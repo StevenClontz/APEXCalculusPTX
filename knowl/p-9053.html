@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:40:24Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<ol class="decimal">
+<li>
+<p>We apply the Ratio Test to the series <span class="process-math">\(\ds \infser \abs{\frac{x^n}{n!}}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lim_{n\to\infty} \frac{\abs{x^{n+1}/(n+1)!}}{\abs{x^n/n!}} \amp = \lim_{n\to\infty} \abs{\frac{x^{n+1}}{x^n}\cdot\frac{n!}{(n+1)!}}\\
+\amp = \lim_{n\to\infty} \abs{\frac x{n+1}}\\
+\amp = 0 \text{ for all }  x\text{.}
+\end{align*}
+</div>
+<p class="continuation">The Ratio Test shows us that regardless of the choice of <span class="process-math">\(x\text{,}\)</span> the series converges. Therefore the radius of convergence is <span class="process-math">\(R=\infty\text{,}\)</span> and the interval of convergence is <span class="process-math">\((-\infty,\infty)\text{.}\)</span></p>
+</li>
+<li>
+<p>We apply the Ratio Test to the series <span class="process-math">\(\ds \infser \abs{(-1)^{n+1}\frac{x^n}{n}} = \infser \abs{\frac{x^n}{n}}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lim_{n\to\infty} \frac{\abs{x^{n+1}/(n+1)}}{\abs{x^n/n}} \amp = \lim_{n\to\infty} \abs{\frac{x^{n+1}}{x^n}\cdot \frac{n}{n+1}}\\
+\amp = \lim_{n\to\infty} n!x^n\\
+\amp = \abs{x}\text{.}
+\end{align*}
+</div>
+<p class="continuation">The Ratio Test states a series converges if the limit of <span class="process-math">\(\abs{a_{n+1}/a_n} = L\lt 1\text{.}\)</span> We found the limit above to be <span class="process-math">\(\abs{x}\text{;}\)</span> therefore, the power series converges when <span class="process-math">\(\abs{x} \lt 1\text{,}\)</span> or when <span class="process-math">\(x\)</span> is in <span class="process-math">\((-1,1)\text{.}\)</span> Thus the radius of convergence is <span class="process-math">\(R=1\text{.}\)</span> To determine the interval of convergence, we need to check the endpoints of <span class="process-math">\((-1,1)\text{.}\)</span> When <span class="process-math">\(x=-1\text{,}\)</span> we have the opposite of the Harmonic Series:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\infser (-1)^{n+1}\frac{(-1)^n}{n} \amp = \infser \frac{-1}{n}\\
+\amp = -\infty\text{.}
+\end{align*}
+</div>
+<p class="continuation">The series diverges when <span class="process-math">\(x=-1\text{.}\)</span> When <span class="process-math">\(x=1\text{,}\)</span> we have the series <span class="process-math">\(\ds \infser (-1)^{n+1}\frac{(1)^n}{n}\text{,}\)</span> which is the Alternating Harmonic Series, which converges. Therefore the interval of convergence is <span class="process-math">\((-1,1]\text{.}\)</span></p>
+</li>
+<li>
+<p>We apply the Ratio Test to the series <span class="process-math">\(\ds\infser[0] \abs{2^n(x-3)^n}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lim_{n\to\infty} \frac{\abs{ 2^{n+1}(x-3)^{n+1}}}{\abs{2^n(x-3)^n}} \amp = \lim_{n\to\infty} \abs{\frac{2^{n+1}}{2^n}\cdot\frac{(x-3)^{n+1}}{(x-3)^n}}\\
+\amp =\lim_{n\to\infty} \abs{2(x-3)}\text{.}
+\end{align*}
+</div>
+<p class="continuation">According to the Ratio Test, the series converges when <span class="process-math">\(\abs{2(x-3)}\lt 1 \implies \abs{x-3} \lt  1/2\text{.}\)</span> The series is centered at 3, and <span class="process-math">\(x\)</span> must be within <span class="process-math">\(1/2\)</span> of 3 in order for the series to converge. Therefore the radius of convergence is <span class="process-math">\(R=1/2\text{,}\)</span> and we know that the series converges absolutely for all <span class="process-math">\(x\)</span> in <span class="process-math">\((3-1/2,3+1/2) = (2.5, 3.5)\text{.}\)</span> We check for convergence at the endpoints to find the interval of convergence. When <span class="process-math">\(x=2.5\text{,}\)</span> we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\infser[0] 2^n(2.5-3)^n \amp = \infser[0] 2^n(-1/2)^n\\
+\amp =\infser[0] (-1)^n\text{,}
+\end{align*}
+</div>
+<p class="continuation">which diverges. A similar process shows that the series also diverges at <span class="process-math">\(x=3.5\text{.}\)</span> Therefore the interval of convergence is <span class="process-math">\((2.5, 3.5)\text{.}\)</span></p>
+</li>
+<li>
+<p>We apply the Ratio Test to <span class="process-math">\(\ds \infser[0] \abs{n!x^n}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lim_{n\to\infty} \frac{\abs{ (n+1)!x^{n+1}}}{\abs{n!x^n}} \amp = \lim_{n\to\infty} \abs{(n+1)x}\\
+\amp = \infty\, \text{ for all \(x\), except \(x=0\). }
+\end{align*}
+</div>
+<p class="continuation">The Ratio Test shows that the series diverges for all <span class="process-math">\(x\)</span> except <span class="process-math">\(x=0\text{.}\)</span> Therefore the radius of convergence is <span class="process-math">\(R=0\text{.}\)</span></p>
+</li>
+</ol>
+<span class="incontext"><a href="sec_power_series.html#p-9053" class="internal">in-context</a></span>
+</body>
+</html>

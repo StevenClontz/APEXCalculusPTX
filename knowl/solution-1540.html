@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:49:58Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.3.7.1</span><span class="period">.</span>
+</h4>
+<p>We start by parametrizing <span class="process-math">\(C_1\text{:}\)</span> the parametrization <span class="process-math">\(\vec r_1(t) = \la t, 2t^2-1\ra\)</span> is straightforward, giving <span class="process-math">\(\vrp_1 = \la 1,4t\ra\text{.}\)</span> On <span class="process-math">\(C_1\text{,}\)</span> <span class="process-math">\(\vec F\big(\vec r_1(t)\big) = \la y,x\ra = \la 2t^2-1,t\ra\text{.}\)</span></p>
+<p>Computing the work along <span class="process-math">\(C_1\text{,}\)</span> we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_{C_1} \vec F\cdot d\vec r_1 \amp  = \int_{-1}^1 \la 2t^2-1,t\ra\cdot\la 1,4t\ra\, dt\\
+\amp = \int_{-1}^1 \big(2t^2-1+4t^2\big)\, dt = 2 \text{ ft-lbs } \text{.}
+\end{align*}
+</div>
+<p>For <span class="process-math">\(C_2\text{,}\)</span> it is probably simplest to parametrize the half circle using sine and cosine. Recall that <span class="process-math">\(\vec r(t) = \la \cos t, \sin t\ra\)</span> is a parametrization of the unit circle on <span class="process-math">\(0\leq t\leq 2\pi\text{;}\)</span> we add 1 to the second component to shift the circle up one unit, then restrict the domain to <span class="process-math">\(\pi\leq t\leq 2\pi\)</span> to obtain only the lower half, giving <span class="process-math">\(\vec r_2(t) = \la \cos t, \sin t+1\ra\text{,}\)</span> <span class="process-math">\(\pi\leq t\leq 2\pi\text{,}\)</span> and hence <span class="process-math">\(\vrp_2(t) = \la -\sin t, \cos t\ra\)</span> and <span class="process-math">\(\vec F\big(\vec r_2(t)\big) = \la y,x\ra = \la \sin t+1,\cos t\ra\text{.}\)</span></p>
+<p>Computing the work along <span class="process-math">\(C_2\text{,}\)</span> we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_{C_2} \vec F\cdot d\vec r_2 \amp  = \int_{\pi}^{2\pi} \la \sin t+1,\cos t\ra\cdot\la -\sin t,\cos t\ra\, dt\\
+\amp = \int_{\pi}^{2\pi} \big(-\sin^2t-\sin t+\cos^2t\big)\, dt = 2 \text{ ft-lbs } \text{.}
+\end{align*}
+</div>
+<p>Note how the work along <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> in this example is the same. We'll address why later in this section when <em class="emphasis">conservative fields</em> and <em class="emphasis">path independence</em> are discussed.</p>
+</div>
+<span class="incontext"><a href="sec_line_int_vf.html#solution-1540" class="internal">in-context</a></span>
+</body>
+</html>

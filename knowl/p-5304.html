@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:48Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Rewrite <span class="process-math">\(\tan(x)\)</span> as <span class="process-math">\(\sin(x) /\cos(x)\text{.}\)</span> While the presence of a composition of functions may not be immediately obvious, recognize that <span class="process-math">\(\cos(x)\)</span> is “inside” the <span class="process-math">\(1/x\)</span> function. Therefore, we see if setting <span class="process-math">\(u = \cos(x)\)</span> returns usable results. We have that <span class="process-math">\(du = -\sin(x) \, dx\text{,}\)</span> hence <span class="process-math">\(-du = \sin(x) \, dx\text{.}\)</span> We can integrate:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int \tan(x) \, dx \amp = \int \frac{\sin(x) }{\cos(x) }\, dx\\
+\amp = \int \frac1{\underbrace{\cos(x) }_u}\underbrace{\sin(x) \, dx}_{-du}\\
+\amp = \int \frac {-1}u \, du\\
+\amp = -\ln\abs{u} + C\\
+\amp = -\ln\abs{\cos(x) } + C\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="sec_substitution.html#p-5304" class="internal">in-context</a></span>
+</body>
+</html>

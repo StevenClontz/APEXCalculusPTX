@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:40:51Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>Given a value <span class="process-math">\(x\text{,}\)</span> the magnitude of the error term <span class="process-math">\(R_n(x)\)</span> is bounded by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\abs{R_n(x)} \leq \frac{\max\abs{\,f^{(n+1)}(z)}}{(n+1)!}\abs{x^{n+1}}\text{.}
+\end{equation*}
+</div>
+<p>Since all derivatives of <span class="process-math">\(\cos(x)\)</span> are <span class="process-math">\(\pm \sin(x)\)</span> or <span class="process-math">\(\pm\cos(x)\text{,}\)</span> whose magnitudes are bounded by <span class="process-math">\(1\text{,}\)</span> we can state</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\abs{R_n(x)} \leq \frac{1}{(n+1)!}\abs{x^{n+1}}
+\end{equation*}
+</div>
+<p class="continuation">which implies</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation}
+-\frac{\abs{x^{n+1}}}{(n+1)!} \leq R_n(x) \leq\frac{\abs{x^{n+1}}}{(n+1)!}\text{.}\tag{9.8.1}
+\end{equation}
+</div>
+<p>For any <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(\lim\limits_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0\text{.}\)</span> Applying the Squeeze Theorem to Equation <a href="" class="xref" data-knowl="./knowl/eq_coseqtaylor.html" title="Equation 9.8.1">(9.8.1)</a>, we conclude that <span class="process-math">\(\lim\limits_{n\to\infty} R_n(x) = 0\)</span> for all <span class="process-math">\(x\text{,}\)</span> and hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_coseqtaylor.html">
+\begin{equation*}
+\cos(x) = \infser[0] (-1)^{n}\frac{x^{2n}}{(2n)!} \text{ for all \(x\) }\text{.}
+\end{equation*}
+</div>
+</div></body>
+</html>

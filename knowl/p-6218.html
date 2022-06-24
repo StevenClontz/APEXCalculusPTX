@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:34Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<ol class="decimal">
+<li>
+<p>Applying <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_inverse_derivatives.html" title="Key Idea 6.6.17: Derivatives Involving Inverse Hyperbolic Functions">Key Idea 6.6.17</a> with the Chain Rule gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_hyperbolic_inverse_derivatives.html">
+\begin{equation*}
+\frac{d}{dx}\left[\cosh^{-1}\left(\frac{3x-2}5\right)\right] = \frac{1}{\sqrt{\left(\frac{3x-2}5\right)^2-1}}\cdot\frac35\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Multiplying the numerator and denominator by <span class="process-math">\((-1)\)</span> gives: <span class="process-math">\(\ds \int \frac{1}{x^2-1}\, dx = \int \frac{-1}{1-x^2}\, dx\text{.}\)</span> The second integral can be solved with a direct application of item #3 from <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_inverse_integrals.html" title="Key Idea 6.6.18: Integrals Involving Inverse Hyperbolic Functions">Key Idea 6.6.18</a>, with <span class="process-math">\(a=1\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_hyperbolic_inverse_integrals.html ./knowl/sec_partial_fraction.html ./knowl/eq_hf3.html">
+\begin{align}
+\int \frac{1}{x^2-1}\, dx \amp = -\int \frac{1}{1-x^2}\, dx\notag\\
+\amp = \left\{\begin{array}{ccc} -\tanh^{-1}\left(x\right)+C \amp  \amp  x^2\lt 1 \\ \\
+-\coth^{-1}\left(x\right)+C \amp  \amp  1\lt x^2
+\end{array} \right.\notag\\
+\amp =-\frac12\ln\abs{\frac{x+1}{x-1}}+C\notag\\
+\amp =\frac12\ln\abs{\frac{x-1}{x+1}}+C\text{.}\tag{6.6.1}
+\end{align}
+</div>
+<p class="continuation">We should note that this exact problem was solved at the beginning of <a href="sec_partial_fraction.html" class="internal" title="Section 6.5: Partial Fraction Decomposition">Section 6.5</a>. In that example the answer was given as <span class="process-math">\(\frac12\ln\abs{x-1}-\frac12\ln\abs{x+1}+C\text{.}\)</span> Note that this is equivalent to the answer given in <a href="" class="xref" data-knowl="./knowl/eq_hf3.html" title="Equation 6.6.1">Equation (6.6.1)</a>, as <span class="process-math">\(\ln(a/b) = \ln(a) - \ln(b)\text{.}\)</span></p>
+</li>
+<li>
+<p>This requires a substitution, then item #2 of <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_inverse_integrals.html" title="Key Idea 6.6.18: Integrals Involving Inverse Hyperbolic Functions">Key Idea 6.6.18</a> can be applied. Let <span class="process-math">\(u = 3x\text{,}\)</span> hence <span class="process-math">\(du = 3dx\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_hyperbolic_inverse_integrals.html">
+\begin{align*}
+\int \frac{1}{\sqrt{9x^2+10}}\, dx \amp = \frac13\int\frac{1}{\sqrt{u^2+10}}\,du.\\
+\end{align*}
+<p class="intertext">Note <span class="process-math">\(a^2=10\text{,}\)</span> hence <span class="process-math">\(a = \sqrt{10}\text{.}\)</span> Now apply the integral rule.</p>
+\begin{align*}
+\amp = \frac13 \sinh^{-1}\left(\frac{3x}{\sqrt{10}}\right) + C\\
+\amp = \frac13 \ln\abs{3x+\sqrt{9x^2+10}}+C\text{.}
+\end{align*}
+</div>
+</li>
+</ol>
+<span class="incontext"><a href="sec_hyperbolic.html#p-6218" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:17Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.4.8.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-trigsub-ex-sec1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/0oCjVzIa_t8?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We start by rewriting the integrand so that it looks like <span class="process-math">\(\sqrt{x^2-a^2}\)</span> for some value of <span class="process-math">\(a\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\sqrt{4x^2-1} \amp = \sqrt{4\left(x^2-\frac14\right)}\\
+\amp = 2\sqrt{x^2-\left(\frac12\right)^2}\text{.}
+\end{align*}
+</div>
+<p>So we have <span class="process-math">\(a=1/2\text{,}\)</span> and following <a href="" class="xref" data-knowl="./knowl/idea_trigsub.html" title="Key Idea 6.4.3: Trigonometric Substitution">Key Idea 6.4.3</a>(c), we set <span class="process-math">\(x= \frac12\sec(\theta)\text{,}\)</span> and hence <span class="process-math">\(dx = \frac12\sec(\theta) \tan(\theta) \, d\theta\text{.}\)</span> We now rewrite the integral with these substitutions:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_trigsub.html">
+\begin{align*}
+\int \sqrt{4x^2-1}\, dx \amp = \int 2\sqrt{x^2-\left(\frac12\right)^2}\, dx\\
+\amp = \int 2\sqrt{\frac14\sec^2(\theta) - \frac14}\left(\frac12\sec(\theta) \tan(\theta) \right)\, d\theta\\
+\amp =\int \sqrt{\frac14(\sec^2(\theta) -1)}\Big(\sec(\theta) \tan(\theta) \Big)\, d\theta\\
+\amp =\int\sqrt{\frac14\tan^2(\theta) }\Big(\sec(\theta) \tan(\theta) \Big)\, d\theta\\
+\amp =\int \frac12\tan^2(\theta) \sec(\theta) \, d\theta\\
+\amp =\frac12\int \Big(\sec^2(\theta) -1\Big)\sec(\theta) \, d\theta\\
+\amp =\frac12\int \big(\sec^3(\theta) - \sec(\theta) \big)\, d\theta\text{.}
+\end{align*}
+</div>
+<p>We integrated <span class="process-math">\(\sec^3(\theta)\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_trigint6.html" title="Example 6.3.11: Integrating powers of tangent and secant">Example 6.3.11</a>, finding its antiderivatives to be</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_trigint6.html">
+\begin{equation*}
+\int \sec^3(\theta) \, d\theta = \frac12\Big(\sec(\theta) \tan(\theta) + \ln\abs{\sec(\theta) +\tan(\theta) }\Big)+C\text{.}
+\end{equation*}
+</div>
+<p>Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\amp \int \sqrt{4x^2-1}\, dx =\frac12\int \big(\sec^3(\theta) - \sec(\theta) \big)\, d\theta\\
+\amp = \frac12\left(\frac12\Big(\sec(\theta) \tan(\theta) + \ln\abs{\sec(\theta) +\tan(\theta) }\Big) -\ln\abs{\sec(\theta) + \tan(\theta) }\right) + C\\
+\amp = \frac14\left(\sec(\theta) \tan(\theta) -\ln\abs{\sec(\theta) +\tan(\theta) }\right)+C\text{.}
+\end{align*}
+</div>
+<p>We are not yet done. Our original integral is given in terms of <span class="process-math">\(x\text{,}\)</span> whereas our final answer, as given, is in terms of <span class="process-math">\(\theta\text{.}\)</span> We need to rewrite our answer in terms of <span class="process-math">\(x\text{.}\)</span> With <span class="process-math">\(a=1/2\text{,}\)</span> and <span class="process-math">\(x=\frac12\sec(\theta)\text{,}\)</span> the reference triangle in <a href="" class="xref" data-knowl="./knowl/idea_trigsub.html" title="Key Idea 6.4.3: Trigonometric Substitution">Key Idea 6.4.3</a>(c) shows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_trigsub.html">
+\begin{equation*}
+\tan(\theta) = \sqrt{x^2-1/4}\Big/(1/2) = 2\sqrt{x^2-1/4} \text{ and }  \sec(\theta) = 2x\text{.}
+\end{equation*}
+</div>
+<p>Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\amp \frac14\Big(\sec(\theta) \tan(\theta) -\ln\abs{\sec(\theta) +\tan(\theta) }\Big)+C\\
+\amp\quad = \frac14\Big(2x\cdot 2\sqrt{x^2-1/4} - \ln\abs{2x + 2\sqrt{x^2-1/4}}\Big)+C\\
+\amp\quad = \frac14\Big(4x\sqrt{x^2-1/4} - \ln\abs{2x + 2\sqrt{x^2-1/4}}\Big)+C\text{.}
+\end{align*}
+</div>
+<p>The final answer is given in the last line above, repeated here:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \sqrt{4x^2-1}\, dx = \frac14\Big(4x\sqrt{x^2-1/4} - \ln\abs{2x + 2\sqrt{x^2-1/4}}\Big)+C\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="sec_trig_sub.html#solution-340" class="internal">in-context</a></span>
+</body>
+</html>

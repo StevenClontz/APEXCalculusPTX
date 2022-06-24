@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:42Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.5.8.1</span><span class="period">.</span>
+</h4>
+<p>We will refer often to <a href="" class="xref" data-knowl="./knowl/fig_pump1a.html" title="Figure 7.5.9">Figure 7.5.9</a> which illustrates the salient aspects of this problem.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_pump1a.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.5.9<span class="period">.</span></span><span class="space"> </span>Illustrating a water tank in order to compute the work required to empty it in <a href="" class="xref" data-knowl="./knowl/ex_pump1.html" title="Example 7.5.8: Computing work performed: pumping fluids">Example 7.5.8</a></figcaption></figure><p>We start as we often do: we partition an interval into subintervals. We orient our tank vertically since this makes intuitive sense with the base of the tank at <span class="process-math">\(y=0\text{.}\)</span> Hence the top of the water is at <span class="process-math">\(y=30\text{,}\)</span> meaning we are interested in subdividing the <span class="process-math">\(y\)</span>-interval <span class="process-math">\([0,30]\)</span> into <span class="process-math">\(n\)</span> subintervals as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0 = y_0 \lt  y_1 \lt  \cdots \lt  y_{n} = 30\text{.}
+\end{equation*}
+</div>
+<p>Consider the work <span class="process-math">\(W_i\)</span> of pumping only the water residing in the <span class="process-math">\(i\)</span>th subinterval, illustrated in <a href="" class="xref" data-knowl="./knowl/fig_pump1a.html" title="Figure 7.5.9">Figure 7.5.9</a>. The force required to move this water is equal to its weight which we calculate as volume <span class="times-sign">×</span> density. The volume of water in this subinterval is <span class="process-math">\(V_i = 10^2\pi \Delta y_i\text{;}\)</span> its density is <span class="quantity">62.4 <sup>lb</sup>⁄<sub>ft<sup>3</sup></sub></span>. Thus the required force is <span class="process-math">\(6240\pi\Delta y_i\)</span> <span class="quantity">lb</span>.</p>
+<p>We approximate the distance the force is applied by using any <span class="process-math">\(y\)</span>-value contained in the <span class="process-math">\(i\)</span>th subinterval; for simplicity, we arbitrarily use <span class="process-math">\(y_i\)</span> for now (it will not matter later on). The water will be pumped to a point <span class="process-math">\(5\)</span> feet above the top of the tank, that is, to the height of <span class="process-math">\(y=35\)</span> <span class="quantity">ft</span>. Thus the distance the water at height <span class="process-math">\(y_i\)</span> travels is <span class="process-math">\(35-y_i\)</span> <span class="quantity">ft</span>.</p>
+<p>In all, the approximate work <span class="process-math">\(W_i\)</span> peformed in moving the water in the <span class="process-math">\(i\)</span>th subinterval to a point <span class="process-math">\(5\)</span> feet above the tank is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+W_i \approx 6240\pi\Delta y_i(35-y_i)\text{.}
+\end{equation*}
+</div>
+<p>To approximate the total work performed in pumping out all the water from the tank, we sum all the work <span class="process-math">\(W_i\)</span> performed in pumping the water from each of the <span class="process-math">\(n\)</span> subintervals of <span class="process-math">\([0,30]\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+W \approx \sum_{i=1}^n W_i = \sum_{i=1}^n 6240\pi\Delta y_i(35-y_i)\text{.}
+\end{equation*}
+</div>
+<p>This is a Riemann sum. Taking the limit as the subinterval length goes to 0 gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+W   \amp =  \int_0^{30} 6240\pi(35-y)\, dy\\
+\amp =  6240\pi\left(35y-1/2y^2\right)\Big|_0^{30}\\
+\amp =   11,762,123 \,\text{ft--lb}\\
+\amp \approx  1.176 \times 10^7 \,\text{ft--lb} \text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_work.html#solution-464" class="internal">in-context</a></span>
+</body>
+</html>

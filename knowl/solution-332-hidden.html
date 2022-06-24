@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:10Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>The powers of both the sine and cosine terms are odd, therefore we can apply the techniques of <a href="" class="xref" data-knowl="./knowl/idea_trig_int_1.html" title="Key Idea 6.3.2: Integrals Involving Powers of Sine and Cosine">Key Idea 6.3.2</a> to either power. We choose to work with the power of the cosine term since the previous example used the sine term's power.</p>
+<p>We rewrite <span class="process-math">\(\cos^9(x)\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\cos^9(x) \amp = \cos^8(x) \cos(x)\\
+\amp = \left(\cos^2(x)\right)^4\cos(x)\\
+\amp = \left(1-\sin^2(x)\right)^4\cos(x)\text{.}
+\end{align*}
+</div>
+<p>We rewrite the integral as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int\sin^5(x) \cos^9(x) \, dx = \int\sin^5(x)  \left(1-\sin^2(x)\right)^4\cos(x) \, dx\text{.}
+\end{equation*}
+</div>
+<p>Now substitute and integrate, using <span class="process-math">\(u = \sin(x)\)</span> and <span class="process-math">\(du = \cos(x) \, dx\text{.}\)</span> Expand the binomial using algebra.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\amp \int u^5(1-u^2)^4\,du\\
+\amp = \int u^5(1-4u^2+6u^4-4u^6+u^8)\,du\\
+\amp = \int\big(u^5-4u^7+6u^9-4u^{11}+u^{13}\big)\,du\\
+\amp = \frac16u^6-\frac12u^8+\frac35u^{10}-\frac13u^{12}+\frac{1}{14}u^{14}+C\\
+\amp = \frac16\sin^6(x) -\frac12\sin^8(x) +\frac35\sin^{10}(x)-\frac13\sin^{12}(x) +\frac{1}{14}\sin^{14}(x) +C\text{.}
+\end{align*}
+</div>
+</div></body>
+</html>

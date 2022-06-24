@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:29:00Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX L'Hospital's Rule</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_hyperbolic.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_anti_tech.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_improper_integration.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_hyperbolic.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_anti_tech.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_improper_integration.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="active">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_lhopitals_rule"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.7</span> <span class="title">L'Hospital's Rule</span>
+</h2>
+<section class="introduction" id="introduction-142"><p id="p-6343">While this chapter is devoted to learning techniques of integration, this section is not about integration. Rather, it is concerned with a technique of evaluating certain limits that will be useful in the following section, where integration is once more discussed.</p>
+<p id="p-6344">Our treatment of limits exposed us to the notion of “0/0”, an indeterminate form. If <span class="process-math">\(\lim\limits_{x\to c}f(x)=0\)</span> and <span class="process-math">\(\lim\limits_{x\to c} g(x) =0\text{,}\)</span> we do not conclude that <span class="process-math">\(\lim\limits_{x\to c} f(x)/g(x)\)</span> is <span class="process-math">\(0/0\text{;}\)</span> rather, we use <span class="process-math">\(0/0\)</span> as notation to describe the fact that both the numerator and denominator approach 0. The expression 0/0 has no numeric value; other work must be done to evaluate the limit.</p>
+<p id="p-6345">Other indeterminate forms exist; they are: <span class="process-math">\(\infty/\infty\text{,}\)</span> <span class="process-math">\(0\cdot\infty\text{,}\)</span> <span class="process-math">\(\infty-\infty\text{,}\)</span> <span class="process-math">\(0^0\text{,}\)</span> <span class="process-math">\(1^\infty\)</span> and <span class="process-math">\(\infty^0\text{.}\)</span> Just as “0/0” does not mean “divide 0 by 0,” the expression “<span class="process-math">\(\infty/\infty\)</span>” does not mean “divide infinity by infinity.” Instead, it means “a quantity is growing without bound and is being divided by another quantity that is growing without bound.” We cannot determine from such a statement what value, if any, results in the limit. Likewise, “<span class="process-math">\(0\cdot \infty\)</span>” does not mean “multiply zero by infinity.” Instead, it means “one quantity is shrinking to zero, and is being multiplied by a quantity that is growing without bound.” We cannot determine from such a description what the result of such a limit will be.</p>
+<figure class="figure figure-like" id="vid-lhospital-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-240" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/_tRdRiWmFhM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.7.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_lhopitals_rule.html" class="internal" title="Section 6.7: L'Hospital's Rule">Section 6.7</a></figcaption></figure><p id="p-6346">This section introduces l'Hospital's Rule, a method of resolving limits that produce the indeterminate forms 0/0 and <span class="process-math">\(\infty/\infty\text{.}\)</span> We'll also show how algebraic manipulation can be used to convert other indeterminate expressions into one of these two forms so that our new rule can be applied.</p></section><section class="subsection" id="sec_lhopital_statement"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.7.1</span> <span class="title">L'Hospital's Rule with indeterminate forms <span class="process-math">\(0/0\)</span> and <span class="process-math">\(\infty/\infty\)</span></span>
+</h3>
+<article class="theorem theorem-like" id="thm_LHR"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.7.2</span><span class="period">.</span><span class="space"> </span><span class="title">L'Hospital's Rule, Part 1.</span>
+</h4>
+<p id="p-6347">Let <span class="process-math">\(\lim\limits_{x\to c}f(x) = 0\)</span> and <span class="process-math">\(\lim\limits_{x\to c}g(x)=0\text{,}\)</span> where <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are differentiable functions on an open interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(c\text{,}\)</span> and <span class="process-math">\(g'(x)\neq 0\)</span> on <span class="process-math">\(I\)</span> except possibly at <span class="process-math">\(c\text{.}\)</span> If </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to c} \frac{\fp(x)}{g'(x)}=L\text{,}
+\end{equation*}
+</div>
+<p class="continuation">then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to c} \frac{f(x)}{g(x)}=L\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(L\)</span> is a real number, or <span class="process-math">\(L=\pm \infty\text{.}\)</span> The result applies to one-sided limits as well.</p></article><aside class="aside aside-like" id="aside-36"><p id="p-6348">To use <a href="" class="xref" data-knowl="./knowl/thm_LHR.html" title="Theorem 6.7.2: L'Hospital's Rule, Part 1">Theorem 6.7.2</a> in practice, notice that there are two conditions we need to check. First, the original limit needs to be of the “<span class="process-math">\(0/0\)</span>” form. Second, the new limit (involving the derivatives of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span>) must exist (or be infinite).</p>
+<p id="p-6349">In some cases, the new limit will also be <span class="process-math">\(0/0\text{,}\)</span> in which case we can apply l'Hospital's rule again. The rule can be applied repeatedly (taking additional derivatives), as long as we reach a step where the limit exists.</p></aside><p id="p-6350">We demonstrate the use of l'Hospital's Rule in the following examples; we will often use “LHR” as an abbreviation of “l'Hospital's Rule.”</p>
+<article class="example example-like" id="ex_lhr1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Using l'Hospital's Rule.</span>
+</h4>
+<p id="p-6351">Evaluate the following limits, using l'Hospital's Rule as needed.</p>
+<ol id="p-6352" class="decimal cols2">
+<li id="li-1275"><p id="p-derived-li-1275"><span class="process-math">\(\displaystyle \lim\limits_{x\to0}\frac{\sin(x) }x\)</span></p></li>
+<li id="li-1276"><p id="p-derived-li-1276"><span class="process-math">\(\displaystyle \lim\limits_{x\to 1}\frac{\sqrt{x+3}-2}{1-x}\)</span></p></li>
+<li id="li-1277"><p id="p-derived-li-1277"><span class="process-math">\(\displaystyle \lim\limits_{x\to0}\frac{x^2}{1-\cos(x) }\)</span></p></li>
+<li id="li-1278"><p id="p-derived-li-1278"><span class="process-math">\(\displaystyle \lim\limits_{x\to 2}\frac{x^2+x-6}{x^2-3x+2}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-373" id="solution-373"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-373"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-lhospital-ex-zerzer1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Y2O3RD9tt34?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-6353" class="decimal">
+<li id="li-1279">
+<p id="p-6354">We proved this limit is 1 in <a href="" class="xref" data-knowl="./knowl/ex_limit_sinx_prove.html" title="Example 1.3.13: Using the Squeeze Theorem">Example 1.3.13</a> using the Squeeze Theorem. Here we use l'Hospital's Rule to show its power.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_limit_sinx_prove.html">
+\begin{equation*}
+\lim_{x\to0}\frac{\sin(x) }x \stackrel{\,\text{ by LHR }  \,}{=} \lim_{x\to0} \frac{\cos(x) }{1}=1\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1280"><p id="p-derived-li-1280"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim\limits_{x\to 1}\frac{\sqrt{x+3}-2}{1-x} 	 \stackrel{\,\text{ by LHR } \,}{=} \lim_{x \to 1} \frac{\frac12(x+3)^{-1/2}}{-1} =-\frac 14\text{.}
+\end{equation*}
+</div></p></li>
+<li id="li-1281">
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6355">
+\begin{equation*}
+\lim\limits_{x\to 0}\frac{x^2}{1-\cos(x) } \stackrel{\,\text{ by LHR } \,}{=} \lim_{x\to 0} \frac{2x}{\sin(x) }\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This latter limit also evaluates to the 0/0 indeterminate form. To evaluate it, we apply l'Hospital's Rule again.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim\limits_{x\to 0} \frac{2x}{\sin(x) } \stackrel{\,\text{ by LHR } \,}{=} \frac{2}{\cos(x) } = 2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(\lim\limits_{x\to0}\frac{x^2}{1-\cos(x) }=2\text{.}\)</span></p>
+</li>
+<li id="li-1282">
+<p id="p-6356">We already know how to evaluate this limit; first factor the numerator and denominator. We then have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 2}\frac{x^2+x-6}{x^2-3x+2} = \lim_{x\to 2}\frac{(x-2)(x+3)}{(x-2)(x-1)} = \lim_{x\to 2}\frac{x+3}{x-1} = 5\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We now show how to solve this using l'Hospital's Rule.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 2}\frac{x^2+x-6}{x^2-3x+2}\stackrel{\,\text{ by LHR }  \,}{=}  \lim_{x\to 2}\frac{2x+1}{2x-3} = 5\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article><p id="p-6357">Note that at each step where l'Hospital's Rule was applied, it was <em class="emphasis">needed</em>: the initial limit returned the indeterminate form of “<span class="process-math">\(0/0\text{.}\)</span>” If the initial limit returns, for example, 1/2, then l'Hospital's Rule does not apply.</p>
+<p id="p-6358">The following theorem extends our initial version of l'Hospital's Rule in two ways. It allows the technique to be applied to the indeterminate form <span class="process-math">\(\infty/\infty\)</span> and to limits where <span class="process-math">\(x\)</span> approaches <span class="process-math">\(\pm\infty\text{.}\)</span></p>
+<article class="theorem theorem-like" id="thm_LHR2"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">L'Hospital's Rule, Part 2.</span>
+</h4>
+<ol id="p-6359" class="decimal">
+<li id="li-1283">
+<p id="p-6360">Let <span class="process-math">\(\lim\limits_{x\to a}f(x) = \pm\infty\)</span> and <span class="process-math">\(\lim\limits_{x\to a}g(x)=\pm \infty\text{,}\)</span> where <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are differentiable on an open interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(a\text{.}\)</span> If </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to a}\frac{\fp(x)}{g'(x)}=L\text{,}
+\end{equation*}
+</div>
+<p class="continuation">then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to a}\frac{f(x)}{g(x)}=L\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(L\)</span> is a real number, or <span class="process-math">\(L=\pm\infty\text{.}\)</span> The result applies to one-sided limits as well.</p>
+</li>
+<li id="li-1284">
+<p id="p-6361">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be differentiable functions on the open interval <span class="process-math">\((a,\infty)\)</span> for some value <span class="process-math">\(a\text{,}\)</span> where <span class="process-math">\(g'(x)\neq 0\)</span> on <span class="process-math">\((a,\infty)\)</span> and <span class="process-math">\(\lim\limits_{x\to\infty} f(x)/g(x)\)</span> returns either <span class="process-math">\(0/0\)</span> or <span class="process-math">\(\infty/\infty\text{.}\)</span> If</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to \infty}\frac{\fp(x)}{g'(x)}=L\text{,}
+\end{equation*}
+</div>
+<p class="continuation">then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to \infty}\frac{f(x)}{g(x)}=L\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(L\)</span> is a real number, or <span class="process-math">\(L=\pm \infty\text{.}\)</span> A similar statement can be made for limits where <span class="process-math">\(x\)</span> approaches <span class="process-math">\(-\infty\text{.}\)</span></p>
+</li>
+</ol></article><article class="example example-like" id="ex_LHR2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Using l'Hospital's Rule with limits involving <span class="process-math">\(\infty\)</span>.</span>
+</h4>
+<p id="p-6362">Evaluate the following limits.</p>
+<p id="p-6363"><span class="process-math">\(\ds 1.\,\lim_{x\to\infty} \frac{3x^2-100x+2}{4x^2+5x-1000} \qquad\qquad 2. \,\lim_{x\to \infty}\frac{e^x}{x^3}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-374" id="solution-374"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-374"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-lhospital-ex-infinf" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/1WIItaObKQk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-6364" class="decimal">
+<li id="li-1285">
+<p id="p-6365">We can evaluate this limit already using <a href="" class="xref" data-knowl="./knowl/thm_lim_rational_fn_at_infty.html" title="Theorem 1.6.21: Limits of Rational Functions at Infinity">Theorem 1.6.21</a>; the answer is 3/4. We apply l'Hospital's Rule to demonstrate its applicability.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_lim_rational_fn_at_infty.html">
+\begin{equation*}
+\lim_{x\to\infty} \frac{3x^2-100x+2}{4x^2+5x-1000}\stackrel{\,\text{ by LHR }  \,}{=} \lim_{x\to\infty} \frac{6x-100}{8x+5} \stackrel{\,\text{ by LHR }  \,}{=} \lim_{x\to\infty} \frac68 = \frac34\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1286">
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6366">
+\begin{equation*}
+\lim\limits_{x\to \infty}\frac{e^x}{x^3} \stackrel{\,\text{ by LHR } \,}{=} \lim_{x\to\infty} \frac{e^x}{3x^2} \stackrel{\,\text{ by LHR } \,}{=} \lim_{x\to\infty} \frac{e^x}{6x} \stackrel{\,\text{ by LHR } \,}{=} \lim_{x\to\infty} \frac{e^x}{6} = \infty\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Recall that this means that the limit does not exist; as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(\infty\text{,}\)</span> the expression <span class="process-math">\(e^x/x^3\)</span> grows without bound. We can infer from this that <span class="process-math">\(e^x\)</span> grows “faster” than <span class="process-math">\(x^3\text{;}\)</span> as <span class="process-math">\(x\)</span> gets large, <span class="process-math">\(e^x\)</span> is far larger than <span class="process-math">\(x^3\text{.}\)</span> (This has important implications in computing when considering efficiency of algorithms.)</p>
+</li>
+</ol>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.7.2</span> <span class="title">Indeterminate Forms <span class="process-math">\(0\cdot\infty\)</span> and <span class="process-math">\(\infty-\infty\)</span></span>
+</h3>
+<p id="p-6367">L'Hospital's Rule can only be applied to ratios of functions. When faced with an indeterminate form such as <span class="process-math">\(0\cdot\infty\)</span> or <span class="process-math">\(\infty-\infty\text{,}\)</span> we can sometimes apply algebra to rewrite the limit so that l'Hospital's Rule can be applied. We demonstrate the general idea in the next example. </p>
+<article class="example example-like" id="ex_LHR3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Applying l'Hospital's Rule to other indeterminate forms.</span>
+</h4>
+<p id="p-6368">Evaluate the following limits.</p>
+<ol id="p-6369" class="decimal cols2">
+<li id="li-1287"><p id="p-derived-li-1287"><span class="process-math">\(\displaystyle \lim\limits_{x\to0^+} x\cdot e^{1/x}\)</span></p></li>
+<li id="li-1288"><p id="p-derived-li-1288"><span class="process-math">\(\displaystyle \lim\limits_{x\to0^-} x\cdot e^{1/x}\)</span></p></li>
+<li id="li-1289"><p id="p-derived-li-1289"><span class="process-math">\(\displaystyle \lim\limits_{x\to\infty} \ln(x+1)-\ln(x)\)</span></p></li>
+<li id="li-1290"><p id="p-derived-li-1290"><span class="process-math">\(\displaystyle \lim\limits_{x\to\infty} x^2-e^x\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-375" id="solution-375"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-375"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-lhospital-ex-zerinf" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=qQCQSB4BySw,BrYTuJS8Y8M&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-6370" class="decimal">
+<li id="li-1291">
+<p id="p-6371">As <span class="process-math">\(x\rightarrow 0^+\text{,}\)</span> <span class="process-math">\(x\rightarrow 0\)</span> and <span class="process-math">\(e^{1/x}\rightarrow \infty\text{.}\)</span> Thus we have the indeterminate form <span class="process-math">\(0\cdot\infty\text{.}\)</span> We rewrite the expression <span class="process-math">\(x\cdot e^{1/x}\)</span> as <span class="process-math">\(\ds\frac{e^{1/x}}{1/x}\text{;}\)</span> now, as <span class="process-math">\(x\rightarrow 0^+\text{,}\)</span> we get the indeterminate form <span class="process-math">\(\infty/\infty\)</span> to which l'Hospital's Rule can be applied.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to0^+} x\cdot e^{1/x} = \lim_{x\to 0^+} \frac{e^{1/x}}{1/x} \stackrel{\,\text{ by LHR }  \,}{=} \lim_{x\to 0^+}\frac{(-1/x^2)e^{1/x}}{-1/x^2} =\lim_{x\to 0^+}e^{1/x} =\infty\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Interpretation: <span class="process-math">\(e^{1/x}\)</span> grows “faster” than <span class="process-math">\(x\)</span> shrinks to zero, meaning their product grows without bound.</p>
+</li>
+<li id="li-1292">
+<p id="p-6372">As <span class="process-math">\(x\rightarrow 0^-\text{,}\)</span> <span class="process-math">\(x\rightarrow 0\)</span> and <span class="process-math">\(e^{1/x}\rightarrow e^{-\infty}\rightarrow 0\text{.}\)</span> The the limit evaluates to <span class="process-math">\(0\cdot 0\)</span> which is not an indeterminate form. We conclude then that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 0^-}x\cdot e^{1/x} = 0\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1293">
+<p id="p-6373">This limit initially evaluates to the indeterminate form <span class="process-math">\(\infty-\infty\text{.}\)</span> By applying a logarithmic rule, we can rewrite the limit as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to\infty} \ln(x+1)-\ln(x) = \lim_{x\to \infty} \ln\left(\frac{x+1}x\right)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">As <span class="process-math">\(x\rightarrow \infty\text{,}\)</span> the argument of the <span class="process-math">\(\ln\)</span> term approaches <span class="process-math">\(\infty/\infty\text{,}\)</span> to which we can apply l'Hospital's Rule.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to\infty} \frac{x+1}x \stackrel{\,\text{ by LHR }  \,}{=} \frac11=1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since <span class="process-math">\(x\rightarrow \infty\)</span> implies <span class="process-math">\(\ds\frac{x+1}x\rightarrow 1\text{,}\)</span> it follows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x\rightarrow \infty  \text{ implies }  \ln\left(\frac{x+1}x\right)\rightarrow \ln(1) =0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to\infty} \ln(x+1)-\ln(x) = \lim_{x\to \infty} \ln\left(\frac{x+1}x\right)=0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Interpretation: since this limit evaluates to 0, it means that for large <span class="process-math">\(x\text{,}\)</span> there is essentially no difference between <span class="process-math">\(\ln(x+1)\)</span> and <span class="process-math">\(\ln(x)\text{;}\)</span> their difference is essentially 0.</p>
+</li>
+<li id="li-1294">
+<p id="p-6374">The limit <span class="process-math">\(\lim\limits_{x\to\infty} x^2-e^x\)</span> initially returns the indeterminate form <span class="process-math">\(\infty-\infty\text{.}\)</span> We can rewrite the expression by factoring out <span class="process-math">\(x^2\text{;}\)</span> <span class="process-math">\(\ds x^2-e^x = x^2\left(1-\frac{e^x}{x^2}\right)\text{.}\)</span> We need to evaluate how <span class="process-math">\(e^x/x^2\)</span> behaves as <span class="process-math">\(x\rightarrow \infty\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to\infty}\frac{e^x}{x^2} \stackrel{\,\text{ by LHR }  \,}{=} \lim_{x\to\infty} \frac{e^x}{2x} \stackrel{\,\text{ by LHR }  \,}{=} \lim_{x\to\infty} \frac{e^x}{2} = \infty\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(\lim_{x\to\infty}x^2(1-e^x/x^2)\)</span> evaluates to <span class="process-math">\(\infty\cdot(-\infty)\text{,}\)</span> which is not an indeterminate form; rather, <span class="process-math">\(\infty\cdot(-\infty)\)</span> evaluates to <span class="process-math">\(-\infty\text{.}\)</span> We conclude that <span class="process-math">\(\lim\limits_{x\to\infty} x^2-e^x = -\infty\text{.}\)</span> Interpretation: as <span class="process-math">\(x\)</span> gets large, the difference between <span class="process-math">\(x^2\)</span> and <span class="process-math">\(e^x\)</span> grows very large.</p>
+</li>
+</ol>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-43"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.7.3</span> <span class="title">Indeterminate Forms  <span class="process-math">\(0^0\text{,}\)</span> <span class="process-math">\(1^\infty\)</span> and <span class="process-math">\(\infty^0\)</span></span>
+</h3>
+<p id="p-6375">When faced with an indeterminate form that involves a power, it often helps to employ the natural logarithmic function. The following Key Idea expresses the concept, which is followed by an example that demonstrates its use.</p>
+<article class="insight remark-like" id="idea_LHR_power"><h4 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">6.7.7</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating Limits Involving Indeterminate Forms <span class="process-math">\(0^0\text{,}\)</span> <span class="process-math">\(1^\infty\)</span> and <span class="process-math">\(\infty^0\)</span>.</span>
+</h4>
+<p id="p-6376">If <span class="process-math">\(\lim\limits_{x\to c} \ln\big(f(x)\big) = L\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim\limits_{x\to c} f(x) = \lim_{x\to c} e^{\ln(f(x))} = e^L\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="ex_LHR4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.7.8</span><span class="period">.</span><span class="space"> </span><span class="title">Using l'Hospital's Rule with indeterminate forms involving exponents.</span>
+</h4>
+<p id="p-6377">Evaluate the following limits.</p>
+<ol id="p-6378" class="decimal cols2">
+<li id="li-1295"><p id="p-derived-li-1295"><span class="process-math">\(\displaystyle \lim_{x\to\infty} \left(1+\frac1x\right)^x\)</span></p></li>
+<li id="li-1296"><p id="p-derived-li-1296"><span class="process-math">\(\displaystyle \lim_{x\to0^+} x^x\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-376" id="solution-376"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-376"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-lhospital-ex-expforms" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/wHCd7Wsxzug?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-6379" class="decimal">
+<li id="li-1297">
+<p id="p-6380">This is equivalent to a special limit given in <a href="" class="xref" data-knowl="./knowl/thm_special_limits.html" title="Theorem 1.3.17: Special Limits">Theorem 1.3.17</a>; these limits have important applications within mathematics and finance. Note that the exponent approaches <span class="process-math">\(\infty\)</span> while the base approaches 1, leading to the indeterminate form <span class="process-math">\(1^\infty\text{.}\)</span> Let <span class="process-math">\(f(x) = (1+1/x)^x\text{;}\)</span> the problem asks to evaluate <span class="process-math">\(\lim\limits_{x\to\infty}f(x)\text{.}\)</span> Let's first evaluate <span class="process-math">\(\lim\limits_{x\to\infty}\ln\big(f(x)\big)\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_special_limits.html ./knowl/idea_LHR_power.html" id="md-306">
+\begin{align*}
+\lim_{x\to\infty}\ln\big(f(x)\big) \amp  = \lim_{x\to\infty} \ln\left(1+\frac1x\right)^x\\
+\amp = \lim_{x\to\infty} x\ln\left(1+\frac1x\right)\\
+\amp =  \lim_{x\to\infty} \frac{\ln\left(1+\frac1x\right)}{1/x}\\
+\end{align*}
+<p class="intertext">This produces the indeterminate form 0/0, so we apply l'Hospital's Rule.</p>
+\begin{align*}
+\amp =  \lim_{x\to\infty} \frac{\frac{1}{1+1/x}\cdot(-1/x^2)}{(-1/x^2)}\\
+\amp = \lim_{x\to\infty}\frac{1}{1+1/x}\\
+\amp = 1\text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(\lim\limits_{x\to\infty} \ln\big(f(x)\big) = 1\text{.}\)</span> We return to the original limit and apply <a href="" class="xref" data-knowl="./knowl/idea_LHR_power.html" title="Key Idea 6.7.7: Evaluating Limits Involving Indeterminate Forms 0^0 1^\infty and \infty^0">Key Idea 6.7.7</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_special_limits.html ./knowl/idea_LHR_power.html">
+\begin{equation*}
+\lim_{x\to\infty}\left(1+\frac1x\right)^x = \lim_{x\to\infty} f(x) =  \lim_{x\to\infty}e^{\ln(f(x))} = e^1 = e\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1298">
+<p id="p-6381">This limit leads to the indeterminate form <span class="process-math">\(0^0\text{.}\)</span> Let <span class="process-math">\(f(x) = x^x\)</span> and consider first <span class="process-math">\(\lim\limits_{x\to0^+} \ln\big(f(x)\big)\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_LHR_power.html ./knowl/fig_LHR4.html" id="md-307">
+\begin{align*}
+\lim_{x\to0^+} \ln\big(f(x)\big) \amp = \lim_{x\to0^+} \ln\left(x^x\right)\\
+\amp = \lim_{x\to0^+} x\ln(x)\\
+\amp = \lim_{x\to0^+} \frac{\ln(x) }{1/x}.\\
+\end{align*}
+<p class="intertext">This produces the indeterminate form <span class="process-math">\(-\infty/\infty\)</span> so we apply l'Hospital's Rule.</p>
+\begin{align*}
+\amp =	\lim_{x\to0^+} \frac{1/x}{-1/x^2}\\
+\amp = \lim_{x\to0^+} -x\\
+\amp = 0\text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(\lim\limits_{x\to0^+} \ln\big(f(x)\big) =0\text{.}\)</span> We return to the original limit and apply <a href="" class="xref" data-knowl="./knowl/idea_LHR_power.html" title="Key Idea 6.7.7: Evaluating Limits Involving Indeterminate Forms 0^0 1^\infty and \infty^0">Key Idea 6.7.7</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_LHR_power.html ./knowl/fig_LHR4.html">
+\begin{equation*}
+\lim_{x\to0^+} x^x = \lim_{x\to0^+} f(x) = \lim_{x\to0^+} e^{\ln(f(x))} = e^0 = 1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This result is supported by the graph of <span class="process-math">\(f(x)=x^x\)</span> given in <a href="" class="xref" data-knowl="./knowl/fig_LHR4.html" title="Figure 6.7.9">Figure 6.7.9</a>.</p>
+<figure class="figure figure-like" id="fig_LHR4"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_LHR4.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.7.9<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(f(x)=x^x\)</span> supporting the fact that as <span class="process-math">\(x\to 0^+\text{,}\)</span> <span class="process-math">\(f(x)\to 1\)</span></figcaption></figure>
+</li>
+</ol>
+</div></div>
+</div></article><p id="p-6382">Our brief revisit of limits will be rewarded in the next section where we consider <em class="emphasis">improper integration.</em> So far, we have only considered definite integrals where the bounds are finite numbers, such as <span class="process-math">\(\ds \int_0^1 f(x)\, dx\text{.}\)</span> Improper integration considers integrals where one, or both, of the bounds are “infinity.” Such integrals have many uses and applications, in addition to generating ideas that are enlightening.</p></section><section class="exercises" id="exercises-34"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">6.7.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-81"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-1195"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-1115" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1115" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKTGlzdCB0aGUgZGlmZmVyZW50IGluZGV0ZXJtaW5hdGUgZm9ybXMgZGVzY3JpYmVkIGluIHRoaXMgc2VjdGlvbi4KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpbYDAvMCwgXGluZnR5L1xpbmZ0eSwgMFxjZG90XGluZnR5LFxpbmZ0eS1caW5mdHksMF4wLDFeXGluZnR5LFxpbmZ0eV4wYF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6383">List the different indeterminate forms described in this section.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1115')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1196"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-1116" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1116" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZSA9IFBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwokZmFsc2UgPSBQb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwyKTsKCkJFR0lOX1BHTUwKVC9GOiBsJ0hvc3BpdGFsJ3MgUnVsZSBwcm92aWRlcyBhIGZhc3RlciBtZXRob2Qgb2YgY29tcHV0aW5nIGRlcml2YXRpdmVzLltfXXskZmFsc2V9ezV9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6385">T/F: l’Hospital’s Rule provides a faster method of computing derivatives.<ul style="list-style:circle;">
+<li id="li-1300"><p id="p-6387">True</p></li>
+<li id="li-1301"><p id="p-6388">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1116')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1197"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-1117" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1117" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT5xfDxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGRzfXtcZGlzcGxheXN0eWxlfVxuZXdjb21tYW5ke1xmcH17Zid9XCk8L2Rpdj58KSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZSA9IFBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwokZmFsc2UgPSBQb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwyKTsKCkJFR0lOX1BHTUwKbCdIb3NwaXRhbCdzIFJ1bGUgc3RhdGVzIHRoYXQgW2BcZHMgXGZyYWN7ZH17ZHh9XGxlZnRbXGZyYWN7Zih4KX17Zyh4KX1ccmlnaHRdID0gXGZyYWN7XGZwKHgpfXtnJyh4KX1cdGV4dHsufWBdW19deyRmYWxzZX17NX0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6390">l’Hospital’s Rule states that <span class="process-math">\(\ds \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{\fp(x)}{g'(x)}\text{.}\)</span><ul style="list-style:circle;">
+<li id="li-1303"><p id="p-6392">True</p></li>
+<li id="li-1304"><p id="p-6393">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1117')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1198"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-1118" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1118" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRXhwbGFpbiB3aGF0IHRoZSBpbmRldGVybWluYXRlIGZvcm0gIltgMV5caW5mdHlgXSIgbWVhbnMuCgpbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KVGhlIGJhc2Ugb2YgYW4gZXhwcmVzc2lvbiBpcyBhcHByb2FjaGluZyAxIHdoaWxlIGl0cyBwb3dlciBpcyBncm93aW5nIHdpdGhvdXQgYm91bmQuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6395">Explain what the indeterminate form “<span class="process-math">\(1^\infty\)</span>” means.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1118')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1199"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div id="webwork-1119" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1119" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRmlsbCBpbiB0aGUgYmxhbmtzOiBUaGUgUXVvdGllbnQgUnVsZSBpcyBhcHBsaWVkIHRvIFtgXGRzIFxmcmFje2YoeCl9e2coeCl9YF0gd2hlbiB0YWtpbmcgOyBsJ0hvc3BpdGFsJ3MgUnVsZSBpcyBhcHBsaWVkIHdoZW4gdGFraW5nIGNlcnRhaW4gLgoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6397">Fill in the blanks: The Quotient Rule is applied to <span class="process-math">\(\ds \frac{f(x)}{g(x)}\)</span> when taking ; l’Hospital’s Rule is applied when taking certain .</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1119')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1200"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div id="webwork-1120" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1120" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKQ3JlYXRlIChidXQgZG8gbm90IGV2YWx1YXRlISkgYSBsaW1pdCB0aGF0IHJldHVybnMgIltgXGluZnR5XjBgXSIuCgpbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6398">Create (but do not evaluate!) a limit that returns “<span class="process-math">\(\infty^0\)</span>”.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1120')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1201"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div id="webwork-1121" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1121" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKQ3JlYXRlIGEgZnVuY3Rpb24gW2BmKHgpYF0gc3VjaCB0aGF0IFtgXGxpbVxsaW1pdHNfe3hcdG8gMX1mKHgpYF0gcmV0dXJucyAiW2AwXjBgXSIuCgpbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6399">Create a function <span class="process-math">\(f(x)\)</span> such that <span class="process-math">\(\lim\limits_{x\to 1}f(x)\)</span> returns “<span class="process-math">\(0^0\)</span>”.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1121')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1202"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div id="webwork-1122" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1122" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKQ3JlYXRlIGEgZnVuY3Rpb24gW2BmKHgpYF0gc3VjaCB0aGF0IFtgXGRzIFxsaW1fe3hcdG8gXGluZnR5fWYoeClgXSByZXR1cm5zICJbYDBcY2RvdFxpbmZ0eWBdIi4KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6400">Create a function <span class="process-math">\(f(x)\)</span> such that <span class="process-math">\(\ds \lim_{x\to \infty}f(x)\)</span> returns “<span class="process-math">\(0\cdot\infty\)</span>”.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1122')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-82"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-124">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-143"><p id="p-6401">In the following exercises, evaluate the given limit.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1203"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-1123" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1123" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gMTsKJGZ1ID0gRm9ybXVsYSgieF4yK3gtMiIpOwokZmwgPSBGb3JtdWxhKCJ4LTEiKTsKJGRmdSA9ICRmdS0+RCgneCcpOwokZGZsID0gJGZsLT5EKCd4Jyk7CmlmICgkZGZsLT5ldmFsKHg9PiR4bGltKT09MCkgewogICRsID0gQ29tcHV0ZSgiaW5mIik7Cn0KZWxzZSB7CiAgJGwgPSAkZGZ1LT5ldmFsKHg9PiR4bGltKSAvICRkZmwtPmV2YWwoeD0+JHhsaW0pOwp9CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6IFtgXGxpbVxsaW1pdHNfe3hcdG8gMX0gXGZyYWN7WyRmdV0gfXtbJGZsXX1gXQoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6402">Use l’Hospital’s Rule to evaluate the limit: <span class="process-math">\(\lim\limits_{x\to 1} \frac{{x^{2}+x-2} }{{x-1}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1123')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1204"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-1124" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1124" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gMjsKJGZ1ID0gRm9ybXVsYSgieF4yK3gtNiIpOwokZmwgPSBGb3JtdWxhKCJ4XjItN3grMTAiKTsKJGRmdSA9ICRmdS0+RCgneCcpOwokZGZsID0gJGZsLT5EKCd4Jyk7CmlmICgkZGZsLT5ldmFsKHg9PiR4bGltKT09MCkgewogICRsID0gQ29tcHV0ZSgiaW5mIik7Cn0KZWxzZSB7CiAgJGwgPSAkZGZ1LT5ldmFsKHg9PiR4bGltKSAvICRkZmwtPmV2YWwoeD0+JHhsaW0pOwp9CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gMn0gXGZyYWN7WyRmdV0gfXtbJGZsXX1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6404">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6405">
+\begin{equation*}
+\lim\limits_{x\to 2} \frac{{x^{2}+x-6} }{{x^{2}-7x+10}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1124')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1205"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<div id="webwork-1125" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1125" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gcGk7CiRmdSA9IEZvcm11bGEoInNpbih4KSIpOwokZmwgPSBGb3JtdWxhKCJ4LXBpIik7CiRkZnUgPSAkZnUtPkQoJ3gnKTsKJGRmbCA9ICRmbC0+RCgneCcpOwppZiAoJGRmbC0+ZXZhbCh4PT4keGxpbSk9PTApIHsKICAkbCA9IENvbXB1dGUoImluZiIpOwp9CmVsc2UgewogICRsID0gJGRmdS0+ZXZhbCh4PT4keGxpbSkgLyAkZGZsLT5ldmFsKHg9PiR4bGltKTsKfQoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIFxwaX0gXGZyYWN7WyRmdV0gfXtbJGZsXX1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6407">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6408">
+\begin{equation*}
+\lim\limits_{x\to \pi} \frac{{\sin\!\left(x\right)} }{{x-\pi }}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1125')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1206"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-1126" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1126" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gcGkvNDsKJGZ1ID0gRm9ybXVsYSgic2luKHgpLWNvcyh4KSIpOwokZmwgPSBGb3JtdWxhKCJjb3MoMngpIik7CiRkZnUgPSAkZnUtPkQoJ3gnKTsKJGRmbCA9ICRmbC0+RCgneCcpOwppZiAoJGRmbC0+ZXZhbCh4PT4keGxpbSk9PTApIHsKICAkbCA9IENvbXB1dGUoImluZiIpOwp9CmVsc2UgewogICRsID0gJGRmdS0+ZXZhbCh4PT4keGxpbSkgLyAkZGZsLT5ldmFsKHg9PiR4bGltKTsKfQoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIFxwaS80fSBcZnJhY3tbJGZ1XSB9e1skZmxdfWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6410">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6411">
+\begin{equation*}
+\lim\limits_{x\to \pi/4} \frac{{\sin\!\left(x\right)-\cos\!\left(x\right)} }{{\cos\!\left(2x\right)}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1126')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1207"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div id="webwork-1127" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1127" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gMDsKJGZ1ID0gRm9ybXVsYSgic2luKDV4KSIpOwokZmwgPSBGb3JtdWxhKCJ4Iik7CiRkZnUgPSAkZnUtPkQoJ3gnKTsKJGRmbCA9ICRmbC0+RCgneCcpOwppZiAoJGRmbC0+ZXZhbCh4PT4keGxpbSk9PTApIHsKICAkbCA9IENvbXB1dGUoImluZiIpOwp9CmVsc2UgewogICRsID0gJGRmdS0+ZXZhbCh4PT4keGxpbSkgLyAkZGZsLT5ldmFsKHg9PiR4bGltKTsKfQoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIDB9IFxmcmFje1skZnVdIH17WyRmbF19YGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6413">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6414">
+\begin{equation*}
+\lim\limits_{x\to 0} \frac{{\sin\!\left(5x\right)} }{{x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1127')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1208"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-1128" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1128" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gMDsKJGZ1ID0gRm9ybXVsYSgic2luKDJ4KSIpOwokZmwgPSBGb3JtdWxhKCJ4KzIiKTsKJGwgPSAkZnUtPmV2YWwoeD0+JHhsaW0pIC8gJGZsLT5ldmFsKHg9PiR4bGltKTsKCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byAwfSBcZnJhY3tbJGZ1XSB9e1skZmxdfWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6416">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6417">
+\begin{equation*}
+\lim\limits_{x\to 0} \frac{{\sin\!\left(2x\right)} }{{x+2}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1128')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1209"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-1129" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1129" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gMDsKJGZ1ID0gRm9ybXVsYSgic2luKDJ4KSIpOwokZmwgPSBGb3JtdWxhKCJzaW4oM3gpIik7CiRkZnUgPSAkZnUtPkQoJ3gnKTsKJGRmbCA9ICRmbC0+RCgneCcpOwppZiAoJGRmbC0+ZXZhbCh4PT4keGxpbSk9PTApIHsKICAkbCA9IENvbXB1dGUoImluZiIpOwp9CmVsc2UgewogICRsID0gJGRmdS0+ZXZhbCh4PT4keGxpbSkgLyAkZGZsLT5ldmFsKHg9PiR4bGltKTsKfQoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIDB9IFxmcmFje1skZnVdIH17WyRmbF19YGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6419">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6420">
+\begin{equation*}
+\lim\limits_{x\to 0} \frac{{\sin\!\left(2x\right)} }{{\sin\!\left(3x\right)}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1129')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1210"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-1130" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1130" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZChhPT4iUmVhbCIsYj0+IlJlYWwiKTsKJHhsaW0gPSAwOwokZnUgPSBGb3JtdWxhKCJzaW4oYSp4KSIpOwokZmwgPSBGb3JtdWxhKCJzaW4oYip4KSIpOwokZGZ1ID0gJGZ1LT5EKCd4Jyk7CiRkZmwgPSAkZmwtPkQoJ3gnKTsKaWYgKCRkZmwtPnN1YnN0aXR1dGUoeD0+JHhsaW0pPT1Gb3JtdWxhKCIwIikpIHsKICAkbCA9IENvbXB1dGUoImluZiIpOwp9CmVsc2UgewogICRsID0gJGRmdS0+c3Vic3RpdHV0ZSh4PT4keGxpbSkgLyAkZGZsLT5zdWJzdGl0dXRlKHg9PiR4bGltKTsKfQoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIDB9IFxmcmFje1skZnVdIH17WyRmbF19YGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6422">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6423">
+\begin{equation*}
+\lim\limits_{x\to 0} \frac{{\sin\!\left(ax\right)} }{{\sin\!\left(bx\right)}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1130')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1211"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-1131" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1131" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gMDsKJGZ1ID0gRm9ybXVsYSgiZV54LTEiKTsKJGZsID0gRm9ybXVsYSgieF4yIik7CiRkZnUgPSAkZnUtPkQoJ3gnKTsKJGRmbCA9ICRmbC0+RCgneCcpOwppZiAoJGRmbC0+ZXZhbCh4PT4keGxpbSk9PTApIHsKICAkbCA9IENvbXB1dGUoImluZiIpOwp9CmVsc2UgewogICRsID0gJGRmdS0+ZXZhbCh4PT4keGxpbSkgLyAkZGZsLT5ldmFsKHg9PiR4bGltKTsKfQoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIDBeK30gXGZyYWN7WyRmdV0gfXtbJGZsXX1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6425">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6426">
+\begin{equation*}
+\lim\limits_{x\to 0^+} \frac{{e^{x}-1} }{{x^{2}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1131')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1212"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-1132" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1132" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gMDsKJGZ1ID0gRm9ybXVsYSgiZV54LXgtMSIpOwokZmwgPSBGb3JtdWxhKCJ4XjIiKTsKJGQyZnUgPSAkZnUtPkQoJ3gnKS0+RCgneCcpOwokZDJmbCA9ICRmbC0+RCgneCcpLT5EKCd4Jyk7CmlmICgkZDJmbC0+ZXZhbCh4PT4keGxpbSk9PTApIHsKICAkbCA9IENvbXB1dGUoImluZiIpOwp9CmVsc2UgewogICRsID0gJGQyZnUtPmV2YWwoeD0+JHhsaW0pIC8gJGQyZmwtPmV2YWwoeD0+JHhsaW0pOwp9CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gMF4rfSBcZnJhY3tbJGZ1XSB9e1skZmxdfWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6428">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6429">
+\begin{equation*}
+\lim\limits_{x\to 0^+} \frac{{e^{x}-x-1} }{{x^{2}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1132')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1213"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-1133" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1133" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gMDsKJGZ1ID0gRm9ybXVsYSgieC1zaW4oeCkiKTsKJGZsID0gRm9ybXVsYSgieF4zLXheMiIpOwokZDJmdSA9ICRmdS0+RCgneCcpLT5EKCd4Jyk7CiRkMmZsID0gJGZsLT5EKCd4JyktPkQoJ3gnKTsKaWYgKCRkMmZsLT5ldmFsKHg9PiR4bGltKT09MCkgewogICRsID0gQ29tcHV0ZSgiaW5mIik7Cn0KZWxzZSB7CiAgJGwgPSAkZDJmdS0+ZXZhbCh4PT4keGxpbSkgLyAkZDJmbC0+ZXZhbCh4PT4keGxpbSk7Cn0KCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byAwXit9IFxmcmFje1skZnVdIH17WyRmbF19YGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6431">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6432">
+\begin{equation*}
+\lim\limits_{x\to 0^+} \frac{{x-\sin\!\left(x\right)} }{{x^{3}-x^{2}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1133')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1214"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-1134" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1134" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRsID0gQ29tcHV0ZSgiMCIpOwokZnUgPSBGb3JtdWxhKCJ4XjQiKTsKJGZsID0gRm9ybXVsYSgiZV54Iik7CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gXGluZnR5fSBcZnJhY3tbJGZ1XX17WyRmbF19YGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6434">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6435">
+\begin{equation*}
+\lim\limits_{x\to \infty} \frac{{x^{4}}}{{e^{x}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1134')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1215"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-1135" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1135" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRsID0gQ29tcHV0ZSgiMCIpOwokZnUgPSBGb3JtdWxhKCJzcXJ0KHgpIik7CiRmbCA9IEZvcm11bGEoImVeeCIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIFxpbmZ0eX0gXGZyYWN7WyRmdV19e1skZmxdfWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6437">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6438">
+\begin{equation*}
+\lim\limits_{x\to \infty} \frac{{\sqrt{x}}}{{e^{x}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1135')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1216"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-1136" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1136" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRsID0gQ29tcHV0ZSgiaW5maW5pdHkiKTsKJGZ1ID0gRm9ybXVsYSgiZV54Iik7CiRmbCA9IEZvcm11bGEoInheMiIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvXGluZnR5fSBcZnJhY3tbJGZ1XX17WyRmbF19YGBgXQoKCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6440">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6441">
+\begin{equation*}
+\lim\limits_{x\to\infty} \frac{{e^{x}}}{{x^{2}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1136')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1217"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div id="webwork-1137" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1137" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmdSA9IEZvcm11bGEoImVeeCIpOwokZmwgPSBGb3JtdWxhKCJzcXJ0KHgpIik7CiRsID0gQ29tcHV0ZSgiaW5maW5pdHkiKTsKCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byBcaW5mdHl9IFxmcmFje1skZnVdfXtbJGZsXX1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6442">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6443">
+\begin{equation*}
+\lim\limits_{x\to \infty} \frac{{e^{x}}}{{\sqrt{x}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1137')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1218"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-1138" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1138" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmdSA9IEZvcm11bGEoImVeeCIpOwokZmwgPSBGb3JtdWxhKCIyXngiKTsKJGwgPSBDb21wdXRlKCJpbmZpbml0eSIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIFxpbmZ0eX0gXGZyYWN7WyRmdV19e1skZmxdfWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6445">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6446">
+\begin{equation*}
+\lim\limits_{x\to \infty} \frac{{e^{x}}}{{2^{x}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1138')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1219"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div id="webwork-1139" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1139" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmdSA9IEZvcm11bGEoImVeeCIpOwokZmwgPSBGb3JtdWxhKCIzXngiKTsKJGwgPSBDb21wdXRlKCIwIik7CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gXGluZnR5fSBcZnJhY3tbJGZ1XX17WyRmbF19YGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6448">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6449">
+\begin{equation*}
+\lim\limits_{x\to \infty} \frac{{e^{x}}}{{3^{x}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1139')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1220"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<div id="webwork-1140" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1140" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gMzsKJGZ1ID0gRm9ybXVsYSgieF4zLTV4XjIrM3grOSIpOwokZmwgPSBGb3JtdWxhKCJ4XjMtN3heMisxNXgtOSIpOwokZDJmdSA9ICRmdS0+RCgneCcpLT5EKCd4Jyk7CiRkMmZsID0gJGZsLT5EKCd4JyktPkQoJ3gnKTsKaWYgKCRkMmZsLT5ldmFsKHg9PiR4bGltKT09MCkgewogICRsID0gQ29tcHV0ZSgiaW5mIik7Cn0KZWxzZSB7CiAgJGwgPSAkZDJmdS0+ZXZhbCh4PT4keGxpbSkgLyAkZDJmbC0+ZXZhbCh4PT4keGxpbSk7Cn0KCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byAzfSBcZnJhY3tbJGZ1XX17WyRmbF19YGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6451">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6452">
+\begin{equation*}
+\lim\limits_{x\to 3} \frac{{x^{3}-5x^{2}+3x+9}}{{x^{3}-7x^{2}+15x-9}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1140')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1221"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<div id="webwork-1141" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1141" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gLTI7CiRmdSA9IEZvcm11bGEoInheMys0eF4yKzR4Iik7CiRmbCA9IEZvcm11bGEoInheMys3eF4yKzE2eCsxMiIpOwokZDJmdSA9ICRmdS0+RCgneCcpLT5EKCd4Jyk7CiRkMmZsID0gJGZsLT5EKCd4JyktPkQoJ3gnKTsKaWYgKCRkMmZsLT5ldmFsKHg9PiR4bGltKT09MCkgewogICRsID0gQ29tcHV0ZSgiaW5mIik7Cn0KZWxzZSB7CiAgJGwgPSAkZDJmdS0+ZXZhbCh4PT4keGxpbSkgLyAkZDJmbC0+ZXZhbCh4PT4keGxpbSk7Cn0KCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byAtMn0gXGZyYWN7WyRmdV19e1skZmxdfWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6454">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6455">
+\begin{equation*}
+\lim\limits_{x\to -2} \frac{{x^{3}+4x^{2}+4x}}{{x^{3}+7x^{2}+16x+12}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1141')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1222"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-1142" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1142" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmdSA9IEZvcm11bGEoImxuKHgpIik7CiRmbCA9IEZvcm11bGEoIngiKTsKJGwgPSBDb21wdXRlKCIwIik7CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gXGluZnR5fSBcZnJhY3tbJGZ1XX17WyRmbF19YGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6457">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6458">
+\begin{equation*}
+\lim\limits_{x\to \infty} \frac{{\ln\!\left(x\right)}}{{x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1142')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1223"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<div id="webwork-1143" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1143" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmdSA9IEZvcm11bGEoImxuKHheMikiKTsKJGZsID0gRm9ybXVsYSgieCIpOwokbCA9IENvbXB1dGUoIjAiKTsKCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byBcaW5mdHl9IFxmcmFje1skZnVdfXtbJGZsXX1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6460">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6461">
+\begin{equation*}
+\lim\limits_{x\to \infty} \frac{{\ln\!\left(x^{2}\right)}}{{x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1143')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1224"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<div id="webwork-1144" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1144" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmdSA9IEZvcm11bGEoImxuKHgpXjIiKTsKJGZsID0gRm9ybXVsYSgieCIpOwokbCA9IENvbXB1dGUoIjAiKTsKCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byBcaW5mdHl9IFxmcmFje1skZnVdfXtbJGZsXX1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6463">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6464">
+\begin{equation*}
+\lim\limits_{x\to \infty} \frac{{\ln^{2}\!\left(x\right)}}{{x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1144')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1225"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<div id="webwork-1145" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1145" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoIngiKTsKJGYyID0gRm9ybXVsYSgibG4oeCkiKTsKJGwgPSBDb21wdXRlKCIwIik7CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gMF4rfSBbJGYxXVxjZG90IFskZjJdYGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6466">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6467">
+\begin{equation*}
+\lim\limits_{x\to 0^+} {x}\cdot {\ln\!\left(x\right)}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1145')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1226"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<div id="webwork-1146" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1146" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoInNxcnQoeCkiKTsKJGYyID0gRm9ybXVsYSgibG4oeCkiKTsKJGwgPSBDb21wdXRlKCIwIik7CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gMF4rfSBbJGYxXVxjZG90IFskZjJdYGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6469">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6470">
+\begin{equation*}
+\lim\limits_{x\to 0^+} {\sqrt{x}}\cdot {\ln\!\left(x\right)}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1146')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1227"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<div id="webwork-1147" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1147" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoIngiKTsKJGYyID0gRm9ybXVsYSgiZV4oMS94KSIpOwokbCA9IENvbXB1dGUoImluZiIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIDBeK30gWyRmMV0gXGNkb3QgWyRmMl1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6472">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6473">
+\begin{equation*}
+\lim\limits_{x\to 0^+} {x} \cdot {e^{\frac{1}{x}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1147')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1228"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<div id="webwork-1148" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1148" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoInheMyIpOwokZjIgPSBGb3JtdWxhKCJ4XjIiKTsKJGwgPSBDb21wdXRlKCJpbmYiKTsKCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byBcaW5mdHl9IFskZjFdLVskZjJdYGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6475">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6476">
+\begin{equation*}
+\lim\limits_{x\to \infty} {x^{3}}-{x^{2}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1148')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1229"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<div id="webwork-1149" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1149" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoInNxcnQoeCkiKTsKJGYyID0gRm9ybXVsYSgibG4oeCkiKTsKJGwgPSBDb21wdXRlKCJpbmYiKTsKCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byBcaW5mdHl9IFskZjFdLVskZjJdYGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6478">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6479">
+\begin{equation*}
+\lim\limits_{x\to \infty} {\sqrt{x}}-{\ln\!\left(x\right)}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1149')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1230"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<div id="webwork-1150" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1150" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoIngiKTsKJGYyID0gRm9ybXVsYSgiZV54Iik7CiRsID0gQ29tcHV0ZSgiMCIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIC1caW5mdHl9IFskZjFdIFxjZG90IFskZjJdYGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6481">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6482">
+\begin{equation*}
+\lim\limits_{x\to -\infty} {x} \cdot {e^{x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1150')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1231"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<div id="webwork-1151" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1151" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoIjEveF4yIik7CiRmMiA9IEZvcm11bGEoImVeKC0xL3gpIik7CiRsID0gQ29tcHV0ZSgiMCIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIDBeK30gWyRmMV0gXGNkb3QgWyRmMl1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6484">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6485">
+\begin{equation*}
+\lim\limits_{x\to 0^+} {\frac{1}{x^{2}}} \cdot {e^{\frac{-1}{x}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1151')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1232"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<div id="webwork-1152" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1152" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmYiA9IEZvcm11bGEoIigxK3gpIik7CiRmcCA9IEZvcm11bGEoIjEveCIpOwokbCA9IENvbXB1dGUoImUiKTsKCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byAwXit9IChbJGZiXSleWyRmcF1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6487">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6488">
+\begin{equation*}
+\lim\limits_{x\to 0^+} ({1+x})^{\frac{1}{x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1152')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1233"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<div id="webwork-1153" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1153" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmYiA9IEZvcm11bGEoIjJ4Iik7CiRmcCA9IEZvcm11bGEoIngiKTsKJGwgPSBDb21wdXRlKCIxIik7CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gMF4rfSAoWyRmYl0pXntbJGZwXX1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6490">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6491">
+\begin{equation*}
+\lim\limits_{x\to 0^+} ({2x})^{{x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1153')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1234"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<div id="webwork-1154" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1154" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmYiA9IEZvcm11bGEoIjIveCIpOwokZnAgPSBGb3JtdWxhKCJ4Iik7CiRsID0gQ29tcHV0ZSgiMSIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIDBeK30gKFskZmJdKV57WyRmcF19YGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6493">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6494">
+\begin{equation*}
+\lim\limits_{x\to 0^+} ({\frac{2}{x}})^{{x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1154')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1235"><h6 class="heading"><span class="codenumber">41<span class="period">.</span></span></h6>
+<div id="webwork-1155" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1155" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmYiA9IEZvcm11bGEoInNpbih4KSIpOwokZnAgPSBGb3JtdWxhKCJ4Iik7CiRsID0gQ29tcHV0ZSgiMSIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIDBeK30gKFskZmJdKV57WyRmcF19YGBgXQoKSGludDogdXNlIHRoZSBTcXVlZXplIFRoZW9yZW0uCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6496">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6497">
+\begin{equation*}
+\lim\limits_{x\to 0^+} ({\sin\!\left(x\right)})^{{x}}
+\end{equation*}
+</div>
+<p id="p-6498">Hint: use the Squeeze Theorem.</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1155')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1236"><h6 class="heading"><span class="codenumber">42<span class="period">.</span></span></h6>
+<div id="webwork-1156" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1156" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmYiA9IEZvcm11bGEoIjEteCIpOwokZnAgPSBGb3JtdWxhKCIxLXgiKTsKJGwgPSBDb21wdXRlKCIxIik7CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gMV4rfSAoWyRmYl0pXntbJGZwXX1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6500">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6501">
+\begin{equation*}
+\lim\limits_{x\to 1^+} ({1-x})^{{1-x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1156')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1237"><h6 class="heading"><span class="codenumber">43<span class="period">.</span></span></h6>
+<div id="webwork-1157" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1157" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmYiA9IEZvcm11bGEoIngiKTsKJGZwID0gRm9ybXVsYSgiMS94Iik7CiRsID0gQ29tcHV0ZSgiMSIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIFxpbmZ0eX0gKFskZmJdKV57WyRmcF19YGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6503">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6504">
+\begin{equation*}
+\lim\limits_{x\to \infty} ({x})^{{\frac{1}{x}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1157')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1238"><h6 class="heading"><span class="codenumber">44<span class="period">.</span></span></h6>
+<div id="webwork-1158" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1158" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmYiA9IEZvcm11bGEoIjEveCIpOwokZnAgPSBGb3JtdWxhKCJ4Iik7CiRsID0gQ29tcHV0ZSgiMCIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIFxpbmZ0eX0gKFskZmJdKV57WyRmcF19YGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6506">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6507">
+\begin{equation*}
+\lim\limits_{x\to \infty} ({\frac{1}{x}})^{{x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1158')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1239"><h6 class="heading"><span class="codenumber">45<span class="period">.</span></span></h6>
+<div id="webwork-1159" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1159" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmYiA9IEZvcm11bGEoImxuKHgpIik7CiRmcCA9IEZvcm11bGEoIjEteCIpOwokbCA9IENvbXB1dGUoIjEiKTsKCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byAxXit9IChbJGZiXSlee1skZnBdfWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6509">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6510">
+\begin{equation*}
+\lim\limits_{x\to 1^+} ({\ln\!\left(x\right)})^{{1-x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1159')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1240"><h6 class="heading"><span class="codenumber">46<span class="period">.</span></span></h6>
+<div id="webwork-1160" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1160" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmYiA9IEZvcm11bGEoIjEreCIpOwokZnAgPSBGb3JtdWxhKCIxL3giKTsKJGwgPSBDb21wdXRlKCIxIik7CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gXGluZnR5fSAoWyRmYl0pXntbJGZwXX1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6512">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6513">
+\begin{equation*}
+\lim\limits_{x\to \infty} ({1+x})^{{\frac{1}{x}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1160')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1241"><h6 class="heading"><span class="codenumber">47<span class="period">.</span></span></h6>
+<div id="webwork-1161" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1161" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmYiA9IEZvcm11bGEoIjEreF4yIik7CiRmcCA9IEZvcm11bGEoIjEveCIpOwokbCA9IENvbXB1dGUoIjEiKTsKCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byBcaW5mdHl9IChbJGZiXSlee1skZnBdfWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6515">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6516">
+\begin{equation*}
+\lim\limits_{x\to \infty} ({1+x^{2}})^{{\frac{1}{x}}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1161')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1242"><h6 class="heading"><span class="codenumber">48<span class="period">.</span></span></h6>
+<div id="webwork-1162" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1162" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoInRhbih4KSIpOwokZjIgPSBGb3JtdWxhKCJjb3MoeCkiKTsKJGwgPSBDb21wdXRlKCIxIik7CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gXHBpLzJ9IFskZjFdIFskZjJdYGBgXQoKCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6518">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6519">
+\begin{equation*}
+\lim\limits_{x\to \pi/2} {\tan\!\left(x\right)} {\cos\!\left(x\right)}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1162')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1243"><h6 class="heading"><span class="codenumber">49<span class="period">.</span></span></h6>
+<div id="webwork-1163" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1163" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoInRhbih4KSIpOwokZjIgPSBGb3JtdWxhKCJzaW4oMngpIik7CiRsID0gQ29tcHV0ZSgiMiIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIFxwaS8yfSBbJGYxXSBbJGYyXWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6521">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6522">
+\begin{equation*}
+\lim\limits_{x\to \pi/2} {\tan\!\left(x\right)} {\sin\!\left(2x\right)}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1163')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1244"><h6 class="heading"><span class="codenumber">50<span class="period">.</span></span></h6>
+<div id="webwork-1164" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1164" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoIjEvbG4oeCkiKTsKJGYyID0gRm9ybXVsYSgiMS8oeC0xKSIpOwokbCA9IENvbXB1dGUoIjEvMiIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIDFeK30gWyRmMV0gLSBbJGYyXWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6524">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6525">
+\begin{equation*}
+\lim\limits_{x\to 1^+} {\frac{1}{\ln\!\left(x\right)}} - {\frac{1}{x-1}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1164')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1245"><h6 class="heading"><span class="codenumber">51<span class="period">.</span></span></h6>
+<div id="webwork-1165" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1165" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoIjUvKHheMi05KSIpOwokZjIgPSBGb3JtdWxhKCJ4Lyh4LTMpIik7CiRsID0gQ29tcHV0ZSgiLWluZiIpOwoKQkVHSU5fUEdNTApVc2UgbCdIb3NwaXRhbCdzIFJ1bGUgdG8gZXZhbHVhdGUgdGhlIGxpbWl0OgoKW2BgYFxsaW1cbGltaXRzX3t4XHRvIDNeK30gWyRmMV0gLSBbJGYyXWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6527">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6528">
+\begin{equation*}
+\lim\limits_{x\to 3^+} {\frac{5}{x^{2}-9}} - {\frac{x}{x-3}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1165')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1246"><h6 class="heading"><span class="codenumber">52<span class="period">.</span></span></h6>
+<div id="webwork-1166" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1166" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmMSA9IEZvcm11bGEoIngiKTsKJGYyID0gRm9ybXVsYSgidGFuKDEveCkiKTsKJGwgPSBDb21wdXRlKCIxIik7CgpCRUdJTl9QR01MClVzZSBsJ0hvc3BpdGFsJ3MgUnVsZSB0byBldmFsdWF0ZSB0aGUgbGltaXQ6CgpbYGBgXGxpbVxsaW1pdHNfe3hcdG8gXGluZnR5fSBbJGYxXSBbJGYyXWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6530">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6531">
+\begin{equation*}
+\lim\limits_{x\to \infty} {x} {\tan\!\left(\frac{1}{x}\right)}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1166')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1247"><h6 class="heading"><span class="codenumber">53<span class="period">.</span></span></h6>
+<div id="webwork-1167" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1167" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmdSA9IEZvcm11bGEoImxuKHgpXjMiKTsKJGZsID0gRm9ybXVsYSgieCIpOwokbCA9IENvbXB1dGUoIjAiKTsKCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byBcaW5mdHl9IFxmcmFje1skZnVdfXtbJGZsXX1gYGBdCgoKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6533">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6534">
+\begin{equation*}
+\lim\limits_{x\to \infty} \frac{{\ln^{3}\!\left(x\right)}}{{x}}
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1167')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1248"><h6 class="heading"><span class="codenumber">54<span class="period">.</span></span></h6>
+<div id="webwork-1168" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1168" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4bGltID0gMTsKJGZ1ID0gRm9ybXVsYSgieF4yK3gtMiIpOwokZmwgPSBGb3JtdWxhKCJsbih4KSIpOwokZGZ1ID0gJGZ1LT5EKCd4Jyk7CiRkZmwgPSAkZmwtPkQoJ3gnKTsKaWYgKCRkZmwtPmV2YWwoeD0+JHhsaW0pPT0wKSB7CiAgJGwgPSBDb21wdXRlKCJpbmYiKTsKfQplbHNlIHsKICAkbCA9ICRkZnUtPmV2YWwoeD0+JHhsaW0pIC8gJGRmbC0+ZXZhbCh4PT4keGxpbSk7Cn0KCkJFR0lOX1BHTUwKVXNlIGwnSG9zcGl0YWwncyBSdWxlIHRvIGV2YWx1YXRlIHRoZSBsaW1pdDoKCltgYGBcbGltXGxpbWl0c197eFx0byAxfSBcZnJhY3tbJGZ1XX17WyRmbF0gfWBgYF0KCgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6536">Use l’Hospital’s Rule to evaluate the limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-6537">
+\begin{equation*}
+\lim\limits_{x\to 1} \frac{{x^{2}+x-2}}{{\ln\!\left(x\right)} }
+\end{equation*}
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1168')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

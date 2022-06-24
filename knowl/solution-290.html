@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:36Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.5.4.1</span><span class="period">.</span>
+</h4>
+<p>We begin by finding <span class="process-math">\(\dx\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{b-a}{n} = \frac{\pi/2 - (-\pi/4)}{10} = \frac{3\pi}{40}\approx 0.2356\text{.}
+\end{equation*}
+</div>
+<p>It is useful to write out the endpoints of the subintervals in a table; in <a href="" class="xref" data-knowl="./knowl/fig_num2a.html" title="Table 5.5.5: Table of values used to approximate \int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\, dx in Example 5.5.4">Figure 5.5.5</a>, we give the exact values of the endpoints, their decimal approximations, and decimal approximations of <span class="process-math">\(\sin(x^3)\)</span> evaluated at these points.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.5.5<span class="period">.</span></span><span class="space"> </span>Table of values used to approximate <span class="process-math">\(\int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\, dx\)</span> in Example 5.5.4</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_i\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Exact</td>
+<td class="l m b0 r0 l0 t0 lines">Approx.</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\sin(x_i^3)\)</span></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-\pi/4\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.7854\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.4657\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-7 \pi/40\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.5498\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.1654\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-{\pi }/{10}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.3142\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.0310\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_3\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-{\pi }/{40}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.0785\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.0005\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_4\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\({\pi }/{20}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.1571\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.0039\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_5\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\({\pi }/{8}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.3927\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.0605\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_6\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\({\pi }/{5}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.6283\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.2455\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_7\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\({11 \pi }/{40}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.8639\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.6011\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_8\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\({7 \pi }/{20}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.0996\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.9710\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_{9}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\({17 \pi }/{40}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.3352\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.6899\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_{10}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\({\pi }/{2}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.5708\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.6700\)</span></td>
+</tr>
+</table></div></figure><p>Once this table is created, it is straightforward to approximate the definite integral using the Left and Right Hand Rules. (Note: the table itself is easy to create, especially with a standard spreadsheet program on a computer. The last two columns are all that are needed.) The Left Hand Rule sums the first 10 values of <span class="process-math">\(\sin(x_i^3)\)</span> and multiplies the sum by <span class="process-math">\(\dx\text{;}\)</span> the Right Hand Rule sums the last 10 values of <span class="process-math">\(\sin(x_i^3)\)</span> and multiplies by <span class="process-math">\(\dx\text{.}\)</span> Therefore we have:</p>
+<p>Left Hand Rule: <span class="process-math">\(\ds \int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\, dx \approx (1.9093)(0.2356) \approx 0.4498\text{.}\)</span></p>
+<p>Right Hand Rule: <span class="process-math">\(\ds \int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\, dx \approx (1.705)(0.2356) \approx 0.4017\text{.}\)</span></p>
+<p>Average of the Left and Right Hand Rules: 0.4258.</p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><img src="generated/latex-image/img_num2b.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><img src="generated/latex-image/img_num2c.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.5.6<span class="period">.</span></span><span class="space"> </span>Approximating <span class="process-math">\(\int_{-\frac{\pi}4}^{\frac{\pi}2}\sin(x^3)\, dx\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_num2.html" title="Example 5.5.4: Approximating definite integrals with rectangles">Example 5.5.4</a></figcaption></figure><p>The actual answer, accurate to 4 places after the decimal, is 0.4609. Our approximations were once again fairly good. The rectangles used in each approximation are shown in <a href="" class="xref" data-knowl="./knowl/fig_num2b.html" title="Figure 5.5.6.(a)">Figure 5.5.6.(a)</a>. It is clear from the graphs that using more rectangles (and hence, narrower rectangles) should result in a more accurate approximation.</p>
+</div>
+<span class="incontext"><a href="sec_numerical_integration.html#solution-290" class="internal">in-context</a></span>
+</body>
+</html>

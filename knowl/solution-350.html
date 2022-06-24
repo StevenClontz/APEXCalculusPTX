@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:25Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.5.8.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-partfrac-ex-divide-first" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/1cszweGfYR0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p><a href="" class="xref" data-knowl="./knowl/idea_partial_fraction.html" title="Key Idea 6.5.2: Partial Fraction Decomposition">Key Idea 6.5.2</a> presumes that the degree of the numerator is less than the degree of the denominator. Since this is not the case here, we begin by using polynomial division to reduce the degree of the numerator. We omit the steps, but encourage the reader to verify that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_partial_fraction.html">
+\begin{equation*}
+\frac{x^3}{(x-5)(x+3)} = x+2+\frac{19x+30}{(x-5)(x+3)}\text{.}
+\end{equation*}
+</div>
+<p>Using <a href="" class="xref" data-knowl="./knowl/idea_partial_fraction.html" title="Key Idea 6.5.2: Partial Fraction Decomposition">Key Idea 6.5.2</a>, we can rewrite the new rational function as:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_partial_fraction.html">
+\begin{equation*}
+\frac{19x+30}{(x-5)(x+3)} = \frac{A}{x-5} + \frac{B}{x+3}
+\end{equation*}
+</div>
+<p class="continuation">for appropriate values of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Clearing denominators, we have</p>
+<aside class="aside aside-like"><p>The values of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> can be quickly found using the technique described in <a href="" class="xref" data-knowl="./knowl/ex_pf3.html" title="Example 6.5.6: Integrating using partial fractions">Example 6.5.6</a>, or they can be found by equating coefficients, as we do in <a href="" class="xref" data-knowl="./knowl/ex_pf4.html" title="Example 6.5.8: Integrating using partial fractions">Example 6.5.8</a>.</p></aside><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+19x+30 \amp = A(x+3) + B(x-5)\\
+\amp = (A+B)x + (3A-5B).\\
+\end{align*}
+<p class="intertext">This implies that:</p>
+\begin{align*}
+19\amp = A+B\\
+30\amp = 3A-5B.\\
+\end{align*}
+<p class="intertext">Solving this system of linear equations gives</p>
+\begin{align*}
+125/8 \amp =A\\
+27/8 \amp =B\text{.}
+\end{align*}
+</div>
+<p>We can now integrate.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int \frac{x^3}{(x-5)(x+3)}\, dx \amp = \int\left(x+2+\frac{125/8}{x-5}+\frac{27/8}{x+3}\right)\, dx\\
+\amp = \frac{x^2}2 + 2x + \frac{125}{8}\ln\abs{x-5} + \frac{27}8\ln\abs{x+3} + C\text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_partial_fraction.html#solution-350" class="internal">in-context</a></span>
+</body>
+</html>

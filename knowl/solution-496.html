@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:39:16Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.4.10.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-model-ratein-rateout-example1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Au4n_QP73Ko?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We use the rate in - rate out setup described above. The quantity here is the amount (in grams) of salt in the tank at time <span class="process-math">\(t\text{.}\)</span> Let <span class="process-math">\(y\)</span> denote the amount of salt. In words, the differential equation is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dt} = \text{ rate in }  - \text{ rate out }\text{.}
+\end{equation*}
+</div>
+<p>Thinking in terms of units can help fill in the details of the differential equation. Since <span class="process-math">\(y\)</span> has units of grams, the left hand side of the equation has units g/min. Both terms on the right hand side must have these same units. Notice that the product of a concentration (with units g/L) and a flow rate (with units L/min) results in a quantity with units g/min. Both terms on the right hand side of the equation will include a concentration multiplied by a flow rate.</p>
+<p>For the rate in, we multiply the inflow concentration by the rate that fluid is flowing into the bucket. This is <span class="process-math">\(\displaystyle \left(3 \frac{\text{g} }{\text{L} }\right)\left(2 \frac{\text{L} }{\text{ min } }\right) = 6\)</span> g/min.</p>
+<p>The rate out is more complicated. The flow rate is still <span class="quantity">2 <sup>L</sup>⁄<sub>min</sub></span>, meaning that the overall volume of the fluid in the bucket is the constant <span class="quantity">5 L</span>. The salt concentration in the bucket is not constant though, meaning that the outflow concentration is not constant. In particular, the outflow concentration is <em class="emphasis">not</em> the constant <span class="quantity">1 <sup>L</sup>⁄<sub>min</sub></span>. This is simply the initial concentration. To find the concentration at any time, we need the amount of salt in the bucket at that time and the volume of liquid in the bucket at that time. The volume of liquid is the constant <span class="quantity">5 L</span>, and the amount of salt is given by the dependent variable <span class="process-math">\(y\text{.}\)</span> Thus, the outflow concentration is <span class="process-math">\(\displaystyle \frac{y}{5}\)</span> g/L, yielding a rate out given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left(\frac{y}{5}\frac{\text{ g } }{\text{ L } }\right)\left(2 \frac{\text{ L } }{\text{ min } }\right) = \frac{2y}{5}\text{ g/min }\text{.}
+\end{equation*}
+</div>
+<p>The differential equation we wish to solve is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dt} = 6 - \frac{2y}{5}\text{.}
+\end{equation*}
+</div>
+<p>To furnish an initial condition, we must convert the initial salt concentration into an initial amount of salt. This is <span class="process-math">\(\left(1\displaystyle \frac{\text{ g } }{\text{ L } }\right)(5 \text{ L } ) = 5\)</span> g, so <span class="process-math">\(y(0) = 5\)</span> is our initial condition.</p>
+<p>Our differential equation is both separable and linear. We solve using separation of variables. The separated form of the differential equation is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{5}{30 - 2y}\,dy = dt\text{.}
+\end{equation*}
+</div>
+<p>Integration yields the implicit solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-\frac{5}{2}\ln\abs{30 - 2y} = t+C\text{.}
+\end{equation*}
+</div>
+<p>Solving for <span class="process-math">\(y\)</span> (and redefining the arbitrary constant <span class="process-math">\(C\)</span> as necessary) yields the explicit solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = 15 + Ce^{-\frac{2}{5}t}\text{.}
+\end{equation*}
+</div>
+<p>The initial condition <span class="process-math">\(y(0) = 5\)</span> means that <span class="process-math">\(C = -10\)</span> so that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = 15 - 10e^{-\frac{2}{5}t}
+\end{equation*}
+</div>
+<p class="continuation">is the particular solution to our initial value problem.</p>
+<p>This function is plotted in <a href="" class="xref" data-knowl="./knowl/fig_equal_flow.html" title="Figure 8.4.11">Figure 8.4.11</a>. Notice that in the limit as <span class="process-math">\(t\to\infty\text{,}\)</span> <span class="process-math">\(y\)</span> approaches <span class="process-math">\(15\text{.}\)</span> This corresponds to a bucket concentration of <span class="process-math">\(15/5 = 3\)</span> g/L. It should not be surprising that salt concentration inside the tank will move to match the inflow salt concentration.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_equal_flow.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.4.11<span class="period">.</span></span><span class="space"> </span>Salt concentration at time <span class="process-math">\(t\text{,}\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_equal_flow.html" title="Example 8.4.10: Equal Flow Rates">Example 8.4.10</a></figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_Modeling.html#solution-496" class="internal">in-context</a></span>
+</body>
+</html>

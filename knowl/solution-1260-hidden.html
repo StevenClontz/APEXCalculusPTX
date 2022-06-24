@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:46:32Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>It is straightforward to compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+f_x(x,y) \amp = 2x-y \amp f_y(x,y) \amp = 2y-x\\
+\frac{dx}{dt} \amp = -\sin(t) \amp \frac{dy}{dt} \amp = \cos(t)\text{.}
+\end{align*}
+</div>
+<p>Combining these according to the Chain Rule gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dz}{dt} = -(2x-y)\sin(t) + (2y-x)\cos(t)\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 99.5049504950495%"><iframe src="generated/asymptote/img_mchain2.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_mchain2.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.5.8<span class="period">.</span></span><span class="space"> </span>Plotting the path of a particle on a surface in <a href="" class="xref" data-knowl="./knowl/ex_mchain2.html" title="Example 13.5.7: Applying the Multivariable Chain Rule">Example 13.5.7</a></figcaption></figure><p>When <span class="process-math">\(t=0\text{,}\)</span> <span class="process-math">\(x=1\)</span> and <span class="process-math">\(y=0\text{.}\)</span> Thus <span class="process-math">\(\ds\frac{dz}{dt} = -(2)(0)+ (-1)(1) = -1\text{.}\)</span> When <span class="process-math">\(t=0\text{,}\)</span> the particle is moving down, as shown in <a href="" class="xref" data-knowl="./knowl/fig_mchain2.html" title="Figure 13.5.8">Figure 13.5.8</a>.</p>
+<p>To find where <span class="process-math">\(z\)</span>-value is maximized/minimized on the particle's path, we set <span class="process-math">\(\frac{dz}{dt}=0\)</span> and solve for <span class="process-math">\(t\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\frac{dz}{dt} =0 \amp = -(2x-y)\sin(t) + (2y-x)\cos(t)\\
+0\amp = -(2\cos(t) -\sin(t) )\sin(t) +(2\sin(t) -\cos(t) )\cos(t)\\
+0\amp = \sin^2(t) -\cos^2(t)\\
+\cos^2(t) \amp =\sin^2(t)\\
+t\amp = n\frac{\pi}4 \text{ (for odd \(n\)) }
+\end{align*}
+</div>
+<p>We can use the First Derivative Test to find that on <span class="process-math">\([0,2\pi]\text{,}\)</span> <span class="process-math">\(z\)</span> has reaches its absolute minimum at <span class="process-math">\(t=\pi/4\)</span> and <span class="process-math">\(5\pi/4\text{;}\)</span> it reaches its absolute maximum at <span class="process-math">\(t=3\pi/4\)</span> and <span class="process-math">\(7\pi/4\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_mchain2.html" title="Figure 13.5.8">Figure 13.5.8</a>.</p>
+</div></body>
+</html>

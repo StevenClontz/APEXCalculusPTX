@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:35Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-intapp-surfarea-example2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=ne-11oB6EXw,pXUigmvFdys&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol class="decimal">
+<li>
+<p>The integral is straightforward to setup:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_sa1.html ./knowl/fig_sa2a_3D.html">
+\begin{align*}
+SA \amp = 2\pi\int_0^1 x^2\sqrt{1+(2x)^2}\, dx.\\
+\end{align*}
+<p class="intertext">Like the integral in <a href="" class="xref" data-knowl="./knowl/ex_sa1.html" title="Example 7.4.14: Finding surface area of a solid of revolution">Example 7.4.14</a>, this requires Trigonometric Substitution.</p>
+\begin{align*}
+\amp = \left.\frac{\pi}{32}\left(2(8x^3+x)\sqrt{1+4x^2}-\sinh^{-1}(2x)\right)\right|_0^1\\
+\amp =\frac{\pi}{32}\left(18\sqrt{5}-\sinh^{-1}(2) \right)\\
+\amp \approx 3.81\,\text{units}^2\text{.}
+\end{align*}
+</div>
+<p class="continuation">The solid formed by revolving <span class="process-math">\(y=x^2\)</span> around the <span class="process-math">\(x\)</span>-axis is graphed in <a href="" class="xref" data-knowl="./knowl/fig_sa2a_3D.html" title="Figure 7.4.17.(a)">Figure 7.4.17.(a)</a>.</p>
+</li>
+<li>
+<p>Since we are revolving around the <span class="process-math">\(y\)</span>-axis, the “radius” of the solid is not <span class="process-math">\(f(x)\)</span> but rather <span class="process-math">\(x\text{.}\)</span> Thus the integral to compute the surface area is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_sa2b_3D.html">
+\begin{align*}
+SA \amp = 2\pi\int_0^1x\sqrt{1+(2x)^2}\, dx.\\
+\end{align*}
+<p class="intertext">This integral can be solved using substitution. Set <span class="process-math">\(u=1+4x^2\text{;}\)</span> the new bounds are <span class="process-math">\(u=1\)</span> to <span class="process-math">\(u=5\text{.}\)</span> We then have</p>
+\begin{align*}
+\amp =	\frac{\pi}4\int_1^5 \sqrt{u}\, du\\
+\amp = \left.\frac{\pi}{4}\frac23 u^{3/2}\right|_1^5\\
+\amp = \frac{\pi}6\left(5\sqrt{5}-1\right)\\
+\amp \approx 5.33\,\text{units}^2\text{.}
+\end{align*}
+</div>
+<p class="continuation">The solid formed by revolving <span class="process-math">\(y=x^2\)</span> about the <span class="process-math">\(y\)</span>-axis is graphed in <a href="" class="xref" data-knowl="./knowl/fig_sa2b_3D.html" title="Figure 7.4.17.(b)">Figure 7.4.17.(b)</a>.</p>
+</li>
+</ol>
+</div></body>
+</html>

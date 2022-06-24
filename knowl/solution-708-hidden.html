@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:40:50Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-taylorseries-maclaurin-cos" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/97x6p1616z0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>In <a href="" class="xref" data-knowl="./knowl/ex_taypoly4.html" title="Example 9.7.18: Finding sufficiently accurate Taylor polynomials">Example 9.7.18</a> we found the <span class="process-math">\(8\)</span>th degree Maclaurin polynomial of <span class="process-math">\(\cos(x)\text{.}\)</span> In doing so, we created the table shown in <a href="" class="xref" data-knowl="./knowl/fig_ts1.html" title="Table 9.8.4: A table of the derivatives of f(x)=\cos (x) evaluated at x=0">Table 9.8.4</a>.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.8.4<span class="period">.</span></span><span class="space"> </span>A table of the derivatives of <span class="process-math">\(f(x)=\cos (x)\)</span> evaluated at <span class="process-math">\(x=0\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(x) = \cos(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0) = 1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\fp(x) = -\sin(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\fp(0) = 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\fp'(x) = -\cos(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\fp'(0) = -1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\fp''(x) = \sin(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\fp''(0) = 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(4)}(x) = \cos(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(4)}(0) = 1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(5)}(x) = -\sin(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(5)}(0) = 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(6)}(x) = -\cos(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(6)}(0) = -1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(7)}(x) = \sin(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(7)}(0) = 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(8)}(x) = \cos(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(8)}(0) = 1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(9)}(x) = -\sin(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f^{(9)}(0) = 0\)</span></td>
+</tr>
+</table></div></figure><p>Notice how <span class="process-math">\(f^{(n)}(0)=0\)</span> when <span class="process-math">\(n\)</span> is odd, <span class="process-math">\(f^{(n)}(0)=1\)</span> when <span class="process-math">\(n\)</span> is divisible by <span class="process-math">\(4\text{,}\)</span> and <span class="process-math">\(f^{(n)}(0)=-1\)</span> when <span class="process-math">\(n\)</span> is even but not divisible by 4. Thus the Maclaurin series of <span class="process-math">\(\cos(x)\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+1-\frac{x^2}2+\frac{x^4}{4!}-\frac{x^6}{6!}+\frac{x^8}{8!} - \cdots
+\end{equation*}
+</div>
+<p>We can go further and write this as a summation. The coefficients alternate between positive and negative. Since we only need the terms where the power of <span class="process-math">\(x\)</span> is even, we write the power series in terms of <span class="process-math">\(x^{2n}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\infser[0] (-1)^{n}\frac{x^{2n}}{(2n)!}\text{.}
+\end{equation*}
+</div>
+<p>This Maclaurin series is a special type of power series. As such, we should determine its interval of convergence. Applying the Ratio Test, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lim_{n\to\infty}\frac{\abs{(-1)^{n+1}\dfrac{x^{2(n+1)}}{\big(2(n+1)\big)!}}}{\abs{(-1)^n\frac{x^{2n}}{(2n)!}}} \amp = \lim_{n\to\infty}\abs{\frac{x^{2n+2}}{x^{2n}}}\frac{(2n)!}{(2n+2)!}\\
+\amp = \lim_{n\to\infty} \frac{\abs{x}^2}{(2n+2)(2n+1)}\text{.}
+\end{align*}
+</div>
+<p>For any fixed <span class="process-math">\(x\text{,}\)</span> this limit is 0. Therefore this power series has an infinite radius of convergence, converging for all <span class="process-math">\(x\text{.}\)</span> It is important to note what we have, and have not, determined: we have determined the Maclaurin series for <span class="process-math">\(\cos(x)\)</span> along with its interval of convergence. We <em class="emphasis">have not</em> shown that <span class="process-math">\(\cos(x)\)</span> is <em class="emphasis">equal</em> to this power series.</p>
+</div></body>
+</html>

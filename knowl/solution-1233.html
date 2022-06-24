@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:46:22Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.4.9.1</span><span class="period">.</span>
+</h4>
+<p>Recognizing that <span class="process-math">\(\pi/4 \approx 0.785\approx 0.8\text{,}\)</span> we can approximate <span class="process-math">\(f(4.1,0.8)\)</span> using <span class="process-math">\(f(4,\pi/4)\text{.}\)</span> We can easily compute <span class="process-math">\(f(4,\pi/4) = \sqrt{4}\sin(\pi/4) = 2\left(\frac{\sqrt{2}}2\right) = \sqrt{2}\approx 1.414\text{.}\)</span> Without calculus, this is the best approximation we could reasonably come up with. The total differential gives us a way of adjusting this initial approximation to hopefully get a more accurate answer.</p>
+<p>We let <span class="process-math">\(\ddz = f(4.1,0.8) - f(4,\pi/4)\text{.}\)</span> The total differential <span class="process-math">\(dz\)</span> is approximately equal to <span class="process-math">\(\ddz\text{,}\)</span> so</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation}
+f(4.1,0.8) - f(4,\pi/4) \approx dz  \Rightarrow  f(4.1,0.8) \approx dz + f(4,\pi/4)\text{.}\tag{13.4.1}
+\end{equation}
+</div>
+<p>To find <span class="process-math">\(dz\text{,}\)</span> we need <span class="process-math">\(f_x\)</span> and <span class="process-math">\(f_y\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+f_x(x,y) \amp = \frac{\sin(y) }{2\sqrt{x}} \Rightarrow\amp
+f_x(4,\pi/4) \amp = \frac{\sin(\pi) /4}{2\sqrt{4}}\\
+\amp  \amp \amp = \frac{\sqrt{2}/2}{4} = \sqrt{2}/8.\\
+f_y(x,y) \amp = \sqrt{x}\cos(y) \Rightarrow\amp
+f_y(4,\pi/4) \amp = \sqrt{4}\frac{\sqrt{2}}2\\
+\amp  \amp  \amp = \sqrt{2}\text{.}
+\end{align*}
+</div>
+<p>Approximating <span class="process-math">\(4.1\)</span> with 4 gives <span class="process-math">\(dx = 0.1\text{;}\)</span> approximating <span class="process-math">\(0.8\)</span> with <span class="process-math">\(\pi/4\)</span> gives <span class="process-math">\(dy \approx 0.015\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+dz(4,\pi/4) \amp =  f_x(4,\pi/4)(0.1) + f_y(4,\pi/4)(0.015)\\
+\amp = \frac{\sqrt{2}}8(0.1) + \sqrt{2}(0.015)\\
+\amp \approx 0.039\text{.}
+\end{align*}
+</div>
+<p>Returning to Equation <a href="" class="xref" data-knowl="./knowl/eq_totaldiff2.html" title="Equation 13.4.1">(13.4.1)</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_totaldiff2.html">
+\begin{equation*}
+f(4.1,0.8) \approx 0.039 + 1.414 = 1.4531\text{.}
+\end{equation*}
+</div>
+<p>We, of course, can compute the actual value of <span class="process-math">\(f(4.1,0.8)\)</span> with a calculator; the actual value, accurate to 5 places after the decimal, is <span class="process-math">\(1.45254\text{.}\)</span> Obviously our approximation is quite good.</p>
+</div>
+<span class="incontext"><a href="sec_total_differential.html#solution-1233" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:49Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.6.13.1</span><span class="period">.</span>
+</h3>
+<p>We place the center of the porthole at the origin, meaning the surface of the water is at <span class="process-math">\(y=50\)</span> and the depth function will be <span class="process-math">\(d(y)=50-y\text{;}\)</span> see <a href="" class="xref" data-knowl="./knowl/fig_fluid4.html" title="Figure 7.6.14">Figure 7.6.14</a></p>
+<p>The equation of a circle with a radius of 1.5 is <span class="process-math">\(x^2+y^2=2.25\text{;}\)</span> solving for <span class="process-math">\(x\)</span> we have <span class="process-math">\(x=\pm \sqrt{2.25-y^2}\text{,}\)</span> where the positive square root corresponds to the right side of the circle and the negative square root corresponds to the left side of the circle. Thus the length function at depth <span class="process-math">\(y\)</span> is <span class="process-math">\(\ell(y) = 2\sqrt{2.25-y^2}\text{.}\)</span> Integrating on <span class="process-math">\([-1.5,1.5]\)</span> we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+F     \amp = 62.4\int_{-1.5}^{1.5} 2(50-y)\sqrt{2.25-y^2}\, dy\\
+\amp = 62.4\int_{-1.5}^{1.5} \big(100\sqrt{2.25-y^2} - 2y\sqrt{2.25-y^2}\big)\, dy\\
+\amp = 6240\int_{-1.5}^{1.5} \big(\sqrt{2.25-y^2}\big)\, dy - 62.4\int_{-1.5}^{1.5} \big(2y\sqrt{2.25-y^2}\big)\, dy\text{.}
+\end{align*}
+</div>
+<p>The second integral above can be evaluated using substitution. Let <span class="process-math">\(u=2.25-y^2\)</span> with <span class="process-math">\(du = -2y\,dy\text{.}\)</span> The new bounds are: <span class="process-math">\(u(-1.5)=0\)</span> and <span class="process-math">\(u(1.5)=0\text{;}\)</span> the new integral will integrate from <span class="process-math">\(u=0\)</span> to <span class="process-math">\(u=0\text{,}\)</span> hence the integral is 0.</p>
+<p>The first integral above finds the area of half a circle of radius 1.5, thus the first integral evaluates to <span class="process-math">\(6240\cdot\pi\cdot1.5^2/2 = 22,054\text{.}\)</span> Thus the total fluid force on a vertically oriented porthole is <span class="quantity">22,054 lb</span>.</p>
+<p>Finding the force on a horizontally oriented porthole is more straightforward:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F = \text{Pressure} \times\text{Area}  = 62.4\cdot50\times \pi\cdot1.5^2 = 22,054\, \text{lb}\text{.}
+\end{equation*}
+</div>
+<p>That these two forces are equal is not coincidental; it turns out that the fluid force applied to a vertically oriented circle whose center is at depth <span class="process-math">\(d\)</span> is the same as force applied to a horizontally oriented circle at depth <span class="process-math">\(d\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_fluid_force.html#solution-470" class="internal">in-context</a></span>
+</body>
+</html>

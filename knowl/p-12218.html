@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:44:36Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>There are many ways to find this time value. We choose one that is relatively simple computationally. As shown in <a href="" class="xref" data-knowl="./knowl/fig_motion3.html" title="Figure 12.3.9">Figure 12.3.9</a>, the vector from the release point to the tree is <span class="process-math">\(\la 0,10\ra - \vec r(t_0)\text{.}\)</span> This line segment is tangent to the circle, which means it is also perpendicular to <span class="process-math">\(\vec r(t_0)\)</span> itself, so their dot product is 0.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_motion3.html">
+\begin{align*}
+\amp \vec r(t_0) \cdot \big(\la 0,10\ra - \vec r(t_0)\big) =0\\
+\amp \la 2\cos(4\pi t_0), 2\sin(4\pi t_0)\ra \cdot \la -2\cos(4\pi t_0),10-2\sin(4\pi t_0)\ra =0\\
+\amp -4\cos^2(4\pi t_0) + 20\sin(4\pi t_0)-4\sin^2(4\pi t_0) = 0\\
+\amp 20\sin(4\pi t_0) - 4 =0\\
+\amp \sin(4\pi t_0) =1/5\\
+\amp 4\pi t_0 = \sin^{-1}(1/5)\\
+\amp 4\pi t_0 \approx 0.2 + 2\pi n,\\
+\end{align*}
+<p class="intertext">where <span class="process-math">\(n\)</span> is an integer. Solving for <span class="process-math">\(t_0\)</span> we have:</p>
+\begin{align*}
+\amp t_0 \approx 0.016 + n/2
+\end{align*}
+</div>
+<p class="continuation">This is a wonderful formula. Every 1/2 second after <span class="process-math">\(t=0.016\,\text{s}\)</span> the boy can release the string (since the ball makes 2 revolutions per second, he has two chances each second to release the ball).</p>
+<span class="incontext"><a href="sec_vvf_motion.html#p-12218" class="internal">in-context</a></span>
+</body>
+</html>

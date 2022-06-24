@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:34:40Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_limit_defn_quadratic" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/QGqoq-xEXyk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Let's do this example symbolically from the start. Let <span class="process-math">\(\varepsilon  \gt  0\)</span> be given; we want <span class="process-math">\(\abs{y-4} \lt \varepsilon\text{,}\)</span> i.e., <span class="process-math">\(\abs{x^2-4} \lt \varepsilon\text{.}\)</span> How do we find <span class="process-math">\(\delta\)</span> such that when <span class="process-math">\(\abs{x-2} \lt \delta\text{,}\)</span> we are guaranteed that <span class="process-math">\(\abs{x^2-4}\lt \varepsilon\text{?}\)</span></p>
+<p>This is a bit trickier than the previous example, but let's start by noticing that <span class="process-math">\(\abs{x^2-4} = \abs{x-2}\cdot\abs{x+2}\text{.}\)</span> Consider:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\abs{x^2-4} \lt  \varepsilon \implies \abs{x-2}\cdot\abs{x+2} \lt  \varepsilon \implies \abs{x-2} \lt  \frac{\varepsilon}{\abs{x+2}}\text{.}
+\end{equation*}
+</div>
+<p>Could we not set <span class="process-math">\(\delta = \frac{\varepsilon}{\abs{x+2}}\text{?}\)</span></p>
+<p>We are close to an answer, but the catch is that <span class="process-math">\(\delta\)</span> must be a <em class="emphasis">constant</em> value (so it can't depend on <span class="process-math">\(x\)</span>). There is a way to work around this, but we do have to make an assumption. Remember that <span class="process-math">\(\varepsilon\)</span> is supposed to be a small number, which implies that <span class="process-math">\(\delta\)</span> will also be a small value. In particular, we can (probably) assume that <span class="process-math">\(\delta \lt 1\text{.}\)</span> If this is true, then <span class="process-math">\(\abs{x-2} \lt \delta\)</span> would imply that <span class="process-math">\(\abs{x-2} \lt 1\text{,}\)</span> giving <span class="process-math">\(1 \lt x \lt 3\text{.}\)</span></p>
+<p>Now, back to the fraction <span class="process-math">\(\frac{\varepsilon}{\abs{x+2}}\text{.}\)</span> If <span class="process-math">\(1\lt x\lt 3\text{,}\)</span> then <span class="process-math">\(3\lt x+2\lt 5\)</span> (add <span class="process-math">\(2\)</span> to all terms in the inequality). Taking reciprocals, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac15 \lt \frac1{\abs{x+2}} \lt  \frac 13\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which implies</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac15 \lt \frac1{\abs{x+2}}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which implies</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation}
+\frac{\varepsilon}{5}\lt \frac{\varepsilon}{\abs{x+2}}\text{.}\tag{1.2.1}
+\end{equation}
+</div>
+<p>This suggests that we set <span class="process-math">\(\delta \lt \frac{\varepsilon}{5}\text{.}\)</span> To see why, let consider what follows when we assume <span class="process-math">\(\abs{x-2}\lt \delta\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_limit1.html">
+\begin{align*}
+\abs{x-2}\amp\lt\delta\\
+\abs{x-2}\amp\lt\frac{\varepsilon}{5}\amp\amp\text{(Our choice of } \delta\text{)}\\
+\abs{x-2}\cdot\abs{x+2}\amp\lt\abs{x+2}\cdot\frac{\varepsilon}{5}\amp\amp\text{(Multiply by }\abs{x+2}\text{)}\\
+\abs{x^2-4}\amp\lt\abs{x+2}\cdot\frac{\varepsilon}{5}\amp\amp\text{(Simplify left side)}\\
+\abs{x^2-4}\amp\lt\abs{x+2}\cdot\frac{\varepsilon}{\abs{x+2}}\amp\amp\text{(}\knowl{./knowl/eq_limit1.html}{\text{Inequality (1.2.1)}}, \delta \lt 1\text{)}\\
+\abs{x^2-4}\amp\lt\varepsilon
+\end{align*}
+</div>
+<p>We have arrived at <span class="process-math">\(\abs{x^2-4}\lt \varepsilon\)</span> as desired. Note again, in order to make this happen we needed <span class="process-math">\(\delta\)</span> to first be less than <span class="process-math">\(1\text{.}\)</span> That is a safe assumption; we want <span class="process-math">\(\varepsilon\)</span> to be arbitrarily small, forcing <span class="process-math">\(\delta\)</span> to also be small.</p>
+<p>We have also picked <span class="process-math">\(\delta\)</span> to be smaller than “necessary.” We could get by with a slightly larger <span class="process-math">\(\delta\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_limit_eover5.html" title="Figure 1.2.7">Figure 1.2.7</a>. The outer lines show the boundaries defined by our choice of <span class="process-math">\(\varepsilon\text{.}\)</span> The inner lines show the boundaries defined by setting <span class="process-math">\(\delta = \varepsilon/5\text{.}\)</span> Note how these dotted lines are within the dashed lines. That is perfectly fine; by choosing <span class="process-math">\(x\)</span> within the dotted lines we are guaranteed that <span class="process-math">\(f(x)\)</span> will be within <span class="process-math">\(\varepsilon\)</span> of <span class="process-math">\(4\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_limit_eover5.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.7<span class="period">.</span></span><span class="space"> </span>Choosing <span class="process-math">\(\delta = \varepsilon/5\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_compute_lim2.html" title="Example 1.2.6: Evaluating a limit using the definition">Example 1.2.6</a></figcaption></figure><p>In summary, given <span class="process-math">\(\varepsilon  \gt  0\text{,}\)</span> set <span class="process-math">\(\delta=\varepsilon/5\text{.}\)</span> Then <span class="process-math">\(\abs{x-2} \lt \delta\)</span> implies <span class="process-math">\(\abs{x^2 - 4}\lt\varepsilon\)</span> (i.e. <span class="process-math">\(\abs{y-4}\lt\varepsilon\)</span>) as desired. This shows that <span class="process-math">\(\lim_{x\to 2} x^2 = 4\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_limit_eover5.html" title="Figure 1.2.7">Figure 1.2.7</a> gives a visualization of this; by restricting <span class="process-math">\(x\)</span> to values within <span class="process-math">\(\delta = \varepsilon/5\)</span> of <span class="process-math">\(2\text{,}\)</span> we see that <span class="process-math">\(f(x)\)</span> is within <span class="process-math">\(\varepsilon\)</span> of <span class="process-math">\(4\text{.}\)</span></p>
+</div></body>
+</html>

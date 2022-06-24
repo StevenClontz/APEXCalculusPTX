@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:18Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>We know the answer already as <span class="process-math">\(\tan^{-1}(x) +C\text{.}\)</span> We apply Trigonometric Substitution here to show that we get the same answer without inherently relying on knowledge of the derivative of the arctangent function.</p>
+<p>Using <a href="" class="xref" data-knowl="./knowl/idea_trigsub.html" title="Key Idea 6.4.3: Trigonometric Substitution">Key Idea 6.4.3</a>(b), let <span class="process-math">\(x=\tan(\theta)\text{,}\)</span> <span class="process-math">\(dx=\sec^2(\theta) \, d\theta\)</span> and note that <span class="process-math">\(x^2+1 = \tan^2(\theta) +1 = \sec^2(\theta)\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_trigsub.html">
+\begin{align*}
+\int \frac1{x^2+1}\, dx \amp = \int \frac{1}{\sec^2(\theta) }\sec^2(\theta) \, d\theta\\
+\amp = \int 1\, d\theta\\
+\amp = \theta + C\text{.}
+\end{align*}
+</div>
+<p>Since <span class="process-math">\(x=\tan(\theta)\text{,}\)</span> <span class="process-math">\(\theta = \tan^{-1}(x)\text{,}\)</span> and we conclude that <span class="process-math">\(\ds \int\frac1{x^2+1}\, dx = \tan^{-1}(x) +C\text{.}\)</span></p>
+</div></body>
+</html>

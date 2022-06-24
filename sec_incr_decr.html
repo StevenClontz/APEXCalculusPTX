@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:28:09Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Increasing and Decreasing Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_mvt.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_graphbehavior.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_concavity.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_mvt.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_graphbehavior.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_concavity.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="active">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_incr_decr"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Increasing and Decreasing Functions</span>
+</h2>
+<p id="p-2979">Our study of “nice” functions <span class="process-math">\(f\)</span> in this chapter has so far focused on individual points: points where <span class="process-math">\(f\)</span> is maximal/minimal, points where <span class="process-math">\(\fp(x) = 0\)</span> or <span class="process-math">\(\fp\)</span> does not exist, and points <span class="process-math">\(c\)</span> where <span class="process-math">\(\fp(c)\)</span> is the average rate of change of <span class="process-math">\(f\)</span> on some interval.</p>
+<p id="p-2980">In this section we begin to study how functions behave <em class="emphasis">between</em> special points; we begin studying in more detail the shape of their graphs.</p>
+<p id="p-2981">We start with an intuitive concept. Given the graph in <a href="" class="xref" data-knowl="./knowl/fig_incr0.html" title="Figure 3.3.1">Figure 3.3.1</a>, where would you say the function is <em class="emphasis">increasing</em>? <em class="emphasis">Decreasing</em>? Even though we have not defined these terms mathematically, one likely answered that <span class="process-math">\(f\)</span> is increasing when <span class="process-math">\(x \gt 1\)</span> and decreasing when <span class="process-math">\(x\lt 1\text{.}\)</span> We formally define these terms here.</p>
+<figure class="figure figure-like" id="fig_incr0"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_incr0.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.1<span class="period">.</span></span><span class="space"> </span>A graph of a function <span class="process-math">\(f\)</span> used to illustrate the concepts of <em class="emphasis">increasing</em> and <em class="emphasis">decreasing</em></figcaption></figure><article class="definition definition-like" id="def_incr_decr"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Increasing and Decreasing Functions.</span>
+</h3>
+<p id="p-2982">Let <span class="process-math">\(f\)</span> be a function defined on an interval <span class="process-math">\(I\text{.}\)</span>   </p>
+<ol class="decimal">
+<li id="li-731"><p id="p-2983"><span class="process-math">\(f\)</span> is <em class="emphasis">increasing</em> on <span class="process-math">\(I\)</span> if for every <span class="process-math">\(a\lt b\)</span> in <span class="process-math">\(I\text{,}\)</span> <span class="process-math">\(f(a) \lt f(b)\text{.}\)</span></p></li>
+<li id="li-732"><p id="p-2984"><span class="process-math">\(f\)</span> is <em class="emphasis">decreasing</em> on <span class="process-math">\(I\)</span> if for every <span class="process-math">\(a\lt b\)</span> in <span class="process-math">\(I\text{,}\)</span> <span class="process-math">\(f(a) \gt f(b)\text{.}\)</span></p></li>
+</ol></article><p id="p-2985">Informally, a function is increasing if as <span class="process-math">\(x\)</span> gets larger (i.e., looking left to right) <span class="process-math">\(f(x)\)</span> gets larger.</p>
+<figure class="figure figure-like" id="vid_graphs_incr_decr_defn"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-114" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/NtV0R-JxrmM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.3<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/def_incr_decr.html" title="Definition 3.3.2: Increasing and Decreasing Functions">Definition 3.3.2</a></figcaption></figure><p id="p-2986">Our interest lies in finding intervals in the domain of <span class="process-math">\(f\)</span> on which <span class="process-math">\(f\)</span> is either increasing or decreasing. Such information should seem useful. For instance, if <span class="process-math">\(f\)</span> describes the speed of an object, we might want to know when the speed was increasing or decreasing (i.e., when the object was accelerating <abbr class="abbreviation">vs.</abbr> decelerating). If <span class="process-math">\(f\)</span> describes the population of a city, we should be interested in when the population is growing or declining.</p>
+<p id="p-2987">To find such intervals, we again consider secant lines. Let <span class="process-math">\(f\)</span> be an increasing, differentiable function on an open interval <span class="process-math">\(I\text{,}\)</span> such as the one shown in <a href="" class="xref" data-knowl="./knowl/fig_incr00.html" title="Figure 3.3.4">Figure 3.3.4</a>, and let <span class="process-math">\(a\lt b\)</span> be given in <span class="process-math">\(I\text{.}\)</span> The secant line on the graph of <span class="process-math">\(f\)</span> from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\)</span> is drawn; it has a slope of <span class="process-math">\((f(b)-f(a))/(b-a)\text{.}\)</span></p>
+<p id="p-2988">But note, since <span class="process-math">\(b \gt a\)</span> and <span class="process-math">\(f\)</span> is increasing, <span class="process-math">\(f(b) \gt f(a)\text{.}\)</span> And these facts imply <span class="process-math">\(b-a \gt 0\)</span> and <span class="process-math">\(f(b)-f(a) \gt 0\text{.}\)</span> Therefore:</p>
+<figure class="figure figure-like" id="fig_incr00"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-109">
+\begin{align*}
+\amp\frac{f(b)-f(a)}{b-a} \gt 0\\
+\implies\amp \text{slope of the secant line} \gt 0\\
+\implies\amp \text{Average rate of change of }f\\
+\amp\text{ on }[a,b]\text{ is } \gt 0\text{.}
+\end{align*}
+</div></div>
+<div class="sbspanel top" style="width:47%;"><img src="generated/latex-image/img_incr00.svg" role="img" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.4<span class="period">.</span></span><span class="space"> </span>Examining the secant line of an increasing function</figcaption></figure><p id="p-2990">We have shown mathematically what may have already been obvious: when <span class="process-math">\(f\)</span> is increasing, its secant lines will have a positive slope. Now recall the <a href="" class="xref" data-knowl="./knowl/thm_mvt.html" title="Theorem 3.2.4: The Mean Value Theorem of Differentiation">Mean Value Theorem 3.2.4</a> guarantees that there is a number <span class="process-math">\(c\text{,}\)</span> where <span class="process-math">\(a\lt c\lt b\text{,}\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_mvt.html">
+\begin{equation*}
+\fp(c) = \frac{f(b)-f(a)}{b-a} \gt 0\text{.}
+\end{equation*}
+</div>
+<p id="p-2991">By considering all such secant lines in <span class="process-math">\(I\text{,}\)</span> we strongly imply that <span class="process-math">\(\fp(x) \gt 0\)</span> on <span class="process-math">\(I\text{.}\)</span> A similar statement can be made for decreasing functions.</p>
+<p id="p-2992">Our above logic can be summarized as “If <span class="process-math">\(f\)</span> is increasing, then <span class="process-math">\(\fp\)</span> is probably positive.” <a href="" class="xref" data-knowl="./knowl/thm_incr_decr.html" title="Theorem 3.3.5: Test For Increasing/Decreasing Functions">Theorem 3.3.5</a> below turns this around by stating “If <span class="process-math">\(\fp\)</span> is positive, then <span class="process-math">\(f\)</span> is increasing.” This leads us to a method for finding when functions are increasing and decreasing.</p>
+<article class="theorem theorem-like" id="thm_incr_decr"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Test For Increasing/Decreasing Functions.</span>
+</h3>
+<p id="p-2993">Let <span class="process-math">\(f\)</span> be a continuous function on <span class="process-math">\([a,b]\)</span> and differentiable on <span class="process-math">\((a,b)\text{.}\)</span></p>
+<ol id="p-2994" class="decimal">
+<li id="thm_incr"><p id="p-2995">If <span class="process-math">\(\fp(c) \gt 0\)</span> for all <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\text{,}\)</span> then <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\([a,b]\text{.}\)</span></p></li>
+<li id="thm_decr"><p id="p-2996">If <span class="process-math">\(\fp(c) \lt 0\)</span> for all <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\text{,}\)</span> then <span class="process-math">\(f\)</span> is decreasing on <span class="process-math">\([a,b]\text{.}\)</span></p></li>
+<li id="li-735"><p id="p-2997">If <span class="process-math">\(\fp(c) =0\)</span> for all <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\text{,}\)</span> then <span class="process-math">\(f\)</span> is constant on <span class="process-math">\([a,b]\text{.}\)</span></p></li>
+</ol>
+<p id="p-2998">The conclusions of <a href="" class="xref" data-knowl="./knowl/thm_incr.html" title="Item 1">Item 1</a> and <a href="" class="xref" data-knowl="./knowl/thm_decr.html" title="Item 2">Item 2</a> also hold if <span class="process-math">\(\fp(c) = 0\)</span> for a finite number of nonadjacent values of <span class="process-math">\(c\)</span> in <span class="process-math">\(I\text{.}\)</span></p></article><figure class="figure figure-like" id="vid_graphs_incr_decr_role_deriv_sign"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-115" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/SjF3vslBqOA?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_incr_decr.html" title="Theorem 3.3.5: Test For Increasing/Decreasing Functions">Theorem 3.3.5</a></figcaption></figure><p id="p-2999">Let <span class="process-math">\(f\)</span> be differentiable on an interval <span class="process-math">\(I\)</span> and let <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> be in <span class="process-math">\(I\)</span> where <span class="process-math">\(\fp(a) \gt 0\)</span> and <span class="process-math">\(\fp(b)\lt 0\text{.}\)</span> If <span class="process-math">\(\fp\)</span> is continuous on <span class="process-math">\([a,b]\text{,}\)</span> it follows from the Intermediate Value Theorem that there must be some value <span class="process-math">\(c\)</span> between <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> where <span class="process-math">\(\fp(c) = 0\text{.}\)</span> (It turns out that this is still true even if <span class="process-math">\(\fp\)</span> is not continuous on <span class="process-math">\([a,b]\text{.}\)</span>) This leads us to the following method for finding intervals on which a function is increasing or decreasing.</p>
+<article class="insight remark-like" id="idea_incr_decr"><h3 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">3.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Intervals on Which <span class="process-math">\(f\)</span> is Increasing or Decreasing.</span>
+</h3>
+<p id="p-3000">Let <span class="process-math">\(f\)</span> be a differentiable function on an interval <span class="process-math">\(I\text{.}\)</span> To find intervals on which <span class="process-math">\(f\)</span> is increasing and decreasing: </p>
+<ol id="p-3001" class="decimal">
+<li id="stp_inc_dec1"><p id="p-3002">If not stated, find the domain of <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\(D\text{.}\)</span> Begin a number line that only includes <span class="process-math">\(D\text{.}\)</span></p></li>
+<li id="stp_inc_dec2"><p id="p-3003">Find the critical values of <span class="process-math">\(f\text{.}\)</span> That is, find all <span class="process-math">\(c\)</span> in the domain of <span class="process-math">\(f\)</span> where <span class="process-math">\(\fp(c) = 0\)</span> or <span class="process-math">\(\fp\)</span> is not defined. (Note: Any values of <span class="process-math">\(c\)</span> <em class="emphasis">not</em> in the domain of <span class="process-math">\(f\)</span> where <span class="process-math">\(\fp(c)\)</span> is undefined should already be marked on your number line from <a href="" class="xref" data-knowl="./knowl/stp_inc_dec1.html" title="Item 1">Step 1</a>).</p></li>
+<li id="li-738"><p id="p-3004">Use the critical values to divide <span class="process-math">\(D\)</span> into subintervals.</p></li>
+<li id="li-739">
+<p id="p-3005">Pick any point <span class="process-math">\(p\)</span> in each subinterval, and find the sign of <span class="process-math">\(\fp(p)\text{.}\)</span></p>
+<ol id="p-3006" class="lower-alpha">
+<li id="li-740"><p id="p-3007">If <span class="process-math">\(\fp(p) \gt 0\text{,}\)</span> then <span class="process-math">\(f\)</span> is increasing on that subinterval.</p></li>
+<li id="li-741"><p id="p-3008">If <span class="process-math">\(\fp(p)\lt 0\text{,}\)</span> then <span class="process-math">\(f\)</span> is decreasing on that subinterval.</p></li>
+</ol>
+</li>
+</ol>
+<p id="p-3009">Note that although <a href="" class="xref" data-knowl="./knowl/thm_incr_decr.html" title="Theorem 3.3.5: Test For Increasing/Decreasing Functions">Theorem 3.3.5</a> allows us to use determine that a function is increasing or decreasing on a closed interval, it is conventional to state the intervals of increase and decrease as <em class="emphasis">open</em> intervals. We will follow this convention in the examples that follow, but it is also acceptable to answer using closed intervals.</p>
+<p id="p-3010">In particular, one should note the following:</p>
+<ul class="disc">
+<li id="li-742"><p id="p-3011">If <span class="process-math">\(f'(x)&gt;0\)</span> on <span class="process-math">\((a,b)\)</span> and on <span class="process-math">\((b,c)\text{,}\)</span> with <span class="process-math">\(f'(b)=0\text{,}\)</span> then we should say that <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\((a,c)\)</span> (or on <span class="process-math">\([a,c]\)</span>) — the zero of the derivative should be included.</p></li>
+<li id="li-743"><p id="p-3012">If <span class="process-math">\(f'(x)&gt;0\)</span> on <span class="process-math">\((a,b)\)</span> and on <span class="process-math">\((b,c)\text{,}\)</span> but <span class="process-math">\(f(b)\)</span> is undefined (or <span class="process-math">\(f\)</span> is discontinuous at <span class="process-math">\(b\)</span>), then we should <em class="emphasis">not</em> include the point <span class="process-math">\(b\)</span> in our interval. Instead, we say that <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\((a,b)\)</span> and <span class="process-math">\((b,c)\text{,}\)</span> or on <span class="process-math">\([a,b)\)</span> and <span class="process-math">\((b,c]\text{.}\)</span></p></li>
+</ul></article><p id="p-3013">We demonstrate using this process in the following example.</p>
+<article class="example example-like" id="ex_incr1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Finding intervals of increasing/decreasing.</span>
+</h3>
+<p id="p-3014">Let <span class="process-math">\(f(x) = x^3+x^2-x+1\text{.}\)</span> Find intervals on which <span class="process-math">\(f\)</span> is increasing or decreasing.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-194" id="solution-194"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-194"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_graphs_incr_decr_ex_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/DW6qcgE1TZ0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-3015">Since an interval was not specified for us to consider, using <a href="" class="xref" data-knowl="./knowl/idea_incr_decr.html" title="Key Idea 3.3.7: Finding Intervals on Which f is Increasing or Decreasing">Key Idea 3.3.7</a>, the domain of <span class="process-math">\(f\)</span> is <span class="process-math">\(\mathbb{R}\)</span> or <span class="process-math">\((-\infty,\infty)\text{.}\)</span> Next, we find the critical values of <span class="process-math">\(f\text{.}\)</span> We have <span class="process-math">\(\fp(x) = 3x^2+2x-1 = (3x-1)(x+1)\text{,}\)</span> so <span class="process-math">\(\fp(x) = 0\)</span> when <span class="process-math">\(x=-1\)</span> and when <span class="process-math">\(x=1/3\text{.}\)</span> <span class="process-math">\(\fp\)</span> is never undefined.</p>
+<p id="p-3016">We thus break the domain (in this case the <span class="process-math">\((-\infty, \infty)\)</span>) into three subintervals based on the two critical values we just found: <span class="process-math">\((-\infty,-1)\text{,}\)</span> <span class="process-math">\((-1,1/3)\)</span> and <span class="process-math">\((1/3,\infty)\text{.}\)</span> This is shown in <a href="" class="xref" data-knowl="./knowl/fig_incrline1.html" title="Figure 3.3.9">Figure 3.3.9</a>.</p>
+<figure class="figure figure-like" id="fig_incrline1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_incrline1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.9<span class="period">.</span></span><span class="space"> </span>Number line for <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_incr1.html" title="Example 3.3.8: Finding intervals of increasing/decreasing">Example 3.3.8</a></figcaption></figure><p id="p-3017">We now pick a value <span class="process-math">\(p\)</span> in each subinterval and find the sign of <span class="process-math">\(\fp(p)\text{.}\)</span> All we care about is the sign, so we do not actually have to fully compute <span class="process-math">\(\fp(p)\text{;}\)</span> pick “nice” values that make this simple.</p>
+<dl id="p-3018" class="description-list">
+<dt id="li-744">Subinterval 1: <span class="process-math">\((-\infty,-1)\)</span>
+</dt>
+<dd>
+<p id="p-3019">We (arbitrarily) pick <span class="process-math">\(p=-2\text{.}\)</span> We can compute <span class="process-math">\(\fp(-2)\)</span> directly: <span class="process-math">\(\fp(-2) = 3(-2)^2+2(-2)-1=7\gt 0\text{.}\)</span> We conclude that <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\((-\infty,-1)\text{.}\)</span></p>
+<p id="p-3020">Note we can arrive at the same conclusion without computation. For instance, we could choose <span class="process-math">\(p=-100\text{.}\)</span> The first term in <span class="process-math">\(\fp(-100)\text{,}\)</span> i.e., <span class="process-math">\(3(-100)^2\)</span> is clearly positive and very large. The other terms are small in comparison, so we know <span class="process-math">\(\fp(-100)\gt 0\text{.}\)</span> All we need is the sign.</p>
+</dd>
+<dt id="li-745">Subinterval 2: <span class="process-math">\((-1,1/3)\)</span>
+</dt>
+<dd><p id="p-3021">We pick <span class="process-math">\(p=0\)</span> since that value seems easy to deal with. <span class="process-math">\(\fp(0) = -1\lt 0\text{.}\)</span> We conclude <span class="process-math">\(f\)</span> is decreasing on <span class="process-math">\((-1,1/3)\text{.}\)</span></p></dd>
+<dt id="li-746">Subinterval 3: <span class="process-math">\((1/3,\infty)\)</span>
+</dt>
+<dd><p id="p-3022">Pick an arbitrarily large value for <span class="process-math">\(p\gt 1/3\)</span> and note that <span class="process-math">\(\fp(p) =3p^2+2p-1 \gt 0\text{.}\)</span> We conclude that <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\((1/3,\infty)\text{.}\)</span></p></dd>
+</dl>
+<p id="p-3023"><a href="" class="xref" data-knowl="./knowl/fig_incrline1a.html" title="Figure 3.3.10">Figure 3.3.10</a> summarizes our work.</p>
+<figure class="figure figure-like" id="fig_incrline1a"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_incrline1a.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.10<span class="period">.</span></span><span class="space"> </span>Completed number line for <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_incr1.html" title="Example 3.3.8: Finding intervals of increasing/decreasing">Example 3.3.8</a></figcaption></figure><p id="p-3024">We can verify our calculations by considering <a href="" class="xref" data-knowl="./knowl/fig_incr1.html" title="Figure 3.3.11">Figure 3.3.11</a>, where <span class="process-math">\(f\)</span> is graphed. The graph also presents <span class="process-math">\(\fp\text{;}\)</span> note how <span class="process-math">\(\fp\gt 0\)</span> when <span class="process-math">\(f\)</span> is increasing and <span class="process-math">\(\fp\lt 0\)</span> when <span class="process-math">\(f\)</span> is decreasing.</p>
+<figure class="figure figure-like" id="fig_incr1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_incr1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.11<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(f(x)\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_incr1.html" title="Example 3.3.8: Finding intervals of increasing/decreasing">Example 3.3.8</a>, showing where <span class="process-math">\(f\)</span> is increasing and decreasing</figcaption></figure>
+</div></div>
+</div></article><p id="p-3025">One is justified in wondering why so much work is done when the graph seems to make the intervals very clear. We give three reasons why the above work is worthwhile.</p>
+<p id="p-3026">First, the points at which <span class="process-math">\(f\)</span> switches from increasing to decreasing are not precisely known given a graph. The graph shows us something significant happens near <span class="process-math">\(x=-1\)</span> and <span class="process-math">\(x=0.3\text{,}\)</span> but we cannot determine exactly where from the graph.</p>
+<p id="p-3027">One could argue that just finding critical values is important; once we know the significant points are <span class="process-math">\(x=-1\)</span> and <span class="process-math">\(x=1/3\text{,}\)</span> the graph shows the increasing/decreasing traits just fine. That is true. However, the technique prescribed here helps reinforce the relationship between increasing/decreasing and the sign of <span class="process-math">\(\fp\text{.}\)</span> Once mastery of this concept (and several others) is obtained, one finds that either (a) just the critical points are computed and the graph shows all else that is desired, or (b) a graph is never produced, because determining increasing/decreasing using <span class="process-math">\(\fp\)</span> is straightforward and the graph is unnecessary. So our second reason why the above work is worthwhile is this: once mastery of a subject is gained, one has <em class="emphasis">options</em> for finding needed information. We are working to develop mastery.</p>
+<p id="p-3028">Finally, our third reason: many problems we face “in the real world” are very complex. Solutions are tractable only through the use of computers to do many calculations for us. Computers do not solve problems “on their own,” however; they need to be taught (i.e., <em class="emphasis">programmed</em>) to do the right things. It would be beneficial to give a function to a computer and have it return maximum and minimum values, intervals on which the function is increasing and decreasing, the locations of relative maxima, etc. The work that we are doing here is easily programmable. It is hard to teach a computer to “look at the graph and see if it is going up or down.” It is easy to teach a computer to “determine if a number is greater than or less than <span class="process-math">\(0\text{.}\)</span>”</p>
+<p id="p-3029">In <a href="sec_extreme_values.html" class="internal" title="Section 3.1: Extreme Values">Section 3.1</a> we learned the definition of relative maxima and minima and found that they occur at critical points. We are now learning that functions can switch from increasing to decreasing (and vice-versa) at critical points. This new understanding of increasing and decreasing creates a great method of determining whether a critical point corresponds to a maximum, minimum, or neither. Imagine a function increasing until a critical point at <span class="process-math">\(x=c\text{,}\)</span> after which it decreases. A quick sketch helps confirm that <span class="process-math">\(f(c)\)</span> must be a relative maximum. A similar statement can be made for relative minimums. We formalize this concept in a theorem.</p>
+<article class="theorem theorem-like" id="thm_first_der"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">First Derivative Test.</span>
+</h3>
+<p id="p-3030">Let <span class="process-math">\(f\)</span> be <em class="emphasis">continuous</em> on an interval <span class="process-math">\(I\text{,}\)</span> and differentiable on <span class="process-math">\(I\text{,}\)</span> except possibly at <span class="process-math">\(c\text{,}\)</span> where <span class="process-math">\(c\)</span> is a critical number in <span class="process-math">\(I\text{.}\)</span> </p>
+<ol class="decimal">
+<li id="li-747"><p id="p-3031">If the sign of <span class="process-math">\(\fp\)</span> switches from positive to negative at <span class="process-math">\(c\text{,}\)</span> then <span class="process-math">\(f(c)\)</span> is a relative maximum of <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-748"><p id="p-3032">If the sign of <span class="process-math">\(\fp\)</span> switches from negative to positive at <span class="process-math">\(c\text{,}\)</span> then <span class="process-math">\(f(c)\)</span> is a relative minimum of <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-749"><p id="p-3033">If <span class="process-math">\(\fp\)</span> is positive (or, negative) before and after <span class="process-math">\(c\text{,}\)</span> then <span class="process-math">\(f(c)\)</span> is not a relative extrema of <span class="process-math">\(f\text{.}\)</span></p></li>
+</ol></article><figure class="figure figure-like" id="vid_graphs_incr_decr_first_deriv_test"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-117" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/_HjE4urOM4Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.13<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_first_der.html" title="Theorem 3.3.12: First Derivative Test">Theorem 3.3.12</a></figcaption></figure><article class="remark remark-like" id="remark-1"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Importance of Continuity.</span>
+</h3>
+<p id="p-3034">The continuity of <span class="process-math">\(f\)</span> when using the first derivative test is very important. Without continuity, almost anything can happen at a critical number. For example, we can construct a piecewise function where the sign of <span class="process-math">\(\fp\)</span> switches to positive to negative at <span class="process-math">\(c\)</span> and <span class="process-math">\(f(c)\)</span> is <em class="emphasis">not</em> a local maximum. This is shown in <a href="" class="xref" data-knowl="./knowl/fig_inc_counter.html" title="Figure 3.3.15">Figure 3.3.15</a>.</p>
+<figure class="figure figure-like" id="fig_inc_counter"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_incr_counter.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.15<span class="period">.</span></span><span class="space"> </span>A discontinuous function where <span class="process-math">\(\fp\)</span> changes sign at 1, but <span class="process-math">\(f(1)\)</span> is not a local maximum</figcaption></figure></article><article class="example example-like" id="ex_incr2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Using the First Derivative Test.</span>
+</h3>
+<p id="p-3035">Find the intervals on which <span class="process-math">\(f\)</span> is increasing and decreasing, and use the <a href="" class="xref" data-knowl="./knowl/thm_first_der.html" title="Theorem 3.3.12: First Derivative Test">First Derivative Test 3.3.12</a> to determine the relative extrema of <span class="process-math">\(f\text{,}\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_first_der.html">
+\begin{equation*}
+f(x) = \frac{x^2+3}{x-1}\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-195" id="solution-195"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-195"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_graphs_incr_decr_ex_2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/94iCiIX07R0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-3036">We start by noting the domain of <span class="process-math">\(f\text{:}\)</span> <span class="process-math">\((-\infty,1)\cup(1,\infty)\text{.}\)</span></p>
+<p id="p-3037">Since <span class="process-math">\(f\)</span> is not defined at <span class="process-math">\(x=1\)</span> (it has a vertical asymptote), the increasing/decreasing nature of <span class="process-math">\(f\)</span> could switch at this value. We know that <span class="process-math">\(\fp(1)\)</span> will be undefined since <span class="process-math">\(f\)</span> is discontinuous at <span class="process-math">\(1\text{.}\)</span> We do not formally consider <span class="process-math">\(x=1\)</span> to be a critical value of <span class="process-math">\(f\text{,}\)</span> but we will use <span class="process-math">\(1\)</span> to subdivide the real number line.</p>
+<p id="p-3038">Using the <a href="" class="xref" data-knowl="./knowl/thm_QuotientRule.html" title="Theorem 2.4.10: Quotient Rule">Quotient Rule 2.4.10</a>, we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_QuotientRule.html">
+\begin{equation*}
+\fp(x) = \frac{x^2-2x-3}{(x-1)^2}\text{.}
+\end{equation*}
+</div>
+<p id="p-3039">We need to find the critical values of <span class="process-math">\(f\text{;}\)</span> we want to know when <span class="process-math">\(\fp(x)=0\)</span> and when <span class="process-math">\(\fp\)</span> is not defined. That latter is straightforward: when the denominator of <span class="process-math">\(\fp(x)\)</span> is <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(\fp\)</span> is undefined. That occurs when <span class="process-math">\(x=1\text{,}\)</span> which we've already recognized as an important value, but not a critical number.</p>
+<p id="p-3040"><span class="process-math">\(\fp(x)=0\)</span> when the numerator of <span class="process-math">\(\fp(x)\)</span> is <span class="process-math">\(0\text{.}\)</span> That occurs when <span class="process-math">\(x^2-2x-3 = (x-3)(x+1) = 0\text{;}\)</span> i.e., when <span class="process-math">\(x=-1,3\text{.}\)</span></p>
+<p id="p-3041">We have found that <span class="process-math">\(f\)</span> has two critical numbers, <span class="process-math">\(x=-1,3\text{,}\)</span> and at <span class="process-math">\(x=1\)</span> something important might also happen. These three numbers divide the real number line into four subintervals:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(-\infty,-1),  (-1, 1),  (1,3),  \text{ and }   (3,\infty)\text{.}
+\end{equation*}
+</div>
+<p id="p-3042">Pick a number <span class="process-math">\(p\)</span> from each subinterval and test the sign of <span class="process-math">\(\fp\)</span> at <span class="process-math">\(p\)</span> to determine whether <span class="process-math">\(f\)</span> is increasing or decreasing on that interval. Again, we do well to avoid complicated computations; notice that the denominator of <span class="process-math">\(\fp\)</span> is <em class="emphasis">always</em> positive so we can ignore it during our work.</p>
+<dl id="p-3043" class="description-list">
+<dt id="li-750">Interval 1: <span class="process-math">\((-\infty,-1)\)</span>
+</dt>
+<dd><p id="p-3044">Choosing a very small number (i.e., a negative number with a large magnitude) <span class="process-math">\(p\)</span> returns <span class="process-math">\(p^2-2p-3\)</span> in the numerator of <span class="process-math">\(\fp\text{;}\)</span> that will be positive. Hence <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\((-\infty,-1)\text{.}\)</span></p></dd>
+<dt id="li-751">Interval 2: <span class="process-math">\((-1,1)\)</span>
+</dt>
+<dd><p id="p-3045">Choosing <span class="process-math">\(0\)</span> seems simple: <span class="process-math">\(\fp(0)=-3\lt 0\text{.}\)</span> We conclude <span class="process-math">\(f\)</span> is decreasing on <span class="process-math">\((-1,1)\text{.}\)</span></p></dd>
+<dt id="li-752">Interval 3: <span class="process-math">\((1,3)\)</span>
+</dt>
+<dd><p id="p-3046">Choosing <span class="process-math">\(2\)</span> seems simple: <span class="process-math">\(\fp(2) = -3\lt 0\text{.}\)</span> Again, <span class="process-math">\(f\)</span> is decreasing.</p></dd>
+<dt id="li-753">Interval 4: <span class="process-math">\((3,\infty)\)</span>
+</dt>
+<dd><p id="p-3047">Choosing an very large number <span class="process-math">\(p\)</span> from this subinterval will give a positive numerator and (of course) a positive denominator. So <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\((3,\infty)\text{.}\)</span></p></dd>
+</dl>
+<p id="p-3048">In summary, <span class="process-math">\(f\)</span> is increasing on the intervals <span class="process-math">\((-\infty,-1)\)</span> and <span class="process-math">\((3,\infty)\)</span> and is decreasing on the intervals <span class="process-math">\((-1,1)\)</span> and <span class="process-math">\((1,3)\text{.}\)</span> Since at <span class="process-math">\(x=-1\text{,}\)</span> the sign of <span class="process-math">\(\fp\)</span> switched from positive to negative, <a href="" class="xref" data-knowl="./knowl/thm_first_der.html" title="Theorem 3.3.12: First Derivative Test">Theorem 3.3.12</a> states that <span class="process-math">\(f(-1)\)</span> is a relative maximum of <span class="process-math">\(f\text{.}\)</span> At <span class="process-math">\(x=3\text{,}\)</span> the sign of <span class="process-math">\(\fp\)</span> switched from negative to positive, meaning <span class="process-math">\(f(3)\)</span> is a relative minimum. At <span class="process-math">\(x=1\text{,}\)</span> <span class="process-math">\(f\)</span> is not defined, so there is no relative extremum at <span class="process-math">\(x=1\text{.}\)</span> As previously stated, <span class="process-math">\(x=1\)</span> is a vertical asymptote of <span class="process-math">\(f\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_incrline2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_incrline2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.17<span class="period">.</span></span><span class="space"> </span>Number line for <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_incr2.html" title="Example 3.3.16: Using the First Derivative Test">Example 3.3.16</a></figcaption></figure><p id="p-3049">This is summarized in the number line shown in <a href="" class="xref" data-knowl="./knowl/fig_incrline2.html" title="Figure 3.3.17">Figure 3.3.17</a>. Also, <a href="" class="xref" data-knowl="./knowl/fig_incr2.html" title="Figure 3.3.18">Figure 3.3.18</a> shows a graph of <span class="process-math">\(f\text{,}\)</span> confirming our calculations. This figure also shows <span class="process-math">\(\fp\text{,}\)</span> again demonstrating that <span class="process-math">\(f\)</span> is increasing when <span class="process-math">\(\fp\gt 0\)</span> and decreasing when <span class="process-math">\(\fp\lt 0\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_incr2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_incr2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.18<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(f(x)\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_incr2.html" title="Example 3.3.16: Using the First Derivative Test">Example 3.3.16</a>, showing where <span class="process-math">\(f\)</span> is increasing and decreasing</figcaption></figure>
+</div></div>
+</div></article><p id="p-3050">One is often tempted to think that functions always alternate “increasing, decreasing, increasing, decreasing,…” around critical values. Our previous example demonstrated that this is not always the case. While <span class="process-math">\(x=1\)</span> was not technically a critical value, it was an important value we needed to consider. We found that <span class="process-math">\(f\)</span> was decreasing on “both sides of <span class="process-math">\(x=1\text{.}\)</span>”</p>
+<p id="p-3051">We examine one more example.</p>
+<article class="example example-like" id="ex_incr3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.19</span><span class="period">.</span><span class="space"> </span><span class="title">Using the First Derivative Test.</span>
+</h3>
+<p id="p-3052">Find the intervals on which <span class="process-math">\(f(x) = x^{8/3}-4x^{2/3}\)</span> is increasing and decreasing and identify the relative extrema.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-196" id="solution-196"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-196"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_graphs_incr_decr_ex_3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/T4RxcQnNotc?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-3053">The domain of <span class="process-math">\(f\)</span> is <span class="process-math">\(\mathbb{R}\)</span> (you can take the odd root of both positive and negative nubmers). Next, we take the first derivative. Since we know we want to solve <span class="process-math">\(\fp(x) = 0\text{,}\)</span> we will do some algebra after taking the derivative.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-110">
+\begin{align*}
+f(x) \amp = x^{\frac{8}{3}}-4x^{\frac{2}{3}}\\
+\fp(x) \amp = \frac{8}{3} x^{\frac{5}{3}} - \frac{8}{3}x^{-\frac{1}{3}}\\
+\amp = \frac{8}{3}x^{-\frac{1}{3}}\left(x^{\frac{6}{3}}-1\right)\\
+\amp =\frac{8}{3}x^{-\frac{1}{3}}\left(x^2-1\right)\\
+\amp =\frac{8}{3}x^{-\frac{1}{3}}(x-1)(x+1)\text{.}
+\end{align*}
+</div>
+<p id="p-3054">This derivation of <span class="process-math">\(\fp\)</span> shows that <span class="process-math">\(\fp(x) = 0\)</span> when <span class="process-math">\(x=\pm 1\)</span> and <span class="process-math">\(\fp\)</span>is not defined when <span class="process-math">\(x=0\text{.}\)</span> Thus we have three critical values, breaking the number line into four subintervals as shown in <a href="" class="xref" data-knowl="./knowl/fig_incrline3.html" title="Figure 3.3.20">Figure 3.3.20</a>.</p>
+<dl id="p-3055" class="description-list">
+<dt id="li-754">Interval 1: <span class="process-math">\((\infty,-1)\)</span>
+</dt>
+<dd><p id="p-3056">We choose <span class="process-math">\(p=-2\text{;}\)</span> we can easily verify that <span class="process-math">\(\fp(-2)\lt 0\text{.}\)</span> So <span class="process-math">\(f\)</span> is decreasing on <span class="process-math">\((-\infty,-1)\text{.}\)</span></p></dd>
+<dt id="li-755">Interval 2: <span class="process-math">\((-1,0)\)</span>
+</dt>
+<dd>
+<p id="p-3057">Choose <span class="process-math">\(p=-1/2\text{.}\)</span> Once more we practice finding the sign of <span class="process-math">\(\fp(p)\)</span> without computing an actual value. We have <span class="process-math">\(\fp(p) = (8/3)p^{-1/3}(p-1)(p+1)\text{;}\)</span> find the sign of each of the three terms at the chosen value of <span class="process-math">\(p\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp(p) = \frac{8}{3} \cdot \underbrace{p^{-\frac{1}{3}}}_{\lt 0}\cdot \underbrace{(p-1)}_{\lt 0}\underbrace{(p+1)}_{\gt 0}\text{.}
+\end{equation*}
+</div>
+<p id="p-3058">We have a “negative <span class="times-sign">×</span> negative <span class="times-sign">×</span> positive” giving a positive number; <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\((-1,0)\text{.}\)</span></p>
+</dd>
+<dt id="li-756">Interval 3: <span class="process-math">\((0,1)\)</span>
+</dt>
+<dd>
+<p id="p-3059">We do a similar sign analysis as before, using <span class="process-math">\(p\)</span> in <span class="process-math">\((0,1)\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp(p) = \frac{8}{3} \cdot \underbrace{p^{-\frac{1}{3}}}_{\gt 0}\cdot \underbrace{(p-1)}_{\lt 0}\underbrace{(p+1)}_{\gt 0}\text{.}
+\end{equation*}
+</div>
+<p id="p-3060">We have two positive factors and one negative factor; <span class="process-math">\(\fp(p)\lt 0\)</span> and so <span class="process-math">\(f\)</span> is decreasing on <span class="process-math">\((0,1)\text{.}\)</span></p>
+</dd>
+<dt id="li-757">Interval 4: <span class="process-math">\((1,\infty)\)</span>
+</dt>
+<dd><p id="p-3061">Similar work to that done for the other three intervals shows that <span class="process-math">\(\fp(x)\gt 0\)</span> on <span class="process-math">\((1,\infty)\text{,}\)</span> so <span class="process-math">\(f\)</span> is increasing on this interval.</p></dd>
+</dl>
+<figure class="figure figure-like" id="fig_incrline3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_incrline3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.20<span class="period">.</span></span><span class="space"> </span>Number line for <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_incr3.html" title="Example 3.3.19: Using the First Derivative Test">Example 3.3.19</a></figcaption></figure><p id="p-3062">We conclude by stating that <span class="process-math">\(f\)</span> is increasing on the intervals <span class="process-math">\((-1,0)\)</span> and <span class="process-math">\((1,\infty)\)</span> and decreasing on the intervals <span class="process-math">\((-\infty,-1)\)</span> and <span class="process-math">\((0,1)\text{.}\)</span> The sign of <span class="process-math">\(\fp\)</span> changes from negative to positive around <span class="process-math">\(x=-1\)</span> and <span class="process-math">\(x=1\text{,}\)</span> meaning by <a href="" class="xref" data-knowl="./knowl/thm_first_der.html" title="Theorem 3.3.12: First Derivative Test">Theorem 3.3.12</a> that <span class="process-math">\(f(-1)\)</span> and <span class="process-math">\(f(1)\)</span> are relative minima of <span class="process-math">\(f\text{.}\)</span> As the sign of <span class="process-math">\(\fp\)</span> changes from positive to negative at <span class="process-math">\(x=0\text{,}\)</span> we have a relative maximum at <span class="process-math">\(f(0)\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_incr3.html" title="Figure 3.3.21">Figure 3.3.21</a> shows a graph of <span class="process-math">\(f\text{,}\)</span> confirming our result. We also graph <span class="process-math">\(\fp\text{,}\)</span> highlighting once more that <span class="process-math">\(f\)</span> is increasing when <span class="process-math">\(\fp\gt 0\)</span> and is decreasing when <span class="process-math">\(\fp\lt 0\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_incr3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_incr3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.21<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(f(x)\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_incr3.html" title="Example 3.3.19: Using the First Derivative Test">Example 3.3.19</a>, showing where <span class="process-math">\(f\)</span> is increasing and decreasing</figcaption></figure>
+</div></div>
+</div></article><p id="p-3063">We have seen how the first derivative of a function helps determine when the graph of a function is going “up” or “down.” In the next section, we will see how the second derivative helps determine how the graph of a function curves.</p>
+<section class="exercises" id="exercises-16"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-42"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-513"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-502" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="502" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKSW4geW91ciBvd24gd29yZHMgZGVzY3JpYmUgd2hhdCBpdCBtZWFucyBmb3IgYSBmdW5jdGlvbiB0byBiZSBpbmNyZWFzaW5nLgoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3064">In your own words describe what it means for a function to be increasing.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-502')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-514"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-503" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="503" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKV2hhdCBkb2VzIGEgZGVjcmVhc2luZyBmdW5jdGlvbiAibG9vayBsaWtlIj8KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpBbnN3ZXJzIHdpbGwgdmFyeSwgYnV0IHNob3VsZCBpbmRpY2F0ZSB0aGF0IHRoZSBncmFwaCBzbG9wZXMgZG93bndhcmQgZnJvbSBsZWZ0IHRvIHJpZ2h0LgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3065">What does a decreasing function “look like”?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-503')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-515"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<p id="p-3067">Sketch a graph of a function on <span class="process-math">\([0,2]\)</span> that is increasing, where it is increasing “quickly” near <span class="process-math">\(x=0\)</span> and increasing “slowly” near <span class="process-math">\(x=2\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-516"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-504" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="504" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKR2l2ZSBhbiBleGFtcGxlIG9mIGEgZnVuY3Rpb24gZGVzY3JpYmluZyBhIHNpdHVhdGlvbiB3aGVyZSBpdCBpcyAiYmFkIiB0byBiZSBpbmNyZWFzaW5nIGFuZCAiZ29vZCIgdG8gYmUgZGVjcmVhc2luZy4KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3069">Give an example of a function describing a situation where it is “bad” to be increasing and “good” to be decreasing.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-504')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-517"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div id="webwork-505" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="505" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JEZhbHNlID0gUG9wVXAoWyc/JywnVHJ1ZScsJ0ZhbHNlJ10sMik7CgpCRUdJTl9QR01MCltfXXskRmFsc2V9ezV9IEZ1bmN0aW9ucyBhbHdheXMgc3dpdGNoIGZyb20gaW5jcmVhc2luZyB0byBkZWNyZWFzaW5nLCBvciBkZWNyZWFzaW5nIHRvIGluY3JlYXNpbmcsIGF0IGNyaXRpY2FsIHBvaW50cy4KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpGYWxzZTsgZm9yIGluc3RhbmNlLCBbYHk9eF4zYF0gaXMgYWx3YXlzIGluY3JlYXNpbmcgdGhvdWdoIGl0IGhhcyBhIGNyaXRpY2FsIHBvaW50IGF0IFtgeD0wXHRleHR7Ln1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3070"><ul style="list-style:circle;">
+<li id="li-759"><p id="p-3072">True</p></li>
+<li id="li-760"><p id="p-3073">False</p></li>
+</ul> Functions always switch from increasing to decreasing, or decreasing to increasing, at critical points.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-505')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-518"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div id="webwork-506" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="506" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT5xfDxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGZwfXtmJ31cbmV3Y29tbWFuZHtcZ3R9ez59XCk8L2Rpdj58KSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKQSBmdW5jdGlvbiBbYGZgXSBoYXMgZGVyaXZhdGl2ZSBbYFxmcCh4KSA9IChcc2luIHggKzIpZV57eF4yKzF9XHRleHR7LH1gXSB3aGVyZSBbYFxmcCh4KSBcZ3QgMWBdIGZvciBhbGwgW2B4XHRleHR7Ln1gXSBJcyBbYGZgXSBpbmNyZWFzaW5nLCBkZWNyZWFzaW5nLCBvciBjYW4gd2Ugbm90IHRlbGwgZnJvbSB0aGUgZ2l2ZW4gaW5mb3JtYXRpb24/IFdoeSBvciB3aHkgbm90PwoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClRoZSBmdW5jdGlvbiBpcyBpbmNyZWFzaW5nLiBTaW5jZSBbYFxmcCh4KSBcZ3QgMVx0ZXh0eyx9YF0gd2Uga25vdyBpbiBwYXJ0aWN1bGFyIHRoYXQgW2BcZnAoeCkgXGd0IDBcdGV4dHssfWBdIHNvIFtgZmBdIGlzIGluY3JlYXNpbmcgYnkgVGhlb3JlbVskTkJTUF0qMy4zLjUuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3076">A function <span class="process-math">\(f\)</span> has derivative <span class="process-math">\(\fp(x) = (\sin x +2)e^{x^2+1}\text{,}\)</span> where <span class="process-math">\(\fp(x) \gt 1\)</span> for all <span class="process-math">\(x\text{.}\)</span> Is <span class="process-math">\(f\)</span> increasing, decreasing, or can we not tell from the given information? Why or why not?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-506')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-43"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-58">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-66"><p id="p-3078">A function <span class="process-math">\(f(x)\)</span> is given. Graph <span class="process-math">\(f\)</span> and <span class="process-math">\(\fp\)</span> on the same axes (using technology is permitted) and verify <a href="" class="xref" data-knowl="./knowl/thm_incr_decr.html" title="Theorem 3.3.5: Test For Increasing/Decreasing Functions">Theorem 3.3.5</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-519"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-3079"><span class="process-math">\(f(x) = 2x+3\)</span></p></article><article class="exercise exercise-like" id="exercise-520"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-3080"><span class="process-math">\(f(x) = x^2-3x+5\)</span></p></article><article class="exercise exercise-like" id="exercise-521"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-3081"><span class="process-math">\(f(x) = \cos(x)\)</span></p></article><article class="exercise exercise-like" id="exercise-522"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-3082"><span class="process-math">\(f(x) = \tan(x)\)</span></p></article><article class="exercise exercise-like" id="exercise-523"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-3083"><span class="process-math">\(f(x) = x^3-5x^2+7x-1\)</span></p></article><article class="exercise exercise-like" id="exercise-524"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-3084"><span class="process-math">\(f(x) = 2x^3-x^2+x-1\)</span></p></article><article class="exercise exercise-like" id="exercise-525"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-3085"><span class="process-math">\(f(x) = x^4-5x^2+4\)</span></p></article><article class="exercise exercise-like" id="exercise-526"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-3086"><span class="process-math">\(f(x) = \frac{1}{x^2+1}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-59">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-67">
+<p id="p-3087">A function <span class="process-math">\(f(x)\)</span> is given.</p>
+<ol class="lower-alpha">
+<li id="li-761"><p id="p-3088">Give the domain of <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-762"><p id="p-3089">Find the critical numbers of <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-763"><p id="p-3090">Create a number line to determine the maximal intervals on which <span class="process-math">\(f\)</span> is increasing and decreasing.</p></li>
+<li id="li-764"><p id="p-3091">Use the First Derivative Test to determine whether each critical point is a relative maximum, minimum, or neither.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-527"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-507" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="507" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCJGcmFjdGlvbiIpOwooJHIsJHMpID0gKC05Li45KVtOY2hvb3NlSygxOSwyKV07CiRtID0gKCRyKyRzKS8yOwokY3JpdD1MaXN0KCIkbSIpOwpDb250ZXh0KCJJbnRlcnZhbCIpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQoaWdub3JlRW5kcG9pbnRUeXBlcyA9PiAxKTsKJGYgPSBGb3JtdWxhKCJ4XjItKCRyKyRzKXgrJHIqJHMiKS0+cmVkdWNlOwokZG9tYWluID0gQ29tcHV0ZSgiKC1pbmYsaW5mKSIpOwokaW5jID0gTGlzdChJbnRlcnZhbCgiWyRtLGluZikiKSk7CiRkZWMgPSBMaXN0KEludGVydmFsKCIoLWluZiwkbV0iKSk7CiRtYXggPSBMaXN0KCJub25lIik7CiRtaW4gPSBMaXN0KCIkbSIpOwoKQkVHSU5fUEdNTApbYGYoeCk9WyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdHaXZlIHRoZSBkb21haW4gb2YgW2BmYF0gdXNpbmcgaW50ZXJ2YWwgbm90YXRpb24uJylAXSoqCgpbX117JGRvbWFpbn17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgY3JpdGljYWwgbnVtYmVycyBvZiBbYGZcdGV4dHssfWBdIHNlcGFyYXRpbmcgd2l0aCBjb21tYXMgaWYgbmVlZGVkLiBJZiB0aGVyZSBhcmUgbm8gY3JpdGljYWwgbnVtYmVycywgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRjcml0fXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIG1heGltYWwgaW50ZXJ2YWxzIHdoZXJlIFtgZmBdIGlzIGluY3JlYXNpbmcsIHVzaW5nIGludGVydmFsIG5vdGF0aW9uLCBhbmQgc2VwYXJhdGluZyB3aXRoIGNvbW1hcyBpZiBuZWVkZWQuIElmIHRoZXJlIGFyZSBubyBzdWNoIGludGVydmFscywgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRpbmN9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgbWF4aW1hbCBpbnRlcnZhbHMgd2hlcmUgW2BmYF0gaXMgZGVjcmVhc2luZywgdXNpbmcgaW50ZXJ2YWwgbm90YXRpb24sIGFuZCBzZXBhcmF0aW5nIHdpdGggY29tbWFzIGlmIG5lZWRlZC4gSWYgdGhlcmUgYXJlIG5vIHN1Y2ggaW50ZXJ2YWxzLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JGRlY317MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBjcml0aWNhbCBwb2ludHMgdGhhdCBhcmUgYSByZWxhdGl2ZSBtYXhpbXVtLiBJZiBub25lIGFyZSwgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRtYXh9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgY3JpdGljYWwgcG9pbnRzIHRoYXQgYXJlIGEgcmVsYXRpdmUgbWluaW11bS4gSWYgbm9uZSBhcmUsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskbWlufXszMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3092"><span class="process-math">\(f(x)={x^{2}-49}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-507')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-528"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-508" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="508" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCJGcmFjdGlvbiIpOwooJGEsJGIpID0gKC05Li4tMSwxLi45KVtOY2hvb3NlSygxOCwyKV07CiRtID0gRnJhY3Rpb24oLTIqJGEsMyk7CigkbSwkbikgPSBudW1fc29ydCgwLCRtKTsKJGNyaXQ9TGlzdCgkbSwkbik7CkNvbnRleHQoIkludGVydmFsIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChpZ25vcmVFbmRwb2ludFR5cGVzID0+IDEpOwokZiA9IEZvcm11bGEoInheMyArICRhIHheMiArICRiIiktPnJlZHVjZTsKJGRvbWFpbiA9IENvbXB1dGUoIigtaW5mLGluZikiKTsKJGluYyA9IExpc3QoSW50ZXJ2YWwoIigtaW5mLCRtXSIpLEludGVydmFsKCJbJG4saW5mKSIpKTsKJGRlYyA9IExpc3QoSW50ZXJ2YWwoIlskbSwkbl0iKSk7CiRtYXggPSBMaXN0KCIkbSIpOwokbWluID0gTGlzdCgiJG4iKTsKCkJFR0lOX1BHTUwKW2BmKHgpPVskZl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnR2l2ZSB0aGUgZG9tYWluIG9mIFtgZmBdIHVzaW5nIGludGVydmFsIG5vdGF0aW9uLicpQF0qKgoKW19deyRkb21haW59ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGNyaXRpY2FsIG51bWJlcnMgb2YgW2BmXHRleHR7LH1gXSBzZXBhcmF0aW5nIHdpdGggY29tbWFzIGlmIG5lZWRlZC4gSWYgdGhlcmUgYXJlIG5vIGNyaXRpY2FsIG51bWJlcnMsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskY3JpdH17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBtYXhpbWFsIGludGVydmFscyB3aGVyZSBbYGZgXSBpcyBpbmNyZWFzaW5nLCB1c2luZyBpbnRlcnZhbCBub3RhdGlvbiwgYW5kIHNlcGFyYXRpbmcgd2l0aCBjb21tYXMgaWYgbmVlZGVkLiBJZiB0aGVyZSBhcmUgbm8gc3VjaCBpbnRlcnZhbHMsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskaW5jfXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIG1heGltYWwgaW50ZXJ2YWxzIHdoZXJlIFtgZmBdIGlzIGRlY3JlYXNpbmcsIHVzaW5nIGludGVydmFsIG5vdGF0aW9uLCBhbmQgc2VwYXJhdGluZyB3aXRoIGNvbW1hcyBpZiBuZWVkZWQuIElmIHRoZXJlIGFyZSBubyBzdWNoIGludGVydmFscywgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRkZWN9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgY3JpdGljYWwgcG9pbnRzIHRoYXQgYXJlIGEgcmVsYXRpdmUgbWF4aW11bS4gSWYgbm9uZSBhcmUsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskbWF4fXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIGNyaXRpY2FsIHBvaW50cyB0aGF0IGFyZSBhIHJlbGF0aXZlIG1pbmltdW0uIElmIG5vbmUgYXJlLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JG1pbn17MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3099"><span class="process-math">\(f(x)={x^{3}-5x^{2}+1}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-508')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-529"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-509" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="509" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKI3Jvb3RzIG9mIGRlcml2YXRpdmUKZG8gewogICRzID0gRnJhY3Rpb24obGlzdF9yYW5kb20oMSwyLDQsNSw3LDgpKmxpc3RfcmFuZG9tKC0xLDEpLCBsaXN0X3JhbmRvbSgzLDYsOSkpOyAjIG1ha2UgYiBkaXYgYnkgMwogICgkYSwkYikgPSAkcy0+dmFsdWU7CiAgaWYgKCRhICUgMiA9PSAwKSB7JHQgPSBGcmFjdGlvbihub25femVyb19yYW5kb20oLTgsOCwyKSxyYW5kb20oMSw5LDIpKTt9CiAgZWxzaWYgKCRiICUgMiA9PSAwKSB7JHQgPSBGcmFjdGlvbihyYW5kb20oLTksOSwyKSxyYW5kb20oMiw4LDIpKTt9CiAgZWxzZSB7JHQgPSBGcmFjdGlvbihyYW5kb20oLTksOSwyKSxyYW5kb20oMSw5LDIpKTt9Cn0gdW50aWwgKCRzICE9ICR0KTsKKCRjLCRkKSA9ICR0LT52YWx1ZTsKIyBmJyh4KSA9IChieCAtIGEpKGR4IC0gYykgPSBiZCB4XjIgLSAoYmMrYWQpIHggKyBhYwooJG0sJG4pID0gbnVtX3NvcnQoJHMsJHQpOwokY3JpdD1MaXN0KCRtLCRuKTsKQ29udGV4dCgiSW50ZXJ2YWwiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KGlnbm9yZUVuZHBvaW50VHlwZXMgPT4gMSk7CiRBID0gJGIqJGQvMzsKJEIgPSAtKCRiKiRjKyRhKiRkKS8yOwokQyA9ICRhKiRjOwokRCA9IG5vbl96ZXJvX3JhbmRvbSgtOSw5LDEpOwokZiA9IEZvcm11bGEoIiRBIHheMyArICRCIHheMiArICRDIHggKyAkRCIpLT5yZWR1Y2U7CiRkb21haW4gPSBDb21wdXRlKCIoLWluZixpbmYpIik7CiRpbmMgPSAkaW5jID0gTGlzdChJbnRlcnZhbCgiKC1pbmYsJG1dIiksSW50ZXJ2YWwoIlskbixpbmYpIikpOwokZGVjID0gTGlzdChJbnRlcnZhbCgiWyRtLCRuXSIpKTsKJG1heCA9IExpc3QoJG0pOwokbWluID0gTGlzdCgkbik7CgpCRUdJTl9QR01MCltgZih4KT1bJGZdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0dpdmUgdGhlIGRvbWFpbiBvZiBbYGZgXSB1c2luZyBpbnRlcnZhbCBub3RhdGlvbi4nKUBdKioKCltfXXskZG9tYWlufXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBjcml0aWNhbCBudW1iZXJzIG9mIFtgZlx0ZXh0eyx9YF0gc2VwYXJhdGluZyB3aXRoIGNvbW1hcyBpZiBuZWVkZWQuIElmIHRoZXJlIGFyZSBubyBjcml0aWNhbCBudW1iZXJzLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JGNyaXR9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgbWF4aW1hbCBpbnRlcnZhbHMgd2hlcmUgW2BmYF0gaXMgaW5jcmVhc2luZywgdXNpbmcgaW50ZXJ2YWwgbm90YXRpb24sIGFuZCBzZXBhcmF0aW5nIHdpdGggY29tbWFzIGlmIG5lZWRlZC4gSWYgdGhlcmUgYXJlIG5vIHN1Y2ggaW50ZXJ2YWxzLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JGluY317MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBtYXhpbWFsIGludGVydmFscyB3aGVyZSBbYGZgXSBpcyBkZWNyZWFzaW5nLCB1c2luZyBpbnRlcnZhbCBub3RhdGlvbiwgYW5kIHNlcGFyYXRpbmcgd2l0aCBjb21tYXMgaWYgbmVlZGVkLiBJZiB0aGVyZSBhcmUgbm8gc3VjaCBpbnRlcnZhbHMsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskZGVjfXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIGNyaXRpY2FsIHBvaW50cyB0aGF0IGFyZSBhIHJlbGF0aXZlIG1heGltdW0uIElmIG5vbmUgYXJlLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JG1heH17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBjcml0aWNhbCBwb2ludHMgdGhhdCBhcmUgYSByZWxhdGl2ZSBtaW5pbXVtLiBJZiBub25lIGFyZSwgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRtaW59ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3106"><span class="process-math">\(f(x)={3x^{3}+11x^{2}+8x+9}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-509')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-530"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-510" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="510" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJHIgPSBub25femVyb19yYW5kb20oLTUsNSwxKTsKJGNyaXQ9TGlzdCgkcik7CkNvbnRleHQoIkludGVydmFsIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChpZ25vcmVFbmRwb2ludFR5cGVzID0+IDEpOwokQSA9IDE7CiRCID0gLTMqJHI7CiRDID0gMyooJHIpKioyOwokRCA9IC0oJHIpKiozOwokZiA9IEZvcm11bGEoIiRBIHheMyArICRCIHheMiArICRDIHggKyAkRCIpLT5yZWR1Y2U7CiRkb21haW4gPSBDb21wdXRlKCIoLWluZixpbmYpIik7CiRpbmMgPSBMaXN0KEludGVydmFsKCIoLWluZixpbmYpIikpOwokZGVjID0gTGlzdChDb21wdXRlKCJOb25lIikpOwokbWF4ID0gTGlzdChDb21wdXRlKCJOb25lIikpOwokbWluID0gTGlzdChDb21wdXRlKCJOb25lIikpOwoKQkVHSU5fUEdNTApbYGYoeCk9WyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdHaXZlIHRoZSBkb21haW4gb2YgW2BmYF0gdXNpbmcgaW50ZXJ2YWwgbm90YXRpb24uJylAXSoqCgpbX117JGRvbWFpbn17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgY3JpdGljYWwgbnVtYmVycyBvZiBbYGZcdGV4dHssfWBdIHNlcGFyYXRpbmcgd2l0aCBjb21tYXMgaWYgbmVlZGVkLiBJZiB0aGVyZSBhcmUgbm8gY3JpdGljYWwgbnVtYmVycywgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRjcml0fXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIG1heGltYWwgaW50ZXJ2YWxzIHdoZXJlIFtgZmBdIGlzIGluY3JlYXNpbmcsIHVzaW5nIGludGVydmFsIG5vdGF0aW9uLCBhbmQgc2VwYXJhdGluZyB3aXRoIGNvbW1hcyBpZiBuZWVkZWQuIElmIHRoZXJlIGFyZSBubyBzdWNoIGludGVydmFscywgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRpbmN9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgbWF4aW1hbCBpbnRlcnZhbHMgd2hlcmUgW2BmYF0gaXMgZGVjcmVhc2luZywgdXNpbmcgaW50ZXJ2YWwgbm90YXRpb24sIGFuZCBzZXBhcmF0aW5nIHdpdGggY29tbWFzIGlmIG5lZWRlZC4gSWYgdGhlcmUgYXJlIG5vIHN1Y2ggaW50ZXJ2YWxzLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JGRlY317MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBjcml0aWNhbCBwb2ludHMgdGhhdCBhcmUgYSByZWxhdGl2ZSBtYXhpbXVtLiBJZiBub25lIGFyZSwgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRtYXh9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgY3JpdGljYWwgcG9pbnRzIHRoYXQgYXJlIGEgcmVsYXRpdmUgbWluaW11bS4gSWYgbm9uZSBhcmUsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskbWlufXszMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3113"><span class="process-math">\(f(x)={x^{3}-9x^{2}+27x-27}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-510')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-531"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-511" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="511" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJHIgPSBub25femVyb19yYW5kb20oLTUsNSwxKTsKJGNyaXQ9TGlzdCgkcik7CkNvbnRleHQoIkludGVydmFsIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChpZ25vcmVFbmRwb2ludFR5cGVzID0+IDEpOwokQSA9IDE7CiRCID0gLTIqJHI7CiRDID0gKCRyKSoqMityYW5kb20oMSw5LDEpOwokZiA9IEZvcm11bGEoIjEvKCRBIHheMiArICRCIHggKyAkQykiKS0+cmVkdWNlOwokZG9tYWluID0gQ29tcHV0ZSgiKC1pbmYsaW5mKSIpOwokaW5jID0gTGlzdChJbnRlcnZhbCgiKC1pbmYsJHJdIikpOwokZGVjID0gTGlzdChJbnRlcnZhbCgiWyRyLGluZikiKSk7CiRtYXggPSBMaXN0KENvbXB1dGUoJHIpKTsKJG1pbiA9IExpc3QoQ29tcHV0ZSgiTm9uZSIpKTsKCkJFR0lOX1BHTUwKW2BmKHgpPVskZl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnR2l2ZSB0aGUgZG9tYWluIG9mIFtgZmBdIHVzaW5nIGludGVydmFsIG5vdGF0aW9uLicpQF0qKgoKW19deyRkb21haW59ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGNyaXRpY2FsIG51bWJlcnMgb2YgW2BmXHRleHR7LH1gXSBzZXBhcmF0aW5nIHdpdGggY29tbWFzIGlmIG5lZWRlZC4gSWYgdGhlcmUgYXJlIG5vIGNyaXRpY2FsIG51bWJlcnMsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskY3JpdH17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBtYXhpbWFsIGludGVydmFscyB3aGVyZSBbYGZgXSBpcyBpbmNyZWFzaW5nLCB1c2luZyBpbnRlcnZhbCBub3RhdGlvbiwgYW5kIHNlcGFyYXRpbmcgd2l0aCBjb21tYXMgaWYgbmVlZGVkLiBJZiB0aGVyZSBhcmUgbm8gc3VjaCBpbnRlcnZhbHMsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskaW5jfXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIG1heGltYWwgaW50ZXJ2YWxzIHdoZXJlIFtgZmBdIGlzIGRlY3JlYXNpbmcsIHVzaW5nIGludGVydmFsIG5vdGF0aW9uLCBhbmQgc2VwYXJhdGluZyB3aXRoIGNvbW1hcyBpZiBuZWVkZWQuIElmIHRoZXJlIGFyZSBubyBzdWNoIGludGVydmFscywgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRkZWN9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgY3JpdGljYWwgcG9pbnRzIHRoYXQgYXJlIGEgcmVsYXRpdmUgbWF4aW11bS4gSWYgbm9uZSBhcmUsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskbWF4fXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIGNyaXRpY2FsIHBvaW50cyB0aGF0IGFyZSBhIHJlbGF0aXZlIG1pbmltdW0uIElmIG5vbmUgYXJlLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JG1pbn17MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3120"><span class="process-math">\(f(x)={\frac{1}{x^{2}-2x+6}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-511')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-532"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-512" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="512" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwooJHIsJHQpID0gKDEuLjkpW05jaG9vc2VLKDksMildOwokUiA9ICgkcikqKjI7CiRUID0gKCR0KSoqMjsKJGNyaXQ9TGlzdCgwKTsKQ29udGV4dCgiSW50ZXJ2YWwiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KGlnbm9yZUVuZHBvaW50VHlwZXMgPT4gMSk7CiRmID0gRm9ybXVsYSgiKHheMi0kUikvKHheMi0kVCkiKS0+cmVkdWNlOwokZG9tYWluID0gQ29tcHV0ZSgiKC1pbmYsLSR0KVUoLSR0LCR0KVUoJHQsaW5mKSIpOwokaW5jID0gTGlzdChJbnRlcnZhbCgiWzAsJHQpIiksSW50ZXJ2YWwoIigkdCxpbmYpIikpOwokZGVjID0gTGlzdChJbnRlcnZhbCgiKC1pbmYsLSR0KSIpLEludGVydmFsKCIoLSR0LDBdIikpOwokbWF4ID0gTGlzdChDb21wdXRlKCJOb25lIikpOwokbWluID0gTGlzdCgwKTsKaWYgKCRyIDwgJHQpIHsKICAoJGluYywkZGVjKSA9ICgkZGVjLCRpbmMpOwogICgkbWF4LCRtaW4pID0gKCRtaW4sJG1heCk7Cn0KCkJFR0lOX1BHTUwKW2BmKHgpPVskZl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnR2l2ZSB0aGUgZG9tYWluIG9mIFtgZmBdIHVzaW5nIGludGVydmFsIG5vdGF0aW9uLicpQF0qKgoKW19deyRkb21haW59ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGNyaXRpY2FsIG51bWJlcnMgb2YgW2BmXHRleHR7LH1gXSBzZXBhcmF0aW5nIHdpdGggY29tbWFzIGlmIG5lZWRlZC4gSWYgdGhlcmUgYXJlIG5vIGNyaXRpY2FsIG51bWJlcnMsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskY3JpdH17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBtYXhpbWFsIGludGVydmFscyB3aGVyZSBbYGZgXSBpcyBpbmNyZWFzaW5nLCB1c2luZyBpbnRlcnZhbCBub3RhdGlvbiwgYW5kIHNlcGFyYXRpbmcgd2l0aCBjb21tYXMgaWYgbmVlZGVkLiBJZiB0aGVyZSBhcmUgbm8gc3VjaCBpbnRlcnZhbHMsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskaW5jfXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIG1heGltYWwgaW50ZXJ2YWxzIHdoZXJlIFtgZmBdIGlzIGRlY3JlYXNpbmcsIHVzaW5nIGludGVydmFsIG5vdGF0aW9uLCBhbmQgc2VwYXJhdGluZyB3aXRoIGNvbW1hcyBpZiBuZWVkZWQuIElmIHRoZXJlIGFyZSBubyBzdWNoIGludGVydmFscywgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRkZWN9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgY3JpdGljYWwgcG9pbnRzIHRoYXQgYXJlIGEgcmVsYXRpdmUgbWF4aW11bS4gSWYgbm9uZSBhcmUsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskbWF4fXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIGNyaXRpY2FsIHBvaW50cyB0aGF0IGFyZSBhIHJlbGF0aXZlIG1pbmltdW0uIElmIG5vbmUgYXJlLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JG1pbn17MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3127"><span class="process-math">\(f(x)={\frac{x^{2}-49}{x^{2}-1}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-512')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-533"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-513" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="513" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwooJHIsJHMpID0gbnVtX3NvcnQoKC05Li4tMSwxLi45KVtOY2hvb3NlSygxOCwyKV0pOwokcnMgPSAkciokczsKJGNyaXQgPSAoJHJzID4gMCkgPyBMaXN0KENvbXB1dGUoLXNxcnQoJHJzKSksLUNvbXB1dGUoLXNxcnQoJHJzKSkpIDogTGlzdChDb21wdXRlKCJOb25lIikpOwpDb250ZXh0KCJJbnRlcnZhbCIpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQoaWdub3JlRW5kcG9pbnRUeXBlcyA9PiAxKTsKJGYgPSBGb3JtdWxhKCJ4Lyh4XjItKCRyKyRzKXgrJHJzKSIpLT5yZWR1Y2U7CiRkb21haW4gPSBDb21wdXRlKCIoLWluZiwkcilVKCRyLCRzKVUoJHMsaW5mKSIpOwppZiAoJHIgPiAwKSB7CiAgJGluYyA9IExpc3QoSW50ZXJ2YWwoIlstc3FydCgkcnMpLCRyKSIpLEludGVydmFsKCIoJHIsc3FydCgkcnMpXSIpKTsKICAkZGVjID0gTGlzdChJbnRlcnZhbCgiKC1pbmYsLXNxcnQoJHJzKV0iKSxJbnRlcnZhbCgiW3NxcnQoJHJzKSwkcykiKSxJbnRlcnZhbCgiKCRzLGluZikiKSk7CiAgJG1heCA9IExpc3QoQ29tcHV0ZSgic3FydCgkcnMpIikpOwogICRtaW4gPSBMaXN0KENvbXB1dGUoIi1zcXJ0KCRycykiKSk7Cn0KZWxzaWYgKCRzID4gMCkgewogICRpbmMgPSBMaXN0KENvbXB1dGUoIm5vbmUiKSk7CiAgJGRlYyA9IExpc3QoSW50ZXJ2YWwoIigtaW5mLCRyKSIpLEludGVydmFsKCIoJHIsJHMpIiksSW50ZXJ2YWwoIigkcyxpbmYpIikpOwogICRtYXggPSBMaXN0KENvbXB1dGUoIm5vbmUiKSk7CiAgJG1pbiA9IExpc3QoQ29tcHV0ZSgibm9uZSIpKTsKfQplbHNlIHsKICAkaW5jID0gTGlzdChJbnRlcnZhbCgiWy1zcXJ0KCRycyksJHMpIiksSW50ZXJ2YWwoIigkcyxzcXJ0KCRycyldIikpOwogICRkZWMgPSBMaXN0KEludGVydmFsKCIoLWluZiwkcikiKSxJbnRlcnZhbCgiKCRyLC1zcXJ0KCRycyldIiksSW50ZXJ2YWwoIltzcXJ0KCRycyksaW5mKSIpKTsKICAkbWF4ID0gTGlzdChDb21wdXRlKCJzcXJ0KCRycykiKSk7CiAgJG1pbiA9IExpc3QoQ29tcHV0ZSgiLXNxcnQoJHJzKSIpKTsKfQoKQkVHSU5fUEdNTApbYGYoeCk9WyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdHaXZlIHRoZSBkb21haW4gb2YgW2BmYF0gdXNpbmcgaW50ZXJ2YWwgbm90YXRpb24uJylAXSoqCgpbX117JGRvbWFpbn17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgY3JpdGljYWwgbnVtYmVycyBvZiBbYGZcdGV4dHssfWBdIHNlcGFyYXRpbmcgd2l0aCBjb21tYXMgaWYgbmVlZGVkLiBJZiB0aGVyZSBhcmUgbm8gY3JpdGljYWwgbnVtYmVycywgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRjcml0fXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIG1heGltYWwgaW50ZXJ2YWxzIHdoZXJlIFtgZmBdIGlzIGluY3JlYXNpbmcsIHVzaW5nIGludGVydmFsIG5vdGF0aW9uLCBhbmQgc2VwYXJhdGluZyB3aXRoIGNvbW1hcyBpZiBuZWVkZWQuIElmIHRoZXJlIGFyZSBubyBzdWNoIGludGVydmFscywgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRpbmN9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgbWF4aW1hbCBpbnRlcnZhbHMgd2hlcmUgW2BmYF0gaXMgZGVjcmVhc2luZywgdXNpbmcgaW50ZXJ2YWwgbm90YXRpb24sIGFuZCBzZXBhcmF0aW5nIHdpdGggY29tbWFzIGlmIG5lZWRlZC4gSWYgdGhlcmUgYXJlIG5vIHN1Y2ggaW50ZXJ2YWxzLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JGRlY317MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBjcml0aWNhbCBwb2ludHMgdGhhdCBhcmUgYSByZWxhdGl2ZSBtYXhpbXVtLiBJZiBub25lIGFyZSwgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRtYXh9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgY3JpdGljYWwgcG9pbnRzIHRoYXQgYXJlIGEgcmVsYXRpdmUgbWluaW11bS4gSWYgbm9uZSBhcmUsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskbWlufXszMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3134"><span class="process-math">\(f(x)={\frac{x}{x^{2}-10x+24}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-513')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-534"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-514" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="514" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJHIgPSBub25femVyb19yYW5kb20oLTksOSwxKTsKJGNyaXQgPSBMaXN0KCRyLDMqJHIpOwpDb250ZXh0KCJJbnRlcnZhbCIpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChpZ25vcmVFbmRwb2ludFR5cGVzID0+IDEpOwokZiA9IEZvcm11bGEoIih4LSRyKV4oMi8zKS94Iik7CiRkb21haW4gPSBDb21wdXRlKCIoLWluZiwwKVUoMCxpbmYpIik7CmlmICgkciA+IDApIHsKICAkaW5jID0gTGlzdChJbnRlcnZhbCgiWyRyLDMqJHJdIikpOwogICRkZWMgPSBMaXN0KEludGVydmFsKCIoLWluZiwwKSIpLEludGVydmFsKCIoMCwkcl0iKSxJbnRlcnZhbCgiWzMqJHIsaW5mKSIpKTsKICAkbWF4ID0gTGlzdCgzKiRyKTsKICAkbWluID0gTGlzdCgkcik7Cn0gZWxzZSB7CiAgJGluYyA9IExpc3QoSW50ZXJ2YWwoIlszKiRyLCRyXSIpKTsKICAkZGVjID0gTGlzdChJbnRlcnZhbCgiKC1pbmYsMyokcl0iKSxJbnRlcnZhbCgiWyRyLDApIiksSW50ZXJ2YWwoIigwLGluZikiKSk7CiAgJG1heCA9IExpc3QoJHIpOwogICRtaW4gPSBMaXN0KDMqJHIpOwp9CgpCRUdJTl9QR01MCltgZih4KT1bJGZdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0dpdmUgdGhlIGRvbWFpbiBvZiBbYGZgXSB1c2luZyBpbnRlcnZhbCBub3RhdGlvbi4nKUBdKioKCltfXXskZG9tYWlufXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBjcml0aWNhbCBudW1iZXJzIG9mIFtgZlx0ZXh0eyx9YF0gc2VwYXJhdGluZyB3aXRoIGNvbW1hcyBpZiBuZWVkZWQuIElmIHRoZXJlIGFyZSBubyBjcml0aWNhbCBudW1iZXJzLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JGNyaXR9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgbWF4aW1hbCBpbnRlcnZhbHMgd2hlcmUgW2BmYF0gaXMgaW5jcmVhc2luZywgdXNpbmcgaW50ZXJ2YWwgbm90YXRpb24sIGFuZCBzZXBhcmF0aW5nIHdpdGggY29tbWFzIGlmIG5lZWRlZC4gSWYgdGhlcmUgYXJlIG5vIHN1Y2ggaW50ZXJ2YWxzLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JGluY317MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBtYXhpbWFsIGludGVydmFscyB3aGVyZSBbYGZgXSBpcyBkZWNyZWFzaW5nLCB1c2luZyBpbnRlcnZhbCBub3RhdGlvbiwgYW5kIHNlcGFyYXRpbmcgd2l0aCBjb21tYXMgaWYgbmVlZGVkLiBJZiB0aGVyZSBhcmUgbm8gc3VjaCBpbnRlcnZhbHMsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskZGVjfXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIGNyaXRpY2FsIHBvaW50cyB0aGF0IGFyZSBhIHJlbGF0aXZlIG1heGltdW0uIElmIG5vbmUgYXJlLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JG1heH17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBjcml0aWNhbCBwb2ludHMgdGhhdCBhcmUgYSByZWxhdGl2ZSBtaW5pbXVtLiBJZiBub25lIGFyZSwgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRtaW59ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3141"><span class="process-math">\(f(x)={\frac{\left(x-8\right)^{\frac{2}{3}}}{x}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-514')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-535"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div id="webwork-515" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="515" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiSW50ZXJ2YWwiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KGlnbm9yZUVuZHBvaW50VHlwZXMgPT4gMSk7CiRkb21haW4gPSBDb21wdXRlKCIoLXBpLHBpKSIpOwokY3JpdCA9IExpc3QoIi0zcGkvNCwtcGkvNCxwaS80LDNwaS80Iik7CiRpbmMgPSBMaXN0KEludGVydmFsKCIoLXBpLC0zcGkvNCkiKSxJbnRlcnZhbCgiKC1waS80LHBpLzQpIiksSW50ZXJ2YWwoIigzcGkvNCxwaSkiKSk7CiRkZWMgPSBMaXN0KEludGVydmFsKCIoLTNwaS80LC1waS80KSIpLEludGVydmFsKCIocGkvNCwzcGkvNCkiKSk7CiRtYXggPSBMaXN0KCItM3BpLzQscGkvNCIpOwokbWluID0gTGlzdCgiLXBpLzQsM3BpLzQiKTsKCkJFR0lOX1BHTUwKW2BmKHgpPVxzaW4oeClcY29zKHgpYF0gb24gW2AoLVxwaSxccGkpYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0dpdmUgdGhlIGRvbWFpbiBvZiBbYGZgXSB1c2luZyBpbnRlcnZhbCBub3RhdGlvbi4nKUBdKioKCltfXXskZG9tYWlufXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBjcml0aWNhbCBudW1iZXJzIG9mIFtgZlx0ZXh0eyx9YF0gc2VwYXJhdGluZyB3aXRoIGNvbW1hcyBpZiBuZWVkZWQuIElmIHRoZXJlIGFyZSBubyBjcml0aWNhbCBudW1iZXJzLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JGNyaXR9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgbWF4aW1hbCBpbnRlcnZhbHMgd2hlcmUgW2BmYF0gaXMgaW5jcmVhc2luZywgdXNpbmcgaW50ZXJ2YWwgbm90YXRpb24sIGFuZCBzZXBhcmF0aW5nIHdpdGggY29tbWFzIGlmIG5lZWRlZC4gSWYgdGhlcmUgYXJlIG5vIHN1Y2ggaW50ZXJ2YWxzLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JGluY317MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBtYXhpbWFsIGludGVydmFscyB3aGVyZSBbYGZgXSBpcyBkZWNyZWFzaW5nLCB1c2luZyBpbnRlcnZhbCBub3RhdGlvbiwgYW5kIHNlcGFyYXRpbmcgd2l0aCBjb21tYXMgaWYgbmVlZGVkLiBJZiB0aGVyZSBhcmUgbm8gc3VjaCBpbnRlcnZhbHMsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskZGVjfXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIGNyaXRpY2FsIHBvaW50cyB0aGF0IGFyZSBhIHJlbGF0aXZlIG1heGltdW0uIElmIG5vbmUgYXJlLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JG1heH17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBjcml0aWNhbCBwb2ludHMgdGhhdCBhcmUgYSByZWxhdGl2ZSBtaW5pbXVtLiBJZiBub25lIGFyZSwgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRtaW59ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3148"><span class="process-math">\(f(x)=\sin(x)\cos(x)\)</span> on <span class="process-math">\((-\pi,\pi)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-515')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-536"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-516" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="516" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJG4gPSByYW5kb20oMyw5LDEpOwppZiAoJG4gPT0gMykgewogICRiID0gbm9uX3plcm9fcmFuZG9tKC05LDksMSk7Cn0KZWxzaWYgKCRuID09IDQpIHsKICAkYiA9IG5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpOwp9CmVsc2lmICgkbiA9PSA1KSB7CiAgJGIgPSBub25femVyb19yYW5kb20oLTMsMywxKTsKfQplbHNpZiAoJG4gPj0gNiBhbmQgJG4gPD0gOCkgewogICRiID0gbm9uX3plcm9fcmFuZG9tKC0yLDIsMSk7Cn0KZWxzZSB7CiAgJGIgPSBub25femVyb19yYW5kb20oLTEsMSwxKTsKfQokYSA9ICgkYikqKigkbi0xKTsKQ29udGV4dCgiSW50ZXJ2YWwiKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjApOwpDb250ZXh0KCktPmZsYWdzLT5zZXQoaWdub3JlRW5kcG9pbnRUeXBlcyA9PiAxKTsKJGRvbWFpbiA9IENvbXB1dGUoIigtaW5mLGluZikiKTsKJGYgPSBGb3JtdWxhKCJ4XiRuIC0gJGEqJG4geCIpLT5yZWR1Y2U7CmlmICgkbiAlIDIgPT0gMCkgewogICRjcml0ID0gTGlzdCgkYik7CiAgJGluYyA9IExpc3QoSW50ZXJ2YWwoIlskYixpbmYpIikpOwogICRkZWMgPSBMaXN0KEludGVydmFsKCIoLWluZiwkYl0iKSk7CiAgJG1heCA9IExpc3QoQ29tcHV0ZSgibm9uZSIpKTsKICAkbWluID0gTGlzdCgkYik7Cn0gZWxzZSB7CiAgJGNyaXQgPSBMaXN0KCRiLC0kYik7CiAgJGluYyA9IExpc3QoSW50ZXJ2YWwoIigtaW5mLC1hYnMoJGIpXSIpLEludGVydmFsKCJbYWJzKCRiKSxpbmYpIikpOwogICRkZWMgPSBMaXN0KEludGVydmFsKCJbLWFicygkYiksYWJzKCRiKV0iKSk7CiAgJG1heCA9IExpc3QoLWFicygkYikpOwogICRtaW4gPSBMaXN0KGFicygkYikpOwp9CgpCRUdJTl9QR01MCltgZih4KT1bJGZdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0dpdmUgdGhlIGRvbWFpbiBvZiBbYGZgXSB1c2luZyBpbnRlcnZhbCBub3RhdGlvbi4nKUBdKioKCltfXXskZG9tYWlufXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBjcml0aWNhbCBudW1iZXJzIG9mIFtgZlx0ZXh0eyx9YF0gc2VwYXJhdGluZyB3aXRoIGNvbW1hcyBpZiBuZWVkZWQuIElmIHRoZXJlIGFyZSBubyBjcml0aWNhbCBudW1iZXJzLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JGNyaXR9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCB0aGUgbWF4aW1hbCBpbnRlcnZhbHMgd2hlcmUgW2BmYF0gaXMgaW5jcmVhc2luZywgdXNpbmcgaW50ZXJ2YWwgbm90YXRpb24sIGFuZCBzZXBhcmF0aW5nIHdpdGggY29tbWFzIGlmIG5lZWRlZC4gSWYgdGhlcmUgYXJlIG5vIHN1Y2ggaW50ZXJ2YWxzLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JGluY317MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBtYXhpbWFsIGludGVydmFscyB3aGVyZSBbYGZgXSBpcyBkZWNyZWFzaW5nLCB1c2luZyBpbnRlcnZhbCBub3RhdGlvbiwgYW5kIHNlcGFyYXRpbmcgd2l0aCBjb21tYXMgaWYgbmVlZGVkLiBJZiB0aGVyZSBhcmUgbm8gc3VjaCBpbnRlcnZhbHMsIGVudGVyIFt8bm9uZXxdKi4nKUBdKioKCltfXXskZGVjfXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgdGhlIGNyaXRpY2FsIHBvaW50cyB0aGF0IGFyZSBhIHJlbGF0aXZlIG1heGltdW0uIElmIG5vbmUgYXJlLCBlbnRlciBbfG5vbmV8XSouJylAXSoqCgpbX117JG1heH17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IHRoZSBjcml0aWNhbCBwb2ludHMgdGhhdCBhcmUgYSByZWxhdGl2ZSBtaW5pbXVtLiBJZiBub25lIGFyZSwgZW50ZXIgW3xub25lfF0qLicpQF0qKgoKW19deyRtaW59ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3155"><span class="process-math">\(f(x)={x^{3}-48x}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-516')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article><article class="subexercises" id="subexercises-44"><h4 class="heading"><span class="title">Review</span></h4>
+<article class="exercise exercise-like" id="exercise-537"><h5 class="heading"><span class="codenumber">25<span class="period">.</span></span></h5>
+<div id="webwork-517" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="517" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRjPUZvcm11bGEoIjEvMiIpOwoKQkVHSU5fUEdNTApDb25zaWRlciBbYGYoeCkgPSB4XjItM3grNWBdIG9uIFtgWy0xLDJdXHRleHR7O31gXSBmaW5kIFtgY2BdIGd1YXJhbnRlZWQgYnkgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbS4KCltfXXskY317MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3162">Consider <span class="process-math">\(f(x) = x^2-3x+5\)</span> on <span class="process-math">\([-1,2]\text{;}\)</span> find <span class="process-math">\(c\)</span> guaranteed by the Mean Value Theorem.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-517')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-538"><h5 class="heading"><span class="codenumber">26<span class="period">.</span></span></h5>
+<div id="webwork-518" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="518" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRjPUZvcm11bGEoImFjb3MoMi9waSksLWFjb3MoMi9waSkiKTsKCkJFR0lOX1BHTUwKQ29uc2lkZXIgW2BmKHgpID0gXHNpbih4KWBdIG9uIFtgWy1ccGkvMixccGkvMl1cdGV4dHs7fWBdIGZpbmQgW2BjYF0gZ3VhcmFudGVlZCBieSB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtLgoKW19deyRjfXszMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3164">Consider <span class="process-math">\(f(x) = \sin(x)\)</span> on <span class="process-math">\([-\pi/2,\pi/2]\text{;}\)</span> find <span class="process-math">\(c\)</span> guaranteed by the Mean Value Theorem.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-518')">Make Interactive</button></div>
+</div></article></article></section></section></div></main>
+</div>
+</body>
+</html>

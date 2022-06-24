@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:08Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_chain_examples_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/yW1BbOeDFcM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol class="decimal">
+<li>
+<p>Consider <span class="process-math">\(y = \sin(2x)\text{.}\)</span> Recognize that this is a composition of functions, where <span class="process-math">\(f(x) = \sin(x)\)</span> and <span class="process-math">\(g(x) = 2x\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+y' \amp = \fp(g(x))\cdot g'(x)\\
+\amp = \cos(2x)\cdot \lzoo{x}{2x}\\
+\amp = \cos(2x)\cdot 2\\
+\amp = 2\cos(2x)\text{.}
+\end{align*}
+</div>
+</li>
+<li>
+<p>Recognize that <span class="process-math">\(y = \ln\mathopen{}\left(4x^3-2x^2\right)\mathclose{}\)</span> is the composition of <span class="process-math">\(f(x) = \ln(x)\)</span> and <span class="process-math">\(g(x) = 4x^3-2x^2\text{.}\)</span> Also, recall that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{\ln(x)} = \frac{1}{x}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This leads us to:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+y' \amp = \frac{1}{4x^3-2x^2} \cdot \lzoo{x}{4x^3-2x^2}\\
+\amp = \frac{1}{4x^3-2x^2} \cdot \left(12x^2-4x\right)\\
+\amp  = \frac{12x^2-4x}{4x^3-2x^2}\\
+\amp = \frac{4x(3x-1)}{2x(2x^2-x)}\\
+\amp = \frac{2(3x-1)}{2x^2-x}\text{.}
+\end{align*}
+</div>
+<p class="continuation">Note that <span class="process-math">\(\ln\mathopen{}\left(4x^3-2x^2\right)\mathclose{}=\ln\mathopen{}\left(4x^2(x-1/2)\right)\mathclose{}\)</span> was only defined for <span class="process-math">\(x \gt 1/2\text{,}\)</span> so the result of <span class="process-math">\(y'=\frac{2(3x-1)}{2x^2-x}\)</span> is only valid for <span class="process-math">\(x \gt 1/2\)</span> as well.</p>
+</li>
+<li>
+<p>Recognize  that <span class="process-math">\(y = e^{-x^2}\)</span> is the composition of <span class="process-math">\(f(x) = e^x\)</span> and <span class="process-math">\(g(x) = -x^2\text{.}\)</span> Remembering that <span class="process-math">\(\fp(x) = e^x\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+y' \amp = e^{-x^2}\cdot \lzoo{x}{-x^2}\\
+\amp = e^{-x^2}\cdot (-2x)\\
+\amp = -2xe^{-x^2}\text{.}
+\end{align*}
+</div>
+</li>
+</ol>
+</div></body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:48:49Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>The order <span class="process-math">\(dz\, dy\, dx\text{:}\)</span></p>
+<p>The region <span class="process-math">\(D\)</span> is bounded below by the plane <span class="process-math">\(z=0\)</span> and above by the plane <span class="process-math">\(z=-y\text{.}\)</span> The cylinder <span class="process-math">\(x^2+y^2=1\)</span> does not offer any bounds in the <span class="process-math">\(z\)</span>-direction, as that surface is parallel to the <span class="process-math">\(z\)</span>-axis. Thus <span class="process-math">\(0\leq z\leq -y\text{.}\)</span></p>
+<p>Collapsing the region into the <span class="process-math">\(xy\)</span>-plane, we get part of the circle with equation <span class="process-math">\(x^2+y^2=1\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_trip3a2_3D.html" title="Figure 14.6.17.(b)">Figure 14.6.17.(b)</a>. As a function of <span class="process-math">\(x\text{,}\)</span> this half circle has equation <span class="process-math">\(y=-\sqrt{1-x^2}\text{.}\)</span> Thus <span class="process-math">\(y\)</span> is bounded below by <span class="process-math">\(-\sqrt{1-x^2}\)</span> and above by <span class="process-math">\(y=0\text{:}\)</span> <span class="process-math">\(-\sqrt{1-x^2}\leq y\leq 0\text{.}\)</span> The <span class="process-math">\(x\)</span> bounds of the half circle are <span class="process-math">\(-1\leq x\leq 1\text{.}\)</span> All together, the bounds of integration and triple integral are as follows:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel middle" style="width:40%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+0 \amp \leq z\leq -y\\
+-\sqrt{1-x^2}\leq \amp y\leq 0\\
+-1 \amp \leq x\leq 1
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10%;"><p><span class="process-math">\(\Rightarrow\)</span></p></div>
+<div class="sbspanel middle" style="width:40%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{-1}^1\int_{-\sqrt{1-x^2}}^{0}\int_0^{-y}\, dz\, dy\, dx\text{.}
+\end{equation*}
+</div></div>
+</div></div>
+<p>We evaluate this triple integral:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_{-1}^1\int_{-\sqrt{1-x^2}}^{0}\int_0^{-y}\, dz\, dy\, dx \amp = \int_{-1}^1\int_{-\sqrt{1-x^2}}^{0}\big(-y\big)\, dy\, dx\\
+\amp =\int_{-1}^1\big(-\frac12y^2\big)\Big|_{-\sqrt{1-x^2}}^{0}\, dx\\
+\amp = \int_{-1}^1 \frac12\big(1-x^2\big)\, dx\\
+\amp = \left.\left(\frac12\left(x-\frac13x^3\right)\right)\right|_{-1}^1\\
+\amp = \frac23\text{ units } ^3\text{.}
+\end{align*}
+</div>
+<p>With the order <span class="process-math">\(dy\, dx\, dz\text{:}\)</span></p>
+<p>The region is bounded “below” in the <span class="process-math">\(y\)</span>-direction by the surface <span class="process-math">\(x^2+y^2=1 \Rightarrow y=-\sqrt{1-x^2}\)</span> and “above” by the surface <span class="process-math">\(y=-z\text{.}\)</span> Thus the <span class="process-math">\(y\)</span> bounds are <span class="process-math">\(-\sqrt{1-x^2}\leq y\leq -z\text{.}\)</span></p>
+<p>Collapsing the region onto the <span class="process-math">\(xz\)</span>-plane gives the region shown in <a href="" class="xref" data-knowl="./knowl/fig_trip3b1_3D.html" title="Figure 14.6.18.(a)">Figure 14.6.18.(a)</a>; this half disk is bounded by <span class="process-math">\(z=0\)</span> and <span class="process-math">\(x^2+z^2=1\text{.}\)</span> (We find this curve by solving each surface for <span class="process-math">\(y^2\text{,}\)</span> then setting them equal to each other. We have <span class="process-math">\(y^2=1-x^2\)</span> and <span class="process-math">\(y=-z\Rightarrow y^2=z^2\text{.}\)</span> Thus <span class="process-math">\(x^2+z^2=1\text{.}\)</span>) It is bounded below by <span class="process-math">\(x=-\sqrt{1-z^2}\)</span> and above by <span class="process-math">\(x=\sqrt{1-z^2}\text{,}\)</span> where <span class="process-math">\(z\)</span> is bounded by <span class="process-math">\(0\leq z\leq 1\text{.}\)</span> All together, we have:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel middle" style="width:40%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+-\sqrt{1-x^2} \amp \leq y\leq -z\\
+-\sqrt{1-z^2} \amp \leq x\leq \sqrt{1-z^2}\\
+0 \amp \leq z\leq 1
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10%;"><p><span class="process-math">\(\Rightarrow\)</span></p></div>
+<div class="sbspanel middle" style="width:40%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{0}^1\int_{-\sqrt{1-z^2}}^{\sqrt{1-z^2}}\int_{-\sqrt{1-x^2}}^{-z}\, dy\, dx\, dz\text{.}
+\end{equation*}
+</div></div>
+</div></div>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100.497512437811%"><iframe src="generated/asymptote/img_trip3b1_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_trip3b1_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_trip3b2_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_trip3b2_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.6.18<span class="period">.</span></span><span class="space"> </span>The region <span class="process-math">\(D\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_trip3.html" title="Example 14.6.16: Finding the volume of a space region with triple integration">Example 14.6.16</a> is shown collapsed onto the <span class="process-math">\(xz\)</span>-plane in (a); in (b), it is collapsed onto the <span class="process-math">\(yz\)</span>-plane</figcaption></figure><p>With the order <span class="process-math">\(dx\, dz\, dy\text{:}\)</span></p>
+<p><span class="process-math">\(D\)</span> is bounded below by the surface <span class="process-math">\(x=-\sqrt{1-y^2}\)</span> and above by <span class="process-math">\(\sqrt{1-y^2}\text{.}\)</span> We then collapse the region onto the <span class="process-math">\(yz\)</span>-plane and get the triangle shown in <a href="" class="xref" data-knowl="./knowl/fig_trip3b2_3D.html" title="Figure 14.6.18.(b)">Figure 14.6.18.(b)</a>. (The hypotenuse is the line <span class="process-math">\(z=-y\text{,}\)</span> just as the plane.) Thus <span class="process-math">\(z\)</span> is bounded by <span class="process-math">\(0\leq z\leq -y\)</span> and <span class="process-math">\(y\)</span> is bounded by <span class="process-math">\(-1\leq y\leq 0\text{.}\)</span> This gives:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel middle" style="width:40%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+-\sqrt{1-y^2} \amp \leq x\leq \sqrt{1-y^2}\\
+0 \amp \leq z\leq -y\\
+-1 \amp \leq y\leq 0
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10%;"><p><span class="process-math">\(\Rightarrow\)</span></p></div>
+<div class="sbspanel middle" style="width:40%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{-1}^0\int_{0}^{-y}\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\, dx\, dz\, dy\text{.}
+\end{equation*}
+</div></div>
+</div></div>
+</div></body>
+</html>

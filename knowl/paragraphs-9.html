@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:44Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<section class="paragraphs"><h3 class="heading"><span class="title">Convergence of Newton's Method.</span></h3>
+<p>What should one use for the initial guess, <span class="process-math">\(x_0\text{?}\)</span> Generally, the closer to the actual root the initial guess is, the better. However, some initial guesses should be avoided. For instance, consider <a href="" class="xref" data-knowl="./knowl/ex_newt2.html" title="Example 4.1.3: Using Newton's Method">Example 4.1.3</a> where we sought the root to <span class="process-math">\(f(x) = x^3-x^2-1\text{.}\)</span> Choosing <span class="process-math">\(x_0=0\)</span> would have been a particularly poor choice. Consider <a href="" class="xref" data-knowl="./knowl/fig_newt2a.html" title="Figure 4.1.7">Figure 4.1.7</a>, where <span class="process-math">\(f(x)\)</span> is graphed along with its tangent line at <span class="process-math">\(x=0\text{.}\)</span> Since <span class="process-math">\(\fp(0)=0\text{,}\)</span> the tangent line is horizontal and does not intersect the <span class="process-math">\(x\)</span>-axis. Graphically, we see that Newton's Method fails.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_newt2a.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.7<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(f(x) = x^3-x^2-1\text{,}\)</span> showing why an initial approximation of <span class="process-math">\(x_0=0\)</span> with Newton's Method fails</figcaption></figure><p>We can also see analytically that it fails. Since</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_1 = 0 -\frac{f(0)}{\fp(0)}
+\end{equation*}
+</div>
+<p class="continuation">and <span class="process-math">\(\fp(0)=0\text{,}\)</span> we see that <span class="process-math">\(x_1\)</span> is not well defined.</p>
+<p>This problem can also occur if, for instance, it turns out that <span class="process-math">\(\fp(x_5)=0\text{.}\)</span> Adjusting the initial approximation <span class="process-math">\(x_0\)</span> by a very small amount will likely fix the problem.</p>
+<p>It is also possible for Newton's Method to not converge while each successive approximation is well defined. Consider <span class="process-math">\(f(x) = x^{1/3}\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_newt4.html" title="Figure 4.1.8">Figure 4.1.8</a>. It is clear that the root is <span class="process-math">\(x=0\text{,}\)</span> but let's approximate this with <span class="process-math">\(x_0=0.1\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_newt4a.html" title="Figure 4.1.8.(a)">Figure 4.1.8.(a)</a> shows graphically the calculation of <span class="process-math">\(x_1\text{;}\)</span> notice how it is farther from the root than <span class="process-math">\(x_0\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_newt4b.html" title="Figure 4.1.8.(b)">Figure 4.1.8.(b)</a> and <a href="" class="xref" data-knowl="./knowl/fig_newt4c.html" title="Figure 4.1.8.(c)">Figure 4.1.8.(c)</a> show the calculation of <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_3\text{,}\)</span> which are even farther away; our successive approximations are getting worse. (It turns out that in this particular example, each successive approximation is twice as far from the true answer as the previous approximation.)</p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like"><img src="generated/latex-image/img_newt4a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like"><img src="generated/latex-image/img_newt4b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like"><img src="generated/latex-image/img_newt4c.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.8<span class="period">.</span></span><span class="space"> </span>Newton's Method fails to find a root of <span class="process-math">\(f(x) = x^{1/3}\text{,}\)</span> regardless of the choice of <span class="process-math">\(x_0\text{.}\)</span></figcaption></figure><p>There is no “fix” to this problem; Newton's Method simply will not work and another method must be used. (In this case the particular reason Newton's Method fails is that the tangent line is vertical at the root).</p>
+<p>While Newton's Method does not always work, it does work “most of the time,” and it is generally very fast. Once the approximations get close to the root, Newton's Method can as much as double the number of correct decimal places with each successive approximation. A course in Numerical Analysis will introduce the reader to more iterative root finding methods, as well as give greater detail about the strengths and weaknesses of Newton's Method.</p></section><span class="incontext"><a href="sec_newton.html#paragraphs-9" class="internal">in-context</a></span>
+</body>
+</html>

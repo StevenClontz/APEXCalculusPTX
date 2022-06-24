@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:34:40Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_limit_defn_polynomial" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/--_Rq2GX9IY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We start our scratch-work by considering <span class="process-math">\(\abs{f(x) - (-1)} \lt  \varepsilon\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align}
+\abs{f(x)-(-1)} \amp \lt  \varepsilon\notag\\
+\abs{x^3-2x + 1}\amp \lt  \varepsilon \amp\amp  \text{(Now factor)}\notag\\
+\abs{(x-1)(x^2+x-1)}\amp \lt  \varepsilon\notag\\
+\abs{x-1}\amp\lt\frac{\varepsilon}{\abs{x^2+x-1}}\text{.}\tag{1.2.2}
+\end{align}
+</div>
+<p>We are at the phase of saying that <span class="process-math">\(\abs{x-1}\lt\)</span> <em class="emphasis">something</em>, where <span class="process-math">\(\textit{something}=\varepsilon/\abs{x^2+x-1}\text{.}\)</span> We want to turn that <em class="emphasis">something</em> into <span class="process-math">\(\delta\text{.}\)</span></p>
+<p>Since <span class="process-math">\(x\)</span> is approaching <span class="process-math">\(1\text{,}\)</span> we are safe to assume that <span class="process-math">\(x\)</span> is between <span class="process-math">\(0\)</span> and <span class="process-math">\(2\text{.}\)</span> So</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+0\amp \lt  x\lt 2\\
+0\amp \lt  x^2\lt 4\amp\amp \text{(Squared each term.)}\\
+\end{align*}
+<p class="intertext">Since <span class="process-math">\(0\lt x\lt 2\text{,}\)</span> we can add <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(x\)</span> and <span class="process-math">\(2\text{,}\)</span> respectively, to each part of the inequality and maintain the inequality.</p>
+\begin{align*}
+0\amp \lt  x^2+x\lt 6\\
+-1\amp \lt  x^2+x-1\lt 5\amp\amp \text{(Subtracted 1 from each part.)}
+\end{align*}
+</div>
+<p>In <a href="" class="xref" data-knowl="./knowl/eq_lim4.html" title="Equation 1.2.2">Inequality (1.2.2)</a>, we wanted <span class="process-math">\(\abs{x-1}\lt \varepsilon/\abs{x^2+x-1}\text{.}\)</span> The above shows that given any <span class="process-math">\(x\)</span> in <span class="process-math">\([0,2]\text{,}\)</span> we know that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_lim4.html">
+\begin{align}
+x^2+x-1 \amp \lt  5 \amp\amp \text{which implies that}\notag\\
+\frac15 \amp \lt  \frac{1}{x^2+x-1} \amp\amp \text{which implies that}\notag\\
+\frac{\varepsilon}5 \amp \lt  \frac{\varepsilon}{x^2+x-1}\amp\amp\text{.}\tag{1.2.3}
+\end{align}
+</div>
+<p>So we set <span class="process-math">\(\delta \lt \epsilon/5\text{.}\)</span> This ends our scratch-work, and we begin the formal proof (which also helps us understand why this was a good choice of <span class="process-math">\(\delta\)</span>).</p>
+<p>Given <span class="process-math">\(\varepsilon\text{,}\)</span> let <span class="process-math">\(\delta \lt \varepsilon/5\text{.}\)</span> We want to show that when <span class="process-math">\(\abs{x-1}\lt \delta\text{,}\)</span> then <span class="process-math">\(\abs{(x^3-2x)-(-1)}\lt \varepsilon\text{.}\)</span> We start with <span class="process-math">\(\abs{x-1}\lt \delta\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_lim5.html">
+\begin{align*}
+\abs{x-1} \amp \lt  \delta\\
+\abs{x-1} \amp \lt  \frac{\varepsilon}{5}\\
+\abs{x-1} \amp \lt  \frac{\varepsilon}{\abs{x^2+x-1}} \amp\amp  \text{(}\knowl{./knowl/eq_lim5.html}{\text{Inequality (1.2.3)}}, x\text{ near 1)}\\
+\abs{x-1}\cdot \abs{x^2+x-1} \amp \lt  \varepsilon\\
+\abs{x^3-2x+1} \amp \lt  \varepsilon\\
+\abs{(x^3-2x)-(-1)} \amp \lt \varepsilon\text{,}
+\end{align*}
+</div>
+<p class="continuation">which is what we wanted to show. Thus <span class="process-math">\(\lim_{x\to 1}(x^3-2x) = -1\text{.}\)</span></p>
+</div></body>
+</html>

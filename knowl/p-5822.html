@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:12Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Employing Integration by Parts, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_trig_int_2c.html ./knowl/idea_trig_int_2.html">
+\begin{align*}
+\int \sec^3(x) \, dx  	\amp =	\int \underbrace{\sec(x) }_u\cdot\underbrace{\sec^2(x) \, dx}_{dv}\\
+\amp =	\sec(x) \tan(x) - \int \sec(x) \tan^2(x) \, dx.\\
+\end{align*}
+<p class="intertext">This new integral also requires applying <a href="" class="xref" data-knowl="./knowl/idea_trig_int_2c.html" title="Item 3">Rule 3</a> of <a href="" class="xref" data-knowl="./knowl/idea_trig_int_2.html" title="Key Idea 6.3.8: Integrals Involving Powers of Tangent and Secant">Key Idea 6.3.8</a>:</p>
+\begin{align*}
+\int \sec^3(x)\, dx\amp = \sec(x) \tan(x) - \int \sec(x) \big(\sec^2(x) -1\big)\, dx\\
+\amp =	\sec(x) \tan(x) - \int \sec^3(x) \, dx + \int \sec(x) \, dx\\
+\amp = \sec(x) \tan(x) -\int \sec^3(x) \, dx + \ln\abs{\sec(x) +\tan(x) }\\
+\end{align*}
+<p class="intertext">In previous applications of Integration by Parts, we have seen where the original integral has reappeared in our work. We resolve this by adding <span class="process-math">\(\int \sec^3(x) \, dx\)</span> to both sides, giving:</p>
+\begin{align*}
+2\int \sec^3(x) \, dx \amp = \sec(x) \tan(x) + \ln\abs{\sec(x) +\tan(x) }\\
+\int \sec^3(x) \, dx \amp = \frac12\Big(\sec(x) \tan(x) + \ln\abs{\sec(x) +\tan(x) }\Big)+C
+\end{align*}
+</div>
+<span class="incontext"><a href="sec_trigint.html#p-5822" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:32:19Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Extreme Values</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_multi_tangent.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_multi.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter_mult_int.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_multi_tangent.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_multi.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter_mult_int.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="active">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_multi_extreme_values"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">13.8</span> <span class="title">Extreme Values</span>
+</h2>
+<section class="subsection" id="subsec-multi-critical"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">13.8.1</span> <span class="title">Critical Points of Functions of Two Variables</span>
+</h3>
+<figure class="figure figure-like" id="vid-multi-extreme-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-523" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/smAvod2dFsw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.1<span class="period">.</span></span><span class="space"> </span>Introducing extreme values for functions of several variables</figcaption></figure><p id="p-14046">Given a function <span class="process-math">\(f(x,y)\text{,}\)</span> we are often interested in points where <span class="process-math">\(z=f(x,y)\)</span> takes on the largest or smallest values. For instance, if <span class="process-math">\(f\)</span> represents a cost function, we would likely want to know what <span class="process-math">\((x,y)\)</span> values minimize the cost. If <span class="process-math">\(f\)</span> represents the ratio of a volume to surface area, we would likely want to know where <span class="process-math">\(f\)</span> is greatest. This leads to the following definition.</p>
+<article class="definition definition-like" id="def_multi_extrema"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">13.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Relative and Absolute Extrema.</span>
+</h4>
+<p id="p-14047">Let <span class="process-math">\(z=f(x,y)\)</span> be defined on a set <span class="process-math">\(S\)</span> containing the point <span class="process-math">\(P=(x_0,y_0)\text{.}\)</span> </p>
+<ol class="decimal">
+<li id="li-2659"><p id="p-14048">If <span class="process-math">\(f(x_0,y_0)\geq f(x,y)\)</span> for all <span class="process-math">\((x,y)\)</span> in <span class="process-math">\(S\text{,}\)</span> then <span class="process-math">\(f\)</span> has an <dfn class="terminology">absolute maximum</dfn> at <span class="process-math">\(P\)</span> If <span class="process-math">\(f(x_0,y_0)\leq f(x,y)\)</span> for all <span class="process-math">\((x,y)\)</span> in <span class="process-math">\(S\text{,}\)</span> then <span class="process-math">\(f\)</span> has an <dfn class="terminology">absolute minimum</dfn> at <span class="process-math">\(P\text{.}\)</span></p></li>
+<li id="li-2660"><p id="p-14049">If there is an open disk <span class="process-math">\(D\)</span> containing <span class="process-math">\(P\)</span> such that <span class="process-math">\(f(x_0,y_0) \geq f(x,y)\)</span> for all points <span class="process-math">\((x,y)\)</span> that are in both <span class="process-math">\(D\)</span> and <span class="process-math">\(S\text{,}\)</span> then <span class="process-math">\(f\)</span> has a <dfn class="terminology">relative maximum</dfn> at <span class="process-math">\(P\text{.}\)</span> If there is an open disk <span class="process-math">\(D\)</span> containing <span class="process-math">\(P\)</span> such that <span class="process-math">\(f(x_0,y_0) \leq f(x,y)\)</span> for all points <span class="process-math">\((x,y)\)</span> that are in both <span class="process-math">\(D\)</span> and <span class="process-math">\(S\text{,}\)</span> then <span class="process-math">\(f\)</span> has a <dfn class="terminology">relative minimum</dfn> at <span class="process-math">\(P\text{.}\)</span></p></li>
+<li id="li-2661"><p id="p-14050">If <span class="process-math">\(f\)</span> has an absolute maximum or minimum at <span class="process-math">\(P\text{,}\)</span> then <span class="process-math">\(f\)</span> has an <dfn class="terminology">absolute extremum</dfn> at <span class="process-math">\(P\text{.}\)</span> If <span class="process-math">\(f\)</span> has a relative maximum or minimum at <span class="process-math">\(P\text{,}\)</span> then <span class="process-math">\(f\)</span> has a <dfn class="terminology">relative extremum</dfn> at <span class="process-math">\(P\text{.}\)</span></p></li>
+</ol></article><p id="p-14051">If <span class="process-math">\(f\)</span> has a relative or absolute maximum at <span class="process-math">\(P=(x_0,y_0)\text{,}\)</span> it means every curve on the surface of <span class="process-math">\(f\)</span> through <span class="process-math">\(P\)</span> will also have a relative or absolute maximum at <span class="process-math">\(P\text{.}\)</span> Recalling what we learned in <a href="sec_extreme_values.html" class="internal" title="Section 3.1: Extreme Values">Section 3.1</a>, the slopes of the tangent lines to these curves at <span class="process-math">\(P\)</span> must be 0 or undefined. Since directional derivatives are computed using <span class="process-math">\(f_x\)</span> and <span class="process-math">\(f_y\text{,}\)</span> we are led to the following definition and theorem.</p>
+<article class="definition definition-like" id="def_multi_critical_point"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">13.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">Critical Point.</span>
+</h4>
+<p id="p-14052">Let <span class="process-math">\(z = f(x,y)\)</span> be continuous on a set <span class="process-math">\(S\text{.}\)</span> A <dfn class="terminology">critical point</dfn> <span class="process-math">\(P=(x_0,y_0)\)</span> of <span class="process-math">\(f\)</span> is a point in <span class="process-math">\(S\)</span> such that, at <span class="process-math">\(P\text{,}\)</span> </p>
+<ul class="disc">
+<li id="li-2662"><p id="p-14053"><span class="process-math">\(f_x(x_0,y_0) = 0\)</span> and <span class="process-math">\(f_y(x_0,y_0) = 0\text{,}\)</span> or</p></li>
+<li id="li-2663"><p id="p-14054"><span class="process-math">\(f_x(x_0,y_0)\)</span> and/or <span class="process-math">\(f_y(x_0,y_0)\)</span> is undefined.</p></li>
+</ul></article><article class="theorem theorem-like" id="thm_multi_critical_point"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.8.4</span><span class="period">.</span><span class="space"> </span><span class="title">Critical Points and Relative Extrema.</span>
+</h4>
+<p id="p-14055">Let <span class="process-math">\(z=f(x,y)\)</span> be defined on an open set <span class="process-math">\(S\)</span> containing <span class="process-math">\(P=(x_0,y_0)\text{.}\)</span> If <span class="process-math">\(f\)</span> has a relative extrema at <span class="process-math">\(P\text{,}\)</span> then <span class="process-math">\(P\)</span> is a critical point of <span class="process-math">\(f\text{.}\)</span> </p></article><p id="p-14056">Therefore, to find relative extrema, we find the critical points of <span class="process-math">\(f\)</span> and determine which correspond to relative maxima, relative minima, or neither. The following examples demonstrate this process.</p>
+<figure class="figure figure-like" id="vid-multi-extreme-critical-point"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-524" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/smAvod2dFsw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.5<span class="period">.</span></span><span class="space"> </span>Finding critical points</figcaption></figure><article class="example example-like" id="ex_multi_extreme1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.8.6</span><span class="period">.</span><span class="space"> </span><span class="title">Finding critical points and relative extrema.</span>
+</h4>
+<p id="p-14057">Let <span class="process-math">\(f(x,y) = x^2+y^2-xy-x-2\text{.}\)</span> Find the relative extrema of <span class="process-math">\(f\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-1322" id="solution-1322"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1322"><div class="solution solution-like">
+<p id="p-14058">We start by computing the partial derivatives of <span class="process-math">\(f\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f_x(x,y) = 2x-y-1 \qquad \text{ and } \qquad f_y(x,y) = 2y-x\text{.}
+\end{equation*}
+</div>
+<p id="p-14059">Each is never undefined. A critical point occurs when <span class="process-math">\(f_x\)</span> and <span class="process-math">\(f_y\)</span> are simultaneously 0, leading us to solve the following system of linear equations:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2x-y-1 = 0\qquad \text{ and } \qquad -x+2y = 0\text{.}
+\end{equation*}
+</div>
+<p id="p-14060">This solution to this system is <span class="process-math">\(x=2/3\text{,}\)</span> <span class="process-math">\(y=1/3\text{.}\)</span> (Check that at <span class="process-math">\((2/3,1/3)\text{,}\)</span> both <span class="process-math">\(f_x\)</span> and <span class="process-math">\(f_y\)</span> are 0.)</p>
+<figure class="figure figure-like" id="fig_multi_extreme1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100.497512437811%"><iframe src="generated/asymptote/img_multi_extreme1.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_multi_extreme1.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.7<span class="period">.</span></span><span class="space"> </span>The surface in <a href="" class="xref" data-knowl="./knowl/ex_multi_extreme1.html" title="Example 13.8.6: Finding critical points and relative extrema">Example 13.8.6</a> with its absolute minimum indicated</figcaption></figure><p id="p-14061">The graph in <a href="" class="xref" data-knowl="./knowl/fig_multi_extreme1.html" title="Figure 13.8.7">Figure 13.8.7</a> shows <span class="process-math">\(f\)</span> along with this critical point. It is clear from the graph that this is a relative minimum; further consideration of the function shows that this is actually the absolute minimum.</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_multi_extreme2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.8.8</span><span class="period">.</span><span class="space"> </span><span class="title">Finding critical points and relative extrema.</span>
+</h4>
+<p id="p-14062">Let <span class="process-math">\(f(x,y) = -\sqrt{x^2+y^2}+2\text{.}\)</span> Find the relative extrema of <span class="process-math">\(f\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-1323" id="solution-1323"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1323"><div class="solution solution-like">
+<p id="p-14063">We start by computing the partial derivatives of <span class="process-math">\(f\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f_x(x,y) = \frac{-x}{\sqrt{x^2+y^2}}\qquad \text{ and } \qquad f_y(x,y) = \frac{-y}{\sqrt{x^2+y^2}}\text{.}
+\end{equation*}
+</div>
+<p id="p-14064">It is clear that <span class="process-math">\(f_x=0\)</span> when <span class="process-math">\(x=0\)</span> &amp; <span class="process-math">\(y\neq0\text{,}\)</span> and that <span class="process-math">\(f_y=0\)</span> when <span class="process-math">\(y=0\)</span> &amp; <span class="process-math">\(x\neq0\text{.}\)</span> At <span class="process-math">\((0,0)\text{,}\)</span> both <span class="process-math">\(f_x\)</span> and <span class="process-math">\(f_y\)</span> are <em class="emphasis">not</em> <span class="process-math">\(0\text{,}\)</span> but rather undefined. The point <span class="process-math">\((0,0)\)</span> is still a critical point, though, because the partial derivatives are undefined. This is the only critical point of <span class="process-math">\(f\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_multi_extreme2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_multi_extreme2.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_multi_extreme2.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.9<span class="period">.</span></span><span class="space"> </span>The surface in <a href="" class="xref" data-knowl="./knowl/ex_multi_extreme2.html" title="Example 13.8.8: Finding critical points and relative extrema">Example 13.8.8</a> with its absolute maximum indicated</figcaption></figure><p id="p-14065">The surface of <span class="process-math">\(f\)</span> is graphed in <a href="" class="xref" data-knowl="./knowl/fig_multi_extreme2.html" title="Figure 13.8.9">Figure 13.8.9</a> along with the point <span class="process-math">\((0,0,2)\text{.}\)</span> The graph shows that this point is the absolute maximum of <span class="process-math">\(f\text{.}\)</span></p>
+</div></div>
+</div></article><p id="p-14066">In each of the previous two examples, we found a critical point of <span class="process-math">\(f\)</span> and then determined whether or not it was a relative (or absolute) maximum or minimum by graphing. It would be nice to be able to determine whether a critical point corresponded to a max or a min without a graph. Before we develop such a test, we do one more example that sheds more light on the issues our test needs to consider.</p>
+<article class="example example-like" id="ex_multi_extreme3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.8.10</span><span class="period">.</span><span class="space"> </span><span class="title">Finding critical points and relative extrema.</span>
+</h4>
+<p id="p-14067">Let <span class="process-math">\(f(x,y) = x^3-3x-y^2+4y\text{.}\)</span> Find the relative extrema of <span class="process-math">\(f\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-1324" id="solution-1324"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1324"><div class="solution solution-like">
+<p id="p-14068">Once again we start by finding the partial derivatives of <span class="process-math">\(f\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f_x(x,y) = 3x^2-3\qquad \text{ and }  \qquad f_y(x,y) = -2y+4\text{.}
+\end{equation*}
+</div>
+<p id="p-14069">Each is always defined. Setting each equal to 0 and solving for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-624">
+\begin{align*}
+f_x(x,y) = 0  \amp \Rightarrow x=\pm 1\\
+f_y(x,y) = 0 \amp \Rightarrow y = 2\text{.}
+\end{align*}
+</div>
+<p id="p-14070">We have two critical points: <span class="process-math">\((-1,2)\)</span> and <span class="process-math">\((1,2)\text{.}\)</span> To determine if they correspond to a relative maximum or minimum, we consider the graph of <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_multi_extreme3.html" title="Figure 13.8.11">Figure 13.8.11</a>.</p>
+<figure class="figure figure-like" id="fig_multi_extreme3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 66.7774086378738%"><iframe src="generated/asymptote/img_multi_extreme3.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_multi_extreme3.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.11<span class="period">.</span></span><span class="space"> </span>The surface in <a href="" class="xref" data-knowl="./knowl/ex_multi_extreme3.html" title="Example 13.8.10: Finding critical points and relative extrema">Example 13.8.10</a> with both critical points marked</figcaption></figure><p id="p-14071">The critical point <span class="process-math">\((-1,2)\)</span> clearly corresponds to a relative maximum. However, the critical point at <span class="process-math">\((1,2)\)</span> is neither a maximum nor a minimum, displaying a different, interesting characteristic.</p>
+<p id="p-14072">If one walks parallel to the <span class="process-math">\(y\)</span>-axis towards this critical point, then this point becomes a relative maximum along this path. But if one walks towards this point parallel to the <span class="process-math">\(x\)</span>-axis, this point becomes a relative minimum along this path. A point that seems to act as both a max and a min is a <em class="emphasis">saddle point</em>. A formal definition follows.</p>
+</div></div>
+</div></article><article class="definition definition-like" id="def_saddle_point"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">13.8.12</span><span class="period">.</span><span class="space"> </span><span class="title">Saddle Point.</span>
+</h4>
+<p id="p-14073">Let <span class="process-math">\(P=(x_0,y_0)\)</span> be in the domain of <span class="process-math">\(f\)</span> where <span class="process-math">\(f_x=0\)</span> and <span class="process-math">\(f_y=0\)</span> at <span class="process-math">\(P\text{.}\)</span> We say <span class="process-math">\(P\)</span> is a <dfn class="terminology">saddle point</dfn> of <span class="process-math">\(f\)</span> if, for every open disk <span class="process-math">\(D\)</span> containing <span class="process-math">\(P\text{,}\)</span> there are points <span class="process-math">\((x_1,y_1)\)</span> and <span class="process-math">\((x_2,y_2)\)</span> in <span class="process-math">\(D\)</span> such that <span class="process-math">\(f(x_0,y_0) \gt f(x_1,y_1)\)</span> and <span class="process-math">\(f(x_0,y_0)\lt f(x_2,y_2)\text{.}\)</span> </p></article><p id="p-14074">At a saddle point, the instantaneous rate of change in all directions is 0 and there are points nearby with <span class="process-math">\(z\)</span>-values both less than and greater than the <span class="process-math">\(z\)</span>-value of the saddle point.</p>
+<p id="p-14075">Before <a href="" class="xref" data-knowl="./knowl/ex_multi_extreme3.html" title="Example 13.8.10: Finding critical points and relative extrema">Example 13.8.10</a> we mentioned the need for a test to differentiate between relative maxima and minima. We now recognize that our test also needs to account for saddle points. To do so, we consider the second partial derivatives of <span class="process-math">\(f\text{.}\)</span></p>
+<p id="p-14076">Recall that with single variable functions, such as <span class="process-math">\(y=f(x)\text{,}\)</span> if <span class="process-math">\(\fp'(c) \gt 0\text{,}\)</span> then <span class="process-math">\(f\)</span> is concave up at <span class="process-math">\(c\text{,}\)</span> and if <span class="process-math">\(\fp(c) =0\text{,}\)</span> then <span class="process-math">\(f\)</span> has a relative minimum at <span class="process-math">\(x=c\text{.}\)</span> (We called this the Second Derivative Test.) Note that at a saddle point, it seems the graph is “both” concave up and concave down, depending on which direction you are considering.</p>
+<p id="p-14077">It would be nice if the following were true:</p>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(f_{xx}\)</span> and <span class="process-math">\(f_{yy}  \gt 0\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">relative minimum</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(f_{xx}\)</span> and <span class="process-math">\(f_{yy} \lt 0\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">relative maximum</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">
+<span class="process-math">\(f_{xx}\)</span> and <span class="process-math">\(f_{yy}\)</span> have opposite signs</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">saddle point.</td>
+</tr>
+</table></div>
+<p id="p-14078">However, this is not the case. Functions <span class="process-math">\(f\)</span> exist where <span class="process-math">\(f_{xx}\)</span> and <span class="process-math">\(f_{yy}\)</span> are both positive but a saddle point still exists. In such a case, while the concavity in the <span class="process-math">\(x\)</span>-direction is up (i.e., <span class="process-math">\(f_{xx} \gt 0\)</span>) and the concavity in the <span class="process-math">\(y\)</span>-direction is also up (i.e., <span class="process-math">\(f_{yy} \gt 0\)</span>), the concavity switches somewhere in between the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-directions.</p>
+<p id="p-14079">To account for this, consider <span class="process-math">\(D = f_{xx}f_{yy}-f_{xy}f_{yx}\text{.}\)</span> Since <span class="process-math">\(f_{xy}\)</span> and <span class="process-math">\(f_{yx}\)</span> are equal when continuous (refer back to <a href="" class="xref" data-knowl="./knowl/thm_mixed_partial.html" title="Theorem 13.3.15: Mixed Partial Derivatives">Theorem 13.3.15</a>), we can rewrite this as <span class="process-math">\(D = f_{xx}f_{yy}-f_{xy}^{\,2}\text{.}\)</span> <span class="process-math">\(D\)</span> can be used to test whether the concavity at a point changes depending on direction. If <span class="process-math">\(D \gt 0\text{,}\)</span> the concavity does not switch (i.e., at that point, the graph is concave up or down in all directions). If <span class="process-math">\(D\lt 0\text{,}\)</span> the concavity does switch. If <span class="process-math">\(D=0\text{,}\)</span> our test fails to determine whether concavity switches or not. We state the use of <span class="process-math">\(D\)</span> in the following theorem.</p>
+<article class="theorem theorem-like" id="thm_multi_second_test"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.8.13</span><span class="period">.</span><span class="space"> </span><span class="title">Second Derivative Test.</span>
+</h4>
+<p id="p-14080">Let <span class="process-math">\(R\)</span> be an open set on which a function <span class="process-math">\(z=f(x,y)\)</span> and all its first and second partial derivatives are defined, let <span class="process-math">\(P = (x_0,y_0)\)</span> be a critical point of <span class="process-math">\(f\)</span> in <span class="process-math">\(R\text{,}\)</span> and let </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+D = f_{xx}(x_0,y_0)f_{yy}(x_0,y_0)-f_{xy}^{\,2}(x_0,y_0)\text{.}
+\end{equation*}
+</div>
+<ol id="p-14081" class="decimal">
+<li id="li-2664"><p id="p-14082">If <span class="process-math">\(D \gt 0\)</span> and <span class="process-math">\(f_{xx}(x_0,y_0) \gt 0\text{,}\)</span> then <span class="process-math">\(f\)</span> has a relative minimum at <span class="process-math">\(P\text{.}\)</span></p></li>
+<li id="li-2665"><p id="p-14083">If <span class="process-math">\(D \gt 0\)</span> and <span class="process-math">\(f_{xx}(x_0,y_0)\lt 0\text{,}\)</span> then <span class="process-math">\(f\)</span> has a relative maximum at <span class="process-math">\(P\text{.}\)</span></p></li>
+<li id="li-2666"><p id="p-14084">If <span class="process-math">\(D\lt 0\text{,}\)</span> then <span class="process-math">\(f\)</span> has a saddle point at <span class="process-math">\(P\text{.}\)</span></p></li>
+<li id="li-2667"><p id="p-14085">If <span class="process-math">\(D=0\text{,}\)</span> the test is inconclusive.</p></li>
+</ol></article><figure class="figure figure-like" id="vid-multi-extreme-second-derivative-test"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-525" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/xap1euIjzww?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.14<span class="period">.</span></span><span class="space"> </span>Presenting the second derivative test</figcaption></figure><p id="p-14086">We first practice using this test with the function in the previous example, where we visually determined we had a relative maximum and a saddle point.</p>
+<article class="example example-like" id="ex_multi_extreme4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.8.15</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Second Derivative Test.</span>
+</h4>
+<p id="p-14087">Let <span class="process-math">\(f(x,y) = x^3-3x-y^2+4y\)</span> as in <a href="" class="xref" data-knowl="./knowl/ex_multi_extreme3.html" title="Example 13.8.10: Finding critical points and relative extrema">Example 13.8.10</a>. Determine whether the function has a relative minimum, maximum, or saddle point at each critical point.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1325" id="solution-1325"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1325"><div class="solution solution-like">
+<p id="p-14088">We determined previously that the critical points of <span class="process-math">\(f\)</span> are <span class="process-math">\((-1,2)\)</span> and <span class="process-math">\((1,2)\text{.}\)</span> To use the Second Derivative Test, we must find the second partial derivatives of <span class="process-math">\(f\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f_{xx} = 6x;\qquad f_{yy} = -2;\qquad f_{xy} = 0\text{.}
+\end{equation*}
+</div>
+<p id="p-14089">Thus <span class="process-math">\(D(x,y) = -12x\text{.}\)</span></p>
+<p id="p-14090">At <span class="process-math">\((-1,2)\text{:}\)</span> <span class="process-math">\(D(-1,2) = 12 \gt 0\text{,}\)</span> and <span class="process-math">\(f_{xx}(-1,2) = -6\text{.}\)</span> By the Second Derivative Test, <span class="process-math">\(f\)</span> has a relative maximum at <span class="process-math">\((-1,2)\text{.}\)</span></p>
+<p id="p-14091">At <span class="process-math">\((1,2)\text{:}\)</span> <span class="process-math">\(D(1,2) = -12 \lt 0\text{.}\)</span> The Second Derivative Test states that <span class="process-math">\(f\)</span> has a saddle point at <span class="process-math">\((1,2)\text{.}\)</span></p>
+<p id="p-14092">The Second Derivative Test confirmed what we determined visually.</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_multi_extreme5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.8.16</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Second Derivative Test.</span>
+</h4>
+<p id="p-14093">Find the relative extrema of <span class="process-math">\(f(x,y) = x^2y+y^2+xy\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-1326" id="solution-1326"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1326"><div class="solution solution-like">
+<p id="p-14094">We start by finding the first and second partial derivatives of <span class="process-math">\(f\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-625">
+\begin{align*}
+f_x \amp = 2xy+y \amp  f_y \amp = x^2+2y+x\\
+f_{xx} \amp = 2y \amp  f_{yy} \amp = 2\\
+f_{xy} \amp = 2x+1	 \amp f_{yx} \amp = 2x+1\text{.}
+\end{align*}
+</div>
+<p id="p-14095">We find the critical points by finding where <span class="process-math">\(f_x\)</span> and <span class="process-math">\(f_y\)</span> are simultaneously 0 (they are both never undefined). Setting <span class="process-math">\(f_x=0\text{,}\)</span> we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f_x=0  \Rightarrow  2xy+y=0 \Rightarrow  y(2x+1)=0\text{.}
+\end{equation*}
+</div>
+<p id="p-14096">This implies that for <span class="process-math">\(f_x=0\text{,}\)</span> either <span class="process-math">\(y=0\)</span> or <span class="process-math">\(2x+1=0\text{.}\)</span></p>
+<p id="p-14097">Assume <span class="process-math">\(y=0\)</span> then consider <span class="process-math">\(f_y=0\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-626">
+\begin{align*}
+f_y \amp = 0\\
+x^2+2y+x \amp = 0,  \qquad \text{ and since \(y=0\), we have }\\
+x^2+x \amp = 0\\
+x(x+1) \amp  = 0\text{.}
+\end{align*}
+</div>
+<p id="p-14098">Thus if <span class="process-math">\(y=0\text{,}\)</span> we have either <span class="process-math">\(x=0\)</span> or <span class="process-math">\(x=-1\text{,}\)</span> giving two critical points: <span class="process-math">\((-1,0)\)</span> and <span class="process-math">\((0,0)\text{.}\)</span></p>
+<p id="p-14099">Going back to <span class="process-math">\(f_x\text{,}\)</span> now assume <span class="process-math">\(2x+1=0\text{,}\)</span> i.e., that <span class="process-math">\(x=-1/2\text{,}\)</span> then consider <span class="process-math">\(f_y=0\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-627">
+\begin{align*}
+f_y \amp = 0\\
+x^2+2y+x \amp = 0,  \qquad \text{ and since \(x=-1/2\), we have }\\
+1/4+2y-1/2 \amp = 0\\
+y\amp = 1/8\text{.}
+\end{align*}
+</div>
+<p id="p-14100">Thus if <span class="process-math">\(x=-1/2\text{,}\)</span> <span class="process-math">\(y=1/8\)</span> giving the critical point <span class="process-math">\((-1/2,1/8)\text{.}\)</span></p>
+<p id="p-14101">With <span class="process-math">\(D = 4y-(2x+1)^2\text{,}\)</span> we apply the Second Derivative Test to each critical point.</p>
+<p id="p-14102">At <span class="process-math">\((-1,0)\text{,}\)</span> <span class="process-math">\(D \lt 0\text{,}\)</span> so <span class="process-math">\((-1,0)\)</span> is a saddle point.</p>
+<p id="p-14103">At <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\(D\lt 0\text{,}\)</span> so <span class="process-math">\((0,0)\)</span> is also a saddle point.</p>
+<p id="p-14104">At <span class="process-math">\((-1/2,1/8)\text{,}\)</span> <span class="process-math">\(D \gt 0\)</span> and <span class="process-math">\(f_{xx}  \gt  0\text{,}\)</span> so <span class="process-math">\((-1/2,1/8)\)</span> is a relative minimum.</p>
+<figure class="figure figure-like" id="fig_multi_extreme5"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_multi_extreme5.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_multi_extreme5.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.17<span class="period">.</span></span><span class="space"> </span>Graphing <span class="process-math">\(f\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_multi_extreme5.html" title="Example 13.8.16: Using the Second Derivative Test">Example 13.8.16</a> and its relative extrema</figcaption></figure><p id="p-14105"><a href="" class="xref" data-knowl="./knowl/fig_multi_extreme5.html" title="Figure 13.8.17">Figure 13.8.17</a> shows a graph of <span class="process-math">\(f\)</span> and the three critical points. Note how this function does not vary much near the critical points — that is, visually it is difficult to determine whether a point is a saddle point or relative minimum (or even a critical point at all!). This is one reason why the Second Derivative Test is so important to have.</p>
+</div></div>
+</div></article><figure class="figure figure-like" id="vid-multi-classify-critical-points"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-526" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=GP6pI3sQ9MU,aVahtgOdMts&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.18<span class="period">.</span></span><span class="space"> </span>Two more examples with classification of critical points</figcaption></figure></section><section class="subsection" id="subsection-139"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">13.8.2</span> <span class="title">Constrained Optimization</span>
+</h3>
+<p id="p-14106">When optimizing functions of one variable such as <span class="process-math">\(y=f(x)\text{,}\)</span> we made use of <a href="" class="xref" data-knowl="./knowl/thm_extreme_val.html" title="Theorem 3.1.4: The Extreme Value Theorem">Theorem 3.1.4</a>, the Extreme Value Theorem, that said that over a closed interval <span class="process-math">\(I=[a,b]\text{,}\)</span> a continuous function has both a maximum and minimum value. To find these maximum and minimum values, we evaluated <span class="process-math">\(f\)</span> at all critical points in the interval, as well as at the endpoints (the “boundary”) of the interval. </p>
+<p id="p-14107">A similar theorem and procedure applies to functions of two variables. A continuous function over a closed set also attains a maximum and minimum value (see the following theorem). We can find these values by evaluating the function at the critical values in the set and over the boundary of the set. After formally stating this extreme value theorem, we give examples.</p>
+<article class="theorem theorem-like" id="thm_extreme_val3"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.8.19</span><span class="period">.</span><span class="space"> </span><span class="title">Extreme Value Theorem.</span>
+</h4>
+<p id="p-14108">Let <span class="process-math">\(z=f(x,y)\)</span> be a continuous function on a closed, bounded set <span class="process-math">\(S\text{.}\)</span> Then <span class="process-math">\(f\)</span> has a maximum and minimum value on <span class="process-math">\(S\text{.}\)</span> </p></article><article class="example example-like" id="ex_conopt1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.8.20</span><span class="period">.</span><span class="space"> </span><span class="title">Finding extrema on a closed set.</span>
+</h4>
+<p id="p-14109">Let <span class="process-math">\(f(x,y) = x^2-y^2+5\)</span> and let <span class="process-math">\(S\)</span> be the triangle with vertices <span class="process-math">\((-1,-2)\text{,}\)</span> <span class="process-math">\((0,1)\)</span> and <span class="process-math">\((2,-2)\text{.}\)</span> Find the maximum and minimum values of <span class="process-math">\(f\)</span> on <span class="process-math">\(S\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-1327" id="solution-1327"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1327"><div class="solution solution-like">
+<p id="p-14110">It can help to see a graph of <span class="process-math">\(f\)</span> along with the set <span class="process-math">\(S\text{.}\)</span> In <a href="" class="xref" data-knowl="./knowl/fig_conopt1a_3D.html" title="Figure 13.8.21.(a)">Figure 13.8.21.(a)</a> the triangle defining <span class="process-math">\(S\)</span> is shown in the <span class="process-math">\(xy\)</span>-plane in a dashed line. Above it is the surface of <span class="process-math">\(f\text{;}\)</span> we are only concerned with the portion of <span class="process-math">\(f\)</span> enclosed by the “triangle” on its surface.</p>
+<figure class="figure figure-like" id="fig_conopt1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_conopt1a_3D"><div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_conopt1a_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_conopt1a_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_conopt1b"><img src="generated/latex-image/img_conopt1b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.21<span class="period">.</span></span><span class="space"> </span>Plotting the surface of <span class="process-math">\(f\)</span> along with the restricted domain <span class="process-math">\(S\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_conopt1.html" title="Example 13.8.20: Finding extrema on a closed set">Example 13.8.20</a></figcaption></figure><p id="p-14111">We begin by finding the critical points of <span class="process-math">\(f\text{.}\)</span> With <span class="process-math">\(f_x = 2x\)</span> and <span class="process-math">\(f_y = -2y\text{,}\)</span> we find only one critical point, at <span class="process-math">\((0,0)\text{.}\)</span></p>
+<p id="p-14112">We now find the maximum and minimum values that <span class="process-math">\(f\)</span> attains along the boundary of <span class="process-math">\(S\text{,}\)</span> that is, along the edges of the triangle. In <a href="" class="xref" data-knowl="./knowl/fig_conopt1b.html" title="Figure 13.8.21.(b)">Figure 13.8.21.(b)</a> we see the triangle sketched in the plane with the equations of the lines forming its edges labeled.</p>
+<p id="p-14113">Start with the bottom edge, along the line <span class="process-math">\(y=-2\text{.}\)</span> If <span class="process-math">\(y\)</span> is <span class="process-math">\(-2\text{,}\)</span> then on the surface, we are considering points <span class="process-math">\(f(x,-2)\text{;}\)</span> that is, our function reduces to <span class="process-math">\(f(x,-2) = x^2-(-2)^2+5 = x^2+1=f_1(x)\text{.}\)</span> We want to maximize/minimize <span class="process-math">\(f_1(x)=x^2+1\)</span> on the interval <span class="process-math">\([-1,2]\text{.}\)</span> To do so, we evaluate <span class="process-math">\(f_1(x)\)</span> at its critical points and at the endpoints.</p>
+<p id="p-14114">The critical points of <span class="process-math">\(f_1\)</span> are found by setting its derivative equal to 0:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp_1(x)=0\qquad \Rightarrow x=0\text{.}
+\end{equation*}
+</div>
+<p id="p-14115">Evaluating <span class="process-math">\(f_1\)</span> at this critical point, and at the endpoints of <span class="process-math">\([-1,2]\)</span> gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-628">
+\begin{align*}
+f_1(-1) = 2 \qquad\amp \Rightarrow\qquad f(-1,-2) = 2\\
+f_1(0) = 1 \qquad\amp \Rightarrow \qquad f(0,-2) = 1\\
+f_1(2) = 5 \qquad\amp \Rightarrow \qquad f(2,-2) = 5\text{.}
+\end{align*}
+</div>
+<p id="p-14116">Notice how evaluating <span class="process-math">\(f_1\)</span> at a point is the same as evaluating <span class="process-math">\(f\)</span> at its corresponding point.</p>
+<p id="p-14117">We need to do this process twice more, for the other two edges of the triangle.</p>
+<p id="p-14118">Along the left edge, along the line <span class="process-math">\(y=3x+1\text{,}\)</span> we substitute <span class="process-math">\(3x+1\)</span> in for <span class="process-math">\(y\)</span> in <span class="process-math">\(f(x,y)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x,y) = f(x,3x+1) = x^2-(3x+1)^2+5 = -8x^2-6x+4 = f_2(x)\text{.}
+\end{equation*}
+</div>
+<p id="p-14119">We want the maximum and minimum values of <span class="process-math">\(f_2\)</span> on the interval <span class="process-math">\([-1,0]\text{,}\)</span> so we evaluate <span class="process-math">\(f_2\)</span> at its critical points and the endpoints of the interval. We find the critical points:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp_2(x) = -16x-6=0 \qquad \Rightarrow \qquad x=-3/8\text{.}
+\end{equation*}
+</div>
+<p id="p-14120">Evaluate <span class="process-math">\(f_2\)</span> at its critical point and the endpoints of <span class="process-math">\([-1,0]\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-629">
+\begin{align*}
+f_2(-1) = 2 \qquad\amp \Rightarrow\qquad f(-1,-2) = 2\\
+f_2(-3/8) = 41/8=5.125  \qquad\amp \Rightarrow \qquad f(-3/8,-0.125) = 5.125\\
+f_2(0) = 4 \qquad\amp \Rightarrow \qquad f(0,1) = 4\text{.}
+\end{align*}
+</div>
+<p id="p-14121">Finally, we evaluate <span class="process-math">\(f\)</span> along the right edge of the triangle, where <span class="process-math">\(y = -3/2x+1\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x,y) = f(x,-3/2x+1) = x^2-(-3/2x+1)^2+5 = -\frac54x^2+3x+4=f_3(x)\text{.}
+\end{equation*}
+</div>
+<p id="p-14122">The critical points of <span class="process-math">\(f_3(x)\)</span> are:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp_3(x) = 0 \qquad \Rightarrow \qquad x=6/5=1.2\text{.}
+\end{equation*}
+</div>
+<p id="p-14123">We evaluate <span class="process-math">\(f_3\)</span> at this critical point and at the endpoints of the interval <span class="process-math">\([0,2]\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-630">
+\begin{align*}
+f_3(0) = 4 \qquad\amp \Rightarrow\qquad f(0,1) = 4\\
+f_3(1.2) = 5.8  \qquad\amp \Rightarrow \qquad f(1.2,-0.8) = 5.8\\
+f_3(2) = 5 \qquad\amp \Rightarrow \qquad f(2,-2) = 5\text{.}
+\end{align*}
+</div>
+<p id="p-14124">One last point to test: the critical point of <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\((0,0)\text{.}\)</span> We find <span class="process-math">\(f(0,0) = 5\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_conopt1bX"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_conopt1bX.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_conopt1bX.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.22<span class="period">.</span></span><span class="space"> </span>The surface of <span class="process-math">\(f\)</span> along with important points along the boundary of <span class="process-math">\(S\)</span> and the interior  in <a href="" class="xref" data-knowl="./knowl/ex_conopt1.html" title="Example 13.8.20: Finding extrema on a closed set">Example 13.8.20</a></figcaption></figure><p id="p-14125">We have evaluated <span class="process-math">\(f\)</span> at a total of 7 different places, all shown in <a href="" class="xref" data-knowl="./knowl/fig_conopt1b.html" title="Figure 13.8.21.(b)">Figure 13.8.21.(b)</a>. We checked each vertex of the triangle twice, as each showed up as the endpoint of an interval twice. Of all the <span class="process-math">\(z\)</span>-values found, the maximum is 5.8, found at <span class="process-math">\((1.2,-0.8)\text{;}\)</span> the minimum is 1, found at <span class="process-math">\((0,-2)\text{.}\)</span></p>
+</div></div>
+</div></article><p id="p-14126">This portion of the text is entitled “Constrained Optimization” because we want to optimize a function (i.e., find its maximum and/or minimum values) subject to a <em class="emphasis">constraint</em> — some limit to what values the function can attain. In the previous example, we constrained ourselves by considering a function only within the boundary of a triangle. This was largely arbitrary; the function and the boundary were chosen just as an example, with no real “meaning” behind the function or the chosen constraint.</p>
+<p id="p-14127">However, solving constrained optimization problems is a very important topic in applied mathematics. The techniques developed here are the basis for solving larger problems, where more than two variables are involved.</p>
+<figure class="figure figure-like" id="vid-multi-extreme-examples"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-527" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=uWD5My3c5p8,W5ykqB7261c&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.23<span class="period">.</span></span><span class="space"> </span>Finding extreme values (two videos)</figcaption></figure><p id="p-14128">We illustrate the technique once more with a classic problem.</p>
+<article class="example example-like" id="ex_conopt2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.8.24</span><span class="period">.</span><span class="space"> </span><span class="title">Constrained Optimization.</span>
+</h4>
+<p id="p-14129">The U.S. Postal Service states that the girth+length of Standard Post Package must not exceed 130''. Given a rectangular box, the “length” is the longest side, and the “girth” is twice the width+height.</p>
+<p id="p-14130">Given a rectangular box where the width and height are equal, what are the dimensions of the box that give the maximum volume subject to the constraint of the size of a Standard Post Package?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-1328" id="solution-1328"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1328"><div class="solution solution-like">
+<p id="p-14131">Let <span class="process-math">\(w\text{,}\)</span> <span class="process-math">\(h\)</span> and <span class="process-math">\(\ell\)</span> denote the width, height and length of a rectangular box; we assume here that <span class="process-math">\(w=h\text{.}\)</span> The girth is then <span class="process-math">\(2(w+h) = 4w\text{.}\)</span> The volume of the box is <span class="process-math">\(V(w,\ell) = wh\ell = w^2\ell\text{.}\)</span> We wish to maximize this volume subject to the constraint <span class="process-math">\(4w+\ell\leq 130\text{,}\)</span> or <span class="process-math">\(\ell\leq 130-4w\text{.}\)</span> (Common sense also indicates that <span class="process-math">\(\ell \gt 0, w \gt 0\text{.}\)</span>)</p>
+<p id="p-14132">We begin by finding the critical values of <span class="process-math">\(V\text{.}\)</span> We find that <span class="process-math">\(V_w = 2w\ell\)</span> and <span class="process-math">\(V_\ell = w^2\text{;}\)</span> these are simultaneously 0 only at <span class="process-math">\((0,0)\text{.}\)</span> This gives a volume of 0, so we can ignore this critical point.</p>
+<p id="p-14133">We now consider the volume along the constraint <span class="process-math">\(\ell=130-4w\text{.}\)</span> Along this line, we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+V(w,\ell) = V(w,130-4w) = w^2(130-4w) = 130w^2-4w^3 = V_1(w)\text{.}
+\end{equation*}
+</div>
+<p id="p-14134">The constraint is applicable on the <span class="process-math">\(w\)</span>-interval <span class="process-math">\([0,32.5]\)</span> as indicated in the figure. Thus we want to maximize <span class="process-math">\(V_1\)</span> on <span class="process-math">\([0,32.5]\text{.}\)</span></p>
+<p id="p-14135">Finding the critical values of <span class="process-math">\(V_1\text{,}\)</span> we take the derivative and set it equal to 0:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+V\,'_1(w) = 260w-12w^2 = 0  \Rightarrow  w(260-12w)= 0  \Rightarrow  w=0,\frac{260}{12}\approx 21.67\text{.}
+\end{equation*}
+</div>
+<p id="p-14136">We found two critical values: when <span class="process-math">\(w=0\)</span> and when <span class="process-math">\(w=21.67\text{.}\)</span> We again ignore the <span class="process-math">\(w=0\)</span> solution; the maximum volume, subject to the constraint, comes at <span class="process-math">\(w=h=21.67\text{,}\)</span> <span class="process-math">\(\ell = 130-4(21.6) =43.33\text{.}\)</span> This gives a volume of <span class="process-math">\(V(21.67,43.33) \approx 19,408\)</span>in<span class="process-math">\(^3\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_conopt2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_conopt2.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_conopt2.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.25<span class="period">.</span></span><span class="space"> </span>Graphing the volume of a box with girth <span class="process-math">\(4w\)</span> and length <span class="process-math">\(\ell\text{,}\)</span> subject to a size constraint</figcaption></figure><p id="p-14137">The volume function <span class="process-math">\(V(w,\ell)\)</span> is shown in <a href="" class="xref" data-knowl="./knowl/fig_conopt2.html" title="Figure 13.8.25">Figure 13.8.25</a> along with the constraint <span class="process-math">\(\ell = 130-4w\text{.}\)</span> As done previously, the constraint is drawn dashed in the <span class="process-math">\(xy\)</span>-plane and also along the surface of the function. The point where the volume is maximized is indicated.</p>
+</div></div>
+</div></article><p id="p-14138">It is hard to overemphasize the importance of optimization. In “the real world,” we routinely seek to make <em class="emphasis">something</em> better. By expressing the <em class="emphasis">something</em> as a mathematical function, “making <em class="emphasis">something</em> better” means “optimize <em class="emphasis">some function.</em>”</p>
+<p id="p-14139">The techniques shown here are only the beginning of an incredibly important field. Many functions that we seek to optimize are incredibly complex, making the step of “find the gradient and set it equal to <span class="process-math">\(\vec 0\)</span>” highly nontrivial. Mastery of the principles here are key to being able to tackle these more complicated problems.</p></section><section class="exercises" id="exercises-77"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">13.8.3</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-164"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-2656"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-1569" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1569" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZT1Qb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKJGZhbHNlPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDIpOwoKQkVHSU5fUEdNTApUcnVlIG9yIEZhbHNlPyBUaGVvcmVtWyROQlNQXSoxMy44LjQgc3RhdGVzIHRoYXQgaWYgW2BmYF0gaGFzIGEgY3JpdGljYWwgcG9pbnQgYXQgW2BQXHRleHR7LH1gXSB0aGVuIFtgZmBdIGhhcyBhIHJlbGF0aXZlIGV4dHJlbWEgYXQgW2BQXHRleHR7Ln1gXSBbX117JGZhbHNlfXs1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-14140">True or False? Theorem 13.8.4 states that if <span class="process-math">\(f\)</span> has a critical point at <span class="process-math">\(P\text{,}\)</span> then <span class="process-math">\(f\)</span> has a relative extrema at <span class="process-math">\(P\text{.}\)</span> <ul style="list-style:circle;">
+<li id="li-2669"><p id="p-14142">True</p></li>
+<li id="li-2670"><p id="p-14143">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1569')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2657"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-1570" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1570" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZT1Qb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKJGZhbHNlPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDIpOwoKQkVHSU5fUEdNTApUcnVlIG9yIEZhbHNlPyBBIHBvaW50IFtgUGBdIGlzIGEgY3JpdGljYWwgcG9pbnQgb2YgW2BmYF0gaWYgW2BmX3hgXSBhbmQgW2BmX3lgXSBhcmUgYm90aCBbYDBgXSBhdCBbYFBcdGV4dHsufWBdIFtfXXskdHJ1ZX17NX0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-14145">True or False? A point <span class="process-math">\(P\)</span> is a critical point of <span class="process-math">\(f\)</span> if <span class="process-math">\(f_x\)</span> and <span class="process-math">\(f_y\)</span> are both <span class="process-math">\(0\)</span> at <span class="process-math">\(P\text{.}\)</span> <ul style="list-style:circle;">
+<li id="li-2672"><p id="p-14147">True</p></li>
+<li id="li-2673"><p id="p-14148">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1570')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2658"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-1571" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1571" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZT1Qb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKJGZhbHNlPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDIpOwoKQkVHSU5fUEdNTApUcnVlIG9yIEZhbHNlPyBBIHBvaW50IFtgUGBdIGlzIGEgY3JpdGljYWwgcG9pbnQgb2YgW2BmYF0gaWYgW2BmX3hgXSBvciBbYGZfeWBdIGFyZSB1bmRlZmluZWQgYXQgW2BQXHRleHR7Ln1gXSBbX117JHRydWV9ezV9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-14150">True or False? A point <span class="process-math">\(P\)</span> is a critical point of <span class="process-math">\(f\)</span> if <span class="process-math">\(f_x\)</span> or <span class="process-math">\(f_y\)</span> are undefined at <span class="process-math">\(P\text{.}\)</span> <ul style="list-style:circle;">
+<li id="li-2675"><p id="p-14152">True</p></li>
+<li id="li-2676"><p id="p-14153">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1571')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2659"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-14155">Explain what it means to “solve a constrained optimization” problem.</p></article></article><article class="subexercises" id="subexercises-165"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-329">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-386"><p id="p-14157">Find the critical points of the given function. Use the Second Derivative Test to determine if each critical point corresponds to a relative maximum, minimum, or saddle point.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2660"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-14158"><span class="process-math">\(f(x,y) = \frac12x^2+2y^2-8y+4x\)</span></p></article><article class="exercise exercise-like" id="exercise-2661"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<div id="webwork-1572" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1572" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiUG9pbnQiKTsKJG1heD1MaXN0KCJOb25lIik7CiRtaW49TGlzdCgiTm9uZSIpOwokc2FkPUxpc3QoIig3LC02KSIpOwokaW5jPUxpc3QoIk5vbmUiKTsKCkJFR0lOX1BHTUwKW2BmKHgseSkgPSB4XjIrNHgreV4yLTl5KzN4eWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IGFsbCBjcml0aWNhbCBwb2ludHMgKG9yIHJlcG9ydCB0aGF0IHRoZXJlIGFyZSBbfG5vbmV8XSopIG9mIFtgZmBdIHdoZXJlIHRoZSBTZWNvbmQgRGVyaXZhdGl2ZSBUZXN0IGluZGljYXRlcyB0aGUgY3JpdGljYWwgcG9pbnQgaXMgYSByZWxhdGl2ZSBtYXhpbXVtLicpQF0qKgoKW19deyRtYXh9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCBhbGwgY3JpdGljYWwgcG9pbnRzIChvciByZXBvcnQgdGhhdCB0aGVyZSBhcmUgW3xub25lfF0qKSBvZiBbYGZgXSB3aGVyZSB0aGUgU2Vjb25kIERlcml2YXRpdmUgVGVzdCBpbmRpY2F0ZXMgdGhlIGNyaXRpY2FsIHBvaW50IGlzIGEgcmVsYXRpdmUgbWluaW11bS4nKUBdKioKCltfXXskbWlufXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgYWxsIGNyaXRpY2FsIHBvaW50cyAob3IgcmVwb3J0IHRoYXQgdGhlcmUgYXJlIFt8bm9uZXxdKikgb2YgW2BmYF0gd2hlcmUgdGhlIFNlY29uZCBEZXJpdmF0aXZlIFRlc3QgaW5kaWNhdGVzIHRoZSBjcml0aWNhbCBwb2ludCBpcyBhIHNhZGRsZSBwb2ludC4nKUBdKioKCltfXXskc2FkfXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgYWxsIGNyaXRpY2FsIHBvaW50cyAob3IgcmVwb3J0IHRoYXQgdGhlcmUgYXJlIFt8bm9uZXxdKikgb2YgW2BmYF0gd2hlcmUgdGhlIFNlY29uZCBEZXJpdmF0aXZlIFRlc3QgaXMgaW5jb25jbHVzaXZlLicpQF0qKgoKW19deyRpbmN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-14160"><span class="process-math">\(f(x,y) = x^2+4x+y^2-9y+3xy\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1572')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2662"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-14165"><span class="process-math">\(f(x,y) = x^2+3y^2-6y+4xy\)</span></p></article><article class="exercise exercise-like" id="exercise-2663"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-1573" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1573" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiUG9pbnQiKTsKJG1heD1MaXN0KCIoMCwwKSIpOwokbWluPUxpc3QoIk5vbmUiKTsKJHNhZD1MaXN0KCJOb25lIik7CiRpbmM9TGlzdCgiTm9uZSIpOwoKQkVHSU5fUEdNTApbYGYoeCx5KSA9IFxmcmFjezF9e3heMit5XjIrMX1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCBhbGwgY3JpdGljYWwgcG9pbnRzIChvciByZXBvcnQgdGhhdCB0aGVyZSBhcmUgW3xub25lfF0qKSBvZiBbYGZgXSB3aGVyZSB0aGUgU2Vjb25kIERlcml2YXRpdmUgVGVzdCBpbmRpY2F0ZXMgdGhlIGNyaXRpY2FsIHBvaW50IGlzIGEgcmVsYXRpdmUgbWF4aW11bS4nKUBdKioKCltfXXskbWF4fXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgYWxsIGNyaXRpY2FsIHBvaW50cyAob3IgcmVwb3J0IHRoYXQgdGhlcmUgYXJlIFt8bm9uZXxdKikgb2YgW2BmYF0gd2hlcmUgdGhlIFNlY29uZCBEZXJpdmF0aXZlIFRlc3QgaW5kaWNhdGVzIHRoZSBjcml0aWNhbCBwb2ludCBpcyBhIHJlbGF0aXZlIG1pbmltdW0uJylAXSoqCgpbX117JG1pbn17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IGFsbCBjcml0aWNhbCBwb2ludHMgKG9yIHJlcG9ydCB0aGF0IHRoZXJlIGFyZSBbfG5vbmV8XSopIG9mIFtgZmBdIHdoZXJlIHRoZSBTZWNvbmQgRGVyaXZhdGl2ZSBUZXN0IGluZGljYXRlcyB0aGUgY3JpdGljYWwgcG9pbnQgaXMgYSBzYWRkbGUgcG9pbnQuJylAXSoqCgpbX117JHNhZH17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IGFsbCBjcml0aWNhbCBwb2ludHMgKG9yIHJlcG9ydCB0aGF0IHRoZXJlIGFyZSBbfG5vbmV8XSopIG9mIFtgZmBdIHdoZXJlIHRoZSBTZWNvbmQgRGVyaXZhdGl2ZSBUZXN0IGlzIGluY29uY2x1c2l2ZS4nKUBdKioKCltfXXskaW5jfXszMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-14167"><span class="process-math">\(f(x,y) = \frac{1}{x^2+y^2+1}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1573')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2664"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-14172"><span class="process-math">\(\ds f(x,y) = x^2+y^3-3y+1\)</span></p></article><article class="exercise exercise-like" id="exercise-2665"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-1574" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1574" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiUG9pbnQiKTsKJG1heD1MaXN0KCIoLTEsLTIpIik7CiRtaW49TGlzdCgiKDEsMikiKTsKJHNhZD1MaXN0KCIoMSwtMiksICgtMSwyKSIpOwokaW5jPUxpc3QoIk5vbmUiKTsKCkJFR0lOX1BHTUwKW2BmKHgseSkgPSBcZnJhYzEzeF4zLXgrXGZyYWMxM3leMy00eWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IGFsbCBjcml0aWNhbCBwb2ludHMgKG9yIHJlcG9ydCB0aGF0IHRoZXJlIGFyZSBbfG5vbmV8XSopIG9mIFtgZmBdIHdoZXJlIHRoZSBTZWNvbmQgRGVyaXZhdGl2ZSBUZXN0IGluZGljYXRlcyB0aGUgY3JpdGljYWwgcG9pbnQgaXMgYSByZWxhdGl2ZSBtYXhpbXVtLicpQF0qKgoKW19deyRtYXh9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCBhbGwgY3JpdGljYWwgcG9pbnRzIChvciByZXBvcnQgdGhhdCB0aGVyZSBhcmUgW3xub25lfF0qKSBvZiBbYGZgXSB3aGVyZSB0aGUgU2Vjb25kIERlcml2YXRpdmUgVGVzdCBpbmRpY2F0ZXMgdGhlIGNyaXRpY2FsIHBvaW50IGlzIGEgcmVsYXRpdmUgbWluaW11bS4nKUBdKioKCltfXXskbWlufXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgYWxsIGNyaXRpY2FsIHBvaW50cyAob3IgcmVwb3J0IHRoYXQgdGhlcmUgYXJlIFt8bm9uZXxdKikgb2YgW2BmYF0gd2hlcmUgdGhlIFNlY29uZCBEZXJpdmF0aXZlIFRlc3QgaW5kaWNhdGVzIHRoZSBjcml0aWNhbCBwb2ludCBpcyBhIHNhZGRsZSBwb2ludC4nKUBdKioKCltfXXskc2FkfXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgYWxsIGNyaXRpY2FsIHBvaW50cyAob3IgcmVwb3J0IHRoYXQgdGhlcmUgYXJlIFt8bm9uZXxdKikgb2YgW2BmYF0gd2hlcmUgdGhlIFNlY29uZCBEZXJpdmF0aXZlIFRlc3QgaXMgaW5jb25jbHVzaXZlLicpQF0qKgoKW19deyRpbmN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-14175"><span class="process-math">\(f(x,y) = \frac13x^3-x+\frac13y^3-4y\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1574')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2666"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-14180"><span class="process-math">\(\ds f(x,y) = x^2y^2\)</span></p></article><article class="exercise exercise-like" id="exercise-2667"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-1575" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1575" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiUG9pbnQiKTsKJG1heD1MaXN0KCIoMCwtMykiKTsKJG1pbj1MaXN0KCIoLTEsMyksICgxLDMpIik7CiRzYWQ9TGlzdCgiKC0xLC0zKSwgKDAsMyksICgxLC0zKSIpOwokaW5jPUxpc3QoIk5vbmUiKTsKCkJFR0lOX1BHTUwKW2BmKHgseSkgPSB4XjQtMnheMit5XjMtMjd5LTE1YF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgYWxsIGNyaXRpY2FsIHBvaW50cyAob3IgcmVwb3J0IHRoYXQgdGhlcmUgYXJlIFt8bm9uZXxdKikgb2YgW2BmYF0gd2hlcmUgdGhlIFNlY29uZCBEZXJpdmF0aXZlIFRlc3QgaW5kaWNhdGVzIHRoZSBjcml0aWNhbCBwb2ludCBpcyBhIHJlbGF0aXZlIG1heGltdW0uJylAXSoqCgpbX117JG1heH17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IGFsbCBjcml0aWNhbCBwb2ludHMgKG9yIHJlcG9ydCB0aGF0IHRoZXJlIGFyZSBbfG5vbmV8XSopIG9mIFtgZmBdIHdoZXJlIHRoZSBTZWNvbmQgRGVyaXZhdGl2ZSBUZXN0IGluZGljYXRlcyB0aGUgY3JpdGljYWwgcG9pbnQgaXMgYSByZWxhdGl2ZSBtaW5pbXVtLicpQF0qKgoKW19deyRtaW59ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCBhbGwgY3JpdGljYWwgcG9pbnRzIChvciByZXBvcnQgdGhhdCB0aGVyZSBhcmUgW3xub25lfF0qKSBvZiBbYGZgXSB3aGVyZSB0aGUgU2Vjb25kIERlcml2YXRpdmUgVGVzdCBpbmRpY2F0ZXMgdGhlIGNyaXRpY2FsIHBvaW50IGlzIGEgc2FkZGxlIHBvaW50LicpQF0qKgoKW19deyRzYWR9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCBhbGwgY3JpdGljYWwgcG9pbnRzIChvciByZXBvcnQgdGhhdCB0aGVyZSBhcmUgW3xub25lfF0qKSBvZiBbYGZgXSB3aGVyZSB0aGUgU2Vjb25kIERlcml2YXRpdmUgVGVzdCBpcyBpbmNvbmNsdXNpdmUuJylAXSoqCgpbX117JGluY317MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-14182"><span class="process-math">\(f(x,y) = x^4-2x^2+y^3-27y-15\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1575')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2668"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-14187"><span class="process-math">\(\ds f(x,y) = \sqrt{16-(x-3)^2-y^2}\)</span></p></article><article class="exercise exercise-like" id="exercise-2669"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-1576" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1576" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiUG9pbnQiKTsKJG1heD1MaXN0KCJOb25lIik7CiRtaW49TGlzdCgiTm9uZSIpOwokc2FkPUxpc3QoIk5vbmUiKTsKJGluYz1MaXN0KCIoMCwwKSIpOwoKQkVHSU5fUEdNTApbYGYoeCx5KSA9IFxzcXJ0e3heMit5XjJ9YF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0xpc3QgYWxsIGNyaXRpY2FsIHBvaW50cyAob3IgcmVwb3J0IHRoYXQgdGhlcmUgYXJlIFt8bm9uZXxdKikgb2YgW2BmYF0gd2hlcmUgdGhlIFNlY29uZCBEZXJpdmF0aXZlIFRlc3QgaW5kaWNhdGVzIHRoZSBjcml0aWNhbCBwb2ludCBpcyBhIHJlbGF0aXZlIG1heGltdW0uJylAXSoqCgpbX117JG1heH17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdMaXN0IGFsbCBjcml0aWNhbCBwb2ludHMgKG9yIHJlcG9ydCB0aGF0IHRoZXJlIGFyZSBbfG5vbmV8XSopIG9mIFtgZmBdIHdoZXJlIHRoZSBTZWNvbmQgRGVyaXZhdGl2ZSBUZXN0IGluZGljYXRlcyB0aGUgY3JpdGljYWwgcG9pbnQgaXMgYSByZWxhdGl2ZSBtaW5pbXVtLicpQF0qKgoKW19deyRtaW59ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCBhbGwgY3JpdGljYWwgcG9pbnRzIChvciByZXBvcnQgdGhhdCB0aGVyZSBhcmUgW3xub25lfF0qKSBvZiBbYGZgXSB3aGVyZSB0aGUgU2Vjb25kIERlcml2YXRpdmUgVGVzdCBpbmRpY2F0ZXMgdGhlIGNyaXRpY2FsIHBvaW50IGlzIGEgc2FkZGxlIHBvaW50LicpQF0qKgoKW19deyRzYWR9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnTGlzdCBhbGwgY3JpdGljYWwgcG9pbnRzIChvciByZXBvcnQgdGhhdCB0aGVyZSBhcmUgW3xub25lfF0qKSBvZiBbYGZgXSB3aGVyZSB0aGUgU2Vjb25kIERlcml2YXRpdmUgVGVzdCBpcyBpbmNvbmNsdXNpdmUuJylAXSoqCgpbX117JGluY317MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-14190"><span class="process-math">\(f(x,y) = \sqrt{x^2+y^2}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1576')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-330">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-387"><p id="p-14195">Find the absolute maximum and minimum of the function subject to the given constraint.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2670"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-1577" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1577" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiUG9pbnQiKTsKJG1heG91dCA9IENvbXB1dGUoIjMiKTsKJG1heGluID0gQ29tcHV0ZSgiKDAsMSkiKTsKJG1pbm91dCA9IENvbXB1dGUoIjMvNCIpOwokbWluaW4gPSBDb21wdXRlKCIoMCwtMS8yKSIpOwoKQkVHSU5fUEdNTApMZXQgW2BmKHgseSkgPSB4XjIreV4yK3krMVx0ZXh0eyx9YF0gY29uc3RyYWluZWQgdG8gdGhlIHRyaWFuZ2xlIHdpdGggdmVydGljZXMgW2AoMCwxKVx0ZXh0eyx9YF0gW2AoLTEsLTEpYF0gYW5kIFtgKDEsLTEpXHRleHR7Ln1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnVGhlIGFic29sdXRlIG1heGltdW0gdmFsdWUgaXM6JylAXSoqCgpbX117JG1heG91dH17NX0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1RoZSBhYnNvbHV0ZSBtYXhpbXVtIGhhcHBlbnMgZm9yIGlucHV0OicpQF0qKgoKW19deyRtYXhpbn17MTB9LgoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnVGhlIGFic29sdXRlIG1pbmltdW0gdmFsdWUgaXM6JylAXSoqCgpbX117JG1pbm91dH17NX0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1RoZSBhYnNvbHV0ZSBtaW5pbXVtIGhhcHBlbnMgZm9yIGlucHV0OicpQF0qKgoKW19deyRtaW5pbn17MTB9LgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClRoZSB0cmlhbmdsZSBpcyBib3VuZCBieSB0aGUgbGluZXMgW2B5PS0xXHRleHR7LH1gXSBbYHk9MngrMWBdIGFuZCBbYHk9LTJ4KzFcdGV4dHsufWBdCgpBbG9uZyBbYHk9LTFcdGV4dHssfWBdIHRoZXJlIGlzIGEgY3JpdGljYWwgcG9pbnQgYXQgW2AoMCwtMSlcdGV4dHsufWBdCgpBbG9uZyBbYHk9MngrMVx0ZXh0eyx9YF0gdGhlcmUgaXMgYSBjcml0aWNhbCBwb2ludCBhdCBbYCgtMy81LC0xLzUpXHRleHR7Ln1gXQoKQWxvbmcgW2B5PS0yeCsxXHRleHR7LH1gXSB0aGVyZSBpcyBhIGNyaXRpY2FsIHBvaW50IGF0IFtgKDMvNSwtMS81KVx0ZXh0ey59YF0KClRoZSBmdW5jdGlvbiBbYGZgXSBoYXMgb25lIGNyaXRpY2FsIHBvaW50LCBpcnJlc3BlY3RpdmUgb2YgdGhlIGNvbnN0cmFpbnQsIGF0IFtgKDAsLTEvMilcdGV4dHsufWBdCgpDaGVja2luZyB0aGUgdmFsdWUgb2YgW2BmYF0gYXQgdGhlc2UgZm91ciBwb2ludHMsIGFsb25nIHdpdGggdGhlIHRocmVlIHZlcnRpY2VzIG9mIHRoZSB0cmlhbmdsZSwgd2UgZmluZCB0aGUgYWJzb2x1dGUgbWF4aW11bSBpcyBhdCBbYCgwLDEsMylgXSBhbmQgdGhlIGFic29sdXRlIG1pbmltdW0gaXMgYXQgW2AoMCwtMS8yLDMvNClcdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-14196">Let <span class="process-math">\(f(x,y) = x^2+y^2+y+1\text{,}\)</span> constrained to the triangle with vertices <span class="process-math">\((0,1)\text{,}\)</span> <span class="process-math">\((-1,-1)\)</span> and <span class="process-math">\((1,-1)\text{.}\)</span></p>
+<p id="p-14197"><span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>.</p>
+<p id="p-14198"><span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>.</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1577')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2671"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-1578" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1578" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiUG9pbnQiKTsKJG1heG91dCA9IENvbXB1dGUoIjI1LzI4Iik7CiRtYXhpbiA9IENvbXB1dGUoIig1LzE0LDI1LzE5NikiKTsKJG1pbm91dCA9IENvbXB1dGUoIi0xMiIpOwokbWluaW4gPSBDb21wdXRlKCIoLTEsMSkiKTsKCkJFR0lOX1BHTUwKTGV0IFtgZih4LHkpID0gNXgtN3lcdGV4dHssfWBdIGNvbnN0cmFpbmVkIHRvIHRoZSByZWdpb24gYm91bmRlZCBieSBbYHk9eF4yYF0gYW5kIFtgeT0xXHRleHR7Ln1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnVGhlIGFic29sdXRlIG1heGltdW0gdmFsdWUgaXM6JylAXSoqCgpbX117JG1heG91dH17NX0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1RoZSBhYnNvbHV0ZSBtYXhpbXVtIGhhcHBlbnMgZm9yIGlucHV0OicpQF0qKgoKW19deyRtYXhpbn17MTB9LgoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnVGhlIGFic29sdXRlIG1pbmltdW0gdmFsdWUgaXM6JylAXSoqCgpbX117JG1pbm91dH17NX0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1RoZSBhYnNvbHV0ZSBtaW5pbXVtIGhhcHBlbnMgZm9yIGlucHV0OicpQF0qKgoKW19deyRtaW5pbn17MTB9LgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClRoZSByZWdpb24gaGFzIHR3byAiY29ybmVycyIgYXQgW2AoMSwxKWBdIGFuZCBbYCgtMSwxKVx0ZXh0ey59YF0KCkFsb25nIFtgeT0xXHRleHR7LH1gXSB0aGVyZSBpcyBubyBjcml0aWNhbCBwb2ludC4KCkFsb25nIFtgeT14XjJcdGV4dHssfWBdIHRoZXJlIGlzIGEgY3JpdGljYWwgcG9pbnQgYXQgW2AoNS8xNCwyNS8xOTYpXGFwcHJveCAoMC4zNTcsMC4xMjgpXHRleHR7Ln1gXQoKVGhlIGZ1bmN0aW9uIFtgZmBdIGl0c2VsZiBoYXMgbm8gY3JpdGljYWwgcG9pbnRzLiBDaGVja2luZyB0aGUgdmFsdWUgb2YgW2BmYF0gYXQgdGhlIGNvcm5lcnMgW2AoMSwxKVx0ZXh0eyx9YF0gW2AoLTEsMSlgXSBhbmQgdGhlIGNyaXRpY2FsIHBvaW50IFtgKDUvMTQsMjUvMTk2KVx0ZXh0eyx9YF0gd2UgZmluZCB0aGUgYWJzb2x1dGUgbWF4aW11bSBpcyBhdCBbYCg1LzE0LDI1LzE5NiwyNS8yOCkgXGFwcHJveCAoMC4zNTcsMC4xMjgsMC44OTMpYF0gYW5kIHRoZSBhYnNvbHV0ZSBtaW5pbXVtIGlzIGF0IFtgKC0xLDEsLTEyKVx0ZXh0ey59YF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-14209">Let <span class="process-math">\(f(x,y) = 5x-7y\text{,}\)</span> constrained to the region bounded by <span class="process-math">\(y=x^2\)</span> and <span class="process-math">\(y=1\text{.}\)</span></p>
+<p id="p-14210"><span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>.</p>
+<p id="p-14211"><span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>.</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1578')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2672"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-14220"><span class="process-math">\(\ds f(x,y) = x^2+2x+y^2+2y\text{,}\)</span> constrained to the region bounded by the circle <span class="process-math">\(x^2+y^2=4\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2673"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-14227"><span class="process-math">\(\ds f(x,y) = 3y-2x^2\text{,}\)</span> constrained to the region bounded by the parabola <span class="process-math">\(y=x^2+x-1\)</span> and the line <span class="process-math">\(y=x\text{.}\)</span></p></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

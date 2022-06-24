@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:43Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.5.13.1</span><span class="period">.</span>
+</h4>
+<p>For the purposes of this problem we choose to set <span class="process-math">\(y=0\)</span> to represent the bottom of the pool, meaning the top of the water is at <span class="process-math">\(y=6\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_pump3a.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.5.15<span class="period">.</span></span><span class="space"> </span>Orienting the pool and showing differential elements for <a href="" class="xref" data-knowl="./knowl/ex_pump3.html" title="Example 7.5.13: Computing work performed: pumping fluids">Example 7.5.13</a></figcaption></figure><p><a href="" class="xref" data-knowl="./knowl/fig_pump_3a.html" title="Figure 7.5.15">Figure 7.5.15</a> shows the pool oriented with this <span class="process-math">\(y\)</span>-axis, along with 2 differential elements as the pool must be split into two different regions.</p>
+<p>The top region lies in the <span class="process-math">\(y\)</span>-interval of <span class="process-math">\([3,6]\text{,}\)</span> where the length of the differential element is <span class="quantity">25 ft</span> as shown. As the pool is <span class="quantity">20 ft</span> wide, this differential element represents a thin slice of water with volume <span class="process-math">\(V(y) = 20\cdot25\cdot dy\text{.}\)</span> The water is to be pumped to a height of <span class="process-math">\(y=8\text{,}\)</span> so the height function is <span class="process-math">\(h(y) = 8-y\text{.}\)</span> The work done in pumping this top region of water is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+W_t = 62.4\int_3^6 500(8-y)\, dy = 327,600 \,\text{ft--lb}\text{.}
+\end{equation*}
+</div>
+<p>The bottom region lies in the <span class="process-math">\(y\)</span>-interval of <span class="process-math">\([0,3]\text{;}\)</span> we need to compute the length of the differential element in this interval.</p>
+<p>One end of the differential element is at <span class="process-math">\(x=0\)</span> and the other is along the line segment joining the points <span class="process-math">\((10,0)\)</span> and <span class="process-math">\((15,3)\text{.}\)</span> The equation of this line is <span class="process-math">\(y= 3/5(x-10)\text{;}\)</span> as we will be integrating with respect to <span class="process-math">\(y\text{,}\)</span> we rewrite this equation as <span class="process-math">\(x=5/3y+10\text{.}\)</span> So the length of the differential element is a difference of <span class="process-math">\(x\)</span>-values: <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=5/3y+10\text{,}\)</span> giving a length of <span class="process-math">\(x=5/3y+10\text{.}\)</span></p>
+<p>Again, as the pool is <span class="quantity">20 ft</span> wide, this differential element represents a thin slice of water with volume <span class="process-math">\(V(y) = 20\cdot(5/3y+10)\cdot dy\text{;}\)</span> the height function is the same as before at <span class="process-math">\(h(y)=8-y\text{.}\)</span> The work performed in emptying this part of the pool is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+W_b = 62.4\int_0^3 20(5/3y+10)(8-y)\, dy = 299,520\,\text{ft--lb}\text{.}
+\end{equation*}
+</div>
+<p>The total work in empyting the pool is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+W = W_b+W_t = 327,600+299,520 = 627,120\,\text{ft--lb}\text{.}
+\end{equation*}
+</div>
+<p>Notice how the emptying of the bottom of the pool performs almost as much work as emptying the top. The top portion travels a shorter distance but has more water. In the end, this extra water produces more work.</p>
+</div>
+<span class="incontext"><a href="sec_work.html#solution-466" class="internal">in-context</a></span>
+</body>
+</html>

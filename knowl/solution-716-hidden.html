@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:40:55Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-taylorseries-integration" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/WhpEci26gUA?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We learned, when studying Numerical Integration, that <span class="process-math">\(e^{-x^2}\)</span> does not have an antiderivative expressible in terms of elementary functions. This means any definite integral of this function must have its value approximated, and not computed exactly.</p>
+<p>We can quickly write out the Taylor series for <span class="process-math">\(e^{-x^2}\)</span> using the Taylor series of <span class="process-math">\(e^x\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+e^x \amp = \infser[0] \frac{x^n}{n!} = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots\\
+\end{align*}
+<p class="intertext">and so</p>
+\begin{align*}
+e^{-x^2} \amp = \infser[0] \frac{(-x^2)^n}{n!}\\
+\amp = \infser[0] (-1)^n\frac{x^{2n}}{n!}\\
+\amp = 1-x^2+\frac{x^4}{2!}-\frac{x^6}{3!}+\cdots\text{.}
+\end{align*}
+</div>
+<p>We use <a href="" class="xref" data-knowl="./knowl/thm_calc_power_series.html" title="Theorem 9.6.9: Derivatives and Indefinite Integrals of Power Series Functions">Theorem 9.6.9</a> to integrate:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_calc_power_series.html">
+\begin{equation*}
+\int e^{-x^2}\, dx = C + x - \frac{x^3}{3}+\frac{x^5}{5\cdot2!}-\frac{x^7}{7\cdot3!}+\cdots +(-1)^n\frac{x^{2n+1}}{(2n+1)n!}+\cdots
+\end{equation*}
+</div>
+<p>This <em class="emphasis">is</em> the antiderivative of <span class="process-math">\(e^{-x^2}\text{;}\)</span> while we can write it out as a series, we cannot write it out in terms of elementary functions. We can evaluate the definite integral <span class="process-math">\(\ds \int_0^1e^{-x^2}\, dx\)</span> using this antiderivative; substituting 1 and 0 for <span class="process-math">\(x\)</span> and subtracting gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^1e^{-x^2}\, dx = 1-\frac{1}{3}+\frac{1}{5\cdot 2!}-\frac{1}{7\cdot3!} + \frac{1}{9\cdot4!}\cdots\text{.}
+\end{equation*}
+</div>
+<p>Summing the 5 terms shown above give the approximation of <span class="process-math">\(0.74749\text{.}\)</span> Since this is an alternating series, we can use the Alternating Series Approximation Theorem, (<a href="" class="xref" data-knowl="./knowl/thm_alt_series_approx.html" title="Theorem 9.5.7: The Alternating Series Approximation Theorem">Theorem 9.5.7</a>), to determine how accurate this approximation is. The next term of the series is <span class="process-math">\(1/(11\cdot5!) \approx 0.00075758\text{.}\)</span> Thus we know our approximation is within <span class="process-math">\(0.00075758\)</span> of the actual value of the integral. This is arguably much less work than using Simpson's Rule to approximate the value of the integral.</p>
+</div></body>
+</html>

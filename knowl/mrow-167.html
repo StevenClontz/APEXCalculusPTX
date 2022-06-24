@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:34:54Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_the_derivative.html ./knowl/ex_der_num_approx.html ./knowl/thm_special_limits.html">
+\begin{align*}
+\fp(x) \amp = \lim_{h\to 0} \frac{\sin(x+h)-\sin(x)}{h} \amp  \amp
+\text{Derivative definition}\\
+\amp = \lim_{h\to 0} \frac{\sin(x)\cos(h)+\cos(x)\sin(h)-\sin(x)}{h} \amp \amp
+\text{Angle addition identity}\\
+\amp = \lim_{h\to 0} \frac{\sin(x)(\cos(h)-1) + \cos(x)\sin(h)}{h} \amp  \amp
+\text{Regrouped and factored}\\
+\amp = \lim_{h\to 0} \left(\frac{\sin(x)(\cos(h)-1)}{h} + \frac{\cos(x)\sin(h)}{h}
+\right) \amp  \amp  \text{Split into two fractions}\\
+\amp = \lim_{h\to 0} \sin(x) \cdot \lim_{h\to 0}\frac{\cos(h)-1}{h}\\
+\amp\quad{}+\lim_{h\to 0}\cos(x)\cdot  \lim_{h\to 0}\frac{\sin(h)}{h} \amp  \amp
+\text{Product/sum limit rules}\\
+\amp = \sin(x)\cdot 0 + \cos(x) \cdot 1 \amp \amp  \text{Applied }
+\knowl{./knowl/thm_special_limits.html}{\text{Theorem 1.3.17}}\\
+\amp = \cos(x). \amp \amp \text{(Are you surprised?)}
+\end{align*}
+</div>
+<span class="incontext"><a href="sec_derivative.html#md-43" class="internal">in-context</a></span>
+</body>
+</html>

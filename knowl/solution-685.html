@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:40:37Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.7.8.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_apps_taylor_poly_ex_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ENf-Z2pLrJg?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol class="decimal">
+<li>
+<p>We start with creating a table of the derivatives of <span class="process-math">\(e^x\)</span> evaluated at <span class="process-math">\(x=0\text{.}\)</span> In this particular case, this is relatively simple, as shown in <a href="" class="xref" data-knowl="./knowl/fig_taypoly1a.html" title="Table 9.7.9: The derivatives of f(x)=e^x evaluated at x=0">Figure 9.7.9</a>.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.7.9<span class="period">.</span></span><span class="space"> </span>The derivatives of <span class="process-math">\(f(x)=e^x\)</span> evaluated at <span class="process-math">\(x=0\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(x) = e^x\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0) = 1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\fp(x) = e^x\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\fp(0) = 1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\fp'(x) = e^x\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\fp'(0) = 1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\,\vdots\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\,\vdots\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f\,^{(n)}(x) = e^x\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\Rightarrow\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f\,^{(n)}(0) = 1\)</span></td>
+</tr>
+</table></div></figure><p>By the definition of the Maclaurin polynomial, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+p_n(x) \amp = f(0) + \fp(0)x + \frac{\fpp(0)}{2!}x^2+\frac{\fp''(0)}{3!}x^3+\cdots+\frac{f\,^{(n)}(0)}{n!}x^n\\
+\amp = 1+x+\frac{1}{2}x^2+\frac{1}{6}x^3 + \frac{1}{24}x^4 + \cdots + \frac{1}{n!}x^n\text{.}
+\end{align*}
+</div>
+</li>
+<li>
+<p>Using our answer from part 1, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_taypoly1b.html">
+\begin{equation*}
+e^x\approx p_5(x) = 1+x+\frac{1}{2}x^2+\frac{1}{6}x^3 + \frac{1}{24}x^4 + \frac{1}{120}x^5\text{.}
+\end{equation*}
+</div>
+<p class="continuation">To approximate the value of <span class="process-math">\(e\text{,}\)</span> note that <span class="process-math">\(e = e^1 = f(1) \approx p_5(1)\text{.}\)</span> It is very straightforward to evaluate <span class="process-math">\(p_5(1)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_taypoly1b.html">
+\begin{equation*}
+p_5(1) = 1+1+\frac12+\frac16+\frac1{24}+\frac1{120} = \frac{163}{60} \approx 2.71667\text{.}
+\end{equation*}
+</div>
+<p class="continuation">A plot of <span class="process-math">\(f(x)=e^x\)</span> and <span class="process-math">\(p_5(x)\)</span> is given in <a href="" class="xref" data-knowl="./knowl/fig_taypoly1b.html" title="Figure 9.7.10">Figure 9.7.10</a>. To <span class="process-math">\(5\)</span> decimal places, the actual value of <span class="process-math">\(e\)</span> is <span class="process-math">\(2.71828\text{.}\)</span> So this approximation agrees to two decimal places. </p>
+</li>
+</ol>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_taypoly1b.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.7.10<span class="period">.</span></span><span class="space"> </span>A plot of <span class="process-math">\(f(x)=e^x\)</span> and its 5<span class="process-math">\(^{th}\)</span> degree Maclaurin polynomial <span class="process-math">\(p_5(x)\)</span></figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_taylor_poly.html#solution-685" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:12Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.3.9.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-trig-ex-tan2sec6" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/yYbn6R20qTk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Since the power of secant is even, we use <a href="" class="xref" data-knowl="./knowl/idea_trig_int_2a.html" title="Item 1">Rule 1</a>from <a href="" class="xref" data-knowl="./knowl/idea_trig_int_2.html" title="Key Idea 6.3.8: Integrals Involving Powers of Tangent and Secant">Key Idea 6.3.8</a> and pull out a <span class="process-math">\(\sec^2(x)\)</span> in the integrand. We convert the remaining powers of secant into powers of tangent.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_trig_int_2a.html ./knowl/idea_trig_int_2.html">
+\begin{align*}
+\int \tan^2(x) \sec^6(x) \, dx \amp = \int\tan^2(x) \sec^4(x) \sec^2(x) \, dx\\
+\amp = \int \tan^2(x) \big(1+\tan^2(x) \big)^2\sec^2(x) \, dx\\
+\end{align*}
+<p class="intertext">Now substitute, with <span class="process-math">\(u=\tan(x)\text{,}\)</span> with <span class="process-math">\(du = \sec^2(x) \, dx\text{.}\)</span></p>
+\begin{align*}
+\amp =\int u^2\big(1+u^2\big)^2\,du\\
+\end{align*}
+<p class="intertext">We leave the integration and subsequent substitution to the reader. The final answer is</p>
+\begin{align*}
+\amp =\frac13\tan^3(x) +\frac25\tan^5(x) +\frac17\tan^7(x) +C\text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_trigint.html#solution-335" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:28:45Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Integration by Parts</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_substitution.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_anti_tech.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_trigint.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_substitution.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_anti_tech.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_trigint.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="active">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_IBP"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.2</span> <span class="title">Integration by Parts</span>
+</h2>
+<p id="p-5566">Here's a simple integral that we can't yet evaluate:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int x\cos(x) \,dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5567">It's a simple matter to take the derivative of the integrand using the Product Rule, but there is no Product Rule for integrals. However, this section introduces <em class="emphasis">Integration by Parts</em>, a method of integration that is based on the Product Rule for derivatives. It will enable us to evaluate this integral.</p>
+<figure class="figure figure-like" id="vid-int-parts-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-201" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/v7KGuoM-cgU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_IBP.html" class="internal" title="Section 6.2: Integration by Parts">Section 6.2</a></figcaption></figure><p id="p-5568">The Product Rule says that if <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are functions of <span class="process-math">\(x\text{,}\)</span> then <span class="process-math">\((uv)' = u'v + uv'\text{.}\)</span> For simplicity, we've written <span class="process-math">\(u\)</span> for <span class="process-math">\(u(x)\)</span> and <span class="process-math">\(v\)</span> for <span class="process-math">\(v(x)\text{.}\)</span> Suppose we integrate both sides with respect to <span class="process-math">\(x\text{.}\)</span> This gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int (uv)'\,dx = \int (u'v+uv')\,dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5569">By the Fundamental Theorem of Calculus, the left side integrates to <span class="process-math">\(uv\text{.}\)</span> The right side can be broken up into two integrals, and we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+uv = \int u'v\,dx + \int uv'\,dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5570">Solving for the second integral we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int uv'\,dx = uv - \int u'v\,dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5571">Using differential notation, we can write <span class="process-math">\(du = u'(x)dx\)</span> and <span class="process-math">\(dv=v'(x)dx\)</span> and the expression above can be written as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int u\,dv = uv - \int v\,du\text{.}
+\end{equation*}
+</div>
+<p id="p-5572">This is the Integration by Parts formula. For reference purposes, we state this in a theorem.</p>
+<article class="theorem theorem-like" id="thm_IBP"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by Parts.</span>
+</h3>
+<p id="p-5573">Let <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> be differentiable functions of <span class="process-math">\(x\)</span> on an interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int u\, dv = uv - \int v\, du\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{x=a}^{x=b} u\, dv = uv\Big|_a^b - \int_{x=a}^{x=b}v\, du\text{.}
+\end{equation*}
+</div></article><aside class="aside aside-like" id="aside-31"><p id="p-5574">The integration by parts formula can also be written as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-217">
+\begin{align*}
+\amp\int f(x)\,g'(x) \,dx\\
+\amp\quad\quad =f(x)g(x)-\int \fp(x)\,g(x)\,dx
+\end{align*}
+</div>
+<p class="continuation">for differentiable functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span></p></aside><p id="p-5575">Let's try an example to understand our new technique.</p>
+<article class="example example-like" id="ex_ibp1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Integrating using Integration by Parts.</span>
+</h3>
+<p id="p-5576">Evaluate <span class="process-math">\(\ds\int x\cos(x) \, dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-319" id="solution-319"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-319"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-parts-ex-onestep" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/gKtzlaH2EPo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-5577">The key to Integration by Parts is to identify part of the integrand as “<span class="process-math">\(u\)</span>” and part as “<span class="process-math">\(dv\text{.}\)</span>” Regular practice will help one make good identifications, and later we will introduce some principles that help. For now, let <span class="process-math">\(u=x\)</span> and <span class="process-math">\(dv=\cos(x) \, dx\text{.}\)</span></p>
+<p id="p-5578">It is generally useful to make a small table of these values as done below. Right now we only know <span class="process-math">\(u\)</span> and <span class="process-math">\(dv\)</span> as shown on the left of <a href="" class="xref" data-knowl="./knowl/fig_ibp1.html" title="Figure 6.2.4">Figure 6.2.4</a>; on the right we fill in the rest of what we need. If <span class="process-math">\(u = x\text{,}\)</span> then <span class="process-math">\(du = dx\text{.}\)</span> Since <span class="process-math">\(dv = \cos(x)\, dx\text{,}\)</span> <span class="process-math">\(v\)</span> is an antiderivative of <span class="process-math">\(\cos(x)\text{.}\)</span> We choose <span class="process-math">\(v = \sin(x)\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_ibp1"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-218">
+\begin{align*}
+u\amp = x \amp  v\amp =\mathord{?}\\
+du\amp = \mathord{?}  \amp  dv\amp =\cos(x) \, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10.3448275862069%;"><p id="p-5580"><span class="process-math">\(\implies\)</span></p></div>
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-219">
+\begin{align*}
+u\amp = x \amp  v\amp =\sin(x)\\
+du\amp = dx \amp  dv\amp =\cos(x) \, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.4<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts</figcaption></figure><p id="p-5582">Now substitute all of this into the Integration by Parts formula, giving</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int x\cos(x)\,dx = x\sin(x) - \int \sin(x) \,dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5583">We can then integrate <span class="process-math">\(\sin(x)\)</span> to get <span class="process-math">\(-\cos(x) + C\)</span> and overall our answer is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int x\cos(x)\, dx = x\sin(x) + \cos(x) + C\text{.}
+\end{equation*}
+</div>
+<p id="p-5584">Note how the antiderivative contains a product, <span class="process-math">\(x\sin(x)\text{.}\)</span> This product is what makes Integration by Parts necessary.</p>
+<p id="p-5585">We can check our work by taking the derivative:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-220">
+\begin{align*}
+\lzoo{x}{x\sin(x) + \cos(x) + C} \amp =x\cos(x)+\sin(x)-\sin(x)+0\\
+\amp = x\cos(x)\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="p-5586">You may wonder what would have happened in <a href="" class="xref" data-knowl="./knowl/ex_ibp1.html" title="Example 6.2.3: Integrating using Integration by Parts">Example 6.2.3</a> if we had chosen our <span class="process-math">\(u\)</span> and <span class="process-math">\(dv\)</span> differently. If we had chosen <span class="process-math">\(u=\cos(x)\)</span> and <span class="process-math">\(dv=x \, dx\)</span> then <span class="process-math">\(du=-\sin(x)\, dx\)</span> and <span class="process-math">\(v=x^2/2\text{.}\)</span> Our second integral is not simpler than the first; we would have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_ibp1.html">
+\begin{equation*}
+\int x\cos(x)\,dx=\cos(x)\frac{x^2}{2}-\int \frac{x^2}{2}\left(-\sin(x)\right)\,dx\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The only way to approach this second integral would be yet another integration by parts.</p>
+<p id="p-5587"><a href="" class="xref" data-knowl="./knowl/ex_ibp1.html" title="Example 6.2.3: Integrating using Integration by Parts">Example 6.2.3</a> demonstrates how Integration by Parts works in general. We try to identify <span class="process-math">\(u\)</span> and <span class="process-math">\(dv\)</span> in the integral we are given, and the key is that we usually want to choose <span class="process-math">\(u\)</span> and <span class="process-math">\(dv\)</span> so that <span class="process-math">\(du\)</span> is simpler than <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> is hopefully not too much more complicated than <span class="process-math">\(dv\text{.}\)</span> This will mean that the integral on the right side of the Integration by Parts formula, <span class="process-math">\(\int v\,du\)</span> will be simpler to integrate than the original integral <span class="process-math">\(\int u\,dv\text{.}\)</span></p>
+<p id="p-5588">In the example above, we chose <span class="process-math">\(u=x\)</span> and <span class="process-math">\(dv=\cos(x)\,dx\text{.}\)</span> Then <span class="process-math">\(du=dx\)</span> was simpler than <span class="process-math">\(u\)</span> and <span class="process-math">\(v=\sin(x)\)</span> is no more complicated than <span class="process-math">\(dv\text{.}\)</span> Therefore, instead of integrating <span class="process-math">\(x\cos(x) \,dx\text{,}\)</span> we could integrate <span class="process-math">\(\sin(x)\,dx\text{,}\)</span> which we knew how to do.</p>
+<p id="p-5589">A useful mnemonic for helping to determine <span class="process-math">\(u\)</span> is “<abbr class="acronym">LIATE</abbr>,” where</p>
+<p id="p-5590"><abbr class="acronym">L</abbr> = <em class="emphasis">L</em>ogarithmic, <abbr class="acronym">I</abbr> = <em class="emphasis">I</em>nverse Trig., <abbr class="acronym">A</abbr> = <em class="emphasis">A</em>lgebraic (polynomials, roots, power functions), <abbr class="acronym">T</abbr> = <em class="emphasis">T</em>rigonometric, and <abbr class="acronym">E</abbr> = <em class="emphasis">E</em>xponential.</p>
+<p id="p-5591">If the integrand contains both a logarithmic and an algebraic term, in general letting <span class="process-math">\(u\)</span> be the logarithmic term works best, as indicated by <abbr class="acronym">L</abbr> coming before <abbr class="acronym">A</abbr> in <abbr class="acronym">LIATE</abbr>.</p>
+<p id="p-5592">We now consider another example.</p>
+<article class="example example-like" id="ex_ibp2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Integrating using Integration by Parts.</span>
+</h3>
+<p id="p-5593">Evaluate <span class="process-math">\(\displaystyle \int x e^x\,dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-320" id="solution-320"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-320"><div class="solution solution-like">
+<p id="p-5594">The integrand contains an <em class="emphasis">A</em>lgebraic term (<span class="process-math">\(x\)</span>) and an <em class="emphasis">E</em>xponential term (<span class="process-math">\(e^x\)</span>). Our mnemonic suggests letting <span class="process-math">\(u\)</span> be the algebraic term, so we choose <span class="process-math">\(u=x\)</span> and <span class="process-math">\(dv=e^x\,dx\text{.}\)</span> Then <span class="process-math">\(du=dx\)</span> and <span class="process-math">\(v=e^x\)</span> as indicated by the tables below.</p>
+<figure class="figure figure-like" id="fig_ibp2"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-221">
+\begin{align*}
+u\amp = x \amp  v\amp =\mathord{?}\\
+du\amp = \mathord{?}  \amp  dv\amp =e^x \, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10.3448275862069%;"><p id="p-5596"><span class="process-math">\(\implies\)</span></p></div>
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-222">
+\begin{align*}
+u\amp = x \amp  v\amp =e^x\\
+du\amp = dx \amp  dv\amp =e^x \, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.6<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts</figcaption></figure><p id="p-5598">We see <span class="process-math">\(du\)</span> is simpler than <span class="process-math">\(u\text{,}\)</span> while there is no change in going from <span class="process-math">\(dv\)</span> to <span class="process-math">\(v\text{.}\)</span> This is good. The Integration by Parts formula gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int x e^x\,dx = xe^x - \int e^x\,dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5599">The integral on the right is simple; our final answer is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int xe^x\, dx = xe^x - e^x + C\text{.}
+\end{equation*}
+</div>
+<p id="p-5600">Note again how the antiderivatives contain a product term.</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_ibp3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Integrating using Integration by Parts.</span>
+</h3>
+<p id="p-5601">Evaluate <span class="process-math">\(\displaystyle \int x^2\cos(x) \,dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-321" id="solution-321"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-321"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-parts-ex-twostep" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/j9pCcQMSjbg?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-5602">The mnemonic suggests letting <span class="process-math">\(u=x^2\)</span> instead of the trigonometric function, hence <span class="process-math">\(dv=\cos(x)\,dx\text{.}\)</span> Then <span class="process-math">\(du=2x\,dx\)</span> and <span class="process-math">\(v=\sin(x)\)</span> as shown below.</p>
+<figure class="figure figure-like" id="fig_ibp3"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-223">
+\begin{align*}
+u\amp = x^2 \amp  v\amp =\mathord{?}\\
+du\amp = \mathord{?}  \amp  dv\amp =\cos(x) \, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10.3448275862069%;"><p id="p-5604"><span class="process-math">\(\implies\)</span></p></div>
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-224">
+\begin{align*}
+u\amp = x^2 \amp  v\amp =\sin(x)\\
+du\amp = 2x\, dx \amp  dv\amp =\cos(x) \, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.8<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts</figcaption></figure><p id="p-5606">The Integration by Parts formula gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int x^2\cos(x)\,dx = x^2\sin(x) - \int 2x\sin(x)\,dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5607">At this point, the integral on the right is indeed simpler than the one we started with, but to evaluate it, we need to do Integration by Parts again. Here we choose <span class="process-math">\(r=2x\)</span> and <span class="process-math">\(ds=\sin(x)\)</span> and fill in the rest below. (We are choosing new names since we have already used <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{.}\)</span> Our integration by parts formula is now <span class="process-math">\(\int r\,ds=rs-\int s\,dr\text{.}\)</span>)</p>
+<figure class="figure figure-like" id="fig_ibp3b"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-225">
+\begin{align*}
+u\amp = 2x \amp  v\amp =\text{?}\\
+du\amp = \text{?}  \amp  dv\amp =\sin(x)\, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10.3448275862069%;"><p id="p-5609"><span class="process-math">\(\Rightarrow\)</span></p></div>
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-226">
+\begin{align*}
+u\amp = 2x \amp  v\amp =-\cos(x)\\
+du\amp = 2\, dx \amp  dv\amp =\sin(x)\, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.9<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts (again)</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="" id="p-5611">
+\begin{equation*}
+\int x^2\cos(x)\,dx = x^2\sin(x) - \left(-2x\cos(x) - \int -2\cos(x)\,dx\right)\text{.}
+\end{equation*}
+</div>
+<p id="p-5612">The integral all the way on the right is now something we can evaluate. It evaluates to <span class="process-math">\(-2\sin(x)\text{.}\)</span> Then going through and simplifying, being careful to keep all the signs straight, our answer is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int x^2\cos(x)\, dx = x^2\sin(x)  + 2x\cos(x) - 2\sin(x) + C\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="ex_ibp4"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Integrating using Integration by Parts.</span>
+</h3>
+<p id="p-5613">Evaluate <span class="process-math">\(\displaystyle \int e^x\cos(x) \,dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-322" id="solution-322"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-322"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-parts-ex-exp-times-cos" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/z0A1v2Zkfns?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-5614">This is a classic problem. Our mnemonic suggests letting <span class="process-math">\(u\)</span> be the trigonometric function instead of the exponential. In this particular example, one can let <span class="process-math">\(u\)</span> be either <span class="process-math">\(\cos(x)\)</span> or <span class="process-math">\(e^x\text{;}\)</span> to demonstrate that we do not have to follow <abbr class="acronym">LIATE</abbr>, we choose <span class="process-math">\(u=e^x\)</span> and hence <span class="process-math">\(dv = \cos(x)\,dx\text{.}\)</span> Then <span class="process-math">\(du=e^x\,dx\)</span> and <span class="process-math">\(v=\sin(x)\)</span> as shown below.</p>
+<figure class="figure figure-like" id="fig_ibp4"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-227">
+\begin{align*}
+u\amp = e^x \amp  v\amp =\mathord{?}\\
+du\amp = \mathord{?}  \amp  dv\amp =\cos(x) \, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10.3448275862069%;"><p id="p-5616"><span class="process-math">\(\implies\)</span></p></div>
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-228">
+\begin{align*}
+u\amp = e^x \amp  v\amp =\sin(x)\\
+du\amp = e^x  \amp  dv\amp =\cos(x) \, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.11<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts</figcaption></figure><p id="p-5618">Notice that <span class="process-math">\(du\)</span> is no simpler than <span class="process-math">\(u\text{,}\)</span> going against our general rule (but bear with us). The Integration by Parts formula yields</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int e^x\cos(x)\, dx = e^x\sin(x) - \int e^x\sin(x)\,dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5619">The integral on the right is not much different than the one we started with, so it seems like we have gotten nowhere. Let's keep working and apply Integration by Parts to the new integral, using <span class="process-math">\(u=e^x\)</span> and <span class="process-math">\(dv = \sin(x)\,dx\text{.}\)</span> This leads us to the following:</p>
+<figure class="figure figure-like" id="fig_ibp4a"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-229">
+\begin{align*}
+r\amp = e^x \amp  s\amp =\mathord{?}\\
+dr\amp = \mathord{?}  \amp  ds\amp =\sin(x) \, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10.3448275862069%;"><p id="p-5621"><span class="process-math">\(\implies\)</span></p></div>
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-230">
+\begin{align*}
+r\amp = e^x \amp  s\amp =-\cos(x)\\
+dr\amp = e^x\, dx \amp  ds\amp =\sin(x) \, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.12<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts (again)</figcaption></figure><p id="p-5623">The Integration by Parts formula then gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-231">
+\begin{align*}
+\int e^x\cos(x)\,dx \amp = e^x\sin(x) - \left(-e^x\cos(x) - \int -e^x\cos(x)\,dx\right)\\
+\amp = e^x\sin(x)+ e^x\cos(x) - \int e^x\cos(x)\, dx\text{.}
+\end{align*}
+</div>
+<p id="p-5624">It seems we are back right where we started, as the right hand side contains <span class="process-math">\(\int e^x\cos(x)\,dx\text{.}\)</span> But this is actually a good thing.</p>
+<p id="p-5625">Add <span class="process-math">\(\ds\int e^x\cos(x)\, dx\)</span> to both sides. This gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-232">
+\begin{align*}
+2\int e^x\cos(x) \, dx \amp  = e^x\sin(x) + e^x\cos(x)\\
+\end{align*}
+<p class="intertext">Now divide both sides by 2 and then add the integration constant:</p>
+\begin{align*}
+\int e^x\cos(x) \, dx \amp  = \frac{1}{2}\big(e^x\sin(x) + e^x\cos(x) \big)+C\text{.}
+\end{align*}
+</div>
+<p id="p-5626">Simplifying a little, our answer is thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int e^x\cos(x)\, dx = \frac12e^x\left(\sin(x) + \cos(x)\right)+C\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="ex_ibp5"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.13</span><span class="period">.</span><span class="space"> </span><span class="title">Integrating using Integration by Parts: antiderivative of <span class="process-math">\(\ln(x)\)</span>.</span>
+</h3>
+<p id="p-5627">Evaluate <span class="process-math">\(\int \ln(x)\,dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-323" id="solution-323"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-323"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-parts-ex-log" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/NGkLj7djFSw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-5628">One may have noticed that we have rules for integrating the familiar trigonometric functions and <span class="process-math">\(e^x\text{,}\)</span> but we have not yet given a rule for integrating <span class="process-math">\(\ln(x)\text{.}\)</span> That is because <span class="process-math">\(\ln(x)\)</span> can't easily be integrated with any of the rules we have learned up to this point. But we can find its antiderivative by a clever application of Integration by Parts. Set <span class="process-math">\(u=\ln(x)\)</span> and <span class="process-math">\(dv=dx\text{.}\)</span> This is a good, sneaky trick to learn as it can help in other situations. This determines <span class="process-math">\(du=(1/x)\,dx\)</span> and <span class="process-math">\(v=x\)</span> as shown below.</p>
+<figure class="figure figure-like" id="fig_ibp5"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-233">
+\begin{align*}
+u\amp = \ln(x) \amp  v\amp =\mathord{?}\\
+du\amp = \mathord{?}  \amp  dv\amp =1 \, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10.3448275862069%;"><p id="p-5630"><span class="process-math">\(\implies\)</span></p></div>
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-234">
+\begin{align*}
+u\amp = \ln(x) \amp  v\amp =x\\
+du\amp = 1/x\, dx  \amp  dv\amp =1 \, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.14<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts</figcaption></figure><p id="p-5632">Putting this all together in the Integration by Parts formula, things work out very nicely:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \ln(x)\,dx = x\ln(x) - \int x\,\frac1x\,dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5633">The new integral simplifies to <span class="process-math">\(\int 1\,dx\text{,}\)</span> which is about as simple as things get. Its integral is <span class="process-math">\(x+C\)</span> and our answer is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \ln(x) \, dx = x\ln(x) - x + C\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="ex_ibp6"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.15</span><span class="period">.</span><span class="space"> </span><span class="title">Integrating using Int. by Parts: antiderivative of <span class="process-math">\(\arctan x\)</span>.</span>
+</h3>
+<p id="p-5634">Evaluate <span class="process-math">\(\displaystyle \int \arctan x \,dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-324" id="solution-324"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-324"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-parts-ex-arctan" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/md3-8bv5E5M?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-5635">The same sneaky trick we used above works here. Let <span class="process-math">\(u=\arctan x\)</span> and <span class="process-math">\(dv=dx\text{.}\)</span> Then <span class="process-math">\(du=1/(1+x^2)\,dx\)</span> and <span class="process-math">\(v=x\text{.}\)</span> The Integration by Parts formula gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \arctan x \,dx = x\arctan x - \int \frac x{1+x^2}\,dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5636">The integral on the right can be solved by substitution. Taking <span class="process-math">\(w=1+x^2\text{,}\)</span> we get <span class="process-math">\(dw=2x\,dx\text{.}\)</span> The integral then becomes</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \arctan x \,dx = x\arctan x - \frac12\int \frac 1{w}\,dw\text{.}
+\end{equation*}
+</div>
+<p id="p-5637">The integral on the right evaluates to <span class="process-math">\(\ln\abs{w}+C\text{,}\)</span> which becomes <span class="process-math">\(\ln(1+x^2)+C\)</span> (we can drop the absolute values as <span class="process-math">\(1+x^2\)</span> is always positive). Therefore, the answer is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \arctan x\, dx = x\arctan x - \frac12\ln(1+x^2) + C\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><section class="paragraphs" id="paragraphs-11"><h3 class="heading"><span class="title">Substitution Before Integration.</span></h3>
+<p id="p-5638">When taking derivatives, it was common to employ multiple rules (such as using both the Quotient and the Chain Rules). It should then come as no surprise that some integrals are best evaluated by combining integration techniques. In particular, here we illustrate making an “unusual” substitution first before using Integration by Parts.</p>
+<article class="example example-like" id="ex_ibp8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.16</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by Parts after substitution.</span>
+</h4>
+<p id="p-5639">Evaluate <span class="process-math">\(\ds \int \cos(\ln(x))\, dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-325" id="solution-325"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-325"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-parts-ex-sub-first" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/0j0vM0nosYs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-5640">The integrand contains a composition of functions, leading us to think Substitution would be beneficial. Letting <span class="process-math">\(u=\ln(x)\text{,}\)</span> we have <span class="process-math">\(du = 1/x\, dx\text{.}\)</span> This seems problematic, as we do not have a <span class="process-math">\(1/x\)</span> in the integrand. But consider:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+du = \frac 1x\, dx \quad \Rightarrow \quad x\cdot du = dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5641">Since <span class="process-math">\(u = \ln(x)\text{,}\)</span> we can use inverse functions and conclude that <span class="process-math">\(x = e^u\text{.}\)</span> Therefore we have that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-235">
+\begin{align*}
+dx \amp = x\cdot du\\
+\amp = e^u\, du\text{.}
+\end{align*}
+</div>
+<p id="p-5642">We can thus replace <span class="process-math">\(\ln(x)\)</span> with <span class="process-math">\(u\)</span> and <span class="process-math">\(dx\)</span> with <span class="process-math">\(e^u\, du\text{.}\)</span> Thus we rewrite our integral as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \cos(\ln(x))\, dx = \int e^u\cos u \, du\text{.}
+\end{equation*}
+</div>
+<p id="p-5643">We evaluated this integral on the right in <a href="" class="xref" data-knowl="./knowl/ex_ibp4.html" title="Example 6.2.10: Integrating using Integration by Parts">Example 6.2.10</a>. (This integral can also be found in a table of integrals). Using the result there, we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_ibp4.html" id="md-236">
+\begin{align*}
+\int \cos(\ln(x) )\, dx \amp = \int e^u\cos(u) \, du\\
+\amp = \frac12e^u\big(\sin(u) + \cos(u) \big) + C\\
+\amp = \frac12e^{\ln(x) } \big(\sin(\ln(x) ) + \cos(\ln(x) )\big)+C\\
+\amp = \frac12x \big(\sin(\ln(x) ) + \cos(\ln(x) )\big)+C\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article></section><section class="paragraphs" id="paragraphs-12"><h3 class="heading"><span class="title">Definite Integrals and Integration By Parts.</span></h3>
+<p id="p-5644">So far we have focused only on evaluating indefinite integrals. Of course, we can use Integration by Parts to evaluate definite integrals as well, as <a href="" class="xref" data-knowl="./knowl/thm_IBP.html" title="Theorem 6.2.2: Integration by Parts">Theorem 6.2.2</a> states. We do so in the next example.</p>
+<article class="example example-like" id="ex_ibp7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.17</span><span class="period">.</span><span class="space"> </span><span class="title">Definite integration using Integration by Parts.</span>
+</h4>
+<p id="p-5645">Evaluate <span class="process-math">\(\displaystyle \int_1^2 x^2 \ln(x) \,dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-326" id="solution-326"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-326"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-parts-ex-definite" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/O9_0B2gatMo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-5646">Our mnemonic suggests letting <span class="process-math">\(u=\ln(x)\text{,}\)</span> hence <span class="process-math">\(dv =x^2\,dx\text{.}\)</span> We then get <span class="process-math">\(du = (1/x)\,dx\)</span> and <span class="process-math">\(v=x^3/3\)</span> as shown below.</p>
+<figure class="figure figure-like" id="fig_ibp7"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-237">
+\begin{align*}
+u\amp = \ln(x) \amp  v\amp =\text{?}\\
+du\amp = \text{?}  \amp  dv\amp =x^2\, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10.3448275862069%;"><p id="p-5648"><span class="process-math">\(\Rightarrow\)</span></p></div>
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="" id="md-238">
+\begin{align*}
+u\amp = \ln(x)\amp  v\amp =x^3/3\\
+du\amp = 1/x\, dx \amp  dv\amp =x^2\, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.18<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts</figcaption></figure><p id="p-5650">The Integration by Parts formula then gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-239">
+\begin{align*}
+\int_1^2 x^2 \ln(x)\,dx \amp = \left.\frac{x^3}3\ln(x)\right|_1^2 - \int_1^2 \frac{x^3}{3}\,\frac 1x\,dx\\
+\amp =  \left.\frac{x^3}3\ln(x)\right|_1^2 - \int_1^2 \frac{x^2}{3}\,dx\\
+\amp =  \left.\frac{x^3}3\ln(x)\right|_1^2 - \left.\frac{x^3}{9}\right|_1^2\\
+\amp =  \left.\left(\frac{x^3}3\ln(x) - \frac{x^3}{9}\right)\right|_1^2\\
+\amp =	\left(\frac83\ln(2) - \frac89\right)-\left(\frac13\ln(1) - \frac19\right)\\
+\amp = \frac83\ln(2) - \frac79\\
+\amp \approx 1.07\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="p-5651">In general, Integration by Parts is useful for integrating certain products of functions, like <span class="process-math">\(\int x e^x\,dx\)</span> or <span class="process-math">\(\int x^3\sin(x)\,dx\text{.}\)</span> It is also useful for integrals involving logarithms and inverse trigonometric functions.</p>
+<p id="p-5652">As stated before, integration is generally more difficult than derivation. We are developing tools for handling a large array of integrals, and experience will tell us when one tool is preferable/necessary over another. For instance, consider the three similar-looking integrals</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int xe^x\,dx, \qquad  \int x e^{x^2}\,dx \qquad \text{ and }  \qquad \int xe^{x^3}\,dx\text{.}
+\end{equation*}
+</div>
+<p id="p-5653">While the first is calculated easily with Integration by Parts, the second is best approached with Substitution. Taking things one step further, the third integral has no answer in terms of elementary functions, so none of the methods we learn in calculus will get us the exact answer.</p>
+<p id="p-5654">Integration by Parts is a very useful method, second only to Substitution. In the following sections of this chapter, we continue to learn other integration techniques. <a href="sec_trigint.html" class="internal" title="Section 6.3: Trigonometric Integrals">Section 6.3</a> focuses on handling integrals containing trigonometric functions.</p></section><section class="exercises" id="exercises-29"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-71"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-1002"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-924" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="924" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskZmFsc2UgPSBQb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwyKTsKJHRydWUgPSBQb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKCkJFR0lOX1BHTUwKW19deyR0cnVlfXs1fSBJbnRlZ3JhdGlvbiBieSBQYXJ0cyBpcyB1c2VmdWwgaW4gZXZhbHVhdGluZyBpbnRlZ3JhbmRzIHRoYXQgY29udGFpbiBwcm9kdWN0cyBvZiBmdW5jdGlvbnMuCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5655"><ul style="list-style:circle;">
+<li id="li-1165"><p id="p-5657">True</p></li>
+<li id="li-1166"><p id="p-5658">False</p></li>
+</ul> Integration by Parts is useful in evaluating integrands that contain products of functions.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-924')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1003"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-925" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="925" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskZmFsc2UgPSBQb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwyKTsKJHRydWUgPSBQb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKCkJFR0lOX1BHTUwKW19deyRmYWxzZX17NX0gSW50ZWdyYXRpb24gYnkgUGFydHMgY2FuIGJlIHRob3VnaHQgb2YgYXMgdGhlICJvcHBvc2l0ZSBvZiB0aGUgQ2hhaW4gUnVsZS4iCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5660"><ul style="list-style:circle;">
+<li id="li-1168"><p id="p-5662">True</p></li>
+<li id="li-1169"><p id="p-5663">False</p></li>
+</ul> Integration by Parts can be thought of as the “opposite of the Chain Rule.”</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-925')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1004"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-926" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="926" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRm9yIHdoYXQgaXMgIkxJQVRFIiB1c2VmdWw/CgpbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KRGV0ZXJtaW5pbmcgd2hpY2ggZnVuY3Rpb25zIGluIHRoZSBpbnRlZ3JhbmQgdG8gc2V0IGVxdWFsIHRvICJbYHVgXSIgYW5kIHdoaWNoIHRvIHNldCBlcXVhbCB0byAiW2BkdmBdIi4KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5665">For what is “LIATE” useful?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-926')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1005"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-927" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="927" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskZmFsc2UgPSBQb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwyKTsKJHRydWUgPSBQb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKCkJFR0lOX1BHTUwKW19deyRmYWxzZX17NX0gSWYgdGhlIGludGVncmFsIHRoYXQgcmVzdWx0cyBmcm9tIEludGVncmF0aW9uIGJ5IFBhcnRzIGFwcGVhcnMgdG8gYWxzbyBuZWVkIEludGVncmF0aW9uIGJ5IFBhcnRzLCB0aGVuIGEgbWlzdGFrZSB3YXMgbWFkZSBpbiB0aGUgb3JpZ2luYWwgY2hvaWNlIG9mICJbYHVgXSIuCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KRjsgaXQgaXMgbm90IHVuY29tbW9uIHRvIG5lZWQgdG8gdXNlIEludGVncmF0aW9uIGJ5IFBhcnRzIHNldmVyYWwgdGltZXMgdG8gZnVsbHkgZXZhbHVhdGUgYW4gaW50ZWdyYWwuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5667"><ul style="list-style:circle;">
+<li id="li-1171"><p id="p-5669">True</p></li>
+<li id="li-1172"><p id="p-5670">False</p></li>
+</ul> If the integral that results from Integration by Parts appears to also need Integration by Parts, then a mistake was made in the original choice of “<span class="process-math">\(u\)</span>”.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-927')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-72"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-108">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-124"><p id="p-5673">Evaluate the given indefinite integral.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="ibp_prob_5"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<div id="webwork-928" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="928" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoInNpbih4KS14KmNvcyh4KSIpOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IHhcc2luKHgpIFwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KW2Bcc2luKHgpIC0geFxjb3MoeCkgK0NgXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5674"><span class="process-math">\(\ds \int x\sin(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-928')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1007"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<div id="webwork-929" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="929" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIi1lXigteCkqKHgrMSkiKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludCB4ZV57LXh9XCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5677"><span class="process-math">\(\ds \int xe^{-x}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-929')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1008"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div id="webwork-930" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="930" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIi14XjIqY29zKHgpKzJ4KnNpbih4KSsyKmNvcyh4KSIpOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IHheMlxzaW4oeCkgXCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5679"><span class="process-math">\(\ds \int x^2\sin(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-930')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1009"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-931" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="931" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIi14XjMqY29zKHgpKzN4XjIqc2luKHgpKzZ4KmNvcyh4KS02KnNpbih4KSIpOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IHheM1xzaW4oeCkgXCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5681"><span class="process-math">\(\ds \int x^3\sin(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-931')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1010"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-932" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="932" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiMS8yKmVeKHheMikiKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludCB4ZV57eF4yfVwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5683"><span class="process-math">\(\ds \int xe^{x^2}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-932')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1011"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-933" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="933" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoImVeeCooeF4zLTN4XjIrNngtNikiKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludCB4XjNlXnt4fVwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5685"><span class="process-math">\(\ds \int x^3e^{x}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-933')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1012"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<div id="webwork-934" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="934" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiLTEvMip4KmVeKC0yeCktZV4oLTJ4KS80Iik7CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgeGVeey0yeH1cLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5687"><span class="process-math">\(\ds \int xe^{-2x}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-934')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1013"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-935" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="935" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiMS8yKmVeeCooc2luKHgpLWNvcyh4KSkiKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludCBlXnhcc2luKHgpIFwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5689"><span class="process-math">\(\ds \int e^x\sin(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-935')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="ibp_prob_13"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div id="webwork-936" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="936" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiMS81KmVeKDJ4KSooc2luKHgpKzIqY29zKHgpKSIpOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IGVeezJ4fVxjb3MoeCkgXCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5691"><span class="process-math">\(\ds \int e^{2x}\cos(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-936')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1015"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-937" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="937" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsInBhcnNlckZvcm11bGFVcFRvQ29uc3RhbnQucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKKCRtLCRuKSA9ICgyLi45KVtOY2hvb3NlSyg4LDIpXTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JG09Mjskbj0zfTsKJGcgPSBnY2QoJG0sJG4pOwokTSA9ICRtLyRnOwokTiA9ICRuLyRnOwokZiA9IEZvcm11bGEoImVeKCRtIHgpIHNpbigkbiB4KSIpOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokZnJhYyA9IEZyYWN0aW9uKCRnLCRtKioyKyRuKioyKTsKJEYgPSBGb3JtdWxhVXBUb0NvbnN0YW50KCIkZnJhYyAgZV4oJG0geCkqKCRNIHNpbigkbiB4KSAtICROIGNvcygkbiB4KSkiKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludCBbJGZdXCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5693"><span class="process-math">\(\ds \int {e^{7x}\sin\!\left(4x\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-937')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1016"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-938" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="938" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CiRtID0gcmFuZG9tKDIsOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JG09NTt9OwokZiA9IEZvcm11bGEoImVeKCRtIHgpIGNvcygkbSB4KSIpOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokZnJhYyA9IEZyYWN0aW9uKDEsMiokbSk7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiJGZyYWMgIGVeKCRtIHgpIChzaW4oJG0geCkgKyBjb3MoJG0geCkpIik7CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgWyRmXVwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5695"><span class="process-math">\(\ds \int {e^{8x}\cos\!\left(8x\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-938')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1017"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-939" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="939" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjEvMipzaW4oeCleMiIpOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IFxzaW4oeCkgXGNvcyh4KSBcLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5697"><span class="process-math">\(\ds \int \sin(x) \cos(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-939')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1018"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-940" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="940" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskZiA9IEZvcm11bGEoInNpbl4tMSh4KSIpOwokRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoInNxcnQoMS14XjIpK3gqYXNpbih4KSIpOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IFskZl1cLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5699"><span class="process-math">\(\ds \int {\sin^{-1}\!\left(x\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-940')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1019"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-941" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="941" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskbSA9IHJhbmRvbSgyLDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRtID0gMjt9OwokZiA9IEZvcm11bGEoInRhbl4tMSgkbSB4KSIpOwokRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIngqdGFuXi0xKCRtIHgpLTEvKDIqJG0pKmxuKCRtXjJ4XjIrMSkiKS0+cmVkdWNlOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IFskZl1cLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5701"><span class="process-math">\(\ds \int {\tan^{-1}\!\left(3x\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-941')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1020"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-942" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="942" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjEvMip4XjIqYXRhbih4KS14LzIrMS8yKmF0YW4oeCkiKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludCB4XHRhbl57LTF9KHgpIFwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5703"><span class="process-math">\(\ds \int x\tan^{-1}(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-942')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1021"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-943" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="943" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskZiA9IEZvcm11bGEoImNvc14tMSh4KSIpOwokRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIi1zcXJ0KDEteF4yKSt4KmFjb3MoeCkiKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludCBbJGZdXCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5705"><span class="process-math">\(\ds \int {\cos^{-1}\!\left(x\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-943')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1022"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-944" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="944" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoeD0+e2xpbWl0cz0+WzAsNF19KTsKJEYgPSBGb3JtdWxhVXBUb0NvbnN0YW50KCIxLzIqeF4yKmxuKHgpLXheMi80Iik7CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgeFxsbih4KSBcLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5707"><span class="process-math">\(\ds \int x\ln(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-944')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1023"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-945" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="945" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CiRiID0gbm9uX3plcm9fcmFuZG9tKC05LDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRiID0gLTI7fTsKJGYgPSBGb3JtdWxhKCIoeCskYilsbih4KSIpLT5yZWR1Y2U7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoeD0+e2xpbWl0cz0+WzAsNF19KTsKJEYgPSBGb3JtdWxhVXBUb0NvbnN0YW50KCIxLzIqeF4yKmxuKHgpLXheMi80ICsgJGIgeCBsbih4KSAtICRiIHgiKS0+cmVkdWNlOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IFskZl1cLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5709"><span class="process-math">\(\ds \int {\left(x+3\right)\ln\!\left(x\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-945')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1024"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div id="webwork-946" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="946" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CiRiID0gbm9uX3plcm9fcmFuZG9tKC05LDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRiID0gMTt9OwokZiA9IEZvcm11bGEoInggbG4oeC0kYikiKS0+cmVkdWNlOwpDb250ZXh0KCJGcmFjdGlvbiIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+c2V0KHg9PntsaW1pdHM9PlskYiwkYis0XX0pOwokZnJhYyA9IEZyYWN0aW9uKCgkYikqKjIsMik7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiMS8yIHheMiBsbih4LSRiKSAtIDEvNCAoeC0kYileMiAtICRiIHggLSAkZnJhYyBsbih4LSRiKSIpLT5yZWR1Y2U7CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgWyRmXVwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5711"><span class="process-math">\(\ds \int {x\ln\!\left(x-5\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-946')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1025"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-947" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="947" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjEvMip4XjIqbG4oeF4yKSAtIHheMi8yIik7CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgeFxsbih4XjIpXCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5713"><span class="process-math">\(\ds \int x\ln(x^2)\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-947')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1026"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div id="webwork-948" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="948" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoeCA9PiB7bGltaXRzID0+IFswLDRdfSk7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiMS8zKnheMypsbih4KSAtIHheMy85Iik7CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgeF4yXGxuKHgpIFwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5715"><span class="process-math">\(\ds \int x^2\ln(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-948')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1027"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<div id="webwork-949" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="949" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjJ4K3gqKGxuKHgpKV4yLTJ4KmxuKHgpIik7CiRGLT57bGltaXRzfSA9IFsxLDVdOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IFxsZWZ0KFxsbih4KSBccmlnaHQpXjJcLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5717"><span class="process-math">\(\ds \int \left(\ln(x) \right)^2\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-949')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1028"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<div id="webwork-950" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="950" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CiRiID0gbm9uX3plcm9fcmFuZG9tKC05LDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRiID0gMTt9OwokZiA9IEZvcm11bGEoIihsbih4KyRiKSleMiIpLT5yZWR1Y2U7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoeD0+e2xpbWl0cz0+Wy0kYiwtJGIrNF19KTsKJEYgPSBGb3JtdWxhVXBUb0NvbnN0YW50KCIyKHgrJGIpKyh4KyRiKSpsbih4KyRiKV4yLTIqKHgrJGIpKmxuKHgrJGIpIiktPnJlZHVjZTsKJEYtPntsaW1pdHN9ID0gWy0kYisxLC0kYis1XTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludCBbJGZdXCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5719"><span class="process-math">\(\ds \int {\ln^{2}\!\left(x-6\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-950')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1029"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-951" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="951" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIngqdGFuKHgpK2xuKGFicyhjb3MoeCkpKSIpOwokRi0+e3Rlc3RfYXR9ID0gW1twaS80XSxbMypwaS80XSxbNSpwaS80XSxbNypwaS80XV07CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgeFxzZWNeMih4KSBcLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5721"><span class="process-math">\(\ds \int x\sec^2(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-951')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1030"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<div id="webwork-952" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="952" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoImxuKGFicyhzaW4oeCkpKS14KmNvdCh4KSIpOwokRi0+e3Rlc3RfYXR9ID0gW1twaS80XSxbMypwaS80XSxbNSpwaS80XSxbNypwaS80XV07CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgeFxjc2NeMih4KSBcLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5723"><span class="process-math">\(\ds \int x\csc^2(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-952')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1031"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<div id="webwork-953" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="953" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CiRiID0gbm9uX3plcm9fcmFuZG9tKC05LDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRiID0gLTI7fTsKJGYgPSBGb3JtdWxhKCJ4IHNxcnQoeCskYikiKS0+cmVkdWNlOwpDb250ZXh0KCJGcmFjdGlvbiIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+c2V0KHg9PntsaW1pdHM9PlstJGIsLSRiKzRdfSk7CiRmcmFjID0gRnJhY3Rpb24oMiokYiwzKTsKJEYgPSBGb3JtdWxhVXBUb0NvbnN0YW50KCIoMi81ICh4KyRiKV4yIC0gJGZyYWMgKHgrJGIpKXNxcnQoeCskYikiKS0+cmVkdWNlOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IFskZl1cLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5725"><span class="process-math">\(\ds \int {x\sqrt{x+6}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-953')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1032"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<div id="webwork-954" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="954" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CiRiID0gbm9uX3plcm9fcmFuZG9tKDIsOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGIgPSAyO307CiRmID0gRm9ybXVsYSgieCBzcXJ0KHheMi0kYikiKS0+cmVkdWNlOwpDb250ZXh0KCJGcmFjdGlvbiIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+c2V0KHg9PntsaW1pdHM9PltzcXJ0KCRiKSxzcXJ0KCRiKSs0XX0pOwokRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjEvMyh4XjItJGIpXigzLzIpIiktPnJlZHVjZTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludCBbJGZdXCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5727"><span class="process-math">\(\ds \int {x\sqrt{x^{2}-7}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-954')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1033"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<div id="webwork-955" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="955" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoInNlYyh4KSIpOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IFxzZWMoeCkgXHRhbih4KSBcLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5729"><span class="process-math">\(\ds \int \sec(x) \tan(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-955')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1034"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<div id="webwork-956" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="956" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIngqc2VjKHgpLWxuKGFicyhzZWMoeCkrdGFuKHgpKSkiKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludCB4XHNlYyh4KSBcdGFuKHgpIFwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5731"><span class="process-math">\(\ds \int x\sec(x) \tan(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-956')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1035"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<div id="webwork-957" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="957" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIi14KmNzYyh4KS1sbihhYnMoY3NjKHgpK2NvdCh4KSkpIik7CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgeFxjc2MoeCkgXGNvdCh4KSBcLCBkeGBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5733"><span class="process-math">\(\ds \int x\csc(x) \cot(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-957')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-109">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-125"><p id="p-5735">Evaluate the indefinite integral after first making a substitution.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1036"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<div id="webwork-958" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="958" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CiR0cmlnID0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskdHJpZyA9ICdzaW4nO307CiRmID0gRm9ybXVsYSgiJHRyaWcobG4oeCkpIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoeD0+e2xpbWl0cz0+WzAsNF19KTsKJEYgPSBGb3JtdWxhVXBUb0NvbnN0YW50KCJ4LzIqKHNpbihsbih4KSkgLSBjb3MobG4oeCkpKSIpOwokRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIngvMiooc2luKGxuKHgpKSArIGNvcyhsbih4KSkpIikgaWYgKCR0cmlnIGVxICdjb3MnKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludCBbJGZdXCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5736"><span class="process-math">\(\ds \int {\sin\!\left(\ln\!\left(x\right)\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-958')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1037"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<div id="webwork-959" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="959" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJpZyA9IGxpc3RfcmFuZG9tKCdzaW4nLCdjb3MnKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JHRyaWcgPSAnY29zJzt9OwokZiA9IEZvcm11bGEoImVeKDJ4KSAkdHJpZyhlXngpIik7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiY29zKGVeeCkrKGVeeCkqc2luKGVeeCkiKTsKJEYgPSBGb3JtdWxhVXBUb0NvbnN0YW50KCJzaW4oZV54KS0oZV54KSpjb3MoZV54KSIpIGlmICgkdHJpZyBlcSAnc2luJyk7CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgWyRmXVwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5738"><span class="process-math">\(\ds \int {e^{2x}\sin\!\left(e^{x}\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-959')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1038"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<div id="webwork-960" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="960" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CiR0cmlnID0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskdHJpZyA9ICdzaW4nO307CiRmID0gRm9ybXVsYSgiJHRyaWcoc3FydCh4KSkiKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPnNldCh4PT57bGltaXRzPT5bMCw0XX0pOwokRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjIqc2luKHNxcnQoeCkpIC0gMipzcXJ0KHgpKmNvcyhzcXJ0KHgpKSIpOwokRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjIqY29zKHNxcnQoeCkpICsgMipzcXJ0KHgpKnNpbihzcXJ0KHgpKSIpIGlmICgkdHJpZyBlcSAnY29zJyk7CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgWyRmXVwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5740"><span class="process-math">\(\ds \int {\sin\!\left(\sqrt{x}\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-960')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1039"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<div id="webwork-961" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="961" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgieCBsbihzcXJ0KHgpKSAtIHgvMiIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+c2V0KHg9PntsaW1pdHM9PlswLDRdfSk7CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgXGxuKFxzcXJ0e3h9KVwsIGR4YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5742"><span class="process-math">\(\ds \int \ln(\sqrt{x})\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-961')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1040"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<div id="webwork-962" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="962" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiMipzcXJ0KHgpKmVec3FydCh4KS0yKmVec3FydCh4KSIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+c2V0KHg9PntsaW1pdHM9PlswLDRdfSk7CgpCRUdJTl9QR01MCltgXGRzIFxpbnQgZV57XHNxcnR7eH19XCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5744"><span class="process-math">\(\ds \int e^{\sqrt{x}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-962')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1041"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<div id="webwork-963" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="963" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgieF4yLzIiKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPnNldCh4PT57bGltaXRzPT5bMCw0XX0pOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50IGVee1xsbih4KSB9XCwgZHhgXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5746"><span class="process-math">\(\ds \int e^{\ln(x) }\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-963')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-110">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-126"><p id="p-5748">Evaluate the definite integral. Note: the corresponding indefinite integral appears in <a href="" class="xref" data-knowl="./knowl/ibp_prob_5.html" title="Exercise 6.2.5">Exercises 6.2.5</a>–<a href="" class="xref" data-knowl="./knowl/ibp_prob_13.html" title="Exercise 6.2.13">6.2.13</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1042"><h6 class="heading"><span class="codenumber">41<span class="period">.</span></span></h6>
+<div id="webwork-964" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="964" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRiID0gbGlzdF9yYW5kb20oJ1xwaS8yJywnXHBpJywnM1xwaS8yJywnMlxwaScpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYiA9ICdccGknO307CiRGID0gRm9ybXVsYSgic2luKHgpLXgqY29zKHgpIik7CiVyID0gKCdccGkvMic9PicxJywnXHBpJz0+J3BpJywnM1xwaS8yJz0+Jy0xJywnMlxwaSc9PictMnBpJyk7CiRyID0gQ29tcHV0ZSgkcnskYn0pOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50XzBee1skYl19IHhcc2luKHgpIFwsIGR4YF0KCltfXXskcn17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5749"><span class="process-math">\(\ds \int_0^{3\pi/2} x\sin(x) \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-964')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1043"><h6 class="heading"><span class="codenumber">42<span class="period">.</span></span></h6>
+<div id="webwork-965" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="965" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGRzfXtcZGlzcGxheXN0eWxlfVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7KCRhLCRiKSA9IG51bV9zb3J0KCgtMiwtMSwxLDIpW05jaG9vc2VLKDQsMildKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGE9LTE7JGI9MTt9OwokZiA9IEZvcm11bGEoInggZV4oLXgpIik7CiRGID0gRm9ybXVsYSgiLWVeKC14KSooeCsxKSIpOwokciA9IEZvcm11bGEoIi0oJGIrMSllXigtJGIpKygkYSsxKWVeKC0kYSkiKS0+cmVkdWNlOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50X3tbJGFdfV57WyRiXX0gWyRmXSBcLCBkeGBdCgpbX117JHJ9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5751"><span class="process-math">\(\ds \int_{-1}^{2} {xe^{-x}} \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-965')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1044"><h6 class="heading"><span class="codenumber">43<span class="period">.</span></span></h6>
+<div id="webwork-966" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="966" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRiID0gbGlzdF9yYW5kb20oJ1xwaS82JywnXHBpLzQnLCdccGkvMycsJ1xwaS8yJyk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRiPSdccGkvNCc7fTsKJGEgPSAnLScuJGI7CiRmID0gRm9ybXVsYSgieF4yIHNpbih4KSIpOwokRiA9IEZvcm11bGEoIi14XjIqY29zKHgpKzJ4KnNpbih4KSsyKmNvcyh4KSIpOwokciA9IEZvcm11bGEoIjAiKS0+cmVkdWNlOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50X3tbJGFdfV57WyRiXX0gWyRmXSBcLCBkeGBdCgpbX117JHJ9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5753"><span class="process-math">\(\ds \int_{-\pi/2}^{\pi/2} {x^{2}\sin\!\left(x\right)} \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-966')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1045"><h6 class="heading"><span class="codenumber">44<span class="period">.</span></span></h6>
+<div id="webwork-967" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="967" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRiID0gbGlzdF9yYW5kb20oJ1xwaS82JywnXHBpLzQnLCdccGkvMycsJ1xwaS8yJyk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRiPSdccGkvMic7fTsKJGEgPSAnLScuJGI7CiRmID0gRm9ybXVsYSgieF4zIHNpbih4KSIpOwokRiA9IEZvcm11bGEoIi14XjMqY29zKHgpKzN4XjIqc2luKHgpKzZ4KmNvcyh4KS02KnNpbih4KSIpOwokciA9IEZvcm11bGEoIi1waV4zLygzMnNxcnQoMikpKzNwaV4yLyg4c3FydCgyKSkrM3BpL3NxcnQoMiktMTIvc3FydCgyKSIpLT5yZWR1Y2U7CiRyID0gRm9ybXVsYSgiLXBpXjNzcXJ0KDMpLzIxNitwaV4yLzEyK3BpIHNxcnQoMyktNiIpLT5yZWR1Y2UgaWYgKCRiIGVxICdccGkvNicpOwokciA9IEZvcm11bGEoIi1waV4zLzI3K3BpXjJzcXJ0KDMpLzMrMnBpLTYqc3FydCgzKSIpLT5yZWR1Y2UgaWYgKCRiIGVxICdccGkvMycpOwokciA9IEZvcm11bGEoIjNwaV4yLzItMTIiKS0+cmVkdWNlIGlmICgkYiBlcSAnXHBpLzInKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludF97WyRhXX1ee1skYl19IFskZl0gXCwgZHhgXQoKW19deyRyfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5755"><span class="process-math">\(\ds \int_{-\pi/6}^{\pi/6} {x^{3}\sin\!\left(x\right)} \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-967')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1046"><h6 class="heading"><span class="codenumber">45<span class="period">.</span></span></h6>
+<div id="webwork-968" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="968" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGMgPSByYW5kb20oMiw5LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYz0yO307CiRhID0gMDsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJGIgPSBGb3JtdWxhKCJzcXJ0KGxuKDIpKSIpOwokZiA9IEZvcm11bGEoInggZV4oeF4yKSIpOwokRiA9IEZvcm11bGEoIjEvMiplXih4XjIpIik7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRyID0gRnJhY3Rpb24oJGMvMi0xLzIpOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50X3tbJGFdfV57WyRiXX0gWyRmXSBcLCBkeGBdCgpbX117JHJ9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5757"><span class="process-math">\(\ds \int_{0}^{{\sqrt{\ln\!\left(2\right)}}} {xe^{x^{2}}} \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-968')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1047"><h6 class="heading"><span class="codenumber">46<span class="period">.</span></span></h6>
+<div id="webwork-969" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="969" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRhID0gMDsKJGIgPSAxOwokRiA9IEZvcm11bGEoInheMyplXngtMyp4XjIqZV54KzYqeCplXngtNiplXngiKTsKJHIgPSAkRi0+ZXZhbCh4PT4kYikgLSAkRi0+ZXZhbCh4PT4kYSk7CgpCRUdJTl9QR01MCltgXGRzIFxpbnRfMF4xIHheM2Vee3h9XCwgZHhgXQoKW19deyRyfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5759"><span class="process-math">\(\ds \int_0^1 x^3e^{x}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-969')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1048"><h6 class="heading"><span class="codenumber">47<span class="period">.</span></span></h6>
+<div id="webwork-970" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="970" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGRzfXtcZGlzcGxheXN0eWxlfVwpPC9kaXY+JykpOwooJGEsJGIpID0gbnVtX3NvcnQoKDEuLjQpW05jaG9vc2VLKDQsMildKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGE9MTskYj0yfTsKJGYgPSBGb3JtdWxhKCJ4IGVeKC0yeCkiKTsKJEYgPSBGb3JtdWxhKCIoLXgvMi0xLzQpIGVeKC0yeCkiKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJGZyYWNiID0gRnJhY3Rpb24oLSRiLzItMS80KTsKJGZyYWNhID0gRnJhY3Rpb24oLSRhLzItMS80KTsKJGIyID0gMiokYjsKJGEyID0gMiokYTsKJHIgPSBGb3JtdWxhKCIkZnJhY2IgZV4oLSRiMikgLSAkZnJhY2EgZV4oLSRhMikiKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludF97WyRhXX1ee1skYl19IFskZl0gXCwgZHhgXQoKW19deyRyfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5761"><span class="process-math">\(\ds \int_{2}^{4} {xe^{-2x}} \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-970')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1049"><h6 class="heading"><span class="codenumber">48<span class="period">.</span></span></h6>
+<div id="webwork-971" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="971" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRiID0gbGlzdF9yYW5kb20oJ1xwaS8yJywnXHBpJywnM1xwaS8yJywnMlxwaScpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYj0nXHBpJ307CiRhPTA7CiRmID0gRm9ybXVsYSgiZV54IHNpbih4KSIpOwokRiA9IEZvcm11bGEoIjEvMiplXngqKHNpbih4KS1jb3MoeCkpIik7CiRyID0gRm9ybXVsYSgiMS8yKmVeKHBpLzIpICsgMS8yIik7CiRyID0gRm9ybXVsYSgiMS8yKmVecGkgKyAxLzIiKSBpZiAoJGIgZXEgJ1xwaScpOwokciA9IEZvcm11bGEoIi0xLzIqZV4oM3BpLzIpICsgMS8yIikgaWYgKCRiIGVxICczXHBpLzInKTsKJHIgPSBGb3JtdWxhKCItMS8yKmVeKDJwaSkgKyAxLzIiKSBpZiAoJGIgZXEgJzJccGknKTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludF97WyRhXX1ee1skYl19IFskZl0gXCwgZHhgXQoKW19deyRyfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5763"><span class="process-math">\(\ds \int_{0}^{3\pi/2} {e^{x}\sin\!\left(x\right)} \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-971')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1050"><h6 class="heading"><span class="codenumber">49<span class="period">.</span></span></h6>
+<div id="webwork-972" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="972" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRiID0gbGlzdF9yYW5kb20oJ1xwaS8yJywnXHBpJywnM1xwaS8yJywnMlxwaScpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYj0nXHBpLzInfTsKJGE9Jy0nLiRiOwokZiA9IEZvcm11bGEoImVeKDJ4KSBjb3MoeCkiKTsKJEYgPSBGb3JtdWxhKCIxLzUqZV4oMngpKihzaW4oeCkrMipjb3MoeCkpIik7CiRyID0gRm9ybXVsYSgiMS81IChlXihwaSkgKyBlXigtcGkpKSIpOwokciA9IEZvcm11bGEoIjIvNSAoLWVeKDJwaSkgKyBlXigtMnBpKSkiKSBpZiAoJGIgZXEgJ1xwaScpOwokciA9IEZvcm11bGEoIjEvNSAoLWVeKDNwaSkgLSBlXigtM3BpKSkiKSBpZiAoJGIgZXEgJzNccGkvMicpOwokciA9IEZvcm11bGEoIjIvNSAoZV4oNHBpKSAtIGVeKC00cGkpKSIpIGlmICgkYiBlcSAnMlxwaScpOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50X3tbJGFdfV57WyRiXX0gWyRmXSBcLCBkeGBdCgpbX117JHJ9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-5765"><span class="process-math">\(\ds \int_{-3\pi/2}^{3\pi/2} {e^{2x}\cos\!\left(x\right)} \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-972')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

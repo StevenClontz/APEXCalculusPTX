@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:47Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>Knowing that substitution is related to the Chain Rule, we choose to let <span class="process-math">\(u\)</span> be the “inside” function of <span class="process-math">\(\sin(x^2+5)\text{.}\)</span> (This is not <em class="emphasis">always</em> a good choice, but it is often the best place to start.)</p>
+<p>Let <span class="process-math">\(u = x^2+5\text{,}\)</span> hence <span class="process-math">\(du = 2x\,dx\text{.}\)</span> The integrand has an <span class="process-math">\(x\,dx\)</span> term, but not a <span class="process-math">\(2x\,dx\)</span> term. (Recall that multiplication is commutative, so the <span class="process-math">\(x\)</span> does not physically have to be next to <span class="process-math">\(dx\)</span> for there to be an <span class="process-math">\(x\,dx\)</span> term.) We can divide both sides of the <span class="process-math">\(du\)</span> expression by 2:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+du = 2x\,dx \quad \Rightarrow \quad  \frac12du = x\,dx\text{.}
+\end{equation*}
+</div>
+<p>We can now substitute.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int x\sin(x^2+5)\, dx \amp = \int \sin(\underbrace{x^2+5}_u) \underbrace{x\, dx}_{\frac12du}\\
+\amp = \int \frac12\sin(u) \, du\\
+\amp = -\frac12\cos(u) + C \quad \text{ (now replace \(u\) with \(x^2+5\)) }\\
+\amp =-\frac12\cos(x^2+5) + C\text{.}
+\end{align*}
+</div>
+<p>Thus <span class="process-math">\(\int x\sin(x^2+5)\, dx = -\frac12\cos(x^2+5)+C\text{.}\)</span> We can check our work by evaluating the derivative of the right hand side.</p>
+</div></body>
+</html>

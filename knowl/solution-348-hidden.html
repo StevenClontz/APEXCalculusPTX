@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:25Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-partfrac-ex-decomp-method2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/QfEgKEhkL6o?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>As we saw in <a href="" class="xref" data-knowl="./knowl/ex_pf2.html" title="Example 6.5.4: Decomposing into partial fractions">Example 6.5.4</a>,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_pf2.html">
+\begin{equation*}
+\frac{1}{x^2-1} = \frac{A}{x-1} + \frac{B}{x+1}\text{.}
+\end{equation*}
+</div>
+<p>To solve for <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> using the Heaviside method, we will build to a common denominator:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\frac{1}{x^2-1} \amp = \frac{A(x+1)}{(x-1)(x+1)}+\frac{B(x-1)}{(x+1)(x-1)}\\
+\amp = \frac{A(x+1)+B(x-1)}{(x-1)(x+1)}
+\end{align*}
+</div>
+<p>Now since the denomiators match, we will only consider the numerator equation (essentially if we multiply both sides of the equation by <span class="process-math">\((x-1)(x+1)\text{,}\)</span> we will clear the denomiators):</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+1=A(x+1)+B(x-1)
+\end{equation*}
+</div>
+<p class="continuation">Now we substitute in “convenient” values of <span class="process-math">\(x\text{.}\)</span> When <span class="process-math">\(x=1\text{,}\)</span> we get <span class="process-math">\(1=2A \Rightarrow A=1/2\text{.}\)</span> When <span class="process-math">\(x=-1\text{,}\)</span> we get <span class="process-math">\(1=-2B \Rightarrow B=-1/2\text{.}\)</span></p>
+<p>You may note that <span class="process-math">\(x=1\)</span> and <span class="process-math">\(x=-1\)</span> were not in the domain of the original fraction. However,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{x^2-1}=\frac{A(x+1)+B(x-1)}{(x-1)(x+1)}
+\end{equation*}
+</div>
+<p class="continuation">is an identity, meaning it is true for all values of <span class="process-math">\(x\text{,}\)</span> even those for which the equation is undefined. We could have chosen any values of <span class="process-math">\(x\)</span> to substitute. Whenever possible, we choose values of <span class="process-math">\(x\)</span> that will make one of the factors zero. In this way, we can avoid solving a system of equations.</p>
+<p>Thus as in <a href="" class="xref" data-knowl="./knowl/ex_pf1.html" title="Example 6.5.3: Decomposing into partial fractions">Example 6.5.3</a>, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_pf1.html">
+\begin{equation*}
+\frac{1}{x^2-1} = \frac{1/2}{x-1}-\frac{1/2}{x+1}\text{.}
+\end{equation*}
+</div>
+</div></body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:04Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_prod_quot_ex_3_func" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/PYK64WB4JUg?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We have a product of three functions while the <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a> only specifies how to handle a product of two functions. Our method of handling this problem is to simply group the latter two functions together, and consider <span class="process-math">\(y = x^3\cdot\left[\ln(x) \cos(x) \right]\text{.}\)</span> Following the <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_ProductRule.html ./knowl/thm_ProductRule.html">
+\begin{align*}
+\yp \amp = \lzoo{x}{x^3}\ln(x) \cos(x) + (x^3)\lzoo{x}{\ln(x) \cos(x)}\\
+\end{align*}
+<p class="intertext">To evaluate <span class="process-math">\(\lzoo{x}{\ln(x) \cos(x)}\text{,}\)</span> we apply the Product Rule again:</p>
+\begin{align*}
+\yp \amp = 3x^2\left[\ln(x) \cos(x) \right] + (x^3)\left[\frac1x\cos(x) + \ln(x) (-\sin(x) )\right]\\
+\amp = 3x^2\ln(x) \cos(x) + x^3\frac{1}{x}\cos(x) + x^3\ln(x) (-\sin(x) )\text{.}
+\end{align*}
+</div>
+<p>Recognize the pattern in our answer above: when applying the <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a> to a product of three functions, there are three terms added together in the final derivative. Each term contains only one derivative of one of the original functions, and each function's derivative shows up in only one term. It is straightforward to extend this pattern to finding the derivative of a product of four or more functions.</p>
+<p>Ultimately though, we would simplify our final computation to:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp=3x^2\ln(x)\cos(x) + x^2\cos(x) + -x^3\ln(x)\sin(x)
+\end{equation*}
+</div>
+<p class="continuation">If you check this answer with a <abbr class="initialism">CAS</abbr>, it may factor and give the answer:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp=-x^2\left[x\ln(x)\sin(x) + \cos(x) + 3\ln(x)\cos(x)\right]
+\end{equation*}
+</div>
+</div></body>
+</html>

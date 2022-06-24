@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:52Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.3.7.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_apps_opt_power_line" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/qDK9rqloKRs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We will follow the strategy of <a href="" class="xref" data-knowl="./knowl/idea_optimization.html" title="Key Idea 4.3.4: Solving Optimization Problems">Key Idea 4.3.4</a> implicitly, without specifically numbering steps.</p>
+<p>There are two immediate solutions that we could consider, each of which we will reject through “common sense.” First, we could minimize the distance by directly connecting the two locations with a straight line. However, this requires that all the wire be laid underwater, the most costly option. Second, we could minimize the underwater length by running a wire all <span class="quantity">5000 ft</span> along the beach, directly across from the offshore facility. This has the undesired effect of having the longest distance of all, probably ensuring a non-minimal cost.</p>
+<p>The optimal solution likely has the line being run along the ground for a while, then underwater, as the figure implies. We need to label our unknown distances — the distance run along the ground and the distance run underwater. Recognizing that the underwater distance can be measured as the hypotenuse of a right triangle, we choose to label the distances as shown in <a href="" class="xref" data-knowl="./knowl/fig_opt3c.html" title="Figure 4.3.9">Figure 4.3.9</a>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_opt3c.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.9<span class="period">.</span></span><span class="space"> </span>Labeling unknown distances in <a href="" class="xref" data-knowl="./knowl/ex_opt3.html" title="Example 4.3.7: Optimization: minimizing cost">Example 4.3.7</a></figcaption></figure><p>By choosing <span class="process-math">\(x\)</span> as we did (instead of letting <span class="process-math">\(x\)</span> be the distance along the land), we make the expression under the square root simple. We now create the cost function.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{alignat*}{3}
+\text{Cost} \amp ={}\amp\amp \text{land cost}              \amp\amp +\text{water cost}\\
+\amp\amp\amp   \$50\times \text{land distance} \amp\amp +\$130 \times \text{water distance}\\
+\amp\amp\amp   50(5000-x)                      \amp\amp +130\sqrt{x^2+1000^2}\text{.}
+\end{alignat*}
+</div>
+<p>So we have <span class="process-math">\(c(x) = 50(5000-x)+ 130\sqrt{x^2+1000^2}\text{.}\)</span> This function only makes sense on the interval <span class="process-math">\([0,5000]\text{.}\)</span> While we are fairly certain the endpoints will not give a minimal cost, we still evaluate <span class="process-math">\(c(x)\)</span> at each to verify.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+c(0) \amp = 380{,}000\amp c(5000) \amp \approx 662{,}873\text{.}
+\end{align*}
+</div>
+<p class="continuation">(Notice that if <span class="process-math">\(x=0\text{,}\)</span> the line is run the full <span class="quantity">5000 ft</span> along land and a full <span class="quantity">1000 ft</span> under water. If <span class="process-math">\(x=5000\text{,}\)</span> the line is run the maximum distance underwater.)</p>
+<p>We now find the critical values of <span class="process-math">\(c(x)\text{.}\)</span> We compute <span class="process-math">\(c'(x)\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c'(x) = -50+\frac{130x}{\sqrt{x^2+1000^2}}\text{.}
+\end{equation*}
+</div>
+<p>Recognize that this is never undefined. Setting <span class="process-math">\(c'(x)=0\)</span> and solving for <span class="process-math">\(x\text{,}\)</span> we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+-50+\frac{130x}{\sqrt{x^2+1000^2}} \amp = 0\\
+\frac{130x}{\sqrt{x^2+1000^2}}  \amp = 50\\
+\frac{130^2x^2}{x^2+1000^2} \amp = 50^2\\
+130^2x^2 \amp = 50^2(x^2+1000^2)\\
+130^2x^2-50^2x^2 \amp = 50^2\cdot1000^2\\
+(130^2-50^2)x^2 \amp = 50,000^2\\
+x^2 \amp = \frac{50,000^2}{130^2-50^2}\\
+x \amp = \frac{50,000}{\sqrt{130^2-50^2}}\\
+x \amp  = \frac{50,000}{120} =\frac{1250}3\approx 416.67\text{.}
+\end{align*}
+</div>
+<p>Evaluating <span class="process-math">\(c(x)\)</span> at <span class="process-math">\(x=416.67\)</span> gives a minimal cost of about <span class="process-math">\(\$370{,}000\text{.}\)</span> The distance the power line is laid along land is <span class="process-math">\(5000-416.67 = 4583.33\)</span> ft., and the underwater distance is <span class="process-math">\(\sqrt{416.67^2+1000^2} \approx 1083\)</span> ft.</p>
+</div>
+<span class="incontext"><a href="sec_optimization.html#solution-246" class="internal">in-context</a></span>
+</body>
+</html>

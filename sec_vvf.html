@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:31:13Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Vector-Valued Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap_vvf.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_vvf.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_vvf_calc.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap_vvf.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_vvf.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_vvf_calc.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="active">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_vvf"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">12.1</span> <span class="title">Vector-Valued Functions</span>
+</h2>
+<section class="introduction" id="introduction-313"><p id="p-11850">We are very familiar with <em class="emphasis">real valued functions</em>, that is, functions whose output is a real number. This section introduces <em class="emphasis">vector-valued functions</em> — functions whose output is a vector.</p>
+<figure class="figure figure-like" id="vid-vvf-vvfintro-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-463" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/MJBP_8ZxiwM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_vvf.html" class="internal" title="Section 12.1: Vector-Valued Functions">Section 12.1</a></figcaption></figure><article class="definition definition-like" id="def_vvf"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Vector-Valued Functions.</span>
+</h3>
+<p id="p-11851">A <dfn class="terminology">vector-valued function</dfn> is a function of the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec r(t) = \la\, f(t),g(t)\,\ra  \text{ or }  \vec r(t) = \la \,f(t),g(t),h(t)\,\ra\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> are real valued functions.</p>
+<p id="p-11852">The <dfn class="terminology">domain</dfn> of <span class="process-math">\(\vec r\)</span> is the set of all values of <span class="process-math">\(t\)</span> for which <span class="process-math">\(\vec r(t)\)</span> is defined. The <dfn class="terminology">range</dfn> of <span class="process-math">\(\vec r\)</span> is the set of all possible output vectors <span class="process-math">\(\vec r(t)\text{.}\)</span> </p></article></section><section class="subsection" id="subsec-eval-vvf"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.1.1</span> <span class="title">Evaluating and Graphing Vector-Valued Functions</span>
+</h3>
+<p id="p-11853">Evaluating a vector-valued function at a specific value of <span class="process-math">\(t\)</span> is straightforward; simply evaluate each component function at that value of <span class="process-math">\(t\text{.}\)</span> For instance, if <span class="process-math">\(\vec r(t) = \la t^2,t^2+t-1\ra\text{,}\)</span> then <span class="process-math">\(\vec r(-2) = \la 4,1\ra\text{.}\)</span> We can sketch this vector, as is done in <a href="" class="xref" data-knowl="./knowl/fig_vvfintro1a.html" title="Figure 12.1.3.(a)">Figure 12.1.3.(a)</a>. Plotting lots of vectors is cumbersome, though, so generally we do not sketch the whole vector but just the terminal point. The <em class="emphasis">graph</em> of a vector-valued function is the set of all terminal points of <span class="process-math">\(\vec r(t)\text{,}\)</span> where the initial point of each vector is always the origin. In <a href="" class="xref" data-knowl="./knowl/fig_vvfintro1b.html" title="Figure 12.1.3.(b)">Figure 12.1.3.(b)</a> we sketch the graph of <span class="process-math">\(\vec r\)</span> ; we can indicate individual points on the graph with their respective vector, as shown. </p>
+<figure class="figure figure-like" id="fig_vvfintro1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vvfintro1a"><img src="generated/latex-image/img_vvfintro1a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vvfintro1b"><img src="generated/latex-image/img_vvfintro1b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.3<span class="period">.</span></span><span class="space"> </span>Sketching the graph of a vector-valued function</figcaption></figure><p id="p-11854">Vector-valued functions are closely related to parametric equations of graphs. While in both methods we plot points <span class="process-math">\(\big(x(t),
+y(t)\big)\)</span> or <span class="process-math">\(\big(x(t),y(t),z(t)\big)\)</span> to produce a graph, in the context of vector-valued functions each such point represents a vector. The implications of this will be more fully realized in the next section as we apply calculus ideas to these functions.</p>
+<article class="example example-like" id="ex_vvf1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Graphing vector-valued functions.</span>
+</h4>
+<p id="p-11855">Graph <span class="process-math">\(\ds \vec r(t) = \la t^3-t, \frac{1}{t^2+1}\ra\text{,}\)</span> for <span class="process-math">\(-2\leq t\leq 2\text{.}\)</span> Sketch <span class="process-math">\(\vec r(-1)\)</span> and <span class="process-math">\(\vec r(2)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video has-tabular" data-refid="hk-solution-1019" id="solution-1019"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1019"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-vvfintro-graph" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/wXzQo0ce3Us?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-11856">We start by making a table of <span class="process-math">\(t\text{,}\)</span> <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> values as shown in <a href="" class="xref" data-knowl="./knowl/fig_vvf1a.html" title="Table 12.1.5.(a): ">Figure 12.1.5.(a)</a>. Plotting these points gives an indication of what the graph looks like. In <a href="" class="xref" data-knowl="./knowl/fig_vvf1b.html" title="Figure 12.1.5.(b)">Figure 12.1.5.(b)</a>, we indicate these points and sketch the full graph. We also highlight <span class="process-math">\(\vec r(-1)\)</span> and <span class="process-math">\(\vec r(2)\)</span> on the graph.</p>
+<figure class="figure figure-like" id="fig_vvf1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel fixed-width bottom" style="width:47%;"><figure class="table table-like" id="fig_vvf1a"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(t\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(t^3-t\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\ds \frac{1}{t^2+1}\)</span></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-6\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">1/5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">1/2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">1/2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(6\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">1/5</td>
+</tr>
+</table>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_vvf1b"><img src="generated/latex-image/img_vvf1b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.5<span class="period">.</span></span><span class="space"> </span>Sketching the vector-valued function of <a href="" class="xref" data-knowl="./knowl/ex_vvf1.html" title="Example 12.1.4: Graphing vector-valued functions">Example 12.1.4</a></figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="ex_vvf2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Graphing vector-valued functions.</span>
+</h4>
+<p id="p-11857">Graph <span class="process-math">\(\vec r(t) = \la \cos(t) ,\sin(t) ,t\ra\)</span> for <span class="process-math">\(0\leq t\leq 4\pi\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-1020" id="solution-1020"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1020"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-vvfintro-graph3d" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/N1qqqHWR6yw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-11858">We can again plot points, but careful consideration of this function is very revealing. Momentarily ignoring the third component, we see the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> components trace out a circle of radius 1 centered at the origin. Noticing that the <span class="process-math">\(z\)</span> component is <span class="process-math">\(t\text{,}\)</span> we see that as the graph winds around the <span class="process-math">\(z\)</span>-axis, it is also increasing at a constant rate in the positive <span class="process-math">\(z\)</span> direction, forming a spiral. This is graphed in <a href="" class="xref" data-knowl="./knowl/fig_vvf2.html" title="Figure 12.1.7">Figure 12.1.7</a>. In the graph <span class="process-math">\(\vec r(7\pi/4)\approx (0.707,-0.707,5.498)\)</span> is highlighted to help us understand the graph.</p>
+<figure class="figure figure-like" id="fig_vvf2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 99.5049504950495%"><iframe src="generated/asymptote/img_vvf2.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vvf2.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.7<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(\vec r(t)\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_vvf2.html" title="Example 12.1.6: Graphing vector-valued functions">Example 12.1.6</a></figcaption></figure>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-97"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.1.2</span> <span class="title">Algebra of Vector-Valued Functions</span>
+</h3>
+<article class="definition definition-like" id="def_vvf_algebra"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Operations on Vector-Valued Functions.</span>
+</h4>
+<p id="p-11859">Let <span class="process-math">\(\vec r_1(t)=\la f_1(t),g_1(t)\ra\)</span> and <span class="process-math">\(\vec r_2(t)=\la f_2(t),g_2(t)\ra\)</span> be vector-valued functions in <span class="process-math">\(\mathbb{R}^2\)</span> and let <span class="process-math">\(c\)</span> be a scalar. Then:</p>
+<ol id="p-11860" class="decimal">
+<li id="li-2328"><p id="p-11861"><span class="process-math">\(\vec r_1(t) \pm \vec r_2(t) = \la\, f_1(t)\pm f_2(t),g_1(t)\pm g_2(t)\,\ra\text{.}\)</span></p></li>
+<li id="li-2329"><p id="p-11862"><span class="process-math">\(c\vec r_1(t) = \la\, cf_1(t),cg_1(t)\,\ra\text{.}\)</span></p></li>
+</ol>
+<p id="p-11863">A similar definition holds for vector-valued functions in <span class="process-math">\(\mathbb{R}^3\text{.}\)</span> </p></article><p id="p-11864">This definition states that we add, subtract and scale vector-valued functions component-wise. Combining vector-valued functions in this way can be very useful (as well as create interesting graphs).</p>
+<figure class="figure figure-like" id="vid-vvf-vvfintro-algebra"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-466" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/5jygsmDFjZw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.9<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/def_vvf_algebra.html" title="Definition 12.1.8: Operations on Vector-Valued Functions">Definition 12.1.8</a></figcaption></figure><article class="example example-like" id="ex_vvf3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Adding and scaling vector-valued functions.</span>
+</h4>
+<p id="p-11865">Let <span class="process-math">\(\vec r_1(t) = \la\,0.2t,0.3t\,\ra\text{,}\)</span> <span class="process-math">\(\vec r_2(t) = \la\,\cos(t) ,\sin(t) \,\ra\)</span> and <span class="process-math">\(\vec r(t) = \vec r_1(t)+\vec r_2(t)\text{.}\)</span> Graph <span class="process-math">\(\vec r_1(t)\text{,}\)</span> <span class="process-math">\(\vec r_2(t)\text{,}\)</span> <span class="process-math">\(\vec r(t)\)</span> and <span class="process-math">\(5\vec r(t)\)</span> on <span class="process-math">\(-10\leq t\leq10\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-1021" id="solution-1021"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1021"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-vvfintro-algebra-eg" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/6A3op7KYppw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-11866">We can graph <span class="process-math">\(\vec r_1\)</span> and <span class="process-math">\(\vec r_2\)</span> easily by plotting points (or just using technology). Let's think about each for a moment to better understand how vector-valued functions work.</p>
+<p id="p-11867">We can rewrite <span class="process-math">\(\vec r_1(t) = \la\, 0.2t,0.3t\,\ra\)</span> as <span class="process-math">\(\vec r_1(t) = t\la 0.2,0.3\ra\text{.}\)</span> That is, the function <span class="process-math">\(\vec r_1\)</span> scales the vector <span class="process-math">\(\la 0.2,0.3\ra\)</span> by <span class="process-math">\(t\text{.}\)</span> This scaling of a vector produces a line in the direction of <span class="process-math">\(\la 0.2,0.3\ra\text{.}\)</span></p>
+<p id="p-11868">We are familiar with <span class="process-math">\(\vec r_2(t) = \la\, \cos(t) ,\sin(t) \,\ra\text{;}\)</span> it traces out a circle, centered at the origin, of radius 1. <a href="" class="xref" data-knowl="./knowl/fig_vvf3a.html" title="Figure 12.1.11.(a)">Figure 12.1.11.(a)</a> graphs <span class="process-math">\(\vec r_1(t)\)</span> and <span class="process-math">\(\vec r_2(t)\text{.}\)</span></p>
+<p id="p-11869">Adding <span class="process-math">\(\vec r_1(t)\)</span> to <span class="process-math">\(\vec r_2(t)\)</span> produces <span class="process-math">\(\vec r(t) = \la\,\cos(t) + 0.2t,\sin(t) +0.3t\,\ra\text{,}\)</span> graphed in <a href="" class="xref" data-knowl="./knowl/fig_vvf3b.html" title="Figure 12.1.11.(b)">Figure 12.1.11.(b)</a>. The linear movement of the line combines with the circle to create loops that move in the direction of <span class="process-math">\(\la 0.2,0.3\ra\text{.}\)</span> (We encourage the reader to experiment by changing <span class="process-math">\(\vec r_1(t)\)</span> to <span class="process-math">\(\la 2t,3t\ra\text{,}\)</span> etc., and observe the effects on the loops.)</p>
+<figure class="figure figure-like" id="fig_vvf3"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_vvf3a"><img src="generated/latex-image/img_vvf3a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_vvf3b"><img src="generated/latex-image/img_vvf3b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_vvf3c"><img src="generated/latex-image/img_vvf3c.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.11<span class="period">.</span></span><span class="space"> </span>Graphing the functions in <a href="" class="xref" data-knowl="./knowl/ex_vvf3.html" title="Example 12.1.10: Adding and scaling vector-valued functions">Example 12.1.10</a></figcaption></figure><p id="p-11870">Multiplying <span class="process-math">\(\vec r(t)\)</span> by 5 scales the function by 5, producing <span class="process-math">\(5\vec r(t) = \langle 5\cos(t) +1,5\sin(t) +1.5\rangle\text{,}\)</span> which is graphed in <a href="" class="xref" data-knowl="./knowl/fig_vvf3c.html" title="Figure 12.1.11.(c)">Figure 12.1.11.(c)</a> along with <span class="process-math">\(\vec r(t)\text{.}\)</span> The new function is “5 times bigger” than <span class="process-math">\(\vec r(t)\text{.}\)</span> Note how the graph of <span class="process-math">\(5\vec r(t)\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_vvf3c.html" title="Figure 12.1.11.(c)">Figure 12.1.11.(c)</a> looks identical to the graph of <span class="process-math">\(\vec r(t)\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_vvf3b.html" title="Figure 12.1.11.(b)">Figure 12.1.11.(b)</a>. This is due to the fact that the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> bounds of the plot in <a href="" class="xref" data-knowl="./knowl/fig_vvf3c.html" title="Figure 12.1.11.(c)">Figure 12.1.11.(c)</a> are exactly 5 times larger than the bounds in <a href="" class="xref" data-knowl="./knowl/fig_vvf3b.html" title="Figure 12.1.11.(b)">Figure 12.1.11.(b)</a>.</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_vvf4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Adding and scaling vector-valued functions.</span>
+</h4>
+<p id="p-11871">A <em class="emphasis">cycloid</em> is a graph traced by a point <span class="process-math">\(p\)</span> on a rolling circle, as shown in <a href="" class="xref" data-knowl="./knowl/fig_vvf4a.html" title="Figure 12.1.13">Figure 12.1.13</a>. Find an equation describing the cycloid, where the circle has radius 1. </p>
+<figure class="figure figure-like" id="fig_vvf4a"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><img src="generated/latex-image/img_vvf4a.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.13<span class="period">.</span></span><span class="space"> </span>Tracing a cycloid</figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-1022" id="solution-1022"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1022"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-vvfintro-cycloid" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/BH9FZMTdgQw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-11872">This problem is not very difficult if we approach it in a clever way. We start by letting <span class="process-math">\(\vec p(t)\)</span> describe the position of the point <span class="process-math">\(p\)</span> on the circle, where the circle is centered at the origin and only rotates clockwise (i.e., it does not roll). This is relatively simple given our previous experiences with parametric equations; <span class="process-math">\(\vec p(t) = \la \cos(t) , -\sin(t) \ra\text{.}\)</span></p>
+<p id="p-11873">We now want the circle to roll. We represent this by letting <span class="process-math">\(\vec c(t)\)</span> represent the location of the center of the circle. It should be clear that the <span class="process-math">\(y\)</span> component of <span class="process-math">\(\vec c(t)\)</span> should be 1; the center of the circle is always going to be 1 if it rolls on a horizontal surface.</p>
+<p id="p-11874">The <span class="process-math">\(x\)</span> component of <span class="process-math">\(\vec c(t)\)</span> is a linear function of <span class="process-math">\(t\text{:}\)</span> <span class="process-math">\(f(t) = mt\)</span> for some scalar <span class="process-math">\(m\text{.}\)</span> When <span class="process-math">\(t=0\text{,}\)</span> <span class="process-math">\(f(t) = 0\)</span> (the circle starts centered on the <span class="process-math">\(y\)</span>-axis). When <span class="process-math">\(t=2\pi\text{,}\)</span> the circle has made one complete revolution, traveling a distance equal to its circumference, which is also <span class="process-math">\(2\pi\text{.}\)</span> This gives us a point on our line <span class="process-math">\(f(t) = mt\text{,}\)</span> the point <span class="process-math">\((2\pi, 2\pi)\text{.}\)</span> It should be clear that <span class="process-math">\(m=1\)</span> and <span class="process-math">\(f(t) = t\text{.}\)</span> So <span class="process-math">\(\vec c(t) = \la t, 1\ra\text{.}\)</span></p>
+<p id="p-11875">We now combine <span class="process-math">\(\vec p\)</span> and <span class="process-math">\(\vec c\)</span> together to form the equation of the cycloid: <span class="process-math">\(\vec r(t) = \vec p(t) + \vec c(t) = \la \cos(t) + t,-\sin(t) +1\ra\text{,}\)</span> which is graphed in <a href="" class="xref" data-knowl="./knowl/fig_vvf4b.html" title="Figure 12.1.14">Figure 12.1.14</a>.</p>
+<figure class="figure figure-like" id="fig_vvf4b"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_vvf4b.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.14<span class="period">.</span></span><span class="space"> </span>The cycloid in <a href="" class="xref" data-knowl="./knowl/ex_vvf4.html" title="Example 12.1.12: Adding and scaling vector-valued functions">Example 12.1.12</a></figcaption></figure>
+</div></div>
+</div></article></section><section class="subsection" id="subsec_vvf_displacement"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.1.3</span> <span class="title">Displacement</span>
+</h3>
+<p id="p-11876">A vector-valued function <span class="process-math">\(\vec r(t)\)</span> is often used to describe the position of a moving object at time <span class="process-math">\(t\text{.}\)</span> At <span class="process-math">\(t=t_0\text{,}\)</span> the object is at <span class="process-math">\(\vec r(t_0)\text{;}\)</span> at <span class="process-math">\(t=t_1\text{,}\)</span> the object is at <span class="process-math">\(\vec r(t_1)\text{.}\)</span> Knowing the locations <span class="process-math">\(\vec r(t_0)\)</span> and <span class="process-math">\(\vec r(t_1)\)</span> give no indication of the path taken between them, but often we only care about the difference of the locations, <span class="process-math">\(\vec r(t_1)-\vec r(t_0)\text{,}\)</span> the <em class="emphasis">displacement</em>. </p>
+<article class="definition definition-like" id="def_displacement"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Displacement.</span>
+</h4>
+<p id="p-11877">Let <span class="process-math">\(\vec r(t)\)</span> be a vector-valued function and let <span class="process-math">\(t_0\lt t_1\)</span> be values in the domain. The <dfn class="terminology">displacement</dfn> <span class="process-math">\(\vec d\)</span> of <span class="process-math">\(\vec r\text{,}\)</span> from <span class="process-math">\(t=t_0\)</span> to <span class="process-math">\(t=t_1\text{,}\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec d=\vec r(t_1)-\vec r(t_0)\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="vid-vvf-vvfintro-displacement"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-469" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/LfOpC91t7H8?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.16<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/def_displacement.html" title="Definition 12.1.15: Displacement">Definition 12.1.15</a></figcaption></figure><p id="p-11878">When the displacement vector is drawn with initial point at <span class="process-math">\(\vec r(t_0)\text{,}\)</span> its terminal point is <span class="process-math">\(\vec r(t_1)\text{.}\)</span> We think of it as the vector which points from a starting position to an ending position.</p>
+<article class="example example-like" id="ex_vvf5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Finding and graphing displacement vectors.</span>
+</h4>
+<p id="p-11879">Let <span class="process-math">\(\vec r(t) = \la \cos(\frac{\pi}{2}t),\sin(\frac{\pi}2 t)\ra\text{.}\)</span> Graph <span class="process-math">\(\vec r(t)\)</span> on <span class="process-math">\(-1\leq t\leq 1\text{,}\)</span> and find the displacement of <span class="process-math">\(\vec r(t)\)</span> on this interval.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-1023" id="solution-1023"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1023"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-vvfintro-displacement-eg" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/eGsIv3hYlak?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-11880">The function <span class="process-math">\(\vec r(t)\)</span> traces out the unit circle, though at a different rate than the “usual” <span class="process-math">\(\la \cos(t) ,\sin(t) \ra\)</span> parametrization. At <span class="process-math">\(t_0=-1\text{,}\)</span> we have <span class="process-math">\(\vec r(t_0) = \la 0,-1\ra\text{;}\)</span> at <span class="process-math">\(t_1=1\text{,}\)</span> we have <span class="process-math">\(\vec r(t_1) = \la 0,1\ra\text{.}\)</span> The displacement of <span class="process-math">\(\vec r(t)\)</span> on <span class="process-math">\([-1,1]\)</span> is thus <span class="process-math">\(\vec d = \la 0,1\ra - \la 0,-1\ra = \la 0,2\ra\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_vvf5"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_vvf5.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.1.18<span class="period">.</span></span><span class="space"> </span>Graphing the displacement of a position function in <a href="" class="xref" data-knowl="./knowl/ex_vvf5.html" title="Example 12.1.17: Finding and graphing displacement vectors">Example 12.1.17</a></figcaption></figure><p id="p-11881">A graph of <span class="process-math">\(\vec r(t)\)</span> on <span class="process-math">\([-1,1]\)</span> is given in <a href="" class="xref" data-knowl="./knowl/fig_vvf5.html" title="Figure 12.1.18">Figure 12.1.18</a>, along with the displacement vector <span class="process-math">\(\vec d\)</span> on this interval.</p>
+</div></div>
+</div></article><p id="p-11882">Measuring displacement makes us contemplate related, yet very different, concepts. Considering the semi-circular path the object in <a href="" class="xref" data-knowl="./knowl/ex_vvf5.html" title="Example 12.1.17: Finding and graphing displacement vectors">Example 12.1.17</a> took, we can quickly verify that the object ended up a distance of 2 units from its initial location. That is, we can compute <span class="process-math">\(\vnorm{d} = 2\text{.}\)</span> However, measuring <em class="emphasis">distance from the starting point</em> is different from measuring <em class="emphasis">distance traveled</em>. Being a semi-circle, we can measure the distance traveled by this object as <span class="process-math">\(\pi\approx 3.14\)</span> units. Knowing <em class="emphasis">distance from the starting point</em> allows us to compute <em class="emphasis">average rate of change.</em></p>
+<article class="definition definition-like" id="def_av_rate_of_change_vect"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">Average Rate of Change.</span>
+</h4>
+<p id="p-11883">Let <span class="process-math">\(\vec r(t)\)</span> be a vector-valued function, where each of its component functions is continuous on its domain, and let <span class="process-math">\(t_0\lt t_1\text{.}\)</span> The <dfn class="terminology">average rate of change</dfn> of <span class="process-math">\(\vec r(t)\)</span> on <span class="process-math">\([t_0,t_1]\)</span> is </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{ average rate of change }  = \frac{\vec r(t_1) - \vec r(t_0)}{t_1-t_0}\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="ex_vvf6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.1.20</span><span class="period">.</span><span class="space"> </span><span class="title">Average rate of change.</span>
+</h4>
+<p id="p-11884">Let <span class="process-math">\(\vec r(t) = \la \cos(\frac{\pi}2t),\sin(\frac{\pi}2t)\ra\)</span> as in <a href="" class="xref" data-knowl="./knowl/ex_vvf5.html" title="Example 12.1.17: Finding and graphing displacement vectors">Example 12.1.17</a>. Find the average rate of change of <span class="process-math">\(\vec r(t)\)</span> on <span class="process-math">\([-1,1]\)</span> and on <span class="process-math">\([-1,5]\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-1024" id="solution-1024"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1024"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-vvfintro-average" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/REA-v1g68bo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-11885">We computed in <a href="" class="xref" data-knowl="./knowl/ex_vvf5.html" title="Example 12.1.17: Finding and graphing displacement vectors">Example 12.1.17</a> that the displacement of <span class="process-math">\(\vec r(t)\)</span> on <span class="process-math">\([-1,1]\)</span> was <span class="process-math">\(\vec d = \la 0,2\ra\text{.}\)</span> Thus the average rate of change of <span class="process-math">\(\vec r(t)\)</span> on <span class="process-math">\([-1,1]\)</span> is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_vvf5.html">
+\begin{equation*}
+\frac{\vec r(1) -\vec r(-1)}{1-(-1)} = \frac{\la 0,2\ra}{2} = \la 0,1\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-11886">We interpret this as follows: the object followed a semi-circular path, meaning it moved towards the right then moved back to the left, while climbing slowly, then quickly, then slowly again. <em class="emphasis">On average</em>, however, it progressed straight up at a constant rate of <span class="process-math">\(\la 0,1\ra\)</span> per unit of time.</p>
+<p id="p-11887">We can quickly see that the displacement on <span class="process-math">\([-1,5]\)</span> is the same as on <span class="process-math">\([-1,1]\text{,}\)</span> so <span class="process-math">\(\vec d = \la 0,2\ra\text{.}\)</span> The average rate of change is different, though:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{\vec r(5)-\vec r(-1)}{5-(-1)} = \frac{\la 0,2\ra}{6} = \la 0,1/3\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-11888">As it took “3 times as long” to arrive at the same place, this average rate of change on <span class="process-math">\([-1,5]\)</span> is <span class="process-math">\(1/3\)</span> the average rate of change on <span class="process-math">\([-1,1]\text{.}\)</span></p>
+</div></div>
+</div></article><p id="p-11889">We considered average rates of change in <a href="sec_limit_intro.html" class="internal" title="Section 1.1: An Introduction To Limits">Sections 1.1</a> and <a href="sec_derivative.html" class="internal" title="Section 2.1: Instantaneous Rates of Change: The Derivative">Section 2.1</a> as we studied limits and derivatives. The same is true here; in the following section we apply calculus concepts to vector-valued functions as we find limits, derivatives, and integrals. Understanding the average rate of change will give us an understanding of the derivative; displacement gives us one application of integration.</p></section><section class="exercises" id="exercises-65"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">12.1.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-140"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-2282"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<p id="p-11890">Vector-valued functions are closely related to <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> of graphs.</p></article><article class="exercise exercise-like" id="exercise-2283"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<p id="p-11892">When sketching vector-valued functions, technically one isn't graphing points, but rather <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>.</p></article><article class="exercise exercise-like" id="exercise-2284"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<p id="p-11894">It can be useful to think of <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> as a vector that points from a starting position to an ending position.</p></article><article class="exercise exercise-like" id="exercise-2285"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-11896">In the context of vector-valued functions, average rate of change is <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> divided by time.</p></article></article><article class="subexercises" id="subexercises-141"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-266">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-314"><p id="p-11898">In the following exercises, sketch the vector-valued function on the given interval.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2286"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-11899"><span class="process-math">\(\vec r(t) = \la t^2,t^2-1\ra\text{,}\)</span> for <span class="process-math">\(-2\leq t\leq 2\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2287"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-11900"><span class="process-math">\(\vec r(t) = \la t^2,t^3\ra\text{,}\)</span> for <span class="process-math">\(-2\leq t\leq 2\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2288"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-11901"><span class="process-math">\(\vec r(t) = \la 1/t,1/t^2\ra\text{,}\)</span> for <span class="process-math">\(-2\leq t\leq 2\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2289"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-11902"><span class="process-math">\(\vec r(t) = \la \frac1{10}t^2,\sin(t) \ra\text{,}\)</span> for <span class="process-math">\(-2\pi\leq t\leq 2\pi\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2290"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-11903"><span class="process-math">\(\vec r(t) = \la \frac1{10}t^2,\sin(t) \ra\text{,}\)</span> for <span class="process-math">\(-2\pi\leq t\leq 2\pi\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2291"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-11904"><span class="process-math">\(\vec r(t) = \la 3\sin(\pi t),2\cos(\pi t)\ra\text{,}\)</span> on <span class="process-math">\([0,2]\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2292"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-11905"><span class="process-math">\(\vec r(t) = \la 3\cos(t) ,2\sin(2 t)\ra\text{,}\)</span> on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2293"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-11906"><span class="process-math">\(\vec r(t) = \la 2\sec(t) ,\tan(t) \ra\text{,}\)</span> on <span class="process-math">\([-\pi,\pi]\text{.}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-267">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-315"><p id="p-11907">In the following exercises, sketch the vector-valued function on the given interval in <span class="process-math">\(\mathbb{R}^3\text{.}\)</span> Technology may be useful in creating the sketch.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2294"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-11908"><span class="process-math">\(\vec r(t) = \la 2\cos(t) , t, 2\sin(t) \ra\text{,}\)</span> on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2295"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-11909"><span class="process-math">\(\vec r(t) = \la 3\cos(t) , \sin(t) , t/\pi\ra\)</span> on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2296"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-11910"><span class="process-math">\(\vec r(t) = \la \cos(t) , \sin(t) ,\sin(t) \ra\)</span> on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2297"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-11911"><span class="process-math">\(\vec r(t) = \la \cos(t) , \sin(t) ,\sin(2t)\ra\)</span> on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-268">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-316"><p id="p-11912">In the following exercises, find <span class="process-math">\(\norm{\vec r(t)}\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2298"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-1454" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1454" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xub3JtfVsxXXtcbGVmdFxsVmVydCMxXHJpZ2h0XHJWZXJ0fVxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSh0PT4nUmVhbCcpOwokbm9ybT1Gb3JtdWxhKCJ8dHwgc3FydCgxK3ReMikiKTsKCkJFR0lOX1BHTUwKSWYgW2BcdmVjIHIodCkgPSBcbGEgdCx0XjJccmFcdGV4dHssfWBdIHRoZW4gW2Bcbm9ybXtcdmVjIHIodCl9PWBdW19deyRub3JtfXszMH0uCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-11913">If <span class="process-math">\(\vec r(t) = \la t,t^2\ra\text{,}\)</span> then <span class="process-math">\(\norm{\vec r(t)}=\)</span><span class="fillin underline" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span>.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1454')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2299"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-11915"><span class="process-math">\(\vec r(t) = \la 5\cos(t) ,3\sin(t) \ra\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2300"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-1455" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1455" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xub3JtfVsxXXtcbGVmdFxsVmVydCMxXHJpZ2h0XHJWZXJ0fVxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSh0PT4nUmVhbCcpOwokbm9ybT1Gb3JtdWxhKCJzcXJ0KDQrdF4yKSIpOwoKQkVHSU5fUEdNTApJZiBbYFx2ZWMgcih0KSA9IFxsYSAyXGNvcyh0KSAsMlxzaW4odCkgLHRccmFcdGV4dHssfWBdIHRoZW4gW2Bcbm9ybXtcdmVjIHIodCl9PWBdW19deyRub3JtfXszMH0uCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-11917">If <span class="process-math">\(\vec r(t) = \la 2\cos(t) ,2\sin(t) ,t\ra\text{,}\)</span> then <span class="process-math">\(\norm{\vec r(t)}=\)</span><span class="fillin underline" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span>.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1455')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2301"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-11919"><span class="process-math">\(\vec r(t) = \la \cos(t) ,t,t^2\ra\text{.}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-269">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-317"><p id="p-11921">Create a vector-valued function whose graph matches the given description.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2302"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-1456" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1456" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiVmVjdG9yMkQiKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSh0PT4nUmVhbCcpOwokdnZmPUZvcm11bGEoIjwyIGNvcyh0KSsxLCAyIHNpbih0KSArIDI+Iik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldCh0b2xUeXBlPT4nYWJzb2x1dGUnLHRvbGVyYW5jZT0+MC4wMDEpOwokdnZmZXY9JHZ2Zi0+Y21wKGNoZWNrZXI9PnN1YnsKICAgIG15ICgkY29ycmVjdCwkc3R1ZGVudCwkc2VsZik9QF87CiAgICBteSAoJHN4LCRzeSk9JHN0dWRlbnQtPnZhbHVlOwogICAgbXkgKCRjeCwkY3kpPSRjb3JyZWN0LT52YWx1ZTsKICAgIG15ICRlbGltaW5hdGVkPUZvcm11bGEoIigoJHN4LTEpLzIpXjIgKyAoKCRzeS0yKS8yKV4yIik7CiAgICByZXR1cm4gMCB1bmxlc3MgKCRlbGltaW5hdGVkID09IEZvcm11bGEoIjEiKSk7CiAgICAjbm9ybWFsaXplIGFuc3dlcnMKICAgICRzeD0oJHN4LTEpLzI7CiAgICAkc3k9KCRzeS0yKS8yOwogICAgJGN4PSgkY3gtMSkvMjsKICAgICRjeT0oJGN5LTIpLzI7CiAgICAjc2hpZnQgc3R1ZGVudCBhbnN3ZXJzCiAgICBteSAkc3gwPSRzeC0+ZXZhbCh0PT4wKTsKICAgIG15ICRzeTA9JHN5LT5ldmFsKHQ9PjApOwogICAgbXkgJHBoaT0oJHN4MCA+PSAwKT9Db21wdXRlKCJhcmNzaW4oJHN5MCkiKTpDb21wdXRlKCJwaS1hcmNzaW4oJHN5MCkiKTsKICAgICRzeD0kc3gtPnN1YnN0aXR1dGUodD0+Rm9ybXVsYSgidC0kcGhpIikpOwogICAgJHN5PSRzeS0+c3Vic3RpdHV0ZSh0PT5Gb3JtdWxhKCJ0LSRwaGkiKSk7CiAgICByZXR1cm4gKCRzeCA9PSAkY3ggYW5kICRzeSA9PSAkY3kpOwogIH0KKTsKCkJFR0lOX1BHTUwKQSBjaXJjbGUgb2YgcmFkaXVzIFtgMlx0ZXh0eyx9YF0gY2VudGVyZWQgYXQgW2AoMSwyKVx0ZXh0eyx9YF0gdHJhY2VkIGNvdW50ZXItY2xvY2t3aXNlIG9uY2UgYXQgY29uc3RhbnQgc3BlZWQgb24gW2BbMCwyXHBpKVx0ZXh0ey59YF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1tgXHZlYyByKHQpPWBdJylAXSoqCgpbX117JHZ2ZmV2fXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-11922">A circle of radius <span class="process-math">\(2\text{,}\)</span> centered at <span class="process-math">\((1,2)\text{,}\)</span> traced counter-clockwise once at constant speed on <span class="process-math">\([0,2\pi)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1456')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2303"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-11924">A circle of radius 3, centered at <span class="process-math">\((5,5)\text{,}\)</span> traced clockwise once on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2304"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-11929">An ellipse, centered at <span class="process-math">\((0,0)\)</span> with vertical major axis of length 10 and minor axis of length 3, traced once counter-clockwise on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2305"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-11932">An ellipse, centered at <span class="process-math">\((3,-2)\)</span> with horizontal major axis of length 6 and minor axis of length 4, traced once clockwise on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2306"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div id="webwork-1457" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1457" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJQYXJhbWV0cmljTGluZS5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCJWZWN0b3IyRCIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKHQ9PidSZWFsJyk7CiR2dmY9UGFyYW1ldHJpY0xpbmUoIjx0KzIsIDV0KzM+Iik7CgpCRUdJTl9QR01MCkEgbGluZSB0aHJvdWdoIFtgKDIsMylgXSB3aXRoIGEgc2xvcGUgb2YgW2A1XHRleHR7Ln1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnW2BcdmVjIHIodCk9YF0nKUBdKioKCltfXXskdnZmfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-11937">A line through <span class="process-math">\((2,3)\)</span> with a slope of <span class="process-math">\(5\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1457')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2307"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-11939">A line through <span class="process-math">\((1,5)\)</span> with a slope of <span class="process-math">\(-1/2\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2308"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-11945">The line through points <span class="process-math">\((1,2,3)\)</span> and <span class="process-math">\((4,5,6)\text{,}\)</span> where</p>
+<p id="p-11946"><span class="process-math">\(\vec r(0) = \la 1,2,3\ra\)</span> and <span class="process-math">\(\vec r(1) = \la 4,5,6\ra\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2309"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-11950">The line through points <span class="process-math">\((1,2)\)</span> and <span class="process-math">\((4,4)\text{,}\)</span> where</p>
+<p id="p-11951"><span class="process-math">\(\vec r(0) = \la 1,2\ra\)</span> and <span class="process-math">\(\vec r(1) = \la 4,4\ra\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2310"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<div id="webwork-1458" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1458" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiVmVjdG9yIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJHZ2Zj1Gb3JtdWxhKCI8MiBjb3ModCksIDIgc2luKHQpLCAydD4iKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHRvbFR5cGU9PidhYnNvbHV0ZScsdG9sZXJhbmNlPT4wLjAwMSk7CiR2dmZldj0kdnZmLT5jbXAoY2hlY2tlcj0+c3ViewogICAgbXkgKCRjb3JyZWN0LCRzdHVkZW50LCRzZWxmKT1AXzsKICAgIG15ICgkc3gsJHN5LCRzeik9JHN0dWRlbnQtPnZhbHVlOwogICAgbXkgKCRjeCwkY3ksJGN6KT0kY29ycmVjdC0+dmFsdWU7CiAgICByZXR1cm4gMCB1bmxlc3MgKCRzeCA9PSAkY3ggYW5kICRzeSA9PSAkY3kpOwogICAgJHN6ZD0kc3otPnJlZHVjZS0+RCgndCcpOwogICAgcmV0dXJuIDAgdW5sZXNzICgkc3pkID09IEZvcm11bGEoIjIiKSk7CiAgICBteSAkciA9ICgkc3otPmV2YWwodD0+MCkpLyg0KnBpKTsKICAgIHJldHVybiAwIHVubGVzcyAoJHIgPT0gaW50KCRyKSk7CiAgfQopOwoKQkVHSU5fUEdNTApBIHZlcnRpY2FsbHkgb3JpZW50ZWQgaGVsaXggd2l0aCByYWRpdXMgb2YgW2AyYF0gdGhhdCBzdGFydHMgYXQgW2AoMiwwLDApYF0gYW5kIGVuZHMgYXQgW2AoMiwwLDRccGkpYF0gYWZ0ZXIgb25lIHJldm9sdXRpb24gb24gW2BbMCwyXHBpXVx0ZXh0ey59YF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1tgXHZlYyByKHQpPWBdJylAXSoqCgpbX117JHZ2ZmV2fXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-11955">A vertically oriented helix with radius of <span class="process-math">\(2\)</span> that starts at <span class="process-math">\((2,0,0)\)</span> and ends at <span class="process-math">\((2,0,4\pi)\)</span> after one revolution on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1458')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2311"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<p id="p-11957">A vertically oriented helix with radius of 3 that starts at <span class="process-math">\((3,0,0)\)</span> and ends at <span class="process-math">\((3,0,3)\)</span> after 2 revolutions on <span class="process-math">\([0,1]\text{.}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-270">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-318"><p id="p-11960">Find the average rate of change of <span class="process-math">\(\vec r(t)\)</span> on the given interval.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2312"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<div id="webwork-1459" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1459" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgiVmVjdG9yMkQiKTsKJGFyYz1WZWN0b3IoIjwxLDA+Iik7CgpCRUdJTl9QR01MCltgXHZlYyByKHQpID0gXGxhIHQsdF4yXHJhYF0gb24gW2BbLTIsMl1cdGV4dHsufWBdCgpbX117JGFyY317MTV9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-11961"><span class="process-math">\(\vec r(t) = \la t,t^2\ra\)</span> on <span class="process-math">\([-2,2]\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1459')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2313"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<p id="p-11963"><span class="process-math">\(\vec r(t) = \la t,t+\sin(t) \ra\)</span> on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2314"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<div id="webwork-1460" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1460" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgiVmVjdG9yIik7CiRhcmM9VmVjdG9yKCI8MCwwLDE+Iik7CgpCRUdJTl9QR01MCltgXHZlYyByKHQpID0gXGxhIDNcY29zKHQpICwyXHNpbih0KSAsdFxyYWBdIG9uIFtgWzAsMlxwaV1cdGV4dHsufWBdCgpbX117JGFyY317MTV9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-11965"><span class="process-math">\(\vec r(t) = \la 3\cos(t) ,2\sin(t) ,t\ra\)</span> on <span class="process-math">\([0,2\pi]\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1460')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2315"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<p id="p-11967"><span class="process-math">\(\vec r(t) = \la t,t^2,t^3\ra\)</span> on <span class="process-math">\([-1,3]\text{.}\)</span></p></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

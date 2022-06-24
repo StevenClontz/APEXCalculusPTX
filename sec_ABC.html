@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:29:09Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Area Between Curves</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter_app_of_int.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_app_of_int.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_disk.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter_app_of_int.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_app_of_int.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_disk.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="active">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_ABC"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.1</span> <span class="title">Area Between Curves</span>
+</h2>
+<p id="p-6814">We are often interested in knowing the area of a region. Forget momentarily that we addressed this already in <a href="sec_FTC.html" class="internal" title="Section 5.4: The Fundamental Theorem of Calculus">Section 5.4</a> and approach it instead using the technique described in <a href="" class="xref" data-knowl="./knowl/idea_app_of_defint.html" title="Key Idea 7.0.1: Application of Definite Integrals Strategy">Key Idea 7.0.1</a>.</p>
+<figure class="figure figure-like" id="vid-intapp-area-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-252" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/HAWBGypgKoQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_ABC.html" class="internal" title="Section 7.1: Area Between Curves">Section 7.1</a></figcaption></figure><p id="p-6815">Let <span class="process-math">\(Q\)</span> be the area of a region bounded by continuous functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span> If we break the region into many subregions, we have an obvious equation:</p>
+<p id="p-6816">Total Area = sum of the areas of the subregions.</p>
+<p id="p-6817">The issue to address next is how to systematically break a region into subregions. A graph will help. Consider <a href="" class="xref" data-knowl="./knowl/fig_abcintroa.html" title="Figure 7.1.2.(a)">Figure 7.1.2.(a)</a> where a region between two curves is shaded. While there are many ways to break this into subregions, one particularly efficient way is to “slice” it vertically, as shown in <a href="" class="xref" data-knowl="./knowl/fig_abcintrob.html" title="Figure 7.1.2.(b)">Figure 7.1.2.(b)</a>, into <span class="process-math">\(n\)</span> equally spaced slices.</p>
+<p id="p-6818">We now approximate the area of a slice. Again, we have many options, but using a rectangle seems simplest. Picking any <span class="process-math">\(x\)</span>-value <span class="process-math">\(c_i\)</span> in the <span class="process-math">\(i\)</span>th slice, we set the height of the rectangle to be <span class="process-math">\(f(c_i)-g(c_i)\text{,}\)</span> the difference of the corresponding <span class="process-math">\(y\)</span>-values. The width of the rectangle is a small difference in <span class="process-math">\(x\)</span>-values, which we represent with <span class="process-math">\(\dx\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_abcintroc.html" title="Figure 7.1.2.(c)">Figure 7.1.2.(c)</a> shows sample points <span class="process-math">\(c_i\)</span> chosen in each subinterval and appropriate rectangles drawn. (Each of these rectangles represents a differential element.) Each slice has an area approximately equal to <span class="process-math">\(\big(f(c_i)-g(c_i)\big)\dx\text{;}\)</span> hence, the total area is approximately the Riemann Sum</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_abcintroc.html">
+\begin{equation*}
+Q = \sum_{i=1}^n \big(f(c_i)-g(c_i)\big)\dx\text{.}
+\end{equation*}
+</div>
+<p id="p-6819">Taking the limit as <span class="process-math">\(n\to \infty\)</span> gives the exact area as <span class="process-math">\(\int_a^b \big(f(x)-g(x)\big)\, dx\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_abcintro"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_abcintroa"><img src="generated/latex-image/img_abcintroa.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_abcintrob"><img src="generated/latex-image/img_abcintrob.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_abcintroc"><img src="generated/latex-image/img_abcintroc.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.2<span class="period">.</span></span><span class="space"> </span>Subdividing a region into vertical slices and approximating the areas with rectangles</figcaption></figure><article class="theorem theorem-like" id="thm_areabetweencurves"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Area Between Curves (restatement of Theorem 5.4.23).</span>
+</h3>
+<p id="p-6820">Let <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> be continuous functions defined on <span class="process-math">\([a,b]\)</span> where <span class="process-math">\(f(x)\geq g(x)\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\([a,b]\text{.}\)</span> The area of the region bounded by the curves <span class="process-math">\(y=f(x)\text{,}\)</span> <span class="process-math">\(y=g(x)\)</span> and the lines <span class="process-math">\(x=a\)</span> and <span class="process-math">\(x=b\)</span> is </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_a^b \big(f(x)-g(x)\big)\, dx\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="ex_abc1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Finding area enclosed by curves.</span>
+</h3>
+<p id="p-6821">Find the area of the region bounded by <span class="process-math">\(f(x) = \sin(x) +2\text{,}\)</span> <span class="process-math">\(g(x) = \frac12\cos(2x)-1\text{,}\)</span> <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=4\pi\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_abc1.html" title="Figure 7.1.5">Figure 7.1.5</a>.</p>
+<figure class="figure figure-like" id="fig_abc1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_abc1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.5<span class="period">.</span></span><span class="space"> </span>Graphing an enclosed region in <a href="" class="xref" data-knowl="./knowl/ex_abc1.html" title="Example 7.1.4: Finding area enclosed by curves">Example 7.1.4</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-388" id="solution-388"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-388"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-intapp-area-example1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/qbhOWW70UyM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-6822">The graph verifies that the upper boundary of the region is given by <span class="process-math">\(f\)</span> and the lower bound is given by <span class="process-math">\(g\text{.}\)</span> Therefore the area of the region is the value of the integral</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-317">
+\begin{align*}
+\int_0^{4\pi} \big(f(x)- g(x)\big)\, dx \amp  = \int_0^{4\pi} \Big(\sin(x) +2 - \big(\frac12\cos(2x)-1\big)\Big)\, dx\\
+\amp = -\cos(x) -\frac14\sin(2x)+3x\Big|_0^{4\pi}\\
+\amp =	12\pi \approx 37.7\,\text{units}^2\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="ex_abc2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Finding total area enclosed by curves.</span>
+</h3>
+<p id="p-6823">Find the total area of the region enclosed by the functions <span class="process-math">\(f(x) = -2x+5\)</span> and <span class="process-math">\(g(x) = x^3-7x^2+12x-3\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_abc2.html" title="Figure 7.1.7">Figure 7.1.7</a>.</p>
+<figure class="figure figure-like" id="fig_abc2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_abc2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.7<span class="period">.</span></span><span class="space"> </span>Graphing a region enclosed by two functions in <a href="" class="xref" data-knowl="./knowl/ex_abc2.html" title="Example 7.1.6: Finding total area enclosed by curves">Example 7.1.6</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-389" id="solution-389"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-389"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-intapp-area-example2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/4wap7fFasZk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-6824">A quick calculation shows that <span class="process-math">\(f=g\)</span> at <span class="process-math">\(x=1, 2\)</span> and 4. One can proceed thoughtlessly by computing <span class="process-math">\(\ds \int_1^4\big(f(x)-g(x)\big)\, dx\text{,}\)</span> but this ignores the fact that on <span class="process-math">\([1,2]\text{,}\)</span> <span class="process-math">\(g(x) \gt f(x)\text{.}\)</span> (In fact, the thoughtless integration returns <span class="process-math">\(-9/4\text{,}\)</span> hardly the expected value of an <em class="emphasis">area</em>.) Thus we compute the total area by breaking the interval <span class="process-math">\([1,4]\)</span> into two subintervals, <span class="process-math">\([1,2]\)</span> and <span class="process-math">\([2,4]\)</span> and using the proper integrand in each.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-318">
+\begin{align*}
+\text{Total Area}  \amp = \int_1^2 \big(g(x)-f(x)\big)\, dx + \int_2^4\big(f(x)-g(x)\big)\, dx\\
+\amp = \int_1^2 \big(x^3-7x^2+14x-8\big) \, dx + \int_2^4\big(-x^3+7x^2-14x+8\big)\, dx\\
+\amp = 5/12 + 8/3\\
+\amp = 37/12 = 3.083\,\text{units}^2\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="p-6825">The previous example makes note that we are expecting area to be <em class="emphasis">positive</em>. When first learning about the definite integral, we interpreted it as “signed area under the curve,” allowing for “negative area.” That doesn't apply here; area is to be positive.</p>
+<p id="p-6826">The previous example also demonstrates that we often have to break a given region into subregions before applying <a href="" class="xref" data-knowl="./knowl/thm_areabetweencurves.html" title="Theorem 7.1.3: Area Between Curves (restatement of Theorem 5.4.23)">Theorem 7.1.3</a>. The following example shows another situation where this is applicable, along with an alternate view of applying the Theorem.</p>
+<article class="example example-like" id="ex_abc3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Finding area: integrating with respect to <span class="process-math">\(y\)</span>.</span>
+</h3>
+<p id="p-6827">Find the area of the region enclosed by the functions <span class="process-math">\(y=\sqrt{x}+2\text{,}\)</span> <span class="process-math">\(y=-(x-1)^2+3\)</span> and <span class="process-math">\(y=2\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_abc3.html" title="Figure 7.1.9">Figure 7.1.9</a>.</p>
+<figure class="figure figure-like" id="fig_abc3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_abc3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.9<span class="period">.</span></span><span class="space"> </span>Graphing a region for <a href="" class="xref" data-knowl="./knowl/ex_abc3.html" title="Example 7.1.8: Finding area: integrating with respect to y">Example 7.1.8</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-390" id="solution-390"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-390"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-intapp-area-example3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/GhdqEHPbPm0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-6828">We give two approaches to this problem. In the first approach, we notice that the region's “top” is defined by two different curves. On <span class="process-math">\([0,1]\text{,}\)</span> the top function is <span class="process-math">\(y=\sqrt{x}+2\text{;}\)</span> on <span class="process-math">\([1,2]\text{,}\)</span> the top function is <span class="process-math">\(y=-(x-1)^2+3\text{.}\)</span></p>
+<p id="p-6829">Thus we compute the area as the sum of two integrals:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-319">
+\begin{align*}
+\text{Total Area}  \amp = \int_0^1 \Big(\big(\sqrt{x}+2\big)-2\Big)\, dx + \int_1^2 \Big(\big(-(x-1)^2+3\big)-2\Big)\, dx\\
+\amp = 2/3 + 2/3\\
+\amp =4/3\text{.}
+\end{align*}
+</div>
+<p id="p-6830">The second approach is clever and very useful in certain situations. We are used to viewing curves as functions of <span class="process-math">\(x\text{;}\)</span> we input an <span class="process-math">\(x\)</span>-value and a <span class="process-math">\(y\)</span>-value is returned. Some curves can also be described as functions of <span class="process-math">\(y\text{:}\)</span> input a <span class="process-math">\(y\)</span>-value and an <span class="process-math">\(x\)</span>-value is returned. We can rewrite the equations describing the boundary by solving for <span class="process-math">\(x\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y=\sqrt{x}+2  \Rightarrow x=(y-2)^2
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y=-(x-1)^2+3  \Rightarrow  x=\sqrt{3-y}+1\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig_abc3b"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_abc3b.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.10<span class="period">.</span></span><span class="space"> </span>The region used in <a href="" class="xref" data-knowl="./knowl/ex_abc3.html" title="Example 7.1.8: Finding area: integrating with respect to y">Example 7.1.8</a> with boundaries relabeled as functions of <span class="process-math">\(y\)</span></figcaption></figure><p id="p-6831"><a href="" class="xref" data-knowl="./knowl/fig_abc3b.html" title="Figure 7.1.10">Figure 7.1.10</a> shows the region with the boundaries relabeled. A differential element, a horizontal rectangle, is also pictured. The width of the rectangle is a small change in <span class="process-math">\(y\text{:}\)</span> <span class="process-math">\(\Delta y\text{.}\)</span> The height of the rectangle is a difference in <span class="process-math">\(x\)</span>-values. The “top” <span class="process-math">\(x\)</span>-value is the largest value, i.e., the rightmost. The “bottom” <span class="process-math">\(x\)</span>-value is the smaller, i.e., the leftmost. Therefore the height of the rectangle is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_abc3b.html">
+\begin{equation*}
+\big(\sqrt{3-y}+1\big) - (y-2)^2\text{.}
+\end{equation*}
+</div>
+<p id="p-6832">The area is found by integrating the above function with respect to <span class="process-math">\(y\)</span> with the appropriate bounds. We determine these by considering the <span class="process-math">\(y\)</span>-values the region occupies. It is bounded below by <span class="process-math">\(y=2\text{,}\)</span> and bounded above by <span class="process-math">\(y=3\text{.}\)</span> That is, both the “top” and “bottom” functions exist on the <span class="process-math">\(y\)</span> interval <span class="process-math">\([2,3]\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-320">
+\begin{align*}
+\text{Total Area}  \amp = \int_2^3 \big(\sqrt{3-y}+1 - (y-2)^2\big)\, dy\\
+\amp = \Big(-\frac23(3-y)^{3/2}+y-\frac13(y-2)^3\Big)\Big|_2^3\\
+\amp = 4/3\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="p-6833">This calculus-based technique of finding area can be useful even with shapes that we normally think of as “easy.” <a href="" class="xref" data-knowl="./knowl/ex_abc4.html" title="Example 7.1.11: Finding the area of a triangle">Example 7.1.11</a> computes the area of a triangle. While the formula “<span class="process-math">\(\frac12\times\,\text{base}\, \times\,\text{height}\)</span>” is well known, in arbitrary triangles it can be nontrivial to compute the height. Calculus makes the problem simple.</p>
+<article class="example example-like" id="ex_abc4"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the area of a triangle.</span>
+</h3>
+<p id="p-6834">Compute the area of the regions bounded by the lines</p>
+<p id="p-6835"><span class="process-math">\(y=x+1\text{,}\)</span> <span class="process-math">\(y=-2x+7\)</span> and <span class="process-math">\(y=-\frac12x+\frac52\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_abc4.html" title="Figure 7.1.12">Figure 7.1.12</a>.</p>
+<figure class="figure figure-like" id="fig_abc4"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_abc4.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.12<span class="period">.</span></span><span class="space"> </span>Graphing a triangular region in <a href="" class="xref" data-knowl="./knowl/ex_abc4.html" title="Example 7.1.11: Finding the area of a triangle">Example 7.1.11</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-391" id="solution-391"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-391"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-intapp-area-example4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/tdFHE8cjDAY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-6836">Recognize that there are two “top” functions to this region, causing us to use two definite integrals.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-321">
+\begin{align*}
+\text{Total Area}  \amp = \int_1^2\big((x+1)-(-\frac12x+\frac52)\big)\, dx\\
+\amp \quad + \int_2^3\big((-2x+7)-(-\frac12x+\frac52)\big)\, dx\\
+\amp = 3/4+3/4\\
+\amp =3/2\text{.}
+\end{align*}
+</div>
+<p id="p-6837">We can also approach this by converting each function into a function of <span class="process-math">\(y\text{.}\)</span> This also requires 2 integrals, so there isn't really any advantage to doing so. We do it here for demonstration purposes.</p>
+<p id="p-6838">The “top” function is always <span class="process-math">\(x=\frac{7-y}2\)</span> while there are two “bottom” functions. Being mindful of the proper integration bounds, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-322">
+\begin{align*}
+\text{Total Area}  \amp = \int_1^2\big(\frac{7-y}2 - (5-2y)\big)\, dy + \int_2^3\big(\frac{7-y}2-(y-1)\big)\, dy\\
+\amp = 3/4 + 3/4\\
+\amp = 3/2\text{.}
+\end{align*}
+</div>
+<p id="p-6839">Of course, the final answer is the same. (It is interesting to note that the area of all 4 subregions used is 3/4. This is coincidental.)</p>
+</div></div>
+</div></article><p id="p-6840">While we have focused on producing exact answers, we are also able to make approximations using the principle of <a href="" class="xref" data-knowl="./knowl/thm_areabetweencurves.html" title="Theorem 7.1.3: Area Between Curves (restatement of Theorem 5.4.23)">Theorem 7.1.3</a>. The integrand in the theorem is a distance (“top minus bottom”); integrating this distance function gives an area. By taking discrete measurements of distance, we can approximate an area using numerical integration techniques developed in <a href="sec_numerical_integration.html" class="internal" title="Section 5.5: Numerical Integration">Section 5.5</a>. The following example demonstrates this.</p>
+<article class="example example-like" id="ex_abc5"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Numerically approximating area.</span>
+</h3>
+<p id="p-6841">To approximate the area of a lake, shown in <a href="" class="xref" data-knowl="./knowl/fig_abc5a.html" title="Figure 7.1.14.(a)">Figure 7.1.14.(a)</a>, the “length” of the lake is measured at 200-foot increments, as shown in <a href="" class="xref" data-knowl="./knowl/fig_abc5b.html" title="Figure 7.1.14.(b)">Figure 7.1.14.(b)</a>. The lengths are given in hundreds of feet. Approximate the area of the lake.</p>
+<figure class="figure figure-like" id="fig_abc5"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_abc5a"><img src="generated/latex-image/img_abc5a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_abc5b"><img src="generated/latex-image/img_abc5b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.14<span class="period">.</span></span><span class="space"> </span>(a) A sketch of a lake, and (b) the lake with length measurements</figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-392" id="solution-392"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-392"><div class="solution solution-like">
+<p id="p-6842">The measurements of length can be viewed as measuring “top minus bottom” of two functions. The exact answer is found by integrating <span class="process-math">\(\ds \int_0^{12} \big(f(x)-g(x)\big)\, dx\text{,}\)</span> but of course we don't know the functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span> Our discrete measurements instead allow us to approximate.</p>
+<p id="p-6843">We have the following data points:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(0,0),\,(2,2.25),\,(4,5.08),\,(6,6.35),\,(8,5.21),\,(10,2.76),\,(12,0)\text{.}
+\end{equation*}
+</div>
+<p id="p-6844">We also have that <span class="process-math">\(\dx=\frac{b-a}{n} = 2\text{,}\)</span> so Simpson's Rule gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-323">
+\begin{align*}
+\text{Area} \amp \approx \frac{2}{3}\Big(1\cdot0+4\cdot2.25+2\cdot5.08+4\cdot6.35+2\cdot5.21+4\cdot2.76+1\cdot0\Big)\\
+\amp = 44.01\overline{3} \,\text{units}^2\text{.}
+\end{align*}
+</div>
+<p id="p-6845">Since the measurements are in hundreds of feet, square units are given by (<span class="quantity">100 ft</span>)<span class="process-math">\(^2 = \)</span><span class="quantity">10,000 ft<sup>2</sup></span>, giving a total area of <span class="quantity">440,133 ft<sup>2</sup></span>. (Since we are approximating, we'd likely say the area was about <span class="quantity">440,000 ft<sup>2</sup></span>, which is a little more than 10 acres.)</p>
+</div></div>
+</div></article><p id="p-6846">In the next section we apply our applications of integration techniques to finding the volumes of certain solids.</p>
+<section class="exercises" id="exercises-36"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-85"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-1293"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-1210" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1210" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZSA9IFBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwoKQkVHSU5fUEdNTApUaGUgYXJlYSBiZXR3ZWVuIGN1cnZlcyBpcyBhbHdheXMgcG9zaXRpdmUuW19deyR0cnVlfXs1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6847">The area between curves is always positive.<ul style="list-style:circle;">
+<li id="li-1410"><p id="p-6849">True</p></li>
+<li id="li-1411"><p id="p-6850">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1210')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1294"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-1211" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1211" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZSA9IFBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwoKQkVHSU5fUEdNTApDYWxjdWx1cyBjYW4gYmUgdXNlZCB0byBmaW5kIHRoZSBhcmVhIG9mIGJhc2ljIGdlb21ldHJpYyBzaGFwZXMuW19deyR0cnVlfXs1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6852">Calculus can be used to find the area of basic geometric shapes.<ul style="list-style:circle;">
+<li id="li-1413"><p id="p-6854">True</p></li>
+<li id="li-1414"><p id="p-6855">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1211')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1295"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-1212" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1212" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKSW4geW91ciBvd24gd29yZHMsIGRlc2NyaWJlIGhvdyB0byBmaW5kIHRoZSB0b3RhbCBhcmVhIGVuY2xvc2VkIGJ5IFtgeT1mKHgpYF0gYW5kIFtgeT1nKHgpXHRleHR7Ln1gXQoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6857">In your own words, describe how to find the total area enclosed by <span class="process-math">\(y=f(x)\)</span> and <span class="process-math">\(y=g(x)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1212')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1296"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-1213" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1213" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRGVzY3JpYmUgYSBzaXR1YXRpb24gd2hlcmUgaXQgaXMgYWR2YW50YWdlb3VzIHRvIGZpbmQgYW4gYXJlYSBlbmNsb3NlZCBieSBjdXJ2ZXMgdGhyb3VnaCBpbnRlZ3JhdGlvbiB3aXRoIHJlc3BlY3QgdG8gW2B5YF0gaW5zdGVhZCBvZiBbYHhcdGV4dHsufWBdCgpbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KQW5zd2VycyBtYXkgdmFyeTsgb25lIGNvbW1vbiBhbnN3ZXIgaXMgd2hlbiB0aGUgcmVnaW9uIGhhcyB0d28gb3IgbW9yZSAidG9wIiBvciAiYm90dG9tIiBmdW5jdGlvbnMgd2hlbiB2aWV3aW5nIHRoZSByZWdpb24gd2l0aCByZXNwZWN0IHRvIFtgeFx0ZXh0eyx9YF0gYnV0IGhhcyBvbmx5IDEgInRvcCIgZnVuY3Rpb24gYW5kIDEgImJvdHRvbSIgZnVuY3Rpb24gd2hlbiB2aWV3ZWQgd2l0aCByZXNwZWN0IHRvIFtgeVx0ZXh0ey59YF0gVGhlIGZvcm1lciBhcmVhIHJlcXVpcmVzIG11bHRpcGxlIGludGVncmFscyB0byBjb21wdXRlLCB3aGVyZWFzIHRoZSBsYXR0ZXIgYXJlYSByZXF1aXJlcyBvbmUuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6858">Describe a situation where it is advantageous to find an area enclosed by curves through integration with respect to <span class="process-math">\(y\)</span> instead of <span class="process-math">\(x\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1213')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-86"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-127">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-148"><p id="p-6860">In the following exercises, find the area of the shaded region in the given graph.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1297"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-6861">Find the area of the shaded region in the graph below.</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_04.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1298"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-6863">Find the area of the shaded region in the graph below.</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_05.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1299"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-6865">Find the area of the shaded region in the graph below.</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_10.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1300"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-6867">Find the area of the shaded region in the graph below.</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_06.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1301"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-6869">Find the area of the shaded region in the graph below.</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_08.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1302"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-6871">Find the area of the shaded region in the graph below.</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_09.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1303"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-6873">Find the area of the shaded region in the graph below.</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_31a.svg" role="img" class="contained"></div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-128">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-149"><p id="p-6875">In the following exercises, find the total area enclosed by the functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1304"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-1214" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1214" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4MCA9IENvbXB1dGUoIi0yIik7CiR4MSA9IENvbXB1dGUoIjEiKTsKJGYgPSBGb3JtdWxhKCJ4XjIrNHgtMSIpOwokZyA9IEZvcm11bGEoIjJ4XjIrNXgtMyIpOwokRiA9IEZvcm11bGEoInheMy8zKzJ4XjIteCIpOwokRyA9IEZvcm11bGEoIjJ4XjMvMys1eF4yLzItM3giKTsKJEQgPSBGb3JtdWxhKCIkRi0kRyIpOwokYXJlYSA9ICRELT5ldmFsKHg9PiR4MSkgLSAkRC0+ZXZhbCh4PT4keDApOwoKQkVHSU5fUEdNTApbYGYoeCkgPSAyeF4yKzV4LTNcdGV4dHssfWBdIFtgZyh4KSA9IHheMis0eC0xYF0KCltfXXskYXJlYX17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6876"><span class="process-math">\(f(x) = 2x^2+5x-3\text{,}\)</span> <span class="process-math">\(g(x) = x^2+4x-1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1214')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1305"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div id="webwork-1215" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1215" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4MCA9IENvbXB1dGUoIi0xIik7CiR4MSA9IENvbXB1dGUoIjEiKTsKJGYgPSBGb3JtdWxhKCItM3grMyIpOwokZyA9IEZvcm11bGEoInheMi0zeCsyIik7CiRGID0gRm9ybXVsYSgiM3heMi8yKzN4Iik7CiRHID0gRm9ybXVsYSgieF4zLzMtM3heMisyeCIpOwokRCA9IEZvcm11bGEoIiRGLSRHIik7CiRhcmVhID0gJEQtPmV2YWwoeD0+JHgxKSAtICRELT5ldmFsKHg9PiR4MCk7CgpCRUdJTl9QR01MCltgZih4KSA9IHheMi0zeCsyXHRleHR7LH1gXSBbYGcoeCkgPSAtM3grM2BdCgpbX117JGFyZWF9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6878"><span class="process-math">\(f(x) = x^2-3x+2\text{,}\)</span> <span class="process-math">\(g(x) = -3x+3\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1215')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1306"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-1216" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1216" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4MCA9IENvbXB1dGUoIjAiKTsKJHgxID0gQ29tcHV0ZSgicGkvMiIpOwokZiA9IEZvcm11bGEoInNpbih4KSIpOwokZyA9IEZvcm11bGEoIjJ4L3BpIik7CiRGID0gRm9ybXVsYSgiLWNvcyh4KSIpOwokRyA9IEZvcm11bGEoInheMi9waSIpOwokRCA9IEZvcm11bGEoIiRGLSRHIik7CiRhcmVhID0gJEQtPmV2YWwoeD0+JHgxKSAtICRELT5ldmFsKHg9PiR4MCk7CiRhcmVhID0gMiokYXJlYTsKCkJFR0lOX1BHTUwKW2BmKHgpID0gXHNpbih4KVx0ZXh0eyx9YF0gW2BnKHgpID0gMngvXHBpYF0KCltfXXskYXJlYX17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6880"><span class="process-math">\(f(x) = \sin(x)\text{,}\)</span> <span class="process-math">\(g(x) = 2x/\pi\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1216')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1307"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-1217" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1217" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyAgJHgwID0gQ29tcHV0ZSgiLTEiKTsKICAkeDEgPSBDb21wdXRlKCIxIik7CiAgJHgyID0gQ29tcHV0ZSgiMyIpOwoKICAkZiA9IEZvcm11bGEoInheMy00eF4yK3gtMSIpOwogICRnID0gRm9ybXVsYSgiLXheMisyeC00Iik7CiAgJEYgPSBGb3JtdWxhKCJ4XjQvNC00eF4zLzMreF4yLzIteCIpOwogICRHID0gRm9ybXVsYSgiLXheMy8zK3heMi00eCIpOwogICREMSA9IEZvcm11bGEoIiRGLSRHIik7CiAgJGFyZWExID0gJEQxLT5ldmFsKHg9PiR4MSkgLSAkRDEtPmV2YWwoeD0+JHgwKTsKICAkRDIgPSBGb3JtdWxhKCItJEQxIik7CiAgJGFyZWEyID0gJEQyLT5ldmFsKHg9PiR4MikgLSAkRDItPmV2YWwoeD0+JHgxKTsKICAkYXJlYSA9ICRhcmVhMSArICRhcmVhMjsKCkJFR0lOX1BHTUwKW2BmKHgpID0geF4zLTR4XjIreC0xXHRleHR7LH1gXSBbYGcoeCkgPSAteF4yKzJ4LTRgXQoKW19deyRhcmVhfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6882"><span class="process-math">\(f(x) = x^3-4x^2+x-1\text{,}\)</span> <span class="process-math">\(g(x) = -x^2+2x-4\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1217')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1308"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-1218" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1218" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4MCA9IENvbXB1dGUoIjAiKTsKJHgxID0gQ29tcHV0ZSgiMSIpOwokZiA9IEZvcm11bGEoInNxcnQoeCkiKTsKJGcgPSBGb3JtdWxhKCJ4Iik7CiRGID0gRm9ybXVsYSgiMi8zKnheKDMvMikiKTsKJEcgPSBGb3JtdWxhKCJ4XjIvMiIpOwokRCA9IEZvcm11bGEoIiRGLSRHIik7CiRhcmVhID0gJEQtPmV2YWwoeD0+JHgxKSAtICRELT5ldmFsKHg9PiR4MCk7CgpCRUdJTl9QR01MCltgZih4KSA9IHhcdGV4dHssfWBdIFtgZyh4KSA9IFxzcXJ0e3h9YF0KCltfXXskYXJlYX17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6884"><span class="process-math">\(f(x) = x\text{,}\)</span> <span class="process-math">\(g(x) = \sqrt{x}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1218')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1309"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-1219" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1219" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4MCA9IENvbXB1dGUoIi0xIik7CiR4MSA9IENvbXB1dGUoIjEiKTsKJHgyID0gQ29tcHV0ZSgiMiIpOwokZiA9IEZvcm11bGEoIjN4XjIreCszIik7CiRnID0gRm9ybXVsYSgiLXheMys1eF4yKzJ4KzEiKTsKJEYgPSBGb3JtdWxhKCJ4XjMreF4yLzIrM3giKTsKJEcgPSBGb3JtdWxhKCIteF40LzQrNXheMy8zK3heMit4Iik7CiREMSA9IEZvcm11bGEoIiRGLSRHIik7CiRhcmVhMSA9ICREMS0+ZXZhbCh4PT4keDEpIC0gJEQxLT5ldmFsKHg9PiR4MCk7CiREMiA9IEZvcm11bGEoIi0kRDEiKTsKJGFyZWEyID0gJEQyLT5ldmFsKHg9PiR4MikgLSAkRDItPmV2YWwoeD0+JHgxKTsKJGFyZWEgPSAkYXJlYTEgKyAkYXJlYTI7CgpCRUdJTl9QR01MCltgZih4KSA9IC14XjMrNXheMisyeCsxXHRleHR7LH1gXSBbYGcoeCkgPSAzeF4yK3grM2BdCgpbX117JGFyZWF9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6886"><span class="process-math">\(f(x) = -x^3+5x^2+2x+1\text{,}\)</span> <span class="process-math">\(g(x) = 3x^2+x+3\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1219')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-1310"><h5 class="heading"><span class="codenumber">18<span class="period">.</span></span></h5>
+<p id="p-6888">The functions <span class="process-math">\(f(x) = \cos (x)\)</span> and <span class="process-math">\(g(x) = \sin x\)</span> intersect infinitely many times, forming an infinite number of repeated, enclosed regions. Find the areas of these regions.</p></article><article class="exercise exercise-like" id="exercise-1311"><h5 class="heading"><span class="codenumber">19<span class="period">.</span></span></h5>
+<div id="webwork-1220" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1220" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyAgJHgwID0gQ29tcHV0ZSgicGkvNiIpOwogICR4MSA9IENvbXB1dGUoIjUqcGkvNiIpOwogICR4MiA9IENvbXB1dGUoIjMqcGkvMiIpOwoKICAkZiA9IEZvcm11bGEoInNpbih4KSIpOwogICRnID0gRm9ybXVsYSgiY29zKDJ4KSIpOwogICRGID0gRm9ybXVsYSgiLWNvcyh4KSIpOwogICRHID0gRm9ybXVsYSgic2luKDJ4KS8yIik7CiAgJEQxID0gRm9ybXVsYSgiJEYtJEciKTsKICAkYXJlYTEgPSAkRDEtPmV2YWwoeD0+JHgxKSAtICREMS0+ZXZhbCh4PT4keDApOwogICREMiA9IEZvcm11bGEoIi0kRDEiKTsKICAkYXJlYTIgPSAkRDItPmV2YWwoeD0+JHgyKSAtICREMi0+ZXZhbCh4PT4keDEpOwogICRhcmVhID0gJGFyZWExICsgJGFyZWEyOwoKQkVHSU5fUEdNTApUaGUgZnVuY3Rpb25zIFtgZih4KSA9IFxjb3MoMngpYF0gYW5kIFtgZyh4KSA9IFxzaW4oeClgXSBpbnRlcnNlY3QgaW5maW5pdGVseSBtYW55IHRpbWVzLCBmb3JtaW5nIGFuIGluZmluaXRlIG51bWJlciBvZiByZXBlYXRlZCwgZW5jbG9zZWQgcmVnaW9ucy4gRmluZCB0aGUgYXJlYXMgb2YgdGhlc2UgcmVnaW9ucy4KClN1bSBvZiByZXBlYXRlZCBhcmVhczogW19deyRhcmVhfXsxMH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpPbiByZWdpb25zIHN1Y2ggYXMgW2BbXHBpLzYsNVxwaS82XVx0ZXh0eyx9YF0gdGhlIGFyZWEgaXMgW2AzXHNxcnR7M30vMlx0ZXh0ey59YF0gT24gcmVnaW9ucyBzdWNoIGFzIFtgWy1ccGkvMixccGkvNl1cdGV4dHssfWBdIHRoZSBhcmVhIGlzIFtgM1xzcXJ0ezN9LzRcdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6890">The functions <span class="process-math">\(f(x) = \cos(2x)\)</span> and <span class="process-math">\(g(x) = \sin(x)\)</span> intersect infinitely many times, forming an infinite number of repeated, enclosed regions. Find the areas of these regions.</p>
+<p id="p-6891">Sum of repeated areas: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1220')">Make Interactive</button></div>
+</div></article><div class="exercisegroup" id="exercisegroup-129">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-150">
+<p id="p-6894">In the following exercises, find the area of the enclosed region in two ways:</p>
+<ol id="p-6895" class="lower-alpha">
+<li id="li-1415"><p id="p-6896">by treating the boundaries as functions of <span class="process-math">\(x\text{,}\)</span> and</p></li>
+<li id="li-1416"><p id="p-6897">by treating the boundaries as functions of <span class="process-math">\(y\text{.}\)</span></p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1312"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_18.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1313"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_19.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1314"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_20.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1315"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_21.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1316"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_22.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1317"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_31.svg" role="img" class="contained"></div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-130">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-151"><p id="p-6904">In the following exercises, find the area of the triangle formed by the given three points.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1318"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<div id="webwork-1221" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1221" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpO0BwMSA9ICgxLDEpOwpAcDIgPSAoMiwzKTsKQHAzID0gKDMsMyk7CiRhcmVhID0gMS8yKigkcDFbMV0qKCRwMlswXS0kcDNbMF0pKyRwMlsxXSooJHAzWzBdLSRwMVswXSkgKyAkcDNbMV0qKCRwMVswXSAtICRwMlswXSkpOwokYXJlYSA9IEZvcm11bGEoYWJzKCRhcmVhKSk7CiRzMSA9IGpvaW4oIiwgIiwgQHAxKTsKJHMyID0gam9pbigiLCAiLCBAcDIpOwokczMgPSBqb2luKCIsICIsIEBwMyk7CgpCRUdJTl9QR01MCltgKFskczFdKVx0ZXh0eyx9YF1bYChbJHMyXSlcdGV4dHssfWBdYW5kIFtgKFskczNdKWBdCgpBcmVhOiBbX117JGFyZWF9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6905"><span class="process-math">\((1, 1)\text{,}\)</span><span class="process-math">\((2, 3)\text{,}\)</span>and <span class="process-math">\((3, 3)\)</span></p>
+<p id="p-6906">Area: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1221')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1319"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<div id="webwork-1222" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1222" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpO0BwMSA9ICgtMSwxKTsKQHAyID0gKDEsMyk7CkBwMyA9ICgyLC0xKTsKJGFyZWEgPSAxLzIqKCRwMVsxXSooJHAyWzBdLSRwM1swXSkrJHAyWzFdKigkcDNbMF0tJHAxWzBdKSArICRwM1sxXSooJHAxWzBdIC0gJHAyWzBdKSk7CiRhcmVhID0gRm9ybXVsYShhYnMoJGFyZWEpKTsKJHMxID0gam9pbigiLCAiLCBAcDEpOwokczIgPSBqb2luKCIsICIsIEBwMik7CiRzMyA9IGpvaW4oIiwgIiwgQHAzKTsKCkJFR0lOX1BHTUwKW2AoWyRzMV0pXHRleHR7LH1gXVtgKFskczJdKVx0ZXh0eyx9YF1hbmQgW2AoWyRzM10pYF0KCkFyZWE6IFtfXXskYXJlYX17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6908"><span class="process-math">\((-1, 1)\text{,}\)</span><span class="process-math">\((1, 3)\text{,}\)</span>and <span class="process-math">\((2, -1)\)</span></p>
+<p id="p-6909">Area: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1222')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1320"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-1223" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1223" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpO0BwMSA9ICgtMSwxKTsKQHAyID0gKDMsMyk7CkBwMyA9ICgzLDMpOwokYXJlYSA9IDEvMiooJHAxWzFdKigkcDJbMF0tJHAzWzBdKSskcDJbMV0qKCRwM1swXS0kcDFbMF0pICsgJHAzWzFdKigkcDFbMF0gLSAkcDJbMF0pKTsKJGFyZWEgPSBGb3JtdWxhKGFicygkYXJlYSkpOwokczEgPSBqb2luKCIsICIsIEBwMSk7CiRzMiA9IGpvaW4oIiwgIiwgQHAyKTsKJHMzID0gam9pbigiLCAiLCBAcDMpOwoKQkVHSU5fUEdNTApbYChbJHMxXSlcdGV4dHssfWBdW2AoWyRzMl0pXHRleHR7LH1gXWFuZCBbYChbJHMzXSlgXQoKQXJlYTogW19deyRhcmVhfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6911"><span class="process-math">\((-1, 1)\text{,}\)</span><span class="process-math">\((3, 3)\text{,}\)</span>and <span class="process-math">\((3, 3)\)</span></p>
+<p id="p-6912">Area: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1223')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1321"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<div id="webwork-1224" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1224" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpO0BwMSA9ICgwLDApOwpAcDIgPSAoMiw1KTsKQHAzID0gKDUsMik7CiRhcmVhID0gMS8yKigkcDFbMV0qKCRwMlswXS0kcDNbMF0pKyRwMlsxXSooJHAzWzBdLSRwMVswXSkgKyAkcDNbMV0qKCRwMVswXSAtICRwMlswXSkpOwokYXJlYSA9IEZvcm11bGEoYWJzKCRhcmVhKSk7CiRzMSA9IGpvaW4oIiwgIiwgQHAxKTsKJHMyID0gam9pbigiLCAiLCBAcDIpOwokczMgPSBqb2luKCIsICIsIEBwMyk7CgpCRUdJTl9QR01MCltgKFskczFdKVx0ZXh0eyx9YF1bYChbJHMyXSlcdGV4dHssfWBdYW5kIFtgKFskczNdKWBdCgpBcmVhOiBbX117JGFyZWF9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6914"><span class="process-math">\((0, 0)\text{,}\)</span><span class="process-math">\((2, 5)\text{,}\)</span>and <span class="process-math">\((5, 2)\)</span></p>
+<p id="p-6915">Area: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1224')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="x07_01_ex_29"><h5 class="heading"><span class="codenumber">30<span class="period">.</span></span></h5>
+<p id="p-6917">Use the Trapezoidal Rule to approximate the area of the pictured lake whose lengths, in hundreds of feet, are measured in 100-foot increments.</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_29.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="x07_01_ex_30"><h5 class="heading"><span class="codenumber">31<span class="period">.</span></span></h5>
+<p id="p-6919">Use Simpson's Rule to approximate the area of the pictured lake whose lengths, in hundreds of feet, are measured in 200-foot increments.</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_07_01_ex_30.svg" role="img" class="contained"></div></article></article></section></section></div></main>
+</div>
+</body>
+</html>

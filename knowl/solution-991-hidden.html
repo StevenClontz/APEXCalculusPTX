@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:43:37Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>It is obviously very difficult to simply look at these equations and discern anything. This is done intentionally. In the “real world,” most equations that are used do not have nice, integer coefficients. Rather, there are lots of digits after the decimal and the equations can look “messy.”</p>
+<p>We again start by deciding whether or not each line has the same direction. The direction of <span class="process-math">\(\ell_1\)</span> is given by <span class="process-math">\(\vec d_1 = \la 1.6,2.72,-3.36\ra\)</span> and the direction of <span class="process-math">\(\ell_2\)</span> is given by <span class="process-math">\(\vec d_2 = \la -2.9,-4.93,6.09\ra\text{.}\)</span> When it is not clear through observation whether two vectors are parallel or not, the standard way of determining this is by comparing their respective unit vectors. Using a calculator, we find:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\vec u_1 \amp = \frac{\vec d_1}{\norm{\vec d_1}} = \la 0.3471,0.5901,-0.7289\ra\\
+\vec u_2 \amp = \frac{\vec d_2}{\norm{\vec d_2}} = \la -0.3471,-0.5901,0.7289\ra\text{.}
+\end{align*}
+</div>
+<p>The two vectors seem to be parallel (at least, their components are equal to 4 decimal places). In most situations, it would suffice to conclude that the lines are at least parallel, if not the same. One way to be sure is to rewrite <span class="process-math">\(\vec d_1\)</span> and <span class="process-math">\(\vec d_2\)</span> in terms of fractions, not decimals. We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec d_1 =\la \frac{16}{10},\frac{272}{100},-\frac{336}{100}\ra \qquad \vec d_2 = \la -\frac{29}{10},-\frac{493}{100},\frac{609}{100}\ra\text{.}
+\end{equation*}
+</div>
+<p>One can then find the magnitudes of each vector in terms of fractions, then compute the unit vectors likewise. After a lot of manual arithmetic (or after briefly using a computer algebra system), one finds that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec u_1 = \la \sqrt{\frac{10}{83}},\frac{17}{\sqrt{830}},-\frac{21}{\sqrt{830}}\ra \qquad \vec u_2 = \la -\sqrt{\frac{10}{83}},-\frac{17}{\sqrt{830}},\frac{21}{\sqrt{830}}\ra\text{.}
+\end{equation*}
+</div>
+<p>We can now say without equivocation that these lines are parallel.</p>
+<p>Are they the same line? The parametric equations for a line describe one point that lies on the line, so we know that the point <span class="process-math">\(P_1 = (-0.7,4.2,2.3)\)</span> lies on <span class="process-math">\(\ell_1\text{.}\)</span> To determine if this point also lies on <span class="process-math">\(\ell_2\text{,}\)</span> plug in the <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> values of <span class="process-math">\(P_1\)</span> into the symmetric equations for <span class="process-math">\(\ell_2\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\frac{(-0.7)-2.8}{-2.9} \amp \stackrel{?}{=} \frac{(4.2)-10.15}{-4.93} \stackrel{?}{=} \frac{(2.3)-(-5.05)}{6.09}\\
+1.2069\amp=1.2069=1.2069\text{.}
+\end{align*}
+</div>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_lines3.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_lines3.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.5.12<span class="period">.</span></span><span class="space"> </span>Graphing the lines in <a href="" class="xref" data-knowl="./knowl/ex_lines3.html" title="Example 11.5.11: Comparing lines">Example 11.5.11</a></figcaption></figure><p>The point <span class="process-math">\(P_1\)</span> lies on both lines, so we conclude they are the same line, just parametrized differently. <a href="" class="xref" data-knowl="./knowl/fig_lines3.html" title="Figure 11.5.12">Figure 11.5.12</a> graphs this line along with the points and vectors described by the parametric equations. Note how <span class="process-math">\(\vec d_1\)</span> and <span class="process-math">\(\vec d_2\)</span> are parallel, though point in opposite directions (as indicated by their unit vectors above).</p>
+</div></body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:50:30Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>In <a href="" class="xref" data-knowl="./knowl/ex_parsurf2.html" title="Example 15.5.6: Parametrizing a surface over a circular disk">Example 15.5.6</a>, we parametrized the surface as <span class="process-math">\(\vec r(u,v) = \la 2v\cos u, 2v\sin u, 4v^2\cos^2u+8v^2\sin^2u\ra\text{,}\)</span> for <span class="process-math">\(0\leq u\leq 2\pi\text{,}\)</span> <span class="process-math">\(0\leq v\leq 1\text{.}\)</span> To find the surface area using <a href="" class="xref" data-knowl="./knowl/thm_par_surface_area.html" title="Theorem 15.5.22: Surface Area of Parametrically Defined Surfaces">Theorem 15.5.22</a>, we need <span class="process-math">\(\snorm{\vec r_u\times\vec r_v}\text{.}\)</span> We find:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_parsurf2.html ./knowl/thm_par_surface_area.html">
+\begin{align*}
+\vec r_u \amp = \la -2v\sin u, 2v\cos u, 8v^2\cos u\sin u\ra\\
+\vec r_v \amp = \la 2\cos u, 2\sin v, 8v\cos^2 u+16v\sin^2u\ra\\
+\vec r_u\times\vec r_v \amp = \la 16v^2\cos u, 32v^2\sin u, -4v\ra\\
+\snorm{\vec r_u\times\vec r_v} \amp = \sqrt{256v^4\cos^2u+1024v^4\sin^2u+16v^2}\text{.}
+\end{align*}
+</div>
+<p>Thus the surface area is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+S = \iint_\surfaceS \, dS \amp = \iint_R\snorm{\vec r_u\times \vec r_v}\, dA\\
+\amp  = \int_0^1\int_0^{2\pi} \sqrt{256v^4\cos^2u+1024v^4\sin^2u+16v^2}\, du\, dv\\
+\amp \approx 53.59\text{.}
+\end{align*}
+</div>
+<p>There is a lot of tedious work in the above calculations and the final integral is nontrivial. The use of a computer-algebra system is highly recommended.</p>
+</div></body>
+</html>

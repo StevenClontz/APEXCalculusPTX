@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:29:28Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Graphical and Numerical Solutions to Differential Equations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter_differential_equations.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_differential_equations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Separable.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter_differential_equations.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_differential_equations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Separable.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="active">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Graphical_Numerical"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">8.1</span> <span class="title">Graphical and Numerical Solutions to Differential Equations</span>
+</h2>
+<section class="introduction" id="introduction-168"><p id="p-7566">In <a href="sec_antider.html" class="internal" title="Section 5.1: Antiderivatives and Indefinite Integration">Section 5.1</a>, we were introduced to the idea of a differential equation. Given a function <span class="process-math">\(y = f(x)\text{,}\)</span> we defined a <em class="emphasis">differential equation</em> as an equation involving <span class="process-math">\(y,
+x\text{,}\)</span> and derivatives of <span class="process-math">\(y\text{.}\)</span> We explored the simple differential equation <span class="process-math">\(\yp = 2x\text{,}\)</span> and saw that a <em class="emphasis">solution</em> to a differential equation is simply a function that satisfies the differential equation.</p>
+<figure class="figure figure-like" id="vid-diffeq-basic-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-275" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/aevFioTbghg?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_Graphical_Numerical.html" class="internal" title="Section 8.1: Graphical and Numerical Solutions to Differential Equations">Section 8.1</a></figcaption></figure></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.1.1</span> <span class="title">Introduction and Terminology</span>
+</h3>
+<article class="definition definition-like" id="def_ODE"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Differential Equation.</span>
+</h4>
+<p id="p-7567">Given a function <span class="process-math">\(y=f(x)\text{,}\)</span> a <dfn class="terminology">differential equation</dfn> is an equation relating <span class="process-math">\(x,
+y\text{,}\)</span> and derivatives of <span class="process-math">\(y\text{.}\)</span></p>
+<ul class="disc">
+<li id="li-1578"><p id="p-7568">The variable <span class="process-math">\(x\)</span> is called the <em class="emphasis">independent variable</em>.</p></li>
+<li id="li-1579"><p id="p-7569">The variable <span class="process-math">\(y\)</span> is called the <em class="emphasis">dependent variable</em>.</p></li>
+<li id="li-1580"><p id="p-7570">The <em class="emphasis">order</em> of the differential equation is the order of the highest derivative of <span class="process-math">\(y\)</span> that appears in the equation.</p></li>
+</ul></article><p id="p-7571">Let us return to the simple differential equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp = 2x\text{.}
+\end{equation*}
+</div>
+<p id="p-7572">To find a solution, we must find a function whose derivative is <span class="process-math">\(2x\text{.}\)</span> In other words, we seek an antiderivative of <span class="process-math">\(2x\text{.}\)</span> The function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = x^2
+\end{equation*}
+</div>
+<p class="continuation">is an antiderivative of <span class="process-math">\(2x\text{,}\)</span> and solves the differential equation. So do the functions</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = x^2 + 1
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = x^2 - 2346\text{.}
+\end{equation*}
+</div>
+<p id="p-7573">We call the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = x^2 +  C\text{,}
+\end{equation*}
+</div>
+<p class="continuation">with <span class="process-math">\(C\)</span> an arbitrary constant of integration, the <em class="emphasis">general solution</em> to the differential equation. </p>
+<p id="p-7574">In order to specify the value of the integration constant <span class="process-math">\(C\text{,}\)</span> we require additional information. For example, if we know that <span class="process-math">\(y(1) = 3\text{,}\)</span> it follows that <span class="process-math">\(C=2\text{.}\)</span> This additional information is called an <em class="emphasis">initial condition.</em></p>
+<article class="definition definition-like" id="def_IVP"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Initial Value Problem.</span>
+</h4>
+<p id="p-7575">A differential equation paired with an initial condition (or initial conditions) is called an <dfn class="terminology">initial value problem.</dfn> </p>
+<p id="p-7576">The solution to an initial value problem is called a <dfn class="terminology">particular solution</dfn>.  A particular solution does not include arbitrary constants.</p>
+<p id="p-7577">The family of solutions to a differential equation that encompasses all possible solutions is called the <dfn class="terminology">general solution</dfn> to the differential equation. </p></article><aside class="aside aside-like" id="aside-42"><p id="p-7578"><em class="emphasis">Note:</em> A general solution typically includes one or more arbitrary constants. Different values of the constant(s) specify different members in the family of solutions. The particular solution to an initial value problem is the specific member in the family of solutions that corresponds to the given initial condition(s).</p></aside><article class="example example-like" id="ex_simple_de"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">A simple first-order differential equation.</span>
+</h4>
+<p id="p-7579">Solve the differential equation <span class="process-math">\(\yp = 2y\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-471" id="solution-471"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-471"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-basic-example1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/PAn_TrwF27M?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-7580">The solution is a function <span class="process-math">\(y\)</span> such that differentiation yields twice the original function. Unlike our starting example, finding the solution here does not involve computing an antiderivative. Notice that “integrating both sides” would yield the result <span class="process-math">\(y = \int 2y\,dx\text{,}\)</span> which is not useful. Without knowledge of the function <span class="process-math">\(y\text{,}\)</span> we can't compute the indefinite integral. Later sections will explore systematic ways to find analytic solutions to simple differential equations. For now, a bit of thought might let us guess the solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = e^{2x}\text{.}
+\end{equation*}
+</div>
+<p id="p-7581">Notice that application of the chain rule yields <span class="process-math">\(\yp = 2e^{2x} = 2y\text{.}\)</span> Another solution is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = -3e^{2x}\text{.}
+\end{equation*}
+</div>
+<p id="p-7582">In fact,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = Ce^{2x}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(C\)</span> is any constant, is the <em class="emphasis">general solution</em> to the differential equation because <span class="process-math">\(\yp = 2Ce^{2x} = 2y\text{.}\)</span></p>
+<p id="p-7583">If we are provided with a single initial condition, say <span class="process-math">\(y(0) = 3/2\text{,}\)</span> we can identify <span class="process-math">\(C=3/2\)</span> so that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = \frac{3}{2}e^{2x}
+\end{equation*}
+</div>
+<p class="continuation">is the <em class="emphasis">particular solution</em> to the initial value problem</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp = 2y, \text{ with }  y(0) = \frac{3}{2}\text{.}
+\end{equation*}
+</div>
+<p id="p-7584"><a href="" class="xref" data-knowl="./knowl/fig_general_particular.html" title="Figure 8.1.5">Figure 8.1.5</a> shows various members of the general solution to the differential equation <span class="process-math">\(\displaystyle \yp = 2y\text{.}\)</span> Each <span class="process-math">\(C\)</span> value yields a different member of the family, and a different function. We emphasize the particular solution corresponding to the initial condition <span class="process-math">\(y(0)=3/2\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_general_particular"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_general_particular.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.5<span class="period">.</span></span><span class="space"> </span>A representation of some of the members of general solution to the differential equation <span class="process-math">\(\yp = 2y\text{,}\)</span> including the particular solution to the initial value problem with <span class="process-math">\(y(0)=\displaystyle 3/2\text{,}\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_simple_de.html" title="Example 8.1.4: A simple first-order differential equation">Example 8.1.4</a></figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="ex_simple_de2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">A second-order differential equation.</span>
+</h4>
+<p id="p-7585">Solve the differential equation <span class="process-math">\(\yp' + 9y = 0\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-472" id="solution-472"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-472"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-basic-example2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ByArQF0qdH0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-7586">We seek a function whose second derivative is negative 9 multiplied by the original function. Both <span class="process-math">\(\sin(3x)\)</span> and <span class="process-math">\(\cos(3x)\)</span> have this feature. The general solution to the differential equation is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = C_1\sin(3x) + C_2\cos(3x)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> are arbitrary constants. To fully specify a particular solution, we require two additional conditions. For example, the initial conditions <span class="process-math">\(y(0)=1\)</span> and <span class="process-math">\(\yp(0)=3\)</span> yield <span class="process-math">\(C_1 = C_2 = 1\text{.}\)</span></p>
+</div></div>
+</div></article><p id="p-7587">The differential equation in <a href="" class="xref" data-knowl="./knowl/ex_simple_de2.html" title="Example 8.1.6: A second-order differential equation">Example 8.1.6</a> is <em class="emphasis">second order</em>, because the equation involves a second derivative. In general, the number of initial conditions required to specify a particular solution depends on the order of the differential equation. For the remainder of the chapter, we restrict our attention to first order differential equations and first order initial value problems.</p>
+<article class="example example-like" id="ex_verify_solutions"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Verifying a solution to the differential equation.</span>
+</h4>
+<p id="p-7588">Which of the following is a solution to the differential equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp + \frac{y}{x} - \sqrt{y} = 0\text{?}
+\end{equation*}
+</div>
+<ol id="p-7589" class="lower-alpha">
+<li id="li-1581"><p id="p-derived-li-1581"><span class="process-math">\(\displaystyle y = C \left ( 1 + \ln(x) \right )^2\)</span></p></li>
+<li id="li-1582"><p id="p-derived-li-1582"><span class="process-math">\(\displaystyle y = \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2\)</span></p></li>
+<li id="li-1583"><p id="p-derived-li-1583"><span class="process-math">\(\displaystyle y = C e^{-3x} + \sqrt{\sin(x)}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-473" id="solution-473"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-473"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-basic-verify" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/bf_WyPauK0Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-7590">Verifying a solution to a differential equation is simply an exercise in differentiation and simplification. We substitute each potential solution into the differential equation to see if it satisfies the equation.</p>
+<ol id="p-7591" class="lower-alpha">
+<li id="li-1584">
+<p id="p-7592">Testing the potential solution <span class="process-math">\(y = C \left ( 1 + \ln(x) \right )^2\text{:}\)</span></p>
+<p id="p-7593">Differentiating, we have <span class="process-math">\(\displaystyle \yp = \frac{2C(1 + \ln(x))}{x}\text{.}\)</span> Substituting into the differential equation,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-355">
+\begin{align*}
+\amp \frac{2C(1+\ln(x))}{x} + \frac{C(1+\ln(x))^2}{x} -\sqrt{C}(1+\ln(x))\\
+\amp = (1+\ln(x))\left( \frac{2C}{x} + \frac{C(1+\ln(x))}{x} - \sqrt{C}\right)\\
+\amp \neq 0\text{.}
+\end{align*}
+</div>
+<p id="p-7594">Since it doesn't satisfy the differential equation, <span class="process-math">\(y = C(1 + \ln(x))^2\)</span> is <em class="emphasis">not</em> a solution.</p>
+</li>
+<li id="li-1585">
+<p id="p-7595">Testing the potential solution <span class="process-math">\(\displaystyle y = \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2\text{:}\)</span></p>
+<p id="p-7596">Differentiating, we have <span class="process-math">\(\displaystyle \yp = 2\left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )\left ( \frac{1}{3} - \frac{C}{2x^{3/2}}\right )\text{.}\)</span> Substituting into the differential equation,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-356">
+\begin{align*}
+\amp 2\left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )\left ( \frac{1}{3} - \frac{C}{2x^{3/2}}\right ) + \frac{1}{x}\left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2 - \left (\frac{1}{3}x + \frac{C}{\sqrt{x}}\right)\\
+\amp = \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right ) \left ( \frac{2}{3} - \frac{C}{x^{3/2}} + \frac{1}{3} + \frac{C}{x^{3/2}} - 1 \right )\\
+\amp = 0. \text{ (Note how the second parenthetical grouping above reduces to 0.) }
+\end{align*}
+</div>
+<p id="p-7597">Thus <span class="process-math">\(\displaystyle y = \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2\)</span> <em class="emphasis">is</em> a solution to the differential equation.</p>
+</li>
+<li id="li-1586">
+<p id="p-7598">Testing the potential solution <span class="process-math">\(\displaystyle y = C e^{-3x} + \sqrt{\sin(x)}\text{:}\)</span></p>
+<p id="p-7599">Differentiating, <span class="process-math">\(\displaystyle \yp = -3Ce^{-3x} + \frac{\cos(x)}{2\sqrt{\sin(x)}}\text{.}\)</span> Substituting into the differential equation,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-3Ce^{-3x} + \frac{\cos(x)}{2\sqrt{\sin(x)}} + \frac{C e^{-3x} + \sqrt{\sin(x)}}{x} - \sqrt{C e^{-3x} + \sqrt{\sin(x)}} \neq 0\text{.}
+\end{equation*}
+</div>
+<p id="p-7600">The function <span class="process-math">\(\displaystyle y = C e^{-3x} + \sqrt{\sin(x)}\)</span> is <em class="emphasis">not</em> a solution to the differential equation.</p>
+</li>
+</ol>
+</div></div>
+</div></article><article class="example example-like" id="ex_verify_solutions2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Verifying a solution to a differential equation.</span>
+</h4>
+<p id="p-7601">Verify that <span class="process-math">\(x^2+y^2 = Cy\)</span> is a solution to <span class="process-math">\(\displaystyle \yp = \frac{2xy}{x^2-y^2}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-474" id="solution-474"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-474"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-basic-verify-implicit" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/B0gxkvJf9oY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-7602">The solution in this example is called an <em class="emphasis">implicit solution.</em> That means the dependent variable <span class="process-math">\(y\)</span> is a function of <span class="process-math">\(x\text{,}\)</span> but has not been explicitly solved for. Verifying the solution still involves differentiation, but we must take the derivatives implicitly. Differentiating, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2x + 2y\yp = C\yp\text{.}
+\end{equation*}
+</div>
+<p id="p-7603">Solving for <span class="process-math">\(\yp\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp = \frac{2x}{C-2y}\text{.}
+\end{equation*}
+</div>
+<p id="p-7604">From the solution, we know that <span class="process-math">\(\displaystyle C = \frac{x^2+y^2}{y}\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-357">
+\begin{align*}
+\yp \amp = \frac{2x}{\displaystyle \frac{x^2+y^2}{y} - 2y}\\
+\amp =\frac{2xy}{x^2+y^2-2y^2}\\
+\amp = \frac{2xy}{x^2-y^2}\text{.}
+\end{align*}
+</div>
+<p id="p-7605">We have verified that <span class="process-math">\(x^2+y^2 = Cy\)</span> is a solution to <span class="process-math">\(\displaystyle \yp = \frac{2xy}{x^2-y^2}\text{.}\)</span></p>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.1.2</span> <span class="title">Graphical Solutions to Differential Equations</span>
+</h3>
+<p id="p-7606">In the examples we have explored so far, we have found exact forms for the functions that solve the differential equations. Solutions of this type are called <em class="emphasis">analytic solutions.</em> Many times a differential equation has a solution, but it is difficult or impossible to find the solution analytically. This is analogous to algebraic equations. The algebraic equation <span class="process-math">\(x^2 + 3x - 1 = 0\)</span> has two real solutions that can be found analytically by using the quadratic formula. The equation <span class="process-math">\(\cos(x) = x\)</span> has one real solution, but we can't find it analytically. As shown in <a href="" class="xref" data-knowl="./knowl/fig_20_01_intersection.html" title="Figure 8.1.9">Figure 8.1.9</a>, we can find an approximate solution graphically by plotting <span class="process-math">\(\cos(x)\)</span> and <span class="process-math">\(x\)</span> and observing the <span class="process-math">\(x\)</span>-value of the intersection. We can similarly use graphical tools to understand the qualitative behavior of solutions to a first order-differential equation.</p>
+<figure class="figure figure-like" id="fig_20_01_intersection"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/fig_de_intersection.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.9<span class="period">.</span></span><span class="space"> </span>Graphically finding an approximate solution to <span class="process-math">\(\cos(x) = x\)</span></figcaption></figure><p id="p-7607">Consider the first-order differential equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp = f(x,y)\text{.}
+\end{equation*}
+</div>
+<p id="p-7608">The function <span class="process-math">\(f\)</span> could be any function of the two variables <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> Written in this way, we can think of the function <span class="process-math">\(f\)</span> as providing a formula to find the slope of a solution at a given point in the <span class="process-math">\(xy\)</span>-plane. In other words, suppose a solution to the differential equation passes through the point <span class="process-math">\((x_0,y_0)\text{.}\)</span> At the point <span class="process-math">\((x_0,y_0)\text{,}\)</span> the slope of the solution curve will be <span class="process-math">\(f(x_0,y_0)\text{.}\)</span> Since this calculation of the slope is possible at any point <span class="process-math">\((x,y)\)</span> where the function <span class="process-math">\(f(x,y)\)</span> is defined, we can produce a plot called a <em class="emphasis">slope field</em> (or direction field) that shows the slope of a solution at any point in the <span class="process-math">\(xy\)</span>-plane where the solution is defined. Further, this process can be done purely by working with the differential equation itself. In other words, we can draw a slope field and use it to determine the qualitative behavior of solutions to a differential equation without having to solve the differential equation. </p>
+<article class="definition definition-like" id="def_slope_field"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Slope Field.</span>
+</h4>
+<p id="p-7609">A <dfn class="terminology">slope field</dfn> for a first-order differential equation <span class="process-math">\(\yp = f(x,y)\)</span> is a plot in the <span class="process-math">\(xy\)</span>-plane made up of short line segments or arrows. At each point <span class="process-math">\((x_0,y_0)\)</span> where <span class="process-math">\(f(x,y)\)</span> is defined, the slope of the line segment is given by <span class="process-math">\(f(x_0,y_0)\text{.}\)</span> Plots of solutions to a differential equation are tangent to the line segments in the slope field. </p></article><article class="example example-like" id="ex_slope_field"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Sketching a slope field.</span>
+</h4>
+<p id="p-7610">Find a slope field for the differential equation <span class="process-math">\(\displaystyle \yp = x+y\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-475" id="solution-475"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-475"><div class="solution solution-like">
+<p id="p-7611">Because the function <span class="process-math">\(f(x,y) = x+y\)</span> is defined for all points <span class="process-math">\((x,y)\text{,}\)</span> every point in the <span class="process-math">\(xy\)</span>-plane has an associated line segment. It is not practical to draw an entire slope field by hand, but many tools exist for drawing slope fields on a computer. Here, we explicitly calculate a few of the line segments in the slope field.</p>
+<ul id="p-7612" class="disc">
+<li id="li-1587"><p id="p-7613">The slope of the line segment at <span class="process-math">\((0,0)\)</span> is <span class="process-math">\(f(0,0) = 0 + 0 = 0\text{.}\)</span></p></li>
+<li id="li-1588"><p id="p-7614">The slope of the line segment at <span class="process-math">\((1,1)\)</span> is <span class="process-math">\(f(1,1) = 1 + 1 = 2\text{.}\)</span></p></li>
+<li id="li-1589"><p id="p-7615">The slope of the line segment at <span class="process-math">\((1,-1)\)</span> is <span class="process-math">\(f(1,-1) = 1 - 1 = 0\text{.}\)</span></p></li>
+<li id="li-1590"><p id="p-7616">The slope of the line segment at <span class="process-math">\((-2,-1)\)</span> is <span class="process-math">\(f(-2,-1) = -2 - 1 = -3\text{.}\)</span></p></li>
+</ul>
+<p id="p-7617">Though it is possible to continue this process to sketch a slope field, we usually use a computer to make the drawing. Most popular computer algebra systems can draw slope fields. There are also various online tools that can make the drawings. The slope field for <span class="process-math">\(\yp = x+y\)</span> is shown in <a href="" class="xref" data-knowl="./knowl/fig_20_01_slopefield1.html" title="Figure 8.1.12">Figure 8.1.12</a>.</p>
+<figure class="figure figure-like" id="fig_20_01_slopefield1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_slopefield1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.12<span class="period">.</span></span><span class="space"> </span>Slope field for <span class="process-math">\(\yp = x+y\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_slope_field.html" title="Example 8.1.11: Sketching a slope field">Example 8.1.11</a></figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="ex_IVP_graphical"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">A graphical solution to an initial value problem.</span>
+</h4>
+<p id="p-7618">Approximate, with a sketch, the solution to the initial value problem <span class="process-math">\(\displaystyle \yp = x+y\text{,}\)</span> with <span class="process-math">\(y(1)=-1\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-476" id="solution-476"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-476"><div class="solution solution-like">
+<p id="p-7619">The solution to the initial value problem should be a continuous smooth curve. Using the slope field, we can draw of a sketch of the solution using the following two criteria:</p>
+<ol class="decimal">
+<li id="li-1591"><p id="p-7620">The solution must pass through the point <span class="process-math">\((1,-1)\text{.}\)</span></p></li>
+<li id="li-1592"><p id="p-7621">When the solution passes through a point <span class="process-math">\((x_0,y_0)\)</span> it must be tangent to the line segment at <span class="process-math">\((x_0,y_0)\text{.}\)</span></p></li>
+</ol>
+<p id="p-7622">Essentially, we sketch a solution to the initial value problem by starting at the point <span class="process-math">\((1,-1)\)</span> and “following the lines” in either direction. A sketch of the solution is shown in <a href="" class="xref" data-knowl="./knowl/fig_20_01_slopefield1solution.html" title="Figure 8.1.14">Figure 8.1.14</a>.</p>
+<figure class="figure figure-like" id="fig_20_01_slopefield1solution"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_slopefield1solution.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.14<span class="period">.</span></span><span class="space"> </span>Solution to the initial value problem <span class="process-math">\(\yp = x+y\text{,}\)</span> with <span class="process-math">\(y(1)=-1\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_IVP_graphical.html" title="Example 8.1.13: A graphical solution to an initial value problem">Example 8.1.13</a></figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="ex_logistic_slope_field"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Using a slope field to predict long term behavior.</span>
+</h4>
+<p id="p-7623">Use the slope field for the differential equation <span class="process-math">\(\yp = y(1-y)\text{,}\)</span> shown in <a href="" class="xref" data-knowl="./knowl/fig_20_01_slopefield2.html" title="Figure 8.1.16">Figure 8.1.16</a>, to predict long term behavior of solutions to the equation.</p>
+<figure class="figure figure-like" id="fig_20_01_slopefield2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_slopefield2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.16<span class="period">.</span></span><span class="space"> </span>Slope field for the logistic differential equation <span class="process-math">\(\yp = y(1-y)\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_logistic_slope_field.html" title="Example 8.1.15: Using a slope field to predict long term behavior">Example 8.1.15</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-477" id="solution-477"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-477"><div class="solution solution-like">
+<p id="p-7624">This differential equation, called the <em class="emphasis">logistic differential equation</em>, often appears in population biology to describe the size of a population. For that reason, we use <span class="process-math">\(t\)</span> (time) as the independent variable instead of <span class="process-math">\(x\text{.}\)</span> We also often restrict attention to non-negative <span class="process-math">\(y\)</span>-values because negative values correspond to a negative population. </p>
+<p id="p-7625">Looking at the slope field in <a href="" class="xref" data-knowl="./knowl/fig_20_01_slopefield2.html" title="Figure 8.1.16">Figure 8.1.16</a>, we can predict long term behavior for a given initial condition.</p>
+<ul class="disc">
+<li id="li-1593"><p id="p-7626">If the initial <span class="process-math">\(y\)</span>-value is negative (<span class="process-math">\(y(0)\lt 0\)</span>), the solution curve must pass though the point <span class="process-math">\((0,y(0))\)</span> and follow the slope field. We expect the solution <span class="process-math">\(y\)</span> to become more and more negative as time increases. Note that this result is not physically relevant when considering a population.</p></li>
+<li id="li-1594"><p id="p-7627">If the initial <span class="process-math">\(y\)</span>-value is greater than 0 but less than 1, we expect the solution <span class="process-math">\(y\)</span> to increase and level off at <span class="process-math">\(y=1\text{.}\)</span></p></li>
+<li id="li-1595"><p id="p-7628">If the initial <span class="process-math">\(y\)</span>-value is greater than 1, we expect the solution <span class="process-math">\(y\)</span> to decrease and level off at <span class="process-math">\(y=1\text{.}\)</span></p></li>
+</ul>
+<p id="p-7629">The slope field for the logistic differential equation, along with representative solution curves, is shown in <a href="" class="xref" data-knowl="./knowl/fig_20_01_slopefield2solution.html" title="Figure 8.1.17">Figure 8.1.17</a>. Notice that any solution curve with positive initial value will tend towards the value <span class="process-math">\(y=1\text{.}\)</span> We call this the <em class="emphasis">carrying capacity.</em> </p>
+<figure class="figure figure-like" id="fig_20_01_slopefield2solution"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_slopefield2solution.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.17<span class="period">.</span></span><span class="space"> </span>Slope field for the logistic differential equation <span class="process-math">\(\yp = y(1-y)\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_logistic_slope_field.html" title="Example 8.1.15: Using a slope field to predict long term behavior">Example 8.1.15</a> with a few representative solution curves</figcaption></figure>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.1.3</span> <span class="title">Numerical Solutions to Differential Equations: Euler's Method</span>
+</h3>
+<p id="p-7630">While the slope field is an effective way to understand the qualitative behavior of solutions to a differential equation, it is difficult to use a slope field to make quantitative predictions. For example, if we have the slope field for the differential equation <span class="process-math">\(\yp = x+y\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_slope_field.html" title="Example 8.1.11: Sketching a slope field">Example 8.1.11</a> along with the initial condition <span class="process-math">\(y(0)=1\text{,}\)</span> we can understand the qualitative behavior of the solution to the initial value problem, but will struggle to predict a specific value, <span class="process-math">\(y(2)\)</span> for example, with any degree of confidence. The most straightforward way to predict <span class="process-math">\(y(2)\)</span> is to find the analytic solution to the the initial value problem and evaluate it at <span class="process-math">\(x=2\text{.}\)</span> Unfortunately, we have already mentioned that it is impossible to find analytic solutions to many differential equations. In the absence of an analytic solution, a <em class="emphasis">numerical solution</em> can serve as an effective tool to make quantitative predictions about the solution to an initial value problem.</p>
+<p id="p-7631">There are many techniques for computing numerical solutions to initial value problems. A course in numerical analysis will discuss various techniques along with their strengths and weaknesses. The simplest technique is called <em class="emphasis">Euler's Method</em>. </p>
+<aside class="aside aside-like" id="aside-43"><p id="p-7632">Euler's Method is named for Leonhard Euler, a prolific Swiss mathematician during the 1700's. His last name is properly pronounced “oil-er”, not “you-ler.”</p></aside><p id="p-7633">Consider the first-order initial value problem</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp = f(x,y), \text{ with }  y(x_0) = y_0\text{.}
+\end{equation*}
+</div>
+<p id="p-7634">Using the definition of the derivative,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp(x) = \lim_{h \to 0} \frac{y(x+h) - y(x)}{h}\text{.}
+\end{equation*}
+</div>
+<p id="p-7635">This notation can be confusing at first, but “<span class="process-math">\(y(x)\)</span>” simply means “the <span class="process-math">\(y\)</span>-value of the solution when the <span class="process-math">\(x\)</span>-value is <span class="process-math">\(x\)</span>”, and “<span class="process-math">\(y(x+h)\)</span>” means “the <span class="process-math">\(y\)</span>-value of the solution when the <span class="process-math">\(x\)</span>-value is <span class="process-math">\(x+h\)</span>”.</p>
+<p id="p-7636">If we remove the limit but restrict <span class="process-math">\(h\)</span> to be “small,” we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp(x) \approx \frac{y(x+h) - y(x)}{h}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">so that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x,y) \approx \frac{y(x+h)-y(x)}{h}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">because <span class="process-math">\(\yp = f(x,y)\)</span> according to the differential equation. Rearranging terms,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y(x + h) \approx y(x) + h\,f(x,y)\text{.}
+\end{equation*}
+</div>
+<p id="p-7637">This statement says that if we know the solution (<span class="process-math">\(y\)</span>-value) to the initial value problem for some given <span class="process-math">\(x\)</span>-value, we can find an approximation for the solution at the value <span class="process-math">\(x+h\)</span> by taking our <span class="process-math">\(y\)</span>-value and adding <span class="process-math">\(h\)</span> times the function <span class="process-math">\(f\)</span> evaluated at the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> values. Euler's method uses the initial condition of an initial value problem as the starting point, and then uses the above idea to find approximate values for the solution <span class="process-math">\(y\)</span> at later <span class="process-math">\(x\)</span>-values. The algorithm is summarized in <a href="" class="xref" data-knowl="./knowl/idea_Euler.html" title="Key Idea 8.1.18: Euler's Method">Key Idea 8.1.18</a>.</p>
+<article class="insight remark-like" id="idea_Euler"><h4 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">8.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">Euler's Method.</span>
+</h4>
+<p id="p-7638">Consider the initial value problem</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp = f(x,y) \text{ with }  y(x_0)=y_0\text{.}
+\end{equation*}
+</div>
+<p id="p-7639">Let <span class="process-math">\(h\)</span> be a small positive number and <span class="process-math">\(N\)</span> be an integer.</p>
+<ol class="decimal">
+<li id="li-1596">
+<p id="p-7640">For <span class="process-math">\(i = 0, 1, 2, \ldots, N\text{,}\)</span> define</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_i = x_0 + ih\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1597">
+<p id="p-7641">The value <span class="process-math">\(y_0\)</span> is given by the initial condition. For <span class="process-math">\(i = 0, 1, 2, \ldots, N-1\text{,}\)</span> define</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y_{i+1} = y_i + hf(x_i,y_i)\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+<p id="p-7642">This process yields a sequence of <span class="process-math">\(N+1\)</span> points <span class="process-math">\((x_i,y_i)\)</span> for <span class="process-math">\(i= 0,1,2,\ldots,N\text{,}\)</span> where <span class="process-math">\((x_i, y_i)\)</span> is an approximation for <span class="process-math">\((x_i,y(x_i))\text{.}\)</span> </p></article><p id="p-7643">Let's practice Euler's Method using a few concrete examples.</p>
+<article class="example example-like" id="ex_euler1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">Using Euler's Method 1.</span>
+</h4>
+<p id="p-7644">Find an approximation at <span class="process-math">\(x=2\)</span> for the solution to <span class="process-math">\(\yp = x + y\)</span> with <span class="process-math">\(y(1)=-1\)</span> using Euler's Method with <span class="process-math">\(h=0.5\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-478" id="solution-478"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-478"><div class="solution solution-like">
+<p id="p-7645">Our initial condition yields the starting values <span class="process-math">\(x_0 = 1\)</span> and <span class="process-math">\(y_0 = -1\text{.}\)</span> With <span class="process-math">\(h = 0.5\text{,}\)</span> it takes <span class="process-math">\(N=2\)</span> steps to get to <span class="process-math">\(x=2\text{.}\)</span> Using steps 1 and 2 from the Euler's Method algorithm,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-358">
+\begin{align*}
+x_0  \amp = 1      \amp    y_0  \amp = -1\\
+x_1   \amp = x_0 + h   \amp    y_1   \amp = y_0 + hf(x_0,y_0)\\
+\amp = 1 + 0.5     \amp     \amp = -1 + 0.5(1 - 1)\\
+\amp = 1.5    \amp     \amp = -1\\
+x_2  \amp = x_0 + 2h  \amp   y_2  \amp = y_1 + hf(x_1,y_1)\\
+\amp = 1 + 2(0.5)  \amp     \amp = -1 + 0.5(1.5 -1)\\
+\amp = 2      \amp     \amp = -0.75 \text{.}
+\end{align*}
+</div>
+<p id="p-7646">Using Euler's method, we find the approximate <span class="process-math">\(y(2) \approx -0.75\text{.}\)</span></p>
+<p id="p-7647">To help visualize the Euler's method approximation, these three points (connected by line segments) are plotted along with the analytical solution to the initial value problem in <a href="" class="xref" data-knowl="./knowl/fig_20_01_euler1.html" title="Figure 8.1.20">Figure 8.1.20</a>.</p>
+<figure class="figure figure-like" id="fig_20_01_euler1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img-euler1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.20<span class="period">.</span></span><span class="space"> </span>Euler's Method approximation to <span class="process-math">\(\yp = x + y\)</span> with <span class="process-math">\(y(1) = -1\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_euler1.html" title="Example 8.1.19: Using Euler's Method 1">Example 8.1.19</a>, along with the analytical solution to the initial value problem</figcaption></figure>
+</div></div>
+</div></article><p id="p-7648">This approximation doesn't appear terrific, though it is better than merely guessing. Let's repeat the previous example using a smaller <span class="process-math">\(h\)</span>-value.</p>
+<article class="example example-like" id="ex_euler2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Using Euler's Method 2.</span>
+</h4>
+<p id="p-7649">Find an approximation on the interval <span class="process-math">\([1,2]\)</span> for the solution to <span class="process-math">\(\yp = x + y\)</span> with <span class="process-math">\(y(1)=-1\)</span> using Euler's Method with <span class="process-math">\(h=0.25\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-479" id="solution-479"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-479"><div class="solution solution-like">
+<p id="p-7650">Our initial condition yields the starting values <span class="process-math">\(x_0 = 1\)</span> and <span class="process-math">\(y_0 = -1\text{.}\)</span> With <span class="process-math">\(h = 0.25\text{,}\)</span> we need <span class="process-math">\(N=4\)</span> steps on the interval <span class="process-math">\([1,2]\)</span> Using steps 1 and 2 from the Euler's Method algorithm (and rounding to 4 decimal points), we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-359">
+\begin{align*}
+x_0  \amp = 1      \amp    y_0  \amp = -1 \\
+x_1   \amp = 1.25    \amp   y_1   \amp = -1 + 0.25(1 - 1) \\
+\amp       \amp     \amp = -1 \\
+x_2   \amp = 1.5     \amp    y_2   \amp = -1 + 0.25(1.25-1) \\
+\amp       \amp     \amp = -0.9375 \\
+x_3  \amp = 1.75    \amp   y_3   \amp = -0.9375 + 0.25(1.5-0.9375) \\
+\amp       \amp     \amp = -0.7969 \\
+x_4  \amp = 2      \amp   y_4  \amp = -0.7969 + 0.25(1.75 - 0.7969) \\
+\amp       \amp     \amp = -0.5586 \text{.}
+\end{align*}
+</div>
+<p id="p-7651">Using Euler's method, we find <span class="process-math">\(y(2) \approx -0.5586\text{.}\)</span></p>
+<p id="p-7652">These five points, along with the points from <a href="" class="xref" data-knowl="./knowl/ex_euler1.html" title="Example 8.1.19: Using Euler's Method 1">Example 8.1.19</a> and the analytic solution, are plotted in <a href="" class="xref" data-knowl="./knowl/fig_20_01_euler2.html" title="Figure 8.1.22">Figure 8.1.22</a>.</p>
+<figure class="figure figure-like" id="fig_20_01_euler2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img-euler2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.22<span class="period">.</span></span><span class="space"> </span>Euler's Method approximations to <span class="process-math">\(\yp = x + y\)</span> with <span class="process-math">\(y(1) = -1\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_euler1.html" title="Example 8.1.19: Using Euler's Method 1">Examples 8.1.19</a> and <a href="" class="xref" data-knowl="./knowl/ex_euler2.html" title="Example 8.1.21: Using Euler's Method 2">Example 8.1.21</a>, along with the analytical solution</figcaption></figure>
+</div></div>
+</div></article><p id="p-7653">Using the results from <a href="" class="xref" data-knowl="./knowl/ex_euler1.html" title="Example 8.1.19: Using Euler's Method 1">Examples 8.1.19</a> and <a href="" class="xref" data-knowl="./knowl/ex_euler2.html" title="Example 8.1.21: Using Euler's Method 2">Example 8.1.21</a>, we can make a few observations about Euler's method. First, the Euler approximation generally gets worse as we get farther from the initial condition. This is because Euler's method involves two sources of error. The first comes from the fact that we're using a positive <span class="process-math">\(h\)</span>-value in the derivative approximation instead of using a limit as <span class="process-math">\(h\)</span> approaches zero. Essentially, we're using a linear approximation to the solution <span class="process-math">\(y\)</span> (similar to the process described in <a href="sec_differentials.html" class="internal" title="Section 4.4: Differentials">Section 4.4</a> on Differentials.) This error is often called the <em class="emphasis">local truncation error.</em> The second source of error comes from the fact that every step in Euler's method uses the result of the previous step. That means we're using an approximate <span class="process-math">\(y\)</span>-value to approximate the next <span class="process-math">\(y\)</span>-value. Doing this repeatedly causes the errors to build on each other. This second type of error is often called the <em class="emphasis">propagated</em> or <em class="emphasis">accumulated error.</em> </p>
+<p id="p-7654">A second observation is that the Euler approximation is more accurate for smaller <span class="process-math">\(h\)</span>-values. This accuracy comes at a cost, though. <a href="" class="xref" data-knowl="./knowl/ex_euler2.html" title="Example 8.1.21: Using Euler's Method 2">Example 8.1.21</a> is more accurate than <a href="" class="xref" data-knowl="./knowl/ex_euler1.html" title="Example 8.1.19: Using Euler's Method 1">Example 8.1.19</a>, but takes twice as many computations. In general, numerical algorithms (even when performed by a computer program) require striking a balance between a desired level of accuracy and the amount of computational effort we are willing to undertake.</p>
+<p id="p-7655">Let's do one final example of Euler's Method.</p>
+<article class="example example-like" id="ex_euler3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.23</span><span class="period">.</span><span class="space"> </span><span class="title">Using Euler's Method 3.</span>
+</h4>
+<p id="p-7656">Find an approximation for the solution to the logistic differential equation</p>
+<p id="p-7657"><span class="process-math">\(\yp = y(1-y)\)</span> with <span class="process-math">\(y(0) = 0.25\text{,}\)</span> for <span class="process-math">\(0 \leq y \leq 4\text{.}\)</span> Use <span class="process-math">\(N = 10\)</span> steps.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-480" id="solution-480"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-480"><div class="solution solution-like">
+<p id="p-7658">The logistic differential equation is what is called an <em class="emphasis">autonomous equation</em>. An autonomous differential equation has no explicit dependence on the independent variable (<span class="process-math">\(t\)</span> in this case). This has no real effect on the application of Euler's method other than the fact that the function <span class="process-math">\(f(t,y)\)</span> is really just a function of <span class="process-math">\(y\text{.}\)</span> To take steps in the <span class="process-math">\(y\)</span> variable, we use</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y_{i+1} = y_i + hf(t_i,y_i) = y_i + hy_i(1-y_i)\text{.}
+\end{equation*}
+</div>
+<p id="p-7659">Using <span class="process-math">\(N=10\)</span> steps requires <span class="process-math">\(\displaystyle h = \frac{4-0}{10} = 0.4\text{.}\)</span> Implementing Euler's Method, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-360">
+\begin{align*}
+x_0  \amp = 0      \amp    y_0  \amp = 0.25 \\
+x_1   \amp = 0.4    \amp   y_1   \amp = 0.25 + 0.4(0.25)(1-0.25) \\
+\amp       \amp     \amp = 0.325 \\
+x_2   \amp = 0.8     \amp    y_2   \amp = 0.325 + 0.4(0.325)(1-0.325) \\
+\amp       \amp     \amp = 0.41275 \\
+x_3  \amp = 1.2    \amp   y_3   \amp = 0.41275 + 0.4(0.41275)(1-0.41275)\\
+\amp       \amp     \amp = 0.50970 \\
+x_4  \amp = 1.6    \amp   y_4  \amp = 0.50970 + 0.4(0.50970)(1 - 0.50970) \\
+\amp       \amp     \amp = 0.60966 \\
+x_5  \amp = 2.0    \amp    y_5  \amp = 0.60966 + 0.4(0.60966)(1-0.60966)\\
+\amp       \amp     \amp =  0.70485 \\
+x_6   \amp = 2.4    \amp   y_6   \amp = 0.70485 + 0.4(0.70485)(1 - 0.70485) \\
+\amp       \amp     \amp = 0.78806\\
+x_7   \amp = 2.8     \amp    y_7   \amp = 0.78806 + 0.4(0.78806)(1-0.78806) \\
+\amp       \amp     \amp = 0.85487 \\
+x_8  \amp = 3.2    \amp   y_8   \amp = 0.85487 + 0.4(0.85487)(1-0.85487)\\
+\amp       \amp     \amp = 0.90450\\
+x_9  \amp = 3.6    \amp   y_9  \amp = 0.90450 + 0.4(0.90450)(1 - 0.90450)\\
+\amp       \amp     \amp = 0.93905 \\
+x_{10}\amp = 4.0    \amp   y_{10}\amp = 0.93905 + 0.4(0.93905)(1 - 0.93905) \\
+\amp       \amp     \amp = 0.96194 \text{.}
+\end{align*}
+</div>
+<p id="p-7660">These 11 points, along with the the analytic solution, are plotted in <a href="" class="xref" data-knowl="./knowl/fig_20_01_euler3.html" title="Figure 8.1.24">Figure 8.1.24</a>. Notice how well they seem to match the true solution.</p>
+<figure class="figure figure-like" id="fig_20_01_euler3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_euler3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.24<span class="period">.</span></span><span class="space"> </span>Euler's Method approximation to <span class="process-math">\(\yp = y(1-y)\)</span> with <span class="process-math">\(y(0) = 0.25\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_euler3.html" title="Example 8.1.23: Using Euler's Method 3">Example 8.1.23</a>, along with the analytical solution</figcaption></figure>
+</div></div>
+</div></article><p id="p-7661">The study of differential equations is a natural extension of the study of derivatives and integrals. The equations themselves involve derivatives, and methods to find analytic solutions often involve finding antiderivatives. In this section, we focus on graphical and numerical techniques to understand solutions to differential equations. We restrict our examples to relatively simple initial value problems that permit analytic solutions to the equations, but we should remember that this is only for comparison purposes. In reality, many differential equations, even some that appear straightforward, do not have solutions we can find analytically. Even so, we can use the techniques presented in this section to understand the behavior of solutions. In the next two sections, we explore two techniques to find analytic solutions to two different classes of differential equations.</p></section><section class="exercises" id="exercises-42"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">8.1.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-97"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-1443"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<p id="p-7662">In your own words, what is an initial value problem, and how is it different than a differential equation?</p></article><article class="exercise exercise-like" id="exercise-1444"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<p id="p-7664">In your own words, describe what it means for a function to be a solution to a differential equation.</p></article><article class="exercise exercise-like" id="exercise-1445"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<p id="p-7666">How can we verify that a function is a solution to a differential equation?</p></article><article class="exercise exercise-like" id="exercise-1446"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-7668">Describe the difference between a particular solution and a general solution.</p></article><article class="exercise exercise-like" id="exercise-1447"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<p id="p-7670">Why might we use a graphical or numerical technique to study solutions to a differential equation instead of simply solving the differential equation to find an analytic solution?</p></article><article class="exercise exercise-like" id="exercise-1448"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<p id="p-7672">Describe the considerations that should be made when choosing an <span class="process-math">\(h\)</span> value to use in a numerical method like Euler's Method.</p></article></article><article class="subexercises" id="subexercises-98"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-144">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-169"><p id="p-7674">In the following exercises, verify that the given function is a solution to the differential equation or initial value problem.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1449"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-7675"><span class="process-math">\(y = Ce^{-6x^2}\text{;}\)</span> <span class="process-math">\(\yp = -12xy\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1450"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-7677"><span class="process-math">\(y = x\sin(x)\text{;}\)</span> <span class="process-math">\(\yp - x\cos(x)= (x^2+1)\sin(x) - xy\text{,}\)</span> with <span class="process-math">\(y(\pi) = 0\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1451"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-7679"><span class="process-math">\(2x^2-y^2=C\text{;}\)</span> <span class="process-math">\(y\yp-2x = 0\)</span></p></article><article class="exercise exercise-like" id="exercise-1452"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-7681"><span class="process-math">\(y=xe^x\text{;}\)</span> <span class="process-math">\(\yp' - 2\yp + y = 0\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-145">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-170"><p id="p-7683">In the following exercises, verify that the given function is a solution to the differential equation and find the <span class="process-math">\(C\)</span> value required to make the function satisfy the initial condition.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1453"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-7684"><span class="process-math">\(y = 4e^{3x}\sin(x) + Ce^{3x}\text{;}\)</span> <span class="process-math">\(\yp - 3y = 4e^{3x}\cos(x)\text{,}\)</span> with <span class="process-math">\(y(0)=2\)</span></p></article><article class="exercise exercise-like" id="exercise-1454"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-7686"><span class="process-math">\(y(x^2+y) = C\text{;}\)</span> <span class="process-math">\(2xy + (x^2+2y)\yp= 0\text{,}\)</span> with <span class="process-math">\(y(1)=2\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-146">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-171"><p id="p-7688">In the following exercises, sketch a slope field for the given differential equation. Let <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> range between <span class="process-math">\(-2\)</span> and <span class="process-math">\(2\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1455"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-7689"><span class="process-math">\(\yp = y-x\)</span></p></article><article class="exercise exercise-like" id="exercise-1456"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-7690"><span class="process-math">\(\yp = \displaystyle \frac{x}{2y}\)</span></p></article><article class="exercise exercise-like" id="exercise-1457"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-7691"><span class="process-math">\(\yp = \sin(\pi y)\)</span></p></article><article class="exercise exercise-like" id="exercise-1458"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-7692"><span class="process-math">\(\yp = \frac{y}{4}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-147">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-172">
+<p id="p-7693">Match each slope field below with the appropriate differential equation.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="generated/latex-image/img_slopefield_exercise_a.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="generated/latex-image/img_slopefield_exercise_b.svg" role="img" class="contained"></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel top" style="width:44.4444444444444%;"><p id="p-7694">(a)</p></div>
+<div class="sbspanel top" style="width:44.4444444444444%;"><p id="p-7695">(b)</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="generated/latex-image/img_slopefield_exercise_c.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="generated/latex-image/img_slopefield_exercise_d.svg" role="img" class="contained"></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel top" style="width:44.4444444444444%;"><p id="p-7696">(c)</p></div>
+<div class="sbspanel top" style="width:44.4444444444444%;"><p id="p-7697">(d)</p></div>
+</div></div>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="ex_slopefield_first"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-7698"><span class="process-math">\(\yp = xy\)</span></p></article><article class="exercise exercise-like" id="exercise-1460"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-7700"><span class="process-math">\(\yp = -y\)</span></p></article><article class="exercise exercise-like" id="exercise-1461"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-7702"><span class="process-math">\(\yp = -x\)</span></p></article><article class="exercise exercise-like" id="ex_slopefield_last"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-7704"><span class="process-math">\(\yp = x(1-x)\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-148">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-173"><p id="p-7706">In the following exercises, sketch the slope field for the differential equation, and use it to draw a sketch of the solution to the initial value problem.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1463"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-7707"><span class="process-math">\(\yp = \displaystyle \frac{y}{x} - y\text{,}\)</span> with <span class="process-math">\(y(0.5)=1\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1464"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-7708"><span class="process-math">\(\yp = y\sin(x)\text{,}\)</span> with <span class="process-math">\(y(0)=1\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1465"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-7709"><span class="process-math">\(\yp = y^2-3y+2\text{,}\)</span> with <span class="process-math">\(y(0)=2\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1466"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-7710"><span class="process-math">\(\displaystyle \yp = -\frac{xy}{1+x^2}\text{,}\)</span> with <span class="process-math">\(y(0)=1\text{.}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-149">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-174"><p id="p-7711">In the following exercises, use Euler's Method to make a table of values that approximates the solution to the initial value problem on the given interval. Use the specified <span class="process-math">\(h\)</span> or <span class="process-math">\(N\)</span> value.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1467"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-7712"><span class="process-math">\(\yp = x+2y\)</span></p>
+<p id="p-7713"><span class="process-math">\(y(0)=1\)</span></p>
+<p id="p-7714">interval: <span class="process-math">\([0,1]\)</span></p>
+<p id="p-7715"><span class="process-math">\(h=0.25\)</span></p></article><article class="exercise exercise-like" id="exercise-1468"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-7717"><span class="process-math">\(\yp = xe^{-y}\)</span></p>
+<p id="p-7718"><span class="process-math">\(y(0)=1\)</span></p>
+<p id="p-7719">interval: <span class="process-math">\([0,0.5]\)</span></p>
+<p id="p-7720"><span class="process-math">\(N=5\)</span></p></article><article class="exercise exercise-like" id="exercise-1469"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-7722"><span class="process-math">\(\yp = y + \sin(x)\)</span></p>
+<p id="p-7723"><span class="process-math">\(y(0)=2\)</span></p>
+<p id="p-7724">interval: <span class="process-math">\([0,1]\)</span></p>
+<p id="p-7725"><span class="process-math">\(h = 0.2\)</span></p></article><article class="exercise exercise-like" id="exercise-1470"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-7727"><span class="process-math">\(\yp = e^{x-y}\)</span></p>
+<p id="p-7728"><span class="process-math">\(y(0)=0\)</span></p>
+<p id="p-7729">interval: <span class="process-math">\([0,2]\)</span></p>
+<p id="p-7730"><span class="process-math">\(h = 0.5\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-150">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-175">
+<p id="p-7732">In the following exercises, use the provided solution <span class="process-math">\(y(x)\)</span> and Euler's Method with the <span class="process-math">\(h=0.2\)</span> and <span class="process-math">\(h=0.1\)</span> to complete the following table.</p>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(0.0\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(0.2\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(0.4\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(0.6\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(0.8\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(1.0\)</span></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(y(x)\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(h = 0.2\)</span></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r1 l0 t0 lines"><span class="process-math">\(h = 0.1\)</span></td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1471"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-7733"><span class="process-math">\(\yp = xy^2\)</span></p>
+<p id="p-7734"><span class="process-math">\(y(0)=1\)</span></p>
+<p id="p-7735">Solution: <span class="process-math">\(\displaystyle y(x) = \frac{2}{1-x^2}\)</span></p></article><article class="exercise exercise-like" id="exercise-1472"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<p id="p-7736"><span class="process-math">\(\displaystyle \yp = xe^{x^2}+\frac{1}{2}xy\)</span></p>
+<p id="p-7737"><span class="process-math">\(\displaystyle y(0)=\frac{1}{2}\)</span></p>
+<p id="p-7738">Solution: <span class="process-math">\(\displaystyle y(x) = \frac{1}{2}(x^2+1)e^{x^2}\)</span></p></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

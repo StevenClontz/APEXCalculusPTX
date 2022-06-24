@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:10Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.3.3.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-trig-ex-sin5cos8" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/CAV4gSbw1GU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>The power of the sine term is odd, so we rewrite <span class="process-math">\(\sin^5(x)\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\sin^5(x) \amp = \sin^4(x) \sin(x)\\
+\amp = (\sin^2(x) )^2\sin(x)\\
+\amp = (1-\cos^2(x) )^2\sin(x)\text{.}
+\end{align*}
+</div>
+<p>Our integral is now <span class="process-math">\(\ds \int (1-\cos^2(x) )^2\cos^8(x) \sin(x) \, dx\text{.}\)</span> Let <span class="process-math">\(u = \cos(x)\text{,}\)</span> hence <span class="process-math">\(du = -\sin(x) \, dx\text{.}\)</span> Making the substitution and expanding the integrand gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int (1-\cos^2)^2\cos^8(x) \sin(x) \, dx \amp = -\int (1-u^2)^2u^8\,du\\
+\amp = -\int \big(1-2u^2+u^4\big)u^8\,du\\
+\amp = -\int \big(u^8-2u^{10}+u^{12}\big)\,du\text{.}
+\end{align*}
+</div>
+<p>This final integral is not difficult to evaluate, giving</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+-\int \big(u^8-2u^{10}+u^{12}\big)\, du \amp = -\frac19u^9 + \frac2{11}u^{11} - \frac1{13}u^{13} + C\\
+\amp =-\frac19\cos^9(x) + \frac2{11}\cos^{11}(x) - \frac1{13}\cos^{13}(x) + C\text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_trigint.html#solution-331" class="internal">in-context</a></span>
+</body>
+</html>

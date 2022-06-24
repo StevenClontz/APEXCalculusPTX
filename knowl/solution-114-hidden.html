@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:34:54Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_intro_ex_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/JKHbXYanjDs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We apply <a href="" class="xref" data-knowl="./knowl/def_the_derivative.html" title="Definition 2.1.19: Derivative Function">Definition 2.1.19</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_the_derivative.html">
+\begin{align*}
+\fp(x)     \amp = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}\\
+\amp =    \lim_{h\to 0} \frac{\frac{1}{x+h+1}-\frac{1}{x+1}}{h}\\
+\end{align*}
+<p class="intertext">Now find common denominator then subtract; pull <span class="process-math">\(1/h\)</span> out front to   facilitate reading.</p>
+\begin{align*}
+\amp = \lim_{h\to 0} \frac{1}{h}\cdot\left(\frac{x+1}{(x+1)(x+h+1)} -
+\frac{x+h+1}{(x+1)(x+h+1)}\right)\\
+\end{align*}
+<p class="intertext">Now simplify algebraically.</p>
+\begin{align*}
+\amp = \lim_{h\to 0} \frac 1h\cdot\left(\frac{x+1-(x+h+1)}{(x+1)(x+h+1)}\right)  \\
+\amp = \lim_{h\to 0} \frac1h\cdot\left(\frac{-h}{(x+1)(x+h+1)}\right)\\
+\end{align*}
+<p class="intertext">Finally, apply the limit.</p>
+\begin{align*}
+\amp = \lim_{h\to 0} \frac{-1}{(x+1)(x+h+1)}\\
+\amp = \frac{-1}{(x+1)(x+1)}\\
+\amp = \frac{-1}{(x+1)^2}\text{.}
+\end{align*}
+</div>
+<p>So <span class="process-math">\(\fp(x) = \frac{-1}{(x+1)^2}\text{.}\)</span> To practice using our notation, we could also state</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}\left(\frac{1}{x+1}\right) = \frac{-1}{(x+1)^2}\text{.}
+\end{equation*}
+</div>
+</div></body>
+</html>

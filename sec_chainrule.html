@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:28:01Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX The Chain Rule</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_prod_quot_rules.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_derivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_imp_deriv.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_prod_quot_rules.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_derivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_imp_deriv.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="active">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_chainrule"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">The Chain Rule</span>
+</h2>
+<p id="p-2210">We have covered almost all of the derivative rules that deal with combinations of two (or more) functions. The operations of addition, subtraction, multiplication (including by a constant) and division led to the <a href="" class="xref" data-knowl="./knowl/sum-difference-derivative-rule.html" title="Item: Sum/Difference Rule">Sum/Difference Rule</a>, the <a href="" class="xref" data-knowl="./knowl/constant-multiple-derivative-rule.html" title="Item: Constant Multiple Rule">Constant Multiple Rule</a>, the <a href="" class="xref" data-knowl="./knowl/thm_PowerRule.html" title="Theorem 2.4.18: Power Rule with Integer Exponents">Power Rule with Integer Exponents</a>, the <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a> and the <a href="" class="xref" data-knowl="./knowl/thm_QuotientRule.html" title="Theorem 2.4.10: Quotient Rule">Quotient Rule</a>. To complete the list of differentiation rules, we look at the last way two (or more) functions can be combined: the process of composition (i.e. one function “inside” another).</p>
+<figure class="figure figure-like" id="vid_deriv_chain_intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-78" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/k7wX-kxd7Kw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_chainrule.html" class="internal" title="Section 2.5: The Chain Rule">Section 2.5</a></figcaption></figure><p id="p-2211">One example of a composition of functions is <span class="process-math">\(f(x) = \cos(x^2)\text{.}\)</span> We currently do not know how to compute this derivative. If forced to guess, one might guess <span class="process-math">\(\fp(x) = -\sin(2x)\text{,}\)</span> where we recognize <span class="process-math">\(-\sin(x)\)</span> as the derivative of <span class="process-math">\(\cos(x)\)</span> and <span class="process-math">\(2x\)</span> as the derivative of <span class="process-math">\(x^2\text{.}\)</span> However, this is not the case; <span class="process-math">\(\fp(x)\neq -\sin(2x)\text{.}\)</span> One way to see this is to examine the graph of <span class="process-math">\(y=\cos\mathopen{}\left(x^2\right)\mathclose{}\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_chain.html" title="Figure 2.5.2">Figure 2.5.2</a> and its tangent line at <span class="process-math">\(x=\pi/2\text{.}\)</span> Clearly the slope of the tangent line there is nonzero, but <span class="process-math">\(-2\sin(2\cdot\pi/2)=0\text{.}\)</span> So it can't be correct to say that <span class="process-math">\(y'=-\sin(2x)\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_chain"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_chain.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.2<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(y=\cos(x^2)\)</span> and a tangent line at <span class="process-math">\(\pi/2\)</span></figcaption></figure><p id="p-2212">In <a href="" class="xref" data-knowl="./knowl/ex_chain7.html" title="Example 2.5.9: Using the Chain Rule to find a tangent line">Example 2.5.9</a> we'll see the correct way to compute the derivative of <span class="process-math">\(\sin\mathopen{}\left(x^2\right)\mathclose{}\text{,}\)</span> which employs the new rule this section introduces, the <em class="emphasis">Chain Rule</em>.</p>
+<p id="p-2213">Before we define this new rule, recall the notation for composition of functions. We write <span class="process-math">\((f \circ g)(x)\)</span> or <span class="process-math">\(f(g(x))\text{,}\)</span> read as “<span class="process-math">\(f\)</span> of <span class="process-math">\(g\)</span> of <span class="process-math">\(x\text{,}\)</span>” to denote composing <span class="process-math">\(f\)</span> with <span class="process-math">\(g\text{.}\)</span> In shorthand, we simply write <span class="process-math">\(f \circ g\)</span> or <span class="process-math">\(f(g)\)</span> and read it as “<span class="process-math">\(f\)</span> of <span class="process-math">\(g\text{.}\)</span>” Before giving the corresponding differentiation rule, we note that the rule extends to multiple compositions like <span class="process-math">\(f(g(h(x)))\)</span> or <span class="process-math">\(f(g(h(j(x))))\text{,}\)</span> etc.</p>
+<p id="p-2214">To motivate the rule, let's look at three derivatives we can already compute.</p>
+<article class="example example-like" id="ex_chain1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Exploring similar derivatives.</span>
+</h3>
+<p id="p-2215">Find the derivatives of <span class="process-math">\(F_1(x) = (1-x)^2\text{,}\)</span> <span class="process-math">\(F_2(x) = (1-x)^3\text{,}\)</span> and <span class="process-math">\(F_3(x) = (1-x)^4\text{.}\)</span> (We'll see later why we are using subscripts for different functions and an uppercase <span class="process-math">\(F\text{.}\)</span>)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-147" id="solution-147"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-147"><div class="solution solution-like">
+<p id="p-2216">In order to use the rules we already have, we must first expand each function as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-76">
+\begin{align*}
+F_1(x)\amp = 1 - 2x + x^2\\
+F_2(x)\amp = 1 - 3x + 3x^2 - x^3\\
+F_3(x)\amp = 1 - 4x + 6x^2 - 4x^3 + x^4
+\end{align*}
+</div>
+<p class="continuation">It is not hard to see that:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-77">
+\begin{align*}
+F_1'(x)\amp = -2 + 2x\\
+F_2'(x)\amp = -3 + 6x - 3x^2\\
+F_3'(x)\amp = -4 + 12x - 12x^2 + 4x^3
+\end{align*}
+</div>
+<p class="continuation">An interesting fact is that these can be rewritten as:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-78">
+\begin{align*}
+F_1'(x)\amp = -2(1-x)\\
+F_2'(x)\amp = -3(1-x)^2\\
+F_3'(x)\amp = -4(1-x)^3
+\end{align*}
+</div>
+<p id="p-2217">A pattern might jump out at you; note how the we end up multiplying by the old power and the new power is reduced by 1. We also always multiply by <span class="process-math">\((-1)\text{.}\)</span></p>
+<p id="p-2218">Recognize that each of these functions is a composition, letting <span class="process-math">\(g(x) = 1-x\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-79">
+\begin{align*}
+F_1(x)\amp = f_1(g(x)),\amp\amp  \text{ where }  f_1(x) = x^2,\\
+F_2(x)\amp = f_2(g(x)),\amp\amp  \text{ where }  f_2(x) = x^3,\\
+F_3(x)\amp = f_3(g(x)),\amp\amp  \text{ where }  f_3(x) = x^4\text{.}
+\end{align*}
+</div>
+<p id="p-2219">We'll come back to this example after giving the formal statements of the Chain Rule; for now, we are just illustrating a pattern.</p>
+</div></div>
+</div></article><aside class="aside aside-like" id="aside-12"><p id="p-2220">When composing functions, we need to make sure that the new function is actually defined. For instance, consider <span class="process-math">\(f(x) = \sqrt{x}\)</span> and <span class="process-math">\(g(x) = -x^2-1\text{.}\)</span> The domain of <span class="process-math">\(f\)</span> excludes all negative numbers, but the range of <span class="process-math">\(g\)</span> is only negative numbers. Therefore the composition <span class="process-math">\(f(g(x)) = \sqrt{-x^2-1}\)</span> is not defined for any <span class="process-math">\(x\text{,}\)</span> and hence is not differentiable.</p>
+<p id="p-2221">The statement of <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">Theorem 2.5.4</a> takes care to ensure this problem does not arise, but our focus is more on the derivative result than on the domain/range conditions.</p></aside><article class="theorem theorem-like" id="thm_chain_rule"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">The Chain Rule.</span>
+</h3>
+<p id="p-2222">Let <span class="process-math">\(g\)</span> be a differentiable function on an interval <span class="process-math">\(I\text{,}\)</span> let the range of <span class="process-math">\(g\)</span> be a subset of the interval <span class="process-math">\(J\text{,}\)</span> and let <span class="process-math">\(f\)</span> be a differentiable function on <span class="process-math">\(J\text{.}\)</span>  Then <span class="process-math">\(y=f(g(x))\)</span> is a differentiable function on <span class="process-math">\(I\text{,}\)</span> and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y' = \fp(g(x))\cdot g'(x)\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="vid_deriv_chain_theorem"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-79" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/1_Lp-ONIMuc?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.5<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">Theorem 2.5.4</a></figcaption></figure><p id="p-2223">Here is the Chain Rule in words:</p>
+<blockquote class="blockquote" id="blockquote-3"><p id="p-2224">The derivative of the outside function, evaluated at the inside function, multiplied by the derivative of the inside function.</p></blockquote>
+<p id="p-2225">To help understand the Chain Rule, we return to <a href="" class="xref" data-knowl="./knowl/ex_chain1.html" title="Example 2.5.3: Exploring similar derivatives">Example 2.5.3</a>.</p>
+<article class="example example-like" id="ex_chain2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Chain Rule.</span>
+</h3>
+<p id="p-2226">Use the Chain Rule to find the derivatives of the functions <span class="process-math">\(F_1(x)\text{,}\)</span> <span class="process-math">\(F_2(x)\text{,}\)</span> and <span class="process-math">\(F_3(x)\text{,}\)</span> as given in <a href="" class="xref" data-knowl="./knowl/ex_chain1.html" title="Example 2.5.3: Exploring similar derivatives">Example 2.5.3</a>.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-148" id="solution-148"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-148"><div class="solution solution-like">
+<p id="p-2227"><a href="" class="xref" data-knowl="./knowl/ex_chain1.html" title="Example 2.5.3: Exploring similar derivatives">Example 2.5.3</a> ended with the recognition that each of the given functions was actually a composition of functions. To avoid confusion, we ignore most of the subscripts here.</p>
+<dl id="p-2228" class="description-list">
+<dt id="li-602"><span class="process-math">\(F_1(x) = (1-x)^2\)</span></dt>
+<dd>
+<p id="p-2229">We found that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html">
+\begin{equation*}
+y=(1-x)^2 = f(g(x))\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(f(x) = x^2\)</span> and <span class="process-math">\(g(x) = 1-x\text{.}\)</span> To find <span class="process-math">\(y'\text{,}\)</span> we apply the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>. We need to note that <span class="process-math">\(\fp(x)=2x\)</span> and <span class="process-math">\(g'(x)=-1\text{.}\)</span></p>
+<p id="p-2230">Part of the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> uses <span class="process-math">\(\fp(g(x))\text{.}\)</span> This means substitute <span class="process-math">\(g(x)\)</span> for <span class="process-math">\(x\)</span> in the equation for <span class="process-math">\(\fp(x)\text{.}\)</span> That is, <span class="process-math">\(\fp(x) = 2(1-x)\text{.}\)</span> Finishing out the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html ./knowl/thm_chain_rule.html" id="md-80">
+\begin{align*}
+y' \amp = \fp(g(x))\cdot g'(x)\\
+\amp = 2(1-x)\cdot (-1)\\
+\amp = -2(1-x)\\
+\amp = 2x-2\text{.}
+\end{align*}
+</div>
+</dd>
+<dt id="li-603"><span class="process-math">\(F_2(x) = (1-x)^3\)</span></dt>
+<dd>
+<p id="p-2231">Let <span class="process-math">\(y = (1-x)^3 = f(g(x))\text{,}\)</span> where <span class="process-math">\(f(x) = x^3\)</span> and <span class="process-math">\(g(x) = (1-x)\text{.}\)</span> We have <span class="process-math">\(\fp(x) = 3x^2\text{,}\)</span> so <span class="process-math">\(\fp(g(x)) = 3(1-x)^2\text{.}\)</span> The <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> then states</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html" id="md-81">
+\begin{align*}
+y' \amp = \fp(g(x))\cdot g'(x)\\
+\amp = 3(1-x)^2\cdot (-1)\\
+\amp = -3(1-x)^2\text{.}
+\end{align*}
+</div>
+</dd>
+<dt id="li-604"><span class="process-math">\(F_3(x) = (1-x)^4\)</span></dt>
+<dd>
+<p id="p-2232">Finally, when <span class="process-math">\(y = (1-x)^4\text{,}\)</span> we have <span class="process-math">\(f(x)= x^4\)</span> and <span class="process-math">\(g(x) = (1-x)\text{.}\)</span> Thus <span class="process-math">\(\fp(x) = 4x^3\)</span> and <span class="process-math">\(\fp(g(x)) = 4(1-x)^3\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-82">
+\begin{align*}
+y' \amp = \fp(g(x))\cdot g'(x)\\
+\amp = 4(1-x)^3\cdot (-1)\\
+\amp = -4(1-x)^3\text{.}
+\end{align*}
+</div>
+</dd>
+</dl>
+</div></div>
+</div></article><p id="p-2233"><a href="" class="xref" data-knowl="./knowl/ex_chain2.html" title="Example 2.5.6: Using the Chain Rule">Example 2.5.6</a> demonstrated a particular pattern: when <span class="process-math">\(f(x)=x^n\text{,}\)</span> then <span class="process-math">\(y' =n\cdot (g(x))^{n-1}\cdot g'(x)\text{.}\)</span> This is called the Generalized Power Rule.</p>
+<article class="theorem theorem-like" id="thm_gen_power_rule"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized Power Rule.</span>
+</h3>
+<p id="p-2234">Let <span class="process-math">\(g(x)\)</span> be a differentiable function and let <span class="process-math">\(n\neq 0\)</span> be an integer.  Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{g(x)^n} = n\cdot\left(g(x)\right)^{n-1}\cdot g'(x)\text{.}
+\end{equation*}
+</div></article><p id="p-2235">This allows us to quickly find the derivative of functions like <span class="process-math">\(y = (3x^2-5x+7+\sin(x) )^{20}\text{.}\)</span> While it may look intimidating, the Generalized Power Rule states that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y' = 20(3x^2-5x+7+\sin(x) )^{19}\cdot (6x-5+\cos(x) )\text{.}
+\end{equation*}
+</div>
+<p id="p-2236">Treat the derivative-taking process step-by-step. In the example just given, first multiply by <span class="process-math">\(20\text{,}\)</span> then rewrite the inside of the parentheses, raising it all to the <span class="process-math">\(19\)</span>th power. Then think about the derivative of the expression inside the parentheses, and multiply by that.</p>
+<p id="p-2237">We now consider more examples that employ the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>.</p>
+<article class="example example-like" id="ex_chain3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Chain Rule.</span>
+</h3>
+<p id="p-2238">Find the derivatives of the following functions:</p>
+<ol class="decimal cols3">
+<li id="li-605"><p id="p-derived-li-605"><span class="process-math">\(y = \sin(2x)\text{.}\)</span></p></li>
+<li id="li-606"><p id="p-derived-li-606"><span class="process-math">\(y= \ln(4x^3-2x^2)\text{.}\)</span></p></li>
+<li id="li-607"><p id="p-derived-li-607"><span class="process-math">\(y = e^{-x^2}\text{.}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-149" id="solution-149"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-149"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_chain_examples_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/yW1BbOeDFcM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-2239" class="decimal">
+<li id="li-608">
+<p id="p-2240">Consider <span class="process-math">\(y = \sin(2x)\text{.}\)</span> Recognize that this is a composition of functions, where <span class="process-math">\(f(x) = \sin(x)\)</span> and <span class="process-math">\(g(x) = 2x\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-83">
+\begin{align*}
+y' \amp = \fp(g(x))\cdot g'(x)\\
+\amp = \cos(2x)\cdot \lzoo{x}{2x}\\
+\amp = \cos(2x)\cdot 2\\
+\amp = 2\cos(2x)\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-609">
+<p id="p-2241">Recognize that <span class="process-math">\(y = \ln\mathopen{}\left(4x^3-2x^2\right)\mathclose{}\)</span> is the composition of <span class="process-math">\(f(x) = \ln(x)\)</span> and <span class="process-math">\(g(x) = 4x^3-2x^2\text{.}\)</span> Also, recall that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{\ln(x)} = \frac{1}{x}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This leads us to:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-84">
+\begin{align*}
+y' \amp = \frac{1}{4x^3-2x^2} \cdot \lzoo{x}{4x^3-2x^2}\\
+\amp = \frac{1}{4x^3-2x^2} \cdot \left(12x^2-4x\right)\\
+\amp  = \frac{12x^2-4x}{4x^3-2x^2}\\
+\amp = \frac{4x(3x-1)}{2x(2x^2-x)}\\
+\amp = \frac{2(3x-1)}{2x^2-x}\text{.}
+\end{align*}
+</div>
+<p class="continuation">Note that <span class="process-math">\(\ln\mathopen{}\left(4x^3-2x^2\right)\mathclose{}=\ln\mathopen{}\left(4x^2(x-1/2)\right)\mathclose{}\)</span> was only defined for <span class="process-math">\(x \gt 1/2\text{,}\)</span> so the result of <span class="process-math">\(y'=\frac{2(3x-1)}{2x^2-x}\)</span> is only valid for <span class="process-math">\(x \gt 1/2\)</span> as well.</p>
+</li>
+<li id="li-610">
+<p id="p-2242">Recognize  that <span class="process-math">\(y = e^{-x^2}\)</span> is the composition of <span class="process-math">\(f(x) = e^x\)</span> and <span class="process-math">\(g(x) = -x^2\text{.}\)</span> Remembering that <span class="process-math">\(\fp(x) = e^x\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-85">
+\begin{align*}
+y' \amp = e^{-x^2}\cdot \lzoo{x}{-x^2}\\
+\amp = e^{-x^2}\cdot (-2x)\\
+\amp = -2xe^{-x^2}\text{.}
+\end{align*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article><article class="example example-like" id="ex_chain7"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Chain Rule to find a tangent line.</span>
+</h3>
+<p id="p-2243">Let <span class="process-math">\(f(x) = \cos(x^2)\text{.}\)</span> Find the equation of the line tangent to the graph of <span class="process-math">\(f\)</span> at <span class="process-math">\(x=1\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-150" id="solution-150"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-150"><div class="solution solution-like">
+<p id="p-2244">The tangent line goes through the point <span class="process-math">\((1,f(1)) \approx (1,0.54)\)</span> with slope <span class="process-math">\(\fp(1)\text{.}\)</span> To find <span class="process-math">\(\fp\text{,}\)</span> we need the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>.</p>
+<p id="p-2245"><span class="process-math">\(\fp(x) = -\sin(x^2) \cdot(2x) = -2x\sin(x^2)\text{.}\)</span> Evaluated at <span class="process-math">\(x=1\text{,}\)</span> we have <span class="process-math">\(\fp(1) = -2\sin(1) \approx -1.68\text{.}\)</span> Thus the equation of the tangent line is approximated by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y \approx -1.68(x-1)+0.54\text{.}
+\end{equation*}
+</div>
+<p id="p-2246">The tangent line is sketched along with <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_chain7.html" title="Figure 2.5.10">Figure 2.5.10</a>.</p>
+<figure class="figure figure-like" id="fig_chain7"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_chain7.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.10<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(f(x) = \cos(x^2)\)</span> sketched along with its tangent line at <span class="process-math">\(x=1\)</span></figcaption></figure>
+</div></div>
+</div></article><p id="p-2247">The <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> is used often in taking derivatives. Because of this, one can become familiar with the basic process and learn patterns that facilitate finding derivatives quickly. For instance,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html">
+\begin{equation*}
+\lzoo{x}{\ln(\text{anything})} = \frac{1}{\text{anything}}\cdot\lzoo{x}{\text{anything}}  = \frac{\lzoo{x}{\text{anything}}}{\text{anything}}\text{.}
+\end{equation*}
+</div>
+<p id="p-2248">A concrete example of this is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{\ln(3x^{15}-\cos(x) +e^x)} = \frac{45x^{14}+\sin(x) +e^x}{3x^{15}-\cos(x) +e^x}\text{.}
+\end{equation*}
+</div>
+<p id="p-2249">While the derivative may look intimidating at first, look for the pattern. The denominator is the same as what was inside the natural log function; the numerator is simply its derivative.</p>
+<p id="p-2250">This pattern recognition process can be applied to lots of functions. In general, instead of writing “anything”, we use <span class="process-math">\(u\)</span> as a generic function of <span class="process-math">\(x\text{.}\)</span> We then say</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{\ln(u)} = \frac{u'}{u}\text{.}
+\end{equation*}
+</div>
+<p id="p-2251">The following is a short list of how the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> can be quickly applied to familiar functions.</p>
+<ol class="decimal cols2">
+<li id="li-611"><p id="p-derived-li-611"><span class="process-math">\(\lzoo{x}{u^n} = n\cdot u^{n-1}\cdot u'\text{.}\)</span></p></li>
+<li id="li-612"><p id="p-derived-li-612"><span class="process-math">\(\lzoo{x}{e^u} = e^u \cdot u'\text{.}\)</span></p></li>
+<li id="li-613"><p id="p-derived-li-613"><span class="process-math">\(\lzoo{x}{\sin(u)} = \cos(u) \cdot u'\text{.}\)</span></p></li>
+<li id="li-614"><p id="p-derived-li-614"><span class="process-math">\(\lzoo{x}{\cos(u)} = -\sin(u)\cdot u'\text{.}\)</span></p></li>
+<li id="li-615"><p id="p-derived-li-615"><span class="process-math">\(\lzoo{x}{\tan(u)} = \sec^2(u) \cdot u'\text{.}\)</span></p></li>
+</ol>
+<p id="p-2252">Of course, the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> can be applied in conjunction with any of the other rules we have already learned. We practice this next.</p>
+<article class="example example-like" id="ex_chain4"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Product, Quotient and Chain Rules.</span>
+</h3>
+<p id="p-2253">Find the derivatives of the following functions.</p>
+<ol class="decimal cols2">
+<li id="li-616"><p id="p-derived-li-616"><span class="process-math">\(f(x) = x^5 \sin(2x^3)\text{.}\)</span></p></li>
+<li id="li-617"><p id="p-derived-li-617"><span class="process-math">\(f(x) = \dfrac{5x^3}{e^{-x^2}}\text{.}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-151" id="solution-151"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-151"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_chain_examples_2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/2QJLR-Y-Ht8?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-2254" class="decimal">
+<li id="li-618">
+<p id="p-2255">We must use the <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a> and <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>. Do not think that you must be able to “see” the whole answer immediately; rather, just proceed step-by-step.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_ProductRule.html ./knowl/thm_chain_rule.html" id="md-86">
+\begin{align*}
+\fp(x) \amp = x^5 \cdot \lzoo{x}{\sin\mathopen{}\left(2x^3\right)\mathclose{}} + \sin\mathopen{}\left(2x^3\right)\mathclose{}\cdot \lzoo{x}{x^5}\\
+\amp = x^5\left(\cos\mathopen{}\left(2x^3\right)\mathclose{}\cdot \lzoo{x}{2x^3} \right) + 5x^4\left(\sin\mathopen{}\left(2x^3\right)\mathclose{} \right)\\
+\amp = x^5\big(6x^2\cos\left(2x^3\right) \big) + 5x^4\big(\sin\left(2x^3\right) \big)\\
+\amp = 6x^7\cos\mathopen{}\left(2x^3\right)\mathclose{}+5x^4\sin\mathopen{}\left(2x^3\right)\mathclose{}\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-619">
+<p id="p-2256">We must employ the <a href="" class="xref" data-knowl="./knowl/thm_QuotientRule.html" title="Theorem 2.4.10: Quotient Rule">Quotient Rule</a> along with the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>. Again, proceed step-by-step.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_QuotientRule.html ./knowl/thm_chain_rule.html" id="md-87">
+\begin{align*}
+\fp(x) \amp= \frac{e^{-x^2}\cdot \lzoo{x}{5x^3} - 5x^3\cdot \lzoo{x}{e^{-x^2}}}{\left(e^{-x^2}\right)^2}\\
+\amp= \frac{e^{-x^2}\cdot 15x^2 - 5x^3\cdot e^{-x^2}\cdot \lzoo{x}{-x^2}}{\left(e^{-x^2}\right)^2}\\
+\amp= \frac{e^{-x^2}\left(15x^2\right) - 5x^3\left((-2x)e^{-x^2}\right)}{\left(e^{-x^2}\right)^2}\\
+\amp =\frac{e^{-x^2}\left(10x^4+15x^2\right)}{e^{-2x^2}}\\
+\amp = e^{x^2}\left(10x^4+15x^2\right)\text{.}
+\end{align*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article><p id="p-2257">A key to correctly working these problems is to break the problem down into smaller, more manageable pieces. For instance, when using the <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a> and <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> together, just consider the first part of the <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a> at first: <span class="process-math">\(f(x)g'(x)\text{.}\)</span> Just rewrite <span class="process-math">\(f(x)\text{,}\)</span> then find <span class="process-math">\(g'(x)\text{.}\)</span> Then move on to the <span class="process-math">\(\fp(x)g(x)\)</span> part. Don't attempt to figure out both parts at once.</p>
+<p id="p-2258">Likewise, using the <a href="" class="xref" data-knowl="./knowl/thm_QuotientRule.html" title="Theorem 2.4.10: Quotient Rule">Quotient Rule</a>, approach the numerator in two steps and handle the denominator after completing that. Only simplify afterward.</p>
+<p id="p-2259">We can also employ the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> itself several times, as shown in the next example.</p>
+<article class="example example-like" id="ex_chain6"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.12</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Chain Rule multiple times.</span>
+</h3>
+<p id="p-2260">Find the derivative of <span class="process-math">\(y = \tan^5(6x^3-7x)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-152" id="solution-152"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-152"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_chain_examples_3_func" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/JeLuSDqqFPA?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-2261">Recognize that we have the <span class="process-math">\(g(x)=\tan\mathopen{}\left(6x^3-7x\right)\mathclose{}\)</span> function “inside” the <span class="process-math">\(f(x)=x^5\)</span> function; that is, we have <span class="process-math">\(y = \left(\tan\mathopen{}\left(6x^3-7x\right)\mathclose{}\right)^5\text{.}\)</span> We begin using the <a href="" class="xref" data-knowl="./knowl/thm_gen_power_rule.html" title="Theorem 2.5.7: Generalized Power Rule">Generalized Power Rule</a>; in this first step, we do not fully compute the derivative. Rather, we are approaching this step-by-step.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_gen_power_rule.html">
+\begin{equation*}
+y' = 5\left(\tan\mathopen{}\left(6x^3-7x\right)\mathclose{}\right)^4\cdot g'(x)\text{.}
+\end{equation*}
+</div>
+<p id="p-2262">We now find <span class="process-math">\(g'(x)\text{.}\)</span> We again need the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>;</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html" id="md-88">
+\begin{align*}
+g'(x) \amp = \sec^2\mathopen{}\left(6x^3-7x\right)\mathclose{}\cdot \lzoo{x}{6x^3-7x}.\\
+\amp = \sec^2\mathopen{}\left(6x^3-7x\right)\mathclose{}\cdot\left(18x^2-7\right)\text{.}
+\end{align*}
+</div>
+<p id="p-2263">Combine this with what we found above to give</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-89">
+\begin{align*}
+y' \amp = 5\left(\tan\mathopen{}\left(6x^3-7x\right)\mathclose{}\right)^4\cdot\sec^2\mathopen{}\left(6x^3-7x\right)\mathclose{}\cdot\left(18x^2-7\right)\\
+\amp = \left(90x^2-35\right)\sec^2\mathopen{}\left(6x^3-7x\right)\mathclose{}\tan^4\mathopen{}\left(6x^3-7x\right)\mathclose{}\text{.}
+\end{align*}
+</div>
+<p id="p-2264">This function is frankly a ridiculous function, possessing no real practical value. It is very difficult to graph, as the tangent function has many vertical asymptotes and <span class="process-math">\(6x^3-7x\)</span> grows so very fast. The important thing to learn from this is that the derivative can be found. In fact, it is not “hard”; one can take several simple steps and should be careful to keep track of how to apply each of these steps.</p>
+</div></div>
+</div></article><p id="p-2265">It is a traditional mathematical exercise to find the derivatives of arbitrarily complicated functions just to demonstrate that it <em class="emphasis">can be done</em>. Just break everything down into smaller pieces.</p>
+<article class="example example-like" id="ex_chain5"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Product, Quotient and Chain Rules.</span>
+</h3>
+<p id="p-2266">Find the derivative of <span class="process-math">\(f(x) = \frac{x\cos(x^{-2})-\sin^2(e^{4x})}{\ln(x^2+5x^4)}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-153" id="solution-153"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-153"><div class="solution solution-like">
+<p id="p-2267">This function likely has no practical use outside of demonstrating derivative skills. The answer is given below without simplification. It employs the <a href="" class="xref" data-knowl="./knowl/thm_QuotientRule.html" title="Theorem 2.4.10: Quotient Rule">Quotient Rule</a>, the <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a>, and the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> three times.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_QuotientRule.html ./knowl/thm_ProductRule.html ./knowl/thm_chain_rule.html" id="md-90">
+\begin{align*}
+\amp\fp(x)\\
+\amp=\Bigg(\ln\mathopen{}\left(x^2+5x^4\right)\mathclose{}\cdot\bigg[\Big(x\cdot\left(-\sin\mathopen{}\left(x^{-2}\right)\mathclose{}\right)\cdot\left(-2x^{-3}\right)\\
+\amp\qquad{}+1\cdot \cos\mathopen{}\left(x^{-2}\right)\Big)-2\sin\mathopen{}\left(e^{4x}\right)\mathclose{}\cdot\cos\mathopen{}\left(e^{4x}\right)\mathclose{}\cdot\left(4e^{4x}\right)\bigg]\\
+\amp\qquad\qquad\qquad{}-\left(x\cos\mathopen{}\left(x^{-2}\right)\mathclose{}-\sin^2\mathopen{}\left(e^{4x}\right)\mathclose{}\right)\cdot\frac{2x+20x^3}{x^2+5x^4}\Bigg)\\
+\amp\phantom{{}={}}\left/\left(\ln\mathopen{}\left(x^2+5x^4\right)\mathclose{}\right)^2\right.\text{.}
+\end{align*}
+</div>
+<p id="p-2268">The reader is highly encouraged to look at each term and recognize why it is there. (i.e., the <a href="" class="xref" data-knowl="./knowl/thm_QuotientRule.html" title="Theorem 2.4.10: Quotient Rule">Quotient Rule</a> is used; in the numerator, identify the “LOdHI” term, etc.) This example demonstrates that derivatives can be computed systematically, no matter how arbitrarily complicated the function is.</p>
+</div></div>
+</div></article><p id="p-2269">The <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> also has theoretic value. That is, it can be used to find the derivatives of functions that we have not yet learned as we do in the following example.</p>
+<article class="example example-like" id="ex_chain8"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.14</span><span class="period">.</span><span class="space"> </span><span class="title">The Chain Rule and exponential functions.</span>
+</h3>
+<p id="p-2270">Use the Chain Rule to find the derivative of <span class="process-math">\(y= 2^x\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-154" id="solution-154"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-154"><div class="solution solution-like">
+<p id="p-2271">We only know how to find the derivative of one exponential function, <span class="process-math">\(y = e^x\text{.}\)</span> We can accomplish our goal by rewriting <span class="process-math">\(2\)</span> in terms of <span class="process-math">\(e\text{.}\)</span> Recalling that <span class="process-math">\(e^x\)</span> and <span class="process-math">\(\ln(x)\)</span> are inverse functions, we can write <span class="process-math">\(2=e^{\ln 2}\)</span> and so</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y=2^x = \left(e^{\ln 2}\right)^x = e^{x(\ln(2))}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">using the “power to a power” property of exponents.</p>
+<p id="p-2272">The function is now the composition <span class="process-math">\(y=f(g(x))\text{,}\)</span> with <span class="process-math">\(f(x) = e^x\)</span> and <span class="process-math">\(g(x) = x(\ln(2))\text{.}\)</span> Since <span class="process-math">\(\fp(x) = e^x\)</span> and <span class="process-math">\(g'(x) = \ln(2)\text{,}\)</span> the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html">
+\begin{equation*}
+y' = e^{x (\ln(2))} \cdot \ln 2\text{.}
+\end{equation*}
+</div>
+<p id="p-2273">Recall that the <span class="process-math">\(e^{x(\ln(2))}\)</span> term on the right hand side is just <span class="process-math">\(2^x\text{,}\)</span> our original function. Thus, the derivative contains the original function itself. We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y' = y \cdot \ln(2) = 2^x\cdot \ln(2)\text{.}
+\end{equation*}
+</div>
+<p id="p-2274">We can extend this process to use any base <span class="process-math">\(a\text{,}\)</span> where <span class="process-math">\(a \gt 0\)</span> and <span class="process-math">\(a\neq 1\text{.}\)</span> All we need to do is replace each “2” in our work with “<span class="process-math">\(a\text{.}\)</span>” The Chain Rule, coupled with the derivative rule of <span class="process-math">\(e^x\text{,}\)</span> allows us to find the derivatives of all exponential functions.</p>
+</div></div>
+</div></article><p id="p-2275">The comment at the end of previous example is important and is restated formally as a theorem.</p>
+<article class="theorem theorem-like" id="thm_exponentials"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.5.15</span><span class="period">.</span><span class="space"> </span><span class="title">Derivatives of Exponential Functions.</span>
+</h3>
+<p id="p-2276">Let <span class="process-math">\(f(x)=a^x\text{,}\)</span> for <span class="process-math">\(a \gt 0, a\neq 1\text{.}\)</span>  Then <span class="process-math">\(f\)</span> is differentiable for all real numbers (i.e., differentiable everywhere) and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp(x) = \ln(a) \cdot a^x\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="vid_deriv_chain_gen_power_exp"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-83" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/LnmwxZ5w30w?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.16<span class="period">.</span></span><span class="space"> </span>Derivatives of exponential and general power functions</figcaption></figure><section class="paragraphs" id="paragraphs-8"><h3 class="heading"><span class="title">Alternate Chain Rule Notation.</span></h3>
+<p id="p-2277">It is instructive to understand what the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> “looks like” using “<span class="process-math">\(\lz{y}{x}\)</span>” notation instead of <span class="process-math">\(y'\)</span> notation. Suppose that <span class="process-math">\(y=f(u)\)</span> is a function of <span class="process-math">\(u\text{,}\)</span> where <span class="process-math">\(u=g(x)\)</span> is a function of <span class="process-math">\(x\text{,}\)</span> as stated in <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">Theorem 2.5.4</a>. Then, through the composition <span class="process-math">\(f \circ g\text{,}\)</span> we can think of <span class="process-math">\(y\)</span> as a function of <span class="process-math">\(x\text{,}\)</span> as <span class="process-math">\(y=f(g(x))\text{.}\)</span> Thus the derivative of <span class="process-math">\(y\)</span> with respect to <span class="process-math">\(x\)</span> makes sense; we can talk about <span class="process-math">\(\lz{y}{x}\text{.}\)</span> This leads to an interesting progression of notation: </p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html ./knowl/thm_chain_rule.html" id="md-91">
+\begin{align*}
+y' \amp = \fp(g(x))\cdot g'(x)\\
+\lz{y}{x} \amp = y'(u) \cdot u'(x)\amp\amp \text{ since } y=f(u) \text{ and }u=g(x)\\
+\lz{y}{x} \amp = \lz{y}{u} \cdot \lz{u}{x}\amp\amp  \text{(using “fractional notation” for the derivative)}
+\end{align*}
+</div>
+<p id="p-2278">Here the “fractional” aspect of the derivative notation stands out. On the right hand side, it seems as though the “<span class="process-math">\(du\)</span>” terms cancel out, leaving</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx} = \frac{dy}{dx}\text{.}
+\end{equation*}
+</div>
+<p id="p-2279">It is important to realize that we <em class="emphasis">are not</em> canceling these terms; the derivative notation of <span class="process-math">\(\lz{y}{u}\)</span> is one symbol. It is equally important to realize that this notation was chosen precisely because of this behavior. It makes applying the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> easy with multiple variables. For instance,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html">
+\begin{equation*}
+\lz{y}{t} = \lz{y}{\bigcirc} \cdot \lz{\bigcirc}{\triangle} \cdot \lz{\triangle}{t}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(\bigcirc\)</span> and <span class="process-math">\(\triangle\)</span> are any variables you'd like to use.</p>
+<p id="p-2280">One of the most common ways of “visualizing” the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> is to consider a set of gears, as shown in <a href="" class="xref" data-knowl="./knowl/fig_chainrulegears.html" title="Figure 2.5.17">Figure 2.5.17</a>. The gears have <span class="process-math">\(36\text{,}\)</span> <span class="process-math">\(18\text{,}\)</span> and <span class="process-math">\(6\)</span> teeth, respectively. That means for every revolution of the <span class="process-math">\(x\)</span> gear, the <span class="process-math">\(u\)</span> gear revolves twice. That is, the rate at which the <span class="process-math">\(u\)</span> gear makes a revolution is twice as fast as the rate at which the <span class="process-math">\(x\)</span> gear makes a revolution.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;">
+<p id="p-2281">Using the terminology of calculus, the rate of <span class="process-math">\(u\)</span>-change, with respect to <span class="process-math">\(x\text{,}\)</span> is <span class="process-math">\(\lz{u}{x} = 2\text{.}\)</span></p>
+<p id="p-2282">Likewise, every revolution of <span class="process-math">\(u\)</span> causes <span class="process-math">\(3\)</span> revolutions of <span class="process-math">\(y\text{:}\)</span> <span class="process-math">\(\lz{y}{u} = 3\text{.}\)</span> How does <span class="process-math">\(y\)</span> change with respect to <span class="process-math">\(x\text{?}\)</span> For each revolution of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> revolves <span class="process-math">\(6\)</span> times; that is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx} = \frac{dy}{du}\cdot \frac{du}{dx} = 2\cdot 3 = 6\text{.}
+\end{equation*}
+</div>
+<p id="p-2283">We can then extend the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> with more variables by adding more gears to the picture.</p>
+</div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_chainrulegears"><img src="generated/latex-image/img_chainrulegears.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.17<span class="period">.</span></span><span class="space"> </span>A series of gears to demonstrate the Chain Rule. Note how <span class="process-math">\(\lz{y}{x} = \lz{y}{u}\cdot\lz{u}{x}\)</span></figcaption></figure></div>
+</div></div>
+<p id="p-2284">It is difficult to overstate the importance of the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>. So often the functions that we deal with are compositions of two or more functions, requiring us to use this rule to compute derivatives. It is also often used in real life when actual functions are unknown. Through measurement, we can calculate (or, approximate) <span class="process-math">\(\lz{y}{u}\)</span> and <span class="process-math">\(\lz{u}{x}\text{.}\)</span> With our knowledge of the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>, we can find <span class="process-math">\(\lz{y}{x}\text{.}\)</span></p>
+<p id="p-2285">In <a href="sec_imp_deriv.html" class="internal" title="Section 2.6: Implicit Differentiation">Section 2.6</a>, we use the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> to justify another differentiation technique. There are many curves that we can draw in the plane that fail the “vertical line test.” For instance, consider <span class="process-math">\(x^2+y^2=1\text{,}\)</span> which describes the unit circle. We may still be interested in finding slopes of tangent lines to the circle at various points. <a href="sec_imp_deriv.html" class="internal" title="Section 2.6: Implicit Differentiation">Section 2.6</a> shows how we can find <span class="process-math">\(\lz{y}{x}\)</span> without first “solving for <span class="process-math">\(y\text{.}\)</span>” While we can in this instance, in many other instances solving for <span class="process-math">\(y\)</span> is impossible. In these situations, <dfn class="terminology">implicit differentiation</dfn> is indispensable.</p></section><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-28"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-343"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-334" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="334" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JHRmPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwoKQkVHSU5fUEdNTApbX117JHRmfXs1fSBUaGUgQ2hhaW4gUnVsZSBkZXNjcmliZXMgaG93IHRvIGV2YWx1YXRlIHRoZSBkZXJpdmF0aXZlIG9mIGEgY29tcG9zaXRpb24gb2YgZnVuY3Rpb25zLgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2286"><ul style="list-style:circle;">
+<li id="li-621"><p id="p-2288">True</p></li>
+<li id="li-622"><p id="p-2289">False</p></li>
+</ul> The Chain Rule describes how to evaluate the derivative of a composition of functions.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-334')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-344"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-335" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="335" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGx6fVsyXXtcZnJhY3tkIzF9e2QjMn19XG5ld2NvbW1hbmR7XGx6b31bMV17XGZyYWN7ZH17ZCMxfX1cbmV3Y29tbWFuZHtcbHpvb31bMl17e1xmcmFje2R9e2QjMX19e1xsZWZ0KCMyXHJpZ2h0KX19XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdGY9UG9wVXAoWyc/JywnVHJ1ZScsJ0ZhbHNlJ10sMik7CgpCRUdJTl9QR01MCltfXXskdGZ9ezV9IFRoZSBHZW5lcmFsaXplZCBQb3dlciBSdWxlIHN0YXRlcyB0aGF0IFtgXGx6b297eH17Zyh4KV5ufSA9IG5cbGVmdChnKHgpXHJpZ2h0KV57bi0xfVx0ZXh0ey59YF0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2291"><ul style="list-style:circle;">
+<li id="li-624"><p id="p-2293">True</p></li>
+<li id="li-625"><p id="p-2294">False</p></li>
+</ul> The Generalized Power Rule states that <span class="process-math">\(\lzoo{x}{g(x)^n} = n\left(g(x)\right)^{n-1}\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-335')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-345"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-336" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="336" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGx6fVsyXXtcZnJhY3tkIzF9e2QjMn19XG5ld2NvbW1hbmR7XGx6b31bMV17XGZyYWN7ZH17ZCMxfX1cbmV3Y29tbWFuZHtcbHpvb31bMl17e1xmcmFje2R9e2QjMX19e1xsZWZ0KCMyXHJpZ2h0KX19XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdGY9UG9wVXAoWyc/JywnVHJ1ZScsJ0ZhbHNlJ10sMik7CgpCRUdJTl9QR01MCltfXXskdGZ9ezV9IFtgXGx6b297eH17XGxuXG1hdGhvcGVue31cbGVmdCh4XjJccmlnaHQpXG1hdGhjbG9zZXt9fSA9IFxmcmFjezF9e3heMn1cdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2296"><ul style="list-style:circle;">
+<li id="li-627"><p id="p-2298">True</p></li>
+<li id="li-628"><p id="p-2299">False</p></li>
+</ul> <span class="process-math">\(\lzoo{x}{\ln\mathopen{}\left(x^2\right)\mathclose{}} = \frac{1}{x^2}\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-336')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-346"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-337" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="337" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGx6fVsyXXtcZnJhY3tkIzF9e2QjMn19XG5ld2NvbW1hbmR7XGx6b31bMV17XGZyYWN7ZH17ZCMxfX1cbmV3Y29tbWFuZHtcbHpvb31bMl17e1xmcmFje2R9e2QjMX19e1xsZWZ0KCMyXHJpZ2h0KX19XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdGY9UG9wVXAoWyc/JywnVHJ1ZScsJ0ZhbHNlJ10sMSk7CgpCRUdJTl9QR01MCltfXXskdGZ9ezV9IFtgXGx6b297eH17M154fVxhcHByb3ggMS4xXGNkb3QzXnhcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2301"><ul style="list-style:circle;">
+<li id="li-630"><p id="p-2303">True</p></li>
+<li id="li-631"><p id="p-2304">False</p></li>
+</ul> <span class="process-math">\(\lzoo{x}{3^x}\approx 1.1\cdot3^x\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-337')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-347"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div id="webwork-338" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="338" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGx6fVsyXXtcZnJhY3tkIzF9e2QjMn19XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdGY9UG9wVXAoWyc/JywnVHJ1ZScsJ0ZhbHNlJ10sMSk7CgpCRUdJTl9QR01MCltfXXskdGZ9ezV9IFtgXGx6e3h9e3l9ID0gXGx6e3h9e3R9XGNkb3RcbHp7dH17eX1cdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2306"><ul style="list-style:circle;">
+<li id="li-633"><p id="p-2308">True</p></li>
+<li id="li-634"><p id="p-2309">False</p></li>
+</ul> <span class="process-math">\(\lz{x}{y} = \lz{x}{t}\cdot\lz{t}{y}\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-338')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-348"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div id="webwork-339" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="339" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JHRmPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwoKQkVHSU5fUEdNTApbX117JHRmfXs1fSBUYWtpbmcgdGhlIGRlcml2YXRpdmUgb2YgW2BmKHgpID0geF4yXHNpbig1eClgXSByZXF1aXJlcyB0aGUgdXNlIG9mIGJvdGggdGhlIFByb2R1Y3QgYW5kIENoYWluIFJ1bGVzLgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2311"><ul style="list-style:circle;">
+<li id="li-636"><p id="p-2313">True</p></li>
+<li id="li-637"><p id="p-2314">False</p></li>
+</ul> Taking the derivative of <span class="process-math">\(f(x) = x^2\sin(5x)\)</span> requires the use of both the Product and Chain Rules.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-339')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-29"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-41">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-47"><p id="p-2316">Compute the derivative of the given function.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exer_02_05_06"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div id="webwork-340" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="340" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmcD1Gb3JtdWxhKCIxMCg0eF4zLXgpXjkoMTJ4XjItMSkiKTsKCkJFR0lOX1BHTUwKW2BmKHgpID0gXGxlZnQoNHheMy14XHJpZ2h0KV57MTB9YF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2317"><span class="process-math">\(f(x) = \left(4x^3-x\right)^{10}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-340')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-350"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-341" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="341" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSh0PT4nUmVhbCcpOwokZnA9Rm9ybXVsYSgiMTUoM3QtMileNCIpOwoKQkVHSU5fUEdNTApbYGYodCkgPSAoM3QtMileezV9YF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2319"><span class="process-math">\(f(t) = (3t-2)^{5}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-341')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-351"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-342" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="342" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1x0aGV0fXtcdGhldGF9XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodGhldGE9PlsnUmVhbCcsVGVYPT4nXHRoZXRhJ10pOwokZnA9Rm9ybXVsYSgiMyhzaW4odGhldGEpK2Nvcyh0aGV0YSkpXjIoY29zKHRoZXRhKS1zaW4odGhldGEpKSIpOwoKQkVHSU5fUEdNTApbYGcoXHRoZXRhKT0oXHNpbihcdGhldGEpK1xjb3MoXHRoZXRhKSleM2BdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdGb3IgW2BcdGhldGFcdGV4dHssfWBdIHR5cGUgW3x0aGV0YXxdKi4nKUBdKioKCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2321"><span class="process-math">\(g(\theta)=(\sin(\theta)+\cos(\theta))^3\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-342')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exer_02_05_09"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-343" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="343" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSh0PT4nUmVhbCcpOwokZnA9Rm9ybXVsYSgiKDZ0KzEpZV4oM3ReMit0LTEpIik7CgpCRUdJTl9QR01MCltgaCh0KSA9IGVeezN0XjIrdC0xfWBdCgpbX117JGZwfXs2MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2323"><span class="process-math">\(h(t) = e^{3t^2+t-1}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-343')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-353"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<div id="webwork-344" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="344" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJGEgPSByYW5kb20oMiw1LDEpOwokYiA9IHJhbmRvbSgzLDgsMSk7CiRwbSA9IGxpc3RfcmFuZG9tKCcrJywnLScpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZm5hbWU9J2YnOyR4PSd4JzskYT0yOyRiPTM7JHBtPScrJ307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CiRmPUZvcm11bGEoIihsbigkeCkkcG0gJHheJGEpXiRiIik7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2325"><span class="process-math">\(f(x) = {\left(\ln\!\left(x\right)+x^{2}\right)^{8}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-344')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-354"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-345" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="345" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJGEgPSByYW5kb20oMiw5LDEpOwokbiA9IHJhbmRvbSgyLDUsMSk7CiRiID0gbm9uX3plcm9fcmFuZG9tKC05LDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0nZic7JHg9J3gnOyRhPTI7JG49MzskYj0zfTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSgkeD0+J1JlYWwnKTsKJGY9Rm9ybXVsYSgiJGFeKCR4XiRuKyRiICR4KSIpLT5yZWR1Y2U7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2327"><span class="process-math">\(g(r) = {6^{r^{4}-2r}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-345')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-355"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div id="webwork-346" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="346" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJHBtID0gbGlzdF9yYW5kb20oJysnLCctJyk7CiRuID0gcmFuZG9tKDMsNiwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdmJzskeD0neCc7JHBtPScrJzskbj00O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CiRmPUZvcm11bGEoIigkeCRwbSAxLyR4KV4kbiIpOwokZnA9JGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pID0gWyRmXWBdCgpbX117JGZwfXs2MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2329"><span class="process-math">\(g(y) = {\left(y+\frac{1}{y}\right)^{4}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-346')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-356"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-347" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="347" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJHRyaWc9IGxpc3RfcmFuZG9tKCdzaW4nLCdjb3MnKTsKJGEgPSByYW5kb20oMiw5LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZm5hbWU9J2YnOyR4PSd4JzskdHJpZz0nY29zJzskYT0zO307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CiRmPUZvcm11bGEoIiR0cmlnKCRhICR4KSIpOwokZnA9JGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pID0gWyRmXWBdCgpbX117JGZwfXs2MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2331"><span class="process-math">\(h(t) = {\sin\!\left(2t\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-347')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-357"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-348" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="348" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJHRyaWc9IGxpc3RfcmFuZG9tKCd0YW4nLCdjb3QnKTsKJGEgPSByYW5kb20oMiw5LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZm5hbWU9J2cnOyR4PSd4JzskdHJpZz0ndGFuJzskYT01O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CiRmPUZvcm11bGEoIiR0cmlnKCRhICR4KSIpOwokZnA9JGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pID0gWyRmXWBdCgpbX117JGZwfXs2MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2333"><span class="process-math">\(j(q) = {\cot\!\left(7q\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-348')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-358"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-349" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="349" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1x0aGV0fXtcdGhldGF9XCk8L2Rpdj4nKSk7CiRmbmFtZSA9IGxpc3RfcmFuZG9tKCdmJywnZycsJ2gnLCdqJywnaycsJ3AnKTsKJHRyaWc9IGxpc3RfcmFuZG9tKCdzaW4nLCdjb3MnLCd0YW4nLCdjb3QnKTsKJGEgPSBub25femVyb19yYW5kb20oLTksOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdoJzskdHJpZz0ndGFuJzskYT00O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodGhldGE9PlsnUmVhbCcsVGVYPT4nXHRoZXRhJ10pOwokZj1Gb3JtdWxhKCIkdHJpZyh0aGV0YV4yKyRhKSIpLT5yZWR1Y2U7CiRmcD0kZi0+RCgndGhldGEnKTsKCkJFR0lOX1BHTUwKW2BbJGZuYW1lXShcdGhldGEpID0gWyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdGb3IgW2BcdGhldGFcdGV4dHssfWBdIHR5cGUgW3x0aGV0YXxdKi4nKUBdKioKCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2335"><span class="process-math">\(j(\theta) = {\cot\!\left(\theta^{2}-5\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-349')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-359"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-350" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="350" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJHRyaWc9IGxpc3RfcmFuZG9tKCdzaW4nLCdjb3MnLCd0YW4nLCdjb3QnKTsKJG4gPSByYW5kb20oMiw5LDEpOwokbSA9IHJhbmRvbSgxLDQsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0nZyc7JHg9J3QnOyR0cmlnPSdzaW4nOyRuPTI7JG09MTt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKCR4PT4nUmVhbCcpOwokZj1Gb3JtdWxhKCIkdHJpZygkeF4kbisxLyR4XiRtKSIpLT5yZWR1Y2U7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2337"><span class="process-math">\(k(t) = {\tan\!\left(t^{3}+\frac{1}{t^{2}}\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-350')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-360"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-351" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="351" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJHRyaWc9IGxpc3RfcmFuZG9tKCdzaW4nLCdjb3MnKTsKJG4gPSByYW5kb20oMyw5LDEpOwokYSA9IHJhbmRvbSgyLDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0naCc7JHg9J3QnOyR0cmlnPSdzaW4nOyRuPTQ7JGE9Mjt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKCR4PT4nUmVhbCcpOwokZj1Gb3JtdWxhKCIkdHJpZ14kbigkYSAkeCkiKS0+cmVkdWNlOwokZnA9JGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pID0gWyRmXWBdCgpbX117JGZwfXs2MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2339"><span class="process-math">\(p(q) = {\sin^{9}\!\left(4q\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-351')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-361"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-352" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="352" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokZm5hbWUgPSBsaXN0X3JhbmRvbSgnZicsJ2cnLCdoJywnaicsJ2snLCdwJyk7CiR4ID0gbGlzdF9yYW5kb20oJ3EnLCdyJywndCcsJ3gnLCd5JywneicpOwokdHJpZz0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycpOwokbiA9IHJhbmRvbSgzLDksMSk7CigkYSwkYikgPSAoLTkuLi0yLDIuLjkpW05jaG9vc2VLKDE2LDIpXTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdwJzskeD0ndCc7JHRyaWc9J3Npbic7JG49MzskYT0zOyRiPTE7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSgkeD0+J1JlYWwnKTsKJGY9Rm9ybXVsYSgiJHRyaWdeJG4oJHheMiskYSAkeCArICRiKSIpLT5yZWR1Y2U7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2341"><span class="process-math">\(p(y) = {\cos^{7}\!\left(y^{2}-4y+8\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-352')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-362"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-353" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="353" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJHRyaWc9IGxpc3RfcmFuZG9tKCdzaW4nLCdjb3MnLCdzZWMnLCdjc2MnKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdmJzskeD0neCc7JHRyaWc9J2Nvcyc7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSgkeD0+J1JlYWwnKTsKJGY9Rm9ybXVsYSgibG4oJHRyaWcoJHgpKSIpLT5yZWR1Y2U7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2343"><span class="process-math">\(f(t) = {\ln\!\left(\csc\!\left(t\right)\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-353')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-363"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-354" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="354" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJG4gPSByYW5kb20oMiw5LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZm5hbWU9J2YnOyR4PSd4Jzskbj0yO307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CiRmPUZvcm11bGEoImxuKCR4XiRuKSIpLT5yZWR1Y2U7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2345"><span class="process-math">\(g(q) = {\ln\!\left(q^{4}\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-354')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-364"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-355" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="355" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJG4gPSByYW5kb20oMiw5LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZm5hbWU9J2YnOyR4PSd4Jzskbj0yO307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CiRmPUZvcm11bGEoIiRuIGxuKCR4KSIpLT5yZWR1Y2U7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2347"><span class="process-math">\(g(y) = {8\ln\!\left(y\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-355')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-365"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div id="webwork-356" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="356" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJGIgPSByYW5kb20oMiw5LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZm5hbWU9J2cnOyR4PSdyJzskYj00O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CiRmPUZvcm11bGEoIiRiXiR4IiktPnJlZHVjZTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJGZwPSRmLT5EKCR4KTsKCkJFR0lOX1BHTUwKW2BbJGZuYW1lXShbJHhdKSA9IFskZl1gXQoKW19deyRmcH17NjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2349"><span class="process-math">\(h(t) = {3^{t}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-356')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-366"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-357" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="357" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onKTsKJGIgPSByYW5kb20oMiw5LDEpOwokdHJpZz0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycsJ3NlYycsJ2NzYycsJ3RhbicsJ2NvdCcpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZm5hbWU9J2cnOyR4PSd0JzskYj01OyR0cmlnPSdjb3MnfTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSgkeD0+J1JlYWwnKTsKJGY9Rm9ybXVsYSgiJGJeKCR0cmlnKCR4KSkiKS0+cmVkdWNlOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwokZnA9JGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pID0gWyRmXWBdCgpbX117JGZwfXs2MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2351"><span class="process-math">\(j(z) = {6^{\cos\!\left(z\right)}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-357')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-367"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div id="webwork-358" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="358" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokZm5hbWUgPSBsaXN0X3JhbmRvbSgnZicsJ2cnLCdoJywnaicsJ2snLCdwJyk7CiR4ID0gbGlzdF9yYW5kb20oJ3EnLCdyJywndCcsJ3gnLCd5JywneicpOwooJGEsJGIpID0gKDIuLjIwKVtOY2hvb3NlSygxOSwyKV07CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0nZyc7JHg9J3QnOyRiPTE1OyRhPTI7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSgkeD0+J1JlYWwnKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCk7CiRmPUZvcm11bGEoIiRiXiRhIik7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2353"><span class="process-math">\(j(x) = {20^{2}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-358')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-368"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<div id="webwork-359" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="359" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokZm5hbWUgPSBsaXN0X3JhbmRvbSgnZicsJ2cnLCdoJywnaicsJ2snLCdwJywnbScpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onLCd3Jyk7CmRvIHsoJGEsJGIpID0gKDIuLjkpW05jaG9vc2VLKDgsMildO30gdW50aWwgKGdjZCgkYSwkYikgPT0gMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0nbSc7JHg9J3cnOyRhPTM7JGI9Mjt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKCR4PT4nUmVhbCcpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwokZj1Gb3JtdWxhKCIkYV4keC8kYl4keCIpOwokZnA9JGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pID0gWyRmXWBdCgpbX117JGZwfXs2MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2355"><span class="process-math">\(p(t) = {\frac{5^{t}}{7^{t}}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-359')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-369"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<div id="webwork-360" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="360" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokZm5hbWUgPSBsaXN0X3JhbmRvbSgnZicsJ2cnLCdoJywnaicsJ2snLCdwJywnbScpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onLCd3Jyk7CmRvIHsoJGEsJGIpID0gKDIuLjkpW05jaG9vc2VLKDgsMildO30gdW50aWwgKGdjZCgkYSwkYikgPT0gMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0naCc7JHg9J3QnOyRhPTI7JGI9Mzt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKCR4PT4nUmVhbCcpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwokZj1Gb3JtdWxhKCIoJGFeJHgrJGIpLygkYl4keCskYSkiKTsKJGZwPSRmLT5EKCR4KTsKCkJFR0lOX1BHTUwKW2BbJGZuYW1lXShbJHhdKSA9IFskZl1gXQoKW19deyRmcH17NjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2357"><span class="process-math">\(m(w) = {\frac{5^{w}+8}{8^{w}+5}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-360')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-370"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-361" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="361" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokZm5hbWUgPSBsaXN0X3JhbmRvbSgnZicsJ2cnLCdoJywnaicsJ2snLCdwJywnbScpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onLCd3Jyk7CmRvIHsoJGEsJGIpID0gKDIuLjkpW05jaG9vc2VLKDgsMildO30gdW50aWwgKGdjZCgkYSwkYikgPT0gMSk7CiRjID0gbm9uX3plcm9fcmFuZG9tKC05LDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0nbSc7JHg9J3cnOyRhPTM7JGI9MjskYz0xO307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRmPUZvcm11bGEoIigkYV4keCskYykvKCRiXiR4KSIpLT5yZWR1Y2U7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2359"><span class="process-math">\(m(y) = {\frac{4^{y}-6}{3^{y}}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-361')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-371"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<div id="webwork-362" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="362" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokZm5hbWUgPSBsaXN0X3JhbmRvbSgnZicsJ2cnLCdoJywnaicsJ2snLCdwJywnbScpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onLCd3Jyk7CmRvIHsoJGEsJGIpID0gKDIuLjkpW05jaG9vc2VLKDgsMildO30gdW50aWwgKGdjZCgkYSwkYikgPT0gMSk7CiRwbSA9IGxpc3RfcmFuZG9tKCcrJywnLScpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZm5hbWU9J2YnOyR4PSd4JzskYT0zOyRiPTI7JHBtPScrJzt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKCR4PT4nUmVhbCcpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwokZj1Gb3JtdWxhKCIoJGFeKCR4XjIpJHBtJHgpLygkYl4oJHheMikpIik7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2361"><span class="process-math">\(f(r) = {\frac{7^{r^{2}}+r}{9^{r^{2}}}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-362')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-372"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<div id="webwork-363" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="363" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcsJ20nKTsKJHggPSBsaXN0X3JhbmRvbSgncScsJ3InLCd0JywneCcsJ3knLCd6JywndycpOwokbiA9IHJhbmRvbSgyLDMsMSk7CiR0cmlnID0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycsJ3RhbicsJ2NvdCcpOwokYSA9IHJhbmRvbSgyLDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0nZic7JHg9J3gnOyRuPTI7JHRyaWc9J3Npbic7JGE9NTt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKCR4PT4nUmVhbCcpOwokZj1Gb3JtdWxhKCIkeF4kbiAkdHJpZygkYSAkeCkiKTsKJGZwPSRmLT5EKCR4KTsKCkJFR0lOX1BHTUwKW2BbJGZuYW1lXShbJHhdKSA9IFskZl1gXQoKW19deyRmcH17NjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2363"><span class="process-math">\(g(w) = {w^{2}\tan\!\left(3w\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-363')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-373"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<div id="webwork-364" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="364" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokZm5hbWUgPSBsaXN0X3JhbmRvbSgnZicsJ2cnLCdoJywnaicsJ2snLCdwJywnbScpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onLCd3Jyk7CigkbSwkbiwkcCkgPSAoMi4uNilbTmNob29zZUsoNSwzKV07CigkYSwkYiwkYykgPSAoMS4uOSlbTmNob29zZUsoOSwzKV07CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0nZic7JHg9J3gnOyRtPTU7JG49NDskcD0zOyRhPTE7JGI9MzskYz0yO307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CiRmPUZvcm11bGEoIigkeF4yKyRhICR4KV4kbSgkYiAkeF4kbiskYyAkeCleJHAiKS0+cmVkdWNlOwokZnA9JGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pID0gWyRmXWBdCgpbX117JGZwfXs2MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2365"><span class="process-math">\(h(x) = {\left(x^{2}+8x\right)^{4}\!\left(7x^{3}+3x\right)^{2}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-364')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-374"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<div id="webwork-365" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="365" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokZm5hbWUgPSBsaXN0X3JhbmRvbSgnZicsJ2cnLCdoJywnaicsJ2snLCdwJywnbScpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onLCd3Jyk7CigkdHJpZ2EsJHRyaWdiKSA9ICgnc2luJywnY29zJylbTmNob29zZUsoMiwyKV07CigkbSwkbikgPSAoMCwyKVtOY2hvb3NlSygyLDIpXTsKKCRhLCRiLCRjLCRkKSA9ICgxLi45KVtOY2hvb3NlSyg5LDQpXTsKJGI9JGIqcmFuZG9tKC0xLDEsMik7CiRkPSRkKnJhbmRvbSgtMSwxLDIpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZm5hbWU9J2cnOyR4PSd0JzskbT0yOyRuPTA7JGE9MTskYj0zOyRjPTU7JGQ9LTc7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSgkeD0+J1JlYWwnKTsKJGY9Rm9ybXVsYSgiJHRyaWdhKCRhICR4XiRtICsgJGIgJHgpJHRyaWdiKCRjICR4ICsgJGQgJHheJG4pIiktPnJlZHVjZS0+cmVkdWNlOwokZnA9JGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pID0gWyRmXWBdCgpbX117JGZwfXs2MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2367"><span class="process-math">\(h(r) = {\cos\!\left(8+7r\right)\sin\!\left(5r-4r^{2}\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-365')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-375"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<div id="webwork-366" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="366" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokZm5hbWUgPSBsaXN0X3JhbmRvbSgnZicsJ2cnLCdoJywnaicsJ2snLCdwJywnbScpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onLCd3Jyk7CigkdHJpZ2EsJHRyaWdiKSA9ICgnc2luJywnY29zJylbTmNob29zZUsoMiwyKV07CigkYSwkYiwkYywkZCkgPSAoMS4uOSlbTmNob29zZUsoOSw0KV07CiRiPSRiKnJhbmRvbSgtMSwxLDIpOwokZD0kZCpyYW5kb20oLTEsMSwyKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdmJzskeD0neCc7JGE9MzskYj00OyRjPTU7JGQ9LTI7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSgkeD0+J1JlYWwnKTsKJGY9Rm9ybXVsYSgiJHRyaWdhKCRhICR4ICsgJGIpJHRyaWdiKCRjICsgJGQgJHgpIiktPnJlZHVjZTsKJGZwPSRmLT5EKCR4KTsKCkJFR0lOX1BHTUwKW2BbJGZuYW1lXShbJHhdKSA9IFskZl1gXQoKW19deyRmcH17NjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2369"><span class="process-math">\(j(w) = {\sin\!\left(2w+8\right)\cos\!\left(9+w\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-366')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-376"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<div id="webwork-367" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="367" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcsJ20nKTsKJHggPSBsaXN0X3JhbmRvbSgncScsJ3InLCd0JywneCcsJ3knLCd6JywndycpOwokdHJpZyA9IGxpc3RfcmFuZG9tKCdzaW4nLCdjb3MnKTsKJGEgPSByYW5kb20oMiw5LDEpOwokbiA9IHJhbmRvbSgyLDMsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0nZyc7JHg9J3QnOyRhPTU7JG49Mjt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKCR4PT4nUmVhbCcpOwokZj1Gb3JtdWxhKCIkdHJpZygxLyR4KWVeKCRhICR4XiRuKSIpLT5yZWR1Y2U7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2371"><span class="process-math">\(k(x) = {e^{5x^{2}}\cos\!\left(\frac{1}{x}\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-367')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-377"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<div id="webwork-368" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="368" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokZm5hbWUgPSBsaXN0X3JhbmRvbSgnZicsJ2cnLCdoJywnaicsJ2snLCdwJywnbScpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onLCd3Jyk7CiR0cmlnID0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycpOwooJGEsJGIsJGMsJGQpID0gKDEuLjkpW05jaG9vc2VLKDksNCldOwokYj0kYipyYW5kb20oLTEsMSwyKTsKJGQ9JGQqcmFuZG9tKC0xLDEsMik7CiRuID0gcmFuZG9tKDIsNCwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdmJzskeD0neCc7JGE9NDskYj0xOyRjPTU7JGQ9LTk7JG49Mzt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKCR4PT4nUmVhbCcpOwokZj1Gb3JtdWxhKCIkdHJpZygkYSAkeCArICRiKS8oJGMgJHggKyAkZCleJG4iKS0+cmVkdWNlOwokZnA9JGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pID0gWyRmXWBdCgpbX117JGZwfXs2MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2373"><span class="process-math">\(p(r) = {\frac{\sin\!\left(2r+1\right)}{\left(8r+3\right)^{4}}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-368')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-378"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<div id="webwork-369" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="369" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokZm5hbWUgPSBsaXN0X3JhbmRvbSgnZicsJ2cnLCdoJywnaicsJ2snLCdwJywnbScpOwokeCA9IGxpc3RfcmFuZG9tKCdxJywncicsJ3QnLCd4JywneScsJ3onLCd3Jyk7CiR0cmlnID0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycsJ3RhbicsJ2NvdCcpOwooJGEsJGIsJGMpID0gKDEuLjkpW05jaG9vc2VLKDksMyldOwokbiA9IHJhbmRvbSgyLDQsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0nZic7JHg9J3gnOyRhPTQ7JGI9MTskYz01OyRuPTI7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSgkeD0+J1JlYWwnKTsKJGY9Rm9ybXVsYSgiKCRhICR4ICsgJGIpXiRuLyR0cmlnKCRjICR4KSIpLT5yZWR1Y2U7CiRmcD0kZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSkgPSBbJGZdYF0KCltfXXskZnB9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2375"><span class="process-math">\(m(z) = {\frac{\left(9z+1\right)^{2}}{\tan\!\left(4z\right)}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-369')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-42">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-48"><p id="p-2377">Find the equations of tangent and normal lines to the graph of the function at the given point. Note: the functions here are the same as in <a href="" class="xref" data-knowl="./knowl/exer_02_05_06.html" title="Exercise 2.5.7">Exercises 2.5.7</a> through <a href="" class="xref" data-knowl="./knowl/exer_02_05_09.html" title="Exercise 2.5.10">Exercise 2.5.10</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-379"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<div id="webwork-370" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="370" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJBc3NpZ25tZW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIk51bWVyaWMiKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKcGFyc2VyOjpBc3NpZ25tZW50LT5BbGxvdzsKJHQ9Rm9ybXVsYSgieT0wIik7CiRuPUZvcm11bGEoIng9MCIpOwoKQkVHSU5fUEdNTApbYGYoeCkgPSBcbGVmdCg0eF4zLXhccmlnaHQpXnsxMH1gXSBhdCBbYHg9MGBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgZXF1YXRpb24gb2YgdGhlIHRhbmdlbnQgbGluZSBoZXJlLicpQF0qKgoKW19deyR0fXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBlcXVhdGlvbiBvZiB0aGUgbm9ybWFsIGxpbmUgaGVyZS4nKUBdKioKCltfXXskbn17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2378"><span class="process-math">\(f(x) = \left(4x^3-x\right)^{10}\)</span> at <span class="process-math">\(x=0\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-370')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-380"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<div id="webwork-371" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="371" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJBc3NpZ25tZW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIk51bWVyaWMiKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKcGFyc2VyOjpBc3NpZ25tZW50LT5BbGxvdzsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCk7CiR0PUZvcm11bGEoInk9MTUoeC0xKSsxIik7CiRuPUZvcm11bGEoInk9LTEvMTUoeC0xKSsxIik7CgpCRUdJTl9QR01MCltgZih4KSA9ICgzeC0yKV41YF0gYXQgW2B4PTFgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGVxdWF0aW9uIG9mIHRoZSB0YW5nZW50IGxpbmUgaGVyZS4nKUBdKioKCltfXXskdH17MjB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgZXF1YXRpb24gb2YgdGhlIG5vcm1hbCBsaW5lIGhlcmUuJylAXSoqCgpbX117JG59ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2381"><span class="process-math">\(f(x) = (3x-2)^5\)</span> at <span class="process-math">\(x=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-371')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-381"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<div id="webwork-372" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="372" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJBc3NpZ25tZW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIk51bWVyaWMiKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKcGFyc2VyOjpBc3NpZ25tZW50LT5BbGxvdzsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCk7CiR0PUZvcm11bGEoInk9LTMoeCAtIHBpLzIpKzEiKTsKJG49Rm9ybXVsYSgieT0xLzMoeCAtIHBpLzIpKzEiKTsKCkJFR0lOX1BHTUwKW2BnKHgpID0gKFxzaW4oeCkrXGNvcyh4KSleM2BdIGF0IFtgeD1ccGkvMlx0ZXh0ey59YF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBlcXVhdGlvbiBvZiB0aGUgdGFuZ2VudCBsaW5lIGhlcmUuJylAXSoqCgpbX117JHR9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGVxdWF0aW9uIG9mIHRoZSBub3JtYWwgbGluZSBoZXJlLicpQF0qKgoKW19deyRufXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2384"><span class="process-math">\(g(x) = (\sin(x)+\cos(x))^3\)</span> at <span class="process-math">\(x=\pi/2\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-372')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-382"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<div id="webwork-373" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="373" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJBc3NpZ25tZW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIk51bWVyaWMiKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKcGFyc2VyOjpBc3NpZ25tZW50LT5BbGxvdzsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCk7CiR0PUZvcm11bGEoInk9LTVlKHgrMSkrZSIpOwokbj1Gb3JtdWxhKCJ5PTEvKDVlKSh4KzEpK2UiKTsKCkJFR0lOX1BHTUwKW2BoKHgpID0gZV57M3heMit4LTF9YF0gYXQgW2B4PS0xYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBlcXVhdGlvbiBvZiB0aGUgdGFuZ2VudCBsaW5lIGhlcmUuJylAXSoqCgpbX117JHR9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGVxdWF0aW9uIG9mIHRoZSBub3JtYWwgbGluZSBoZXJlLicpQF0qKgoKW19deyRufXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2387"><span class="process-math">\(h(x) = e^{3x^2+x-1}\)</span> at <span class="process-math">\(x=-1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-373')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-383"><h5 class="heading"><span class="codenumber">41<span class="period">.</span></span></h5>
+<div id="webwork-374" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="374" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcbHp9WzJde1xmcmFje2QjMX17ZCMyfX1cbmV3Y29tbWFuZHtcbHpvfVsxXXtcZnJhY3tkfXtkIzF9fVxuZXdjb21tYW5ke1xsem9vfVsyXXt7XGZyYWN7ZH17ZCMxfX17XGxlZnQoIzJccmlnaHQpfX1cKTwvZGl2PicpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZChrPT4nUmVhbCcpOwokZiA9IEZvcm11bGEoImxuKGsgeCkiKTsKJGQgPSBGb3JtdWxhKCIxL3giKTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHRoZSB3b3JrIGZvciBib3RoIHBhcnRzLiIpIEBdKic7CgpCRUdJTl9QR01MCkNvbXB1dGUgW2BcbHpvb3t4fXtcbG4oa3gpfWBdIHR3byB3YXlzLiBGaXJzdCBieSB1c2luZyB0aGUgQ2hhaW4gUnVsZS4gU2Vjb25kLCBieSB1c2luZyB0aGUgbG9nYXJpdGhtIHJ1bGUgW2BcbG4oYWIpID0gXGxuKGEpICsgXGxuKGIpYF0gYW5kIHRoZW4gdGFraW5nIHRoZSBkZXJpdmF0aXZlLgoKW19deyRkfXsyMH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpJbiBib3RoIGNhc2VzIHRoZSBkZXJpdmF0aXZlIGlzIHRoZSBzYW1lOiBbYDEveFx0ZXh0ey59YF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2390">Compute <span class="process-math">\(\lzoo{x}{\ln(kx)}\)</span> two ways. First by using the Chain Rule. Second, by using the logarithm rule <span class="process-math">\(\ln(ab) = \ln(a) + \ln(b)\)</span> and then taking the derivative.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-374')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-384"><h5 class="heading"><span class="codenumber">42<span class="period">.</span></span></h5>
+<div id="webwork-375" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="375" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcbHp9WzJde1xmcmFje2QjMX17ZCMyfX1cbmV3Y29tbWFuZHtcbHpvfVsxXXtcZnJhY3tkfXtkIzF9fVxuZXdjb21tYW5ke1xsem9vfVsyXXt7XGZyYWN7ZH17ZCMxfX17XGxlZnQoIzJccmlnaHQpfX1cKTwvZGl2PicpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZChrPT4nUmVhbCcpOwokZiA9IEZvcm11bGEoImxuKHheaykiKTsKJGQgPSBGb3JtdWxhKCJrL3giKTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHRoZSB3b3JrIGZvciBib3RoIHBhcnRzLiIpIEBdKic7CgpCRUdJTl9QR01MCkNvbXB1dGUgW2BcbHpvb3t4fXtcbG5cbWF0aG9wZW57fVxsZWZ0KHhea1xyaWdodClcbWF0aGNsb3Nle319YF0gdHdvIHdheXMuIEZpcnN0IGJ5IHVzaW5nIHRoZSBDaGFpbiBSdWxlLiBTZWNvbmQsIGJ5IHVzaW5nIHRoZSBsb2dhcml0aG0gcnVsZSBbYFxsblxtYXRob3Blbnt9XGxlZnQoYV5wXHJpZ2h0KVxtYXRoY2xvc2V7fSA9IHBcbG4oYSlgXSAoZm9yIHBvc2l0aXZlIFtgYWBdKSBhbmQgdGhlbiB0YWtpbmcgdGhlIGRlcml2YXRpdmUuCgpbX117JGR9ezIwfQoKWyRzaG93d29ya10qKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCkluIGJvdGggY2FzZXMgdGhlIGRlcml2YXRpdmUgaXMgdGhlIHNhbWU6IFtgay94XHRleHR7Ln1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2393">Compute <span class="process-math">\(\lzoo{x}{\ln\mathopen{}\left(x^k\right)\mathclose{}}\)</span> two ways. First by using the Chain Rule. Second, by using the logarithm rule <span class="process-math">\(\ln\mathopen{}\left(a^p\right)\mathclose{} = p\ln(a)\)</span> (for positive <span class="process-math">\(a\)</span>) and then taking the derivative.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-375')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-30"><h4 class="heading"><span class="title">Review</span></h4>
+<article class="exercise exercise-like" id="exercise-385"><h5 class="heading"><span class="codenumber">43<span class="period">.</span></span></h5>
+<div id="webwork-376" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="376" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwicGFyc2VyUG9wVXAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRzaWduPVBvcFVwKFsnPycsJ3Bvc2l0aXZlJywnbmVnYXRpdmUnXSwyKTsKCkJFR0lOX1BHTUwKVGhlICJ3aW5kIGNoaWxsIGZhY3RvciIgaXMgYSBtZWFzdXJlbWVudCBvZiBob3cgY29sZCBpdCAiZmVlbHMiIGR1cmluZyBjb2xkLCB3aW5keSB3ZWF0aGVyLiBMZXQgW2BXKHcpYF0gYmUgdGhlIHdpbmQgY2hpbGwgZmFjdG9yLCBpbiBkZWdyZWVzIEZhaHJlbmhlaXQsIHdoZW4gaXQgaXMgW2AyNV5cY2lyY2BdRiBvdXRzaWRlIHdpdGggYSB3aW5kIG9mIFtgd2BdIG1waC4KCmEuICBXaGF0IGFyZSB0aGUgdW5pdHMgb2YgW2BXJyh3KVx0ZXh0ez99YF0KCiAgICBbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKYS4gIFdoYXQgd291bGQgeW91IGV4cGVjdCB0aGUgc2lnbiBvZiBbYFcnKDEwKWBdIHRvIGJlPwoKICAgIFtfXXskc2lnbn17NX0KCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KYS4gIFtgXlxjaXJjYF1GL21waAoKCmEuICBUaGUgc2lnbiB3b3VsZCBiZSBuZWdhdGl2ZTsgd2hlbiB0aGUgd2luZCBpcyBibG93aW5nIGF0IDEwIG1waCwgYW55IGluY3JlYXNlIGluIHdpbmQgc3BlZWQgd2lsbCBtYWtlIGl0IGZlZWwgY29sZGVyLCBpLmUuLCBhIGxvd2VyIG51bWJlciBvbiB0aGUgRmFocmVuaGVpdCBzY2FsZS4KCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-2396">The “wind chill factor” is a measurement of how cold it “feels” during cold, windy weather. Let <span class="process-math">\(W(w)\)</span> be the wind chill factor, in degrees Fahrenheit, when it is <span class="process-math">\(25^\circ\)</span>F outside with a wind of <span class="process-math">\(w\)</span> mph.</p>
+<ol id="p-2397" class="lower-alpha">
+<li id="li-638"><p id="p-2398">What are the units of <span class="process-math">\(W'(w)\text{?}\)</span></p></li>
+<li id="li-639">
+<p id="p-2399">What would you expect the sign of <span class="process-math">\(W'(10)\)</span> to be?</p>
+<p id="p-2400"><ul style="list-style:circle;">
+<li id="li-641"><p id="p-2402">positive</p></li>
+<li id="li-642"><p id="p-2403">negative</p></li>
+</ul></p>
+</li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-376')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-386"><h5 class="heading"><span class="codenumber">44<span class="period">.</span></span></h5>
+<div id="webwork-377" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="377" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRzPT4wKTsKJGE9cmFuZG9tKDEsOSwxKTsKJG49cmFuZG9tKDEsNCwxKTsKJHRyaWc9bGlzdF9yYW5kb20oJ3NpbicsJ2NvcycsJ3NlYycsJ2NzYycsJ3RhbicsJ2NvdCcpOwooJGIsJGMsJGQpPW51bV9zb3J0KCgyLi45KVtOY2hvb3NlSyg4LDMpXSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRhPTI7JG49MTskdHJpZz0nY290JzskYj0yOyRjPTM7JGQ9NDt9OwokZiA9IEZvcm11bGEoIiRhIHheJG4gZV54ICR0cmlnKHgpIiktPnJlZHVjZTsKJGcgPSBGb3JtdWxhKCIkYl54ICRjXnggJGReeCIpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwokZnA9JGYtPkQoJ3gnKTsKJGdwPSRnLT5EKCd4Jyk7CgpCRUdJTl9QR01MCkZpbmQgdGhlIGRlcml2YXRpdmVzIG9mIHRoZSBmb2xsb3dpbmcgZnVuY3Rpb25zLgoKYS4gIFtgZih4KSA9IFskZl1gXQoKICAgIFtfXXskZnB9ezQwfQoKCmEuICBbYGcoeCkgPSBbJGddYF0KCiAgICBbX117JGdwfXs0MH0KCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-2408">Find the derivatives of the following functions.</p>
+<ol id="p-2409" class="lower-alpha">
+<li id="li-645"><p id="p-2410"><span class="process-math">\(\displaystyle f(x) = {7xe^{x}\cot\!\left(x\right)}\)</span></p></li>
+<li id="li-646"><p id="p-2411"><span class="process-math">\(\displaystyle g(x) = {3^{x}\cdot 7^{x}\cdot 9^{x}}\)</span></p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-377')">Make Interactive</button></div>
+</div></article></article></section></section></div></main>
+</div>
+</body>
+</html>

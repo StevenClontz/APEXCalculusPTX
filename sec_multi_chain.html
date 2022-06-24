@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:32:03Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX The Multivariable Chain Rule</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_total_differential.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_multi.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_directional_derivative.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_total_differential.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_multi.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_directional_derivative.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="active">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_multi_chain"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">13.5</span> <span class="title">The Multivariable Chain Rule</span>
+</h2>
+<section class="introduction" id="introduction-370"><p id="p-13492">Consider driving an off-road vehicle along a dirt road. As you drive, your elevation likely changes. What factors determine how quickly your elevation rises and falls? After some thought, generally one recognizes that one's <em class="emphasis">velocity</em> (speed and direction) and the <em class="emphasis">terrain</em> influence your rise and fall.</p>
+<p id="p-13493">One can represent the terrain as the surface defined by a multivariable function <span class="process-math">\(f(x,y)\text{;}\)</span> one can represent the path of the off-road vehicle, as seen from above, with a vector-valued function <span class="process-math">\(\vec r(t) = \langle x(t),
+y(t)\rangle\text{;}\)</span> the velocity of the vehicle is thus <span class="process-math">\(\vrp(t) = \langle x'(t),y'(t)\rangle\text{.}\)</span></p>
+<p id="p-13494">Consider <a href="" class="xref" data-knowl="./knowl/fig_mchain_intro.html" title="Figure 13.5.1">Figure 13.5.1</a> in which a surface <span class="process-math">\(z=f(x,y)\)</span> is drawn, along with a dashed curve in the <span class="process-math">\(xy\)</span>-plane. Restricting <span class="process-math">\(f\)</span> to just the points on this circle gives the curve shown on the surface (i.e., “the path of the off-road vehicle.”) The derivative <span class="process-math">\(\frac{df}{dt}\)</span> gives the instantaneous rate of change of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(t\text{.}\)</span> If we consider an object traveling along this path, <span class="process-math">\(\frac{df}{dt}=\frac{dz}{dt}\)</span> gives the rate at which the object rises/falls (i.e., “the rate of elevation change” of the vehicle.) Conceptually, the Multivariable Chain Rule combines terrain and velocity information properly to compute this rate of elevation change.</p>
+<figure class="figure figure-like" id="fig_mchain_intro"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 99.5049504950495%"><iframe src="generated/asymptote/img_mchain_intro.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_mchain_intro.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.5.1<span class="period">.</span></span><span class="space"> </span>Understanding the application of the Multivariable Chain Rule</figcaption></figure><p id="p-13495">Abstractly, let <span class="process-math">\(z\)</span> be a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{;}\)</span> that is, <span class="process-math">\(z=f(x,y)\)</span> for some function <span class="process-math">\(f\text{,}\)</span> and let <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> each be functions of <span class="process-math">\(t\text{.}\)</span> By choosing a <span class="process-math">\(t\)</span>-value, <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-values are determined, which in turn determine <span class="process-math">\(z\text{:}\)</span> this defines <span class="process-math">\(z\)</span> as a function of <span class="process-math">\(t\text{.}\)</span> The Multivariable Chain Rule gives a method of computing <span class="process-math">\(\frac{dz}{dt}\text{.}\)</span></p>
+<figure class="figure figure-like" id="vid-multi-chain-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-517" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/e4uf2cA7YyA?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.5.2<span class="period">.</span></span><span class="space"> </span>Introducing the chain rule in several variables</figcaption></figure></section><section class="subsection" id="subsec-multi-chain-intro"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">13.5.1</span> <span class="title">Multivariable Chain Rule, Part I</span>
+</h3>
+<article class="theorem theorem-like" id="thm_multi_chain"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Multivariable Chain Rule, Part I.</span>
+</h4>
+<p id="p-13496">Let <span class="process-math">\(z=f(x,y)\text{,}\)</span> <span class="process-math">\(x=g(t)\)</span> and <span class="process-math">\(y=h(t)\text{,}\)</span> where <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> are differentiable functions. Then <span class="process-math">\(z = f(x,y) = f\big(g(t),h(t)\big)\)</span> is a function of <span class="process-math">\(t\text{,}\)</span> and </p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-601">
+\begin{align*}
+\frac{dz}{dt} = \frac{df}{dt} \amp = f_x(x,y)\frac{dx}{dt}+f_y(x,y)\frac{dy}{dt}\\
+\amp = \frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}\\
+\amp = \langle\, f_x,f_y\rangle \cdot \langle x',y'\rangle\text{.}
+\end{align*}
+</div></article><p id="p-13497">The Chain Rule of <a href="sec_chainrule.html" class="internal" title="Section 2.5: The Chain Rule">Section 2.5</a> states that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_chainrule.html ./knowl/thm_multi_chain.html">
+\begin{equation*}
+\frac{d}{dx}\Big(f\big(g(x)\big)\Big) = \fp\big(g(x)\big)g'(x)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">If <span class="process-math">\(t=g(x)\text{,}\)</span> we can express the Chain Rule as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_chainrule.html ./knowl/thm_multi_chain.html">
+\begin{equation*}
+\frac{df}{dx} = \frac{df}{dt}\frac{dt}{dx};
+\end{equation*}
+</div>
+<p class="continuation">recall that the derivative notation is deliberately chosen to reflect their fraction-like properties. A similar effect is seen in <a href="" class="xref" data-knowl="./knowl/thm_multi_chain.html" title="Theorem 13.5.3: Multivariable Chain Rule, Part I">Theorem 13.5.3</a>. In the second line of equations, one can think of the <span class="process-math">\(dx\)</span> and <span class="process-math">\(\partial x\)</span> as “sort of” canceling out, and likewise with <span class="process-math">\(dy\)</span> and <span class="process-math">\(\partial y\text{.}\)</span></p>
+<p id="p-13498">Notice, too, the third line of equations in <a href="" class="xref" data-knowl="./knowl/thm_multi_chain.html" title="Theorem 13.5.3: Multivariable Chain Rule, Part I">Theorem 13.5.3</a>. The vector <span class="process-math">\(\langle\,f_x,f_y\rangle\)</span> contains information about the surface (terrain); the vector <span class="process-math">\(\langle x',y'\rangle\)</span> can represent velocity. In the context measuring the rate of elevation change of the off-road vehicle, the Multivariable Chain Rule states it can be found through a product of terrain and velocity information.</p>
+<p id="p-13499">We now practice applying the Multivariable Chain Rule.</p>
+<figure class="figure figure-like" id="vid-multi-chain-example"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-518" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/bagsQndc8nw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.5.4<span class="period">.</span></span><span class="space"> </span>Examples involving the chain rule</figcaption></figure><article class="example example-like" id="ex_mchain1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Multivariable Chain Rule.</span>
+</h4>
+<p id="p-13500">Let <span class="process-math">\(z=x^2y+x\text{,}\)</span> where <span class="process-math">\(x=\sin(t)\)</span> and <span class="process-math">\(y=e^{5t}\text{.}\)</span> Find <span class="process-math">\(\frac{dz}{dt}\)</span> using the Chain Rule.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1258" id="solution-1258"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1258"><div class="solution solution-like">
+<p id="p-13501">Following <a href="" class="xref" data-knowl="./knowl/thm_multi_chain.html" title="Theorem 13.5.3: Multivariable Chain Rule, Part I">Theorem 13.5.3</a>, we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_multi_chain.html">
+\begin{equation*}
+f_x(x,y) = 2xy+1,\qquad f_y(x,y) = x^2,\qquad \frac{dx}{dt} = \cos(t) ,\qquad \frac{dy}{dt}= 5e^{5t}\text{.}
+\end{equation*}
+</div>
+<p id="p-13502">Applying the theorem, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dz}{dt} = (2xy+1)\cos(t) + 5x^2e^{5t}\text{.}
+\end{equation*}
+</div>
+<p id="p-13503">This may look odd, as it seems that <span class="process-math">\(\frac{dz}{dt}\)</span> is a function of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(t\text{.}\)</span> Since <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are functions of <span class="process-math">\(t\text{,}\)</span> <span class="process-math">\(\frac{dz}{dt}\)</span> is really just a function of <span class="process-math">\(t\text{,}\)</span> and we can replace <span class="process-math">\(x\)</span> with <span class="process-math">\(\sin(t)\)</span> and <span class="process-math">\(y\)</span> with <span class="process-math">\(e^{5t}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dz}{dt} = (2xy+1)\cos(t) + 5x^2e^{5t} = (2\sin(t)e^{5t}+1)\cos(t) +5e^{5t}\sin^2(t)\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><p id="p-13504">The previous example can make us wonder: if we substituted for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> at the end to show that <span class="process-math">\(\frac{dz}{dt}\)</span> is really just a function of <span class="process-math">\(t\text{,}\)</span> why not substitute before differentiating, showing clearly that <span class="process-math">\(z\)</span> is a function of <span class="process-math">\(t\text{?}\)</span></p>
+<p id="p-13505">That is, <span class="process-math">\(z = x^2y+x = (\sin(t) )^2e^{5t}+\sin(t) \text{.}\)</span> Applying the Chain and Product Rules, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dz}{dt} = 2\sin(t) \cos(t) \, e^{5t}+ 5\sin^2(t) \,e^{5t}+\cos(t)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which matches the result from the example.</p>
+<p id="p-13506">This may now make one wonder “What's the point? If we could already find the derivative, why learn another way of finding it?” In some cases, applying this rule makes deriving simpler, but this is hardly the power of the Chain Rule. Rather, in the case where <span class="process-math">\(z=f(x,y)\text{,}\)</span> <span class="process-math">\(x=g(t)\)</span> and <span class="process-math">\(y=h(t)\text{,}\)</span> the Chain Rule is extremely powerful when <em class="emphasis">we do not know what <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\(g\)</span> and/or <span class="process-math">\(h\)</span> are</em>. It may be hard to believe, but often in “the real world” we know rate-of-change information (i.e., information about derivatives) without explicitly knowing the underlying functions. The Chain Rule allows us to combine several rates of change to find another rate of change. The Chain Rule also has theoretic use, giving us insight into the behavior of certain constructions (as we'll see in the next section).</p>
+<p id="p-13507">We demonstrate this in the next example.</p>
+<article class="example example-like" id="ex_mchain100"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Multivariable Chain Rule.</span>
+</h4>
+<p id="p-13508">An object travels along a path on a surface. The exact path and surface are not known, but at time <span class="process-math">\(t=t_0\)</span> it is known that :</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{\partial z}{\partial x} = 5,\qquad \frac{\partial z}{\partial y}=-2,\qquad \frac{dx}{dt}=3\qquad \text{ and } \qquad \frac{dy}{dt}=7\text{.}
+\end{equation*}
+</div>
+<p id="p-13509">Find <span class="process-math">\(\frac{dz}{dt}\)</span> at time <span class="process-math">\(t_0\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1259" id="solution-1259"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1259"><div class="solution solution-like">
+<p id="p-13510">The Multivariable Chain Rule states that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-602">
+\begin{align*}
+\frac{dz}{dt} \amp = \frac{\partial z}{\partial x}\frac{dx}{dt} + \frac{\partial z}{\partial y}\frac{dy}{dt}\\
+\amp = 5(3)+(-2)(7)\\
+\amp =1\text{.}
+\end{align*}
+</div>
+<p id="p-13511">By knowing certain rates-of-change information about the surface and about the path of the particle in the <span class="process-math">\(xy\)</span>-plane, we can determine how quickly the object is rising/falling.</p>
+</div></div>
+</div></article><p id="p-13512">We next apply the Chain Rule to solve a max/min problem.</p>
+<article class="example example-like" id="ex_mchain2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Multivariable Chain Rule.</span>
+</h4>
+<p id="p-13513">Consider the surface <span class="process-math">\(z=x^2+y^2-xy\text{,}\)</span> a paraboloid, on which a particle moves with <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> coordinates given by <span class="process-math">\(x=\cos(t)\)</span> and <span class="process-math">\(y=\sin(t)\text{.}\)</span> Find <span class="process-math">\(\frac{dz}{dt}\)</span> when <span class="process-math">\(t=0\text{,}\)</span> and find where the particle reaches its maximum/minimum <span class="process-math">\(z\)</span>-values.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-1260" id="solution-1260"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1260"><div class="solution solution-like">
+<p id="p-13514">It is straightforward to compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-603">
+\begin{align*}
+f_x(x,y) \amp = 2x-y \amp f_y(x,y) \amp = 2y-x\\
+\frac{dx}{dt} \amp = -\sin(t) \amp \frac{dy}{dt} \amp = \cos(t)\text{.}
+\end{align*}
+</div>
+<p id="p-13515">Combining these according to the Chain Rule gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dz}{dt} = -(2x-y)\sin(t) + (2y-x)\cos(t)\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig_mchain2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 99.5049504950495%"><iframe src="generated/asymptote/img_mchain2.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_mchain2.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.5.8<span class="period">.</span></span><span class="space"> </span>Plotting the path of a particle on a surface in <a href="" class="xref" data-knowl="./knowl/ex_mchain2.html" title="Example 13.5.7: Applying the Multivariable Chain Rule">Example 13.5.7</a></figcaption></figure><p id="p-13516">When <span class="process-math">\(t=0\text{,}\)</span> <span class="process-math">\(x=1\)</span> and <span class="process-math">\(y=0\text{.}\)</span> Thus <span class="process-math">\(\ds\frac{dz}{dt} = -(2)(0)+ (-1)(1) = -1\text{.}\)</span> When <span class="process-math">\(t=0\text{,}\)</span> the particle is moving down, as shown in <a href="" class="xref" data-knowl="./knowl/fig_mchain2.html" title="Figure 13.5.8">Figure 13.5.8</a>.</p>
+<p id="p-13517">To find where <span class="process-math">\(z\)</span>-value is maximized/minimized on the particle's path, we set <span class="process-math">\(\frac{dz}{dt}=0\)</span> and solve for <span class="process-math">\(t\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-604">
+\begin{align*}
+\frac{dz}{dt} =0 \amp = -(2x-y)\sin(t) + (2y-x)\cos(t)\\
+0\amp = -(2\cos(t) -\sin(t) )\sin(t) +(2\sin(t) -\cos(t) )\cos(t)\\
+0\amp = \sin^2(t) -\cos^2(t)\\
+\cos^2(t) \amp =\sin^2(t)\\
+t\amp = n\frac{\pi}4 \text{ (for odd \(n\)) }
+\end{align*}
+</div>
+<p id="p-13518">We can use the First Derivative Test to find that on <span class="process-math">\([0,2\pi]\text{,}\)</span> <span class="process-math">\(z\)</span> has reaches its absolute minimum at <span class="process-math">\(t=\pi/4\)</span> and <span class="process-math">\(5\pi/4\text{;}\)</span> it reaches its absolute maximum at <span class="process-math">\(t=3\pi/4\)</span> and <span class="process-math">\(7\pi/4\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_mchain2.html" title="Figure 13.5.8">Figure 13.5.8</a>.</p>
+</div></div>
+</div></article><p id="p-13519">We can extend the Chain Rule to include the situation where <span class="process-math">\(z\)</span> is a function of more than one variable, and each of these variables is also a function of more than one variable. The basic case of this is where <span class="process-math">\(z=f(x,y)\text{,}\)</span> and <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are functions of two variables, say <span class="process-math">\(s\)</span> and <span class="process-math">\(t\text{.}\)</span></p>
+<article class="theorem theorem-like" id="thm_multi_chain2"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Multivariable Chain Rule, Part II.</span>
+</h4>
+<ol id="p-13520" class="decimal">
+<li id="li-2556">
+<p id="p-13521">Let <span class="process-math">\(z=f(x,y)\text{,}\)</span> <span class="process-math">\(x=g(s,t)\)</span> and <span class="process-math">\(y=h(s,t)\text{,}\)</span> where <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> are differentiable functions. Then <span class="process-math">\(z\)</span> is a function of <span class="process-math">\(s\)</span> and <span class="process-math">\(t\text{,}\)</span> and</p>
+<ul id="p-13522" class="disc">
+<li id="li-2557"><p id="p-derived-li-2557"><span class="process-math">\(\displaystyle \frac{\partial z}{\partial s} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial s}\)</span></p></li>
+<li id="li-2558"><p id="p-derived-li-2558"><span class="process-math">\(\displaystyle \frac{\partial z}{\partial t} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial t}\)</span></p></li>
+</ul>
+</li>
+<li id="li-2559">
+<p id="p-13523">Let <span class="process-math">\(z = f(x_1,x_2,\ldots,x_m)\)</span> be a differentiable function of <span class="process-math">\(m\)</span> variables, where each of the <span class="process-math">\(x_i\)</span> is a differentiable function of the variables <span class="process-math">\(t_1,t_2,\ldots,t_n\text{.}\)</span> Then <span class="process-math">\(z\)</span> is a function of the <span class="process-math">\(t_i\text{,}\)</span> and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{\partial z}{\partial t_i} = \frac{\partial f}{\partial x_1}\frac{\partial x_1}{\partial t_i} + \frac{\partial f}{\partial x_2}\frac{\partial x_2}{\partial t_i} + \cdots +  \frac{\partial f}{\partial x_m}\frac{\partial x_m}{\partial t_i}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="example example-like" id="ex_mchain3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Multivariable Chain Rule, Part II.</span>
+</h4>
+<p id="p-13524">Let <span class="process-math">\(z=x^2y+x\text{,}\)</span> <span class="process-math">\(x=s^2+3t\)</span> and <span class="process-math">\(y=2s-t\text{.}\)</span> Find <span class="process-math">\(\frac{\partial z}{\partial s}\)</span> and <span class="process-math">\(\frac{\partial z}{\partial t}\text{,}\)</span> and evaluate each when <span class="process-math">\(s=1\)</span> and <span class="process-math">\(t=2\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1261" id="solution-1261"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1261"><div class="solution solution-like">
+<p id="p-13525">Following <a href="" class="xref" data-knowl="./knowl/thm_multi_chain2.html" title="Theorem 13.5.9: Multivariable Chain Rule, Part II">Theorem 13.5.9</a>, we compute the following partial derivatives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_multi_chain2.html">
+\begin{equation*}
+\frac{\partial f}{\partial x} = 2xy+1\qquad\qquad \frac{\partial f}{\partial y} = x^2\text{,}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_multi_chain2.html">
+\begin{equation*}
+\frac{\partial x}{\partial s} = 2s \qquad\qquad \frac{\partial x}{\partial t} = 3\qquad\qquad \frac{\partial y}{\partial s} = 2 \qquad\qquad \frac{\partial y}{\partial t} = -1\text{.}
+\end{equation*}
+</div>
+<p id="p-13526">Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ds \frac{\partial z}{\partial s} = (2xy+1)(2s) + (x^2)(2) = 4xys+2s + 2x^2, \text{ and }
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ds \frac{\partial z}{\partial t} = (2xy+1)(3) + (x^2)(-1) = 6xy-x^2+3\text{.}
+\end{equation*}
+</div>
+<p id="p-13527">When <span class="process-math">\(s=1\)</span> and <span class="process-math">\(t=2\text{,}\)</span> <span class="process-math">\(x= 7\)</span> and <span class="process-math">\(y= 0\text{,}\)</span> so</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{\partial z}{\partial s} = 100\qquad \text{ and } \qquad \frac{\partial z}{\partial t} = -46\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="ex_mchain4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Multivariable Chain Rule, Part II.</span>
+</h4>
+<p id="p-13528">Let <span class="process-math">\(w = xy+z^2\text{,}\)</span> where <span class="process-math">\(x= t^2e^s\text{,}\)</span> <span class="process-math">\(y= t\cos(s)\text{,}\)</span> and <span class="process-math">\(z=s\sin(t)\text{.}\)</span> Find <span class="process-math">\(\frac{\partial w}{\partial t}\)</span> when <span class="process-math">\(s=0\)</span> and <span class="process-math">\(t=\pi\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1262" id="solution-1262"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1262"><div class="solution solution-like">
+<p id="p-13529">Following <a href="" class="xref" data-knowl="./knowl/thm_multi_chain2.html" title="Theorem 13.5.9: Multivariable Chain Rule, Part II">Theorem 13.5.9</a>, we compute the following partial derivatives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_multi_chain2.html" id="md-605">
+\begin{align*}
+\frac{\partial f}{\partial x} \amp = y \amp \frac{\partial f}{\partial y} \amp = x \amp \frac{\partial f}{\partial z} \amp = 2z\\
+\frac{\partial x}{\partial t} \amp = 2te^s \amp \frac{\partial y}{\partial t} \amp = \cos(s) \amp \frac{\partial z}{\partial t} \amp = s\cos(t)\text{.}
+\end{align*}
+</div>
+<p id="p-13530">Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{\partial w}{\partial t} = y(2te^s) + x(\cos(s) ) + 2z(s\cos(t) )\text{.}
+\end{equation*}
+</div>
+<p id="p-13531">When <span class="process-math">\(s=0\)</span> and <span class="process-math">\(t=\pi\text{,}\)</span> we have <span class="process-math">\(x=\pi^2\text{,}\)</span> <span class="process-math">\(y=\pi\)</span> and <span class="process-math">\(z=0\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{\partial w}{\partial t} = \pi(2\pi) + \pi^2 = 3\pi^2\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="subsec-implicit-diff"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">13.5.2</span> <span class="title">Implicit Differentiation</span>
+</h3>
+<p id="p-13532">We studied finding <span class="process-math">\(\frac{dy}{dx}\)</span> when <span class="process-math">\(y\)</span> is given as an implicit function of <span class="process-math">\(x\)</span> in detail in <a href="sec_imp_deriv.html" class="internal" title="Section 2.6: Implicit Differentiation">Section 2.6</a>. We find here that the Multivariable Chain Rule gives a simpler method of finding <span class="process-math">\(\frac{dy}{dx}\text{.}\)</span></p>
+<p id="p-13533">For instance, consider the implicit function <span class="process-math">\(x^2y-xy^3=3\text{.}\)</span> We learned to use the following steps to find <span class="process-math">\(\frac{dy}{dx}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-606">
+\begin{align*}
+\frac{d}{dx}\Big(x^2y-xy^3\big) \amp = \frac{d}{dx}\Big(3\Big)\\
+2xy + x^2\frac{dy}{dx}-y^3-3xy^2\frac{dy}{dx} \amp = 0\\
+\frac{dy}{dx} = -\frac{2xy-y^3}{x^2-3xy^2}\text{.}
+\end{align*}
+</div>
+<p id="p-13534">Instead of using this method, consider <span class="process-math">\(z=x^2y-xy^3\text{.}\)</span> The implicit function above describes the level curve <span class="process-math">\(z=3\text{.}\)</span> Considering <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> as functions of <span class="process-math">\(x\text{,}\)</span> the Multivariable Chain Rule states that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_mchain1">
+\begin{equation}
+\frac{dz}{dx} = \frac{\partial z}{\partial x}\frac{dx}{dx}+\frac{\partial z}{\partial y}\frac{dy}{dx}\text{.}\tag{13.5.1}
+\end{equation}
+</div>
+<p id="p-13535">Since <span class="process-math">\(z\)</span> is constant (in our example, <span class="process-math">\(z=3\)</span>), <span class="process-math">\(\frac{dz}{dx} = 0\text{.}\)</span> We also know <span class="process-math">\(\frac{dx}{dx} = 1\text{.}\)</span> Equation <a href="" class="xref" data-knowl="./knowl/eq_mchain1.html" title="Equation 13.5.1">(13.5.1)</a> becomes</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_mchain1.html" id="mdn-9">
+\begin{align}
+0 \amp = \frac{\partial z}{\partial x}(1) + \frac{\partial z}{\partial y}\frac{dy}{dx}  \Rightarrow\notag\\
+\frac{dy}{dx} \amp = -\frac{\partial z}{\partial x}\Big/\frac{\partial z}{\partial y}\notag\\
+\amp = -\frac{\,f_x\,}{f_y}\text{.}\tag{13.5.2}
+\end{align}
+</div>
+<p id="p-13536">Note how our solution for <span class="process-math">\(\frac{dy}{dx}\)</span> in Equation <a href="" class="xref" data-knowl="./knowl/eq_mchain2.html" title="Equation 13.5.2">(13.5.2)</a> is just the partial derivative of <span class="process-math">\(z\)</span> with respect to <span class="process-math">\(x\text{,}\)</span> divided by the partial derivative of <span class="process-math">\(z\)</span> with respect to <span class="process-math">\(y\text{,}\)</span> all multiplied by <span class="process-math">\((-1)\text{.}\)</span></p>
+<p id="p-13537">We state the above as a theorem.</p>
+<article class="theorem theorem-like" id="thm_implicit_deriv_chain"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.5.12</span><span class="period">.</span><span class="space"> </span><span class="title">Implicit Differentiation.</span>
+</h4>
+<p id="p-13538">Let <span class="process-math">\(f\)</span> be a differentiable function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> where <span class="process-math">\(f(x,y)=c\)</span> defines <span class="process-math">\(y\)</span> as an implicit function of <span class="process-math">\(x\text{,}\)</span> for some constant <span class="process-math">\(c\text{.}\)</span> Then </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx} = - \frac{f_x(x,y)}{f_y(x,y)}\text{.}
+\end{equation*}
+</div></article><p id="p-13539">We practice using <a href="" class="xref" data-knowl="./knowl/thm_implicit_deriv_chain.html" title="Theorem 13.5.12: Implicit Differentiation">Theorem 13.5.12</a> by applying it to a problem from <a href="sec_imp_deriv.html" class="internal" title="Section 2.6: Implicit Differentiation">Section 2.6</a>.</p>
+<article class="example example-like" id="ex_mchain5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Implicit Differentiation.</span>
+</h4>
+<p id="p-13540">Given the implicitly defined function <span class="process-math">\(\sin(x^2y^2)+y^3=x+y\text{,}\)</span> find <span class="process-math">\(y'\text{.}\)</span> Note: this is the same problem as given in <a href="" class="xref" data-knowl="./knowl/ex_implicit5.html" title="Example 2.6.8: Using Implicit Differentiation">Example 2.6.8</a> of <a href="sec_imp_deriv.html" class="internal" title="Section 2.6: Implicit Differentiation">Section 2.6</a>, where the solution took about a full page to find.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1263" id="solution-1263"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1263"><div class="solution solution-like">
+<p id="p-13541">Let <span class="process-math">\(f(x,y) = \sin(x^2y^2)+y^3-x-y\text{;}\)</span> the implicitly defined function above is equivalent to <span class="process-math">\(f(x,y)=0\text{.}\)</span> We find <span class="process-math">\(\frac{dy}{dx}\)</span> by applying <a href="" class="xref" data-knowl="./knowl/thm_implicit_deriv_chain.html" title="Theorem 13.5.12: Implicit Differentiation">Theorem 13.5.12</a>. We find</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_implicit_deriv_chain.html ./knowl/ex_implicit5.html" id="md-607">
+\begin{align*}
+f_x(x,y) \amp = 2xy^2\cos(x^2y^2)-1\\
+f_y(x,y) \amp = 2x^2y\cos(x^2y^2)+3y^2-1\text{,}
+\end{align*}
+</div>
+<p class="continuation">so</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_implicit_deriv_chain.html ./knowl/ex_implicit5.html">
+\begin{equation*}
+\frac{dy}{dx} = -\frac{2xy^2\cos(x^2y^2)-1}{2x^2y\cos(x^2y^2)+3y^2-1}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which matches our solution from <a href="" class="xref" data-knowl="./knowl/ex_implicit5.html" title="Example 2.6.8: Using Implicit Differentiation">Example 2.6.8</a>.</p>
+</div></div>
+</div></article><figure class="figure figure-like" id="vid-multi-implicit-differentiation"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-519" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/o9Zyg-QY8Qo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.5.14<span class="period">.</span></span><span class="space"> </span>Examples with implicit differentiation</figcaption></figure><p id="p-13542">We can also do implicit differentiation for functions of three variables. In the same way that a level curve <span class="process-math">\(f(x,y)=c\)</span> is used to implicitly define <span class="process-math">\(y\)</span> as a function of <span class="process-math">\(x\text{,}\)</span> a level surface <span class="process-math">\(f(x,y,z)=c\)</span> can be viewed as implicitly defining <span class="process-math">\(z\)</span> as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span></p>
+<p id="p-13543">Suppose the equation <span class="process-math">\(f(x,y,z)=c\text{,}\)</span> where <span class="process-math">\(c\)</span> is a constant, defines the function <span class="process-math">\(z=g(x,y)\text{.}\)</span> Then we can use the chain rule to compute the derivatives of <span class="process-math">\(f(x,y,z)\)</span> with respect to <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> where we set <span class="process-math">\(x=x\text{,}\)</span> <span class="process-math">\(y=y\text{,}\)</span> and <span class="process-math">\(z=g(x,y)\text{.}\)</span> Since <span class="process-math">\(f(x,y,z)\)</span> is constant, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-608">
+\begin{align*}
+0 \amp = \frac{\partial}{\partial x}f(x,y,z) \\
+\amp = f_x(x,y,z)\plz{x}{x}+f_y(x,y,z)\plz{y}{x}+f_z(x,y,z)\plz{z}{x}\\
+\amp = f_x(x,y,z)(1)+f_y(x,y,z)(0)+f_z(x,y,z)\plz{z}{x}\text{.}
+\end{align*}
+</div>
+<p class="continuation">Solving for <span class="process-math">\(\plz{z}{x}\)</span> gives us</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\plz{z}{x} = -\frac{f_x(x,y,z)}{f_z(x,y,z)}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and similarly,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\plz{z}{y} = -\frac{f_y(x,y,z)}{f_z(x,y,z)}\text{.}
+\end{equation*}
+</div>
+<aside class="aside aside-like" id="aside-86"><p id="p-13544">There is a subtlety in this calculation that can be quite confusing. It appears to be chain rule, but shouldn't the derivative of <span class="process-math">\(f(x,y,z)\)</span> with respect to <span class="process-math">\(x\)</span> be simply <span class="process-math">\(f_x(x,y,z)\text{?}\)</span> The catch here is that we are considering the variables <span class="process-math">\(x,y,z\)</span> (viewed as coordinates in <span class="process-math">\(\mathbb{R}^3\)</span>) as functions of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> viewed as coordinates in <span class="process-math">\(\mathbb{R}^2\text{.}\)</span></p>
+<p id="p-13545">In other words, the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in <span class="process-math">\(g(x,y)\)</span> are not the same as the ones in <span class="process-math">\(f(x,y,z)\text{!}\)</span> If this is still confusing, try setting <span class="process-math">\(x=s\text{,}\)</span> <span class="process-math">\(y=t\text{,}\)</span> and <span class="process-math">\(z=g(s,t)\text{,}\)</span> and then applying the chain rule as usual, for derivatives of <span class="process-math">\(f(x,y,z)\)</span> with respect to <span class="process-math">\(s\)</span> and <span class="process-math">\(t\text{.}\)</span> At the end, we can relabel <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> as <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span></p></aside><p id="p-13546">In <a href="sec_partial_derivatives.html#subsec-tangent-plane" class="internal" title="Subsection 13.3.2: Tangent Planes">Subsection 13.3.2</a> we saw that we can use partial derivatives to determine the equation of the tangent plane to a graph <span class="process-math">\(z=f(x,y)\text{.}\)</span> Using implicit differentiation, we can do the same for a level surface <span class="process-math">\(f(x,y,z)=c\text{.}\)</span></p>
+<article class="example example-like" id="ex_mchain6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.5.15</span><span class="period">.</span><span class="space"> </span><span class="title">Implicit Differentiation with three variables.</span>
+</h4>
+<p id="p-13547">Given that the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eqn-implicit-three">
+\begin{equation}
+x^2yz^3-\sin(x-3z)+4xy^2-3yz=0\tag{13.5.3}
+\end{equation}
+</div>
+<p class="continuation">defines <span class="process-math">\(z\)</span> implicitly as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> compute <span class="process-math">\(\plz{z}{x}\)</span> and <span class="process-math">\(\plz{z}{y}\)</span> using implicit differentiation. Then, determine the equation of the tangent plane to the surface at the point <span class="process-math">\((3,0,1)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1264" id="solution-1264"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1264"><div class="solution solution-like">
+<p id="p-13548">There are two ways to proceed. One is to use implicit differentiation as before, but using partial derivatives. Whenever we differentiate a function of <span class="process-math">\(z\text{,}\)</span> we multiply by the appropriate partial derivative of <span class="process-math">\(z\text{.}\)</span> The other option is to use the formula derived above. We will use the first method for the <span class="process-math">\(x\)</span> derivative, and the second for <span class="process-math">\(y\text{.}\)</span></p>
+<p id="p-13549">We first take the partial derivative of both sides of <a href="" class="xref" data-knowl="./knowl/eqn-implicit-three.html" title="Equation 13.5.3">(13.5.3)</a> with respect to <span class="process-math">\(x\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn-implicit-three.html" id="md-609">
+\begin{align*}
+\frac{\partial}{\partial x}(x^2yz^3-\sin(x-3z)+4xy^2-3yz) \amp = 0\\
+2xyz^3 + x^2y(3z^2)\plz{z}{x}-\cos(x-3z)\left(1-3\plz{z}{x}\right)+4y^2-3y\plz{z}{x} \amp = 0\text{.}
+\end{align*}
+</div>
+<p class="continuation">Note that we treated <span class="process-math">\(y\)</span> as a constant, since the derivative is with respect to <span class="process-math">\(x\text{.}\)</span> Next, we collect terms:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn-implicit-three.html">
+\begin{equation*}
+\plz{z}{x}\left(3x^2yz^2+3\cos(x-3z)-3y\right) = -2xyz^3+\cos(x-3z)-4y^2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Lastly, we solve for <span class="process-math">\(\plz{z}{x}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn-implicit-three.html">
+\begin{equation*}
+\plz{z}{x} = \frac{-2xyz^3+\cos(x-3z)-4y^2}{3x^2yz^2+3\cos(x-3z)-3y}\text{.}
+\end{equation*}
+</div>
+<p id="p-13550">For the <span class="process-math">\(y\)</span> derivative, we will use the result given above. Setting <span class="process-math">\(f(x,y,z) = x^2yz^3-\sin(x-3z)+4xy^2-3yz\text{,}\)</span> we have <span class="process-math">\(\plz{z}{y} = -\frac{f_y(x,y,z)}{f_z(x,y,z)}\text{.}\)</span> Therefore,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\plz{z}{y} = -\frac{x^2z^3+8xy-3z}{3x^2yz^2+3\cos(x-3z)-3y}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The second method certainly seems simpler! The reader is invited to try each part with the other method, and compare answers.</p>
+<p id="p-13551">Finally, we consider the problem of the tangent plane. First, we check that the point <span class="process-math">\((3,0,1)\)</span> is indeed on the surface: <span class="process-math">\(f(3,0,1)=0\text{,}\)</span> as required. Next we note that <span class="process-math">\(z=1\)</span> is given to us from this point. So if <span class="process-math">\(f(x,y,z)=c\)</span> implicitly defines the graph <span class="process-math">\(z=g(x,y)\text{,}\)</span> then we must have <span class="process-math">\(g(3,0)=1\text{.}\)</span> Next, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-610">
+\begin{align*}
+g_x(3,0) \amp = \plzoa{z}{x}{(3,0)} = \frac{0+1-0}{0+3-0}=\frac13 \\
+g_y(3,0) \amp = \plzoa{z}{y}{(3,0)} = -\frac{9+0-3}{0+3-0} = -2\text{.}
+\end{align*}
+</div>
+<p class="continuation">The equation of the tangent plane is therefore</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+z = g(3,0)+g_x(3,0)(x-3)+g_y(3,0)(y-0) = 1+\frac13(x-3)-2y\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><p id="p-13552">In <a href="sec_partial_derivatives.html" class="internal" title="Section 13.3: Partial Derivatives">Section 13.3</a> we learned how partial derivatives give certain instantaneous rate of change information about a function <span class="process-math">\(f(x,y)\text{.}\)</span> In that section, we measured the rate of change of <span class="process-math">\(f\)</span> by holding one variable constant and letting the other vary (such as, holding <span class="process-math">\(y\)</span> constant and letting <span class="process-math">\(x\)</span> vary gives <span class="process-math">\(f_x\)</span>). We can visualize this change by considering the surface defined by <span class="process-math">\(f\)</span> at a point and moving parallel to the <span class="process-math">\(x\)</span>-axis.</p>
+<p id="p-13553">What if we want to move in a direction that is not parallel to a coordinate axis? Can we still measure instantaneous rates of change? Yes; we find out how in <a href="sec_directional_derivative.html" class="internal" title="Section 13.6: Directional Derivatives">Section 13.6</a>. In doing so, we'll see how the Multivariable Chain Rule informs our understanding of these <em class="emphasis">directional derivatives</em>.</p></section><section class="exercises" id="exercises-74"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">13.5.3</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-158"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-2574"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<p id="p-13554">Let a level curve of <span class="process-math">\(z=f(x,y)\)</span> be described by <span class="process-math">\(x=g(t)\text{,}\)</span> <span class="process-math">\(y = h(t)\text{.}\)</span> Explain why <span class="process-math">\(\frac{dz}{dt}=0\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2575"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<p id="p-13556">Fill in the blank: The single variable Chain Rule states <span class="process-math">\(\ds\frac{d}{dx}\Big(f\big(g(x)\big)\Big) = \fp\big(g(x)\big)\cdot\)</span><span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>.</p></article><article class="exercise exercise-like" id="exercise-2576"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<p id="p-13558">Fill in the blank: The Multivariable Chain Rule states</p>
+<p id="p-13559"><span class="process-math">\(\ds\frac{df}{dt}=\frac{\partial f}{\partial x}\cdot\)</span><span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(+\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span><span class="process-math">\(\cdot\frac{dy}{dt}\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2577"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-13561">If <span class="process-math">\(z=f(x,y)\text{,}\)</span> where <span class="process-math">\(x=g(t)\)</span> and <span class="process-math">\(y=h(t)\text{,}\)</span> we can substitute and write <span class="process-math">\(z\)</span> as an explicit function of <span class="process-math">\(t\text{.}\)</span></p>
+<p id="p-13562">T/F: Using the Multivariable Chain Rule to find <span class="process-math">\(\frac{dz}{dt}\)</span> is sometimes easier than first substituting and then taking the derivative.</p></article><article class="exercise exercise-like" id="exercise-2578"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<p id="p-13564">T/F: The Multivariable Chain Rule is only useful when all the related functions are known explicitly.</p></article><article class="exercise exercise-like" id="exercise-2579"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div id="webwork-1531" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1531" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJHBhcnRpYWw9InBhcnRpYWwiOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgkcGFydGlhbD0+e30sKTsKCkJFR0lOX1BHTUwKVGhlIE11bHRpdmFyaWFibGUgQ2hhaW4gUnVsZSBhbGxvd3MgdXMgdG8gY29tcHV0ZSBpbXBsaWNpdCBkZXJpdmF0aXZlcyBlYXNpbHkgYnkganVzdCBjb21wdXRpbmcgdHdvIFtfXXskcGFydGlhbH17MTB9IGRlcml2YXRpdmVzLgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13566">The Multivariable Chain Rule allows us to compute implicit derivatives easily by just computing two <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> derivatives.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1531')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-159"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-315">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-371">
+<p id="p-13568">Given the functions <span class="process-math">\(z=f(x,y)\text{,}\)</span> <span class="process-math">\(x=g(t)\)</span> and <span class="process-math">\(y=h(t)\text{:}\)</span></p>
+<ol id="p-13569" class="lower-alpha">
+<li id="li-2560"><p id="p-13570">Use the Multivariable Chain Rule to compute <span class="process-math">\(\lz{z}{t}\text{.}\)</span></p></li>
+<li id="li-2561"><p id="p-13571">Evaluate <span class="process-math">\(\lz{z}{t}\)</span> at the indicated <span class="process-math">\(t\)</span>-value.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="x12_08_ex_07"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-13572"><span class="process-math">\(z=3x+4y\text{,}\)</span> <span class="process-math">\(x=t^2\text{,}\)</span> <span class="process-math">\(y=2t\text{;}\)</span> <span class="process-math">\(t=1\)</span></p></article><article class="exercise exercise-like" id="exercise-2581"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-1532" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1532" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyx0PT4nUmVhbCcpOwokeD1Db21wdXRlKCJ0Iik7CiR5PUNvbXB1dGUoInReMi0xIik7CiRkemR0PUNvbXB1dGUoIjJ4LTR5dCIpOwokcmVkdWNlZD0kZHpkdC0+c3Vic3RpdHV0ZSh4PT4keCx5PT4keSk7CiRkemR0MT0kcmVkdWNlZC0+ZXZhbCh0PT4xLHg9PjAseT0+MCk7CiRldj0kZHpkdC0+Y21wKGNoZWNrZXIgPT4gc3ViIHsKICBteSAoJGNvcnJlY3QsJHN0dWRlbnQsJGFuc0hhc2gpID0gQF87CiAgcmV0dXJuIDEgaWYgKCRjb3JyZWN0ID09ICRzdHVkZW50KTsKICBteSAkc3JlZHVjZWQ9JHN0dWRlbnQtPnN1YnN0aXR1dGUoeD0+JHgseT0+JHkpOwogIFZhbHVlOjpFcnJvcigiTWF0aGVtYXRpY2FsbHkgY29ycmVjdCwgYnV0IGdpdmUgdGhlIGV4cHJlc3Npb24gdGhhdCB0aGUgTXVsdGl2YXJpYWJsZSBDaGFpciBSdWxlIHdvdWxkIGdpdmUgaWYgeW91IGRpZCBub3Qgc3Vic3RpdHV0ZSBleHByZXNzaW9ucyBmb3IgeCBhbmQgeSIpIGlmICgkcmVkdWNlZCA9PSAkc3JlZHVjZWQpOwogIHJldHVybiAwOwp9KTsKCkJFR0lOX1BHTUwKW2B6PXheMi15XjJcdGV4dHssfWBdIFtgeD10XHRleHR7LH1gXSBhbmQgW2B5PXReMi0xXHRleHR7O31gXSBbYHQ9MWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdVc2UgdGhlIE11bHRpdmFyaWFibGUgQ2hhaW4gUnVsZSB0byBjb21wdXRlIFtgXGx6e3p9e3R9XHRleHR7Ln1gXScpQF0qKgoKW19deyRldn17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFdmFsdWF0ZSBbYFxsent6fXt0fWBdIGF0IHRoZSBpbmRpY2F0ZWQgW2B0YF0tdmFsdWUuJylAXSoqCgpbX117JGR6ZHQxfXsxNX0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13576"><span class="process-math">\(z=x^2-y^2\text{,}\)</span> <span class="process-math">\(x=t\text{,}\)</span> and <span class="process-math">\(y=t^2-1\text{;}\)</span> <span class="process-math">\(t=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1532')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2582"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-13579"><span class="process-math">\(\ds z=5x+2y\text{,}\)</span> <span class="process-math">\(x=2\cos(t) +1\text{,}\)</span> <span class="process-math">\(y=\sin(t) -3\text{;}\)</span> <span class="process-math">\(t=\pi/4\)</span></p></article><article class="exercise exercise-like" id="exercise-2583"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-1533" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1533" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyx0PT4nUmVhbCcpOwokeD1Db21wdXRlKCJjb3ModCkiKTsKJHk9Q29tcHV0ZSgic2luKHQpIik7CiRkemR0PUNvbXB1dGUoIi1zaW4odCkvKDEreV4yKS0yeHljb3ModCkvKHleMisxKV4yIik7CiRyZWR1Y2VkPSRkemR0LT5zdWJzdGl0dXRlKHg9PiR4LHk9PiR5KTsKJGV2PSRkemR0LT5jbXAoY2hlY2tlciA9PiBzdWIgewogIG15ICgkY29ycmVjdCwkc3R1ZGVudCwkYW5zSGFzaCkgPSBAXzsKICByZXR1cm4gMSBpZiAoJGNvcnJlY3QgPT0gJHN0dWRlbnQpOwogIG15ICRzcmVkdWNlZD0kc3R1ZGVudC0+c3Vic3RpdHV0ZSh4PT4keCx5PT4keSk7CiAgVmFsdWU6OkVycm9yKCJNYXRoZW1hdGljYWxseSBjb3JyZWN0LCBidXQgZ2l2ZSB0aGUgZXhwcmVzc2lvbiB0aGF0IHRoZSBNdWx0aXZhcmlhYmxlIENoYWlyIFJ1bGUgd291bGQgZ2l2ZSBpZiB5b3UgZGlkIG5vdCBzdWJzdGl0dXRlIGV4cHJlc3Npb25zIGZvciB4IGFuZCB5IikgaWYgKCRyZWR1Y2VkID09ICRzcmVkdWNlZCk7CiAgcmV0dXJuIDA7Cn0pOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokZHpkdDE9RnJhY3Rpb24oJHJlZHVjZWQtPmV2YWwodD0+cGkvMix4PT4wLHk9PjApKTsKCkJFR0lOX1BHTUwKW2B6PVxmcmFje3h9e3leMisxfVx0ZXh0eyx9YF0gW2B4PVxjb3ModClcdGV4dHssfWBdIGFuZCBbYHk9XHNpbih0KVx0ZXh0ezt9YF0gW2B0PVxwaS8yYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1VzZSB0aGUgTXVsdGl2YXJpYWJsZSBDaGFpbiBSdWxlIHRvIGNvbXB1dGUgW2BcbHp7en17dH1cdGV4dHsufWBdJylAXSoqCgpbX117JGV2fXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0V2YWx1YXRlIFtgXGx6e3p9e3R9YF0gYXQgdGhlIGluZGljYXRlZCBbYHRgXS12YWx1ZS4nKUBdKioKCltfXXskZHpkdDF9ezE1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13583"><span class="process-math">\(z=\frac{x}{y^2+1}\text{,}\)</span> <span class="process-math">\(x=\cos(t)\text{,}\)</span> and <span class="process-math">\(y=\sin(t)\text{;}\)</span> <span class="process-math">\(t=\pi/2\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1533')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="x12_08_ex_10"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-13586"><span class="process-math">\(\ds z=x^2+2y^2\text{,}\)</span> <span class="process-math">\(x=\sin(t)\text{,}\)</span> <span class="process-math">\(y=3\sin(t)\text{;}\)</span> <span class="process-math">\(t=\pi/4\)</span></p></article><article class="exercise exercise-like" id="x12_08_ex_08"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-1534" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1534" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyx0PT4nUmVhbCcpOwokeD1Db21wdXRlKCJwaSB0Iik7CiR5PUNvbXB1dGUoIjJwaSB0ICsgcGkvMiIpOwokZHpkdD1Db21wdXRlKCItc2luKHgpIHNpbih5KSAocGkpICsgY29zKHgpIGNvcyh5KSAoMnBpKSIpOwokcmVkdWNlZD0kZHpkdC0+c3Vic3RpdHV0ZSh4PT4keCx5PT4keSk7CiRldj0kZHpkdC0+Y21wKGNoZWNrZXIgPT4gc3ViIHsKICBteSAoJGNvcnJlY3QsJHN0dWRlbnQsJGFuc0hhc2gpID0gQF87CiAgcmV0dXJuIDEgaWYgKCRjb3JyZWN0ID09ICRzdHVkZW50KTsKICBteSAkc3JlZHVjZWQ9JHN0dWRlbnQtPnN1YnN0aXR1dGUoeD0+JHgseT0+JHkpOwogIFZhbHVlOjpFcnJvcigiTWF0aGVtYXRpY2FsbHkgY29ycmVjdCwgYnV0IGdpdmUgdGhlIGV4cHJlc3Npb24gdGhhdCB0aGUgTXVsdGl2YXJpYWJsZSBDaGFpciBSdWxlIHdvdWxkIGdpdmUgaWYgeW91IGRpZCBub3Qgc3Vic3RpdHV0ZSBleHByZXNzaW9ucyBmb3IgeCBhbmQgeSIpIGlmICgkcmVkdWNlZCA9PSAkc3JlZHVjZWQpOwogIHJldHVybiAwOwp9KTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJGR6ZHQxPUZyYWN0aW9uKCRyZWR1Y2VkLT5ldmFsKHQ9PjMseD0+MCx5PT4wKSk7CgpCRUdJTl9QR01MCltgej1cY29zKHgpIFxzaW4oeSlcdGV4dHssfWBdIFtgeD1ccGkgdFx0ZXh0eyx9YF0gYW5kIFtgeT0yXHBpIHQrXHBpLzJcdGV4dHs7fWBdIFtgdD0zYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1VzZSB0aGUgTXVsdGl2YXJpYWJsZSBDaGFpbiBSdWxlIHRvIGNvbXB1dGUgW2BcbHp7en17dH1cdGV4dHsufWBdJylAXSoqCgpbX117JGV2fXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0V2YWx1YXRlIFtgXGx6e3p9e3R9YF0gYXQgdGhlIGluZGljYXRlZCBbYHRgXS12YWx1ZS4nKUBdKioKCltfXXskZHpkdDF9ezE1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13590"><span class="process-math">\(z=\cos(x) \sin(y)\text{,}\)</span> <span class="process-math">\(x=\pi t\text{,}\)</span> and <span class="process-math">\(y=2\pi t+\pi/2\text{;}\)</span> <span class="process-math">\(t=3\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1534')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-316">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-372"><p id="p-13593">In the following exercises, functions <span class="process-math">\(z=f(x,y)\text{,}\)</span> <span class="process-math">\(x=g(t)\)</span> and <span class="process-math">\(y=h(t)\)</span> are given. Find the values of <span class="process-math">\(t\)</span> where <span class="process-math">\(\frac{dz}{dt}=0\text{.}\)</span> Note: these are the same surfaces/curves as found in <a href="" class="xref" data-knowl="./knowl/x12_08_ex_07.html" title="Exercise 13.5.3.7">Exercises 13.5.3.7–13.5.3.12</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2586"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-13594"><span class="process-math">\(\ds z=3x+4y\text{,}\)</span> <span class="process-math">\(x=t^2\text{,}\)</span> <span class="process-math">\(y=2t\)</span></p></article><article class="exercise exercise-like" id="exercise-2587"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-1535" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1535" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRzPT4wLHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJHplcm9zPUNvbXB1dGUoIi1zcXJ0KDMvMiksIDAsIHNxcnQoMy8yKSIpOwoKQkVHSU5fUEdNTApHaXZlbiBbYHo9eF4yLXleMlx0ZXh0eyx9YF0gW2B4PXRcdGV4dHssfWBdIGFuZCBbYHk9dF4yLTFcdGV4dHssfWBdIGF0IHdoYXQgdmFsdWVzIG9mIFtgdGBdIGRvZXMgW2BcbHp7en17dH09MFx0ZXh0ez99YF0KCltfXXskemVyb3N9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13596">Given <span class="process-math">\(z=x^2-y^2\text{,}\)</span> <span class="process-math">\(x=t\text{,}\)</span> and <span class="process-math">\(y=t^2-1\text{,}\)</span> at what values of <span class="process-math">\(t\)</span> does <span class="process-math">\(\lz{z}{t}=0\text{?}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1535')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2588"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-13598"><span class="process-math">\(\ds z=5x+2y\text{,}\)</span> <span class="process-math">\(x=2\cos(t) +1\text{,}\)</span> <span class="process-math">\(y=\sin(t) -3\)</span></p></article><article class="exercise exercise-like" id="exercise-2589"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-1536" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1536" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRzPT4wLHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJHplcm9zPUNvbXB1dGUoIjAsIHBpIik7CgpCRUdJTl9QR01MCkdpdmVuIFtgej1cZnJhY3t4fXt5XjIrMX1cdGV4dHssfWBdIFtgeD1cY29zKHQpXHRleHR7LH1gXSBhbmQgW2B5PVxzaW4odClcdGV4dHssfWBdIGF0IHdoYXQgdmFsdWVzIG9mIFtgdGBdIGluIFtgWzAsMlxwaSlgXSBkb2VzIFtgXGx6e3p9e3R9PTBcdGV4dHs/fWBdCgpbX117JHplcm9zfXszMH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpXZSBmaW5kIHRoYXQKCltgYGAKICAgICAgICAgICAgICAgICAgICBcZnJhY3tken17ZHR9ID0gLVxmcmFjezJcY29zXjIodCkgXHNpbih0KSB9eygxK1xzaW5eMih0KSApXjJ9LVxmcmFje1xzaW4odCkgfXsxK1xzaW5eMih0KSB9CiAgICAgICAgICAgICAgICAgIFx0ZXh0ey59YGBgXQoKCgpTZXR0aW5nIHRoaXMgZXF1YWwgdG8gW2AwXHRleHR7LH1gXSBmaW5kaW5nIGEgY29tbW9uIGRlbm9taW5hdG9yIGFuZCBmYWN0b3Jpbmcgb3V0IFtgXHNpbih0KVx0ZXh0eyx9YF0gd2UgZ2V0CgpbYGBgCiAgICAgICAgICAgICAgICAgICAgXHNpbih0KSBcbGVmdChcZnJhY3syXGNvc14yKHQpICtcc2luXjIodCkgKzF9eygxK1xzaW5eMih0KSApXjJ9XHJpZ2h0KT0wCiAgICAgICAgICAgICAgICAgIFx0ZXh0ey59YGBgXQoKCgpXZSBoYXZlIFtgXHNpbih0KSA9IDBgXSB3aGVuIFtgdCA9IFxwaSBuXHRleHR7LH1gXSB3aGVyZSBbYG5gXSBpcyBhbiBpbnRlZ2VyLiBUaGUgZXhwcmVzc2lvbiBpbiB0aGUgcGFyZW50aGVzaXMgYWJvdmUgaXMgYWx3YXlzIHBvc2l0aXZlLCBhbmQgaGVuY2UgbmV2ZXIgZXF1YWwgW2AwXHRleHR7Ln1gXSBTbyBhbGwgc29sdXRpb25zIGFyZSBbYHQ9XHBpIG5cdGV4dHssfWBdIG4gaXMgYW4gaW50ZWdlci4gSW4gW2BbMCwyXHBpKVx0ZXh0eyx9YF0gdGhlIG9ubHkgc29sdXRpb25zIGFyZSBbYDBgXSBhbmQgW2BccGlcdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13600">Given <span class="process-math">\(z=\frac{x}{y^2+1}\text{,}\)</span> <span class="process-math">\(x=\cos(t)\text{,}\)</span> and <span class="process-math">\(y=\sin(t)\text{,}\)</span> at what values of <span class="process-math">\(t\)</span> in <span class="process-math">\([0,2\pi)\)</span> does <span class="process-math">\(\lz{z}{t}=0\text{?}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1536')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2590"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-13607"><span class="process-math">\(\ds z=x^2+2y^2\text{,}\)</span> <span class="process-math">\(x=\sin(t)\text{,}\)</span> <span class="process-math">\(y=3\sin(t)\)</span></p></article><article class="exercise exercise-like" id="exercise-2591"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-1537" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1537" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRzPT4wLHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJHplcm9zPUNvbXB1dGUoIjAsIDEvcGkqYXJjdGFuKHNxcnQoNSkpLCAxLSAxL3BpKmFyY3RhbihzcXJ0KDUpKSwgMSwgMSsxL3BpKmFyY3RhbihzcXJ0KDUpKSwgMi0xL3BpKmFyY3RhbihzcXJ0KDUpKSIpOwoKQkVHSU5fUEdNTApHaXZlbiBbYHo9XGNvcyh4KSBcc2luKHkpXHRleHR7LH1gXSBbYHg9XHBpIHRcdGV4dHssfWBdIGFuZCBbYHk9MlxwaSB0K1xwaS8yXHRleHR7LH1gXSBhdCB3aGF0IHZhbHVlcyBvZiBbYHRgXSBpbiBbYFswLDIpYF0gZG9lcyBbYFxsent6fXt0fT0wXHRleHR7P31gXQoKW19deyR6ZXJvc317NTB9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KV2UgZmluZCB0aGF0CgpbYGBgCiAgICAgICAgICAgICAgICAgICAgXGZyYWN7ZHp9e2R0fSA9IC1ccGlcc2luKFxwaSB0KVxzaW4oMlxwaSB0K1xwaS8yKSsyXHBpXGNvcyhccGkgdClcY29zKDJccGkgdCtccGkvMikKICAgICAgICAgICAgICAgICAgXHRleHR7Ln1gYGBdCgoKCk9uZSBjYW4gImVhc2lseSIgc2VlIHRoYXQgd2hlbiBbYHRgXSBpcyBhbiBpbnRlZ2VyLCBbYFxzaW4oXHBpIHQpID0wYF0gYW5kIFtgXGNvcygyXHBpIHQrXHBpLzIpPTBcdGV4dHssfWBdIGhlbmNlIFtgXGZyYWN7ZHp9e2R0fT0wYF0gd2hlbiBbYHRgXSBpcyBhbiBpbnRlZ2VyLiBUaGVyZSBhcmUgb3RoZXIgcGxhY2VzIHdoZXJlIFtgemBdIGhhcyBhIHJlbGF0aXZlIG1heC9taW4gdGhhdCByZXF1aXJlIG1vcmUgd29yay4gRmlyc3QsIHZlcmlmeSB0aGF0IFtgXHNpbigyXHBpIHQrXHBpLzIpID0gXGNvcygyXHBpIHQpXHRleHR7LH1gXSBhbmQgW2BcY29zKDJccGkgdCtccGkvMikgPSAtXHNpbigyXHBpIHQpXHRleHR7Ln1gXSBUaGlzIGxldHMgdXMgcmV3cml0ZSBbYFxmcmFje2R6fXtkdH0gPSAwYF0gYXMKCltgYGAKICAgICAgICAgICAgICAgICAgICAtXHNpbihccGkgdClcY29zKDJccGkgdCktMlxjb3MoXHBpIHQpXHNpbigyXHBpIHQpPTAKICAgICAgICAgICAgICAgICAgXHRleHR7Ln1gYGBdCgoKCkJ5IGJyaW5naW5nIG9uZSB0ZXJtIHRvIHRoZSBvdGhlciBzaWRlIG9mIHRoZSBlcXVhbGl0eSB0aGVuIGRpdmlkaW5nLCB3ZSBjYW4gZ2V0CgpbYGBgCiAgICAgICAgICAgICAgICAgICAgMlx0YW4oMlxwaSB0KSA9IC1cdGFuKFxwaSB0KQogICAgICAgICAgICAgICAgICBcdGV4dHsufWBgYF0KCgoKVXNpbmcgdGhlIGFuZ2xlIHN1bS9kaWZmZXJlbmNlIGZvcm11bGEgZm9yIHRhbmdlbnQsIHdlIGtub3cKCltgYGAKICAgICAgICAgICAgICAgICAgICBcdGFuKDJccGkgdCkgPSBcdGFuKFxwaSB0ICsgXHBpIHQpID0gXGZyYWN7XHRhbihccGkgdCkrXHRhbihccGkgdCl9ezEtXHRhbl4yKFxwaSB0KX0KICAgICAgICAgICAgICAgICAgXHRleHR7Ln1gYGBdCgoKClRodXMgd2Ugd3JpdGUKCltgYGAKICAgICAgICAgICAgICAgICAgICAyXGZyYWN7XHRhbihccGkgdCkrXHRhbihccGkgdCl9ezEtXHRhbl4yKFxwaSB0KX0gPSAtXHRhbihccGkgdCkKICAgICAgICAgICAgICAgICAgXHRleHR7Ln1gYGBdCgoKClNvbHZpbmcgZm9yIFtgXHRhbl4yKFxwaSB0KVx0ZXh0eyx9YF0gd2UgZmluZAoKW2BgYAogICAgICAgICAgICAgICAgICAgIFx0YW5eMihccGkgdCkgPSA1ICBcaW1wbGllcyAgXHRhbihccGkgdCkgPSBccG1cc3FydHs1fQogICAgICAgICAgICAgICAgICBcdGV4dHssfWBgYF0KCmFuZCBzbwoKW2BgYAogICAgICAgICAgICAgICAgICAgIFxwaSB0ID0gXHRhbl57LTF9KFxwbVxzcXJ0ezV9KSA9IFxwbVx0YW5eey0xfShcc3FydHs1fSkKICAgICAgICAgICAgICAgICAgXHRleHR7Ln1gYGBdCgoKClNpbmNlIHRoZSBwZXJpb2Qgb2YgdGFuZ2VudCBpcyBbYFxwaVx0ZXh0eyx9YF0gd2UgY2FuIGFkanVzdCBvdXIgYW5zd2VyIHRvIGJlCgpbYGBgCiAgICAgICAgICAgICAgICAgICAgXHBpIHQgPSBccG1cdGFuXnstMX0oXHNxcnR7NX0pKyBuXHBpLFx0ZXh0eyB3aGVyZSBcKG5cKSBpcyBhbiBpbnRlZ2VyLiB9CiAgICAgICAgICAgICAgICAgIGBgYF0KCgoKRGl2aWRpbmcgYnkgW2BccGlcdGV4dHssfWBdIHdlIGZpbmQKCltgYGAKICAgICAgICAgICAgICAgICAgICB0ID0gXHBtXGZyYWMxXHBpXHRhbl57LTF9KFxzcXJ0ezV9KSsgbixcdGV4dHsgd2hlcmUgXChuXCkgaXMgYW4gaW50ZWdlci4gfQogICAgICAgICAgICAgICAgICBgYGBdCgoKClNvIHRoZSBzb2x1dGlvbnMgaW4gW2BbMCwyKWBdIGFyZSBbYDBcdGV4dHssfWBdIFtgXGZyYWN7MX17cGl9XGFyY3RhbihzcXJ0ezV9KVx0ZXh0eyx9YF0gW2AxLVxmcmFjezF9e3BpfVxhcmN0YW4oc3FydHs1fSlcdGV4dHssfWBdIFtgMVx0ZXh0eyx9YF0gW2AxK1xmcmFjezF9e3BpfVxhcmN0YW4oc3FydHs1fSlcdGV4dHssfWBdIGFuZCBbYDItXGZyYWN7MX17cGl9XGFyY3RhbihzcXJ0ezV9KVx0ZXh0ey59YF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13610">Given <span class="process-math">\(z=\cos(x) \sin(y)\text{,}\)</span> <span class="process-math">\(x=\pi t\text{,}\)</span> and <span class="process-math">\(y=2\pi t+\pi/2\text{,}\)</span> at what values of <span class="process-math">\(t\)</span> in <span class="process-math">\([0,2)\)</span> does <span class="process-math">\(\lz{z}{t}=0\text{?}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1537')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-317">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-373">
+<p id="p-13631">Given the functions <span class="process-math">\(z=f(x,y)\text{,}\)</span> <span class="process-math">\(x=g(s,t)\)</span> and <span class="process-math">\(y=h(s,t)\text{:}\)</span></p>
+<ol id="p-13632" class="lower-alpha">
+<li id="li-2568"><p id="p-13633">Use the Multivariable Chain Rule to compute <span class="process-math">\(\frac{\partial z}{\partial s}\)</span> and <span class="process-math">\(\frac{\partial z}{\partial t}\text{.}\)</span></p></li>
+<li id="li-2569"><p id="p-13634">Evaluate <span class="process-math">\(\frac{\partial z}{\partial s}\)</span> and <span class="process-math">\(\frac{\partial z}{\partial t}\)</span> at the indicated <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> values.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2592"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-13635"><span class="process-math">\(\ds z=x^2y\text{,}\)</span> <span class="process-math">\(x=s-t\text{,}\)</span> <span class="process-math">\(y=2s+4t\text{;}\)</span> <span class="process-math">\(s=1\text{,}\)</span> <span class="process-math">\(t=0\)</span></p></article><article class="exercise exercise-like" id="exercise-2593"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-1538" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1538" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xwbHp9WzJde1xmcmFje1xwYXJ0aWFsIzF9e1xwYXJ0aWFsIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyxzPT4nUmVhbCcsIHQ9PidSZWFsJyk7CiR4PUNvbXB1dGUoInN0XjIiKTsKJHk9Q29tcHV0ZSgic14ydCIpOwokZHpkcz1Db21wdXRlKCItcGkgc2luKHBpIHggKyBwaSB5LzIpKHReMiktMS8ycGkgc2luKHBpIHggKyBwaSB5LzIpKDJzdCkiKTsKJGR6ZHQ9Q29tcHV0ZSgiLXBpIHNpbihwaSB4ICsgcGkgeS8yKSgyc3QpLTEvMnBpIHNpbihwaSB4ICsgcGkgeS8yKShzXjIpIik7CiRkemRzcmVkdWNlZD0kZHpkcy0+c3Vic3RpdHV0ZSh4PT4keCx5PT4keSk7CiRkemR0cmVkdWNlZD0kZHpkdC0+c3Vic3RpdHV0ZSh4PT4keCx5PT4keSk7CiRkemRzMT1Db21wdXRlKCIycGkiKTsKJGR6ZHQxPUNvbXB1dGUoIjVwaS8yIik7CiRkemRzZXY9JGR6ZHMtPmNtcChjaGVja2VyID0+IHN1YiB7CiAgbXkgKCRjb3JyZWN0LCRzdHVkZW50LCRhbnNIYXNoKSA9IEBfOwogIHJldHVybiAxIGlmICgkY29ycmVjdCA9PSAkc3R1ZGVudCk7CiAgbXkgJHNyZWR1Y2VkPSRzdHVkZW50LT5zdWJzdGl0dXRlKHg9PiR4LHk9PiR5KTsKICBWYWx1ZTo6RXJyb3IoIk1hdGhlbWF0aWNhbGx5IGNvcnJlY3QsIGJ1dCBnaXZlIHRoZSBleHByZXNzaW9uIHRoYXQgdGhlIE11bHRpdmFyaWFibGUgQ2hhaXIgUnVsZSB3b3VsZCBnaXZlIGlmIHlvdSBkaWQgbm90IHN1YnN0aXR1dGUgZXhwcmVzc2lvbnMgZm9yIHggYW5kIHkiKSBpZiAoJGR6ZHNyZWR1Y2VkID09ICRzcmVkdWNlZCk7CiAgcmV0dXJuIDA7Cn0pOwokZHpkdGV2PSRkemR0LT5jbXAoY2hlY2tlciA9PiBzdWIgewogIG15ICgkY29ycmVjdCwkc3R1ZGVudCwkYW5zSGFzaCkgPSBAXzsKICByZXR1cm4gMSBpZiAoJGNvcnJlY3QgPT0gJHN0dWRlbnQpOwogIG15ICRzcmVkdWNlZD0kc3R1ZGVudC0+c3Vic3RpdHV0ZSh4PT4keCx5PT4keSk7CiAgVmFsdWU6OkVycm9yKCJNYXRoZW1hdGljYWxseSBjb3JyZWN0LCBidXQgZ2l2ZSB0aGUgZXhwcmVzc2lvbiB0aGF0IHRoZSBNdWx0aXZhcmlhYmxlIENoYWlyIFJ1bGUgd291bGQgZ2l2ZSBpZiB5b3UgZGlkIG5vdCBzdWJzdGl0dXRlIGV4cHJlc3Npb25zIGZvciB4IGFuZCB5IikgaWYgKCRkemR0cmVkdWNlZCA9PSAkc3JlZHVjZWQpOwogIHJldHVybiAwOwp9KTsKCkJFR0lOX1BHTUwKW2B6PVxjb3NcbWF0aG9wZW57fVxsZWZ0KFxwaSB4K1xmcmFje1xwaX0yeVxyaWdodClcbWF0aGNsb3Nle31cdGV4dHssfWBdIFtgeD1zdF4yXHRleHR7LH1gXSBhbmQgW2B5PXNeMnRcdGV4dHs7fWBdIFtgcz0xXHRleHR7LH1gXSBbYHQ9MGBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdVc2UgdGhlIE11bHRpdmFyaWFibGUgQ2hhaW4gUnVsZSB0byBjb21wdXRlIFtgXHBsent6fXtzfVx0ZXh0ey59YF0nKUBdKioKCltfXXskZHpkc2V2fXs1MH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1VzZSB0aGUgTXVsdGl2YXJpYWJsZSBDaGFpbiBSdWxlIHRvIGNvbXB1dGUgW2BccGx6e3p9e3R9XHRleHR7Ln1gXScpQF0qKgoKW19deyRkemR0ZXZ9ezUwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRXZhbHVhdGUgW2BccGx6e3p9e3N9YF0gYXQgW2BzPTFcdGV4dHssfWBdIFtgdD0wXHRleHR7Ln1gXScpQF0qKgoKW19deyRkemRzMX17MTV9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFdmFsdWF0ZSBbYFxwbHp7en17dH1gXSBhdCBbYHM9MVx0ZXh0eyx9YF0gW2B0PTBcdGV4dHsufWBdJylAXSoqCgpbX117JGR6ZHQxfXsxNX0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13639"><span class="process-math">\(z=\cos\mathopen{}\left(\pi x+\frac{\pi}2y\right)\mathclose{}\text{,}\)</span> <span class="process-math">\(x=st^2\text{,}\)</span> and <span class="process-math">\(y=s^2t\text{;}\)</span> <span class="process-math">\(s=1\text{,}\)</span> <span class="process-math">\(t=0\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1538')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2594"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-1539" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1539" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xwbHp9WzJde1xmcmFje1xwYXJ0aWFsIzF9e1xwYXJ0aWFsIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyxzPT4nUmVhbCcsIHQ9PidSZWFsJyk7CiR4PUNvbXB1dGUoInN0XjIiKTsKJHk9Q29tcHV0ZSgic14ydCIpOwokZHpkcz1Db21wdXRlKCIyeCBjb3ModCkgKyAyeSBzaW4odCkiKTsKJGR6ZHQ9Q29tcHV0ZSgiLTJ4cyBzaW4odCkgKyAyeXMgY29zKHQpIik7CiRkemRzcmVkdWNlZD0kZHpkcy0+c3Vic3RpdHV0ZSh4PT4keCx5PT4keSk7CiRkemR0cmVkdWNlZD0kZHpkdC0+c3Vic3RpdHV0ZSh4PT4keCx5PT4keSk7CiRkemRzMT1Db21wdXRlKCI0Iik7CiRkemR0MT1Db21wdXRlKCIwIik7CiRkemRzZXY9JGR6ZHMtPmNtcChjaGVja2VyID0+IHN1YiB7CiAgbXkgKCRjb3JyZWN0LCRzdHVkZW50LCRhbnNIYXNoKSA9IEBfOwogIHJldHVybiAxIGlmICgkY29ycmVjdCA9PSAkc3R1ZGVudCk7CiAgbXkgJHNyZWR1Y2VkPSRzdHVkZW50LT5zdWJzdGl0dXRlKHg9PiR4LHk9PiR5KTsKICBWYWx1ZTo6RXJyb3IoIk1hdGhlbWF0aWNhbGx5IGNvcnJlY3QsIGJ1dCBnaXZlIHRoZSBleHByZXNzaW9uIHRoYXQgdGhlIE11bHRpdmFyaWFibGUgQ2hhaXIgUnVsZSB3b3VsZCBnaXZlIGlmIHlvdSBkaWQgbm90IHN1YnN0aXR1dGUgZXhwcmVzc2lvbnMgZm9yIHggYW5kIHkiKSBpZiAoJGR6ZHNyZWR1Y2VkID09ICRzcmVkdWNlZCk7CiAgcmV0dXJuIDA7Cn0pOwokZHpkdGV2PSRkemR0LT5jbXAoY2hlY2tlciA9PiBzdWIgewogIG15ICgkY29ycmVjdCwkc3R1ZGVudCwkYW5zSGFzaCkgPSBAXzsKICByZXR1cm4gMSBpZiAoJGNvcnJlY3QgPT0gJHN0dWRlbnQpOwogIG15ICRzcmVkdWNlZD0kc3R1ZGVudC0+c3Vic3RpdHV0ZSh4PT4keCx5PT4keSk7CiAgVmFsdWU6OkVycm9yKCJNYXRoZW1hdGljYWxseSBjb3JyZWN0LCBidXQgZ2l2ZSB0aGUgZXhwcmVzc2lvbiB0aGF0IHRoZSBNdWx0aXZhcmlhYmxlIENoYWlyIFJ1bGUgd291bGQgZ2l2ZSBpZiB5b3UgZGlkIG5vdCBzdWJzdGl0dXRlIGV4cHJlc3Npb25zIGZvciB4IGFuZCB5IikgaWYgKCRkemR0cmVkdWNlZCA9PSAkc3JlZHVjZWQpOwogIHJldHVybiAwOwp9KTsKCkJFR0lOX1BHTUwKW2B6PXheMit5XjJcdGV4dHssfWBdIFtgeD1zXGNvcyh0KVx0ZXh0eyx9YF0gYW5kIFtgeT1zXHNpbih0KVx0ZXh0ezt9YF0gW2BzPTJcdGV4dHssfWBdIFtgdD1ccGkvNGBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdVc2UgdGhlIE11bHRpdmFyaWFibGUgQ2hhaW4gUnVsZSB0byBjb21wdXRlIFtgXHBsent6fXtzfVx0ZXh0ey59YF0nKUBdKioKCltfXXskZHpkc2V2fXs1MH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1VzZSB0aGUgTXVsdGl2YXJpYWJsZSBDaGFpbiBSdWxlIHRvIGNvbXB1dGUgW2BccGx6e3p9e3R9XHRleHR7Ln1gXScpQF0qKgoKW19deyRkemR0ZXZ9ezUwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRXZhbHVhdGUgW2BccGx6e3p9e3N9YF0gYXQgW2BzPTJcdGV4dHssfWBdIFtgdD1ccGkvNFx0ZXh0ey59YF0nKUBdKioKCltfXXskZHpkczF9ezE1fQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRXZhbHVhdGUgW2BccGx6e3p9e3R9YF0gYXQgW2BzPTJcdGV4dHssfWBdIFtgdD1ccGkvNFx0ZXh0ey59YF0nKUBdKioKCltfXXskZHpkdDF9ezE1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13644"><span class="process-math">\(z=x^2+y^2\text{,}\)</span> <span class="process-math">\(x=s\cos(t)\text{,}\)</span> and <span class="process-math">\(y=s\sin(t)\text{;}\)</span> <span class="process-math">\(s=2\text{,}\)</span> <span class="process-math">\(t=\pi/4\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1539')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2595"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-1540" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1540" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xwbHp9WzJde1xmcmFje1xwYXJ0aWFsIzF9e1xwYXJ0aWFsIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyxzPT4nUmVhbCcsIHQ9PidSZWFsJyk7CiR4PUNvbXB1dGUoInN0XjIiKTsKJHk9Q29tcHV0ZSgic14ydCIpOwokZHpkcz1Db21wdXRlKCItMiB5IHReMiBlXigtKHheMit5XjIpKSIpOwokZHpkdD1Db21wdXRlKCItMiB4IGVeKC0oeF4yK3leMikpIC0gNCBzIHQgeSBlXigtKHheMit5XjIpKSIpOwokZHpkc3JlZHVjZWQ9JGR6ZHMtPnN1YnN0aXR1dGUoeD0+JHgseT0+JHkpOwokZHpkdHJlZHVjZWQ9JGR6ZHQtPnN1YnN0aXR1dGUoeD0+JHgseT0+JHkpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRzPT4wLHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJGR6ZHMxPUNvbXB1dGUoIi0yL2VeMiIpOwokZHpkdDE9Q29tcHV0ZSgiLTYvZV4yIik7CiRkemRzZXY9JGR6ZHMtPmNtcChjaGVja2VyID0+IHN1YiB7CiAgbXkgKCRjb3JyZWN0LCRzdHVkZW50LCRhbnNIYXNoKSA9IEBfOwogIHJldHVybiAxIGlmICgkY29ycmVjdCA9PSAkc3R1ZGVudCk7CiAgbXkgJHNyZWR1Y2VkPSRzdHVkZW50LT5zdWJzdGl0dXRlKHg9PiR4LHk9PiR5KTsKICBWYWx1ZTo6RXJyb3IoIk1hdGhlbWF0aWNhbGx5IGNvcnJlY3QsIGJ1dCBnaXZlIHRoZSBleHByZXNzaW9uIHRoYXQgdGhlIE11bHRpdmFyaWFibGUgQ2hhaXIgUnVsZSB3b3VsZCBnaXZlIGlmIHlvdSBkaWQgbm90IHN1YnN0aXR1dGUgZXhwcmVzc2lvbnMgZm9yIHggYW5kIHkiKSBpZiAoJGR6ZHNyZWR1Y2VkID09ICRzcmVkdWNlZCk7CiAgcmV0dXJuIDA7Cn0pOwokZHpkdGV2PSRkemR0LT5jbXAoY2hlY2tlciA9PiBzdWIgewogIG15ICgkY29ycmVjdCwkc3R1ZGVudCwkYW5zSGFzaCkgPSBAXzsKICByZXR1cm4gMSBpZiAoJGNvcnJlY3QgPT0gJHN0dWRlbnQpOwogIG15ICRzcmVkdWNlZD0kc3R1ZGVudC0+c3Vic3RpdHV0ZSh4PT4keCx5PT4keSk7CiAgVmFsdWU6OkVycm9yKCJNYXRoZW1hdGljYWxseSBjb3JyZWN0LCBidXQgZ2l2ZSB0aGUgZXhwcmVzc2lvbiB0aGF0IHRoZSBNdWx0aXZhcmlhYmxlIENoYWlyIFJ1bGUgd291bGQgZ2l2ZSBpZiB5b3UgZGlkIG5vdCBzdWJzdGl0dXRlIGV4cHJlc3Npb25zIGZvciB4IGFuZCB5IikgaWYgKCRkemR0cmVkdWNlZCA9PSAkc3JlZHVjZWQpOwogIHJldHVybiAwOwp9KTsKCkJFR0lOX1BHTUwKW2B6PWVeey0oeF4yK3leMil9XHRleHR7LH1gXSBbYHg9dFx0ZXh0eyx9YF0gYW5kIFtgeT1zdF4yXHRleHR7LH1gXSBbYHM9MVx0ZXh0eyx9YF0gW2B0PTFgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnVXNlIHRoZSBNdWx0aXZhcmlhYmxlIENoYWluIFJ1bGUgdG8gY29tcHV0ZSBbYFxwbHp7en17c31cdGV4dHsufWBdJylAXSoqCgpbX117JGR6ZHNldn17NTB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdVc2UgdGhlIE11bHRpdmFyaWFibGUgQ2hhaW4gUnVsZSB0byBjb21wdXRlIFtgXHBsent6fXt0fVx0ZXh0ey59YF0nKUBdKioKCltfXXskZHpkdGV2fXs1MH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0V2YWx1YXRlIFtgXHBsent6fXtzfWBdIGF0IFtgcz0xXHRleHR7LH1gXSBbYHQ9MVx0ZXh0ey59YF0nKUBdKioKCltfXXskZHpkczF9ezE1fQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRXZhbHVhdGUgW2BccGx6e3p9e3R9YF0gYXQgW2BzPTFcdGV4dHssfWBdIFtgdD0xXHRleHR7Ln1gXScpQF0qKgoKW19deyRkemR0MX17MTV9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13649"><span class="process-math">\(z=e^{-(x^2+y^2)}\text{,}\)</span> <span class="process-math">\(x=t\text{,}\)</span> and <span class="process-math">\(y=st^2\text{,}\)</span> <span class="process-math">\(s=1\text{,}\)</span> <span class="process-math">\(t=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1540')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-318">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-374"><p id="p-13654">The given equation defines <span class="process-math">\(y\)</span> implicitly as a function of <span class="process-math">\(x\text{.}\)</span> Find <span class="process-math">\(\lz{y}{x}\)</span> using Implicit Differentiation and <a href="" class="xref" data-knowl="./knowl/thm_implicit_deriv_chain.html" title="Theorem 13.5.12: Implicit Differentiation">Theorem 13.5.12</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2596"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-13655"><span class="process-math">\(x^2\tan(y) = 50\)</span></p></article><article class="exercise exercise-like" id="exercise-2597"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-1541" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1541" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyk7CiRkeWR4PUNvbXB1dGUoIi14L3leMiIpOwoKQkVHSU5fUEdNTApbYFxsZWZ0KDN4XjIrMnleM1xyaWdodCleND0yYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BcbHp7eX17eH1cdGV4dHs6fWBdJylAXSoqCgpbX117JGR5ZHh9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13658"><span class="process-math">\(\left(3x^2+2y^3\right)^4=2\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1541')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2598"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-13660"><span class="process-math">\(\ds \frac{x^2+y}{x+y^2}=17\)</span></p></article><article class="exercise exercise-like" id="exercise-2599"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<div id="webwork-1542" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1542" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyk7CiRkeWR4PUNvbXB1dGUoIi0oMngreSkvKDJ5K3gpIik7CgpCRUdJTl9QR01MCltgXGxuXG1hdGhvcGVue31cbGVmdCh4XjIreHkreV4yXHJpZ2h0KVxtYXRoY2xvc2V7fT0xYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BcbHp7eX17eH1cdGV4dHs6fWBdJylAXSoqCgpbX117JGR5ZHh9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13663"><span class="process-math">\(\ln\mathopen{}\left(x^2+xy+y^2\right)\mathclose{}=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1542')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-319">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-375"><p id="p-13665">Find <span class="process-math">\(\lz{z}{t}\text{,}\)</span> or <span class="process-math">\(\plz{z}{s}\)</span> and <span class="process-math">\(\plz{z}{t}\text{,}\)</span> using the supplied information.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2600"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-13666"><span class="process-math">\(\ds\frac{\partial z}{\partial x} = 2\text{,}\)</span><span class="process-math">\(\ds\frac{\partial z}{\partial y} = 1\text{,}\)</span><span class="process-math">\(\ds\frac{dx}{dt} = 4\text{,}\)</span><span class="process-math">\(\ds\frac{dy}{dt} = -5\)</span></p></article><article class="exercise exercise-like" id="exercise-2601"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-1543" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1543" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVxuZXdjb21tYW5ke1xwbHp9WzJde1xmcmFje1xwYXJ0aWFsIzF9e1xwYXJ0aWFsIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7JGR6ZHQ9Q29tcHV0ZSgiMCIpOwoKQkVHSU5fUEdNTApbYFxwbHp7en17eH0gPSAxXHRleHR7LH1gXSBbYFxwbHp7en17eX0gPSAtM1x0ZXh0eyx9YF0gW2BcbHp7eH17dH0gPSA2XHRleHR7LH1gXSBhbmQgW2BcbHp7eX17dH0gPSAyXHRleHR7Ln1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRmluZCBbYFxsent6fXt0fVx0ZXh0ezp9YF0nKUBdKioKCltfXXskZHpkdH17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13668"><span class="process-math">\(\plz{z}{x} = 1\text{,}\)</span> <span class="process-math">\(\plz{z}{y} = -3\text{,}\)</span> <span class="process-math">\(\lz{x}{t} = 6\text{,}\)</span> and <span class="process-math">\(\lz{y}{t} = 2\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1543')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2602"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-13670"><span class="process-math">\(\ds\frac{\partial z}{\partial x} = -4\text{,}\)</span><span class="process-math">\(\ds\frac{\partial z}{\partial y} = 9\text{,}\)</span></p>
+<p id="p-13671"><span class="process-math">\(\ds\frac{\partial x}{\partial s} = 5\text{,}\)</span><span class="process-math">\(\ds\frac{\partial x}{\partial t} = 7\text{,}\)</span><span class="process-math">\(\ds \frac{\partial y}{\partial s} = -2\text{,}\)</span><span class="process-math">\(\ds \frac{\partial y}{\partial t} = 6\)</span></p></article><article class="exercise exercise-like" id="exercise-2603"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<div id="webwork-1544" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1544" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xwbHp9WzJde1xmcmFje1xwYXJ0aWFsIzF9e1xwYXJ0aWFsIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7JGR6ZHM9Q29tcHV0ZSgiLTIiKTsKJGR6ZHQ9Q29tcHV0ZSgiNSIpOwoKQkVHSU5fUEdNTApbYFxwbHp7en17eH0gPSAyXHRleHR7LH1gXSBbYFxwbHp7en17eX0gPSAxXHRleHR7LH1gXSBbYFxwbHp7eH17c30gPSAtMlx0ZXh0eyx9YF0gW2BccGx6e3h9e3R9ID0gM1x0ZXh0eyx9YF0gW2BccGx6e3l9e3N9ID0gMmBdIGFuZCBbYFxwbHp7eX17dH0gPSAtMWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdGaW5kIFtgXHBsent6fXtzfVx0ZXh0ezp9YF0nKUBdKioKCltfXXskZHpkc317MjB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdGaW5kIFtgXHBsent6fXt0fVx0ZXh0ezp9YF0nKUBdKioKCltfXXskZHpkdH17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-13674"><span class="process-math">\(\plz{z}{x} = 2\text{,}\)</span> <span class="process-math">\(\plz{z}{y} = 1\text{,}\)</span> <span class="process-math">\(\plz{x}{s} = -2\text{,}\)</span> <span class="process-math">\(\plz{x}{t} = 3\text{,}\)</span> <span class="process-math">\(\plz{y}{s} = 2\)</span> and <span class="process-math">\(\plz{y}{t} = -1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1544')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

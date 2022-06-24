@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:29:35Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Modeling with Differential Equations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Linear.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_differential_equations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter_sequences_series.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Linear.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_differential_equations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter_sequences_series.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="active">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Modeling"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">8.4</span> <span class="title">Modeling with Differential Equations</span>
+</h2>
+<section class="introduction" id="introduction-185"><p id="p-7940">In the first three sections of this chapter, we focused on the basic ideas behind differential equations and the mechanics of solving certain types of differential equations. We have only hinted at their practical use. In this section, we use differential equations for mathematical modeling, the process of using equations to describe real world processes. We explore a few different mathematical models with the goal of gaining an introduction to this large field of applied mathematics. </p></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.4.1</span> <span class="title">Models Involving Proportional Change</span>
+</h3>
+<p id="p-7941">Some of the simplest differential equation models involve one quantity that changes at a rate proportional to another quantity. In the introduction to this chapter, we considered a population that grows at a rate proportional to the current population. The words in this assumption can be directly translated into a differential equation as shown below.</p>
+<figure class="figure figure-like" id="fig_20_translation"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="generated/latex-image/img_20_04_translation.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.4.1<span class="period">.</span></span><span class="space"> </span>Translating words into a differential equation</figcaption></figure><p id="p-7942">There are some key ideas that can be helpful when translating words into a differential equation. Any time we see something about rates or changes, we should think about derivatives. The word “is” usually corresponds to an equal sign in the equation. The words “proportional to” mean we have a constant multiplied by something.</p>
+<p id="p-7943">The differential equation in <a href="" class="xref" data-knowl="./knowl/fig_20_translation.html" title="Figure 8.4.1">Figure 8.4.1</a> is easily solved using separation of variables. We find</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_20_translation.html">
+\begin{equation*}
+p = Ce^{kt}\text{.}
+\end{equation*}
+</div>
+<p id="p-7944">Notice that we need values for both <span class="process-math">\(C\)</span> and <span class="process-math">\(k\)</span> before we can use this formula to predict population size. We require information about the population at two different times in order to fully determine the population model.</p>
+<article class="example example-like" id="ex_ecoli"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Bacterial Growth.</span>
+</h4>
+<p id="p-7945">Suppose a population of <em class="emphasis">e-coli</em> bacteria grows at a rate proportional to the current population. If an initial popluation of 200 bacteria has grown to 1600 three hours later, find a function for the size of the population at time <span class="process-math">\(t\text{,}\)</span> and use it to predict when the population size will reach 10,000. </p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-491" id="solution-491"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-491"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-model-bacterial-growth" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/EC18tbH7SQw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-7946">We already know that the population at time <span class="process-math">\(t\)</span> is given by <span class="process-math">\(p = Ce^{kt}\)</span> for some <span class="process-math">\(C\)</span> and <span class="process-math">\(k\text{.}\)</span> The information about the initial size of the population means that <span class="process-math">\(p(0)=200\text{.}\)</span> Thus <span class="process-math">\(C=200\text{.}\)</span> Our knowledge of the population size after three hours allows us to solve for <span class="process-math">\(k\)</span> via the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+1600 = 200e^{3k}\text{.}
+\end{equation*}
+</div>
+<p id="p-7947">Solving this exponential equation yields <span class="process-math">\(k =\ln(8)/3 \approx 0.6931\text{.}\)</span> The popluation at time <span class="process-math">\(t\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p = 200 e^{(\ln(8)/3)t}\text{.}
+\end{equation*}
+</div>
+<p id="p-7948">Solving</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+10000 = 200e^{(\ln(8)/3)t}
+\end{equation*}
+</div>
+<p class="continuation">yields <span class="process-math">\(t =(3\ln(50))/\ln(8) \approx 5.644\text{.}\)</span> The population is predicted to reach 10,000 bacteria in slightly more than five and a half hours.</p>
+</div></div>
+</div></article><p id="p-7949">Another example of porportional change is <em class="emphasis">Newton's Law of Cooling.</em> The laws of thermodynamics state that heat flows from areas of higher temperature to areas of lower temperature. A simple example is a hot object that cools down when placed in a cool room. Newton's Law of Cooling is the simple assumption that the temperature of the object changes at a rate proportional to the difference between the temperature of the object and the ambient temperature of the room. If <span class="process-math">\(T\)</span> is the temperature of the object and <span class="process-math">\(A\)</span> is the constant ambient temperature, Newton's Law of Cooling can be expressed as the differential equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dT}{dt} = k(A - T)\text{.}
+\end{equation*}
+</div>
+<p id="p-7950">This differential equation is both linear and separable. The separated form is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{A-T}\,dT = k\,dt\text{.}
+\end{equation*}
+</div>
+<p id="p-7951">Then an implicit definition of the temperature is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-\ln\abs{A-T} = kt + C\text{.}
+\end{equation*}
+</div>
+<p id="p-7952">If we solve for <span class="process-math">\(T\text{,}\)</span> we find the explicit temperature</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T = A-Ce^{-kt}\text{.}
+\end{equation*}
+</div>
+<p id="p-7953">Though we didn't show the steps, the explicit solution involves the typical process of renaming the constant <span class="process-math">\(\pm e^{-C}\)</span> as <span class="process-math">\(C\text{,}\)</span> and allowing <span class="process-math">\(C\)</span> to be positive, negative, or zero to account for both cases of the absolution value and to catch the constant solution <span class="process-math">\(T=A\text{.}\)</span> Notice that the temperature of the object approaches the ambient temperature in the limit as <span class="process-math">\(t\to\infty\text{.}\)</span></p>
+<aside class="aside aside-like" id="aside-51"><p id="p-7954">The equation <span class="process-math">\(\displaystyle \frac{dT}{dt} = k(T-A)\)</span> is also a valid representation of Newton's Law of Cooling. Intuition tells us that <span class="process-math">\(T\)</span> will increase if <span class="process-math">\(T\)</span> is less than <span class="process-math">\(A\)</span> and decrease if <span class="process-math">\(T\)</span> is greater then <span class="process-math">\(A\text{.}\)</span> The form we use in the text follows this intuition with a positive <span class="process-math">\(k\)</span> value. The form above will require that <span class="process-math">\(k\)</span> take on a negative value. In the end, both forms result in the same function.</p></aside><article class="example example-like" id="ex_coffee"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Hot Coffee.</span>
+</h4>
+<p id="p-7955">A freshly brewed cup of coffee is set on the counter and has a temperature of 200<span class="process-math">\(^\circ\)</span> Fahrenheit. After 3 minutes, it has cooled to 190<span class="process-math">\(^\circ\text{,}\)</span> but is still too hot to drink. If the room is 72<span class="process-math">\(^\circ\)</span> and the coffee cools according to Newton's Law of Cooling, how long will the impatient coffee drinker have to wait until the coffee has cooled to 165<span class="process-math">\(^\circ\text{?}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-492" id="solution-492"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-492"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-model-newton-cooling" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/tEMLcz1yvFI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-7956">Since we have already solved the differential equation for Newton's Law of Cooling, we can immediately use the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T = A - Ce^{-kt}\text{.}
+\end{equation*}
+</div>
+<p id="p-7957">Since the room is 72<span class="process-math">\(^\circ\text{,}\)</span> we know <span class="process-math">\(A = 72\text{.}\)</span> The initial temperature is 200<span class="process-math">\(^\circ\text{,}\)</span> which means <span class="process-math">\(C = -128\text{.}\)</span> At this point, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+T = 72 + 128e^{-kt}
+\end{equation*}
+</div>
+<p id="p-7958">The information about the coffee cooling to 190<span class="process-math">\(^\circ\)</span> in 3 minutes leads to the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+190 = 72 + 128e^{-3k}\text{.}
+\end{equation*}
+</div>
+<p id="p-7959">Solving the exponential equation for <span class="process-math">\(k\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+k = -\frac{1}{3}\ln \left(\frac{59}{64}\right) \approx 0.0271\text{.}
+\end{equation*}
+</div>
+<p id="p-7960">Finally, we finish the problem by solving the exponential equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+165 = 72 + 128e^{\frac{1}{3}\ln \left(\frac{59}{64}\right)t}\text{.}
+\end{equation*}
+</div>
+<p id="p-7961">The coffee drinker must wait <span class="process-math">\(\displaystyle t = \frac{3 \ln \left(\frac{93}{128}\right)}{\ln \left(\frac{59}{64}\right)} \approx 11.78\)</span> minutes.</p>
+</div></div>
+</div></article><p id="p-7962">We finish our discussion of models of proportional change by exploring three different models of disease spread through a population. In all of the models, we let <span class="process-math">\(y\)</span> denote the proportion of the population that is sick (<span class="process-math">\(0 \leq y \leq 1\)</span>). We assume a proportion of <span class="process-math">\(0.05\)</span> is initially sick and that a proportion of <span class="process-math">\(0.1\)</span> is sick 1 week later.</p>
+<article class="example example-like" id="ex_disease_exponential"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Disease Spread 1.</span>
+</h4>
+<p id="p-7963">Suppose a disease spreads through a population at a rate proportional to the number of individuals who are sick. If 5% of the population is sick initially and 10% of the population is sick one week later, find a formula for the proportion of the popoulation that is sick at time <span class="process-math">\(t\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-493" id="solution-493"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-493"><div class="solution solution-like">
+<p id="p-7964">The assumption here seems to have some merit because it matches our intuition that a disease should spread more rapidly when more individuals are sick. The differential equation is simply</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dt} = ky\text{,}
+\end{equation*}
+</div>
+<p class="continuation">with solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = Ce^{kt}\text{.}
+\end{equation*}
+</div>
+<p id="p-7965">The conditions <span class="process-math">\(y(0)=0.05\)</span> and <span class="process-math">\(y(1) = 0.1\)</span> lead to <span class="process-math">\(C = 0.05\)</span> a and <span class="process-math">\(k = \ln(2)\text{,}\)</span> so the function is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = 0.05e^{(\ln(2)t}\text{.}
+\end{equation*}
+</div>
+<p id="p-7966">We should point out a glaring problem with this model. The variable <span class="process-math">\(y\)</span> is a proportion and should take on values between 0 and 1, but the function <span class="process-math">\(y = 0.05e^{2t}\)</span> grows without bound. After <span class="process-math">\(t \approx 4.32\)</span> weeks, <span class="process-math">\(y\)</span> exceeds 1, and the model ceases to make physical sense.</p>
+</div></div>
+</div></article><figure class="figure figure-like" id="vid-diffeq-model-disease12"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-293" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/UjRpT852su4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.4.5<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/ex_disease_exponential.html" title="Example 8.4.4: Disease Spread 1">Examples 8.4.4–8.4.6</a></figcaption></figure><article class="example example-like" id="ex_disease_newton"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Disease Spread 2.</span>
+</h4>
+<p id="p-7967">Suppose a disease spreads through a population at a rate proportional to the number of individuals who are not sick. If 5% of the population is sick initially and 10% of the population is sick one week later, find a formula for the proportion of the popoulation that is sick at time <span class="process-math">\(t\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-494" id="solution-494"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-494"><div class="solution solution-like">
+<p id="p-7968">The intuition behind the assumption here is that a disease can only spread if there are individuals who are susceptible to the infection. As fewer and fewer people are able to be infected, the disease spread should slow down. Since <span class="process-math">\(y\)</span> is proportion of the population that is sick, <span class="process-math">\(1-y\)</span> is the proportion who are not sick, and the differential equation is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dt} = k(1-y)\text{.}
+\end{equation*}
+</div>
+<p id="p-7969">Though the context is quite different, the differential equation is identical to the differential equation for Newton's Law of Cooling, with <span class="process-math">\(A=1\text{.}\)</span> The solution is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = 1 - Ce^{-kt}\text{.}
+\end{equation*}
+</div>
+<p id="p-7970">The conditions <span class="process-math">\(y(0)=0.05\)</span> and <span class="process-math">\(y(1) = 0.1\)</span> yield <span class="process-math">\(C = 0.95\)</span> and <span class="process-math">\(k = -\ln\left(\frac{18}{19}\right) \approx 0.0541\text{,}\)</span> so the final function is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = 1-.95e^{\ln\left(\frac{18}{19}\right)t}\text{.}
+\end{equation*}
+</div>
+<p id="p-7971">Notice that this function approaches <span class="process-math">\(y=1\)</span> in the limit as <span class="process-math">\(t \to \infty\text{,}\)</span> and does not suffer from the non-physical behavior described in <a href="" class="xref" data-knowl="./knowl/ex_disease_exponential.html" title="Example 8.4.4: Disease Spread 1">Example 8.4.4</a>.</p>
+</div></div>
+</div></article><p id="p-7972">In <a href="" class="xref" data-knowl="./knowl/ex_disease_exponential.html" title="Example 8.4.4: Disease Spread 1">Example 8.4.4</a>, we assumed disease spread depends on the number of infected individuals. In <a href="" class="xref" data-knowl="./knowl/ex_disease_newton.html" title="Example 8.4.6: Disease Spread 2">Example 8.4.6</a>, we assumed disease spread depends on the number of susceptible individuals who are able to become infected. In reality, we would expect many diseases to require the interaction of both infected and susceptible individuals in order to spread. One of the simplest ways to model this required interaction is to assume disease spread depends on the product of the proportions of infected and uninfected individuals. This assumption (regularly seen in the context of chemical reactions) is often called the <em class="emphasis">law of mass action.</em></p>
+<article class="example example-like" id="ex_disease_logistic"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Disease Spread 3.</span>
+</h4>
+<p id="p-7973">Suppose a disease spreads through a population at a rate proportional to the product of the number of infected and uninfected individuals. If 5% of the population is sick initially and 10% of the population is sick one week later, find a formula for the proportion of the population that is sick at time <span class="process-math">\(t\text{.}\)</span> </p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-495" id="solution-495"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-495"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-model-disease3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/vV8Jy231gLk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-7974">The differential equation is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dt} = ky(1-y)\text{.}
+\end{equation*}
+</div>
+<p id="p-7975">This is exactly the logistic equation with <span class="process-math">\(M = 1\text{.}\)</span> We solved this differential equation in <a href="" class="xref" data-knowl="./knowl/ex_logistic.html" title="Example 8.2.8: Solving the Logistic Differential Equation">Example 8.2.8</a>, and found</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_logistic.html">
+\begin{equation*}
+y = \frac{1}{1 + be^{-kt}}\text{.}
+\end{equation*}
+</div>
+<p id="p-7976">The conditions <span class="process-math">\(y(0)=0.05\)</span> and <span class="process-math">\(y(1) = 0.1\)</span> yield <span class="process-math">\(b = 19\)</span> and <span class="process-math">\(k = -\ln\left(\frac{9}{19}\right) \approx 0.7472\text{.}\)</span> The final function is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = \frac{1}{1+19e^{\ln\left(\frac{9}{19}\right)t}}\text{.}
+\end{equation*}
+</div>
+<p id="p-7977">Based on the three different assumptions about the rate of disease spread explored in the last three examples, we now have three different functions giving the proportion of a population that is sick at time <span class="process-math">\(t\text{.}\)</span> Each of the three functions meets the conditions <span class="process-math">\(y(0)=0.05\)</span> and <span class="process-math">\(y(1) = 0.1\text{.}\)</span> The three functions are shown in <a href="" class="xref" data-knowl="./knowl/fig_disease.html" title="Figure 8.4.8">Figure 8.4.8</a>.</p>
+<p id="p-7978">Notice that the logistic function mimics specific parts of the functions from <a href="" class="xref" data-knowl="./knowl/ex_disease_exponential.html" title="Example 8.4.4: Disease Spread 1">Examples 8.4.4</a> and <a href="" class="xref" data-knowl="./knowl/ex_disease_newton.html" title="Example 8.4.6: Disease Spread 2">Example 8.4.6</a>. We see in <a href="" class="xref" data-knowl="./knowl/fig_diseasea.html" title="Figure 8.4.8.(a)">Figure 8.4.8.(a)</a> that the logistic and exponential functions are virtually indistinguishable for small <span class="process-math">\(t\)</span> values. When there are few infected individuals and lots of susceptible individuals, the spread of a disease is largely determined by the number of sick people. The logistic curve captures this feature, and is “almost exponential” early on.</p>
+<p id="p-7979">In <a href="" class="xref" data-knowl="./knowl/fig_diseaseb.html" title="Figure 8.4.8.(b)">Figure 8.4.8.(b)</a>, we see that the logistic curve leaves the exponential curve from <a href="" class="xref" data-knowl="./knowl/ex_disease_exponential.html" title="Example 8.4.4: Disease Spread 1">Example 8.4.4</a> and approaches the curve from <a href="" class="xref" data-knowl="./knowl/ex_disease_newton.html" title="Example 8.4.6: Disease Spread 2">Example 8.4.6</a>. This result implies that when most of the population is sick, the spread of the disease is largely dependent on the number of susceptible individuals. Though there are much more sophisticated mathematical models describing the spread of infections, we could argue that the logistic model presented in this example is the “best” of the three.</p>
+<figure class="figure figure-like" id="fig_disease"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="figure figure-like" id="fig_diseasea"><img src="generated/latex-image/img_disease_a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="figure figure-like" id="fig_diseaseb"><img src="generated/latex-image/img_disease_b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.4.8<span class="period">.</span></span><span class="space"> </span>Plots of the functions from <a href="" class="xref" data-knowl="./knowl/ex_disease_exponential.html" title="Example 8.4.4: Disease Spread 1">Example 8.4.4</a> (dotted), <a href="" class="xref" data-knowl="./knowl/ex_disease_newton.html" title="Example 8.4.6: Disease Spread 2">Example 8.4.6</a> (dashed), and <a href="" class="xref" data-knowl="./knowl/ex_disease_logistic.html" title="Example 8.4.7: Disease Spread 3">Example 8.4.7</a> (solid)</figcaption></figure>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-58"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.4.2</span> <span class="title">Rate-in Rate-out Problems</span>
+</h3>
+<p id="p-7980">One of the classic ways to build a mathematical model involves tracking the way the amount of something can change. We sometimes say these models are based on <em class="emphasis">conservation laws</em>. Consider a box with some amount of a specific type of material inside. (Some type of chemical, for example.) The amount of material of the specific type in the box can only change in four ways; we can add more to the box, we can remove some from the box, some of the material can change into material of a different type, or some other type of material can turn into the type we're tracking. In the examples that follow, we assume material doesn't change type, so we only need to keep track of material coming into the box and material leaving the box. To derive a differential equation, we track rates:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{ rate of change of some quantity }  = \text{ rate in }  - \text{ rate out }\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="vid-diffeq-model-ratein-rateout-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-295" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/G3nvU0Jc5pw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.4.9<span class="period">.</span></span><span class="space"> </span>Introduction to Rate-in Rate-out problems</figcaption></figure><p id="p-7981">Though we stick to relatively simple examples, this basic idea can be used to derive some very important differential equations in mathematics and physics.</p>
+<p id="p-7982">The examples to follow involve tracking the amount of a chemical in solution. We assume liquid containing some chemical flows into a container at some rate. That liquid mixes instantaneously with the liquid already in the container. Then the liquid from the container flows out at some (potentially different) rate.</p>
+<aside class="aside aside-like" id="aside-52"><p id="p-7983">The assumption about instantaneous mixing, though not physically accurate, leads to a differential equation we have hope of solving. In reality, the amount of chemical at a specific location in the container depends both on the location and how long we have been waiting. This dependence on both space and time leads to a type of differential equation called a <em class="emphasis">partial differential equation.</em> Differential equations of this type are more interesting, but significantly harder to study. Instantaneous mixing removes any spatial dependence from the problem, and leaves us with an <em class="emphasis">ordinary differential equation</em>.</p></aside><article class="example example-like" id="ex_equal_flow"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Equal Flow Rates.</span>
+</h4>
+<p id="p-7984">Suppose a 10 liter tank has 5 liters of salt solution in it. The initial concentration of the salt solution is 1 gram per liter. A salt solution with concentration <span class="quantity">3 <sup>g</sup>⁄<sub>L</sub></span> flows into the tank at a rate of <span class="quantity">2 <sup>L</sup>⁄<sub>min</sub></span>. Suppose the salt solution mixes instantaneously with the solution already in the tank, and that the mixed solution from the tank flows out at a rate of <span class="quantity">2 <sup>L</sup>⁄<sub>min</sub></span>. Find a function that gives the amount of salt in the tank at time <span class="process-math">\(t\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-496" id="solution-496"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-496"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-model-ratein-rateout-example1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Au4n_QP73Ko?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-7985">We use the rate in - rate out setup described above. The quantity here is the amount (in grams) of salt in the tank at time <span class="process-math">\(t\text{.}\)</span> Let <span class="process-math">\(y\)</span> denote the amount of salt. In words, the differential equation is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dt} = \text{ rate in }  - \text{ rate out }\text{.}
+\end{equation*}
+</div>
+<p id="p-7986">Thinking in terms of units can help fill in the details of the differential equation. Since <span class="process-math">\(y\)</span> has units of grams, the left hand side of the equation has units g/min. Both terms on the right hand side must have these same units. Notice that the product of a concentration (with units g/L) and a flow rate (with units L/min) results in a quantity with units g/min. Both terms on the right hand side of the equation will include a concentration multiplied by a flow rate.</p>
+<p id="p-7987">For the rate in, we multiply the inflow concentration by the rate that fluid is flowing into the bucket. This is <span class="process-math">\(\displaystyle \left(3 \frac{\text{g} }{\text{L} }\right)\left(2 \frac{\text{L} }{\text{ min } }\right) = 6\)</span> g/min.</p>
+<p id="p-7988">The rate out is more complicated. The flow rate is still <span class="quantity">2 <sup>L</sup>⁄<sub>min</sub></span>, meaning that the overall volume of the fluid in the bucket is the constant <span class="quantity">5 L</span>. The salt concentration in the bucket is not constant though, meaning that the outflow concentration is not constant. In particular, the outflow concentration is <em class="emphasis">not</em> the constant <span class="quantity">1 <sup>L</sup>⁄<sub>min</sub></span>. This is simply the initial concentration. To find the concentration at any time, we need the amount of salt in the bucket at that time and the volume of liquid in the bucket at that time. The volume of liquid is the constant <span class="quantity">5 L</span>, and the amount of salt is given by the dependent variable <span class="process-math">\(y\text{.}\)</span> Thus, the outflow concentration is <span class="process-math">\(\displaystyle \frac{y}{5}\)</span> g/L, yielding a rate out given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left(\frac{y}{5}\frac{\text{ g } }{\text{ L } }\right)\left(2 \frac{\text{ L } }{\text{ min } }\right) = \frac{2y}{5}\text{ g/min }\text{.}
+\end{equation*}
+</div>
+<p id="p-7989">The differential equation we wish to solve is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dt} = 6 - \frac{2y}{5}\text{.}
+\end{equation*}
+</div>
+<p id="p-7990">To furnish an initial condition, we must convert the initial salt concentration into an initial amount of salt. This is <span class="process-math">\(\left(1\displaystyle \frac{\text{ g } }{\text{ L } }\right)(5 \text{ L } ) = 5\)</span> g, so <span class="process-math">\(y(0) = 5\)</span> is our initial condition.</p>
+<p id="p-7991">Our differential equation is both separable and linear. We solve using separation of variables. The separated form of the differential equation is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{5}{30 - 2y}\,dy = dt\text{.}
+\end{equation*}
+</div>
+<p id="p-7992">Integration yields the implicit solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-\frac{5}{2}\ln\abs{30 - 2y} = t+C\text{.}
+\end{equation*}
+</div>
+<p id="p-7993">Solving for <span class="process-math">\(y\)</span> (and redefining the arbitrary constant <span class="process-math">\(C\)</span> as necessary) yields the explicit solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = 15 + Ce^{-\frac{2}{5}t}\text{.}
+\end{equation*}
+</div>
+<p id="p-7994">The initial condition <span class="process-math">\(y(0) = 5\)</span> means that <span class="process-math">\(C = -10\)</span> so that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = 15 - 10e^{-\frac{2}{5}t}
+\end{equation*}
+</div>
+<p class="continuation">is the particular solution to our initial value problem.</p>
+<p id="p-7995">This function is plotted in <a href="" class="xref" data-knowl="./knowl/fig_equal_flow.html" title="Figure 8.4.11">Figure 8.4.11</a>. Notice that in the limit as <span class="process-math">\(t\to\infty\text{,}\)</span> <span class="process-math">\(y\)</span> approaches <span class="process-math">\(15\text{.}\)</span> This corresponds to a bucket concentration of <span class="process-math">\(15/5 = 3\)</span> g/L. It should not be surprising that salt concentration inside the tank will move to match the inflow salt concentration.</p>
+<figure class="figure figure-like" id="fig_equal_flow"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_equal_flow.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.4.11<span class="period">.</span></span><span class="space"> </span>Salt concentration at time <span class="process-math">\(t\text{,}\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_equal_flow.html" title="Example 8.4.10: Equal Flow Rates">Example 8.4.10</a></figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="ex_unequal_flow"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Unequal Flow Rates.</span>
+</h4>
+<p id="p-7996">Suppose the setup is identical to the setup in <a href="" class="xref" data-knowl="./knowl/ex_equal_flow.html" title="Example 8.4.10: Equal Flow Rates">Example 8.4.10</a> except that now liquid flows out of the bucket at a rate of 1 L/min. Find a function that gives the amount of salt in the bucket at time <span class="process-math">\(t\text{.}\)</span> What is the salt concentration when the solution ceases to be valid?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-497" id="solution-497"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-497"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-model-ratein-ratout-example2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/P3fkhn-TQEk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-7997">Because the inflow and outflow rates no longer match, the volume of liquid in the bucket is not the constant 5 L. In general, we can find the volume of liquid via the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{ volume }  = \text{ initial volume }  + \text{ (inflow rate - outflow rate) } t\text{.}
+\end{equation*}
+</div>
+<p id="p-7998">In this example, the volume at time <span class="process-math">\(t\)</span> is <span class="process-math">\(5 + t\)</span> liters. Because the total volume of the bucket is only 10 L, it follows that our solution will only be valid for <span class="process-math">\(0 \leq t \leq 5\text{.}\)</span> At that point it is no longer possible to have liquid flow into a the bucket at a rate of 2 L/min and out of the bucket at a rate of 1 L/min.</p>
+<p id="p-7999">To update the differential equation, we must modify the rate out. Since the volume is <span class="process-math">\(5 + t\text{,}\)</span> the concentration at time <span class="process-math">\(t\)</span> is given by <span class="process-math">\(\frac{y}{5+t}\)</span> g/L. Thus for rate out, we must use <span class="process-math">\(\left( \frac{y}{5+t}\right)(1)\)</span> g/min. The initial value problem is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dt} = 6 - \frac{y}{5+t}, \text{ with }  y(0)=5\text{.}
+\end{equation*}
+</div>
+<p id="p-8000">Unlike <a href="" class="xref" data-knowl="./knowl/ex_equal_flow.html" title="Example 8.4.10: Equal Flow Rates">Example 8.4.10</a>, where we had equal flow rates, this differential equation is no longer separable. We must proceed with an integrating factor. Writing the differential equation in the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_equal_flow.html">
+\begin{equation*}
+\frac{dy}{dt} + \frac{1}{5+t}y = 6\text{,}
+\end{equation*}
+</div>
+<p class="continuation">we identify the integrating factor</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_equal_flow.html">
+\begin{equation*}
+\mu(t) = e^{\int \frac{1}{5+t}\,dt} = e^{\ln(5+t)} = 5+t\text{.}
+\end{equation*}
+</div>
+<p id="p-8001">Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dt}\big((5+t)y\big) = 6(5+t)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">yielding the implicit solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(5+t)y = 30t + 3t^2 + C\text{.}
+\end{equation*}
+</div>
+<p id="p-8002">The initial condition <span class="process-math">\(y(0) = 5\)</span> implies <span class="process-math">\(C = 25\text{,}\)</span> so the explicit solution to our initial value problem is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = \frac{3t^2 + 30t + 25}{5+t}\text{.}
+\end{equation*}
+</div>
+<p id="p-8003">This solution ceases to be valid at <span class="process-math">\(t=5\text{.}\)</span> At that time, there are 25 g of salt in the tank. The volume of liquid is 10 L, resulting in a salt concentration of <span class="process-math">\(2.5\)</span> g/L.</p>
+</div></div>
+</div></article><p id="p-8004">Differential equations are powerful tools that can be used to help describe the world around us. Though relatively simple in concept, the ideas of proportional change and matching rates can serve as building blocks in the development of more sophisticated mathematical models. As we saw in this section, some simple mathematical models can be solved analytically using the techniques developed in this chapter. Most sophisticated mathematical models don't allow for analytic solutions. Even so, there are an array of graphical and numerical techniques that can be used to analyze the model to make predictions and infer information about real world phenomena.</p></section><section class="exercises" id="exercises-45"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">8.4.3</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-101"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-158">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-186"><p id="p-8005">In the following exercises, use the tools in the section to answer the questions presented.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1515"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-8006">Suppose the rate of change of <span class="process-math">\(y\)</span> with respect to <span class="process-math">\(x\)</span> is proportional to <span class="process-math">\(10 - y\text{.}\)</span> Write down and solve a differential equation for <span class="process-math">\(y\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1516"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-8008">A rumor is spreading through a middle school with 250 students. Suppose the rumor spreads at a rate proportional to the number of students who haven't heard the rumor yet. If 1 person starts the rumor, and 75 students have heard the rumor 3 days later, how many days will it take until 80% of the students in the school have heard the rumor?</p></article><article class="exercise exercise-like" id="exercise-1517"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-8010">A rumor is spreading through a middle school with 250 students. Suppose the rumor spreads at a rate proportional to the product of number of students who have heard the rumor and the number who haven't heard the rumor. If 1 person starts the rumor, and 75 students have heard the rumor 3 days later, how many days will it take until 80% of the students in the school have heard the rumor?</p></article><article class="exercise exercise-like" id="exercise-1518"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-8012">A feature of radioactive decay is that the amount of a radioactive substance decreases at a rate proportional to the current amount of the substance. The <em class="emphasis">half life</em>  of a substance is the amount of time it takes for half of a given amount of substance to decay. The half life of carbon-14 is approximately 5730 years. If an ancient object has a carbon-14 amount that is 20% of the original amount, how old is the object?</p></article><article class="exercise exercise-like" id="exercise-1519"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-8014">Consider a chemical reaction where molecules of type A combine with molecules of type B to form molecules of type C. Suppose one molecule of type A combines with one molecule of type B to form one molecule of type C, and that type C is produced at a rate proportional the product of the remaining number of molecules of types A and B. Let <span class="process-math">\(x\)</span> denote moles of molecules of type <span class="process-math">\(C\text{.}\)</span> Find a function giving the number of moles of type C at time <span class="process-math">\(t\)</span> if there are originally <span class="process-math">\(a\)</span> moles of type A, <span class="process-math">\(b\)</span> moles of type B, and zero moles of type C.</p></article><article class="exercise exercise-like" id="exercise-1520"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-8016">Suppose an object with a temperature of 100<span class="process-math">\(^\circ\)</span> is introduced into a room with an ambient temperature of 70<span class="process-math">\(^\circ\text{.}\)</span> Suppose the temperature of the object changes at a rate proportional to the difference between the temperature of the object and the temperature of the room (Newton's Law of Cooling). If the object has cooled to 92<span class="process-math">\(^\circ\)</span> in 10 minutes, how long until the object has cooled to 84<span class="process-math">\(^\circ?\)</span></p></article><article class="exercise exercise-like" id="exercise-1521"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-8018">Suppose an object with a temperature of 100<span class="process-math">\(^\circ\)</span> is introduced into a room with an ambient temperature given by <span class="process-math">\(60 + 20e^{-\frac{1}{4}t}\)</span> degrees. Suppose the temperature of the object changes at a rate proportional to the difference between the temperature of the object and the temperature of the room (Newton's Law of Cooling). If the object is 80<span class="process-math">\(^\circ\)</span> after 20 minutes, find a formula giving the temperature of the object at time <span class="process-math">\(t\text{.}\)</span> (Note: This problem requires a numerical technique to solve for the unknown constants.)</p></article><article class="exercise exercise-like" id="exercise-1522"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-8020">A tank contains 5 gallons of salt solution with concentration 0.5 g/gal. Pure water flows into the tank at a rate of 1 gallon per minute. Salt solution flows out of the tank at a rate of 1 gallon per minute. (Assume instantaneous mixing.) Find the concentration of the salt solution at 10 minutes.</p></article><article class="exercise exercise-like" id="exercise-1523"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-8022">Dead leaves accumulate on the ground at a rate of 4 grams per square centimeter per year. The dead leaves on the ground decompose at a rate of 50% per year. Find a formula giving grams per square centimeter on the ground if there are no leaves on the ground at time <span class="process-math">\(t=0\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1524"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-8024">A pond initially contains 10 million gallons of fresh water. Water containing an undesirable chemical flows into the pond at a rate of 5 million gallons per year, and fluid from the pond flows out at the same rate. (Assume instantaneous mixing.) If the concentration (in grams per million gallons) of the incoming chemical varies periodically according to the expression <span class="process-math">\(2 + \sin(2t)\text{,}\)</span> find a formula giving the amount of chemical in the pond at time <span class="process-math">\(t\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1525"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-8026">A large tank contains 1 gallon of a salt solution with concentration 2 g/gal. A salt solution with concentration 1 g/gal flows into the tank at a rate of 4 gal/min. Salt solution flows out of the tank at a rate of 3 gal/min. (Assume instantaneous mixing.) Find the amount of salt in the tank at 10 minutes.</p></article><article class="exercise exercise-like" id="exercise-1526"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-8028">A stream flows into a pond containing 2 million gallons of fresh water at a rate of 1 million gallons per day. The stream flows out of the first pond and into a second pond containing 3 million gallons of fresh water. The stream then flows out of the second pond. Suppose the inflow and outflow rates are the same so that both ponds maintain their volumes. A factory upstream of the first pond starts polluting the stream. Directly below the factory, pollutant has a concentration of 55 grams per million gallons, and this concentration starts to flow into the first pond. Find the concentration of pollutant in the first and second ponds at 5 days.</p></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

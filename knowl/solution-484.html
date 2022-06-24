@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:39:05Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.2.8.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-separable-example-logistic" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/nLItalqug6A?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We looked at a slope field for this equation in <a href="sec_Graphical_Numerical.html" class="internal" title="Section 8.1: Graphical and Numerical Solutions to Differential Equations">Section 8.1</a> in the specific case of <span class="process-math">\(k = M = 1\text{.}\)</span> Here, we use separation of variables to find an analytic solution to the more general equation. Notice that the independent variable <span class="process-math">\(t\)</span> does not explicitly appear in the differential equation. We mentioned that an equation of this type is called <em class="emphasis">autonomous</em>. All autonomous first order differential equations are separable.</p>
+<p>We start by making the observation that both <span class="process-math">\(y=0\)</span> and <span class="process-math">\(y = M\)</span> are constant solutions to the differential equation. We must check that these solutions are not lost during the separation of variables process. The separated form of the equation is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{y \left(1-\displaystyle\frac{y}{M}\right)}\,dy = k\,dt\text{.}
+\end{equation*}
+</div>
+<p>The antiderivative of the left hand side of the equation can be found by making use of partial fractions. Using the techniques discussed in <a href="sec_partial_fraction.html" class="internal" title="Section 6.5: Partial Fraction Decomposition">Section 6.5</a>, we write</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_partial_fraction.html">
+\begin{equation*}
+\frac{1}{y\left(1-\frac{y}{M}\right)} = \frac{1}{y} + \frac{1}{M-y}\text{.}
+\end{equation*}
+</div>
+<p>Then an implicit form of the solution is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ln \abs{y} - \ln \abs{M-y} = kt + C\text{.}
+\end{equation*}
+</div>
+<p>Combining the logarithms,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ln \abs{\frac{y}{M-y}} = kt + C\text{.}
+\end{equation*}
+</div>
+<p>Similarly to <a href="" class="xref" data-knowl="./knowl/ex_separable_DE.html" title="Example 8.2.5: Solving a Separable Differential Equation">Example 8.2.5</a>, we can write</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_separable_DE.html">
+\begin{equation*}
+\frac{y}{M-y} = Ae^{kt}\text{.}
+\end{equation*}
+</div>
+<p>Letting <span class="process-math">\(A\)</span> take on positive values or negative values incorporates both cases of the absolute value. This is another implicit form of the solution. Solving for <span class="process-math">\(y\)</span> gives the explicit form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = \frac{M}{1 + be^{-kt}}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(b\)</span> is an arbitrary constant. Notice that <span class="process-math">\(b=0\)</span> recovers the constant solution <span class="process-math">\(y = M\text{.}\)</span> The constant solution <span class="process-math">\(y=0\)</span> cannot be produced with a finite <span class="process-math">\(b\)</span> value, and has been lost. The general solution the logistic differential equation is the set containing <span class="process-math">\(\displaystyle y = \frac{M}{1 + be^{-kt}}\)</span> and <span class="process-math">\(y=0\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_Separable.html#solution-484" class="internal">in-context</a></span>
+</body>
+</html>

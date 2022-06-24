@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:28:08Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX The Mean Value Theorem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_extreme_values.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_graphbehavior.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_incr_decr.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_extreme_values.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_graphbehavior.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_incr_decr.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="active">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_mvt"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">The Mean Value Theorem</span>
+</h2>
+<p id="p-2896">We motivate this section with the following question: Suppose you leave your house and drive to your friend's house in a city <span class="process-math">\(100\)</span> miles away, completing the trip in two hours. At any point during the trip do you necessarily have to be going <span class="process-math">\(50\)</span> miles per hour?</p>
+<p id="p-2897">In answering this question, it is clear that the <em class="emphasis">average</em> speed for the entire trip is <span class="quantity">50 mph</span> (i.e. <span class="process-math">\(100\)</span> miles in <span class="process-math">\(2\)</span> hours), but the question is whether or not your <em class="emphasis">instantaneous</em> speed is ever exactly <span class="quantity">50 mph</span>. More simply, does your speedometer ever read exactly <span class="quantity">50 mph</span>?. The answer, under some very reasonable assumptions, is “yes.”</p>
+<figure class="figure figure-like" id="vid_graphs_MVT_intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-106" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/GvdxKh6RpT0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_mvt.html" class="internal" title="Section 3.2: The Mean Value Theorem">Section 3.2</a></figcaption></figure><p id="p-2898">Let's now see why this situation is in a calculus text by translating it into mathematical symbols.</p>
+<p id="p-2899">First assume that the function <span class="process-math">\(y = f(t)\)</span> gives the distance (in miles) traveled from your home at time <span class="process-math">\(t\)</span> (in hours) where <span class="process-math">\(0\le t\le 2\text{.}\)</span> In particular, this gives <span class="process-math">\(f(0)=0\)</span> and <span class="process-math">\(f(2)=100\text{.}\)</span> The slope of the secant line connecting the starting and ending points <span class="process-math">\((0,f(0))\)</span> and <span class="process-math">\((2,f(2))\)</span> is therefore</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-105">
+\begin{align*}
+\frac{\Delta f}{\Delta t} \amp = \frac{f(2)-f(0)}{2-0}\\
+\amp  = \frac{100-0}{2}\\
+\amp = 50 \text{ mph}\text{.}
+\end{align*}
+</div>
+<p id="p-2900">The slope at any point on the graph itself is given by the derivative <span class="process-math">\(\fp(t)\text{.}\)</span> So, since the answer to the question above is “yes,” this means that at some time during the trip, the derivative takes on the value of <span class="quantity">50 mph</span>. Symbolically,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp(c) = \frac{f(2)-f(0)}{2-0} = 50
+\end{equation*}
+</div>
+<p class="continuation">for some time <span class="process-math">\(0\le c \le 2\text{.}\)</span></p>
+<p id="p-2901">How about more generally? Given any function <span class="process-math">\(y=f(x)\)</span> and a range <span class="process-math">\(a\le x\le b\)</span> does the value of the derivative at some point between <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> have to match the slope of the secant line connecting the points <span class="process-math">\((a,f(a))\)</span> and <span class="process-math">\((b,f(b))\text{?}\)</span> Or equivalently, does the equation <span class="process-math">\(\fp(c) = \frac{f(b)-f(a)}{b-a}\)</span> have to hold for some <span class="process-math">\(a \lt c \lt b\text{?}\)</span></p>
+<p id="p-2902">Let's look at two functions in an example.</p>
+<article class="example example-like" id="ex_mvt1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing average and instantaneous rates of change.</span>
+</h3>
+<p id="p-2903">Consider functions</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_mvt1.html" id="md-106">
+\begin{align*}
+f_1(x)\amp=\frac{1}{x^2}\amp f_2(x)\amp= \abs{x}
+\end{align*}
+</div>
+<p class="continuation">with <span class="process-math">\(a=-1\)</span> and <span class="process-math">\(b=1\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_mvt1.html" title="Figure 3.2.3">Figure 3.2.3</a>. Both functions have a value of <span class="process-math">\(1\)</span> at <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> Therefore the slope of the secant line connecting the end points is <span class="process-math">\(0\)</span> in each case. But if you look at the plots of each, you can see that there are no points on either graph where the tangent lines have slope zero. Therefore we have found that there is no <span class="process-math">\(c\)</span> in <span class="process-math">\([-1,1]\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_mvt1.html">
+\begin{equation*}
+\fp(c) = \frac{f(1)-f(-1)}{1-(-1)} = 0\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig_mvt1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="figure-161"><img src="generated/latex-image/img_mvt1.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>A graph of <span class="process-math">\(f_1(x) = 1/x^2\)</span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="figure-162"><img src="generated/latex-image/img_mvt2.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>A graph of <span class="process-math">\(f_2(x) = \abs{x}\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.3<span class="period">.</span></span><span class="space"> </span>Graphs of two “misbehaving” functions</figcaption></figure></article><p id="p-2904">So what went “wrong”? It may not be surprising to find that the discontinuity of <span class="process-math">\(f_1\)</span> and the corner of <span class="process-math">\(f_2\)</span> play a role. If our functions had been continuous and differentiable, would we have been able to find that special value <span class="process-math">\(c\text{?}\)</span> This is our motivation for the following theorem.</p>
+<article class="theorem theorem-like" id="thm_mvt"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">The Mean Value Theorem of Differentiation.</span>
+</h3>
+<p id="p-2905">Let <span class="process-math">\(y=f(x)\)</span> be a continuous function on the closed interval <span class="process-math">\([a,b]\)</span> and differentiable on the open interval <span class="process-math">\((a,b)\text{.}\)</span> There exists a value <span class="process-math">\(c\text{,}\)</span> <span class="process-math">\(a \lt  c \lt  b\text{,}\)</span> such that </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp(c) = \frac{f(b)-f(a)}{b-a}\text{.}
+\end{equation*}
+</div>
+<p id="p-2906">That is, there is a value <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\)</span> where the instantaneous rate of change of <span class="process-math">\(f\)</span> at <span class="process-math">\(c\)</span> is equal to the average rate of change of <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\text{.}\)</span></p></article><p id="p-2907">Note that the reasons that the functions in <a href="" class="xref" data-knowl="./knowl/ex_mvt1.html" title="Example 3.2.2: Comparing average and instantaneous rates of change">Example 3.2.2</a> fail are indeed that <span class="process-math">\(f_1\)</span> has a discontinuity on the interval <span class="process-math">\([-1,1]\)</span> and <span class="process-math">\(f_2\)</span> is not differentiable at the origin.</p>
+<p id="p-2908">We will give a proof of the Mean Value Theorem below. To do so, we use a fact, called Rolle's Theorem, stated here.</p>
+<article class="theorem theorem-like" id="thm_rolles"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Rolle's Theorem.</span>
+</h3>
+<p id="p-2909">Let <span class="process-math">\(f\)</span> be continuous on <span class="process-math">\([a,b]\)</span> and differentiable on <span class="process-math">\((a,b)\text{,}\)</span> where <span class="process-math">\(f(a) = f(b)\text{.}\)</span> There is some <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\)</span> such that <span class="process-math">\(\fp(c) = 0\text{.}\)</span> </p></article><figure class="figure figure-like" id="vid_graphs_MVT_rolles_thm"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-107" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/E05H1f8TByI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.6<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_rolles.html" title="Theorem 3.2.5: Rolle's Theorem">Theorem 3.2.5</a></figcaption></figure><p id="p-2910">Consider <a href="" class="xref" data-knowl="./knowl/fig_mvt3.html" title="Figure 3.2.7">Figure 3.2.7</a> where the graph of a function <span class="process-math">\(f\)</span> is given, where <span class="process-math">\(f(a) = f(b)\text{.}\)</span> It should make intuitive sense that if <span class="process-math">\(f\)</span> is differentiable (and hence, continuous) that there would be a value <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\)</span> where <span class="process-math">\(\fp(c)=0\text{;}\)</span> that is, there would be a relative maximum or minimum of <span class="process-math">\(f\)</span> in <span class="process-math">\((a,b)\text{.}\)</span> Rolle's Theorem guarantees at least one; there may be more.</p>
+<figure class="figure figure-like" id="fig_mvt3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_mvt3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.7<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(f(x) = x^3-5x^2+3x+5\text{,}\)</span> where <span class="process-math">\(f(a) = f(b)\text{.}\)</span> Note the existence of <span class="process-math">\(c\text{,}\)</span> where <span class="process-math">\(a\lt c\lt b\text{,}\)</span> where <span class="process-math">\(\fp(c)=0\text{.}\)</span></figcaption></figure><p id="vidint_graphs_MVT_ex1">Rolle's Theorem is presented here as a stepping stone toward the Mean Value Theorem, but it's a useful result in its own right. It often turns up as a tool in mathematical problem solving. The following video illustrates one such use of Rolle's Theorem.</p>
+<figure class="figure figure-like" id="vid_graphs_MVT_ex_1"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-108" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/le-5zsb6O7o?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.8<span class="period">.</span></span><span class="space"> </span>Using Rolle's Theorem to show a polynomial has at most one real root</figcaption></figure><p id="p-2912">Rolle's Theorem is really just a special case of the Mean Value Theorem. If <span class="process-math">\(f(a) = f(b)\text{,}\)</span> then the <em class="emphasis">average</em> rate of change on <span class="process-math">\((a,b)\)</span> is <span class="process-math">\(0\text{,}\)</span> and the theorem guarantees some <span class="process-math">\(c\)</span> where <span class="process-math">\(\fp(c)=0\text{.}\)</span> We will prove Rolle's Theorem, then use it to prove the Mean Value Theorem.</p>
+<article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h3 class="heading"><span class="title">Proof of Rolle's Theorem.</span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-2913">Let <span class="process-math">\(f\)</span> be differentiable on <span class="process-math">\((a,b)\)</span> where <span class="process-math">\(f(a)=f(b)\text{.}\)</span> We consider two cases.</p>
+<article class="case" id="case-1"><h3 class="heading">Case.</h3>
+<p id="p-2914">Consider the case when <span class="process-math">\(f\)</span> is constant on <span class="process-math">\([a,b]\text{;}\)</span> that is, <span class="process-math">\(f(x) = f(a) = f(b)\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\([a,b]\text{.}\)</span> Then <span class="process-math">\(\fp(x) = 0\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\([a,b]\text{,}\)</span> showing there is at least one value <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\)</span> where <span class="process-math">\(\fp(c)=0\text{.}\)</span></p></article><article class="case" id="case-2"><h3 class="heading">Case.</h3>
+<p id="p-2915">Now assume that <span class="process-math">\(f\)</span> is not constant on <span class="process-math">\([a,b]\text{.}\)</span> The Extreme Value Theorem guarantees that <span class="process-math">\(f\)</span> has a maximal and minimal value on <span class="process-math">\([a,b]\text{,}\)</span> found either at the endpoints or at a critical value in <span class="process-math">\((a,b)\text{.}\)</span> Since <span class="process-math">\(f(a)=f(b)\)</span> and <span class="process-math">\(f\)</span> is not constant, it is clear that the maximum and minimum cannot <em class="emphasis">both</em> be found at the endpoints. Assume, without loss of generality, that the maximum of <span class="process-math">\(f\)</span> is not found at the endpoints. Therefore there is a <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\)</span> such that <span class="process-math">\(f(c)\)</span> is the maximum value of <span class="process-math">\(f\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/thm_criticalpts.html" title="Theorem 3.1.15: Relative Extrema and Critical Points">Theorem 3.1.15</a>, <span class="process-math">\(c\)</span> must be a critical number of <span class="process-math">\(f\text{;}\)</span> since <span class="process-math">\(f\)</span> is differentiable, we have that <span class="process-math">\(\fp(c) = 0\text{,}\)</span> completing the proof of the theorem.</p></article></article></div>
+<p id="p-2916">We can now prove the Mean Value Theorem.</p>
+<article class="hiddenproof" id="proof-3"><a href="" data-knowl="" class="id-ref proof-knowl original has-video" data-refid="hk-proof-3"><h3 class="heading"><span class="title">Proof of the Mean Value Theorem.</span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_graphs_MVT_proof_MVT" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/1b9af8q5JMg?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-2917">Define the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+g(x) = f(x) - \frac{f(b)-f(a)}{b-a}x\text{.}
+\end{equation*}
+</div>
+<p id="p-2918">We know <span class="process-math">\(g\)</span> is differentiable on <span class="process-math">\((a,b)\)</span> and continuous on <span class="process-math">\([a,b]\)</span> since <span class="process-math">\(f\)</span> is. We can show <span class="process-math">\(g(a)=g(b)\)</span> (it is actually easier to show <span class="process-math">\(g(b)-g(a)=0\text{,}\)</span> which suffices). We can then apply Rolle's theorem to guarantee the existence of <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\)</span> such that <span class="process-math">\(g'(c) = 0\text{.}\)</span> But note that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0= g'(c) = \fp(c) - \frac{f(b)-f(a)}{b-a}\text{;}
+\end{equation*}
+</div>
+<p class="continuation">hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp(c) = \frac{f(b)-f(a)}{b-a}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which is what we sought to prove.</p></article></div>
+<p id="p-2919">Going back to the very beginning of the section, we see that the only assumption we would need about our distance function <span class="process-math">\(f(t)\)</span> is that it be continuous and differentiable for <span class="process-math">\(t\)</span> from <span class="process-math">\(0\)</span> to <span class="process-math">\(2\)</span> hours (both reasonable assumptions). By the <a href="" class="xref" data-knowl="./knowl/thm_mvt.html" title="Theorem 3.2.4: The Mean Value Theorem of Differentiation">Theorem 3.2.4</a>, we are guaranteed a time during the trip where our instantaneous speed is <span class="quantity">50 mph</span>. This fact is used in practice. Some law enforcement agencies monitor traffic speeds while in aircraft. They do not measure speed with radar, but rather by timing individual cars as they pass over lines painted on the highway whose distances apart are known. The officer is able to measure the <em class="emphasis">average</em> speed of a car between the painted lines; if that average speed is greater than the posted speed limit, the officer is assured that the driver exceeded the speed limit at some time.</p>
+<p id="p-2920">Note that the <a href="" class="xref" data-knowl="./knowl/thm_mvt.html" title="Theorem 3.2.4: The Mean Value Theorem of Differentiation">Theorem 3.2.4</a> is an <em class="emphasis">existence</em> theorem. It states that a special value <span class="process-math">\(c\)</span> <em class="emphasis">exists</em>, but it does not give any indication about how to find it. It turns out that when we need the <a href="" class="xref" data-knowl="./knowl/thm_mvt.html" title="Theorem 3.2.4: The Mean Value Theorem of Differentiation">Theorem 3.2.4</a>, existence is all we need.</p>
+<article class="example example-like" id="ex_mvt2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Mean Value Theorem.</span>
+</h3>
+<p id="p-2921">Consider <span class="process-math">\(f(x) = x^3+5x+5\)</span> on <span class="process-math">\([-3,3]\text{.}\)</span> Find <span class="process-math">\(c\)</span> in <span class="process-math">\([-3,3]\)</span> that satisfies the <a href="" class="xref" data-knowl="./knowl/thm_mvt.html" title="Theorem 3.2.4: The Mean Value Theorem of Differentiation">Theorem 3.2.4</a>.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-189" id="solution-189"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-189"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_graphs_MVT_ex_3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ON7WYLJY2tE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-2922">The average rate of change of <span class="process-math">\(f\)</span> on <span class="process-math">\([-3,3]\)</span> is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-107">
+\begin{align*}
+\frac{f(3)-f(-3)}{3-(-3)} \amp =\frac{47-(-37)}{6}\\
+\amp =\frac{84}{6}\\
+\amp = 14\text{.}
+\end{align*}
+</div>
+<p id="p-2923">We want to find <span class="process-math">\(c\)</span> such that <span class="process-math">\(\fp(c) = 14\text{.}\)</span> We find <span class="process-math">\(\fp(x) = 3x^2+5\text{.}\)</span> We set this equal to <span class="process-math">\(14\)</span> and solve for <span class="process-math">\(x\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-108">
+\begin{align*}
+\fp(x) \amp = 14\\
+3x^2 +5 \amp = 14\\
+x^2  \amp = 3\\
+x \amp = \pm \sqrt{3} \approx \pm 1.732
+\end{align*}
+</div>
+<p id="p-2924">We have found two values <span class="process-math">\(c\)</span> in <span class="process-math">\([-3,3]\)</span> where the instantaneous rate of change is equal to the average rate of change; the <a href="" class="xref" data-knowl="./knowl/thm_mvt.html" title="Theorem 3.2.4: The Mean Value Theorem of Differentiation">Theorem 3.2.4</a> guaranteed at least one. In <a href="" class="xref" data-knowl="./knowl/fig_mvt4.html" title="Figure 3.2.10">Figure 3.2.10</a>, <span class="process-math">\(f\)</span> is graphed with a line representing the average rate of change; the lines tangent to <span class="process-math">\(f\)</span> at <span class="process-math">\(x=\pm \sqrt{3}\)</span> are also given. Note how these lines are parallel (i.e., have the same slope) to the secant line.</p>
+<figure class="figure figure-like" id="fig_mvt4"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_mvt4.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.10<span class="period">.</span></span><span class="space"> </span>Demonstrating the Mean Value Theorem in <a href="" class="xref" data-knowl="./knowl/ex_mvt2.html" title="Example 3.2.9: Using the Mean Value Theorem">Example 3.2.9</a></figcaption></figure>
+</div></div>
+</div></article><p id="p-2925">While the <a href="" class="xref" data-knowl="./knowl/thm_mvt.html" title="Theorem 3.2.4: The Mean Value Theorem of Differentiation">Theorem 3.2.4</a> has practical use (for instance, the speed monitoring application mentioned before), it is mostly used to advance other theory. We will use it in the next section to relate the shape of a graph to its derivative.</p>
+<p id="vidint-MVT-applications">Before ending this section, we give video presentations of some of the basic theoretical applications of the Mean Value Theorem.</p>
+<p id="vidint-MVT-applications2">First, we recall that the derivative of any constant function is zero. Now, suppose that you know the derivative of some function is zero. Is the converse true? That is, are constant functions the only ones whose derivative is zero? The Mean Value Theorem says yes.</p>
+<figure class="figure figure-like" id="vid_graphs_MVT_func_deriv_0_const"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-111" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/PVMLAKYehgs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.11<span class="period">.</span></span><span class="space"> </span>Showing that a function with zero derivative is constant</figcaption></figure><p id="vidint-MVT-applications3">Using this result, we can establish another result which will be useful when we study antiderivatives: if two functions have the same derivative, then they differ by a constant.</p>
+<figure class="figure figure-like" id="vid_graphs_MVT_funcs_eq_derivs_diff_const"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-112" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/BzvxKeZMNtE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.12<span class="period">.</span></span><span class="space"> </span>Showing that two functions with the equal derivatives differ by a constant</figcaption></figure><p id="vidint-MVT-applications4">We end this section with one more proof involving the Mean Value Theorem; this time, establishing a property of the sine function.</p>
+<figure class="figure figure-like" id="vid_graphs_MVT_ex_2"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-113" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/CGBTZtM9mFY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.13<span class="period">.</span></span><span class="space"> </span>Demonstrating a property of the sine function</figcaption></figure><section class="exercises" id="exercises-15"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-39"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-490"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-479" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="479" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRXhwbGFpbiBpbiB5b3VyIG93biB3b3JkcyB3aGF0IHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gc3RhdGVzLgoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCkFuc3dlcnMgd2lsbCB2YXJ5LgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2930">Explain in your own words what the Mean Value Theorem states.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-479')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-491"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-480" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="480" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRXhwbGFpbiBpbiB5b3VyIG93biB3b3JkcyB3aGF0IFJvbGxlJ3MgVGhlb3JlbSBzdGF0ZXMuCgpbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KQW5zd2VycyB3aWxsIHZhcnkuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2932">Explain in your own words what Rolle’s Theorem states.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-480')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-40"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-56">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-64"><p id="p-2934">A function <span class="process-math">\(f(x)\)</span> and interval <span class="process-math">\([a,b]\)</span> are given. Check if <a href="" class="xref" data-knowl="./knowl/thm_rolles.html" title="Theorem 3.2.5: Rolle's Theorem">Rolle's Theorem</a> can be applied to <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\text{;}\)</span> if so, find <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\)</span> such that <span class="process-math">\(\fp(c)=0\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-492"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<div id="webwork-481" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="481" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT5xfDxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGZwfXtmJ31cKTwvZGl2PnwpKTsKQ29udGV4dCgiSW50ZXJ2YWwiKTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ2RvZXMgbm90IGFwcGx5Jz0+e30pOwokYz1Db21wdXRlKCIoLTEsMSkiKTsKJHNob3d3b3JrID0gcSFbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiRXhwbGFpbiB3aHkgUm9sbGUncyBUaGVvcmVtIGNhbiBvciBjYW5ub3QgYmUgYXBwbGllZC4iKSBAXSohOwoKQkVHSU5fUEdNTApbYGYoeCkgPSA2YF0gb24gW2BbLTEsMV1gXQoKWyRzaG93d29ya10qKgoKW0BLZXlib2FyZEluc3RydWN0aW9ucyhxIklmIFJvbGxlJ3MgVGhlb3JlbSBhcHBsaWVzLCBlbnRlciB0aGUgdmFsdWVzIG9mIFtgY2BdIGluIFtgKGEsYilgXSBzdWNoIHRoYXQgW2BcZnAoYyk9MFx0ZXh0ey59YF0gWW91IG1heSBlaXRoZXIgbGlzdCBpbmRpdmlkdWFsIG51bWJlcnMgc2VwYXJhdGVkIGJ5IGNvbW1hcywgb3IgdXNlIGludGVydmFsIG5vdGF0aW9uLiBJZiBSb2xsZSdzIFRoZW9yZW0gZG9lcyBub3QgYXBwbHksIGVudGVyIFt8ZG9lcyBub3QgYXBwbHl8XSouIilAXSoqCgpbX117JGN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2935"><span class="process-math">\(f(x) = 6\)</span> on <span class="process-math">\([-1,1]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-481')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-493"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<div id="webwork-482" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="482" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT5xfDxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGZwfXtmJ31cKTwvZGl2PnwpKTsKQ29udGV4dCgiSW50ZXJ2YWwiKTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ2RvZXMgbm90IGFwcGx5Jz0+e30pOwokYz1Db21wdXRlKCJkb2VzIG5vdCBhcHBseSIpOwokc2hvd3dvcmsgPSBxIVtAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJFeHBsYWluIHdoeSBSb2xsZSdzIFRoZW9yZW0gY2FuIG9yIGNhbm5vdCBiZSBhcHBsaWVkLiIpIEBdKiE7CgpCRUdJTl9QR01MCltgZih4KSA9IDZ4YF0gb24gW2BbLTEsMV1gXQoKWyRzaG93d29ya10qKgoKW0BLZXlib2FyZEluc3RydWN0aW9ucyhxIklmIFJvbGxlJ3MgVGhlb3JlbSBhcHBsaWVzLCBlbnRlciB0aGUgdmFsdWVzIG9mIFtgY2BdIGluIFtgKGEsYilgXSBzdWNoIHRoYXQgW2BcZnAoYyk9MFx0ZXh0ey59YF0gWW91IG1heSBlaXRoZXIgbGlzdCBpbmRpdmlkdWFsIG51bWJlcnMgc2VwYXJhdGVkIGJ5IGNvbW1hcywgb3IgdXNlIGludGVydmFsIG5vdGF0aW9uLiBJZiBSb2xsZSdzIFRoZW9yZW0gZG9lcyBub3QgYXBwbHksIGVudGVyIFt8ZG9lcyBub3QgYXBwbHl8XSouIilAXSoqCgpbX117JGN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2937"><span class="process-math">\(f(x) = 6x\)</span> on <span class="process-math">\([-1,1]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-482')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-494"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<div id="webwork-483" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="483" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT5xfDxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGZwfXtmJ31cKTwvZGl2PnwpKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ2RvZXMgbm90IGFwcGx5Jz0+e30pOwokYz1GcmFjdGlvbigiLTEvMiIpOwokc2hvd3dvcmsgPSBxIVtAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJFeHBsYWluIHdoeSBSb2xsZSdzIFRoZW9yZW0gY2FuIG9yIGNhbm5vdCBiZSBhcHBsaWVkLiIpIEBdKiE7CgpCRUdJTl9QR01MCltgZih4KSA9IHheMit4LTZgXSBvbiBbYFstMywyXWBdCgpbJHNob3d3b3JrXSoqCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKHEiSWYgUm9sbGUncyBUaGVvcmVtIGFwcGxpZXMsIGVudGVyIHRoZSB2YWx1ZXMgb2YgW2BjYF0gaW4gW2AoYSxiKWBdIHN1Y2ggdGhhdCBbYFxmcChjKT0wXHRleHR7Ln1gXSBZb3UgbWF5IGVpdGhlciBsaXN0IGluZGl2aWR1YWwgbnVtYmVycyBzZXBhcmF0ZWQgYnkgY29tbWFzLCBvciB1c2UgaW50ZXJ2YWwgbm90YXRpb24uIElmIFJvbGxlJ3MgVGhlb3JlbSBkb2VzIG5vdCBhcHBseSwgZW50ZXIgW3xkb2VzIG5vdCBhcHBseXxdKi4iKUBdKioKCltfXXskY317MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2939"><span class="process-math">\(f(x) = x^2+x-6\)</span> on <span class="process-math">\([-3,2]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-483')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-495"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<div id="webwork-484" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="484" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT5xfDxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGZwfXtmJ31cKTwvZGl2PnwpKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ2RvZXMgbm90IGFwcGx5Jz0+e30pOwokYz1GcmFjdGlvbigiLTEvMiIpOwokc2hvd3dvcmsgPSBxIVtAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJFeHBsYWluIHdoeSBSb2xsZSdzIFRoZW9yZW0gY2FuIG9yIGNhbm5vdCBiZSBhcHBsaWVkLiIpIEBdKiE7CgpCRUdJTl9QR01MCltgZih4KSA9IHheMit4LTJgXSBvbiBbYFstMywyXWBdCgpbJHNob3d3b3JrXSoqCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKHEiSWYgUm9sbGUncyBUaGVvcmVtIGFwcGxpZXMsIGVudGVyIHRoZSB2YWx1ZXMgb2YgW2BjYF0gaW4gW2AoYSxiKWBdIHN1Y2ggdGhhdCBbYFxmcChjKT0wXHRleHR7Ln1gXSBZb3UgbWF5IGVpdGhlciBsaXN0IGluZGl2aWR1YWwgbnVtYmVycyBzZXBhcmF0ZWQgYnkgY29tbWFzLCBvciB1c2UgaW50ZXJ2YWwgbm90YXRpb24uIElmIFJvbGxlJ3MgVGhlb3JlbSBkb2VzIG5vdCBhcHBseSwgZW50ZXIgW3xkb2VzIG5vdCBhcHBseXxdKi4iKUBdKioKCltfXXskY317MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2941"><span class="process-math">\(f(x) = x^2+x-2\)</span> on <span class="process-math">\([-3,2]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-484')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-496"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div id="webwork-485" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="485" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT5xfDxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGZwfXtmJ31cKTwvZGl2PnwpKTsKQ29udGV4dCgiSW50ZXJ2YWwiKTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ2RvZXMgbm90IGFwcGx5Jz0+e30pOwokYz1Db21wdXRlKCJkb2VzIG5vdCBhcHBseSIpOwokc2hvd3dvcmsgPSBxIVtAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJFeHBsYWluIHdoeSBSb2xsZSdzIFRoZW9yZW0gY2FuIG9yIGNhbm5vdCBiZSBhcHBsaWVkLiIpIEBdKiE7CgpCRUdJTl9QR01MCltgZih4KSA9IHheMit4YF0gb24gW2BbLTIsMl1gXQoKWyRzaG93d29ya10qKgoKW0BLZXlib2FyZEluc3RydWN0aW9ucyhxIklmIFJvbGxlJ3MgVGhlb3JlbSBhcHBsaWVzLCBlbnRlciB0aGUgdmFsdWVzIG9mIFtgY2BdIGluIFtgKGEsYilgXSBzdWNoIHRoYXQgW2BcZnAoYyk9MFx0ZXh0ey59YF0gWW91IG1heSBlaXRoZXIgbGlzdCBpbmRpdmlkdWFsIG51bWJlcnMgc2VwYXJhdGVkIGJ5IGNvbW1hcywgb3IgdXNlIGludGVydmFsIG5vdGF0aW9uLiBJZiBSb2xsZSdzIFRoZW9yZW0gZG9lcyBub3QgYXBwbHksIGVudGVyIFt8ZG9lcyBub3QgYXBwbHl8XSouIilAXSoqCgpbX117JGN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2943"><span class="process-math">\(f(x) = x^2+x\)</span> on <span class="process-math">\([-2,2]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-485')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-497"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-486" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="486" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT5xfDxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGZwfXtmJ31cKTwvZGl2PnwpKTsKQ29udGV4dCgiSW50ZXJ2YWwiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdkb2VzIG5vdCBhcHBseSc9Pnt9KTsKJGM9Rm9ybXVsYSgicGkvMiIpOwokc2hvd3dvcmsgPSBxIVtAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJFeHBsYWluIHdoeSBSb2xsZSdzIFRoZW9yZW0gY2FuIG9yIGNhbm5vdCBiZSBhcHBsaWVkLiIpIEBdKiE7CgpCRUdJTl9QR01MCltgZih4KSA9IFxzaW4oeClgXSBvbiBbYFtccGkvNiw1XHBpLzZdYF0KClskc2hvd3dvcmtdKioKCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMocSJJZiBSb2xsZSdzIFRoZW9yZW0gYXBwbGllcywgZW50ZXIgdGhlIHZhbHVlcyBvZiBbYGNgXSBpbiBbYChhLGIpYF0gc3VjaCB0aGF0IFtgXGZwKGMpPTBcdGV4dHsufWBdIFlvdSBtYXkgZWl0aGVyIGxpc3QgaW5kaXZpZHVhbCBudW1iZXJzIHNlcGFyYXRlZCBieSBjb21tYXMsIG9yIHVzZSBpbnRlcnZhbCBub3RhdGlvbi4gSWYgUm9sbGUncyBUaGVvcmVtIGRvZXMgbm90IGFwcGx5LCBlbnRlciBbfGRvZXMgbm90IGFwcGx5fF0qLiIpQF0qKgoKW19deyRjfXszMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2945"><span class="process-math">\(f(x) = \sin(x)\)</span> on <span class="process-math">\([\pi/6,5\pi/6]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-486')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-498"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-487" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="487" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT5xfDxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGZwfXtmJ31cKTwvZGl2PnwpKTsKQ29udGV4dCgiSW50ZXJ2YWwiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdkb2VzIG5vdCBhcHBseSc9Pnt9KTsKJGM9Q29tcHV0ZSgiZG9lcyBub3QgYXBwbHkiKTsKJHNob3d3b3JrID0gcSFbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiRXhwbGFpbiB3aHkgUm9sbGUncyBUaGVvcmVtIGNhbiBvciBjYW5ub3QgYmUgYXBwbGllZC4iKSBAXSohOwoKQkVHSU5fUEdNTApbYGYoeCkgPSBcY29zKHgpYF0gb24gW2BbMCxccGldYF0KClskc2hvd3dvcmtdKioKCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMocSJJZiBSb2xsZSdzIFRoZW9yZW0gYXBwbGllcywgZW50ZXIgdGhlIHZhbHVlcyBvZiBbYGNgXSBpbiBbYChhLGIpYF0gc3VjaCB0aGF0IFtgXGZwKGMpPTBcdGV4dHsufWBdIFlvdSBtYXkgZWl0aGVyIGxpc3QgaW5kaXZpZHVhbCBudW1iZXJzIHNlcGFyYXRlZCBieSBjb21tYXMsIG9yIHVzZSBpbnRlcnZhbCBub3RhdGlvbi4gSWYgUm9sbGUncyBUaGVvcmVtIGRvZXMgbm90IGFwcGx5LCBlbnRlciBbfGRvZXMgbm90IGFwcGx5fF0qLiIpQF0qKgoKW19deyRjfXszMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2947"><span class="process-math">\(f(x) = \cos(x)\)</span> on <span class="process-math">\([0,\pi]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-487')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-499"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-488" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="488" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT5xfDxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGZwfXtmJ31cKTwvZGl2PnwpKTsKQ29udGV4dCgiSW50ZXJ2YWwiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdkb2VzIG5vdCBhcHBseSc9Pnt9KTsKJGM9Q29tcHV0ZSgiZG9lcyBub3QgYXBwbHkiKTsKJHNob3d3b3JrID0gcSFbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiRXhwbGFpbiB3aHkgUm9sbGUncyBUaGVvcmVtIGNhbiBvciBjYW5ub3QgYmUgYXBwbGllZC4iKSBAXSohOwoKQkVHSU5fUEdNTApbYGYoeCkgPSBcZnJhY3sxfXt4XjItMngrMX1gXSBvbiBbYFswLDJdYF0KClskc2hvd3dvcmtdKioKCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMocSJJZiBSb2xsZSdzIFRoZW9yZW0gYXBwbGllcywgZW50ZXIgdGhlIHZhbHVlcyBvZiBbYGNgXSBpbiBbYChhLGIpYF0gc3VjaCB0aGF0IFtgXGZwKGMpPTBcdGV4dHsufWBdIFlvdSBtYXkgZWl0aGVyIGxpc3QgaW5kaXZpZHVhbCBudW1iZXJzIHNlcGFyYXRlZCBieSBjb21tYXMsIG9yIHVzZSBpbnRlcnZhbCBub3RhdGlvbi4gSWYgUm9sbGUncyBUaGVvcmVtIGRvZXMgbm90IGFwcGx5LCBlbnRlciBbfGRvZXMgbm90IGFwcGx5fF0qLiIpQF0qKgoKW19deyRjfXszMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2949"><span class="process-math">\(f(x) = \frac{1}{x^2-2x+1}\)</span> on <span class="process-math">\([0,2]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-488')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-57">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-65"><p id="p-2951">A function <span class="process-math">\(f(x)\)</span> and interval <span class="process-math">\([a,b]\)</span> are given. Check if <a href="" class="xref" data-knowl="./knowl/thm_mvt.html" title="Theorem 3.2.4: The Mean Value Theorem of Differentiation">The Mean Value Theorem of Differentiation</a> can be applied to <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\text{;}\)</span> if so, find <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\)</span> guaranteed by the Mean Value Theorem.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-500"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<div id="webwork-489" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="489" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkludGVydmFsIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgYXBwbHknPT57fSk7CiRjPUZvcm11bGEoIjAiKTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJFeHBsYWluIHdoeSB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtIGNhbiBvciBjYW5ub3QgYmUgYXBwbGllZC4iKSBAXSonOwoKQkVHSU5fUEdNTApbYGYoeCkgPSB4XjIrM3gtMWBdIG9uIFtgWy0yLDJdYF0KClskc2hvd3dvcmtdKioKCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gYXBwbGllcywgZW50ZXIgdGhlIHZhbHVlcyBvZiBbYGNgXSBpbiBbYChhLGIpYF0gZ3VhcmFudGVlZCBieSB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtLiBZb3UgbWF5IGVpdGhlciBsaXN0IGluZGl2aWR1YWwgbnVtYmVycyBzZXBhcmF0ZWQgYnkgY29tbWFzLCBvciB1c2UgaW50ZXJ2YWwgbm90YXRpb24uIElmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gZG9lcyBub3QgYXBwbHksIGVudGVyIFt8ZG9lcyBub3QgYXBwbHl8XSouJylAXSoqCgpbX117JGN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2952"><span class="process-math">\(f(x) = x^2+3x-1\)</span> on <span class="process-math">\([-2,2]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-489')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-501"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-490" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="490" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgYXBwbHknPT57fSk7CiRjPUZyYWN0aW9uKCI1LzIiKTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJFeHBsYWluIHdoeSB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtIGNhbiBvciBjYW5ub3QgYmUgYXBwbGllZC4iKSBAXSonOwoKQkVHSU5fUEdNTApbYGYoeCkgPSA1eF4yLTZ4KzhgXSBvbiBbYFswLDVdYF0KClskc2hvd3dvcmtdKioKCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gYXBwbGllcywgZW50ZXIgdGhlIHZhbHVlcyBvZiBbYGNgXSBpbiBbYChhLGIpYF0gZ3VhcmFudGVlZCBieSB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtLiBZb3UgbWF5IGVpdGhlciBsaXN0IGluZGl2aWR1YWwgbnVtYmVycyBzZXBhcmF0ZWQgYnkgY29tbWFzLCBvciB1c2UgaW50ZXJ2YWwgbm90YXRpb24uIElmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gZG9lcyBub3QgYXBwbHksIGVudGVyIFt8ZG9lcyBub3QgYXBwbHl8XSouJylAXSoqCgpbX117JGN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2954"><span class="process-math">\(f(x) = 5x^2-6x+8\)</span> on <span class="process-math">\([0,5]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-490')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-502"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div id="webwork-491" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="491" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgYXBwbHknPT57fSk7CiRjPUZvcm11bGEoIjNzcXJ0KDIpLzIiKTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJFeHBsYWluIHdoeSB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtIGNhbiBvciBjYW5ub3QgYmUgYXBwbGllZC4iKSBAXSonOwoKQkVHSU5fUEdNTApbYGYoeCkgPSBcc3FydHs5LXheMn1gXSBvbiBbYFswLDNdYF0KClskc2hvd3dvcmtdKioKCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gYXBwbGllcywgZW50ZXIgdGhlIHZhbHVlcyBvZiBbYGNgXSBpbiBbYChhLGIpYF0gZ3VhcmFudGVlZCBieSB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtLiBZb3UgbWF5IGVpdGhlciBsaXN0IGluZGl2aWR1YWwgbnVtYmVycyBzZXBhcmF0ZWQgYnkgY29tbWFzLCBvciB1c2UgaW50ZXJ2YWwgbm90YXRpb24uIElmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gZG9lcyBub3QgYXBwbHksIGVudGVyIFt8ZG9lcyBub3QgYXBwbHl8XSouJylAXSoqCgpbX117JGN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2956"><span class="process-math">\(f(x) = \sqrt{9-x^2}\)</span> on <span class="process-math">\([0,3]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-491')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-503"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-492" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="492" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgYXBwbHknPT57fSk7CiRjPUZyYWN0aW9uKCIxOS80Iik7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiRXhwbGFpbiB3aHkgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbSBjYW4gb3IgY2Fubm90IGJlIGFwcGxpZWQuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BmKHgpID0gXHNxcnR7MjUteH1gXSBvbiBbYFswLDldYF0KClskc2hvd3dvcmtdKioKCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gYXBwbGllcywgZW50ZXIgdGhlIHZhbHVlcyBvZiBbYGNgXSBpbiBbYChhLGIpYF0gZ3VhcmFudGVlZCBieSB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtLiBZb3UgbWF5IGVpdGhlciBsaXN0IGluZGl2aWR1YWwgbnVtYmVycyBzZXBhcmF0ZWQgYnkgY29tbWFzLCBvciB1c2UgaW50ZXJ2YWwgbm90YXRpb24uIElmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gZG9lcyBub3QgYXBwbHksIGVudGVyIFt8ZG9lcyBub3QgYXBwbHl8XSouJylAXSoqCgpbX117JGN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2958"><span class="process-math">\(f(x) = \sqrt{25-x}\)</span> on <span class="process-math">\([0,9]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-492')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-504"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-493" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="493" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgYXBwbHknPT57fSk7CiRjPUNvbXB1dGUoImRvZXMgbm90IGFwcGx5Iik7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiRXhwbGFpbiB3aHkgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbSBjYW4gb3IgY2Fubm90IGJlIGFwcGxpZWQuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BmKHgpID0gXGZyYWN7eF4yLTl9e3heMi0xfWBdIG9uIFtgWzAsMl1gXQoKWyRzaG93d29ya10qKgoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbSBhcHBsaWVzLCBlbnRlciB0aGUgdmFsdWVzIG9mIFtgY2BdIGluIFtgKGEsYilgXSBndWFyYW50ZWVkIGJ5IHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0uIFlvdSBtYXkgZWl0aGVyIGxpc3QgaW5kaXZpZHVhbCBudW1iZXJzIHNlcGFyYXRlZCBieSBjb21tYXMsIG9yIHVzZSBpbnRlcnZhbCBub3RhdGlvbi4gSWYgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbSBkb2VzIG5vdCBhcHBseSwgZW50ZXIgW3xkb2VzIG5vdCBhcHBseXxdKi4nKUBdKioKCltfXXskY317MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2960"><span class="process-math">\(f(x) = \frac{x^2-9}{x^2-1}\)</span> on <span class="process-math">\([0,2]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-493')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-505"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-494" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="494" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgYXBwbHknPT57fSk7CiRjPUZvcm11bGEoIjQvbG4oNSkiKTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJFeHBsYWluIHdoeSB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtIGNhbiBvciBjYW5ub3QgYmUgYXBwbGllZC4iKSBAXSonOwoKQkVHSU5fUEdNTApbYGYoeCkgPSBcbG4oeClgXSBvbiBbYFsxLDVdYF0KClskc2hvd3dvcmtdKioKCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gYXBwbGllcywgZW50ZXIgdGhlIHZhbHVlcyBvZiBbYGNgXSBpbiBbYChhLGIpYF0gZ3VhcmFudGVlZCBieSB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtLiBZb3UgbWF5IGVpdGhlciBsaXN0IGluZGl2aWR1YWwgbnVtYmVycyBzZXBhcmF0ZWQgYnkgY29tbWFzLCBvciB1c2UgaW50ZXJ2YWwgbm90YXRpb24uIElmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gZG9lcyBub3QgYXBwbHksIGVudGVyIFt8ZG9lcyBub3QgYXBwbHl8XSouJylAXSoqCgpbX117JGN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2962"><span class="process-math">\(f(x) = \ln(x)\)</span> on <span class="process-math">\([1,5]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-494')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-506"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-495" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="495" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgYXBwbHknPT57fSk7CiRjPUNvbXB1dGUoIi1hc2VjKDIvc3FydChwaSkpLCBhc2VjKDIvc3FydChwaSkpIik7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiRXhwbGFpbiB3aHkgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbSBjYW4gb3IgY2Fubm90IGJlIGFwcGxpZWQuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BmKHgpID0gXHRhbih4KWBdIG9uIFtgWy1ccGkvNCxccGkvNF1gXQoKWyRzaG93d29ya10qKgoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbSBhcHBsaWVzLCBlbnRlciB0aGUgdmFsdWVzIG9mIFtgY2BdIGluIFtgKGEsYilgXSBndWFyYW50ZWVkIGJ5IHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0uIFlvdSBtYXkgZWl0aGVyIGxpc3QgaW5kaXZpZHVhbCBudW1iZXJzIHNlcGFyYXRlZCBieSBjb21tYXMsIG9yIHVzZSBpbnRlcnZhbCBub3RhdGlvbi4gSWYgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbSBkb2VzIG5vdCBhcHBseSwgZW50ZXIgW3xkb2VzIG5vdCBhcHBseXxdKi4nKUBdKioKCltfXXskY317MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2964"><span class="process-math">\(f(x) = \tan(x)\)</span> on <span class="process-math">\([-\pi/4,\pi/4]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-495')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-507"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-496" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="496" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgYXBwbHknPT57fSk7CiRjPUZyYWN0aW9uKCItMi8zIik7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiRXhwbGFpbiB3aHkgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbSBjYW4gb3IgY2Fubm90IGJlIGFwcGxpZWQuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BmKHgpID0geF4zLTJ4XjIreCsxYF0gb24gW2BbLTIsMl1gXQoKWyRzaG93d29ya10qKgoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbSBhcHBsaWVzLCBlbnRlciB0aGUgdmFsdWVzIG9mIFtgY2BdIGluIFtgKGEsYilgXSBndWFyYW50ZWVkIGJ5IHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0uIFlvdSBtYXkgZWl0aGVyIGxpc3QgaW5kaXZpZHVhbCBudW1iZXJzIHNlcGFyYXRlZCBieSBjb21tYXMsIG9yIHVzZSBpbnRlcnZhbCBub3RhdGlvbi4gSWYgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbSBkb2VzIG5vdCBhcHBseSwgZW50ZXIgW3xkb2VzIG5vdCBhcHBseXxdKi4nKUBdKioKCltfXXskY317MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2966"><span class="process-math">\(f(x) = x^3-2x^2+x+1\)</span> on <span class="process-math">\([-2,2]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-496')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-508"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-497" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="497" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgYXBwbHknPT57fSk7CiRjPUNvbXB1dGUoIjUrN3NxcnQoNykvNiwgNS03c3FydCg3KS82Iik7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiRXhwbGFpbiB3aHkgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbSBjYW4gb3IgY2Fubm90IGJlIGFwcGxpZWQuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BmKHgpID0gMnheMy01eF4yKzZ4KzFgXSBvbiBbYFstNSwyXWBdCgpbJHNob3d3b3JrXSoqCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtIGFwcGxpZXMsIGVudGVyIHRoZSB2YWx1ZXMgb2YgW2BjYF0gaW4gW2AoYSxiKWBdIGd1YXJhbnRlZWQgYnkgdGhlIE1lYW4gVmFsdWUgVGhlb3JlbS4gWW91IG1heSBlaXRoZXIgbGlzdCBpbmRpdmlkdWFsIG51bWJlcnMgc2VwYXJhdGVkIGJ5IGNvbW1hcywgb3IgdXNlIGludGVydmFsIG5vdGF0aW9uLiBJZiB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtIGRvZXMgbm90IGFwcGx5LCBlbnRlciBbfGRvZXMgbm90IGFwcGx5fF0qLicpQF0qKgoKW19deyRjfXszMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2968"><span class="process-math">\(f(x) = 2x^3-5x^2+6x+1\)</span> on <span class="process-math">\([-5,2]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-497')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-509"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-498" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="498" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgYXBwbHknPT57fSk7CiRjPUNvbXB1dGUoInNxcnQocGleMi00KS9waSwgLXNxcnQocGleMi00KS9waSIpOwokc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2UgPT4gIkV4cGxhaW4gd2h5IHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gY2FuIG9yIGNhbm5vdCBiZSBhcHBsaWVkLiIpIEBdKic7CgpCRUdJTl9QR01MCltgZih4KSA9IFxzaW5eey0xfSh4KWBdIG9uIFtgWy0xLDFdYF0KClskc2hvd3dvcmtdKioKCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gYXBwbGllcywgZW50ZXIgdGhlIHZhbHVlcyBvZiBbYGNgXSBpbiBbYChhLGIpYF0gZ3VhcmFudGVlZCBieSB0aGUgTWVhbiBWYWx1ZSBUaGVvcmVtLiBZb3UgbWF5IGVpdGhlciBsaXN0IGluZGl2aWR1YWwgbnVtYmVycyBzZXBhcmF0ZWQgYnkgY29tbWFzLCBvciB1c2UgaW50ZXJ2YWwgbm90YXRpb24uIElmIHRoZSBNZWFuIFZhbHVlIFRoZW9yZW0gZG9lcyBub3QgYXBwbHksIGVudGVyIFt8ZG9lcyBub3QgYXBwbHl8XSouJylAXSoqCgpbX117JGN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2970"><span class="process-math">\(f(x) = \sin^{-1}(x)\)</span> on <span class="process-math">\([-1,1]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-498')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article><article class="subexercises" id="subexercises-41"><h4 class="heading"><span class="title">Review</span></h4>
+<article class="exercise exercise-like" id="exercise-510"><h5 class="heading"><span class="codenumber">21<span class="period">.</span></span></h5>
+<div id="webwork-499" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="499" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwooJGIsJGMpID0gKC05Li4tMSwxLi45KVtOY2hvb3NlSygxOCwyKV07CigkbCwkaCkgPSAoMS4uNClbTmNob29zZUsoNCwyKV07CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRiPS0zOyRjPTk7JGw9MzskaD00fTsKJGxvdyA9IGludCgtJGIvMikgLSAkbDsKJGhpZ2ggPSBpbnQoLSRiLzIpICsgJGg7CiRmID0gRm9ybXVsYSgieF4yKyRiIHgrJGMiKS0+cmVkdWNlOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokbWF4ID0gRnJhY3Rpb24obWF4KCRmLT5ldmFsKHg9PiRsb3cpLCRmLT5ldmFsKHg9PiRoaWdoKSwkZi0+ZXZhbCh4PT4tJGIvMikpKTsKJG1pbiA9IEZyYWN0aW9uKG1pbigkZi0+ZXZhbCh4PT4kbG93KSwkZi0+ZXZhbCh4PT4kaGlnaCksJGYtPmV2YWwoeD0+LSRiLzIpKSk7CgpCRUdJTl9QR01MCkZpbmQgdGhlIGV4dHJlbWUgdmFsdWVzIG9mIFtgZih4KSA9IFskZl1gXSBvbiBbYFtbJGxvd10sWyRoaWdoXV1cdGV4dHsufWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKHEiRW50ZXIgdGhlIG1heGltaW11bSB2YWx1ZSBoZXJlLCBvciBlbnRlciBbfE5PTkV8XSogaWYgdGhlcmUgaXNuJ3Qgb25lLiIpQF0qKgoKW19deyRtYXh9ezEwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucyhxIkVudGVyIHRoZSBtaW5pbWltdW0gdmFsdWUgaGVyZSwgb3IgZW50ZXIgW3xOT05FfF0qIGlmIHRoZXJlIGlzbid0IG9uZS4iKUBdKioKCltfXXskbWlufXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2972">Find the extreme values of <span class="process-math">\(f(x) = {x^{2}-5x+3}\)</span> on <span class="process-math">\([-2,5]\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-499')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-511"><h5 class="heading"><span class="codenumber">22<span class="period">.</span></span></h5>
+<div id="webwork-500" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="500" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRGVzY3JpYmUgdGhlIGNyaXRpY2FsIHBvaW50cyBvZiBbYGYoeCkgPSBcY29zKHgpXHRleHR7Ln1gXQoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClRoZXkgYXJlIHRoZSBtdWx0aXBsZXMgb2YgW2BccGlgXSBzdWNoIGFzIFtgMFx0ZXh0eyx9YF0gW2BccG1ccGlcdGV4dHssfWBdIFtgXHBtIDJccGlcdGV4dHssfWBdIFtgXHBtNFxwaVx0ZXh0eyx9YF0gZXRjLgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2975">Describe the critical points of <span class="process-math">\(f(x) = \cos(x)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-500')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-512"><h5 class="heading"><span class="codenumber">23<span class="period">.</span></span></h5>
+<div id="webwork-501" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="501" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRGVzY3JpYmUgdGhlIGNyaXRpY2FsIHBvaW50cyBvZiBbYGYoeCkgPSBcdGFuKHgpXHRleHR7Ln1gXQoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClRoZXJlIGFyZW4ndCBhbnkgY3JpdGljYWwgcG9pbnRzLiBXaGVyZXZlciBbYFx0YW4oeClgXSBpcyBkZWZpbmVkLCBpdHMgZGVyaXZhdGl2ZSBpcyBhbHNvIGRlZmluZWQgYW5kIHN0cmljdGx5IHBvc2l0aXZlLgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2977">Describe the critical points of <span class="process-math">\(f(x) = \tan(x)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-501')">Make Interactive</button></div>
+</div></article></article></section></section></div></main>
+</div>
+</body>
+</html>

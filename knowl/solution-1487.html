@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:49:13Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">14.7.11.1</span><span class="period">.</span>
+</h4>
+<p>We convert the equation of the plane to use cylindrical coordinates: <span class="process-math">\(z= 1-r\cos(\theta)+0.1r\sin(\theta)\text{.}\)</span> Thus the region is space is bounded by <span class="process-math">\(0 \leq z \leq 1-r\cos(\theta) + 0.1r\sin(\theta)\text{,}\)</span> <span class="process-math">\(0 \leq r \leq \cos(3\theta)\text{,}\)</span> <span class="process-math">\(0 \leq \theta \leq \pi\)</span> (recall that the rose curve <span class="process-math">\(r=\cos(3\theta)\)</span> is traced out once on <span class="process-math">\([0,\pi]\text{.}\)</span></p>
+<p>Since density is constant, we set <span class="process-math">\(\delta = 1\)</span> and finding the mass is equivalent to finding the volume of the solid. We set up the triple integral to compute this but do not evaluate it; we leave it to the reader to confirm it evaluates to the same result found in <a href="" class="xref" data-knowl="./knowl/ex_doublepol4.html" title="Example 14.3.13: Finding the volume of a solid">Example 14.3.13</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_doublepol4.html">
+\begin{equation*}
+M = \iiint_D\delta \, dV = \int_0^{\pi}\int_0^{\cos(3\theta)}\int_0^{1-r\cos(\theta)+0.1r\sin(\theta)} r\,dz\,dr\,d\theta \approx 0.785\text{.}
+\end{equation*}
+</div>
+<p>From <a href="" class="xref" data-knowl="./knowl/def_mass_3d.html" title="Definition 14.6.30: Mass, Center of Mass of Solids">Definition 14.6.30</a> we set up the triple integrals to compute the moments about the three coordinate planes. The computation of each is left to the reader (using technology is recommended):</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_mass_3d.html">
+\begin{align*}
+M_{yz} = \iiint_D x\,dV \amp = \int_0^{\pi}\int_0^{\cos(3\theta)}\int_0^{1-r\cos(\theta)+0.1r\sin(\theta)} (r\cos(\theta)) r\,dz\,dr\,d\theta\\
+\amp = -0.147\text{.}
+\end{align*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_mass_3d.html">
+\begin{align*}
+M_{xz} = \iiint_D y\,dV \amp = \int_0^{\pi}\int_0^{\cos(3\theta)}\int_0^{1-r\cos(\theta)+0.1r\sin(\theta)} (r\sin(\theta)) r\,dz\,dr\,d\theta\\
+\amp = 0.015.\\
+M_{xy} = \iiint_D z\,dV \amp = \int_0^{\pi}\int_0^{\cos(3\theta)}\int_0^{1-r\cos(\theta)+0.1r\sin(\theta)} (z) r\,dz\,dr\,d\theta\\
+\amp = 0.467\text{.}
+\end{align*}
+</div>
+<p>The center of mass, in rectangular coordinates, is located at <span class="process-math">\((-0.147,0.015,0.467)\text{,}\)</span> which lies outside the bounds of the solid.</p>
+</div>
+<span class="incontext"><a href="sec_cylindrical_spherical.html#solution-1487" class="internal">in-context</a></span>
+</body>
+</html>

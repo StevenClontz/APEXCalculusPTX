@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:18Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-trigsub-ex-complete-square" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/5JAXeV1-vCo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We start by completing the square, then make the substitution <span class="process-math">\(u=x+3\text{,}\)</span> followed by the trigonometric substitution of <span class="process-math">\(u=\tan(\theta)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align}
+\int \frac1{(x^2+6x+10)^2}\, dx =\int \frac1{\big((x+3)^2+1\big)^2}\, dx\amp = \int \frac1{(u^2+1)^2}\,du.\notag\\
+\end{align}
+<p class="intertext">Now make the substitution <span class="process-math">\(u=\tan(\theta)\text{,}\)</span> <span class="process-math">\(du=\sec^2(\theta) \, d\theta\text{:}\)</span></p>
+\begin{align}
+\amp =	\int \frac1{(\tan^2(\theta) +1)^2}\sec^2(\theta) \, d\theta\notag\\
+\amp = \int\frac 1{(\sec^2(\theta) )^2}\sec^2(\theta) \, d\theta\notag\\
+\amp = \int \cos^2(\theta) \, d\theta.\notag\\
+\end{align}
+<p class="intertext">Applying a power reducing formula, we have</p>
+\begin{align}
+\amp = \int \left(\frac12 +\frac12\cos(2\theta)\right)\, d\theta\notag\\
+\amp = \frac12\theta + \frac14\sin(2\theta) + C\text{.}\tag{6.4.2}
+\end{align}
+</div>
+<p>We need to return to the variable <span class="process-math">\(x\text{.}\)</span> As <span class="process-math">\(u=\tan(\theta)\text{,}\)</span> <span class="process-math">\(\theta = \tan^{-1}(u)\text{.}\)</span> Using the identity <span class="process-math">\(\sin(2\theta) = 2\sin(\theta) \cos(\theta)\)</span> and using the reference triangle found in <a href="" class="xref" data-knowl="./knowl/idea_trigsub.html" title="Key Idea 6.4.3: Trigonometric Substitution">Key Idea 6.4.3</a>(b), we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_trigsub.html">
+\begin{equation*}
+\frac14\sin(2\theta) = \frac12\frac u{\sqrt{u^2+1}}\cdot\frac 1{\sqrt{u^2+1}} = \frac12\frac u{u^2+1}\text{.}
+\end{equation*}
+</div>
+<p>Finally, we return to <span class="process-math">\(x\)</span> with the substitution <span class="process-math">\(u=x+3\text{.}\)</span> We start with the expression in Equation <a href="" class="xref" data-knowl="./knowl/eq_extrigsub7.html" title="Equation 6.4.2">(6.4.2)</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_extrigsub7.html">
+\begin{align*}
+\frac12\theta + \frac14\sin(2\theta) + C \amp = \frac12\tan^{-1}(u) + \frac12\frac{u}{u^2+1}+C\\
+\amp = \frac12\tan^{-1}(x+3) + \frac{x+3}{2(x^2+6x+10)}+C\text{.}
+\end{align*}
+</div>
+<p>Stating our final result in one line,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int\frac1{(x^2+6x+10)^2}\, dx=\frac12\tan^{-1}(x+3) + \frac{x+3}{2(x^2+6x+10)}+C\text{.}
+\end{equation*}
+</div>
+</div></body>
+</html>

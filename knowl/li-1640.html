@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:39:21Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="li"><h4 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
+</h4>
+<p>We cannot actually apply <a href="" class="xref" data-knowl="./knowl/thm_seq_limit.html" title="Theorem 9.1.12: Limit of a Sequence">Theorem 9.1.12</a> here, as the function <span class="process-math">\(f(x) = (-1)^x/x\)</span> is not well defined. (What does <span class="process-math">\((-1)^{\sqrt{2}}\)</span> mean? In actuality, there is an answer, but it involves <em class="emphasis">complex analysis</em>, beyond the scope of this text.)  Instead, we invoke the definition of the limit of a sequence. By looking at the plot in <a href="" class="xref" data-knowl="./knowl/fig_seq4c.html" title="Figure 9.1.16">Figure 9.1.16</a>, we would like to conclude that the sequence converges to <span class="process-math">\(L=0\text{.}\)</span> Let <span class="process-math">\(\epsilon&gt;0\)</span> be given. We can find a natural number <span class="process-math">\(m\)</span> such that <span class="process-math">\(1/m \lt  \varepsilon\text{.}\)</span> Let <span class="process-math">\(n&gt;m\text{,}\)</span> and consider <span class="process-math">\(\abs{a_n - L}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_seq_limit.html ./knowl/fig_seq4c.html">
+\begin{align*}
+\abs{a_n - L} \amp = \left\lvert\frac{(-1)^n}{n} - 0\right\rvert\\
+\amp = \frac1n\\
+\amp \lt  \frac1m \text{ (since \(n&gt;m\)) }\\
+\amp \lt  \varepsilon\text{.}
+\end{align*}
+</div>
+<p class="continuation">We have shown that by picking <span class="process-math">\(m\)</span> large enough, we can ensure that <span class="process-math">\(a_n\)</span> is arbitrarily close to our limit, <span class="process-math">\(L=0\text{,}\)</span> hence by the definition of the limit of a sequence, we can say <span class="process-math">\(\lim\limits_{n\to\infty}a_n = 0\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_seq4c.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.16<span class="period">.</span></span><span class="space"> </span>Scatter plot for the sequence in <a href="" class="xref" data-knowl="./knowl/item_ex_seq4_3.html" title="Item 3">Item 3</a></figcaption></figure></article><span class="incontext"><a href="sec_sequences.html#li-1640" class="internal">in-context</a></span>
+</body>
+</html>

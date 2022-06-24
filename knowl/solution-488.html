@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:39:10Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.3.8.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-linear-example3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/XsFRAzdk7WI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We first divide by <span class="process-math">\(x\)</span> to get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx}-\frac{1}{x}y = x^2\ln(x)\text{.}
+\end{equation*}
+</div>
+<p>The integrating factor is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\mu(x) \amp = e^{\int-\frac{1}{x}\,dx}\\
+\amp = e^{-\ln(x)}\\
+\amp = e^{\ln(x)^{-1}}\\
+\amp = x^{-1}\text{.}
+\end{align*}
+</div>
+<p>Multiplying both sides of the differential equation by the integrating factor and condensing the left hand side, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx} \left( \frac{y}{x}\right) = x\ln(x)\text{.}
+\end{equation*}
+</div>
+<p>Using Integrating by Parts to find the antiderivative of <span class="process-math">\(x\ln(x)\text{,}\)</span> we find the implicit solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{y}{x} = \frac{1}{2}x^2\ln(x) - \frac{1}{4}x^2 + C\text{.}
+\end{equation*}
+</div>
+<p>Solving for <span class="process-math">\(y\text{,}\)</span> the explicit solution is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = \frac{1}{2}x^3\ln(x) - \frac{1}{4}x^3 + Cx\text{.}
+\end{equation*}
+</div>
+<p>The initial condition <span class="process-math">\(y(1) = 0\)</span> yields <span class="process-math">\(C = 1/4\text{.}\)</span> The solution to the initial value problem is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = \frac{1}{2}x^3\ln(x) - \frac{1}{4}x^3 + \frac{1}{4}x\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="sec_Linear.html#solution-488" class="internal">in-context</a></span>
+</body>
+</html>

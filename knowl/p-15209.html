@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:49:16Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>The sphere of radius <span class="process-math">\(r\text{,}\)</span> centered at the origin, has equation <span class="process-math">\(\rho = r\text{.}\)</span> To obtain the full sphere, the bounds on <span class="process-math">\(\theta\)</span> and <span class="process-math">\(\varphi\)</span> are <span class="process-math">\(0\leq \theta \leq 2\pi\)</span> and <span class="process-math">\(-\pi/2 \leq \varphi \leq \pi/2\text{.}\)</span> This leads us to:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+V \amp = \iiint_D\, dV\\
+\amp = \int_{-\pi/2}^{\pi/2}\int_0^{2\pi}\int_0^r\big(\rho^2\cos(\varphi)\big)\, d\rho\, d\theta\, d\varphi\\
+\amp = \int_{-\pi/2}^{\pi/2}\int_0^{2\pi}\left(\frac13\rho^3\cos(\varphi)\Big|_0^r\right)\, d\theta\, d\varphi\\
+\amp = \int_{-\pi/2}^{\pi/2}\int_0^{2\pi} \left(\frac13r^3\cos(\varphi)\right)\, d\theta\, d\varphi\\
+\amp = \int_{-\pi/2}^{\pi/2} \left(\frac{2\pi}3r^3\cos(\varphi)\right)\, d\varphi\\
+\amp = \left.\left(\frac{2\pi}3r^3\sin(\varphi)\right)\right|_{-\pi/2}^{\pi/2}\\
+\amp = \frac{4\pi}3r^3\text{,}
+\end{align*}
+</div>
+<p class="continuation">the familiar formula for the volume of a sphere. Note how the integration steps were easy, not using square roots nor integration steps such as Substitution.</p>
+<span class="incontext"><a href="sec_cylindrical_spherical.html#p-15209" class="internal">in-context</a></span>
+</body>
+</html>

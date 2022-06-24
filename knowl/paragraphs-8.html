@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:09Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<section class="paragraphs"><h3 class="heading"><span class="title">Alternate Chain Rule Notation.</span></h3>
+<p>It is instructive to understand what the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> “looks like” using “<span class="process-math">\(\lz{y}{x}\)</span>” notation instead of <span class="process-math">\(y'\)</span> notation. Suppose that <span class="process-math">\(y=f(u)\)</span> is a function of <span class="process-math">\(u\text{,}\)</span> where <span class="process-math">\(u=g(x)\)</span> is a function of <span class="process-math">\(x\text{,}\)</span> as stated in <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">Theorem 2.5.4</a>. Then, through the composition <span class="process-math">\(f \circ g\text{,}\)</span> we can think of <span class="process-math">\(y\)</span> as a function of <span class="process-math">\(x\text{,}\)</span> as <span class="process-math">\(y=f(g(x))\text{.}\)</span> Thus the derivative of <span class="process-math">\(y\)</span> with respect to <span class="process-math">\(x\)</span> makes sense; we can talk about <span class="process-math">\(\lz{y}{x}\text{.}\)</span> This leads to an interesting progression of notation: </p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html ./knowl/thm_chain_rule.html">
+\begin{align*}
+y' \amp = \fp(g(x))\cdot g'(x)\\
+\lz{y}{x} \amp = y'(u) \cdot u'(x)\amp\amp \text{ since } y=f(u) \text{ and }u=g(x)\\
+\lz{y}{x} \amp = \lz{y}{u} \cdot \lz{u}{x}\amp\amp  \text{(using “fractional notation” for the derivative)}
+\end{align*}
+</div>
+<p>Here the “fractional” aspect of the derivative notation stands out. On the right hand side, it seems as though the “<span class="process-math">\(du\)</span>” terms cancel out, leaving</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx} = \frac{dy}{dx}\text{.}
+\end{equation*}
+</div>
+<p>It is important to realize that we <em class="emphasis">are not</em> canceling these terms; the derivative notation of <span class="process-math">\(\lz{y}{u}\)</span> is one symbol. It is equally important to realize that this notation was chosen precisely because of this behavior. It makes applying the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> easy with multiple variables. For instance,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html">
+\begin{equation*}
+\lz{y}{t} = \lz{y}{\bigcirc} \cdot \lz{\bigcirc}{\triangle} \cdot \lz{\triangle}{t}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(\bigcirc\)</span> and <span class="process-math">\(\triangle\)</span> are any variables you'd like to use.</p>
+<p>One of the most common ways of “visualizing” the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> is to consider a set of gears, as shown in <a href="" class="xref" data-knowl="./knowl/fig_chainrulegears.html" title="Figure 2.5.17">Figure 2.5.17</a>. The gears have <span class="process-math">\(36\text{,}\)</span> <span class="process-math">\(18\text{,}\)</span> and <span class="process-math">\(6\)</span> teeth, respectively. That means for every revolution of the <span class="process-math">\(x\)</span> gear, the <span class="process-math">\(u\)</span> gear revolves twice. That is, the rate at which the <span class="process-math">\(u\)</span> gear makes a revolution is twice as fast as the rate at which the <span class="process-math">\(x\)</span> gear makes a revolution.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;">
+<p>Using the terminology of calculus, the rate of <span class="process-math">\(u\)</span>-change, with respect to <span class="process-math">\(x\text{,}\)</span> is <span class="process-math">\(\lz{u}{x} = 2\text{.}\)</span></p>
+<p>Likewise, every revolution of <span class="process-math">\(u\)</span> causes <span class="process-math">\(3\)</span> revolutions of <span class="process-math">\(y\text{:}\)</span> <span class="process-math">\(\lz{y}{u} = 3\text{.}\)</span> How does <span class="process-math">\(y\)</span> change with respect to <span class="process-math">\(x\text{?}\)</span> For each revolution of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> revolves <span class="process-math">\(6\)</span> times; that is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx} = \frac{dy}{du}\cdot \frac{du}{dx} = 2\cdot 3 = 6\text{.}
+\end{equation*}
+</div>
+<p>We can then extend the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> with more variables by adding more gears to the picture.</p>
+</div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><img src="generated/latex-image/img_chainrulegears.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.17<span class="period">.</span></span><span class="space"> </span>A series of gears to demonstrate the Chain Rule. Note how <span class="process-math">\(\lz{y}{x} = \lz{y}{u}\cdot\lz{u}{x}\)</span></figcaption></figure></div>
+</div></div>
+<p>It is difficult to overstate the importance of the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>. So often the functions that we deal with are compositions of two or more functions, requiring us to use this rule to compute derivatives. It is also often used in real life when actual functions are unknown. Through measurement, we can calculate (or, approximate) <span class="process-math">\(\lz{y}{u}\)</span> and <span class="process-math">\(\lz{u}{x}\text{.}\)</span> With our knowledge of the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>, we can find <span class="process-math">\(\lz{y}{x}\text{.}\)</span></p>
+<p>In <a href="sec_imp_deriv.html" class="internal" title="Section 2.6: Implicit Differentiation">Section 2.6</a>, we use the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> to justify another differentiation technique. There are many curves that we can draw in the plane that fail the “vertical line test.” For instance, consider <span class="process-math">\(x^2+y^2=1\text{,}\)</span> which describes the unit circle. We may still be interested in finding slopes of tangent lines to the circle at various points. <a href="sec_imp_deriv.html" class="internal" title="Section 2.6: Implicit Differentiation">Section 2.6</a> shows how we can find <span class="process-math">\(\lz{y}{x}\)</span> without first “solving for <span class="process-math">\(y\text{.}\)</span>” While we can in this instance, in many other instances solving for <span class="process-math">\(y\)</span> is impossible. In these situations, <dfn class="terminology">implicit differentiation</dfn> is indispensable.</p></section><span class="incontext"><a href="sec_chainrule.html#paragraphs-8" class="internal">in-context</a></span>
+</body>
+</html>

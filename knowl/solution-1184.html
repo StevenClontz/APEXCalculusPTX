@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:45:42Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.2.12.1</span><span class="period">.</span>
+</h4>
+<p>It is relatively easy to show that along any line <span class="process-math">\(y=mx\text{,}\)</span> the limit is 0. This is not enough to prove that the limit exists, as demonstrated in the previous example, but it tells us that if the limit does exist then it must be 0.</p>
+<p>To prove the limit is 0, we apply <a href="" class="xref" data-knowl="./knowl/def_multilimit.html" title="Definition 13.2.7: Limit of a Function of Two Variables">Definition 13.2.7</a>. Let <span class="process-math">\(\varepsilon  \gt 0\)</span> be given. We want to find <span class="process-math">\(\delta  \gt 0\)</span> such that if <span class="process-math">\(\sqrt{(x-0)^2+(y-0)^2} \lt \delta\text{,}\)</span> then <span class="process-math">\(\abs{f(x,y)-0} \lt \varepsilon\text{.}\)</span></p>
+<p>Set <span class="process-math">\(\delta \lt \sqrt{\varepsilon/5}\text{.}\)</span> Note that <span class="process-math">\(\abs{\frac{5y^2}{x^2+y^2}} \lt 5\)</span> for all <span class="process-math">\((x,y)\neq (0,0)\text{,}\)</span> and that if <span class="process-math">\(\sqrt{x^2+y^2} \lt \delta\text{,}\)</span> then <span class="process-math">\(x^2\lt \delta^2\text{.}\)</span></p>
+<p>Let <span class="process-math">\(\sqrt{(x-0)^2+(y-0)^2} = \sqrt{x^2+y^2}\lt \delta\text{.}\)</span> Consider <span class="process-math">\(\abs{f(x,y)-0}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\abs{f(x,y)-0} \amp = \abs{\frac{5x^2y^2}{x^2+y^2}-0}\\
+\amp = \abs{x^2\cdot\frac{5y^2}{x^2+y^2}}\\
+\amp \lt  \delta^2\cdot 5\\
+\amp \lt  \frac{\varepsilon}{5}\cdot 5\\
+\amp = \varepsilon\text{.}
+\end{align*}
+</div>
+<p>Thus if <span class="process-math">\(\sqrt{(x-0)^2+(y-0)^2}\lt \delta\)</span> then <span class="process-math">\(\abs{f(x,y)-0}\lt \varepsilon\text{,}\)</span> which is what we wanted to show. Thus <span class="process-math">\(\lim\limits_{(x,y)\to(0,0)} \frac{5x^2y^2}{x^2+y^2} = 0\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_multi_limit.html#solution-1184" class="internal">in-context</a></span>
+</body>
+</html>

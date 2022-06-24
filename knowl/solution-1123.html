@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:45:09Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.5.3.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-curv-arclen-eg" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/UZkbOv5zW1U?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Using Equation <a href="" class="xref" data-knowl="./knowl/eq_vvfarc.html" title="Equation 12.5.1">(12.5.1)</a>, we write</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_vvfarc.html">
+\begin{equation*}
+s(t) = \int_0^t \norm{\vrp(u)}\, du\text{.}
+\end{equation*}
+</div>
+<p>We can integrate this, explicitly finding a relationship between <span class="process-math">\(s\)</span> and <span class="process-math">\(t\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+s(t) \amp = \int_0^t \norm{\vrp(u)}\, du\\
+\amp = \int_0^t \sqrt{3^2+4^2}\, du\\
+\amp = \int_0^t 5\, du\\
+\amp = 5t\text{.}
+\end{align*}
+</div>
+<p>Since <span class="process-math">\(s=5t\text{,}\)</span> we can write <span class="process-math">\(t=s/5\)</span> and replace <span class="process-math">\(t\)</span> in <span class="process-math">\(\vrt\)</span> with <span class="process-math">\(s/5\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec r(s) = \la 3(s/5)-1, 4(s/5)+2\ra = \la \frac35s-1,\frac45s+2\ra\text{.}
+\end{equation*}
+</div>
+<p>Clearly, as shown in <a href="" class="xref" data-knowl="./knowl/fig_vvfarc1.html" title="Figure 12.5.4">Figure 12.5.4</a>, the graph of <span class="process-math">\(\vec r\)</span> is a line, where <span class="process-math">\(t=0\)</span> corresponds to the point <span class="process-math">\((-1,2)\text{.}\)</span> What point on the line is 2 units away from this initial point? We find it with <span class="process-math">\(\vec r(2) = \la 1/5, 18/5\ra\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_vvfarc1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.5.4<span class="period">.</span></span><span class="space"> </span>Graphing <span class="process-math">\(\vec r\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_vvfarc1.html" title="Example 12.5.3: Finding the arc length parameter">Example 12.5.3</a> with parameters <span class="process-math">\(t\)</span> and <span class="process-math">\(s\)</span></figcaption></figure><p>Is the point <span class="process-math">\((1/5,18/5)\)</span> really 2 units away from <span class="process-math">\((-1,2)\text{?}\)</span> We use the Distance Formula to check:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+d = \sqrt{\left(\frac15-(-1)\right)^2+ \left(\frac{18}5-2\right)^2} = \sqrt{\frac{36}{25}+\frac{64}{25}} = \sqrt{4}=2\text{.}
+\end{equation*}
+</div>
+<p>Yes, <span class="process-math">\(\vec r(2)\)</span> is indeed 2 units away, in the direction of travel, from the initial point.</p>
+</div>
+<span class="incontext"><a href="sec_curvature.html#solution-1123" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:48:35Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>We start by computing partial derivatives and find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f_x(x,y) = \frac{-x}{\sqrt{a^2-x^2-y^2}}  \text{ and }  f_y(x,y) = \frac{-y}{\sqrt{a^2-x^2-y^2}}\text{.}
+\end{equation*}
+</div>
+<p>As our function <span class="process-math">\(f\)</span> only defines the top upper hemisphere of the sphere, we double our surface area result to get the total area:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+S \amp  = 2\iint_R \sqrt{1+ f_x(x,y)^2+f_y(x,y)^2}\, dA\\
+\amp = 2\iint_R \sqrt{1+ \frac{x^2+y^2}{a^2-x^2-y^2}}\, dA\text{.}
+\end{align*}
+</div>
+<p>The region <span class="process-math">\(R\)</span> that we are integrating over is bounded by the circle, centered at the origin, with radius <span class="process-math">\(a\text{:}\)</span> <span class="process-math">\(x^2+y^2=a^2\text{.}\)</span> Because of this region, we are likely to have greater success with our integration by converting to polar coordinates. Using the substitutions <span class="process-math">\(x=r\cos(\theta)\text{,}\)</span> <span class="process-math">\(y=r\sin(\theta)\text{,}\)</span> <span class="process-math">\(dA = r\, dr\, d\theta\)</span> and bounds <span class="process-math">\(0\leq\theta\leq2\pi\)</span> and <span class="process-math">\(0\leq r\leq a\text{,}\)</span> we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align}
+S \amp = 2\int_0^{2\pi}\int_0^a \sqrt{1+\frac{r^2\cos^2(\theta) +r^2\sin^2(\theta) }{a^2-r^2\cos^2(\theta) -r^2\sin^2(\theta) }}\, r\, dr\, d\theta\notag\\
+\amp =2\int_0^{2\pi}\int_0^ar\sqrt{1+\frac{r^2}{a^2-r^2}}\, dr\, d\theta\notag\\
+\amp =2\int_0^{2\pi}\int_0^ar\sqrt{\frac{a^2}{a^2-r^2}}\, dr\, d\theta.\tag{14.5.1}\\
+\end{align}
+<p class="intertext">Apply substitution <span class="process-math">\(u=a^2-r^2\)</span> and integrate the inner integral, giving</p>
+\begin{align}
+\amp = 2\int_0^{2\pi} a^2\, d\theta\notag\\
+\amp = 4\pi a^2\text{.}\notag
+\end{align}
+</div>
+<p>Our work confirms our previous formula.</p>
+</div></body>
+</html>

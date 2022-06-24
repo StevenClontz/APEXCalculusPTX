@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:50:54Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>We begin by demonstrating that <span class="process-math">\(C\)</span> lies on the surface <span class="process-math">\(z=6-x^2-y^2\text{.}\)</span> We can parametrize the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> components of <span class="process-math">\(C\)</span> with <span class="process-math">\(x=\cos t+1\text{,}\)</span> <span class="process-math">\(y=\sin t+1\)</span> as before. Lifting these components to the surface <span class="process-math">\(f\)</span> gives the <span class="process-math">\(z\)</span> component as <span class="process-math">\(z = 6-x^2-y^2 = 6-(\cos t+1)^2-(\sin t+1)^2 = 3-2\cos t-2\sin t\text{,}\)</span> which is the same <span class="process-math">\(z\)</span> component as found in <a href="" class="xref" data-knowl="./knowl/ex_stokes1.html" title="Example 15.7.13: Verifying Stokes' Theorem">Example 15.7.13</a>. Thus the curve <span class="process-math">\(C\)</span> lies on the surface <span class="process-math">\(z=6-x^2-y^2\text{,}\)</span> as illustrated in <a href="" class="xref" data-knowl="./knowl/fig_stokes2.html" title="Figure 15.7.17">Figure 15.7.17</a>.</p>
+<p>Since <span class="process-math">\(C\)</span> and <span class="process-math">\(\vec F\)</span> are the same as in the previous example, we already know that <span class="process-math">\(\oint_C\vec F\cdot\, d\vec r = 3\pi\text{.}\)</span> We confirm that this is also the value of <span class="process-math">\(\iint_\surfaceS (\curl\vec F)\cdot \vec n\, dS\text{.}\)</span></p>
+<p>We parametrize <span class="process-math">\(\surfaceS\)</span> with</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec r(u,v) = \langle v\cos u+1,v\sin u+1, 6-(v\cos u+1)^2-(v\sin u+1)^2\rangle\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(0\leq u\leq 2\pi\)</span> and <span class="process-math">\(0\leq v\leq 1\text{,}\)</span> and leave it to the reader to confirm that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec r_u\times \vec r_v = \la 2v\big(v\cos u+1\big), 2v\big(v\sin u+1\big),v\ra\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which also conforms to the right-hand rule with regard to the orientation of <span class="process-math">\(C\text{.}\)</span> With <span class="process-math">\(\curl \vec F = \langle 2y,0,-1\rangle\)</span> as before, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\amp\iint_\surfaceS (\curl\vec F)\cdot \vec n\, dS\\
+\quad\quad\amp = \int_0^1\int_0^{2\pi} \la 2v\sin u+2,0,-1\ra\cdot \la 2v\big(v\cos u+1\big), 2v\big(v\sin u+1\big),v\ra\, du\, dv \\
+\quad\quad\amp =3\pi\text{.}
+\end{align*}
+</div>
+<p>Even though the surfaces used in this example and in <a href="" class="xref" data-knowl="./knowl/ex_stokes1.html" title="Example 15.7.13: Verifying Stokes' Theorem">Example 15.7.13</a> are very different, because they share the same boundary, Stokes' Theorem guarantees they have equal “sum of curls” across their respective surfaces.</p>
+</div></body>
+</html>

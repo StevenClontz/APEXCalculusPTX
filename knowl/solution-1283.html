@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:46:51Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.6.14.1</span><span class="period">.</span>
+</h4>
+<p>Let <span class="process-math">\(\vrt = \la x(t),
+y(t)\ra\)</span> be the vector-valued function describing the path of the water in the <span class="process-math">\(xy\)</span>-plane; we seek <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\text{.}\)</span> We know that water will always flow downhill in the steepest direction; therefore, at any point on its path, it will be moving in the direction of <span class="process-math">\(-\nabla f\text{.}\)</span> (We ignore the physical effects of momentum on the water.) Thus <span class="process-math">\(\vrp(t)\)</span> will be parallel to <span class="process-math">\(\nabla f\text{,}\)</span> and there is some constant <span class="process-math">\(c\)</span> such that <span class="process-math">\(c\nabla f = \vrp(t) = \la x'(t),
+y'(t)\ra\text{.}\)</span></p>
+<p>We find <span class="process-math">\(\nabla f = \la -2x, -4y\ra\)</span> and write <span class="process-math">\(x'(t)\)</span> as <span class="process-math">\(\frac{dx}{dt}\)</span> and <span class="process-math">\(y'(t)\)</span> as <span class="process-math">\(\frac{dy}{dt}\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+c\nabla f \amp = \la x'(t), y'(t)\ra\\
+\la -2cx, -4cy \ra \amp  = \la \frac{dx}{dt}, \frac{dy}{dt}\ra\text{.}
+\end{align*}
+</div>
+<p>This implies</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-2cx = \frac{dx}{dt}  \text{ and }    -4cy =\frac{dy}{dt}, \text{i.e.,}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c = -\frac{1}{2x}\frac{dx}{dt}  \text{ and }    c =-\frac{1}{4y}\frac{dy}{dt}\text{.}
+\end{equation*}
+</div>
+<p>As <span class="process-math">\(c\)</span> equals both expressions, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{2x}\frac{dx}{dt} =\frac{1}{4y}\frac{dy}{dt}\text{.}
+\end{equation*}
+</div>
+<p>To find an explicit relationship between <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> we can integrate both sides with respect to <span class="process-math">\(t\text{.}\)</span> Recall from our study of differentials that <span class="process-math">\(\frac{dx}{dt}dt = dx\text{.}\)</span> Thus:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int \frac{1}{2x}\frac{dx}{dt}\,dt \amp =\int \frac{1}{4y}\frac{dy}{dt}\,dt\\
+\int \frac{1}{2x}\,dx \amp =\int\frac{1}{4y}\,dy\\
+\frac 12\ln\abs{x} \amp = \frac14\ln\abs{y} +C_1\\
+2\ln\abs{x} \amp = \ln\abs{y} +C_1\\
+\ln\abs{x^2} \amp = \ln\abs{y}+C_1\\
+\end{align*}
+<p class="intertext">Now raise both sides as a power of <span class="process-math">\(e\text{:}\)</span></p>
+\begin{align*}
+x^2 \amp = e^{\ln\abs{y}+C_1}\\
+x^2 \amp = e^{\ln\abs{y}}e^{C_1}\qquad \text{(Note that \(e^{C_1}\) is just a constant.)}\\
+x^2 \amp = yC_2\\
+\frac1{C_2}x^2 \amp =y   \qquad \text{ (Note that \(1/C_2\) is just a constant.) }\\
+Cx^2 \amp = y\text{.}
+\end{align*}
+</div>
+<p>As the water started at the point <span class="process-math">\((1,1/4)\text{,}\)</span> we can solve for <span class="process-math">\(C\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C(1)^2 = \frac14  \Rightarrow  C = \frac14\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_direct3a_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_direct3a_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like"><img src="generated/latex-image/img_direct3b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.6.15<span class="period">.</span></span><span class="space"> </span>A graph of the surface described in <a href="" class="xref" data-knowl="./knowl/ex_direct3.html" title="Example 13.6.14: The flow of water downhill">Example 13.6.14</a> along with the path in the <span class="process-math">\(xy\)</span>-plane with the level curves</figcaption></figure><p>Thus the water follows the curve <span class="process-math">\(y=x^2/4\)</span> in the <span class="process-math">\(xy\)</span>-plane. The surface and the path of the water is graphed in <a href="" class="xref" data-knowl="./knowl/fig_direct3a_3D.html" title="Figure 13.6.15.(a)">Figure 13.6.15.(a)</a>. In <a href="" class="xref" data-knowl="./knowl/fig_direct3b.html" title="Figure 13.6.15.(b)">Figure 13.6.15.(b)</a>, the level curves of the surface are plotted in the <span class="process-math">\(xy\)</span>-plane, along with the curve <span class="process-math">\(y=x^2/4\text{.}\)</span> Notice how the path intersects the level curves at right angles. As the path follows the gradient downhill, this reinforces the fact that the gradient is orthogonal to level curves.</p>
+</div>
+<span class="incontext"><a href="sec_directional_derivative.html#solution-1283" class="internal">in-context</a></span>
+</body>
+</html>

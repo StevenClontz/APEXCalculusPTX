@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:40Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.5.2.1</span><span class="period">.</span>
+</h4>
+<p>We need to create a force function <span class="process-math">\(F(x)\)</span> on the interval <span class="process-math">\([0,60]\text{.}\)</span> To do so, we must first decide what <span class="process-math">\(x\)</span> is measuring: is it the length of the rope still hanging or is it the amount of rope pulled in? As long as we are consistent, either approach is fine. We adopt for this example the convention that <span class="process-math">\(x\)</span> is the amount of rope pulled in. This seems to match intuition better; pulling up the first <span class="process-math">\(10\)</span> meters of rope involves <span class="process-math">\(x=0\)</span> to <span class="process-math">\(x=10\)</span> instead of <span class="process-math">\(x=60\)</span> to <span class="process-math">\(x=50\text{.}\)</span></p>
+<p>As <span class="process-math">\(x\)</span> is the amount of rope pulled in, the amount of rope still hanging is <span class="process-math">\(60-x\text{.}\)</span> This length of rope has a mass of <span class="quantity">66 <sup>g</sup>⁄<sub>m</sub></span> or <span class="quantity">0.066 <sup>kg</sup>⁄<sub>m</sub></span>. The mass of the rope still hanging is <span class="process-math">\(0.066(60-x)\)</span> <span class="quantity">kg</span>; multiplying this mass by the acceleration of gravity, <span class="quantity">9.8 <sup>m</sup>⁄<sub>s<sup>2</sup></sub></span>, gives our variable force function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F(x) = (9.8)(0.066)(60-x) = 0.6468(60-x)\text{.}
+\end{equation*}
+</div>
+<p>Thus the total work performed in pulling up the rope is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+W = \int_0^{60} 0.6468(60-x)\, dx = 1,164.24 \,\text{J}\text{.}
+\end{equation*}
+</div>
+<p>By comparison, consider the work done in lifting the entire rope <span class="process-math">\(60\)</span> meters. The rope weighs <span class="process-math">\(60\times 0.066 \times 9.8 = 38.808\)</span> N, so the work applying this force for <span class="process-math">\(60\)</span> meters is <span class="process-math">\(60\times 38.808 = 2,328.48\)</span> J. This is exactly twice the work calculated before (and we leave it to the reader to understand why.)</p>
+</div>
+<span class="incontext"><a href="sec_work.html#solution-460" class="internal">in-context</a></span>
+</body>
+</html>

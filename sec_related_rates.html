@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:28:18Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Related Rates</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_newton.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_deriv_apps.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_optimization.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_newton.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_deriv_apps.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_optimization.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="active">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_related_rates"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Related Rates</span>
+</h2>
+<figure class="figure figure-like" id="vid_deriv_apps_rel_rates_intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-131" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/TKqYEDaAidQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_related_rates.html" class="internal" title="Section 4.2: Related Rates">Section 4.2</a></figcaption></figure><p id="p-3659">When two quantities are related by an equation, knowing the value of one quantity can determine the value of the other. For instance, the circumference and radius of a circle are related by <span class="process-math">\(C=2\pi r\text{;}\)</span> knowing that <span class="process-math">\(C\)</span> is <span class="quantity">6<span class="process-math">\(\pi\)</span> in</span> determines the radius must be <span class="quantity">3 in</span>.</p>
+<p id="p-3660">But what if both variables are changing with time? If we know how two variables are related and we know how one of them changes with time, can we find how the other variable changes with time?</p>
+<p id="p-3661">The topic of <dfn class="terminology">related rates</dfn> allows us to answer this question: knowing the <em class="emphasis">rate</em> at which one quantity is changing can determine the <em class="emphasis">rate</em> at which another changes. </p>
+<article class="remark remark-like" id="remark-2"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
+</h3>
+<p id="p-3662">This section relies heavily on implicit differentiation, so referring back to <a href="sec_imp_deriv.html" class="internal" title="Section 2.6: Implicit Differentiation">Section 2.6</a> may help.</p></article><p id="p-3663">We demonstrate the concepts of related rates through examples.</p>
+<article class="example example-like" id="ex_rr1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Understanding related rates.</span>
+</h3>
+<p id="p-3664">The radius of a circle is growing at a rate of <span class="quantity">5 <sup>in</sup>⁄<sub>h</sub></span>. At what rate is the circumference growing?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-240" id="solution-240"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-240"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_apps_rel_rates_circumference" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Qg3GStrQ8pY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-3665">The circumference and radius of a circle are related by <span class="process-math">\(C = 2\pi r\text{.}\)</span> We are given information about how the length of <span class="process-math">\(r\)</span> changes with respect to time; that is, we are told <span class="process-math">\(\lz{r}{t}\)</span> is <span class="quantity">5 <sup>in</sup>⁄<sub>h</sub></span>. We want to know how the length of <span class="process-math">\(C\)</span> changes with respect to time, i.e., we want to know <span class="process-math">\(\lz{C}{t}\text{.}\)</span></p>
+<p id="p-3666">Implicitly differentiate both sides of <span class="process-math">\(C = 2\pi r\)</span> with respect to <span class="process-math">\(t\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-122">
+\begin{align*}
+C \amp = 2\pi r\\
+\lzoo{t}{C} \amp = \lzoo{t}{2\pi r}\\
+\lz{C}{t} \amp =2\pi \lz{r}{t}\text{.}
+\end{align*}
+</div>
+<p id="p-3667">As we know <span class="process-math">\(\lz{r}{t}\)</span> is <span class="quantity">5 <sup>in</sup>⁄<sub>h</sub></span>, we know</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lz{C}{t} = 2\pi 5 = 10\pi \approx 31.4\text{ in/hr }\text{.}
+\end{equation*}
+</div>
+<p id="vidint_deriv_apps_rel_rates_circ_area">This problem was relatively straighforward, owing to the linear relationship between radius and circumference. The next video explores what would happen if we had instead been asked for the rate at which the area is changing.</p>
+<figure class="figure figure-like" id="vid_deriv_apps_rel_rates_circ_area"><div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="video-133" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/RDPxSmxqUBs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.4<span class="period">.</span></span><span class="space"> </span>Trying to find the rate at which area is changing for the circle in <a href="" class="xref" data-knowl="./knowl/ex_rr1.html" title="Example 4.2.3: Understanding related rates">Example 4.2.3</a></figcaption></figure>
+</div></div>
+</div></article><p id="p-3669">In related rates problems, we will be presented with an application problem that involves two or more variables and one or more rate. It is the job of the reader to construct the appropriate model that can be used to answer the posed question. <a href="" class="xref" data-knowl="./knowl/idea_relatedrates.html" title="Key Idea 4.2.5: Related Rates">Key Idea 4.2.5</a> outlines the basic steps for solving a related rates problem.</p>
+<article class="insight remark-like" id="idea_relatedrates"><h3 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Related Rates.</span>
+</h3>
+<ol id="p-3670" class="decimal">
+<li id="li-837"><p id="p-3671">Read the problem carefully and identify the quantities that are changing with time. (There may be many quantities that change with time, try to identify which variables are important to your goal and only focus on these quantities.)</p></li>
+<li id="li-838"><p id="p-3672">Draw a diagram (if applicable) and assign mathematical variables to each quantity that is changing with time. (If you are given a particular value of a quantity that is also changing with time, do not include these values on your diagram. We will call these “instantaneous values” of the variable.)</p></li>
+<li id="li_rrmodel"><p id="p-3673">Relate the important variables using a mathematical model. (Typical models are known formulas for area, perimeter, the Pythagorean Theorem or Trigonometric Ratios.) It may be necessary to use more than one technique (such as similar triangles) to reduce your model down to one that only involves the variables of interest.</p></li>
+<li id="li-840"><p id="p-3674">Implicitly differentiate both sides of the equation found in <a href="" class="xref" data-knowl="./knowl/li_rrmodel.html" title="Item 3">Step 3</a> with respect to <span class="process-math">\(t\text{.}\)</span></p></li>
+<li id="li-841"><p id="p-3675">Substitute in the known values of rates and known instantaneous values of the variables.</p></li>
+<li id="li-842"><p id="p-3676">Solve for the unknown rate.</p></li>
+<li id="li-843"><p id="p-3677">Write a full sentence conclusion.</p></li>
+</ol></article><p id="p-3678">Consider another, similar example.</p>
+<article class="example example-like" id="ex_rr2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Finding related rates.</span>
+</h3>
+<p id="p-3679">Water streams out of a faucet at a rate of <span class="quantity">2 <sup>in<sup>3</sup></sup>⁄<sub>s</sub></span> onto a flat surface at a constant rate, forming a circular puddle that is <span class="quantity">1/8 in</span> deep.</p>
+<ol id="p-3680" class="decimal">
+<li id="ex_rr2a"><p id="p-3681">At what rate is the area of the puddle growing?</p></li>
+<li id="ex_rr2b"><p id="p-3682">At what rate is the radius of the circle growing?</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-241" id="solution-241"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-241"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_apps_rel_rates_water_flow" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/8ctKxMoFWkU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-3683" class="decimal">
+<li id="li-846">
+<p id="p-3684">We can answer this question two ways: using “common sense” or related rates. The common sense method states that the volume of the puddle is growing by <span class="quantity">2 <sup>in<sup>3</sup></sup>⁄<sub>s</sub></span>, where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{volume of puddle}=\text{area of circle}\times\text{depth}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since the depth is constant at <span class="quantity">1/8 in</span>, the area must be growing by <span class="quantity">16 <sup>in<sup>2</sup></sup>⁄<sub>s</sub></span> since <span class="process-math">\(16\cdot \frac{1}{8}=2\text{.}\)</span> This approach reveals the underlying related rates principle.</p>
+<p id="p-3685">Now let's solve the problem using <a href="" class="xref" data-knowl="./knowl/idea_relatedrates.html" title="Key Idea 4.2.5: Related Rates">Key Idea 4.2.5</a>. Based on the problem description, the quantities that change with time are the volume of water (the volume of the puddle), the area of the circular puddle and the radius of the circle. We don't need a diagram for this problem. The important variables for this part of the problem are the volume and area.</p>
+<p id="p-3686">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(A\)</span> represent the Volume and Area of the puddle. We know <span class="process-math">\(V= A\times \frac{1}{8}\text{.}\)</span> Take the derivative of both sides with respect to <span class="process-math">\(t\text{,}\)</span> employing implicit differentiation.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-123">
+\begin{align*}
+V \amp = \frac{1}{8}A\\
+\lzoo{t}{V}\amp = \lzoo{t}{\frac{1}{8}A}\\
+\lz{V}{t} \amp = \frac{1}{8}\lz{A}{t}
+\end{align*}
+</div>
+<p class="continuation">We know the change in volume, <span class="process-math">\(\lz{V}{t} = 2\text{,}\)</span> so we substitute this value into our related rates equation: <span class="process-math">\(2 = \frac{1}{8}\lz{A}{t}\text{,}\)</span> and hence <span class="process-math">\(\lz{A}{t} = 16\text{.}\)</span> Thus the area is growing by <span class="quantity">16 <sup>in<sup>2</sup></sup>⁄<sub>s</sub></span>.</p>
+</li>
+<li id="li-847">
+<p id="p-3687">We already identified the quantities that are changing in <a href="" class="xref" data-knowl="./knowl/ex_rr2a.html" title="Item 1">Part 1</a>. The variables of interest in this problem are the radius and the volume. We need an equation that relates the volume of the circle to the radius. Since the puddle is a right circular cylinder, we will use a known volume formula, <span class="process-math">\(V=\pi r^2 h\)</span> where <span class="process-math">\(V\)</span> is the volume of the puddle (in <span class="quantity">in<sup>3</sup></span>, <span class="process-math">\(r\)</span> is the radius (in inches) and <span class="process-math">\(h\)</span> is the height (i.e. depth) of the puddle in inches. (Notice that this formula is equivalent to <span class="process-math">\(V=\text{area} \times \text{depth}\text{.}\)</span>) We know that the height (depth) is a constant <span class="process-math">\(1/8\)</span> inch. Since this quantity does not change in the problem, we can safely substitute this value now.</p>
+<p id="p-3688">Implicitly derive both sides of <span class="process-math">\(V=\pi r^2 \frac{1}{8}\)</span> with respect to <span class="process-math">\(t\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-124">
+\begin{align*}
+V \amp = \frac{1}{8} \pi r^2\\
+\frac{d}{dt}\big(V\big) \amp = \frac{d}{dt}\left(\frac{1}{8}\pi r^2\right)\\
+\lz{V}{t} \amp = \frac{1}{8} 2\pi r\lz{r}{t}\\
+\lz{V}{t} \amp = \frac{1}{4} \pi r\lz{r}{t}
+\end{align*}
+</div>
+<p class="continuation">We know that  <span class="process-math">\(\lz{V}{t}\)</span> is <span class="quantity">2 <sup>in<sup>3</sup></sup>⁄<sub>s</sub></span>. So we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2 = \frac14 \pi r\lz{r}{t}
+\end{equation*}
+</div>
+<p class="continuation">Solving for <span class="process-math">\(\lz{r}{t}\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lz{r}{t} = \frac{8}{\pi r}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Note how our answer is not a number, but rather a function of <span class="process-math">\(r\text{.}\)</span> In other words, <em class="emphasis">the rate at which the radius is growing depends on how big the circle already is.</em> If the circle is very large, adding <span class="quantity">2 <sup>in<sup>3</sup></sup>⁄<sub>s</sub></span> of water will not make the circle much bigger at all. If the circle is dime-sized, adding the same amount of water will make a radical change in the radius of the circle.</p>
+<p id="p-3689">In some ways, our problem was (intentionally) ill-posed. We need to specify a current (instantaneous) value of the radius in order to know a rate of change. When the puddle has a radius of <span class="quantity">10 in</span>, the radius is growing at a rate of</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lz{r}{t} = \frac{8}{10\pi} = \frac{4}{5\pi} \approx 0.25\text{ in/s }\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article><article class="example example-like" id="ex_rr3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Studying related rates.</span>
+</h3>
+<p id="p-3690">Radar guns measure the rate of distance change between the gun and the object it is measuring. For instance, a reading of “<span class="quantity">55 mph</span>” means the object is moving away from the gun at a rate of <span class="process-math">\(55\)</span> miles per hour, whereas a measurement of “<span class="quantity">-25 mph</span>” would mean that the object is approaching the gun at a rate of <span class="process-math">\(25\)</span> miles per hour.</p>
+<p id="p-3691">If the radar gun is moving (say, attached to a police car) then radar readouts are only immediately understandable if the gun and the object are moving along the same line. If a police officer is traveling <span class="quantity">60 mph</span> and gets a readout of <span class="quantity">15 mph</span>, he knows that the car ahead of him is moving away at a rate of <span class="process-math">\(15\)</span> miles an hour, meaning the car is traveling <span class="quantity">75 mph</span>. (This straight-line principle is one reason officers park on the side of the highway and try to shoot straight back down the road. It gives the most accurate reading.)</p>
+<p id="p-3692">Suppose an officer is driving due north at <span class="quantity">30 mph</span> and sees a car moving due east, as shown in <a href="" class="xref" data-knowl="./knowl/fig_rr3.html" title="Figure 4.2.8">Figure 4.2.8</a>. Using his radar gun, he measures a reading of <span class="quantity">20 mph</span>. By using landmarks, he believes both he and the other car are about <span class="process-math">\(1/2\)</span> mile from the intersection of their two roads.</p>
+<figure class="figure figure-like" id="fig_rr3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rr3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.8<span class="period">.</span></span><span class="space"> </span>A sketch of a police car (at bottom) attempting to measure the speed of a car (at right) in <a href="" class="xref" data-knowl="./knowl/ex_rr3.html" title="Example 4.2.7: Studying related rates">Example 4.2.7</a></figcaption></figure><p id="p-3693">If the speed limit on the other road is <span class="quantity">55 mph</span>, is the other driver speeding?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-242" id="solution-242"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-242"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_apps_rel_rates_speed_radar" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/8fFao8XCQC0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-3694">The important quantities that are changing are: the distance of the officer to the intersection, the distance of the car to the intersection, and the distance of the officer to the car. (There are other quantities that are changing as well such as the angles and area of the triangle, but these are not important to this problem.)</p>
+<p id="p-3695">Using the diagram in <a href="" class="xref" data-knowl="./knowl/fig_rr3.html" title="Figure 4.2.8">Figure 4.2.8</a>, let's label what we know about the situation. As both the police officer and other driver are <span class="process-math">\(1/2\)</span> mile from the intersection, we have <span class="process-math">\(A = 1/2\text{,}\)</span> <span class="process-math">\(B = 1/2\text{,}\)</span> and through the Pythagorean Theorem, <span class="process-math">\(C = 1/\sqrt{2}\approx 0.707\text{.}\)</span> These values are “instantaneous” values for our variables, so we won't use them until the <em class="emphasis">end</em> of the problem. Instead, we will use the variables <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\text{.}\)</span></p>
+<p id="p-3696">We need an equation that relates <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\text{.}\)</span> The Pythagorean Theorem is a good choice: <span class="process-math">\(A^2+B^2 = C^2\text{.}\)</span> Differentiate both sides with respect to <span class="process-math">\(t\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-125">
+\begin{align*}
+A^2 + B^2 \amp = C^2\\
+\lzoo{t}{A^2+B^2} \amp = \lzoo{t}{C^2}\\
+2A\lz{A}{t} + 2B\lz{B}{t} \amp = 2C\lz{C}{t}
+\end{align*}
+</div>
+<p id="p-3697">We know the police officer is traveling at <span class="quantity">30 mph</span>; that is, <span class="process-math">\(\lz{A}{t} = -30\text{.}\)</span> The reason this rate of change is negative is that <span class="process-math">\(A\)</span> is getting smaller; the distance between the officer and the intersection is shrinking. The radar measurement is <span class="process-math">\(\lz{C}{t} = 20\text{.}\)</span> We want to find <span class="process-math">\(\lz{B}{t}\text{.}\)</span></p>
+<p id="p-3698">We have values for everything except <span class="process-math">\(\lz{B}{t}\text{.}\)</span> Solving for this we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lz{B}{t} = \frac{C\lz{C}{t}- A\lz{A}{t}}{B}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Now we substitue in our known rates and instantaneous values of our variables:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-126">
+\begin{align*}
+\lz{B}{t} \amp \approx \frac{0.707(20)- 0.5(-30)}{(0.5)}\\
+\amp= 58.28 \text{ mph }\text{.}
+\end{align*}
+</div>
+<p id="p-3699">The other driver appears to be speeding slightly.</p>
+</div></div>
+</div></article><aside class="aside aside-like" id="aside-24"><h3 class="heading"><span class="title">Practicality.</span></h3>
+<p id="p-3700"><a href="" class="xref" data-knowl="./knowl/ex_rr3.html" title="Example 4.2.7: Studying related rates">Example 4.2.7</a> is both interesting and impractical. It highlights the difficulty in using radar in a nonlinear fashion, and explains why “in real life” the police officer would follow the other driver to determine their speed, and not pull out pencil and paper.</p>
+<p id="p-3701">The principles here are important, though. Many automated vehicles make judgments about other moving objects based on perceived distances, radar-like measurements and the concepts of related rates.</p></aside><article class="example example-like" id="ex_rr4"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Studying related rates.</span>
+</h3>
+<p id="p-3702">A camera is placed on a tripod <span class="quantity">10 ft</span> from the side of a road. The camera is to turn to track a car that is to drive by at <span class="quantity">100 mph</span> for a promotional video. The video's planners want to know what kind of motor the tripod should be equipped with in order to properly track the car as it passes by. <a href="" class="xref" data-knowl="./knowl/fig_rr4.html" title="Figure 4.2.10">Figure 4.2.10</a> shows the proposed setup.</p>
+<figure class="figure figure-like" id="fig_rr4"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rr4.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.10<span class="period">.</span></span><span class="space"> </span>Tracking a speeding car (at left) with a rotating camera</figcaption></figure><p id="p-3703">How fast must the camera be able to turn to track the car?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-243" id="solution-243"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-243"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_apps_rel_rates_turning_camera" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/B85LlGHgVQo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-3704">The quantities that changing are <span class="process-math">\(x\)</span> and <span class="process-math">\(\theta\)</span> as drawn on <a href="" class="xref" data-knowl="./knowl/fig_rr4.html" title="Figure 4.2.10">Figure 4.2.10</a>. (The hypotenuse of the triangle is also changing, but this isn't important to the problem). We seek information about how fast the camera is to <em class="emphasis">turn</em>; therefore, we need an equation that will relate an angle <span class="process-math">\(\theta\)</span> to the position of the camera and the speed and position of the car.</p>
+<p id="p-3705"><a href="" class="xref" data-knowl="./knowl/fig_rr4.html" title="Figure 4.2.10">Figure 4.2.10</a> suggests we use a trigonometric equation. Letting <span class="process-math">\(x\)</span> represent the distance the car is from the point on the road directly in front of the camera, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_rr4.html" id="eq_rr4">
+\begin{equation}
+\tan(\theta) = \frac{x}{10}\text{.}\tag{4.2.1}
+\end{equation}
+</div>
+<p id="p-3706">Now take the derivative of both sides of Equation <a href="" class="xref" data-knowl="./knowl/eq_rr4.html" title="Equation 4.2.1">(4.2.1)</a> using implicit differentiation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_rr4.html" id="md-127">
+\begin{align*}
+\tan(\theta) \amp = \frac{x}{10}\\
+\lzoo{t}{\tan(\theta)} \amp = \lzoo{t}{\frac{x}{10}}\\
+\sec^2(\theta)\lz{\theta}{t} \amp = \frac{1}{10}\lz{x}{t}
+\end{align*}
+</div>
+<p class="continuation">Now we solve for <span class="process-math">\(\lz{\theta}{t}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_rr4.html" id="eq_rr4b">
+\begin{equation}
+\lz{\theta}{t} = \frac{\cos^2(\theta)}{10}\lz{x}{t}\tag{4.2.2}
+\end{equation}
+</div>
+<p id="p-3707">As the car is moving at <span class="quantity">100 mph</span>, we have that <span class="process-math">\(\lz{x}{t}\)</span> is <span class="quantity">-100 mph</span> (as in the last example, since <span class="process-math">\(x\)</span> is getting smaller as the car travels, <span class="process-math">\(\lz{x}{t}\)</span> is negative). We need to convert the measurements so they use the same units (we chose <span class="quantity">ft</span>); rewrite <span class="quantity">-100 mph</span> in terms of <span class="quantity"><sup>ft</sup>⁄<sub>s</sub></span>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-128">
+\begin{align*}
+\lz{x}{t} \amp = -100\frac{\text{mi} }{\text{ hr } }\\
+\amp = -100\frac{\text{mi} }{\text{ hr } }\cdot5280\frac{\text{ ft } }{\text{mi} }\cdot\frac{1}{3600}\frac{\text{ hr } }{\text{s} }\\
+\amp =-146.\overline{6}\text{ ft/s }\text{.}
+\end{align*}
+</div>
+<p id="p-3708">We want to know the fastest the camera has to turn. Common sense tells us this is when the car is directly in front of the camera (i.e., when <span class="process-math">\(\theta = 0\)</span>). Our mathematics bears this out. In <a href="" class="xref" data-knowl="./knowl/eq_rr4b.html" title="Equation 4.2.2">Equation (4.2.2)</a> we see this is when <span class="process-math">\(\cos^2(\theta)\)</span> is largest; this is when <span class="process-math">\(\cos(\theta) = 1\text{,}\)</span> or when <span class="process-math">\(\theta = 0\text{.}\)</span> We also know that we should get an answer that is in <span class="quantity"><sup>rad</sup>⁄<sub>s</sub></span>. Since <span class="process-math">\(\cos(\theta)\)</span> is a “dimensionless” measure, it won't contribute to the units. However, radians are also dimensionless. This means we can write (or erase) the word “radian” without any unit consequences. (The same is not true of degrees — always convert degress to radians).</p>
+<p id="p-3709">With <span class="process-math">\(\lz{x}{t}\)</span> approximately <span class="quantity">-146.7 <sup>ft</sup>⁄<sub>s</sub></span>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-129">
+\begin{align*}
+\lz{\theta}{t} \amp \approx -\frac{1}{10\text{ ft } }146.67\text{ ft/s }\\
+\amp = -14.667\text{ radians/s }
+\end{align*}
+</div>
+<p id="p-3710">We find that <span class="process-math">\(\lz{\theta}{t}\)</span> is negative; this matches our diagram in <a href="" class="xref" data-knowl="./knowl/fig_rr4.html" title="Figure 4.2.10">Figure 4.2.10</a> for <span class="process-math">\(\theta\)</span> is getting smaller as the car approaches the camera.</p>
+<p id="p-3711">What is the practical meaning of <span class="quantity">-14.667 <sup>rad</sup>⁄<sub>s</sub></span>? Recall that <span class="process-math">\(1\)</span> circular revolution goes through <span class="process-math">\(2\pi\)</span> radians, thus <span class="quantity">14.667 <sup>rad</sup>⁄<sub>s</sub></span> means <span class="process-math">\(14.667/(2\pi)\approx 2.33\)</span> revolutions per second. The negative sign indicates the camera is rotating in a clockwise fashion.</p>
+</div></div>
+</div></article><p id="p-3712">We introduced the derivative as a function that gives the slopes of tangent lines of functions. This chapter emphasizes using the derivative in other ways. Newton's Method uses the derivative to approximate roots of functions; this section stresses the “rate of change” aspect of the derivative to find a relationship between the rates of change of two related quantities.</p>
+<p id="p-3713">In the next section we use Extreme Value concepts to <em class="emphasis">optimize</em> quantities.</p>
+<section class="exercises" id="exercises-20"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-49"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-642"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-584" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="584" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZT1Qb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKJGZhbHNlPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDIpOwoKQkVHSU5fUEdNTApbX117JHRydWV9ezV9IEltcGxpY2l0IGRpZmZlcmVudGlhdGlvbiBpcyBvZnRlbiB1c2VkIHdoZW4gc29sdmluZyAicmVsYXRlZCByYXRlcyIgdHlwZSBwcm9ibGVtcy4KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3714"><ul style="list-style:circle;">
+<li id="li-849"><p id="p-3716">True</p></li>
+<li id="li-850"><p id="p-3717">False</p></li>
+</ul> Implicit differentiation is often used when solving “related rates” type problems.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-584')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-643"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-585" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="585" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZT1Qb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKJGZhbHNlPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDIpOwoKQkVHSU5fUEdNTApbX117JGZhbHNlfXs1fSBBIHN0dWR5IG9mIHJlbGF0ZWQgcmF0ZXMgaXMgcGFydCBvZiB0aGUgc3RhbmRhcmQgcG9saWNlIG9mZmljZXIgdHJhaW5pbmcuCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3719"><ul style="list-style:circle;">
+<li id="li-852"><p id="p-3721">True</p></li>
+<li id="li-853"><p id="p-3722">False</p></li>
+</ul> A study of related rates is part of the standard police officer training.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-585')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-50"><h4 class="heading"><span class="title">Problems</span></h4>
+<article class="exercise exercise-like" id="exercise-644"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-586" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="586" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsInBhcnNlck51bWJlcldpdGhVbml0cy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwooJHJhdGUsJGRlcHRoKSA9ICg0Li4xMClbTmNob29zZUsoNywyKV07CiRhID0gcmFuZG9tKDEsNCwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JHJhdGU9NTsgJGRlcHRoPTEwOyAkYT0xO307CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjApOwokcmF0ZVUgPSBOdW1iZXJXaXRoVW5pdHMoIiRyYXRlIGNtXjMvcyIpOwokZGVwdGhVID0gTnVtYmVyV2l0aFVuaXRzKCIkZGVwdGggbW0iKTsKQHI9KCRhLCRhKjEwLCRhKjEwMCk7CkByVSA9IG1hcHtOdW1iZXJXaXRoVW5pdHMoIiRfIGNtIil9KEByKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQGYgPSBtYXB7RnJhY3Rpb24oNSokcmF0ZSwyKiRfKiRkZXB0aCl9KEByKTsKQG51bSA9IG1hcHsoJF8tPnZhbHVlKVswXX0oQGYpOwpAZGVuID0gbWFweygkXy0+dmFsdWUpWzFdfShAZik7CkBzVSA9IG1hcHtOdW1iZXJXaXRoVW5pdHMoIiRudW1bJF9dLygkZGVuWyRfXSBwaSkgY20vcyIpfSgwLDEsMik7CgpCRUdJTl9QR01MCldhdGVyIGZsb3dzIG9udG8gYSBmbGF0IHN1cmZhY2UgYXQgYSByYXRlIG9mIFtgWyRyYXRlVV1gXSBmb3JtaW5nIGEgY2lyY3VsYXIgcHVkZGxlIFtgWyRkZXB0aFVdYF0gZGVlcC4gSG93IGZhc3QgaXMgdGhlIHJhZGl1cyBncm93aW5nIHdoZW4gdGhlIHJhZGl1cyBpczoKYS4gIFtgWyRyVVswXV1gXQoKICAgIFtfXXskc1VbMF19ezIwfQoKCmEuICBbYFskclVbMV1dYF0KCiAgICBbX117JHNVWzFdfXsyMH0KCgphLiAgW2BbJHJVWzJdXWBdCgogICAgW19deyRzVVsyXX17MjB9CgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-3724">Water flows onto a flat surface at a rate of <span class="process-math">\({10\ {\textstyle\frac{\rm\mathstrut cm^{3}}{\rm\mathstrut s}}}\)</span> forming a circular puddle <span class="process-math">\({6\ {\rm mm}}\)</span> deep. How fast is the radius growing when the radius is:</p>
+<ol class="lower-alpha">
+<li id="li-854"><p id="p-3725"><span class="process-math">\(\displaystyle {1\ {\rm cm}}\)</span></p></li>
+<li id="li-855"><p id="p-3726"><span class="process-math">\(\displaystyle {10\ {\rm cm}}\)</span></p></li>
+<li id="li-856"><p id="p-3727"><span class="process-math">\(\displaystyle {100\ {\rm cm}}\)</span></p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-586')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-645"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-587" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="587" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJOdW1iZXJXaXRoVW5pdHMucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJHJhdGUgPSByYW5kb20oNCwxMiwxKTsKJGEgPSByYW5kb20oMSw0LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskcmF0ZT0xMDsgJGE9MTt9OwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRzPT4wKTsKJHJhdGVVID0gTnVtYmVyV2l0aFVuaXRzKCIkcmF0ZSBjbV4zL3MiKTsKQHI9KCRhLCRhKjEwLCRhKjEwMCk7CkByVSA9IG1hcHtOdW1iZXJXaXRoVW5pdHMoIiRfIGNtIil9KEByKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQGYgPSBtYXB7RnJhY3Rpb24oJHJhdGUsNCokXyoqMil9KEByKTsKQG51bSA9IG1hcHsoJF8tPnZhbHVlKVswXX0oQGYpOwpAZGVuID0gbWFweygkXy0+dmFsdWUpWzFdfShAZik7CkBzVSA9IG1hcHtOdW1iZXJXaXRoVW5pdHMoIiRudW1bJF9dLygkZGVuWyRfXSBwaSkgY20vcyIpfSgwLDEsMik7CgpCRUdJTl9QR01MCkEgc3BoZXJpY2FsIGJhbGxvb24gaXMgaW5mbGF0ZWQgd2l0aCBhaXIgZmxvd2luZyBhdCBhIHJhdGUgb2YgW2BbJHJhdGVVXVx0ZXh0ey59YF0gSG93IGZhc3QgaXMgdGhlIHJhZGl1cyBvZiB0aGUgYmFsbG9vbiBpbmNyZWFzaW5nIHdoZW4gdGhlIHJhZGl1cyBpczoKYS4gIFtgWyRyVVswXV1gXQoKICAgIFtfXXskc1VbMF19ezIwfQoKCmEuICBbYFskclVbMV1dYF0KCiAgICBbX117JHNVWzFdfXsyMH0KCgphLiAgW2BbJHJVWzJdXWBdCgogICAgW19deyRzVVsyXX17MjB9CgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-3731">A spherical balloon is inflated with air flowing at a rate of <span class="process-math">\({12\ {\textstyle\frac{\rm\mathstrut cm^{3}}{\rm\mathstrut s}}}\text{.}\)</span> How fast is the radius of the balloon increasing when the radius is:</p>
+<ol class="lower-alpha">
+<li id="li-857"><p id="p-3732"><span class="process-math">\(\displaystyle {1\ {\rm cm}}\)</span></p></li>
+<li id="li-858"><p id="p-3733"><span class="process-math">\(\displaystyle {10\ {\rm cm}}\)</span></p></li>
+<li id="li-859"><p id="p-3734"><span class="process-math">\(\displaystyle {100\ {\rm cm}}\)</span></p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-587')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-646"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div id="webwork-588" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="588" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJOdW1iZXJXaXRoVW5pdHMucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJGYgPSBsaXN0X3JhbmRvbShGcmFjdGlvbigxLDIpLEZyYWN0aW9uKDMsNCksRnJhY3Rpb24oMiwzKSxGcmFjdGlvbigzLDUpLEZyYWN0aW9uKDQsNSkpOwokc3BlZWQgPSByYW5kb20oNDUsNTUsNSk7CiRyYXRlID0gcmFuZG9tKDcwLDkwLDUpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZj1GcmFjdGlvbigxLDIpOyRzcGVlZD01MDskcmF0ZT04MDt9OwpDb250ZXh0KCJOdW1lcmljIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjApOwokYSA9IENvbXB1dGUoIiRyYXRlKnNxcnQoMiktJHNwZWVkIik7CiRhID0gTnVtYmVyV2l0aFVuaXRzKCIkYSBtaS9oIik7CgpCRUdJTl9QR01MCkNvbnNpZGVyIHRoZSB0cmFmZmljIHNpdHVhdGlvbiBpbnRyb2R1Y2VkIGluIEV4YW1wbGVbJE5CU1BdKjQuMi43LiBIb3cgZmFzdCBpcyB0aGUgIm90aGVyIGNhciIgdHJhdmVsaW5nIGlmIHRoZSBvZmZpY2VyIGFuZCB0aGUgb3RoZXIgY2FyIGFyZSBlYWNoIFtgWyRmXWBdIG1pbGUgZnJvbSB0aGUgaW50ZXJzZWN0aW9uLCB0aGUgb3RoZXIgY2FyIGlzIHRyYXZlbGluZyBfZHVlIHdlc3RfLCB0aGUgb2ZmaWNlciBpcyB0cmF2ZWxpbmcgbm9ydGggYXQgW2BbJHNwZWVkXVwsXHRleHR7bXBofVx0ZXh0eyx9YF0gYW5kIHRoZSByYWRhciByZWFkaW5nIGlzIFtgLVskcmF0ZV1cLFx0ZXh0e21waH1cdGV4dHs/fWBdCgpbX117JGF9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3738">Consider the traffic situation introduced in Example 4.2.7. How fast is the “other car” traveling if the officer and the other car are each <span class="process-math">\({{\textstyle\frac{1}{2}}}\)</span> mile from the intersection, the other car is traveling <em class="emphasis">due west</em>, the officer is traveling north at <span class="process-math">\(55\,\text{mph}\text{,}\)</span> and the radar reading is <span class="process-math">\(-90\,\text{mph}\text{?}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-588')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-647"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div id="webwork-589" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="589" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJOdW1iZXJXaXRoVW5pdHMucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJGYgPSBsaXN0X3JhbmRvbShGcmFjdGlvbigxLDIpLEZyYWN0aW9uKDMsNCksRnJhY3Rpb24oMiwzKSxGcmFjdGlvbigzLDUpLEZyYWN0aW9uKDQsNSkpOwokc3BlZWQgPSByYW5kb20oNDUsNTUsNSk7CiRyYXRlID0gcmFuZG9tKDcwLDkwLDUpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZj1GcmFjdGlvbigxLDIpOyRzcGVlZD01MDskcmF0ZT04MDt9OwpDb250ZXh0KCJOdW1lcmljIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjApOwokZjIgPSAxKyRmKioyOwokZjMgPSAkc3BlZWQqJGY7CiRhID0gQ29tcHV0ZSgiJHJhdGUqc3FydCgkZjIpLSRmMyIpOwokYSA9IE51bWJlcldpdGhVbml0cygiJGEgbWkvaCIpOwokZjQgPSAkcmF0ZS8kZjsKJGY1ID0gJHNwZWVkLyRmOwokYiA9IENvbXB1dGUoIiRmNCBzcXJ0KCRmMiktJGY1Iik7CiRiID0gTnVtYmVyV2l0aFVuaXRzKCIkYiBtaS9oIik7CgpCRUdJTl9QR01MCkNvbnNpZGVyIHRoZSB0cmFmZmljIHNpdHVhdGlvbiBpbnRyb2R1Y2VkIGluIEV4YW1wbGVbJE5CU1BdKjQuMi43LiBDYWxjdWxhdGUgaG93IGZhc3QgdGhlICJvdGhlciBjYXIiIGlzIHRyYXZlbGluZyBpbiBlYWNoIG9mIHRoZSBmb2xsb3dpbmcgc2l0dWF0aW9ucy4KYS4gIFRoZSBvZmZpY2VyIGlzIHRyYXZlbGluZyBkdWUgbm9ydGggYXQgW2BbJHNwZWVkXVwsXHRleHR7bXBofWBdIGFuZCBpcyBbYFskZl1gXSBtaWxlIGZyb20gdGhlIGludGVyc2VjdGlvbiwgd2hpbGUgdGhlIG90aGVyIGNhciBpcyBbYDFgXSBtaWxlIGZyb20gdGhlIGludGVyc2VjdGlvbiB0cmF2ZWxpbmcgd2VzdCBhbmQgdGhlIHJhZGFyIHJlYWRpbmcgaXMgW2AtWyRyYXRlXVwsXHRleHR7bXBofVx0ZXh0ez99YF0KCiAgICBbX117JGF9ezIwfQoKCmEuICBUaGUgb2ZmaWNlciBpcyB0cmF2ZWxpbmcgZHVlIG5vcnRoIGF0IFtgWyRzcGVlZF1cLFx0ZXh0e21waH1gXSBhbmQgaXMgW2AxYF0gbWlsZSBmcm9tIHRoZSBpbnRlcnNlY3Rpb24sIHdoaWxlIHRoZSBvdGhlciBjYXIgaXMgW2BbJGZdYF0gbWlsZSBmcm9tIHRoZSBpbnRlcnNlY3Rpb24gdHJhdmVsaW5nIHdlc3QgYW5kIHRoZSByYWRhciByZWFkaW5nIGlzIFtgLVskcmF0ZV1cLFx0ZXh0e21waH1cdGV4dHs/fWBdCgogICAgW19deyRifXsyMH0KCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-3740">Consider the traffic situation introduced in Example 4.2.7. Calculate how fast the “other car” is traveling in each of the following situations.</p>
+<ol class="lower-alpha">
+<li id="li-860"><p id="p-3741">The officer is traveling due north at <span class="process-math">\(50\,\text{mph}\)</span> and is <span class="process-math">\({{\textstyle\frac{3}{4}}}\)</span> mile from the intersection, while the other car is <span class="process-math">\(1\)</span> mile from the intersection traveling west and the radar reading is <span class="process-math">\(-75\,\text{mph}\text{?}\)</span></p></li>
+<li id="li-861"><p id="p-3742">The officer is traveling due north at <span class="process-math">\(50\,\text{mph}\)</span> and is <span class="process-math">\(1\)</span> mile from the intersection, while the other car is <span class="process-math">\({{\textstyle\frac{3}{4}}}\)</span> mile from the intersection traveling west and the radar reading is <span class="process-math">\(-75\,\text{mph}\text{?}\)</span></p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-589')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exer_04_02_ex_07"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<p id="p-3745">An F-22 aircraft is flying at <span class="process-math">\(500\,\text{mph}\)</span> with an elevation of <span class="process-math">\(10{,}000\,\text{ft}\)</span> on a straight-line path that will take it directly over an anti-aircraft gun.</p>
+<div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_04_02_ex_07.svg" role="img" class="contained"></div>
+<p id="p-3746">How fast must the gun be able to turn to accurately track the aircraft when the plane is:</p>
+<ol class="lower-alpha">
+<li id="li-862"><p id="p-3747"><span class="process-math">\(1\)</span> mile away?</p></li>
+<li id="li-863"><p id="p-3748"><span class="process-math">\(1/5\)</span> mile away?</p></li>
+<li id="li-864"><p id="p-3749">Directly overhead?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-649"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div id="webwork-590" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="590" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJOdW1iZXJXaXRoVW5pdHMucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCk7CiRzcGVlZCA9IHJhbmRvbSg0MDAsNjAwLDUwKTsKJHNwZWVkVSA9IE51bWJlcldpdGhVbml0cygiJHNwZWVkIG1pL2giKTsKQGEgPSAocmFuZG9tKDEwMDAsMjAwMCwxMDApLCByYW5kb20oMTAwLDUwMCw1MCksIDApOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYVswXT0xMDAwLCRhWzFdPTEwMDt9OwpAYVUgPSBtYXB7TnVtYmVyV2l0aFVuaXRzKCIkXyBmdCIpfShAYSk7CkBiID0gbWFwezEwMCokc3BlZWQqNTI4MC8zNjAwLygxMDAqKjIgKyAkXyoqMil9KEBhKTsKQGJVID0gbWFwe051bWJlcldpdGhVbml0cygiJF8gcmFkL3MiKX0oQGIpOwoKQkVHSU5fUEdNTApBbiBGLTIyIGFpcmNyYWZ0IGlzIGZseWluZyBhdCBbJHNwZWVkVV0gd2l0aCBhbiBlbGV2YXRpb24gb2YgW2AxMDBcLFx0ZXh0e2Z0fWBdIG9uIGEgc3RyYWlnaHQtbGluZSBwYXRoIHRoYXQgd2lsbCB0YWtlIGl0IGRpcmVjdGx5IG92ZXIgYW4gYW50aS1haXJjcmFmdCBndW4gYXMgaW4gRXhlcmNpc2VbJE5CU1BdKjQuMi43IChub3RlIHRoZSBsb3dlciBlbGV2YXRpb24gaGVyZSkuCgpIb3cgZmFzdCBtdXN0IHRoZSBndW4gYmUgYWJsZSB0byB0dXJuIHRvIGFjY3VyYXRlbHkgdHJhY2sgdGhlIGFpcmNyYWZ0IHdoZW4gdGhlIHBsYW5lIGlzOgphLiAgW2BbJGFVWzBdXWBdIGZlZXQgYXdheT8KCiAgICBbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdVc2UgW3xyYWQvc3xdKiBmb3IgcmFkaWFucyBwZXIgc2Vjb25kLicpQF0qKgoKICAgIFtfXXskYlVbMF19ezIwfQoKCmEuICBbYFskYVVbMV1dYF0gZmVldCBhd2F5PwoKICAgIFtAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1VzZSBbfHJhZC9zfF0qIGZvciByYWRpYW5zIHBlciBzZWNvbmQuJylAXSoqCgogICAgW19deyRiVVsxXX17MjB9CgoKYS4gIERpcmVjdGx5IG92ZXJoZWFkPwoKICAgIFtAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1VzZSBbfHJhZC9zfF0qIGZvciByYWRpYW5zIHBlciBzZWNvbmQuJylAXSoqCgogICAgW19deyRiVVsyXX17MjB9CgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-3750">An F-22 aircraft is flying at 450 mi/h with an elevation of <span class="process-math">\(100\,\text{ft}\)</span> on a straight-line path that will take it directly over an anti-aircraft gun as in Exercise 4.2.7 (note the lower elevation here).</p>
+<p id="p-3751">How fast must the gun be able to turn to accurately track the aircraft when the plane is:</p>
+<ol class="lower-alpha">
+<li id="li-865"><p id="p-3752"><span class="process-math">\({2000\ {\rm ft}}\)</span> feet away?</p></li>
+<li id="li-866"><p id="p-3753"><span class="process-math">\({400\ {\rm ft}}\)</span> feet away?</p></li>
+<li id="li-867"><p id="p-3754">Directly overhead?</p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-590')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-650"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<p id="p-3758">A <span class="quantity">24 ft</span> ladder is leaning against a house while the base is pulled away at a constant rate of <span class="quantity">1 <sup>ft</sup>⁄<sub>s</sub></span>.</p>
+<div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_04_02_ex_09.svg" role="img" class="contained"></div>
+<p id="p-3759">At what rate is the top of the ladder sliding down the side of the house when the base is:</p>
+<ol id="p-3760" class="lower-alpha">
+<li id="li-868"><p id="p-3761"><span class="process-math">\(1\)</span> foot from the house?</p></li>
+<li id="li-869"><p id="p-3762"><span class="process-math">\(10\)</span> feet from the house?</p></li>
+<li id="li-870"><p id="p-3763"><span class="process-math">\(23\)</span> feet from the house?</p></li>
+<li id="li-871"><p id="p-3764"><span class="process-math">\(24\)</span> feet from the house?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-651"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<p id="p-3765">A boat is being pulled into a dock at a constant rate of <span class="quantity">30 <sup>ft</sup>⁄<sub>min</sub></span> by a winch located <span class="quantity">10 ft</span> above the deck of the boat.</p>
+<div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_04_02_ex_10.svg" role="img" class="contained"></div>
+<p id="p-3766">At what rate is the boat approaching the dock when the boat is:</p>
+<ol id="p-3767" class="lower-alpha">
+<li id="li-872"><p id="p-3768"><span class="process-math">\(50\)</span> feet out?</p></li>
+<li id="li-873"><p id="p-3769"><span class="process-math">\(15\)</span> feet out?</p></li>
+<li id="li-874"><p id="p-3770"><span class="process-math">\(1\)</span> foot from the dock?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-652"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div id="webwork-591" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="591" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsInBhcnNlck51bWJlcldpdGhVbml0cy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7KCRkZXB0aCwkZGlhbWV0ZXIpID0gKDEwLi4zMClbTmNob29zZUsoMjEsMildOwokcmF0ZSA9IHJhbmRvbSg4LDEyLDEpOwpAYT0oMSxyYW5kb20oOCwxNSwxKSxyYW5kb20oMTgsMjUsMSkpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZGVwdGg9MjA7ICRkaWFtZXRlcj0xMDsgJHJhdGU9MTA7ICRhWzFdPTEwOyAkYVsyXT0gMTk7fTsKJGRlcHRoVSA9IE51bWJlcldpdGhVbml0cygiJGRlcHRoIGZ0Iik7CiRkaWFtZXRlclUgPSBOdW1iZXJXaXRoVW5pdHMoIiRkaWFtZXRlciBmdCIpOwokcmF0ZVUgPSBOdW1iZXJXaXRoVW5pdHMoIiRyYXRlIGZ0XjMvcyIpOwpAYiA9IG1hcHskcmF0ZSAqIDQgLyBwaSAqICRkZXB0aCoqMiAvICRkaWFtZXRlcioqMiAvICRfKioyfShAYSk7CkBiVSA9IG1hcHtOdW1iZXJXaXRoVW5pdHMoIiRfIGZ0L3MiKX0oQGIpOwokVCA9IHBpLzEyICogJGRpYW1ldGVyKioyICogJGRlcHRoIC8gJHJhdGU7CiRUVSA9IE51bWJlcldpdGhVbml0cygiJFQgcyIpOwoKQkVHSU5fUEdNTApBbiBpbnZlcnRlZCBjeWxpbmRyaWNhbCBjb25lLCBbYFskZGVwdGhVXWBdIGRlZXAgYW5kIFtgWyRkaWFtZXRlclVdYF0gYWNyb3NzIGF0IHRoZSB0b3AsIGlzIGJlaW5nIGZpbGxlZCB3aXRoIHdhdGVyIGF0IGEgcmF0ZSBvZiBbYFskcmF0ZVVdXHRleHR7Ln1gXSBBdCB3aGF0IHJhdGUgaXMgdGhlIHdhdGVyIHJpc2luZyBpbiB0aGUgdGFuayB3aGVuIHRoZSBkZXB0aCBvZiB0aGUgd2F0ZXIgaXM6CmEuICBbYFskYVswXV1gXSBmb290PwoKICAgIFtfXXskYlVbMF19ezIwfQoKCmEuICBbYFskYVsxXV1gXSBmZWV0PwoKICAgIFtfXXskYlVbMV19ezIwfQoKCmEuICBbYFskYVsyXV1gXSBmZWV0PwoKICAgIFtfXXskYlVbMl19ezIwfQoKCkhvdyBsb25nIHdpbGwgdGhlIHRhbmsgdGFrZSB0byBmaWxsIHdoZW4gc3RhcnRpbmcgYXQgZW1wdHk/CgpbX117JFRVfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-3771">An inverted cylindrical cone, <span class="process-math">\({19\ {\rm ft}}\)</span> deep and <span class="process-math">\({23\ {\rm ft}}\)</span> across at the top, is being filled with water at a rate of <span class="process-math">\({8\ {\textstyle\frac{\rm\mathstrut ft^{3}}{\rm\mathstrut s}}}\text{.}\)</span> At what rate is the water rising in the tank when the depth of the water is:</p>
+<ol class="lower-alpha">
+<li id="li-875"><p id="p-3772"><span class="process-math">\(1\)</span> foot?</p></li>
+<li id="li-876"><p id="p-3773"><span class="process-math">\(11\)</span> feet?</p></li>
+<li id="li-877"><p id="p-3774"><span class="process-math">\(19\)</span> feet?</p></li>
+</ol>
+<p id="p-3775">How long will the tank take to fill when starting at empty?</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-591')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exer_04_02_ex_12"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<p id="p-3780">A rope, attached to a weight, goes up through a pulley at the ceiling and back down to a worker. The man holds the rope at the same height as the connection point between rope and weight.</p>
+<div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_04_02_ex_12.svg" role="img" class="contained"></div>
+<p id="p-3781">Suppose the man stands directly next to the weight (i.e., a total rope length of <span class="process-math">\(60\)</span> feet) and begins to walk away at a rate of <span class="quantity">2 <sup>ft</sup>⁄<sub>s</sub></span>. How fast is the weight rising when the man has walked:</p>
+<ol id="p-3782" class="lower-alpha">
+<li id="li-878"><p id="p-3783"><span class="process-math">\(10\)</span> feet?</p></li>
+<li id="li-879"><p id="p-3784"><span class="process-math">\(40\)</span> feet?</p></li>
+</ol>
+<p id="p-3785">How far must the man walk to raise the weight all the way to the pulley?</p></article><article class="exercise exercise-like" id="exercise-654"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div id="webwork-592" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="592" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJOdW1iZXJXaXRoVW5pdHMucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyMgSGVpZ2h0IGlzIGZpeGVkIGF0IDMwIGZ0CiMgTmVlZCBhbiBpbml0aWFsIGRpc3RhbmNlIHRoYXQgbWFrZXMgYSBQeXRoYWdvcmVhbiB0cmlwbGUgd2l0aCAzMAokYiA9IHJhbmRvbSg0MCw3MiwyMjQpOwokc3BlZWQgPSByYW5kb20oMiw0LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYj00MDskc3BlZWQ9Mjt9OwokYlUgPSBOdW1iZXJXaXRoVW5pdHMoIiRiIGZ0Iik7CiRzcGVlZFUgPSBOdW1iZXJXaXRoVW5pdHMoIiRzcGVlZCBmdC9zIik7CiRjID0gc3FydCgzMCoqMiArICRiKioyKTsKJGxlbmd0aCA9IDMwICsgJGM7CiRsZW5ndGhVID0gTnVtYmVyV2l0aFVuaXRzKCIkbGVuZ3RoIGZ0Iik7CiRuZXdiID0gJGIrMTA7CiRuZXdjID0gc3FydCgzMCoqMiArICRuZXdiKioyKTsKJG5ld3JhdGUgPSAkbmV3Yi8kbmV3YyAqICRzcGVlZDsKJG5ld3JhdGVVID0gTnVtYmVyV2l0aFVuaXRzKCIkbmV3cmF0ZSBmdC9zIik7CiRuZXduZXdiID0gJGIrMzA7CiRuZXduZXdjID0gc3FydCgzMCoqMiArICRuZXduZXdiKioyKTsKJG5ld25ld3JhdGUgPSAkbmV3bmV3Yi8kbmV3bmV3YyAqICRzcGVlZDsKJG5ld25ld3JhdGVVID0gTnVtYmVyV2l0aFVuaXRzKCIkbmV3bmV3cmF0ZSBmdC9zIik7CiRmYXIgPSBzcXJ0KCRsZW5ndGgqKjIgLSAzMCoqMik7CiRmYXJVID0gTnVtYmVyV2l0aFVuaXRzKCIkZmFyIGZ0Iik7CgpCRUdJTl9QR01MCkNvbnNpZGVyIHRoZSBzaXR1YXRpb24gZGVzY3JpYmVkIGluIEV4ZXJjaXNlWyROQlNQXSo0LjIuMTIuIFN1cHBvc2UgdGhlIG1hbiBzdGFydHMgW2BbJGJVXWBdIGZyb20gdGhlIHdlaWdodCBhbmQgYmVnaW5zIHRvIHdhbGsgYXdheSBhdCBhIHJhdGUgb2YgW2BbJHNwZWVkVV1cdGV4dHsufWBdCmEuICBIb3cgbG9uZyBpcyB0aGUgcm9wZT8KCiAgICBbX117JGxlbmd0aFV9ezIwfQoKCmEuICBIb3cgZmFzdCBpcyB0aGUgd2VpZ2h0IHJpc2luZyBhZnRlciB0aGUgbWFuIGhhcyB3YWxrZWQgW2AxMGBdIGZlZXQ/CgogICAgW19deyRuZXdyYXRlVX17MjB9CgoKYS4gIEhvdyBmYXN0IGlzIHRoZSB3ZWlnaHQgcmlzaW5nIGFmdGVyIHRoZSBtYW4gaGFzIHdhbGtlZCBbYDMwYF0gZmVldD8KCiAgICBbX117JG5ld25ld3JhdGVVfXsyMH0KCgphLiAgSG93IGZhciBtdXN0IHRoZSBtYW4gd2FsayB0byByYWlzZSB0aGUgd2VpZ2h0IGFsbCB0aGUgd2F5IHRvIHRoZSBwdWxsZXk/CgogICAgW19deyRmYXJVfXsyMH0KCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-3786">Consider the situation described in Exercise 4.2.12. Suppose the man starts <span class="process-math">\({40\ {\rm ft}}\)</span> from the weight and begins to walk away at a rate of <span class="process-math">\({2\ {\textstyle\frac{\rm\mathstrut ft}{\rm\mathstrut s}}}\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-880"><p id="p-3787">How long is the rope?</p></li>
+<li id="li-881"><p id="p-3788">How fast is the weight rising after the man has walked <span class="process-math">\(10\)</span> feet?</p></li>
+<li id="li-882"><p id="p-3789">How fast is the weight rising after the man has walked <span class="process-math">\(30\)</span> feet?</p></li>
+<li id="li-883"><p id="p-3790">How far must the man walk to raise the weight all the way to the pulley?</p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-592')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-655"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
+<div id="webwork-593" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="593" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJOdW1iZXJXaXRoVW5pdHMucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRkaXN0YW5jZSA9IHJhbmRvbSg4MCwxMjAsNSk7CiRoZWlnaHQgPSByYW5kb20oNSw2LDEpOwokcmF0ZSA9IHJhbmRvbSgzLDgsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRkaXN0YW5jZT0xMDA7JGhlaWdodD01O307CiRoZWlnaHRVID0gTnVtYmVyV2l0aFVuaXRzKCIkaGVpZ2h0IGZ0Iik7CiRlbGV2ID0gJGRpc3RhbmNlICsgJGhlaWdodDsKJGVsZXZVID0gTnVtYmVyV2l0aFVuaXRzKCIkZWxldiBmdCIpOwokc3BlZWQgPSAyKiRkaXN0YW5jZSokcmF0ZSpwaS8xODA7CiRzcGVlZFUgPSBOdW1iZXJXaXRoVW5pdHMoIiRzcGVlZCBmdC9zIik7CgpCRUdJTl9QR01MCkEgaG90IGFpciBiYWxsb29uIGxpZnRzIG9mZiBmcm9tIGdyb3VuZCByaXNpbmcgdmVydGljYWxseS4gRnJvbSBbYFskZGlzdGFuY2VdYF0gZmVldCBhd2F5LCBhIFtgWyRoZWlnaHRVXWBdIHRhbGwgd29tYW4gdHJhY2tzIHRoZSBwYXRoIG9mIHRoZSBiYWxsb29uLiBXaGVuIGhlciBzaWdodGxpbmUgd2l0aCB0aGUgYmFsbG9vbiBtYWtlcyBhIFtgNDVeXGNpcmNgXSBhbmdsZSB3aXRoIHRoZSBob3Jpem9udGFsLCBzaGUgbm90ZXMgdGhlIGFuZ2xlIGlzIGluY3JlYXNpbmcgYXQgYWJvdXQgW2BbJHJhdGVdXlxjaXJjYF0gcGVyIG1pbnV0ZS4KYS4gIFdoYXQgaXMgdGhlIGVsZXZhdGlvbiBvZiB0aGUgYmFsbG9vbj8KCiAgICBbX117JGVsZXZVfXsyMH0KCgphLiAgSG93IGZhc3QgaXMgaXQgcmlzaW5nPwoKICAgIFtfXXskc3BlZWRVfXsyMH0KCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-3795">A hot air balloon lifts off from ground rising vertically. From <span class="process-math">\(105\)</span> feet away, a <span class="process-math">\({6\ {\rm ft}}\)</span> tall woman tracks the path of the balloon. When her sightline with the balloon makes a <span class="process-math">\(45^\circ\)</span> angle with the horizontal, she notes the angle is increasing at about <span class="process-math">\(8^\circ\)</span> per minute.</p>
+<ol class="lower-alpha">
+<li id="li-884"><p id="p-3796">What is the elevation of the balloon?</p></li>
+<li id="li-885"><p id="p-3797">How fast is it rising?</p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-593')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-656"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
+<div id="webwork-594" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="594" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJOdW1iZXJXaXRoVW5pdHMucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJHJhdGUgPSByYW5kb20oMyw4LDEpOwokbmQgPSBsaXN0X3JhbmRvbShbMiwzXSxbNCw1XSxbNCw3XSxbNSw2XSxbNSw3XSxbNSw4XSk7CiRoZWlnaHQgPSByYW5kb20oMjAsNDAsNSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRyYXRlPTU7JG5kPVsyLDNdOyRoZWlnaHQ9MzA7fTsKJHJhdGVVID0gTnVtYmVyV2l0aFVuaXRzKCIkcmF0ZSBmdF4zL3MiKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJGZyYWMgPSBGcmFjdGlvbigkbmQtPlswXSwkbmQtPlsxXSk7CkNvbnRleHQoIk51bWVyaWMiKTsKJHNwZWVkID0gNCokZnJhYyoqMi9waS8kaGVpZ2h0KioyKiRyYXRlOwokc3BlZWRVID0gTnVtYmVyV2l0aFVuaXRzKCIkc3BlZWQgZnQvcyIpOwoKQkVHSU5fUEdNTApBIGNvbXBhbnkgdGhhdCBwcm9kdWNlcyBsYW5kc2NhcGluZyBtYXRlcmlhbHMgaXMgZHVtcGluZyBzYW5kIGludG8gYSBjb25pY2FsIHBpbGUuIFRoZSBzYW5kIGlzIGJlaW5nIHBvdXJlZCBhdCBhIHJhdGUgb2YgW2BbJHJhdGVVXVx0ZXh0ey59YF0gVGhlIHBoeXNpY2FsIHByb3BlcnRpZXMgb2YgdGhlIHNhbmQsIGluIGNvbmp1bmN0aW9uIHdpdGggZ3Jhdml0eSwgZW5zdXJlIHRoYXQgdGhlIGNvbmUncyBoZWlnaHQgaXMgcm91Z2hseSBbYFskZnJhY11gXSB0aGUgbGVuZ3RoIG9mIHRoZSBkaWFtZXRlciBvZiB0aGUgY2lyY3VsYXIgYmFzZS4KCkhvdyBmYXN0IGlzIHRoZSBjb25lIHJpc2luZyB3aGVuIGl0IGhhcyBhIGhlaWdodCBvZiBbYFskaGVpZ2h0XWBdIGZlZXQ/CgpbX117JHNwZWVkVX17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-3800">A company that produces landscaping materials is dumping sand into a conical pile. The sand is being poured at a rate of <span class="process-math">\({7\ {\textstyle\frac{\rm\mathstrut ft^{3}}{\rm\mathstrut s}}}\text{.}\)</span> The physical properties of the sand, in conjunction with gravity, ensure that the cone’s height is roughly <span class="process-math">\({{\textstyle\frac{5}{6}}}\)</span> the length of the diameter of the circular base.</p>
+<p id="p-3801">How fast is the cone rising when it has a height of <span class="process-math">\(30\)</span> feet?</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-594')">Make Interactive</button></div>
+</div></article></article></section></section></div></main>
+</div>
+</body>
+</html>

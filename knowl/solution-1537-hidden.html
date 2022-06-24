@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:49:50Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>The point mass pulls toward the origin, so at <span class="process-math">\((x,y,z)\text{,}\)</span> the force will pull in the direction of <span class="process-math">\(\langle -x, -y, -z\rangle\text{.}\)</span> To get the proper magnitude, it will be useful to find the unit vector in this direction. Dividing by its magnitude, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec u = \left\langle \frac{-x}{\sqrt{x^2+y^2+z^2}}, \frac{-y}{\sqrt{x^2+y^2+z^2}},\frac{-z}{\sqrt{x^2+y^2+z^2}}\right\rangle\text{.}
+\end{equation*}
+</div>
+<p>The magnitude of the force is inversely proportional to the square of the distance between the two points. Letting <span class="process-math">\(k\)</span> be the constant of proportionality, we have the magnitude as <span class="process-math">\(\ds\frac{k}{x^2+y^2+z^2}\text{.}\)</span> Multiplying this magnitude by the unit vector above, we have the desired vector field:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec F = \left\langle \frac{-kx}{(x^2+y^2+z^2)^{3/2}}, \frac{-ky}{(x^2+y^2+z^2)^{3/2}},\frac{-kz}{(x^2+y^2+z^2)^{3/2}}\right\rangle\text{.}
+\end{equation*}
+</div>
+<p>We leave it to the reader to confirm that <span class="process-math">\(\divv \vec F = 0\)</span> and <span class="process-math">\(\curl \vec F = \vec 0\text{.}\)</span></p>
+<p>The analogous planar vector field is given in <a href="" class="xref" data-knowl="./knowl/fig_vectorfield3.html" title="Figure 15.2.19">Figure 15.2.19</a>. Note how all arrows point to the origin, and the magnitude gets very small when “far” from the origin.</p>
+</div></body>
+</html>

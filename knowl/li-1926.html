@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:40:24Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="li"><h4 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span>
+</h4>
+<p>We apply the Ratio Test to the series <span class="process-math">\(\ds \infser \abs{(-1)^{n+1}\frac{x^n}{n}} = \infser \abs{\frac{x^n}{n}}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lim_{n\to\infty} \frac{\abs{x^{n+1}/(n+1)}}{\abs{x^n/n}} \amp = \lim_{n\to\infty} \abs{\frac{x^{n+1}}{x^n}\cdot \frac{n}{n+1}}\\
+\amp = \lim_{n\to\infty} n!x^n\\
+\amp = \abs{x}\text{.}
+\end{align*}
+</div>
+<p class="continuation">The Ratio Test states a series converges if the limit of <span class="process-math">\(\abs{a_{n+1}/a_n} = L\lt 1\text{.}\)</span> We found the limit above to be <span class="process-math">\(\abs{x}\text{;}\)</span> therefore, the power series converges when <span class="process-math">\(\abs{x} \lt 1\text{,}\)</span> or when <span class="process-math">\(x\)</span> is in <span class="process-math">\((-1,1)\text{.}\)</span> Thus the radius of convergence is <span class="process-math">\(R=1\text{.}\)</span> To determine the interval of convergence, we need to check the endpoints of <span class="process-math">\((-1,1)\text{.}\)</span> When <span class="process-math">\(x=-1\text{,}\)</span> we have the opposite of the Harmonic Series:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\infser (-1)^{n+1}\frac{(-1)^n}{n} \amp = \infser \frac{-1}{n}\\
+\amp = -\infty\text{.}
+\end{align*}
+</div>
+<p class="continuation">The series diverges when <span class="process-math">\(x=-1\text{.}\)</span> When <span class="process-math">\(x=1\text{,}\)</span> we have the series <span class="process-math">\(\ds \infser (-1)^{n+1}\frac{(1)^n}{n}\text{,}\)</span> which is the Alternating Harmonic Series, which converges. Therefore the interval of convergence is <span class="process-math">\((-1,1]\text{.}\)</span></p></article><span class="incontext"><a href="sec_power_series.html#li-1926" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:48:09Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">14.3.4.1</span><span class="period">.</span>
+</h3>
+<p>The bounds of the integral are determined solely by the region <span class="process-math">\(R\)</span> over which we are integrating. In this case, it is a disk with boundary <span class="process-math">\(x^2+y^2=1\text{.}\)</span> We need to find polar bounds for this region. It may help to review <a href="sec_polar.html" class="internal" title="Section 10.4: Introduction to Polar Coordinates">Section 10.4</a>; bounds for this disk are <span class="process-math">\(0\leq r\leq 1\)</span> and <span class="process-math">\(0\leq \theta\leq 2\pi\text{.}\)</span></p>
+<p>We replace <span class="process-math">\(f(x,y)\)</span> with <span class="process-math">\(f(r\cos(\theta) ,r\sin(\theta) )\text{.}\)</span> That means we make the following substitutions:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+4-x-2y  \Rightarrow  4-r\cos(\theta) -2r\sin(\theta)\text{.}
+\end{equation*}
+</div>
+<p>Finally, we replace <span class="process-math">\(dA\)</span> in the double integral with <span class="process-math">\(r\, dr\, d\theta\text{.}\)</span> This gives the final iterated integral, which we evaluate:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint_Rf(x,y)\, dA \amp = \int_0^{2\pi}\int_0^1\big(4-r\cos(\theta) -2r\sin(\theta) \big)r\, dr\, d\theta\\
+\amp = \int_0^{2\pi}\int_0^1\big(4r-r^2(\cos(\theta) -2\sin(\theta) )\big)\, dr\, d\theta\\
+\amp = \int_0^{2\pi}\left.\left(2r^2-\frac13r^3(\cos(\theta) -2\sin(\theta) )\right)\right|_0^1d\theta\\
+\amp = \int_0^{2\pi} \left(2-\frac13\big(\cos(\theta) -2\sin(\theta) \big)\right)\, d\theta\\
+\amp = \left.\left(2\theta -\frac13\big(\sin(\theta) +2\cos(\theta) \big)\right)\right|_0^{2\pi}\\
+\amp = 4\pi \approx 12.566\text{.}
+\end{align*}
+</div>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100.497512437811%"><iframe src="generated/asymptote/img_doublepol1.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_doublepol1.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.3.5<span class="period">.</span></span><span class="space"> </span>Evaluating a double integral with polar coordinates in <a href="" class="xref" data-knowl="./knowl/ex_doublepol1.html" title="Example 14.3.4: Evaluating a double integral with polar coordinates">Example 14.3.4</a></figcaption></figure><p>The surface and region <span class="process-math">\(R\)</span> are shown in <a href="" class="xref" data-knowl="./knowl/fig_doublepol1.html" title="Figure 14.3.5">Figure 14.3.5</a>.</p>
+</div>
+<span class="incontext"><a href="sec_double_int_polar.html#solution-1389" class="internal">in-context</a></span>
+</body>
+</html>

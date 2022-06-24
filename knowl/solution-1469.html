@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:48:54Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">14.6.23.1</span><span class="period">.</span>
+</h4>
+<p>The main point of this example is this: integrating with respect to <span class="process-math">\(z\)</span> first is rather straightforward; integrating with respect to <span class="process-math">\(x\)</span> first is not.</p>
+<p>The order <span class="process-math">\(dz\, dy\, dx\text{:}\)</span></p>
+<p>The bounds on <span class="process-math">\(z\)</span> are clearly <span class="process-math">\(2x^2+2\leq z\leq 6-2x^2-y^2\text{.}\)</span> Collapsing <span class="process-math">\(D\)</span> onto the <span class="process-math">\(xy\)</span>-plane gives the ellipse shown in <a href="" class="xref" data-knowl="./knowl/fig_trip5a3_3D.html" title="Figure 14.6.24.(c)">Figure 14.6.24.(c)</a>. The equation of this ellipse is found by setting the two surfaces equal to each other:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_trip5a3_3D.html">
+\begin{equation*}
+2x^2+2 = 6-2x^2-y^2 \Rightarrow 4x^2+y^2=4 \Rightarrow x^2+\frac{y^2}4=1\text{.}
+\end{equation*}
+</div>
+<p>We can describe this ellipse with the bounds</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-\sqrt{4-4x^2} \leq y\leq \sqrt{4-4x^2} \text{ and }  -1\leq x\leq 1\text{.}
+\end{equation*}
+</div>
+<p>Thus we find volume as</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel middle" style="width:40%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+2x^2+2 \amp \leq z\leq 6-2x^2-y^2\\
+-\sqrt{4-4x^2} \amp \leq y\leq \sqrt{4-4x^2}\\
+-1 \amp \leq x\leq 1
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10%;"><p><span class="process-math">\(\Rightarrow\)</span></p></div>
+<div class="sbspanel middle" style="width:40%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{-1}^1\int_{-\sqrt{4-4x^2}}^{\sqrt{4-4x^2}}\int_{2x^2+2}^{6-2x^2-y^2}\, dz\, dy\, dx\text{.}
+\end{equation*}
+</div></div>
+</div></div>
+<p>The order <span class="process-math">\(dy\, dz\, dx\text{:}\)</span></p>
+<p>Integrating with respect to <span class="process-math">\(y\)</span> is not too difficult. Since the surface <span class="process-math">\(z=2x^2+2\)</span> is a cylinder whose directrix is the <span class="process-math">\(y\)</span>-axis, it does not create a border for <span class="process-math">\(y\text{.}\)</span> The paraboloid <span class="process-math">\(z=6-2x^2-y^2\)</span> does; solving for <span class="process-math">\(y\text{,}\)</span> we get the bounds</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-\sqrt{6-2x^2-z}\leq y\leq \sqrt{6-2x^2-z}\text{.}
+\end{equation*}
+</div>
+<p>Collapsing <span class="process-math">\(D\)</span> onto the <span class="process-math">\(xz\)</span>-plane gives the region shown in <a href="" class="xref" data-knowl="./knowl/fig_trip5b1_3D.html" title="Figure 14.6.25.(a)">Figure 14.6.25.(a)</a>; the lower curve is from the cylinder, with equation <span class="process-math">\(z=2x^2+2\text{.}\)</span> The upper curve is from the paraboloid; with <span class="process-math">\(y=0\text{,}\)</span> the curve is <span class="process-math">\(z=6-2x^2\text{.}\)</span> Thus bounds on <span class="process-math">\(z\)</span> are <span class="process-math">\(2x^2+2\leq z\leq 6-2x^2\text{;}\)</span> the bounds on <span class="process-math">\(x\)</span> are <span class="process-math">\(-1\leq x\leq 1\text{.}\)</span> Thus we have:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel middle" style="width:40%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+-\sqrt{6-2x^2-z} \amp \leq y\leq \sqrt{6-2x^2-z}\\
+2x^2+2 \amp \leq z\leq 6-2x^2\\
+-1 \amp \leq x\leq 1
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10%;"><p><span class="process-math">\(\Rightarrow\)</span></p></div>
+<div class="sbspanel middle" style="width:40%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{-1}^1\int_{2x^2+2}^{6-2x^2}\int_{-\sqrt{6-2x^2-z}}^{\sqrt{6-2x^2-z}}\, dy\, dz\, dx\text{.}
+\end{equation*}
+</div></div>
+</div></div>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_trip5b1_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_trip5b1_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_trip5b2_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_trip5b2_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.6.25<span class="period">.</span></span><span class="space"> </span>The region <span class="process-math">\(D\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_trip5.html" title="Example 14.6.23: Finding the volume of a space region">Example 14.6.23</a> is collapsed onto the <span class="process-math">\(xz\)</span>-plane in (a); in (b), it is collapsed onto the <span class="process-math">\(yz\)</span>-plane</figcaption></figure><p>The order <span class="process-math">\(dx\, dz\, dy\text{:}\)</span></p>
+<p>This order takes more effort as <span class="process-math">\(D\)</span> must be split into two subregions. The two surfaces create two sets of upper/lower bounds in terms of <span class="process-math">\(x\text{;}\)</span> the cylinder creates bounds</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-\sqrt{z/2-1}\leq x\leq \sqrt{z/2-1}
+\end{equation*}
+</div>
+<p class="continuation">for region <span class="process-math">\(D_1\)</span> and the paraboloid creates bounds</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-\sqrt{3-y^2/2-z^2/2}\leq x\leq \sqrt{3-y^2/2-z^2/2}
+\end{equation*}
+</div>
+<p class="continuation">for region <span class="process-math">\(D_2\text{.}\)</span></p>
+<p>Collapsing <span class="process-math">\(D\)</span> onto the <span class="process-math">\(yz\)</span>-axes gives the regions shown in <a href="" class="xref" data-knowl="./knowl/fig_trip5b2_3D.html" title="Figure 14.6.25.(b)">Figure 14.6.25.(b)</a>. We find the equation of the curve <span class="process-math">\(z=4-y^2/2\)</span> by noting that the equation of the ellipse seen in <a href="" class="xref" data-knowl="./knowl/fig_trip5a3_3D.html" title="Figure 14.6.24.(c)">Figure 14.6.24.(c)</a> has equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_trip5b2_3D.html ./knowl/fig_trip5a3_3D.html">
+\begin{equation*}
+x^2+y^2/4=1  \Rightarrow  x = \sqrt{1-y^2/4}\text{.}
+\end{equation*}
+</div>
+<p>Substitute this expression for <span class="process-math">\(x\)</span> in either surface equation, <span class="process-math">\(z=6-2x^2-y^2\)</span> or <span class="process-math">\(z=2x^2+2\text{.}\)</span> In both cases, we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+z=4-\frac12y^2\text{.}
+\end{equation*}
+</div>
+<p>Region <span class="process-math">\(R_1\text{,}\)</span> corresponding to <span class="process-math">\(D_1\text{,}\)</span> has bounds</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2\leq z\leq 4-y^2/2, -2\leq y\leq 2
+\end{equation*}
+</div>
+<p class="continuation">and region <span class="process-math">\(R_2\text{,}\)</span> corresponding to <span class="process-math">\(D_2\text{,}\)</span> has bounds</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+4-y^2/2\leq z\leq 6-y^2, -2\leq y\leq 2\text{.}
+\end{equation*}
+</div>
+<p>Thus the volume of <span class="process-math">\(D\)</span> is given by:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{-2}^2\int_2^{4-y^2/2}\int_{-\sqrt{z/2-1}}^{\sqrt{z/2-1}}\, dx\, dz\, dy \, +\, \int_{-2}^2\int_{4-y^2/2}^{6-y^2}\int_{-\sqrt{3-y^2/2-z^2/2}}^{\sqrt{3-y^2/2-z^2/2}}\, dx\, dz\, dy\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="sec_triple_int.html#solution-1469" class="internal">in-context</a></span>
+</body>
+</html>

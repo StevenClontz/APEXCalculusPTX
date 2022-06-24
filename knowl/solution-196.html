@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:26Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.3.19.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_graphs_incr_decr_ex_3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/T4RxcQnNotc?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>The domain of <span class="process-math">\(f\)</span> is <span class="process-math">\(\mathbb{R}\)</span> (you can take the odd root of both positive and negative nubmers). Next, we take the first derivative. Since we know we want to solve <span class="process-math">\(\fp(x) = 0\text{,}\)</span> we will do some algebra after taking the derivative.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+f(x) \amp = x^{\frac{8}{3}}-4x^{\frac{2}{3}}\\
+\fp(x) \amp = \frac{8}{3} x^{\frac{5}{3}} - \frac{8}{3}x^{-\frac{1}{3}}\\
+\amp = \frac{8}{3}x^{-\frac{1}{3}}\left(x^{\frac{6}{3}}-1\right)\\
+\amp =\frac{8}{3}x^{-\frac{1}{3}}\left(x^2-1\right)\\
+\amp =\frac{8}{3}x^{-\frac{1}{3}}(x-1)(x+1)\text{.}
+\end{align*}
+</div>
+<p>This derivation of <span class="process-math">\(\fp\)</span> shows that <span class="process-math">\(\fp(x) = 0\)</span> when <span class="process-math">\(x=\pm 1\)</span> and <span class="process-math">\(\fp\)</span>is not defined when <span class="process-math">\(x=0\text{.}\)</span> Thus we have three critical values, breaking the number line into four subintervals as shown in <a href="" class="xref" data-knowl="./knowl/fig_incrline3.html" title="Figure 3.3.20">Figure 3.3.20</a>.</p>
+<dl class="description-list">
+<dt>Interval 1: <span class="process-math">\((\infty,-1)\)</span>
+</dt>
+<dd><p>We choose <span class="process-math">\(p=-2\text{;}\)</span> we can easily verify that <span class="process-math">\(\fp(-2)\lt 0\text{.}\)</span> So <span class="process-math">\(f\)</span> is decreasing on <span class="process-math">\((-\infty,-1)\text{.}\)</span></p></dd>
+<dt>Interval 2: <span class="process-math">\((-1,0)\)</span>
+</dt>
+<dd>
+<p>Choose <span class="process-math">\(p=-1/2\text{.}\)</span> Once more we practice finding the sign of <span class="process-math">\(\fp(p)\)</span> without computing an actual value. We have <span class="process-math">\(\fp(p) = (8/3)p^{-1/3}(p-1)(p+1)\text{;}\)</span> find the sign of each of the three terms at the chosen value of <span class="process-math">\(p\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp(p) = \frac{8}{3} \cdot \underbrace{p^{-\frac{1}{3}}}_{\lt 0}\cdot \underbrace{(p-1)}_{\lt 0}\underbrace{(p+1)}_{\gt 0}\text{.}
+\end{equation*}
+</div>
+<p>We have a “negative <span class="times-sign">×</span> negative <span class="times-sign">×</span> positive” giving a positive number; <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\((-1,0)\text{.}\)</span></p>
+</dd>
+<dt>Interval 3: <span class="process-math">\((0,1)\)</span>
+</dt>
+<dd>
+<p>We do a similar sign analysis as before, using <span class="process-math">\(p\)</span> in <span class="process-math">\((0,1)\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp(p) = \frac{8}{3} \cdot \underbrace{p^{-\frac{1}{3}}}_{\gt 0}\cdot \underbrace{(p-1)}_{\lt 0}\underbrace{(p+1)}_{\gt 0}\text{.}
+\end{equation*}
+</div>
+<p>We have two positive factors and one negative factor; <span class="process-math">\(\fp(p)\lt 0\)</span> and so <span class="process-math">\(f\)</span> is decreasing on <span class="process-math">\((0,1)\text{.}\)</span></p>
+</dd>
+<dt>Interval 4: <span class="process-math">\((1,\infty)\)</span>
+</dt>
+<dd><p>Similar work to that done for the other three intervals shows that <span class="process-math">\(\fp(x)\gt 0\)</span> on <span class="process-math">\((1,\infty)\text{,}\)</span> so <span class="process-math">\(f\)</span> is increasing on this interval.</p></dd>
+</dl>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_incrline3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.20<span class="period">.</span></span><span class="space"> </span>Number line for <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_incr3.html" title="Example 3.3.19: Using the First Derivative Test">Example 3.3.19</a></figcaption></figure><p>We conclude by stating that <span class="process-math">\(f\)</span> is increasing on the intervals <span class="process-math">\((-1,0)\)</span> and <span class="process-math">\((1,\infty)\)</span> and decreasing on the intervals <span class="process-math">\((-\infty,-1)\)</span> and <span class="process-math">\((0,1)\text{.}\)</span> The sign of <span class="process-math">\(\fp\)</span> changes from negative to positive around <span class="process-math">\(x=-1\)</span> and <span class="process-math">\(x=1\text{,}\)</span> meaning by <a href="" class="xref" data-knowl="./knowl/thm_first_der.html" title="Theorem 3.3.12: First Derivative Test">Theorem 3.3.12</a> that <span class="process-math">\(f(-1)\)</span> and <span class="process-math">\(f(1)\)</span> are relative minima of <span class="process-math">\(f\text{.}\)</span> As the sign of <span class="process-math">\(\fp\)</span> changes from positive to negative at <span class="process-math">\(x=0\text{,}\)</span> we have a relative maximum at <span class="process-math">\(f(0)\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_incr3.html" title="Figure 3.3.21">Figure 3.3.21</a> shows a graph of <span class="process-math">\(f\text{,}\)</span> confirming our result. We also graph <span class="process-math">\(\fp\text{,}\)</span> highlighting once more that <span class="process-math">\(f\)</span> is increasing when <span class="process-math">\(\fp\gt 0\)</span> and is decreasing when <span class="process-math">\(\fp\lt 0\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_incr3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.21<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(f(x)\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_incr3.html" title="Example 3.3.19: Using the First Derivative Test">Example 3.3.19</a>, showing where <span class="process-math">\(f\)</span> is increasing and decreasing</figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_incr_decr.html#solution-196" class="internal">in-context</a></span>
+</body>
+</html>

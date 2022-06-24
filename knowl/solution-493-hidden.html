@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:39:15Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>The assumption here seems to have some merit because it matches our intuition that a disease should spread more rapidly when more individuals are sick. The differential equation is simply</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dt} = ky\text{,}
+\end{equation*}
+</div>
+<p class="continuation">with solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = Ce^{kt}\text{.}
+\end{equation*}
+</div>
+<p>The conditions <span class="process-math">\(y(0)=0.05\)</span> and <span class="process-math">\(y(1) = 0.1\)</span> lead to <span class="process-math">\(C = 0.05\)</span> a and <span class="process-math">\(k = \ln(2)\text{,}\)</span> so the function is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = 0.05e^{(\ln(2)t}\text{.}
+\end{equation*}
+</div>
+<p>We should point out a glaring problem with this model. The variable <span class="process-math">\(y\)</span> is a proportion and should take on values between 0 and 1, but the function <span class="process-math">\(y = 0.05e^{2t}\)</span> grows without bound. After <span class="process-math">\(t \approx 4.32\)</span> weeks, <span class="process-math">\(y\)</span> exceeds 1, and the model ceases to make physical sense.</p>
+</div></body>
+</html>

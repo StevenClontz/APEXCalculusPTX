@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:34:40Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.2.13.1</span><span class="period">.</span>
+</h6>
+<p>Let <span class="process-math">\(\epsilon  \gt 0\)</span> be given. We wish to find <span class="process-math">\(\delta  \gt 0\)</span> such that when <span class="process-math">\(|x-1|\lt \delta\text{,}\)</span> <span class="process-math">\(|f(x)-1|\lt \epsilon\text{.}\)</span></p>
+<p>Consider <span class="process-math">\(|f(x)-1|\lt \epsilon\text{,}\)</span> keeping in mind we want to make a statement about <span class="process-math">\(|x-1|\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{gathered}
+|f(x) -1 | \lt  \epsilon\\
+|1/x-1 |\lt \epsilon\\
+| (1-x)/x | \lt  \epsilon\\
+| x-1 |/|x| \lt  \epsilon\\
+| x-1 | \lt  \epsilon\cdot|x|
+\end{gathered}
+\end{equation*}
+</div>
+<p>Since <span class="process-math">\(x\)</span> is near 1, we can safely assume that, for instance, <span class="process-math">\(1/2\lt x\lt 3/2\text{.}\)</span> Thus <span class="process-math">\(\epsilon/2 \lt \epsilon\cdot x\text{.}\)</span></p>
+<p>Let <span class="process-math">\(\delta =\frac{\epsilon}{2}\text{.}\)</span> Then:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{gathered}
+\abs{x-1}\lt \delta\\
+\abs{x-1} \lt  \frac{\epsilon}{2}\\
+\abs{x-1} \lt  \epsilon\cdot x\\
+\abs{x-1}/x \lt  \epsilon
+\end{gathered}
+\end{equation*}
+</div>
+<p>Assuming <span class="process-math">\(x\)</span> is near 1, <span class="process-math">\(x\)</span> is positive and we can bring it into the absolute value signs on the left.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{gathered}
+\abs{(x-1)/x} \lt  \epsilon\\
+\abs{1-1/x} \lt  \epsilon\\
+\abs{(1/x) -1} \lt  \epsilon\text{,}
+\end{gathered}
+\end{equation*}
+</div>
+<p>which is what we wanted to prove.</p>
+</div>
+<span class="incontext"><a href="sec_limit_def.html#solution-44" class="internal">in-context</a></span>
+</body>
+</html>

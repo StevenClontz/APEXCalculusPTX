@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:34:47Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.5.21.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_limit_con_IVT_bisec" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=mwq447zC9R0,dx5reJRcQD0&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Consider the graph of <span class="process-math">\(f(x) = x-\cos(x)\text{,}\)</span> shown in <a href="" class="xref" data-knowl="./knowl/fig_xminuscosx.html" title="Figure 1.5.22">Figure 1.5.22</a>. It is clear that the graph crosses the <span class="process-math">\(x\)</span>-axis somewhere near <span class="process-math">\(x=0.8\text{.}\)</span> To start the Bisection Method, pick an interval that contains <span class="process-math">\(0.8\text{.}\)</span> We choose <span class="process-math">\([0.7,0.9]\text{.}\)</span> Note that all we care about are signs of <span class="process-math">\(f(x)\text{,}\)</span> not their actual value, so this is all we display.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_xminuscosx.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.5.22<span class="period">.</span></span><span class="space"> </span>Graphing a root of <span class="process-math">\(f(x) = x-\cos(x)\)</span></figcaption></figure><dl class="description-list">
+<dt>Iteration 1:</dt>
+<dd><p><span class="process-math">\(f(0.7) \lt 0\text{,}\)</span> <span class="process-math">\(f(0.9) \gt 0\text{,}\)</span> and <span class="process-math">\(f(0.8) \gt 0\text{.}\)</span> So replace <span class="process-math">\(0.9\)</span> with <span class="process-math">\(0.8\)</span> and repeat.</p></dd>
+<dt>Iteration 2:</dt>
+<dd><p><span class="process-math">\(f(0.7)\lt 0\text{,}\)</span> <span class="process-math">\(f(0.8) \gt 0\text{,}\)</span> and at the midpoint, <span class="process-math">\(0.75\text{,}\)</span> we have <span class="process-math">\(f(0.75) \gt 0\text{.}\)</span> So replace <span class="process-math">\(0.8\)</span> with <span class="process-math">\(0.75\)</span> and repeat. Note that we don't need to continue to check the endpoints, just the midpoint. Thus we put the rest of the iterations in <a href="" class="xref" data-knowl="./knowl/table_rootfinding.html" title="Table 1.5.23: Iterations of the Bisection Method of Root Finding">Table 1.5.23</a>.</p></dd>
+</dl>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.5.23<span class="period">.</span></span><span class="space"> </span>Iterations of the Bisection Method of Root Finding</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Iteration #</td>
+<td class="l m b0 r0 l0 t0 lines">Interval</td>
+<td class="l m b0 r0 l0 t0 lines">Midpoint Sign</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([\highlight{0.7},0.9]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0.8) \gt 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([\highlight{0.7},0.8]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0.75) \gt 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([\highlight{0.7},\highlight{0.75}]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0.725)\lt 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([0.725,\highlight{0.75}]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0.7375)\lt 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(5\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([\highlight{0.7375},\highlight{0.75}]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0.7438)\gt \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(6\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([\highlight{0.7375},0.7438]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0.7407)\gt 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(7\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([\highlight{0.7375},0.7407]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0.7391)\gt 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(8\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([\highlight{0.7375},\highlight{0.7391}]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0.7383)\lt 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([0.7383,\highlight{0.7391}]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0.7387)\lt 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([0.7387,\highlight{0.7391}]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0.7389)\lt 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(11\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([0.7389,\highlight{0.7391}]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(0.7390)\lt 0\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(12\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([0.7390,\highlight{0.7391}]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+</table></div></figure><p>Notice that in the 12th iteration we have the endpoints of the interval each starting with <span class="process-math">\(0.739\text{.}\)</span> Thus we have narrowed the zero down to an accuracy of the first three places after the decimal. Using a computer, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(0.7390) = -0.00014,  f(0.7391) = 0.000024\text{.}
+\end{equation*}
+</div>
+<p>Either endpoint of the interval gives a good approximation of where <span class="process-math">\(f\)</span> is <span class="process-math">\(0\text{.}\)</span> The <a href="" class="xref" data-knowl="./knowl/thm_IVT.html" title="Theorem 1.5.19: Intermediate Value Theorem">Theorem 1.5.19</a> states that the actual zero is still within this interval. While we do not know its exact value, we know it starts with <span class="process-math">\(0.739\text{.}\)</span></p>
+<p>This type of exercise is rarely done by hand. Rather, it is simple to program a computer to run such an algorithm and stop when the endpoints differ by a preset small amount. One of the authors did write such a program and found the zero of <span class="process-math">\(f\)</span> to be <span class="process-math">\(0.7390851332\)</span> , accurate to <span class="process-math">\(10\)</span> places after the decimal. While it took a few minutes to write the program, it took less than a thousandth of a second for the program to run the necessary <span class="process-math">\(35\)</span> iterations. In less than <span class="process-math">\(8\)</span> hundredths of a second, the zero was calculated to <span class="process-math">\(100\)</span> decimal places (with less than <span class="process-math">\(200\)</span> iterations).</p>
+</div>
+<span class="incontext"><a href="sec_continuity.html#solution-78" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:40:26Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.6.12.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-powerseries-example-exponential" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/SQm1BC7bwEw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We start by making two notes: first, in <a href="" class="xref" data-knowl="./knowl/ex_ps2.html" title="Example 9.6.8: Determining the radius and interval of convergence">Example 9.6.8</a>, we found the interval of convergence of this power series is <span class="process-math">\((-\infty,\infty)\text{.}\)</span> Second, we will find it useful later to have a few terms of the series written out:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_ps2.html">
+\begin{equation}
+\infser[0] \frac{x^n}{n!} = 1 + x + \frac{x^2}2+\frac{x^3}{6} + \frac{x^4}{24} +\cdots\tag{9.6.3}
+\end{equation}
+</div>
+<p>We now find the derivative:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\fp(x) \amp = \infser n\frac{x^{n-1}}{n!}\\
+\amp =\infser \frac{x^{n-1}}{(n-1)!} = 1+x+\frac{x^2}{2!}+\cdots.\\
+\end{align*}
+<p class="intertext">Since the series starts at <span class="process-math">\(n=1\)</span> and each term refers to <span class="process-math">\((n-1)\text{,}\)</span> we can re-index the series starting with <span class="process-math">\(n=0\text{:}\)</span></p>
+\begin{align*}
+\amp = \infser[0] \frac{x^{n}}{n!}\\
+\amp = f(x)\text{.}
+\end{align*}
+</div>
+<p>We found the derivative of <span class="process-math">\(f(x)\)</span> is <span class="process-math">\(f(x)\text{.}\)</span> The only functions for which this is true are of the form <span class="process-math">\(y=ce^x\)</span> for some constant <span class="process-math">\(c\text{.}\)</span> As <span class="process-math">\(f(0) = 1\)</span> (see Equation <a href="" class="xref" data-knowl="./knowl/eq_ps4.html" title="Equation 9.6.3">(9.6.3)</a>), <span class="process-math">\(c\)</span> must be 1. Therefore we conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_ps4.html">
+\begin{equation*}
+f(x) = \infser[0] \frac{x^n}{n!} = e^x
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\(x\text{.}\)</span></p>
+<p>We can also find <span class="process-math">\(\ds \int f(x)\, dx\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int f(x)\, dx \amp = C+\infser[0] \frac{x^{n+1}}{n!(n+1)}\\
+\amp = C+ \infser[0] \frac{x^{n+1}}{(n+1)!}
+\end{align*}
+</div>
+<p>We write out a few terms of this last series:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C+ \infser[0] \frac{x^{n+1}}{(n+1)!} = C+ x+ \frac{x^2}2+\frac{x^3}{6}+\frac{x^4}{24}+\cdots
+\end{equation*}
+</div>
+<p>The integral of <span class="process-math">\(f(x)\)</span> differs from <span class="process-math">\(f(x)\)</span> only by a constant, again indicating that <span class="process-math">\(f(x) = e^x\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_power_series.html#solution-647" class="internal">in-context</a></span>
+</body>
+</html>

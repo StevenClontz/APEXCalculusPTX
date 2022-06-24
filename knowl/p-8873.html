@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:40:13Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<ol class="decimal">
+<li>
+<p>Using <a href="" class="xref" data-knowl="./knowl/thm_alt_series_approx.html" title="Theorem 9.5.7: The Alternating Series Approximation Theorem">Theorem 9.5.7</a>, we want to find <span class="process-math">\(n\)</span> where <span class="process-math">\(1/n^3 \leq 0.001\text{.}\)</span> That is, we want to find the the first time a term in the sequence <span class="process-math">\(a_n\)</span> is smaller than the desired level of error:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_alt_series_approx.html">
+\begin{align*}
+\frac1{n^3} \amp \leq 0.001=\frac{1}{1000}\\
+n^3 \amp \geq 1000\\
+n \amp \geq \sqrt[3]{1000}\\
+n \amp \geq 10\text{.}
+\end{align*}
+</div>
+<p class="continuation">Let <span class="process-math">\(L\)</span> be the sum of this series. By Part 1 of the theorem, <span class="process-math">\(\abs{S_9-L}\lt a_{10} = 1/1000\text{.}\)</span> (We found <span class="process-math">\(a_{10}=a_{n+1}\lt 0.0001\text{,}\)</span> so <span class="process-math">\(n=9\)</span>). We can compute <span class="process-math">\(S_9=0.902116\text{,}\)</span> which our theorem states is within <span class="process-math">\(0.001\)</span> of the total sum. We can use Part 2 of the theorem to obtain an even more accurate result. As we know the <span class="process-math">\(10\)</span>th term of the series is <span class="process-math">\((-1)^n/10^3=-1/1000\text{,}\)</span> we can easily compute <span class="process-math">\(S_{10} = 0.901116\text{.}\)</span> Part 2 of the theorem states that <span class="process-math">\(L\)</span> is between <span class="process-math">\(S_9\)</span> and <span class="process-math">\(S_{10}\text{,}\)</span> so <span class="process-math">\(0.901116 \lt L\lt 0.902116\text{.}\)</span></p>
+</li>
+<li>
+<p>We want to find <span class="process-math">\(n\)</span> where <span class="process-math">\(\ln(n)/n \lt  0.001\text{.}\)</span> We start by solving <span class="process-math">\(\ln(n)/n = 0.001\)</span> for <span class="process-math">\(n\text{.}\)</span> This cannot be solved algebraically, so we will use Newton's Method to approximate a solution. (Note: we can also use a “Brute Force” technique. That is, we can guess and check numerically until we find a solution.) Let <span class="process-math">\(f(x) = \ln(x)/x-0.001\text{;}\)</span> we want to know where <span class="process-math">\(f(x) = 0\text{.}\)</span> We make a guess that <span class="process-math">\(x\)</span> must be “large,” so our initial guess will be <span class="process-math">\(x_1=1000\text{.}\)</span> Recall how Newton's Method works: given an approximate solution <span class="process-math">\(x_n\text{,}\)</span> our next approximation <span class="process-math">\(x_{n+1}\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_{n+1} = x_n - \frac{f(x_n)}{\fp(x_n)}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We find <span class="process-math">\(\fp(x) = \big(1-\ln(x)\big)/x^2\text{.}\)</span> This gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x_2 \amp = 1000 - \frac{\ln(1000)/1000-0.001}{\big(1-\ln(1000)\big)/1000^2}\\
+\amp = 2000\text{.}
+\end{align*}
+</div>
+<p class="continuation">Using a computer, we find that Newton's Method seems to converge to a solution <span class="process-math">\(x=9118.01\)</span> after 8 iterations. Taking the next integer higher, we have <span class="process-math">\(n=9119\text{,}\)</span> where <span class="process-math">\(\ln(9119)/9119 =0.000999903\lt 0.001\text{.}\)</span> Again using a computer, we find <span class="process-math">\(S_{9118} = -0.160369\text{.}\)</span> Part 1 of the theorem states that this is within <span class="process-math">\(0.001\)</span> of the actual sum <span class="process-math">\(L\text{.}\)</span> Already knowing the <span class="process-math">\(9{,}119\)</span>th term, we can compute <span class="process-math">\(S_{9119} = -0.159369\text{,}\)</span> meaning <span class="process-math">\(-0.159369 \lt  L \lt  -0.160369\text{.}\)</span></p>
+</li>
+</ol>
+<span class="incontext"><a href="sec_alt_series.html#p-8873" class="internal">in-context</a></span>
+</body>
+</html>

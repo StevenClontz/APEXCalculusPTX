@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:48:10Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Replacing <span class="process-math">\(x\)</span> with <span class="process-math">\(r\cos(\theta)\)</span> in the integrand, along with replacing <span class="process-math">\(y\)</span> with <span class="process-math">\(r\sin(\theta)\text{,}\)</span> prepares us to evaluate the double integral <span class="process-math">\(\iint_Rf(x,y)\, dA\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint_Rf(x,y)\, dA \amp = \int_0^{\pi}\int_{2\cos(\theta) }^{4\cos(\theta) } \Big(4-\big(r\cos(\theta) -2\big)^2-\big(r\sin(\theta) \big)^2\Big)r\, dr\, d\theta\\
+\amp = \int_0^{\pi}\int_{2\cos(\theta) }^{4\cos(\theta) } \big(-r^3+4r^2\cos(\theta) \big)\, dr\, d\theta\\
+\amp = \int_0^\pi \left.\left(-\frac14r^4+\frac43r^3\cos(\theta) \right)\right|_{2\cos(\theta) }^{4\cos(\theta) }d\theta\\
+\amp =\int_0^\pi \left(\left[-\frac14(256\cos^4(\theta) )+\frac43(64\cos^4(\theta) )\right]-\right.\\
+\amp \quad \left.\left[-\frac14(16\cos^4(\theta) )+\frac43(8\cos^4(\theta) )\right]\right)\, d\theta\\
+\amp =\int_0^\pi\frac{44}3\cos^4(\theta) \, d\theta
+\end{align*}
+</div>
+<p class="continuation">To integrate <span class="process-math">\(\cos^4(\theta)\text{,}\)</span> rewrite it as <span class="process-math">\(\cos^2(\theta) \cos^2(\theta)\)</span> and employ the power-reducing formula twice:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\cos^4(\theta) \amp =\cos^2(\theta) \cos^2(\theta)\\
+\amp = \frac12\big(1+\cos(2\theta)\big)\frac12\big(1+\cos(2\theta)\big)\\
+\amp = \frac14\big(1+2\cos(2\theta)+\cos^2(2\theta)\big)\\
+\amp =\frac14\Big(1+2\cos(2\theta)+\frac12\big(1+\cos(4\theta)\big)\Big)\\
+\amp = \frac38+\frac12\cos(2\theta)+\frac18\cos(4\theta)\text{.}
+\end{align*}
+</div>
+<p class="continuation">Picking up from where we left off above, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint_R f(x,y)\,dA \amp =\int_0^\pi\frac{44}3\cos^4(\theta) \, d\theta\\
+\amp =\int_0^\pi \frac{44}3\left(\frac38+\frac12\cos(2\theta)+\frac18\cos(4\theta)\right)d\theta\\
+\amp = \left.\frac{44}3\left(\frac{3}8\theta+\frac14\sin(2\theta)+\frac{1}{32}\sin(4\theta)\right)\right|_0^\pi\\
+\amp =\frac{11}2\pi\approx 17.279\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="sec_double_int_polar.html#p-14535" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:58Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>The logistic differential equation is what is called an <em class="emphasis">autonomous equation</em>. An autonomous differential equation has no explicit dependence on the independent variable (<span class="process-math">\(t\)</span> in this case). This has no real effect on the application of Euler's method other than the fact that the function <span class="process-math">\(f(t,y)\)</span> is really just a function of <span class="process-math">\(y\text{.}\)</span> To take steps in the <span class="process-math">\(y\)</span> variable, we use</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y_{i+1} = y_i + hf(t_i,y_i) = y_i + hy_i(1-y_i)\text{.}
+\end{equation*}
+</div>
+<p>Using <span class="process-math">\(N=10\)</span> steps requires <span class="process-math">\(\displaystyle h = \frac{4-0}{10} = 0.4\text{.}\)</span> Implementing Euler's Method, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x_0  \amp = 0      \amp    y_0  \amp = 0.25 \\
+x_1   \amp = 0.4    \amp   y_1   \amp = 0.25 + 0.4(0.25)(1-0.25) \\
+\amp       \amp     \amp = 0.325 \\
+x_2   \amp = 0.8     \amp    y_2   \amp = 0.325 + 0.4(0.325)(1-0.325) \\
+\amp       \amp     \amp = 0.41275 \\
+x_3  \amp = 1.2    \amp   y_3   \amp = 0.41275 + 0.4(0.41275)(1-0.41275)\\
+\amp       \amp     \amp = 0.50970 \\
+x_4  \amp = 1.6    \amp   y_4  \amp = 0.50970 + 0.4(0.50970)(1 - 0.50970) \\
+\amp       \amp     \amp = 0.60966 \\
+x_5  \amp = 2.0    \amp    y_5  \amp = 0.60966 + 0.4(0.60966)(1-0.60966)\\
+\amp       \amp     \amp =  0.70485 \\
+x_6   \amp = 2.4    \amp   y_6   \amp = 0.70485 + 0.4(0.70485)(1 - 0.70485) \\
+\amp       \amp     \amp = 0.78806\\
+x_7   \amp = 2.8     \amp    y_7   \amp = 0.78806 + 0.4(0.78806)(1-0.78806) \\
+\amp       \amp     \amp = 0.85487 \\
+x_8  \amp = 3.2    \amp   y_8   \amp = 0.85487 + 0.4(0.85487)(1-0.85487)\\
+\amp       \amp     \amp = 0.90450\\
+x_9  \amp = 3.6    \amp   y_9  \amp = 0.90450 + 0.4(0.90450)(1 - 0.90450)\\
+\amp       \amp     \amp = 0.93905 \\
+x_{10}\amp = 4.0    \amp   y_{10}\amp = 0.93905 + 0.4(0.93905)(1 - 0.93905) \\
+\amp       \amp     \amp = 0.96194 \text{.}
+\end{align*}
+</div>
+<p>These 11 points, along with the the analytic solution, are plotted in <a href="" class="xref" data-knowl="./knowl/fig_20_01_euler3.html" title="Figure 8.1.24">Figure 8.1.24</a>. Notice how well they seem to match the true solution.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_euler3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.24<span class="period">.</span></span><span class="space"> </span>Euler's Method approximation to <span class="process-math">\(\yp = y(1-y)\)</span> with <span class="process-math">\(y(0) = 0.25\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_euler3.html" title="Example 8.1.23: Using Euler's Method 3">Example 8.1.23</a>, along with the analytical solution</figcaption></figure>
+</div></body>
+</html>

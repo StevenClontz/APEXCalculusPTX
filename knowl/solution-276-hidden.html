@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:20Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_rie_ex_2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/O6S1f6-D8Ls?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Following <a href="" class="xref" data-knowl="./knowl/idea_riemann.html" title="Key Idea 5.3.20: Riemann Sum Concepts">Key Idea 5.3.20</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_riemann.html">
+\begin{equation*}
+\Delta x = \frac{3 - (-2)}{10} = 1/2  \text{ and }   x_i = (-2) + (1/2)(i) = i/2-2\text{.}
+\end{equation*}
+</div>
+<p>As we are using the Midpoint Rule, we will also need <span class="process-math">\(x_{i-1}\)</span> and <span class="process-math">\(\ds \frac{x_{i-1}+x_{i}}2\text{.}\)</span> Since <span class="process-math">\(x_i = i/2-2\text{,}\)</span><span class="process-math">\(x_{i-1} = (i-1)/2 - 2 = i/2 -5/2\text{.}\)</span> This gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{x_{i-1}+x_{i}}2 = \frac{(i/2-5/2) + (i/2-2)}{2} = \frac{i-9/2}{2} = i/2 - 9/4\text{.}
+\end{equation*}
+</div>
+<p>We now construct the Riemann sum and compute its value using summation formulas.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_{-2}^3 (5x+2)\, dx   \amp \approx \sum_{i=1}^{10} f\left(\frac{x_{i-1}+x_{i}}{2}\right)\Delta x\\
+\amp =  \sum_{i=1}^{10} f(i/2 - 9/4)\Delta x\\
+\amp =  \sum_{i=1}^{10} \big(5(i/2-9/4) + 2\big)\Delta x\\
+\amp =  \Delta x\sum_{i=1}^{10}\left[\left(\frac{5}{2}\right)i - \frac{37}{4}\right]\\
+\amp =  \Delta x\left(\frac{5}2\sum_{i=1}^{10} (i) - \sum_{i=1}^{10}\left(\frac{37}{4}\right)\right)\\
+\amp = \frac12\left(\frac52\cdot\frac{10(11)}{2} - 10\cdot\frac{37}4\right)\\
+\amp = \frac{45}2 = 22.5
+\end{align*}
+</div>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rie8.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.22<span class="period">.</span></span><span class="space"> </span>Approximating <span class="process-math">\(\int_{-2}^3 (5x+2)\, dx\)</span> using the Midpoint Rule and 10 evenly spaced subintervals in <a href="" class="xref" data-knowl="./knowl/ex_rie8.html" title="Example 5.3.21: Approximating definite integrals with sums">Example 5.3.21</a></figcaption></figure><p>Note the graph of <span class="process-math">\(f(x) = 5x+2\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_rie8.html" title="Figure 5.3.22">Figure 5.3.22</a>. The regions whose area is computed by the definite integral are triangles, meaning we can find the exact answer without summation techniques. We find that the exact answer is indeed 22.5. One of the strengths of the Midpoint Rule is that often each rectangle includes area that should not be counted, but misses other area that should. When the partition size is small, these two amounts are about equal and these errors almost “cancel each other out.” In this example, since our function is a line, these errors are exactly equal and they do cancel each other out, giving us the exact answer.</p>
+<p>Note too that when the function is negative, the rectangles have a “negative” height. When we compute the area of the rectangle, we use <span class="process-math">\(f(c_i)\Delta x\text{;}\)</span> when <span class="process-math">\(f\)</span> is negative, the area is counted as negative.</p>
+</div></body>
+</html>

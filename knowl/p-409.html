@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:34:41Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<ol class="lower-alpha">
+<li><p>This is a straightforward application of <a href="" class="xref" data-knowl="./knowl/thm_lim_continuous.html" title="Theorem 1.3.7: Limits of Common Functions">Theorem 1.3.7</a>: <span class="process-math">\(\lim\limits_{x\to \pi} \cos(x) = \cos(\pi) = -1\text{.}\)</span></p></li>
+<li>
+<p>We can approach this in at least two ways. First, by directly applying <a href="" class="xref" data-knowl="./knowl/thm_lim_continuous.html" title="Theorem 1.3.7: Limits of Common Functions">Theorem 1.3.7</a>, we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_lim_continuous.html">
+\begin{equation*}
+\lim_{x\to 3} \left(\sec^2(x) - \tan^2(x)\right) = \sec^2(3)-\tan^2(3)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Using the Pythagorean Theorem, this last expression is <span class="process-math">\(1\text{;}\)</span> therefore</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_lim_continuous.html">
+\begin{equation*}
+\lim_{x\to 3} \left(\sec^2(x) - \tan^2(x)\right) = 1\text{.}
+\end{equation*}
+</div>
+<p>We can also use the Pythagorean Theorem from the start.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/constant-limit-rule.html">
+\begin{equation*}
+\lim_{x\to 3} \left(\sec^2(x) - \tan^2(x)\right) = \lim_{x\to 3} 1 = 1\text{,}
+\end{equation*}
+</div>
+<p class="continuation">using the <a href="" class="xref" data-knowl="./knowl/constant-limit-rule.html" title="Item: Constants">Constants</a> rule. Either way, we find the limit is <span class="process-math">\(1\text{.}\)</span></p>
+</li>
+<li>
+<p>Applying the <a href="" class="xref" data-knowl="./knowl/product-limit-rule.html" title="Item: Products">Products</a> rule and <a href="" class="xref" data-knowl="./knowl/thm_lim_continuous.html" title="Theorem 1.3.7: Limits of Common Functions">Theorem 1.3.7</a> gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/product-limit-rule.html ./knowl/thm_lim_continuous.html">
+\begin{equation*}
+\lim\limits_{x\to \pi/2} \cos(x)\sin(x) = \cos(\pi/2)\sin(\pi/2) = 0\cdot 1 = 0\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that <span class="process-math">\(e^{\ln(x)} = x\)</span> and evaluate <span class="process-math">\(\lim\limits_{x\to 1} e^{\ln(x)} = \lim\limits_{x\to 1} x = 1\text{.}\)</span></p>
+<p>We can also use the <a href="" class="xref" data-knowl="./knowl/composition-limit-rule.html" title="Item: Compositions">Compositions</a> rule. Using <a href="" class="xref" data-knowl="./knowl/thm_lim_continuous.html" title="Theorem 1.3.7: Limits of Common Functions">Theorem 1.3.7</a>, we have <span class="process-math">\(\lim\limits_{x\to 1}\ln(x) = \ln(1) = 0\)</span> and <span class="process-math">\(\lim_{x\to 0} e^x= e^0=1\text{,}\)</span> satisfying the conditions of the <a href="" class="xref" data-knowl="./knowl/composition-limit-rule.html" title="Item: Compositions">Compositions</a> rule. Applying this rule,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/composition-limit-rule.html ./knowl/thm_lim_continuous.html ./knowl/composition-limit-rule.html">
+\begin{equation*}
+\lim_{x\to 1} e^{\ln(x)} = e^{\lim_{x\to 1} \ln(x)}=e^{\ln(1)}  = e^0 = 1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Both approaches are valid, giving the same result.</p>
+</li>
+<li>
+<p>We encountered this limit in <a href="sec_limit_intro.html" class="internal" title="Section 1.1: An Introduction To Limits">Section 1.1</a>. Applying our theorems, we attempt to find the limit as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_limit_intro.html ./knowl/quotient-limit-rule.html">
+\begin{equation*}
+\lim_{x\to 0}\frac{\sin(x)}{x}\rightarrow \frac{\sin(0) }{0}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which is of the form <span class="process-math">\(\frac{0}{0}\text{.}\)</span> This, of course, violates a condition of the <a href="" class="xref" data-knowl="./knowl/quotient-limit-rule.html" title="Item: Quotients">Quotients</a> rule, as the limit of the denominator is not allowed to be <span class="process-math">\(0\text{.}\)</span> Therefore, we are still unable to evaluate this limit with tools we currently have at hand.</p>
+</li>
+</ol>
+<span class="incontext"><a href="sec_limit_analytically.html#p-409" class="internal">in-context</a></span>
+</body>
+</html>

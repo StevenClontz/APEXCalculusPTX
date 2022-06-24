@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:40:12Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<ol class="decimal">
+<li><p>This is the Alternating Harmonic Series as seen previously. The underlying sequence is <span class="process-math">\(\{a_n\} = \{1/n\}\text{,}\)</span> which is positive, decreasing, and approaches 0 as <span class="process-math">\(n\to\infty\text{.}\)</span> Therefore we can apply the Alternating Series Test and conclude this series converges. While the test does not state what the series converges to, we will see later that <span class="process-math">\(\ds \infser (-1)^{n+1}\frac1n=\ln(2)\text{.}\)</span></p></li>
+<li>
+<p>The underlying sequence is <span class="process-math">\(\{a_n\} = \{\ln(n) /n\}\text{.}\)</span> This is positive and approaches 0 as <span class="process-math">\(n\to\infty\)</span> (use L'Hospital's Rule). However, the sequence is not decreasing for all <span class="process-math">\(n\text{.}\)</span> It is straightforward to compute <span class="process-math">\(a_1=0\text{,}\)</span> <span class="process-math">\(a_2\approx0.347\text{,}\)</span> <span class="process-math">\(a_3\approx 0.366\text{,}\)</span> and <span class="process-math">\(a_4\approx 0.347\text{:}\)</span> the sequence is increasing for at least the first 3 terms. We do not immediately conclude that we cannot apply the Alternating Series Test. Rather, consider the long-term behavior of <span class="process-math">\(\{a_n\}\text{.}\)</span> Treating <span class="process-math">\(a_n=a(n)\)</span> as a continuous function of <span class="process-math">\(n\)</span> defined on <span class="process-math">\([1,\infty)\text{,}\)</span> we can take its derivative:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_series_behavior.html">
+\begin{equation*}
+a'(n) = \frac{1-\ln(n) }{n^2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The derivative is negative for all <span class="process-math">\(n\geq 3\)</span> (actually, for all <span class="process-math">\(n \gt e\)</span>), meaning <span class="process-math">\(a(n)=a_n\)</span> is decreasing on <span class="process-math">\([3,\infty)\text{.}\)</span> We can apply the Alternating Series Test to the series when we start with <span class="process-math">\(n=3\)</span> and conclude that <span class="process-math">\(\ds \sum_{n=3}^\infty(-1)^n\frac{\ln(n) }{n}\)</span> converges; adding the terms with <span class="process-math">\(n=1\)</span> and <span class="process-math">\(n=2\)</span> do not change the convergence (i.e., we apply <a href="" class="xref" data-knowl="./knowl/thm_series_behavior.html" title="Theorem 9.2.24: Infinite Nature of Series">Theorem 9.2.24</a>). The important lesson here is that as before, if a series fails to meet the criteria of the Alternating Series Test on only a finite number of terms, we can still apply the test.</p>
+</li>
+<li><p>The underlying sequence is <span class="process-math">\(\{a_n\} = \abs{\sin(n) }/n\text{.}\)</span> This sequence is positive and approaches <span class="process-math">\(0\)</span> as <span class="process-math">\(n\to\infty\text{.}\)</span> However, it is not a decreasing sequence; the value of <span class="process-math">\(\abs{\sin(n) }\)</span> oscillates between <span class="process-math">\(0\)</span> and <span class="process-math">\(1\)</span> as <span class="process-math">\(n\to\infty\text{.}\)</span> We cannot remove a finite number of terms to make <span class="process-math">\(\{a_n\}\)</span> decreasing, therefore we cannot apply the Alternating Series Test. Keep in mind that this does not mean we conclude the series diverges; in fact, it does converge. We are just unable to conclude this based on <a href="" class="xref" data-knowl="./knowl/thm_alt_series_test.html" title="Theorem 9.5.2: Alternating Series Test">Theorem 9.5.2</a>. We will be able to show that this series converges shortly.</p></li>
+</ol>
+<span class="incontext"><a href="sec_alt_series.html#p-8854" class="internal">in-context</a></span>
+</body>
+</html>

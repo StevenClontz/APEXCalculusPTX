@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:54Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.1.4.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-basic-example1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/PAn_TrwF27M?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>The solution is a function <span class="process-math">\(y\)</span> such that differentiation yields twice the original function. Unlike our starting example, finding the solution here does not involve computing an antiderivative. Notice that “integrating both sides” would yield the result <span class="process-math">\(y = \int 2y\,dx\text{,}\)</span> which is not useful. Without knowledge of the function <span class="process-math">\(y\text{,}\)</span> we can't compute the indefinite integral. Later sections will explore systematic ways to find analytic solutions to simple differential equations. For now, a bit of thought might let us guess the solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = e^{2x}\text{.}
+\end{equation*}
+</div>
+<p>Notice that application of the chain rule yields <span class="process-math">\(\yp = 2e^{2x} = 2y\text{.}\)</span> Another solution is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = -3e^{2x}\text{.}
+\end{equation*}
+</div>
+<p>In fact,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = Ce^{2x}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(C\)</span> is any constant, is the <em class="emphasis">general solution</em> to the differential equation because <span class="process-math">\(\yp = 2Ce^{2x} = 2y\text{.}\)</span></p>
+<p>If we are provided with a single initial condition, say <span class="process-math">\(y(0) = 3/2\text{,}\)</span> we can identify <span class="process-math">\(C=3/2\)</span> so that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = \frac{3}{2}e^{2x}
+\end{equation*}
+</div>
+<p class="continuation">is the <em class="emphasis">particular solution</em> to the initial value problem</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\yp = 2y, \text{ with }  y(0) = \frac{3}{2}\text{.}
+\end{equation*}
+</div>
+<p><a href="" class="xref" data-knowl="./knowl/fig_general_particular.html" title="Figure 8.1.5">Figure 8.1.5</a> shows various members of the general solution to the differential equation <span class="process-math">\(\displaystyle \yp = 2y\text{.}\)</span> Each <span class="process-math">\(C\)</span> value yields a different member of the family, and a different function. We emphasize the particular solution corresponding to the initial condition <span class="process-math">\(y(0)=3/2\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_general_particular.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.5<span class="period">.</span></span><span class="space"> </span>A representation of some of the members of general solution to the differential equation <span class="process-math">\(\yp = 2y\text{,}\)</span> including the particular solution to the initial value problem with <span class="process-math">\(y(0)=\displaystyle 3/2\text{,}\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_simple_de.html" title="Example 8.1.4: A simple first-order differential equation">Example 8.1.4</a></figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_Graphical_Numerical.html#solution-471" class="internal">in-context</a></span>
+</body>
+</html>

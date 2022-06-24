@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:16Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-intapp-disk-example1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/JeQve79KVDE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>There are many ways to “orient” the pyramid along the <span class="process-math">\(x\)</span>-axis; <a href="" class="xref" data-knowl="./knowl/fig_disk0.html" title="Figure 7.2.5">Figure 7.2.5</a> gives one such way, with the pointed top of the pyramid at the origin and the <span class="process-math">\(x\)</span>-axis going through the center of the base.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_disk0.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_disk0.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.5<span class="period">.</span></span><span class="space"> </span>Orienting a pyramid along the <span class="process-math">\(x\)</span>-axis in <a href="" class="xref" data-knowl="./knowl/ex_disk0.html" title="Example 7.2.4: Finding the volume of a solid">Example 7.2.4</a></figcaption></figure><p>Each cross section of the pyramid is a square; this is a sample differential element. To determine its area <span class="process-math">\(A(x)\text{,}\)</span> we need to determine the side lengths of the square.</p>
+<p>When <span class="process-math">\(x=5\text{,}\)</span> the square has side length 10; when <span class="process-math">\(x=0\text{,}\)</span> the square has side length 0. Since the edges of the pyramid are lines, it is easy to figure that each cross-sectional square has side length <span class="process-math">\(2x\text{,}\)</span> giving <span class="process-math">\(A(x) = (2x)^2=4x^2\text{.}\)</span></p>
+<p>If one were to cut a slice out of the pyramid at <span class="process-math">\(x=3\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_disk0a.html" title="Figure 7.2.6">Figure 7.2.6</a>, one would have a shape with square bottom and top with sloped sides. If the slice were thin, both the bottom and top squares would have sides lengths of about 6, and thus the cross-sectional area of the bottom and top would be about <span class="quantity">36 in<sup>2</sup></span>. Letting <span class="process-math">\(\Delta x_i\)</span> represent the thickness of the slice, the volume of this slice would then be about <span class="process-math">\(36\Delta x_i\)</span> <span class="quantity"> in<sup>3</sup></span>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_disk0a.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_disk0a.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.6<span class="period">.</span></span><span class="space"> </span>Cutting a slice in the pyramid in <a href="" class="xref" data-knowl="./knowl/ex_disk0.html" title="Example 7.2.4: Finding the volume of a solid">Example 7.2.4</a> at <span class="process-math">\(x=3\)</span></figcaption></figure><p>Cutting the pyramid into <span class="process-math">\(n\)</span> slices divides the total volume into <span class="process-math">\(n\)</span> equally-spaced smaller pieces, each with volume <span class="process-math">\((2x_i)^2\Delta x\text{,}\)</span> where <span class="process-math">\(x_i\)</span> is the approximate location of the slice along the <span class="process-math">\(x\)</span>-axis and <span class="process-math">\(\Delta x\)</span> represents the thickness of each slice. One can approximate total volume of the pyramid by summing up the volumes of these slices:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{Approximate volume}  = \sum_{i=1}^n (2x_i)^2\Delta x\text{.}
+\end{equation*}
+</div>
+<p>Taking the limit as <span class="process-math">\(n\to\infty\)</span> gives the actual volume of the pyramid; recoginizing this sum as a Riemann Sum allows us to find the exact answer using a definite integral, matching the definite integral given by <a href="" class="xref" data-knowl="./knowl/thm_volume_by_cross_section.html" title="Theorem 7.2.3: Volume By Cross-Sectional Area">Theorem 7.2.3</a>.</p>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+V \amp = \lim_{n\to\infty} \sum_{i=1}^n (2x_i)^2\Delta x\\
+\amp = \int_0^5 4x^2\, dx\\
+\amp = \frac43x^3\Big|_0^5\\
+\amp =\frac{500}{3}\,\text{in}^3 \approx 166.67\,\text{in}^3\text{.}
+\end{align*}
+</div>
+<p>We can check our work by consulting the general equation for the volume of a pyramid (see the back cover under “Volume of A General Cone”):</p>
+<p><span class="process-math">\(\frac13\times \,\text{area of base}\, \times \,\text{height}\text{.}\)</span></p>
+<p>Certainly, using this formula from geometry is faster than our new method, but the calculus-based method can be applied to much more than just cones.</p>
+</div></body>
+</html>

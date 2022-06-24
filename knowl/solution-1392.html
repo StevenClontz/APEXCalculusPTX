@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:48:11Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">14.3.11.1</span><span class="period">.</span>
+</h3>
+<p>The sphere of radius <span class="process-math">\(a\text{,}\)</span> centered at the origin, has equation <span class="process-math">\(x^2+y^2+z^2=a^2\text{;}\)</span> solving for <span class="process-math">\(z\text{,}\)</span> we have <span class="process-math">\(z=\sqrt{a^2-x^2-y^2}\text{.}\)</span> This gives the upper half of a sphere. We wish to find the volume under this top half, then double it to find the total volume.</p>
+<p>The region we need to integrate over is the disk of radius <span class="process-math">\(a\text{,}\)</span> centered at the origin. Polar bounds for this equation are <span class="process-math">\(0\leq r\leq a\text{,}\)</span> <span class="process-math">\(0\leq\theta\leq2\pi\text{.}\)</span></p>
+<p>All together, the volume of a sphere with radius <span class="process-math">\(a\)</span> is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+2\iint_R\sqrt{a^2-x^2-y^2}\, dA \amp = 2\int_0^{2\pi}\int_0^a\sqrt{a^2-(r\cos(\theta) )^2-(r\sin(\theta) )^2}r\, dr\, d\theta\\
+\amp =2\int_0^{2\pi}\int_0^ar\sqrt{a^2-r^2}\, dr\, d\theta.\\
+\end{align*}
+<p class="intertext">We can evaluate this inner integral with substitution. With <span class="process-math">\(u=a^2-r^2\text{,}\)</span> <span class="process-math">\(du = -2r\, dr\text{.}\)</span> The new bounds of integration are <span class="process-math">\(u(0) = a^2\)</span> to <span class="process-math">\(u(a)=0\text{.}\)</span> Thus we have:</p>
+\begin{align*}
+\amp = \int_0^{2\pi}\int_{a^2}^0\big(-u^{1/2}\big)\, du\, d\theta\\
+\amp = \int_0^{2\pi}\left.\left(-\frac23u^{3/2}\right)\right|_{a^2}^0 d\theta\\
+\amp = \int_0^{2\pi}\left(\frac23a^3\right)\, d\theta\\
+\amp = \left.\left(\frac23a^3\theta\right)\right|_0^{2\pi}\\
+\amp = \frac43\pi a^3\text{.}
+\end{align*}
+</div>
+<p>Generally, the formula for the volume of a sphere with radius <span class="process-math">\(r\)</span> is given as <span class="process-math">\(4/3\pi r^3\text{;}\)</span> we have justified this formula with our calculation.</p>
+</div>
+<span class="incontext"><a href="sec_double_int_polar.html#solution-1392" class="internal">in-context</a></span>
+</body>
+</html>

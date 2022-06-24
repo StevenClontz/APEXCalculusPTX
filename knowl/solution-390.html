@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:06Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.1.8.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-intapp-area-example3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/GhdqEHPbPm0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We give two approaches to this problem. In the first approach, we notice that the region's “top” is defined by two different curves. On <span class="process-math">\([0,1]\text{,}\)</span> the top function is <span class="process-math">\(y=\sqrt{x}+2\text{;}\)</span> on <span class="process-math">\([1,2]\text{,}\)</span> the top function is <span class="process-math">\(y=-(x-1)^2+3\text{.}\)</span></p>
+<p>Thus we compute the area as the sum of two integrals:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\text{Total Area}  \amp = \int_0^1 \Big(\big(\sqrt{x}+2\big)-2\Big)\, dx + \int_1^2 \Big(\big(-(x-1)^2+3\big)-2\Big)\, dx\\
+\amp = 2/3 + 2/3\\
+\amp =4/3\text{.}
+\end{align*}
+</div>
+<p>The second approach is clever and very useful in certain situations. We are used to viewing curves as functions of <span class="process-math">\(x\text{;}\)</span> we input an <span class="process-math">\(x\)</span>-value and a <span class="process-math">\(y\)</span>-value is returned. Some curves can also be described as functions of <span class="process-math">\(y\text{:}\)</span> input a <span class="process-math">\(y\)</span>-value and an <span class="process-math">\(x\)</span>-value is returned. We can rewrite the equations describing the boundary by solving for <span class="process-math">\(x\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y=\sqrt{x}+2  \Rightarrow x=(y-2)^2
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y=-(x-1)^2+3  \Rightarrow  x=\sqrt{3-y}+1\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_abc3b.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.10<span class="period">.</span></span><span class="space"> </span>The region used in <a href="" class="xref" data-knowl="./knowl/ex_abc3.html" title="Example 7.1.8: Finding area: integrating with respect to y">Example 7.1.8</a> with boundaries relabeled as functions of <span class="process-math">\(y\)</span></figcaption></figure><p><a href="" class="xref" data-knowl="./knowl/fig_abc3b.html" title="Figure 7.1.10">Figure 7.1.10</a> shows the region with the boundaries relabeled. A differential element, a horizontal rectangle, is also pictured. The width of the rectangle is a small change in <span class="process-math">\(y\text{:}\)</span> <span class="process-math">\(\Delta y\text{.}\)</span> The height of the rectangle is a difference in <span class="process-math">\(x\)</span>-values. The “top” <span class="process-math">\(x\)</span>-value is the largest value, i.e., the rightmost. The “bottom” <span class="process-math">\(x\)</span>-value is the smaller, i.e., the leftmost. Therefore the height of the rectangle is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_abc3b.html">
+\begin{equation*}
+\big(\sqrt{3-y}+1\big) - (y-2)^2\text{.}
+\end{equation*}
+</div>
+<p>The area is found by integrating the above function with respect to <span class="process-math">\(y\)</span> with the appropriate bounds. We determine these by considering the <span class="process-math">\(y\)</span>-values the region occupies. It is bounded below by <span class="process-math">\(y=2\text{,}\)</span> and bounded above by <span class="process-math">\(y=3\text{.}\)</span> That is, both the “top” and “bottom” functions exist on the <span class="process-math">\(y\)</span> interval <span class="process-math">\([2,3]\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\text{Total Area}  \amp = \int_2^3 \big(\sqrt{3-y}+1 - (y-2)^2\big)\, dy\\
+\amp = \Big(-\frac23(3-y)^{3/2}+y-\frac13(y-2)^3\Big)\Big|_2^3\\
+\amp = 4/3\text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_ABC.html#solution-390" class="internal">in-context</a></span>
+</body>
+</html>

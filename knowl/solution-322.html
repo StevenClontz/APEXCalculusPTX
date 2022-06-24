@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:02Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.2.10.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-parts-ex-exp-times-cos" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/z0A1v2Zkfns?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>This is a classic problem. Our mnemonic suggests letting <span class="process-math">\(u\)</span> be the trigonometric function instead of the exponential. In this particular example, one can let <span class="process-math">\(u\)</span> be either <span class="process-math">\(\cos(x)\)</span> or <span class="process-math">\(e^x\text{;}\)</span> to demonstrate that we do not have to follow <abbr class="acronym">LIATE</abbr>, we choose <span class="process-math">\(u=e^x\)</span> and hence <span class="process-math">\(dv = \cos(x)\,dx\text{.}\)</span> Then <span class="process-math">\(du=e^x\,dx\)</span> and <span class="process-math">\(v=\sin(x)\)</span> as shown below.</p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+u\amp = e^x \amp  v\amp =\mathord{?}\\
+du\amp = \mathord{?}  \amp  dv\amp =\cos(x) \, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10.3448275862069%;"><p><span class="process-math">\(\implies\)</span></p></div>
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+u\amp = e^x \amp  v\amp =\sin(x)\\
+du\amp = e^x  \amp  dv\amp =\cos(x) \, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.11<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts</figcaption></figure><p>Notice that <span class="process-math">\(du\)</span> is no simpler than <span class="process-math">\(u\text{,}\)</span> going against our general rule (but bear with us). The Integration by Parts formula yields</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int e^x\cos(x)\, dx = e^x\sin(x) - \int e^x\sin(x)\,dx\text{.}
+\end{equation*}
+</div>
+<p>The integral on the right is not much different than the one we started with, so it seems like we have gotten nowhere. Let's keep working and apply Integration by Parts to the new integral, using <span class="process-math">\(u=e^x\)</span> and <span class="process-math">\(dv = \sin(x)\,dx\text{.}\)</span> This leads us to the following:</p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+r\amp = e^x \amp  s\amp =\mathord{?}\\
+dr\amp = \mathord{?}  \amp  ds\amp =\sin(x) \, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10.3448275862069%;"><p><span class="process-math">\(\implies\)</span></p></div>
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+r\amp = e^x \amp  s\amp =-\cos(x)\\
+dr\amp = e^x\, dx \amp  ds\amp =\sin(x) \, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.12<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts (again)</figcaption></figure><p>The Integration by Parts formula then gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int e^x\cos(x)\,dx \amp = e^x\sin(x) - \left(-e^x\cos(x) - \int -e^x\cos(x)\,dx\right)\\
+\amp = e^x\sin(x)+ e^x\cos(x) - \int e^x\cos(x)\, dx\text{.}
+\end{align*}
+</div>
+<p>It seems we are back right where we started, as the right hand side contains <span class="process-math">\(\int e^x\cos(x)\,dx\text{.}\)</span> But this is actually a good thing.</p>
+<p>Add <span class="process-math">\(\ds\int e^x\cos(x)\, dx\)</span> to both sides. This gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+2\int e^x\cos(x) \, dx \amp  = e^x\sin(x) + e^x\cos(x)\\
+\end{align*}
+<p class="intertext">Now divide both sides by 2 and then add the integration constant:</p>
+\begin{align*}
+\int e^x\cos(x) \, dx \amp  = \frac{1}{2}\big(e^x\sin(x) + e^x\cos(x) \big)+C\text{.}
+\end{align*}
+</div>
+<p>Simplifying a little, our answer is thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int e^x\cos(x)\, dx = \frac12e^x\left(\sin(x) + \cos(x)\right)+C\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="sec_IBP.html#solution-322" class="internal">in-context</a></span>
+</body>
+</html>

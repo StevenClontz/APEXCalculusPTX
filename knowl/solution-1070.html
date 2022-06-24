@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:44:38Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.3.15.1</span><span class="period">.</span>
+</h4>
+<p>The position function for the path of Alex's bb is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vrt = \la (350\cos(\theta) )t, -16t^2+(350\sin(\theta) )t+3\ra\text{.}
+\end{equation*}
+</div>
+<p>We need to find <span class="process-math">\(\theta\)</span> so that <span class="process-math">\(\vrt =\la 25,6\ra\)</span> for some value of <span class="process-math">\(t\text{.}\)</span> That is, we want to find <span class="process-math">\(\theta\)</span> and <span class="process-math">\(t\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(350\cos(\theta) )t = 25  \text{ and }  -16t^2+(350\sin(\theta) )t+3 = 6\text{.}
+\end{equation*}
+</div>
+<p>This is not trivial (though not “hard”). We start by solving each equation for <span class="process-math">\(\cos(\theta)\)</span> and <span class="process-math">\(\sin(\theta)\text{,}\)</span> respectively.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\cos(\theta) = \frac{25}{350t}  \text{ and }   \sin(\theta) = \frac{3+16t^2}{350t}\text{.}
+\end{equation*}
+</div>
+<p>Using the Pythagorean Identity <span class="process-math">\(\cos^2(\theta) +\sin^2(\theta) =1\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\left(\frac{25}{350t}\right)^2 + \left(\frac{3+16t^2}{350t}\right)^2 \amp =1\\
+\end{align*}
+<p class="intertext">Multiply both sides by <span class="process-math">\((350t)^2\text{:}\)</span></p>
+\begin{align*}
+25^2 + (3+16t^2)^2 \amp =350^2t^2\\
+256t^4-122,404t^2+634 \amp =0.\\
+\end{align*}
+<p class="intertext">This is a quadratic <em class="emphasis">in</em> <span class="process-math">\(t^2\text{.}\)</span> That is, we can apply the quadratic formula  to find <span class="process-math">\(t^2\text{,}\)</span> then solve for <span class="process-math">\(t\)</span> itself.</p>
+\begin{align*}
+t^2 \amp = \frac{122,404\pm\sqrt{122,404^2-4(256)(634)}}{512}\\
+t^2 \amp = 0.0052,\,478.135\\
+t \amp =  \pm 0.072,\,\pm 21.866
+\end{align*}
+</div>
+<p>Clearly the negative <span class="process-math">\(t\)</span> values do not fit our context, so we have <span class="process-math">\(t=0.072\)</span> and <span class="process-math">\(t=21.866\text{.}\)</span> Using <span class="process-math">\(\cos(\theta) = 25/(350 t)\text{,}\)</span> we can solve for <span class="process-math">\(\theta\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\theta \amp = \cos^{-1}\left(\frac{25}{350\cdot 0.072}\right) \text{ and }  \cos^{-1}\left(\frac{25}{350\cdot 21.866}\right)\\
+\theta \amp = 7.03^\circ  \text{ and }   89.8^\circ\text{.}
+\end{align*}
+</div>
+<p>Alex has two choices of angle. He can hold the rifle at an angle of about <span class="process-math">\(7^\circ\)</span> with the horizontal and hit his target <span class="quantity">0.07 s</span> after firing, or he can hold his rifle almost straight up, with an angle of <span class="process-math">\(89.8^\circ\text{,}\)</span> where he'll hit his target about <span class="quantity">22 s</span> later. The first option is clearly the option he should choose.</p>
+</div>
+<span class="incontext"><a href="sec_vvf_motion.html#solution-1070" class="internal">in-context</a></span>
+</body>
+</html>

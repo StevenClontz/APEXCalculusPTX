@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:20Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.23.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_rie_ex_n_rect" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/LjMZOVNdRxQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Using <a href="" class="xref" data-knowl="./knowl/idea_riemann.html" title="Key Idea 5.3.20: Riemann Sum Concepts">Key Idea 5.3.20</a>, we know <span class="process-math">\(\Delta x = \frac{4-0}{n} = 4/n\text{.}\)</span> We also find <span class="process-math">\(x_i = 0 + i\Delta x = 4i/n\text{.}\)</span></p>
+<p>We construct the Right Hand Rule Riemann sum as follows. Be sure to follow each step carefully. If you get stuck, and do not understand how one line proceeds to the next, you may skip to the result and consider how this result is used. You should come back, though, and work through each step for full understanding.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_0^4(4x-x^2)\, dx \amp \approx \sum_{i=1}^n f(x_{i})\Delta x\\
+\amp = \sum_{i=1}^n f\left(\frac{4i}{n}\right) \Delta x\\
+\amp =  \sum_{i=1}^n \left[4\frac{4i}n-\left(\frac{4i}n\right)^2\right]\Delta x\\
+\amp =  \sum_{i=1}^n \left(\frac{16\Delta x}{n}\right)i - \sum_{i=1}^n \left(\frac{16\Delta x}{n^2}\right)i^2\\
+\amp =  \left(\frac{16\Delta x}{n}\right)\sum_{i=1}^n i - \left(\frac{16\Delta x}{n^2}\right)\sum_{i=1}^n i^2\\
+\amp = \left(\frac{16\Delta x}{n}\right)\cdot \frac{n(n+1)}{2} - \left(\frac{16\Delta x}{n^2}\right)\frac{n(n+1)(2n+1)}{6}\\
+\amp =\frac{32(n+1)}{n} - \frac{32(n+1)(2n+1)}{3n^2}  (\text{ recall } \Delta x = 4/n)\\
+\amp = \frac{32}{3}\left(1-\frac{1}{n^2}\right) \text{ (after simplifying) }
+\end{align*}
+</div>
+<p>The result is an amazing, easy to use formula. To approximate the definite integral with 10 equally spaced subintervals and the Right Hand Rule, set <span class="process-math">\(n=10\)</span> and compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^4 (4x-x^2)\, dx \approx \frac{32}{3}\left(1-\frac{1}{10^2}\right) = 10.56\text{.}
+\end{equation*}
+</div>
+<p>Recall how earlier we approximated the definite integral with 4 subintervals; with <span class="process-math">\(n=4\text{,}\)</span> the formula gives 10, our answer as before.</p>
+<p>It is now easy to approximate the integral with 1,000,000 subintervals! Hand-held calculators will round off the answer a bit prematurely giving an answer of <span class="process-math">\(10.66666667\text{.}\)</span> (The actual answer is <span class="process-math">\(10.666666666656\text{.}\)</span>)</p>
+<p>We now take an important leap. Up to this point, our mathematics has been limited to geometry and algebra (finding areas and manipulating expressions). Now we apply <em class="emphasis">calculus</em>. For any <em class="emphasis">finite</em> <span class="process-math">\(n\text{,}\)</span> we know that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^4 (4x-x^2)\, dx \approx \frac{32}{3}\left(1-\frac{1}{n^2}\right)\text{.}
+\end{equation*}
+</div>
+<p>Both common sense and high-level mathematics tell us that as <span class="process-math">\(n\)</span> gets large, the approximation gets better. In fact, if we take the <em class="emphasis">limit</em> as <span class="process-math">\(n\rightarrow \infty\text{,}\)</span> we get the <em class="emphasis">exact area</em> described by <span class="process-math">\(\int_0^4 (4x-x^2)\, dx\text{.}\)</span> That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_0^4 (4x-x^2)\, dx \amp = \lim_{n\rightarrow \infty} \frac{32}{3}\left(1-\frac{1}{n^2}\right)\\
+\amp = \frac{32}{3}\left(1-0\right)\\
+\amp = \frac{32}{3} = 10.\overline{6}
+\end{align*}
+</div>
+<p>This is a fantastic result. By considering <span class="process-math">\(n\)</span> equally-spaced subintervals, we obtained a formula for an approximation of the definite integral that involved our variable <span class="process-math">\(n\text{.}\)</span> As <span class="process-math">\(n\)</span> grows large — without bound — the error shrinks to zero and we obtain the exact area.</p>
+</div>
+<span class="incontext"><a href="sec_riemann.html#solution-277" class="internal">in-context</a></span>
+</body>
+</html>

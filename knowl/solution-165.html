@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:13Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.6.19.1</span><span class="period">.</span>
+</h4>
+<figure class="figure figure-like"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-90" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=aofx_jgKDhU,w93T6AyU_aE&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.20<span class="period">.</span></span><span class="space"> </span>Two approaches to solving <a href="" class="xref" data-knowl="./knowl/ex_implicit10.html" title="Example 2.6.19: Using Logarithmic Differentiation">Example 2.6.19</a>. In the first video, taking the log of both sides. In the second, using the inverse relationship <span class="process-math">\(e^{\ln(x)}=x\text{.}\)</span></figcaption></figure><p>As suggested above, we start by taking the natural log of both sides then applying implicit differentiation.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+y \amp = x^x\amp\\
+\ln(y) \amp = \ln(x^x)\amp\amp\text{(apply logarithm rule)}\\
+\ln(y) \amp = x\ln(x) \amp\amp\text{(now use implicit differentiation)}\\
+\lzoo{x}{\ln(y)} \amp = \lzoo{x}{x\ln(x)}\\
+\frac{y'}{y} \amp = \ln(x) + x\cdot\frac{1}{x}\amp\\
+\frac{y'}{y} \amp = \ln(x) + 1\amp\\
+y' \amp = y\left(\ln(x) +1\right) \amp\amp\text{(substitute }y=x^x\text{)}\\
+y' \amp = x^x\left(\ln(x) +1\right)\amp\text{.}
+\end{align*}
+</div>
+<p>To “test” our answer, let's use it to find the equation of the tangent line at <span class="process-math">\(x=1.5\text{.}\)</span> The point on the graph our tangent line must pass through is <span class="process-math">\(\left(1.5, 1.5^{1.5}\right) \approx (1.5, 1.837)\text{.}\)</span> Using the equation for <span class="process-math">\(y'\text{,}\)</span> we find the slope as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y' = 1.5^{1.5}\left(\ln(1.5) +1\right) \approx 1.837(1.405) \approx 2.582\text{.}
+\end{equation*}
+</div>
+<p>Thus the equation of the tangent line is (approximately) <span class="process-math">\(y \approx 2.582(x-1.5)+1.837\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_implicit10.html" title="Figure 2.6.21">Figure 2.6.21</a> graphs <span class="process-math">\(y=x^x\)</span> along with this tangent line.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit10.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.21<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(y=x^x\)</span> and its tangent line at <span class="process-math">\(x=1.5\)</span></figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_imp_deriv.html#solution-165" class="internal">in-context</a></span>
+</body>
+</html>

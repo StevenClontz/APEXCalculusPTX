@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:30:24Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Calculus and Parametric Equations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_param_eqs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_planar_curves.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_polar.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_param_eqs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_planar_curves.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_polar.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="active">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_par_calc"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">10.3</span> <span class="title">Calculus and Parametric Equations</span>
+</h2>
+<section class="introduction" id="introduction-253"><p id="p-10020">The previous section defined curves based on parametric equations. In this section we'll employ the techniques of calculus to study these curves.</p>
+<p id="p-10021">We are still interested in lines tangent to points on a curve. They describe how the <span class="process-math">\(y\)</span>-values are changing with respect to the <span class="process-math">\(x\)</span>-values, they are useful in making approximations, and they indicate instantaneous direction of travel.</p>
+<figure class="figure figure-like" id="vid-planecurves-parcalc-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-380" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/FIvX66HAaj8?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_par_calc.html" class="internal" title="Section 10.3: Calculus and Parametric Equations">Section 10.3</a></figcaption></figure><p id="p-10022">The slope of the tangent line is still <span class="process-math">\(\frac{dy}{dx}\text{,}\)</span> and the Chain Rule allows us to calculate this in the context of parametric equations. If <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\text{,}\)</span> the Chain Rule states that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dt} = \frac{dy}{dx}\cdot\frac{dx}{dt}\text{.}
+\end{equation*}
+</div>
+<p id="p-10023">Solving for <span class="process-math">\(\frac{dy}{dx}\text{,}\)</span> we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx} = \frac{dy}{dt}\Bigg/\frac{dx}{dt} = \frac{g'(t)}{\fp(t)}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">provided that <span class="process-math">\(\fp(t)\neq 0\text{.}\)</span> This is important so we label it a Key Idea.</p>
+<article class="insight remark-like" id="idea_dydxpar"><h3 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">10.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Finding <span class="process-math">\(\frac{dy}{dx}\)</span> with Parametric Equations.</span>
+</h3>
+<p id="p-10024">Let <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\text{,}\)</span> where <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are differentiable on some open interval <span class="process-math">\(I\)</span> and <span class="process-math">\(\fp(t)\neq 0\)</span> on <span class="process-math">\(I\text{.}\)</span> Then </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx} = \frac{g'(t)}{\fp(t)}\text{.}
+\end{equation*}
+</div></article><p id="p-10025">We use this to define the tangent line.</p>
+<article class="definition definition-like" id="def_tangent_par"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">10.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Tangent and Normal Lines.</span>
+</h3>
+<p id="p-10026">Let a curve <span class="process-math">\(C\)</span> be parametrized by <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\text{,}\)</span> where <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are differentiable functions on some interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(t=t_0\text{.}\)</span> The <dfn class="terminology">tangent line</dfn> to <span class="process-math">\(C\)</span> at <span class="process-math">\(t=t_0\)</span> is the line through <span class="process-math">\(\big(f(t_0),g(t_0)\big)\)</span> with slope <span class="process-math">\(m=g'(t_0)/\fp(t_0)\text{,}\)</span> provided <span class="process-math">\(\fp(t_0)\neq 0\text{.}\)</span></p>
+<p id="p-10027">The <dfn class="terminology">normal line</dfn> to <span class="process-math">\(C\)</span> at <span class="process-math">\(t=t_0\)</span> is the line through <span class="process-math">\(\big(f(t_0),g(t_0)\big)\)</span> with slope <span class="process-math">\(m=-\fp(t_0)/g'(t_0)\text{,}\)</span> provided <span class="process-math">\(g'(t_0)\neq 0\text{.}\)</span> </p></article><p id="p-10028">The definition leaves two special cases to consider. When the tangent line is horizontal, the normal line is undefined by the above definition as <span class="process-math">\(g'(t_0)=0\text{.}\)</span> Likewise, when the normal line is horizontal, the tangent line is undefined. It seems reasonable that these lines be defined (one can draw a line tangent to the “right side” of a circle, for instance), so we add the following to the above definition.</p>
+<ol id="p-10029" class="decimal">
+<li id="li-2062"><p id="p-10030">If the tangent line at <span class="process-math">\(t=t_0\)</span> has a slope of 0, the normal line to <span class="process-math">\(C\)</span> at <span class="process-math">\(t=t_0\)</span> is the line <span class="process-math">\(x=f(t_0)\text{.}\)</span></p></li>
+<li id="li-2063"><p id="p-10031">If the normal line at <span class="process-math">\(t=t_0\)</span> has a slope of 0, the tangent line to <span class="process-math">\(C\)</span> at <span class="process-math">\(t=t_0\)</span> is the line <span class="process-math">\(x=f(t_0)\text{.}\)</span></p></li>
+</ol>
+<article class="example example-like" id="ex_parcalc1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Tangent and Normal Lines to Curves.</span>
+</h3>
+<p id="p-10032">Let <span class="process-math">\(x=5t^2-6t+4\)</span> and <span class="process-math">\(y=t^2+6t-1\text{,}\)</span> and let <span class="process-math">\(C\)</span> be the curve defined by these equations.</p>
+<ol id="p-10033" class="decimal">
+<li id="li-2064"><p id="p-10034">Find the equations of the tangent and normal lines to <span class="process-math">\(C\)</span> at <span class="process-math">\(t=3\text{.}\)</span></p></li>
+<li id="li-2065"><p id="p-10035">Find where <span class="process-math">\(C\)</span> has vertical and horizontal tangent lines.</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-825" id="solution-825"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-825"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-planecurves-parcalc-example-tangent" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/A62eUDxiOw4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-10036" class="decimal">
+<li id="li-2066">
+<p id="p-10037">We start by computing <span class="process-math">\(\fp(t) = 10t-6\)</span> and <span class="process-math">\(g'(t) =2t+6\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx} = \frac{2t+6}{10t-6}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Make note of something that might seem unusual: <span class="process-math">\(\frac{dy}{dx}\)</span> is a function of <span class="process-math">\(t\text{,}\)</span> not <span class="process-math">\(x\text{.}\)</span> Just as points on the curve are found in terms of <span class="process-math">\(t\text{,}\)</span> so are the slopes of the tangent lines. The point on <span class="process-math">\(C\)</span> at <span class="process-math">\(t=3\)</span> is <span class="process-math">\((31,26)\text{.}\)</span> The slope of the tangent line is <span class="process-math">\(m=1/2\)</span> and the slope of the normal line is <span class="process-math">\(m=-2\text{.}\)</span> Thus,</p>
+<ul class="disc">
+<li id="li-2067"><p id="p-10038">the equation of the tangent line is <span class="process-math">\(\ds y=\frac12(x-31)+26\text{,}\)</span> and</p></li>
+<li id="li-2068"><p id="p-10039">the equation of the normal line is <span class="process-math">\(\ds y=-2(x-31)+26\text{.}\)</span></p></li>
+</ul>
+<p id="p-10040">This is illustrated in <a href="" class="xref" data-knowl="./knowl/fig_parcalc1.html" title="Figure 10.3.5">Figure 10.3.5</a>.</p>
+<figure class="figure figure-like" id="fig_parcalc1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_parcalc1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.5<span class="period">.</span></span><span class="space"> </span>Graphing tangent and normal lines in <a href="" class="xref" data-knowl="./knowl/ex_parcalc1.html" title="Example 10.3.4: Tangent and Normal Lines to Curves">Example 10.3.4</a></figcaption></figure>
+</li>
+<li id="li-2069">
+<p id="p-10041">To find where <span class="process-math">\(C\)</span> has a horizontal tangent line, we set <span class="process-math">\(\frac{dy}{dx}=0\)</span> and solve for <span class="process-math">\(t\text{.}\)</span> In this case, this amounts to setting <span class="process-math">\(g'(t)=0\)</span> and solving for <span class="process-math">\(t\)</span> (and making sure that <span class="process-math">\(\fp(t)\neq 0\)</span>).</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_parcalc1.html">
+\begin{equation*}
+g'(t)=0  \Rightarrow  2t+6=0  \Rightarrow  t=-3\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The point on <span class="process-math">\(C\)</span> corresponding to <span class="process-math">\(t=-3\)</span> is <span class="process-math">\((67,-10)\text{;}\)</span> the tangent line at that point is horizontal (hence with equation <span class="process-math">\(y=-10\)</span>). To find where <span class="process-math">\(C\)</span> has a vertical tangent line, we find where it has a horizontal normal line, and set <span class="process-math">\(-\frac{\fp(t)}{g'(t)}=0\text{.}\)</span> This amounts to setting <span class="process-math">\(\fp(t)=0\)</span> and solving for <span class="process-math">\(t\)</span> (and making sure that <span class="process-math">\(g'(t)\neq 0\)</span>).</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_parcalc1.html">
+\begin{equation*}
+\fp(t)=0  \Rightarrow  10t-6=0  \Rightarrow  t=0.6\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The point on <span class="process-math">\(C\)</span> corresponding to <span class="process-math">\(t=0.6\)</span> is <span class="process-math">\((2.2,2.96)\text{.}\)</span> The tangent line at that point is <span class="process-math">\(x=2.2\text{.}\)</span> The points where the tangent lines are vertical and horizontal are indicated on the graph in <a href="" class="xref" data-knowl="./knowl/fig_parcalc1.html" title="Figure 10.3.5">Figure 10.3.5</a>.</p>
+</li>
+</ol>
+</div></div>
+</div></article><article class="example example-like" id="ex_parcalc2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Tangent and Normal Lines to a Circle.</span>
+</h3>
+<ol id="p-10042" class="decimal">
+<li id="li-2070"><p id="p-10043">Find where the unit circle, defined by <span class="process-math">\(x=\cos(t)\)</span> and <span class="process-math">\(y=\sin(t)\)</span> on <span class="process-math">\([0,2\pi]\text{,}\)</span> has vertical and horizontal tangent lines.</p></li>
+<li id="li-2071"><p id="p-10044">Find the equation of the normal line at <span class="process-math">\(t=t_0\text{.}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-826" id="solution-826"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-826"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-planecurves-parcalc-circle" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/PpmsaMVJAZI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-10045" class="decimal">
+<li id="li-2072">
+<p id="p-10046">We compute the derivative following <a href="" class="xref" data-knowl="./knowl/idea_dydxpar.html" title="Key Idea 10.3.2: Finding \frac{dy}{dx} with Parametric Equations">Key Idea 10.3.2</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_dydxpar.html">
+\begin{equation*}
+\frac{dy}{dx} = \frac{g'(t)}{\fp(t)} = -\frac{\cos(t) }{\sin(t) }\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The derivative is <span class="process-math">\(0\)</span> when <span class="process-math">\(\cos(t) = 0\text{;}\)</span> that is, when <span class="process-math">\(t=\pi/2,\, 3\pi/2\text{.}\)</span> These are the points <span class="process-math">\((0,1)\)</span> and <span class="process-math">\((0,-1)\)</span> on the circle. The normal line is horizontal (and hence, the tangent line is vertical) when <span class="process-math">\(\sin(t) =0\text{;}\)</span> that is, when <span class="process-math">\(t= 0,\,\pi,\,2\pi\text{,}\)</span> corresponding to the points <span class="process-math">\((-1,0)\)</span> and <span class="process-math">\((0,1)\)</span> on the circle. These results should make intuitive sense.</p>
+</li>
+<li id="li-2073">
+<p id="p-10047">The slope of the normal line at <span class="process-math">\(t=t_0\)</span> is <span class="process-math">\(\ds m=\frac{\sin(t_0) }{\cos(t_0) } = \tan(t_0)\text{.}\)</span> This normal line goes through the point <span class="process-math">\((\cos(t_0) ,\sin(t_0) )\text{,}\)</span> giving the line</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_parcalc2.html" id="md-455">
+\begin{align*}
+y \amp =\frac{\sin(t_0) }{\cos(t_0) }(x-\cos(t_0) ) + \sin(t_0)\\
+\amp = (\tan(t_0) )x\text{,}
+\end{align*}
+</div>
+<p class="continuation">as long as <span class="process-math">\(\cos(t_0) \neq 0\text{.}\)</span> It is an important fact to recognize that the normal lines to a circle pass through its center, as illustrated in <a href="" class="xref" data-knowl="./knowl/fig_parcalc2.html" title="Figure 10.3.7">Figure 10.3.7</a>. Stated in another way, any line that passes through the center of a circle intersects the circle at right angles.</p>
+<figure class="figure figure-like" id="fig_parcalc2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_parcalc2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.7<span class="period">.</span></span><span class="space"> </span>Illustrating how a circle's normal lines pass through its center</figcaption></figure>
+</li>
+</ol>
+</div></div>
+</div></article><article class="example example-like" id="ex_parcalc3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Tangent lines when <span class="process-math">\(\frac{dy}{dx}\)</span> is not defined.</span>
+</h3>
+<p id="p-10048">Find the equation of the tangent line to the astroid <span class="process-math">\(x=\cos^3(t)\text{,}\)</span> <span class="process-math">\(y=\sin^3(t)\)</span> at <span class="process-math">\(t=0\text{,}\)</span> shown in <a href="" class="xref" data-knowl="./knowl/fig_parcalc3.html" title="Figure 10.3.9">Figure 10.3.9</a>.</p>
+<figure class="figure figure-like" id="fig_parcalc3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_parcalc3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.9<span class="period">.</span></span><span class="space"> </span>A graph of an astroid</figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-827" id="solution-827"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-827"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-planecurves-parcalc-astroid" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/rb4wEkhcUtE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-10049">We start by finding <span class="process-math">\(x'(t)\)</span> and <span class="process-math">\(y'(t)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x'(t) = -3\sin(t) \cos^2(t) , \qquad y'(t) = 3\cos(t) \sin^2(t)\text{.}
+\end{equation*}
+</div>
+<p id="p-10050">Note that both of these are 0 at <span class="process-math">\(t=0\text{;}\)</span> the curve is not smooth at <span class="process-math">\(t=0\)</span> forming a cusp on the graph. Evaluating <span class="process-math">\(\frac{dy}{dx}\)</span> at this point returns the indeterminate form of “0/0”.</p>
+<p id="p-10051">We can, however, examine the slopes of tangent lines near <span class="process-math">\(t=0\text{,}\)</span> and take the limit as <span class="process-math">\(t\to 0\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-456">
+\begin{align*}
+\lim_{t\to0} \frac{y'(t)}{x'(t)} \amp =\lim_{t\to0} \frac{3\cos(t) \sin^2(t) }{-3\sin(t) \cos^2(t) }  \text{ (We can cancel as \(t\neq 0\).) }\\
+\amp = \lim_{t\to0} -\frac{\sin(t) }{\cos(t) }\\
+\amp = 0\text{.}
+\end{align*}
+</div>
+<p id="p-10052">We have accomplished something significant. When the derivative <span class="process-math">\(\frac{dy}{dx}\)</span> returns an indeterminate form at <span class="process-math">\(t=t_0\text{,}\)</span> we can define its value by setting it to be <span class="process-math">\(\lim\limits_{t\to t_0}\)</span><span class="process-math">\(\frac{dy}{dx}\text{,}\)</span> if that limit exists. This allows us to find slopes of tangent lines at cusps, which can be very beneficial.</p>
+<p id="p-10053">We found the slope of the tangent line at <span class="process-math">\(t=0\)</span> to be 0; therefore the tangent line is <span class="process-math">\(y=0\text{,}\)</span> the <span class="process-math">\(x\)</span>-axis.</p>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-73"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">10.3.1</span> <span class="title">Concavity</span>
+</h3>
+<p id="p-10054">We continue to analyze curves in the plane by considering their concavity; that is, we are interested in <span class="process-math">\(\frac{d^2y}{dx^2}\text{,}\)</span> “the second derivative of <span class="process-math">\(y\)</span> with respect to <span class="process-math">\(x\text{.}\)</span>” To find this, we need to find the derivative of <span class="process-math">\(\frac{dy}{dx}\)</span> with respect to <span class="process-math">\(x\text{;}\)</span> that is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d^2y}{dx^2}=\frac{d}{dx}\left[\frac{dy}{dx}\right]\text{,}
+\end{equation*}
+</div>
+<p class="continuation">but recall that <span class="process-math">\(\frac{dy}{dx}\)</span> is a function of <span class="process-math">\(t\text{,}\)</span> not <span class="process-math">\(x\text{,}\)</span> making this computation not straightforward. </p>
+<p id="p-10055">To make the upcoming notation a bit simpler, let <span class="process-math">\(h(t) = \frac{dy}{dx}\text{.}\)</span> We want <span class="process-math">\(\frac{d}{dx}[h(t)]\text{;}\)</span> that is, we want <span class="process-math">\(\frac{dh}{dx}\text{.}\)</span> We again appeal to the Chain Rule. Note:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dh}{dt} = \frac{dh}{dx}\cdot\frac{dx}{dt}  \Rightarrow  \frac{dh}{dx} = \frac{dh}{dt}\Bigg/\frac{dx}{dt}\text{.}
+\end{equation*}
+</div>
+<p id="p-10056">In words, to find <span class="process-math">\(\frac{d^2y}{dx^2}\text{,}\)</span> we first take the derivative of <span class="process-math">\(\frac{dy}{dx}\)</span> <em class="emphasis">with respect to <span class="process-math">\(t\)</span></em>, then divide by <span class="process-math">\(x'(t)\text{.}\)</span> We restate this as a Key Idea.</p>
+<article class="insight remark-like" id="idea_second_der_par"><h4 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">10.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Finding <span class="process-math">\(\frac{d^2y}{dx^2}\)</span> with Parametric Equations.</span>
+</h4>
+<p id="p-10057">Let <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\)</span> be twice differentiable functions on an open interval <span class="process-math">\(I\text{,}\)</span> where <span class="process-math">\(\fp(t)\neq 0\)</span> on <span class="process-math">\(I\text{.}\)</span> Then </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d^2y}{dx^2} = \frac{d}{dt}\left[\frac{dy}{dx}\right]\Bigg/\frac{dx}{dt} = \frac{d}{dt}\left[\frac{dy}{dx}\right]\Bigg/\fp(t)\text{.}
+\end{equation*}
+</div></article><p id="p-10058">Examples will help us understand this Key Idea.</p>
+<article class="example example-like" id="ex_parcalc4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Concavity of Plane Curves.</span>
+</h4>
+<p id="p-10059">Let <span class="process-math">\(x=5t^2-6t+4\)</span> and <span class="process-math">\(y=t^2+6t-1\)</span> as in <a href="" class="xref" data-knowl="./knowl/ex_parcalc1.html" title="Example 10.3.4: Tangent and Normal Lines to Curves">Example 10.3.4</a>. Determine the <span class="process-math">\(t\)</span>-intervals on which the graph is concave up/down.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-828" id="solution-828"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-828"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-planecurves-parcalc-concavity" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/rb4wEkhcUtE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-10060">Concavity is determined by the second derivative of <span class="process-math">\(y\)</span> with respect to <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(\frac{d^2y}{dx^2}\text{,}\)</span> so we compute that here following <a href="" class="xref" data-knowl="./knowl/idea_second_der_par.html" title="Key Idea 10.3.10: Finding \frac{d^2y}{dx^2} with Parametric Equations">Key Idea 10.3.10</a>.</p>
+<p id="p-10061">In <a href="" class="xref" data-knowl="./knowl/ex_parcalc1.html" title="Example 10.3.4: Tangent and Normal Lines to Curves">Example 10.3.4</a>, we found <span class="process-math">\(\ds\frac{dy}{dx} = \frac{2t+6}{10t-6}\)</span> and <span class="process-math">\(\fp(t) = 10t-6\text{.}\)</span> So:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_parcalc1.html" id="md-457">
+\begin{align*}
+\frac{d^2y}{dx^2} \amp = \frac{d}{dt}\left[\frac{2t+6}{10t-6}\right]\Bigg/(10t-6)\\
+\amp = -\frac{72}{(10t-6)^2}\Bigg/(10t-6)\\
+\amp = -\frac{72}{(10t-6)^3}\\
+\amp = -\frac{9}{(5t-3)^3}
+\end{align*}
+</div>
+<figure class="figure figure-like" id="fig_parcalc4"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_parcalc4.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.12<span class="period">.</span></span><span class="space"> </span>Graphing the parametric equations in <a href="" class="xref" data-knowl="./knowl/ex_parcalc4.html" title="Example 10.3.11: Concavity of Plane Curves">Example 10.3.11</a> to demonstrate concavity</figcaption></figure><p id="p-10062">The graph of the parametric functions is concave up when <span class="process-math">\(\frac{d^2y}{dx^2} \gt 0\)</span> and concave down when <span class="process-math">\(\frac{d^2y}{dx^2} \lt 0\text{.}\)</span> We determine the intervals when the second derivative is greater/less than 0 by first finding when it is 0 or undefined.</p>
+<p id="p-10063">As the numerator of <span class="process-math">\(\ds -\frac{9}{(5t-3)^3}\)</span> is never 0, <span class="process-math">\(\frac{d^2y}{dx^2} \neq 0\)</span> for all <span class="process-math">\(t\text{.}\)</span> It is undefined when <span class="process-math">\(5t-3=0\text{;}\)</span> that is, when <span class="process-math">\(t= 3/5\text{.}\)</span> Following the work established in <a href="sec_concavity.html" class="internal" title="Section 3.4: Concavity and the Second Derivative">Section 3.4</a>, we look at values of <span class="process-math">\(t\)</span> greater/less than <span class="process-math">\(3/5\)</span> on a number line:</p>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="generated/latex-image/img_parcalc4X.svg" role="img" class="contained"></div>
+<p id="p-10064">Reviewing <a href="" class="xref" data-knowl="./knowl/ex_parcalc1.html" title="Example 10.3.4: Tangent and Normal Lines to Curves">Example 10.3.4</a>, we see that when <span class="process-math">\(t=3/5=0.6\text{,}\)</span> the graph of the parametric equations has a vertical tangent line. This point is also a point of inflection for the graph, illustrated in <a href="" class="xref" data-knowl="./knowl/fig_parcalc4.html" title="Figure 10.3.12">Figure 10.3.12</a>.</p>
+<p id="vidint-planecurves-parcalc-sketch">The video in <a href="" class="xref" data-knowl="./knowl/vid-planecurves-parcalc-sketch.html" title="Figure 10.3.13">Figure 10.3.13</a> shows how this information can be used to sketch the curve by hand.</p>
+<figure class="figure figure-like" id="vid-planecurves-parcalc-sketch"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-385" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/HSBSVFSVqms?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.13<span class="period">.</span></span><span class="space"> </span>Sketching the curve in <a href="" class="xref" data-knowl="./knowl/ex_parcalc4.html" title="Example 10.3.11: Concavity of Plane Curves">Example 10.3.11</a></figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="ex_parcalc5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Concavity of Plane Curves.</span>
+</h4>
+<p id="p-10066">Find the points of inflection of the graph of the parametric equations <span class="process-math">\(x=\sqrt{t}\text{,}\)</span> <span class="process-math">\(y=\sin(t)\text{,}\)</span> for <span class="process-math">\(0\leq t\leq 16\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-829" id="solution-829"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-829"><div class="solution solution-like">
+<p id="p-10067">We need to compute <span class="process-math">\(\frac{dy}{dx}\)</span> and <span class="process-math">\(\frac{d^2y}{dx^2}\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx} = \frac{y'(t)}{x'(t)} = \frac{\cos(t) }{1/(2\sqrt{t})} = 2\sqrt{t}\cos(t)\text{.}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d^2y}{dx^2} = \frac{\frac{d}{dt}\left[\frac{dy}{dx}\right]}{x'(t)} = \frac{\cos(t) /\sqrt{t}-2\sqrt{t}\sin(t) }{1/(2\sqrt{t})}=2\cos(t) -4t\sin(t)\text{.}
+\end{equation*}
+</div>
+<p id="p-10068">The points of inflection are found by setting <span class="process-math">\(\frac{d^2y}{dx^2}=0\text{.}\)</span> This is not trivial, as equations that mix polynomials and trigonometric functions generally do not have “nice” solutions.</p>
+<p id="p-10069">In <a href="" class="xref" data-knowl="./knowl/fig_parcalc5a.html" title="Figure 10.3.15.(a)">Figure 10.3.15.(a)</a> we see a plot of the second derivative. It shows that it has zeros at approximately <span class="process-math">\(t=0.5,\,3.5,\,6.5,\,9.5,\,12.5\)</span> and <span class="process-math">\(16\text{.}\)</span> These approximations are not very good, made only by looking at the graph. Newton's Method provides more accurate approximations. Accurate to 2 decimal places, we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_parcalc5a.html">
+\begin{equation*}
+t=0.65,\,3.29,\,6.36,\,9.48,\,12.61\,\text{ and } \,15.74\text{.}
+\end{equation*}
+</div>
+<p id="p-10070">The corresponding points have been plotted on the graph of the parametric equations in <a href="" class="xref" data-knowl="./knowl/fig_parcalc5b.html" title="Figure 10.3.15.(b)">Figure 10.3.15.(b)</a>. Note how most occur near the <span class="process-math">\(x\)</span>-axis, but not exactly on the axis.</p>
+<figure class="figure figure-like" id="fig_parcalc5"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_parcalc5a"><img src="generated/latex-image/img_parcalc5a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_parcalc5b"><img src="generated/latex-image/img_parcalc5.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.15<span class="period">.</span></span><span class="space"> </span>In (a), a graph of <span class="process-math">\(\frac{d^2y}{dx^2}\text{,}\)</span> showing where it is approximately 0. In (b), graph of the parametric equations in <a href="" class="xref" data-knowl="./knowl/ex_parcalc5.html" title="Example 10.3.14: Concavity of Plane Curves">Example 10.3.14</a> along with the points of inflection</figcaption></figure>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">10.3.2</span> <span class="title">Arc Length</span>
+</h3>
+<p id="p-10071">We continue our study of the features of the graphs of parametric equations by computing their arc length.</p>
+<figure class="figure figure-like" id="vid-planecurves-parcalc-arclength"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-386" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/57F7ZspP0lU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.16<span class="period">.</span></span><span class="space"> </span>Video introduction to arc length for parametric curves</figcaption></figure><p id="p-10072">Recall in <a href="sec_arc_length.html" class="internal" title="Section 7.4: Arc Length and Surface Area">Section 7.4</a> we found the arc length of the graph of a function, from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\text{,}\)</span> to be</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_arc_length.html">
+\begin{equation*}
+L = \int_a^b\sqrt{1+\left(\frac{dy}{dx}\right)^2}\, dx\text{.}
+\end{equation*}
+</div>
+<p id="p-10073">We can use this equation and convert it to the parametric equation context. Letting <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\text{,}\)</span> we know that <span class="process-math">\(\frac{dy}{dx} = g'(t)/\fp(t)\text{.}\)</span> It will also be useful to calculate the differential of <span class="process-math">\(x\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+dx = \fp(t)dt \qquad \Rightarrow \qquad dt = \frac{1}{\fp(t)}\cdot dx\text{.}
+\end{equation*}
+</div>
+<p id="p-10074">Starting with the arc length formula above, consider:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-458">
+\begin{align*}
+L \amp = \int_a^b\sqrt{1+\left(\frac{dy}{dx}\right)^2}\, dx\\
+\amp = \int_a^b \sqrt{1+\frac{g'(t)^2}{\fp(t)^2}}\, dx.\\
+\end{align*}
+<p class="intertext">Factor out the <span class="process-math">\(\fp(t)^2\text{:}\)</span></p>
+\begin{align*}
+\amp = \int_a^b \sqrt{\fp(t)^2+g'(t)^2}\cdot\underbrace{\frac1{\fp(t)}\, dx}_{=dt}\\
+\amp = \int_{t_1}^{t_2} \sqrt{\fp(t)^2+g'(t)^2}\, dt\text{.}
+\end{align*}
+</div>
+<p id="p-10075">Note the new bounds (no longer “<span class="process-math">\(x\)</span>” bounds, but “<span class="process-math">\(t\)</span>” bounds). They are found by finding <span class="process-math">\(t_1\)</span> and <span class="process-math">\(t_2\)</span> such that <span class="process-math">\(a= f(t_1)\)</span> and <span class="process-math">\(b=f(t_2)\text{.}\)</span> This formula is important, so we restate it as a theorem.</p>
+<article class="theorem theorem-like" id="thm_arc_length_parametric"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">10.3.17</span><span class="period">.</span><span class="space"> </span><span class="title">Arc Length of Parametric Curves.</span>
+</h4>
+<p id="p-10076">Let <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\)</span> be parametric equations with <span class="process-math">\(\fp\)</span> and <span class="process-math">\(g'\)</span> continuous on <span class="process-math">\([t_1,t_2]\text{,}\)</span> on which the graph traces itself only once. The arc length of the graph, from <span class="process-math">\(t=t_1\)</span> to <span class="process-math">\(t=t_2\text{,}\)</span> is </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L = \int_{t_1}^{t_2} \sqrt{\fp(t)^2+g'(t)^2}\, dt\text{.}
+\end{equation*}
+</div></article><aside class="aside aside-like" id="aside-66"><p id="p-10077"><em class="emphasis">Note:</em> <a href="" class="xref" data-knowl="./knowl/thm_arc_length_parametric.html" title="Theorem 10.3.17: Arc Length of Parametric Curves">Theorem 10.3.17</a> makes use of differentiability on closed intervals, just as was done in <a href="sec_arc_length.html" class="internal" title="Section 7.4: Arc Length and Surface Area">Section 7.4</a>.</p></aside><p id="p-10078">As before, these integrals are often not easy to compute. We start with a simple example, then give another where we approximate the solution.</p>
+<article class="example example-like" id="ex_parcalc6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Arc Length of a Circle.</span>
+</h4>
+<p id="p-10079">Find the arc length of the circle parametrized by <span class="process-math">\(x=3\cos(t)\text{,}\)</span> <span class="process-math">\(y=3\sin(t)\)</span> on <span class="process-math">\([0,3\pi/2]\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-830" id="solution-830"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-830"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-planecurves-parcalc-arclength-example1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/It8vHw3RHEw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-10080">By direct application of <a href="" class="xref" data-knowl="./knowl/thm_arc_length_parametric.html" title="Theorem 10.3.17: Arc Length of Parametric Curves">Theorem 10.3.17</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_arc_length_parametric.html" id="md-459">
+\begin{align*}
+L \amp = \int_0^{3\pi/2} \sqrt{(-3\sin(t) )^2 +(3\cos(t) )^2} \, dt.\\
+\end{align*}
+<p class="intertext">Apply the Pythagorean Theorem.</p>
+\begin{align*}
+\amp = \int_0^{3\pi/2} 3 \, dt\\
+\amp = 3t\Big|_0^{3\pi/2} = 9\pi/2\text{.}
+\end{align*}
+</div>
+<p id="p-10081">This should make sense; we know from geometry that the circumference of a circle with radius 3 is <span class="process-math">\(6\pi\text{;}\)</span> since we are finding the arc length of <span class="process-math">\(3/4\)</span> of a circle, the arc length is <span class="process-math">\(3/4\cdot 6\pi = 9\pi/2\text{.}\)</span></p>
+</div></div>
+</div></article><article class="example example-like" id="ex_parcalc7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.19</span><span class="period">.</span><span class="space"> </span><span class="title">Arc Length of a Parametric Curve.</span>
+</h4>
+<p id="p-10082">The graph of the parametric equations <span class="process-math">\(x=t(t^2-1)\text{,}\)</span> <span class="process-math">\(y=t^2-1\)</span> crosses itself as shown in <a href="" class="xref" data-knowl="./knowl/fig_parcalc7.html" title="Figure 10.3.20">Figure 10.3.20</a>, forming a “teardrop.” Find the arc length of the teardrop.</p>
+<figure class="figure figure-like" id="fig_parcalc7"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_parcalc7.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.20<span class="period">.</span></span><span class="space"> </span>A graph of the parametric equations in <a href="" class="xref" data-knowl="./knowl/ex_parcalc7.html" title="Example 10.3.19: Arc Length of a Parametric Curve">Example 10.3.19</a>, where the arc length of the teardrop is calculated</figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-831" id="solution-831"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-831"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-planecurves-parcalc-arclength-example2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/G5U9BVhB3PE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-10083">We can see by the parametrizations of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> that when <span class="process-math">\(t=\pm 1\text{,}\)</span> <span class="process-math">\(x=0\)</span> and <span class="process-math">\(y=0\text{.}\)</span> This means we'll integrate from <span class="process-math">\(t=-1\)</span> to <span class="process-math">\(t=1\text{.}\)</span> Applying <a href="" class="xref" data-knowl="./knowl/thm_arc_length_parametric.html" title="Theorem 10.3.17: Arc Length of Parametric Curves">Theorem 10.3.17</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_arc_length_parametric.html" id="md-460">
+\begin{align*}
+L   \amp = \int_{-1}^1\sqrt{(3t^2-1)^2+(2t)^2}\, dt\\
+\amp =  \int_{-1}^1 \sqrt{9t^4-2t^2+1} \, dt\text{.}
+\end{align*}
+</div>
+<p id="p-10084">Unfortunately, the integrand does not have an antiderivative expressible by elementary functions. We turn to numerical integration to approximate its value. Using 4 subintervals, Simpson's Rule approximates the value of the integral as <span class="process-math">\(2.65051\text{.}\)</span> Using a computer, more subintervals are easy to employ, and <span class="process-math">\(n=20\)</span> gives a value of <span class="process-math">\(2.71559\text{.}\)</span> Increasing <span class="process-math">\(n\)</span> shows that this value is stable and a good approximation of the actual value.</p>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-75"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">10.3.3</span> <span class="title">Surface Area of a Solid of Revolution</span>
+</h3>
+<p id="p-10085">Related to the formula for finding arc length is the formula for finding surface area. We can adapt the formula found in <a href="" class="xref" data-knowl="./knowl/thm_surface_area.html" title="Theorem 7.4.13: Surface Area of a Solid of Revolution">Theorem 7.4.13</a> from <a href="sec_arc_length.html" class="internal" title="Section 7.4: Arc Length and Surface Area">Section 7.4</a> in a similar way as done to produce the formula for arc length done before.</p>
+<article class="theorem theorem-like" id="thm_surface_area_parametric"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">10.3.21</span><span class="period">.</span><span class="space"> </span><span class="title">Surface Area of a Solid of Revolution.</span>
+</h4>
+<p id="p-10086">Consider the graph of the parametric equations <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\text{,}\)</span> where <span class="process-math">\(\fp\)</span> and <span class="process-math">\(g'\)</span> are continuous on an open interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(t_1\)</span> and <span class="process-math">\(t_2\)</span> on which the graph does not cross itself. </p>
+<ol id="p-10087" class="decimal">
+<li id="li-2074">
+<p id="p-10088">The surface area of the solid formed by revolving the graph about the <span class="process-math">\(x\)</span>-axis is (where <span class="process-math">\(g(t)\geq 0\)</span> on <span class="process-math">\([t_1,t_2]\)</span>):</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{ Surface Area }  = 2\pi\int_{t_1}^{t_2} g(t)\sqrt{\fp(t)^2+g'(t)^2}\, dt\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-2075">
+<p id="p-10089">The surface area of the solid formed by revolving the graph about the <span class="process-math">\(y\)</span>-axis is (where <span class="process-math">\(f(t)\geq 0\)</span> on <span class="process-math">\([t_1,t_2]\)</span>):</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{ Surface Area }  = 2\pi\int_{t_1}^{t_2} f(t)\sqrt{\fp(t)^2+g'(t)^2}\, dt\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="example example-like" id="ex_parcalc8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.22</span><span class="period">.</span><span class="space"> </span><span class="title">Surface Area of a Solid of Revolution.</span>
+</h4>
+<p id="p-10090">Consider the teardrop shape formed by the parametric equations <span class="process-math">\(x=t(t^2-1)\text{,}\)</span> <span class="process-math">\(y=t^2-1\)</span> as seen in <a href="" class="xref" data-knowl="./knowl/ex_parcalc7.html" title="Example 10.3.19: Arc Length of a Parametric Curve">Example 10.3.19</a>. Find the surface area if this shape is rotated about the <span class="process-math">\(x\)</span>-axis, as shown in <a href="" class="xref" data-knowl="./knowl/fig_parcalc8.html" title="Figure 10.3.23">Figure 10.3.23</a>.</p>
+<figure class="figure figure-like" id="fig_parcalc8"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_parcalc8.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_parcalc8.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.23<span class="period">.</span></span><span class="space"> </span>Rotating a teardrop shape about the <span class="process-math">\(x\)</span>-axis in <a href="" class="xref" data-knowl="./knowl/ex_parcalc8.html" title="Example 10.3.22: Surface Area of a Solid of Revolution">Example 10.3.22</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-832" id="solution-832"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-832"><div class="solution solution-like">
+<p id="p-10091">The teardrop shape is formed between <span class="process-math">\(t=-1\)</span> and <span class="process-math">\(t=1\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/thm_surface_area_parametric.html" title="Theorem 10.3.21: Surface Area of a Solid of Revolution">Theorem 10.3.21</a>, we see we need for <span class="process-math">\(g(t)\geq 0\)</span> on <span class="process-math">\([-1,1]\text{,}\)</span> and this is not the case. To fix this, we simplify replace <span class="process-math">\(g(t)\)</span> with <span class="process-math">\(-g(t)\text{,}\)</span> which flips the whole graph about the <span class="process-math">\(x\)</span>-axis (and does not change the surface area of the resulting solid). The surface area is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_surface_area_parametric.html" id="md-461">
+\begin{align*}
+\text{ Area } \,S \amp = 2\pi\int_{-1}^1 (1-t^2)\sqrt{(3t^2-1)^2+(2t)^2}\, dt\\
+\amp =  2\pi\int_{-1}^1 (1-t^2)\sqrt{9t^4-2t^2+1} \, dt\text{.}
+\end{align*}
+</div>
+<p id="p-10092">Once again we arrive at an integral that we cannot compute in terms of elementary functions. Using Simpson's Rule with <span class="process-math">\(n=20\text{,}\)</span> we find the area to be <span class="process-math">\(S=9.44\text{.}\)</span> Using larger values of <span class="process-math">\(n\)</span> shows this is accurate to 2 places after the decimal.</p>
+</div></div>
+</div></article><p id="p-10093">After defining a new way of creating curves in the plane, in this section we have applied calculus techniques to the parametric equation defining these curves to study their properties. In the next section, we define another way of forming curves in the plane. To do so, we create a new coordinate system, called <em class="emphasis">polar coordinates</em>, that identifies points in the plane in a manner different than from measuring distances from the <span class="process-math">\(y\)</span>- and <span class="process-math">\(x\)</span>- axes.</p></section><section class="exercises" id="exercises-56"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">10.3.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-122"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-1926"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-1294" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1294" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT5xfDxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGZwfXtmJ31cbmV3Y29tbWFuZHtcbHp9WzJde1xmcmFje2QjMX17ZCMyfX1cKTwvZGl2PnwpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR0cnVlPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwokZmFsc2U9UG9wVXAoWyc/JywnVHJ1ZScsJ0ZhbHNlJ10sMik7CgpCRUdJTl9QR01MClRydWUgb3IgRmFsc2U/IEdpdmVuIHBhcmFtZXRyaWMgZXF1YXRpb25zIFtgeD1mKHQpYF0gYW5kIFtgeT1nKHQpXHRleHR7LH1gXSBbYFxsent5fXt4fSA9IFxmcCh0KS9nJyh0KVx0ZXh0eyx9YF0gYXMgbG9uZyBhcyBbYGcnKHQpIFxuZXEgMFx0ZXh0ey59YF0gW19deyRmYWxzZX17NX0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10094">True or False? Given parametric equations <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\text{,}\)</span> <span class="process-math">\(\lz{y}{x} = \fp(t)/g'(t)\text{,}\)</span> as long as <span class="process-math">\(g'(t) \neq 0\text{.}\)</span> <ul style="list-style:circle;">
+<li id="li-2077"><p id="p-10096">True</p></li>
+<li id="li-2078"><p id="p-10097">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1294')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1927"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<p id="p-10099">Given parametric equations <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\text{,}\)</span> the derivative <span class="process-math">\(\frac{dy}{dx}\)</span> as given in <a href="" class="xref" data-knowl="./knowl/idea_dydxpar.html" title="Key Idea 10.3.2: Finding \frac{dy}{dx} with Parametric Equations">Key Idea 10.3.2</a> is a function of <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>?</p></article><article class="exercise exercise-like" id="exercise-1928"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-1295" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1295" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcbHp9WzJde1xmcmFje2QjMX17ZCMyfX1cbmV3Y29tbWFuZHtcbHpufVszXXtcZnJhY3tkXnsjMX0jMn17ZCMzXnsjMX19fVxuZXdjb21tYW5ke1xsem99WzFde1xmcmFje2R9e2QjMX19XG5ld2NvbW1hbmR7XGx6b299WzJde3tcZnJhY3tkfXtkIzF9fXtcbGVmdCgjMlxyaWdodCl9fVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7JHRydWU9UG9wVXAoWyc/JywnVHJ1ZScsJ0ZhbHNlJ10sMSk7CiRmYWxzZT1Qb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwyKTsKCkJFR0lOX1BHTUwKVHJ1ZSBvciBGYWxzZT8gR2l2ZW4gcGFyYW1ldHJpYyBlcXVhdGlvbnMgW2B4PWYodClgXSBhbmQgW2B5PWcodClcdGV4dHssfWBdIHRvIGZpbmQgW2BcbHpuezJ9e3l9e3h9XHRleHR7LH1gXSBvbmUgc2ltcGx5IGNvbXB1dGVzIFtgXGx6b297dH17XGx6e3l9e3h9fVx0ZXh0ey59YF0gW19deyRmYWxzZX17NX0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10101">True or False? Given parametric equations <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\text{,}\)</span> to find <span class="process-math">\(\lzn{2}{y}{x}\text{,}\)</span> one simply computes <span class="process-math">\(\lzoo{t}{\lz{y}{x}}\text{.}\)</span> <ul style="list-style:circle;">
+<li id="li-2080"><p id="p-10103">True</p></li>
+<li id="li-2081"><p id="p-10104">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1295')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1929"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-1296" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1296" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcbHp9WzJde1xmcmFje2QjMX17ZCMyfX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR0cnVlPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwokZmFsc2U9UG9wVXAoWyc/JywnVHJ1ZScsJ0ZhbHNlJ10sMik7CgpCRUdJTl9QR01MClRydWUgb3IgRmFsc2U/IElmIFtgXGx6e3l9e3h9PTBgXSBhdCBbYHQ9dF8wXHRleHR7LH1gXSB0aGVuIHRoZSBub3JtYWwgbGluZSB0byB0aGUgY3VydmUgYXQgW2B0PXRfMGBdIGlzIGEgdmVydGljYWwgbGluZS4gW19deyR0cnVlfXs1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10106">True or False? If <span class="process-math">\(\lz{y}{x}=0\)</span> at <span class="process-math">\(t=t_0\text{,}\)</span> then the normal line to the curve at <span class="process-math">\(t=t_0\)</span> is a vertical line. <ul style="list-style:circle;">
+<li id="li-2083"><p id="p-10108">True</p></li>
+<li id="li-2084"><p id="p-10109">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1296')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-123"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-216">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-254">
+<p id="p-10111">In the following exercises, parametric equations for a curve are given.</p>
+<ol id="p-10112" class="lower-alpha">
+<li id="li-2085"><p id="p-10113">Find <span class="process-math">\(\ds\frac{dy}{dx}\text{.}\)</span></p></li>
+<li id="li-2086"><p id="p-10114">Find the equations of the tangent and normal line(s) at the point(s) given.</p></li>
+<li id="li-2087"><p id="p-10115">Sketch the graph of the parametric functions along with the found tangent and normal lines.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="ex_09_03_ex_05"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-10116"><span class="process-math">\(x=t\text{,}\)</span> <span class="process-math">\(y=t^2\text{;}\)</span><span class="process-math">\(t=1\)</span></p></article><article class="exercise exercise-like" id="exercise-1931"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-10120"><span class="process-math">\(x=\sqrt{t}\text{,}\)</span> <span class="process-math">\(y=5t+2\text{;}\)</span><span class="process-math">\(t=4\)</span></p></article><article class="exercise exercise-like" id="exercise-1932"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-10124"><span class="process-math">\(x=t^2-t\text{,}\)</span> <span class="process-math">\(y=t^2+t\text{;}\)</span><span class="process-math">\(t=1\)</span></p></article><article class="exercise exercise-like" id="exercise-1933"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-10128"><span class="process-math">\(x=t^2-1\text{,}\)</span> <span class="process-math">\(y=t^3-t\text{;}\)</span><span class="process-math">\(t=0\)</span> and <span class="process-math">\(t=1\)</span></p></article><article class="exercise exercise-like" id="exercise-1934"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-10132"><span class="process-math">\(x=\sec(t)\text{,}\)</span> <span class="process-math">\(y=\tan(t)\)</span> on <span class="process-math">\((-\pi/2,\pi/2)\text{;}\)</span><span class="process-math">\(t=\pi/4\)</span></p></article><article class="exercise exercise-like" id="exercise-1935"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-10136"><span class="process-math">\(x=\cos(t)\text{,}\)</span> <span class="process-math">\(y=\sin(2t)\)</span> on <span class="process-math">\([0,2\pi]\text{;}\)</span><span class="process-math">\(t=\pi/4\)</span></p></article><article class="exercise exercise-like" id="exercise-1936"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-10140"><span class="process-math">\(x=\cos(t) \sin(2t)\text{,}\)</span> <span class="process-math">\(y=\sin(t) \sin(2t)\)</span> on <span class="process-math">\([0,2\pi]\text{;}\)</span> <span class="process-math">\(t=3\pi/4\)</span></p></article><article class="exercise exercise-like" id="ex_09_03_ex_12"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-10144"><span class="process-math">\(x=e^{t/10}\cos(t)\text{,}\)</span> <span class="process-math">\(y=e^{t/10}\sin(t)\text{;}\)</span> <span class="process-math">\(t=\pi/2\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-217">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-255"><p id="p-10148">Find the <span class="process-math">\(t\)</span>-values where the curve defined by the given parametric equations has a horizontal tangent line. Note: these are the same equations as in <a href="" class="xref" data-knowl="./knowl/ex_09_03_ex_05.html" title="Exercise 10.3.4.5">Exercises 10.3.4.5</a> — <a href="" class="xref" data-knowl="./knowl/ex_09_03_ex_12.html" title="Exercise 10.3.4.12">Exercise 10.3.4.12</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1938"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-10149"><span class="process-math">\(x=t\text{,}\)</span> <span class="process-math">\(y=t^2\)</span></p></article><article class="exercise exercise-like" id="exercise-1939"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-10151"><span class="process-math">\(x=\sqrt{t}\text{,}\)</span> <span class="process-math">\(y=5t+2\)</span></p></article><article class="exercise exercise-like" id="exercise-1940"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-1297" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1297" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGhvcnQ9TGlzdCgiLTEvMiIpOwpDb250ZXh0KCJQb2ludCIpOwokcG9pbnRzPUxpc3QoIigzLzQsLTEvNCkiKTsKCkJFR0lOX1BHTUwKW2B4PXReMi10XHRleHR7LH1gXSBbYHk9dF4yK3RgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnR2l2ZSB0aGUgW2B0YF0gdmFsdWVzIHdoZXJlIHRoZSBjdXJ2ZSBoYXMgYSBob3Jpem9udGFsIHRhbmdlbnQgbGluZS4gKElmIHRoZXJlIGlzIG1vcmUgdGhhbiBvbmUsIHVzZSBjb21tYXMgdG8gc2VwYXJhdGUgdGhlbS4pJylAXSoqCgpbX117JGhvcnR9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnR2l2ZSB0aGUgY29ycmVzcG9uZGluZyBwb2ludChzKSBpbiB0aGUgcGxhbmUgd2hlcmUgdGhlIHRhbmdlbnQgbGluZSBpcyBob3Jpem9udGFsLiAoSWYgdGhlcmUgaXMgbW9yZSB0aGFuIG9uZSwgdXNlIGNvbW1hcyB0byBzZXBhcmF0ZSB0aGVtLiknKUBdKioKCltfXXskcG9pbnRzfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10153"><span class="process-math">\(x=t^2-t\text{,}\)</span> <span class="process-math">\(y=t^2+t\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1297')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1941"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-10156"><span class="process-math">\(x=t^2-1\text{,}\)</span> <span class="process-math">\(y=t^3-t\)</span></p></article><article class="exercise exercise-like" id="exercise-1942"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-10158"><span class="process-math">\(x=\sec(t)\text{,}\)</span> <span class="process-math">\(y=\tan(t)\)</span> on <span class="process-math">\((-\pi/2,\pi/2)\)</span></p></article><article class="exercise exercise-like" id="exercise-1943"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-1298" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1298" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRob3J0PUxpc3QoRm9ybXVsYSgicGkvNCIpLEZvcm11bGEoIjNwaS80IiksRm9ybXVsYSgiNXBpLzQiKSxGb3JtdWxhKCI3cGkvNCIpKTsKQ29udGV4dCgiUG9pbnQiKTsKJHBvaW50cz1Db21wdXRlKCIoc3FydCgyKS8yLDEpLCAoLXNxcnQoMikvMiwtMSksICgtc3FydCgyKS8yLDEpLCAoc3FydCgyKS8yLC0xKSIpOwoKQkVHSU5fUEdNTApbYHg9XGNvcyh0KVx0ZXh0eyx9YF0gW2B5PVxzaW4oMnQpXHRleHR7LH1gXSBvbiBbYFswLDJccGkpYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0dpdmUgdGhlIFtgdGBdIHZhbHVlcyB3aGVyZSB0aGUgY3VydmUgaGFzIGEgaG9yaXpvbnRhbCB0YW5nZW50IGxpbmUuIChJZiB0aGVyZSBpcyBtb3JlIHRoYW4gb25lLCB1c2UgY29tbWFzIHRvIHNlcGFyYXRlIHRoZW0uKScpQF0qKgoKW19deyRob3J0fXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0dpdmUgdGhlIGNvcnJlc3BvbmRpbmcgcG9pbnQocykgaW4gdGhlIHBsYW5lIHdoZXJlIHRoZSB0YW5nZW50IGxpbmUgaXMgaG9yaXpvbnRhbC4gKElmIHRoZXJlIGlzIG1vcmUgdGhhbiBvbmUsIHVzZSBjb21tYXMgdG8gc2VwYXJhdGUgdGhlbS4pJylAXSoqCgpbX117JHBvaW50c317NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10160"><span class="process-math">\(x=\cos(t)\text{,}\)</span> <span class="process-math">\(y=\sin(2t)\text{,}\)</span> on <span class="process-math">\([0,2\pi)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1298')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1944"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-10163"><span class="process-math">\(x=\cos(t) \sin(2t)\text{,}\)</span> <span class="process-math">\(y=\sin(t) \sin(2t)\)</span> on <span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1945"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-10165"><span class="process-math">\(x=e^{t/10}\cos(t)\text{,}\)</span> <span class="process-math">\(y=e^{t/10}\sin(t)\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-218">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-256"><p id="p-10167">Find the point <span class="process-math">\(t=t_0\)</span> where the graph of the given parametric equations is not smooth, then find <span class="process-math">\(\lim\limits_{t\to t_0}\frac{dy}{dx}\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1946"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-1299" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1299" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7JHQwID0gUmVhbCgiMCIpOwokTCA9IFJlYWwoIjAiKTsKCkJFR0lOX1BHTUwKW2B4PVxmcmFjezF9e3ReMisxfVx0ZXh0eyx9YF0gW2B5PXReM2BdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdGaW5kIHRoZSBwb2ludCBbYHRfMGBdIHdoZXJlIHRoZSBjdXJ2ZSBpcyBub3Qgc21vb3RoLicpQF0qKgoKW19deyR0MH17NX0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BcbGltXGxpbWl0c197dFx0byB0XzB9XGx6e3l9e3h9XHRleHR7Ln1gXScpQF0qKgoKW19deyRMfXs1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10168"><span class="process-math">\(x=\frac{1}{t^2+1}\text{,}\)</span> <span class="process-math">\(y=t^3\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1299')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1947"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-1300" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1300" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7JHQwID0gUmVhbCgiMiIpOwokTCA9IFJlYWwoIjEiKTsKCkJFR0lOX1BHTUwKW2B4PS10XjMrN3ReMi0xNnQrMTNcdGV4dHssfWBdIFtgeT10XjMtNXReMis4dC0yYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgdGhlIHBvaW50IFtgdF8wYF0gd2hlcmUgdGhlIGN1cnZlIGlzIG5vdCBzbW9vdGguJylAXSoqCgpbX117JHQwfXs1fQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRmluZCBbYFxsaW1cbGltaXRzX3t0XHRvIHRfMH1cbHp7eX17eH1cdGV4dHsufWBdJylAXSoqCgpbX117JEx9ezV9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10171"><span class="process-math">\(x=-t^3+7t^2-16t+13\text{,}\)</span> <span class="process-math">\(y=t^3-5t^2+8t-2\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1300')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1948"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-10174"><span class="process-math">\(x=t^3-3t^2+3t-1\text{,}\)</span><span class="process-math">\(y=t^2-2t+1\)</span></p></article><article class="exercise exercise-like" id="exercise-1949"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-10176"><span class="process-math">\(\ds x=\cos^2(t)\text{,}\)</span><span class="process-math">\(y=1-\sin^2(t)\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-219">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-257"><p id="p-10178">For the given parametric equations for a curve, find <span class="process-math">\(\frac{d^2y}{dx^2}\text{,}\)</span> then determine the intervals on which the graph of the curve is concave up/down. Note: these are the same equations as in <a href="" class="xref" data-knowl="./knowl/ex_09_03_ex_05.html" title="Exercise 10.3.4.5">Exercises 10.3.4.5</a> — <a href="" class="xref" data-knowl="./knowl/ex_09_03_ex_12.html" title="Exercise 10.3.4.12">Exercise 10.3.4.12</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1950"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-10179"><span class="process-math">\(x=t\text{,}\)</span><span class="process-math">\(y=t^2\)</span></p></article><article class="exercise exercise-like" id="exercise-1951"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-10181"><span class="process-math">\(x=\sqrt{t}\text{,}\)</span><span class="process-math">\(y=5t+2\)</span></p></article><article class="exercise exercise-like" id="exercise-1952"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<div id="webwork-1301" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1301" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVxuZXdjb21tYW5ke1xsem59WzNde1xmcmFje2ReeyMxfSMyfXtkIzNeeyMxfX19XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJHlwcD1Gb3JtdWxhKCItKDQvKDJ0LTEpXjMpIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChpZ25vcmVFbmRwb2ludFR5cGVzID0+IDEpOwokdXA9TGlzdCgiKC1pbmYsMS8yXSIpOwokZG93bj1MaXN0KCJbMS8yLGluZikiKTsKCkJFR0lOX1BHTUwKW2B4PXReMi10XHRleHR7LH1gXSBbYHk9dF4yK3RgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRmluZCBbYFxsem57Mn17eX17eH1gXSBhcyBhIGZ1bmN0aW9uIG9mIFtgdFx0ZXh0ey59YF0nKUBdKioKCltfXXskeXBwfXs0MH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0dpdmUgdGhlIGludGVydmFsKHMpIHdoZXJlIHRoZSBjdXJ2ZSBpcyBjb25jYXZlIHVwLiAoSWYgdGhlcmUgaXMgbW9yZSB0aGFuIG9uZSBpbnRlcnZhbCwgdXNlIGNvbW1hcyB0byBzZXBhcmF0ZSB0aGVtLiknKUBdKioKCltfXXskdXB9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnR2l2ZSB0aGUgaW50ZXJ2YWwocykgd2hlcmUgdGhlIGN1cnZlIGlzIGNvbmNhdmUgZG93bi4gKElmIHRoZXJlIGlzIG1vcmUgdGhhbiBvbmUgaW50ZXJ2YWwsIHVzZSBjb21tYXMgdG8gc2VwYXJhdGUgdGhlbS4pJylAXSoqCgpbX117JGRvd259ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10183"><span class="process-math">\(x=t^2-t\text{,}\)</span> <span class="process-math">\(y=t^2+t\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1301')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1953"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-10187"><span class="process-math">\(x=t^2-1\text{,}\)</span><span class="process-math">\(y=t^3-t\)</span></p></article><article class="exercise exercise-like" id="exercise-1954"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-10189"><span class="process-math">\(x=\sec(t)\text{,}\)</span><span class="process-math">\(y=\tan(t)\)</span> on <span class="process-math">\((-\pi/2,\pi/2)\)</span></p></article><article class="exercise exercise-like" id="exercise-1955"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<div id="webwork-1302" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1302" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsen1bMl17XGZyYWN7ZCMxfXtkIzJ9fVxuZXdjb21tYW5ke1xsem59WzNde1xmcmFje2ReeyMxfSMyfXtkIzNeeyMxfX19XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJHlwcD1Gb3JtdWxhKCIyIChzaW4odCkqLTJzaW4oMnQpIC0gY29zKDJ0KSpjb3ModCkpIC8gc2luXjModCkiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KGlnbm9yZUVuZHBvaW50VHlwZXMgPT4gMSk7CiR1cD1Db21wdXRlKCJbcGkvMixwaV0sIFszcGkvMiwycGldIik7CiRkb3duPUNvbXB1dGUoIlswLHBpLzJdLCBbcGksM3BpLzJdIik7CgpCRUdJTl9QR01MCltgeD1cY29zKHQpXHRleHR7LH1gXSBbYHk9XHNpbigydClcdGV4dHssfWBdIG9uIFtgWzAsMlxwaSlgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRmluZCBbYFxsem57Mn17eX17eH1gXSBhcyBhIGZ1bmN0aW9uIG9mIFtgdFx0ZXh0ey59YF0nKUBdKioKCltfXXskeXBwfXs0MH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0dpdmUgdGhlIGludGVydmFsKHMpIHdoZXJlIHRoZSBjdXJ2ZSBpcyBjb25jYXZlIHVwLiAoSWYgdGhlcmUgaXMgbW9yZSB0aGFuIG9uZSBpbnRlcnZhbCwgdXNlIGNvbW1hcyB0byBzZXBhcmF0ZSB0aGVtLiknKUBdKioKCltfXXskdXB9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnR2l2ZSB0aGUgaW50ZXJ2YWwocykgd2hlcmUgdGhlIGN1cnZlIGlzIGNvbmNhdmUgZG93bi4gKElmIHRoZXJlIGlzIG1vcmUgdGhhbiBvbmUgaW50ZXJ2YWwsIHVzZSBjb21tYXMgdG8gc2VwYXJhdGUgdGhlbS4pJylAXSoqCgpbX117JGRvd259ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10191"><span class="process-math">\(x=\cos(t)\text{,}\)</span> <span class="process-math">\(y=\sin(2t)\text{,}\)</span> on <span class="process-math">\([0,2\pi)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1302')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1956"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<p id="p-10195"><span class="process-math">\(\ds x=\cos(t) \sin(2t)\text{,}\)</span><span class="process-math">\(y=\sin(t) \sin(2t)\)</span> on <span class="process-math">\([-\pi/2,\pi/2]\)</span></p></article><article class="exercise exercise-like" id="exercise-1957"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<p id="p-10197"><span class="process-math">\(x=e^{t/10}\cos(t)\text{,}\)</span><span class="process-math">\(y=e^{t/10}\sin(t)\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-220">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-258"><p id="p-10199">Find the arc length of the graph of the parametric equations on the given interval(s).</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1958"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<div id="webwork-1303" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1303" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCk7CiRsZW5ndGg9Rm9ybXVsYSgiNnBpIik7CgpCRUdJTl9QR01MCltgeD0tM1xzaW4oMnQpXHRleHR7LH1gXSBbYHk9M1xjb3MoMnQpYF0gb24gW2BbMCxccGldYF0KCltfXXskbGVuZ3RofXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10200"><span class="process-math">\(x=-3\sin(2t)\text{,}\)</span> <span class="process-math">\(y=3\cos(2t)\)</span> on <span class="process-math">\([0,\pi]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1303')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1959"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<div id="webwork-1304" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1304" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRsZW5ndGgxPUZvcm11bGEoInNxcnQoMTAxKShlXihwaS81KS0xKSIpOwokbGVuZ3RoMj1Gb3JtdWxhKCJzcXJ0KDEwMSkoZV4oMnBpLzUpLWVeKHBpLzUpKSIpOwoKQkVHSU5fUEdNTApbYHg9ZV57dC8xMH1cY29zKHQpXHRleHR7LH1gXSBbYHk9ZV57dC8xMH1cc2luKHQpYF0gb24gW2BbMCwyXHBpXWBdIGFuZCBbYFsyXHBpLDRccGldXHRleHR7Ln1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnR2l2ZSB0aGUgYXJjIGxlbmd0aCBvbiBbYFswLDJccGldXHRleHR7On1gXScpQF0qKgoKW19deyRsZW5ndGgxfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0dpdmUgdGhlIGFyYyBsZW5ndGggb24gW2BbMlxwaSw0XHBpXVx0ZXh0ezp9YF0nKUBdKioKCltfXXskbGVuZ3RoMn17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10202"><span class="process-math">\(x=e^{t/10}\cos(t)\text{,}\)</span> <span class="process-math">\(y=e^{t/10}\sin(t)\)</span> on <span class="process-math">\([0,2\pi]\)</span> and <span class="process-math">\([2\pi,4\pi]\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1304')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1960"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<div id="webwork-1305" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1305" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRsZW5ndGg9Rm9ybXVsYSgiMnNxcnQoMzQpIik7CgpCRUdJTl9QR01MCltgeD01dCsyXHRleHR7LH1gXSBbYHk9MS0zdGBdIG9uIFtgWy0xLDFdYF0KCltfXXskbGVuZ3RofXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10205"><span class="process-math">\(x=5t+2\text{,}\)</span> <span class="process-math">\(y=1-3t\)</span> on <span class="process-math">\([-1,1]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1305')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1961"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<p id="p-10207"><span class="process-math">\(x=2t^{3/2}\text{,}\)</span><span class="process-math">\(y=3t\)</span> on <span class="process-math">\([0,1]\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-221">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-259"><p id="p-10209">In the following exercises, numerically approximate the given arc length.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1962"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<p id="p-10210">Approximate the arc length of one petal of the rose curve <span class="process-math">\(x=\cos(t) \cos(2t)\text{,}\)</span><span class="process-math">\(y=\sin(t) \cos(2t)\)</span> using Simpson's Rule and <span class="process-math">\(n=4\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1963"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<p id="p-10212">Approximate the arc length of the “bow tie curve” <span class="process-math">\(x=\cos(t)\text{,}\)</span><span class="process-math">\(y=\sin(2t)\)</span> using Simpson's Rule and <span class="process-math">\(n=6\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1964"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<p id="p-10214">Approximate the arc length of the parabola <span class="process-math">\(x=t^2-t\text{,}\)</span><span class="process-math">\(y=t^2+t\)</span> on <span class="process-math">\([-1,1]\)</span> using Simpson's Rule and <span class="process-math">\(n=4\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1965"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<p id="p-10216">A common approximate of the circumference of an ellipse given by <span class="process-math">\(x=a\cos(t)\text{,}\)</span><span class="process-math">\(y=b\sin(t)\)</span> is <span class="process-math">\(\ds C\approx 2\pi\sqrt{\frac{a^2+b^2}2}\text{.}\)</span> Use this formula to approximate the circumference of <span class="process-math">\(x=5\cos(t)\text{,}\)</span> <span class="process-math">\(y=3\sin(t)\)</span> and compare this to the approximation given by Simpson's Rule and <span class="process-math">\(n=6\text{.}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-222">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-260"><p id="p-10218">In the following exercises, a solid of revolution is described. Find or approximate its surface area as specified.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1966"><h6 class="heading"><span class="codenumber">41<span class="period">.</span></span></h6>
+<p id="p-10219">Find the surface area of the sphere formed by rotating the circle <span class="process-math">\(x=2\cos(t)\text{,}\)</span><span class="process-math">\(y=2\sin(t)\)</span> about:</p>
+<ol id="p-10220" class="lower-alpha">
+<li id="li-2104"><p id="p-10221">the <span class="process-math">\(x\)</span>-axis and</p></li>
+<li id="li-2105"><p id="p-10222">the <span class="process-math">\(y\)</span>-axis.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-1967"><h6 class="heading"><span class="codenumber">42<span class="period">.</span></span></h6>
+<p id="p-10224">Find the surface area of the torus (or “donut”) formed by rotating the circle <span class="process-math">\(x=\cos(t) +2\text{,}\)</span><span class="process-math">\(y=\sin(t)\)</span> about the <span class="process-math">\(y\)</span>-axis.</p></article><article class="exercise exercise-like" id="exercise-1968"><h6 class="heading"><span class="codenumber">43<span class="period">.</span></span></h6>
+<p id="p-10226">Approximate the surface area of the solid formed by rotating the “upper right half” of the bow tie curve <span class="process-math">\(x=\cos(t)\text{,}\)</span><span class="process-math">\(y=\sin(2t)\)</span> on <span class="process-math">\([0,\pi/2]\)</span> about the <span class="process-math">\(x\)</span>-axis, using Simpson's Rule and <span class="process-math">\(n=4\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1969"><h6 class="heading"><span class="codenumber">44<span class="period">.</span></span></h6>
+<p id="p-10228">Approximate the surface area of the solid formed by rotating the one petal of the rose curve <span class="process-math">\(x=\cos(t) \cos(2t)\text{,}\)</span><span class="process-math">\(y=\sin(t) \cos(2t)\)</span> on <span class="process-math">\([0,\pi/4]\)</span> about the <span class="process-math">\(x\)</span>-axis, using Simpson's Rule and <span class="process-math">\(n=4\text{.}\)</span></p></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

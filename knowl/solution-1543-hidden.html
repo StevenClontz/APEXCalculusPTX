@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:50:02Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>To show <span class="process-math">\(\vec F\)</span> is conservative, we need to find <span class="process-math">\(z = f(x,y)\)</span> such that <span class="process-math">\(\vec F = \nabla f = \la f_x, f_y\ra\text{.}\)</span> That is, we need to find <span class="process-math">\(f\)</span> such that <span class="process-math">\(f_x = 3x^2y+2x\)</span> and <span class="process-math">\(f_y = x^3+1\text{.}\)</span> As all we know about <span class="process-math">\(f\)</span> are its partial derivatives, we recover <span class="process-math">\(f\)</span> by integration:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{\partial f}{\partial x}\, dx = f(x,y) + C(y)\text{.}
+\end{equation*}
+</div>
+<p>Note how the constant of integration is more than “just a constant”: it is anything that acts as a constant when taking a derivative with respect to <span class="process-math">\(x\text{.}\)</span> Any function that is a function of <span class="process-math">\(y\)</span> (containing no <span class="process-math">\(x\)</span>'s) acts as a constant when deriving with respect to <span class="process-math">\(x\text{.}\)</span></p>
+<p>Integrating <span class="process-math">\(f_x\)</span> in this example gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{\partial f}{\partial x}\, dx = \int (3x^2y+2x)\, dx = x^3y+x^2 + C(y)\text{.}
+\end{equation*}
+</div>
+<p>Likewise, integrating <span class="process-math">\(f_y\)</span> with respect to <span class="process-math">\(y\)</span> gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{\partial f}{\partial y}\, dy = \int( x^3+1)\, dy = x^3y+ y + C(x)\text{.}
+\end{equation*}
+</div>
+<p>These two results should be equal with appropriate choices of <span class="process-math">\(C(x)\)</span> and <span class="process-math">\(C(y)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x^3y+x^2 + C(y) = x^3y+ y + C(x) \Rightarrow C(x) = x^2  \text{ and }  C(y) = y\text{.}
+\end{equation*}
+</div>
+<p>We find <span class="process-math">\(f(x,y) = x^3y+x^2+y\text{,}\)</span> a potential function of <span class="process-math">\(\vec F\text{.}\)</span> (If <span class="process-math">\(\vec F\)</span> were not conservative, no choice of <span class="process-math">\(C(x)\)</span> and <span class="process-math">\(C(y)\)</span> would give equality.)</p>
+<p>By the Fundamental Theorem of Line Integrals, regardless of the path from <span class="process-math">\(A\)</span> to <span class="process-math">\(B\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_A^B\vec F\cdot d\vec r \amp = f(B) - f(A)\\
+\amp = f(1,4) - f(0,1)\\
+\amp = 9 - 1 = 8\text{.}
+\end{align*}
+</div>
+<p>To illustrate the validity of the Fundamental Theorem, we pick a path from <span class="process-math">\(A\)</span> to <span class="process-math">\(B\text{.}\)</span> The line between these two points would be simple to construct; we choose a slightly more complicated path by choosing the parabola <span class="process-math">\(y = x^2+2x+1\text{.}\)</span> This leads to the parametrization <span class="process-math">\(\vrt = \la t, t^2+2t+1\ra\text{,}\)</span> <span class="process-math">\(0\leq t\leq 1\text{,}\)</span> with <span class="process-math">\(\vrp(t) = \la t, 2t+2\ra\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_C \vec F\cdot d\vec r \amp = \int_C\vec F\big(\vrt\big)\cdot\vrp(t)\, dt\\
+\amp = \int_0^1\la 3(t)(t^2+2t+1)+2t, t^3+1\ra\cdot\la t,2t+2\ra\, dt\\
+\amp = \int_0^1 \big(5t^4+8t^3+3t^2+4t+2\big)\, dt\\
+\amp = \big(t^5+2t^4+t^3+2t^2+2t\big)\Big|_0^1\\
+\amp = 8\text{,}
+\end{align*}
+</div>
+<p class="continuation">which matches our previous result.</p>
+</div></body>
+</html>

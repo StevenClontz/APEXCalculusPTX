@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:30:49Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX An Introduction to Vectors</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_space_coord.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_vectors.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_dot_product.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_space_coord.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_vectors.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_dot_product.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="active">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_vector_intro"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">11.2</span> <span class="title">An Introduction to Vectors</span>
+</h2>
+<p id="p-10858">Many quantities we think about daily can be described by a single number: temperature, speed, cost, weight and height. There are also many other concepts we encounter daily that cannot be described with just one number. For instance, a weather forecaster often describes wind with its speed and its direction (“<span class="process-math">\(\ldots\)</span> with winds from the southeast gusting up to 30 mph <span class="process-math">\(\ldots\)</span>”). When applying a force, we are concerned with both the magnitude and direction of that force. In both of these examples, <em class="emphasis">direction</em> is important. Because of this, we study <em class="emphasis">vectors</em>, mathematical objects that convey both magnitude and direction information.</p>
+<figure class="figure figure-like" id="vid-vectors-intro-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-417" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/_1mYILsTF2U?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_vector_intro.html" class="internal" title="Section 11.2: An Introduction to Vectors">Section 11.2</a></figcaption></figure><p id="p-10859">One “bare-bones” definition of a vector is based on what we wrote above: “a vector is a mathematical object with magnitude and direction parameters.” This definition leaves much to be desired, as it gives no indication as to how such an object is to be used. Several other definitions exist; we choose here a definition rooted in a geometric visualization of vectors. It is very simplistic but readily permits further investigation.</p>
+<article class="definition definition-like" id="def_vector"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Vector.</span>
+</h3>
+<p id="p-10860">A <dfn class="terminology">vector</dfn> is a directed line segment.</p>
+<p id="p-10861">Given points <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> (either in the plane or in space), we denote with <span class="process-math">\(\overrightarrow{PQ}\)</span> the vector <dfn class="terminology">from</dfn> <span class="process-math">\(P\)</span> <dfn class="terminology">to</dfn> <span class="process-math">\(Q\text{.}\)</span> The point <span class="process-math">\(P\)</span> is said to be the <dfn class="terminology">initial point</dfn> of the vector, and the point <span class="process-math">\(Q\)</span> is the <dfn class="terminology">terminal point</dfn>.</p>
+<p id="p-10862">The <dfn class="terminology">magnitude</dfn>, <dfn class="terminology">length</dfn> or <dfn class="terminology">norm</dfn> of <span class="process-math">\(\overrightarrow{PQ}\)</span> is the length of the line segment <span class="process-math">\(\overline{PQ}\text{:}\)</span> <span class="process-math">\(\norm{\overrightarrow{PQ}} = \norm{\overline{PQ}}\text{.}\)</span></p>
+<p id="p-10863">Two vectors are <dfn class="terminology">equal</dfn> if they have the same magnitude and direction. </p></article><p id="p-10864"><a href="" class="xref" data-knowl="./knowl/fig_vectintro1.html" title="Figure 11.2.3">Figure 11.2.3</a> shows multiple instances of the same vector. Each directed line segment has the same direction and length (magnitude), hence each is the same vector.</p>
+<figure class="figure figure-like" id="fig_vectintro1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_vectintro1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.3<span class="period">.</span></span><span class="space"> </span>Drawing the same vector with different initial points</figcaption></figure><p id="p-10865">We use <span class="process-math">\(\mathbb{R}^2\)</span> (pronounced “r two”) to represent all the vectors in the plane, and use <span class="process-math">\(\mathbb{R}^3\)</span> (pronounced “r three”) to represent all the vectors in space. </p>
+<figure class="figure figure-like" id="fig_vectintro2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_vectintro2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.4<span class="period">.</span></span><span class="space"> </span>Illustrating how equal vectors have the same displacement</figcaption></figure><p id="p-10866">Consider the vectors <span class="process-math">\(\overrightarrow{PQ}\)</span> and <span class="process-math">\(\overrightarrow{RS}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_vectintro2.html" title="Figure 11.2.4">Figure 11.2.4</a>. The vectors look to be equal; that is, they seem to have the same length and direction. Indeed, they are. Both vectors move 2 units to the right and 1 unit up from the initial point to reach the terminal point. One can analyze this movement to measure the magnitude of the vector, and the movement itself gives direction information (one could also measure the slope of the line passing through <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> or <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span>). Since they have the same length and direction, these two vectors are equal.</p>
+<p id="p-10867">This demonstrates that inherently all we care about is <em class="emphasis">displacement</em>; that is, how far in the <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and possibly <span class="process-math">\(z\)</span> directions the terminal point is from the initial point. Both the vectors <span class="process-math">\(\overrightarrow{PQ}\)</span> and <span class="process-math">\(\overrightarrow{RS}\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_vectintro2.html" title="Figure 11.2.4">Figure 11.2.4</a> have an <span class="process-math">\(x\)</span>-displacement of 2 and a <span class="process-math">\(y\)</span>-displacement of 1. This suggests a standard way of describing vectors in the plane. A vector whose <span class="process-math">\(x\)</span>-displacement is <span class="process-math">\(a\)</span> and whose <span class="process-math">\(y\)</span>-displacement is <span class="process-math">\(b\)</span> will have terminal point <span class="process-math">\((a,b)\)</span> when the initial point is the origin, <span class="process-math">\((0,0)\text{.}\)</span> This leads us to a definition of a standard and concise way of referring to vectors.</p>
+<article class="definition definition-like" id="def_vector_component"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Component Form of a Vector.</span>
+</h3>
+<ol id="p-10868" class="decimal">
+<li id="li-2196"><p id="p-10869">The <em class="emphasis">component form</em> of a vector <span class="process-math">\(\vec{v}\)</span> in <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> whose terminal point is <span class="process-math">\((a,b)\)</span> when its initial point is <span class="process-math">\((0,0)\text{,}\)</span> is <span class="process-math">\(\la a,b\ra\text{.}\)</span></p></li>
+<li id="li-2197"><p id="p-10870">The <em class="emphasis">component form</em> of a vector <span class="process-math">\(\vec{v}\)</span> in <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> whose terminal point is <span class="process-math">\((a,b,c)\)</span> when its initial point is <span class="process-math">\((0,0,0)\text{,}\)</span> is <span class="process-math">\(\la a,b,c\ra\text{.}\)</span></p></li>
+</ol>
+<p id="p-10871">The numbers <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\)</span> (and <span class="process-math">\(c\text{,}\)</span> respectively) are the <dfn class="terminology">components</dfn> of <span class="process-math">\(\vec v\text{.}\)</span> </p></article><p id="p-10872">It follows from the definition that the component form of the vector <span class="process-math">\(\overrightarrow{PQ}\text{,}\)</span> where <span class="process-math">\(P=(x_1,y_1)\)</span> and <span class="process-math">\(Q=(x_2,y_2)\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\overrightarrow{PQ} = \la x_2-x_1, y_2-y_1\ra;
+\end{equation*}
+</div>
+<p class="continuation">in space, where <span class="process-math">\(P=(x_1,y_1,z_1)\)</span> and <span class="process-math">\(Q=(x_2,y_2,z_2)\text{,}\)</span> the component form of <span class="process-math">\(\overrightarrow{PQ}\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\overrightarrow{PQ} = \la x_2-x_1, y_2-y_1,z_2-z_1\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-10873">We practice using this notation in the following example.</p>
+<article class="example example-like" id="ex_vect1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Using component form notation for vectors.</span>
+</h3>
+<ol id="p-10874" class="decimal">
+<li id="li-2198"><p id="p-10875">Sketch the vector <span class="process-math">\(\vec v=\la 2,-1\ra\)</span> starting at <span class="process-math">\(P=(3,2)\)</span> and find its magnitude.</p></li>
+<li id="li-2199"><p id="p-10876">Find the component form of the vector <span class="process-math">\(\vec w\)</span> whose initial point is <span class="process-math">\(R=(-3,-2)\)</span> and whose terminal point is <span class="process-math">\(S=(-1,2)\text{.}\)</span></p></li>
+<li id="li-2200"><p id="p-10877">Sketch the vector <span class="process-math">\(\vec u = \la 2,-1,3\ra\)</span> starting at the point <span class="process-math">\(Q = (1,1,1)\)</span> and find its magnitude.</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-933" id="solution-933"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-933"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vectors-intro-sketch" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/w1MzWJzoyGg?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-10878" class="decimal">
+<li id="li-2201">
+<p id="p-10879">Using <span class="process-math">\(P\)</span> as the initial point, we move 2 units in the positive <span class="process-math">\(x\)</span>-direction and <span class="process-math">\(-1\)</span> units in the positive <span class="process-math">\(y\)</span>-direction to arrive at the terminal point <span class="process-math">\(P\,'=(5,1)\text{,}\)</span> as drawn in <a href="" class="xref" data-knowl="./knowl/fig_vect1a.html" title="Figure 11.2.7.(a)">Figure 11.2.7.(a)</a>. The magnitude of <span class="process-math">\(\vec v\)</span> is determined directly from the component form:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_vect1a.html">
+\begin{equation*}
+\norm{\vec v} =\sqrt{2^2+(-1)^2} = \sqrt{5}\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig_vect1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vect1a"><img src="generated/latex-image/img_vect1a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vect1b_3D"><div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_vect1b_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vect1b_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.7<span class="period">.</span></span><span class="space"> </span>Graphing vectors in <a href="" class="xref" data-knowl="./knowl/ex_vect1.html" title="Example 11.2.6: Using component form notation for vectors">Example 11.2.6</a></figcaption></figure>
+</li>
+<li id="li-2202">
+<p id="p-10880">Using the note following <a href="" class="xref" data-knowl="./knowl/def_vector_component.html" title="Definition 11.2.5: Component Form of a Vector">Definition 11.2.5</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_vector_component.html ./knowl/fig_vect1a.html">
+\begin{equation*}
+\overrightarrow{RS} = \la -1-(-3), 2-(-2)\ra = \la 2,4\ra\text{.}
+\end{equation*}
+</div>
+<p class="continuation">One can readily see from <a href="" class="xref" data-knowl="./knowl/fig_vect1a.html" title="Figure 11.2.7.(a)">Figure 11.2.7.(a)</a> that the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-displacement of <span class="process-math">\(\overrightarrow{RS}\)</span> is 2 and 4, respectively, as the component form suggests.</p>
+</li>
+<li id="li-2203">
+<p id="p-10881">Using <span class="process-math">\(Q\)</span> as the initial point, we move 2 units in the positive <span class="process-math">\(x\)</span>-direction, <span class="process-math">\(-1\)</span> unit in the positive <span class="process-math">\(y\)</span>-direction, and 3 units in the positive <span class="process-math">\(z\)</span>-direction to arrive at the terminal point <span class="process-math">\(Q' = (3,0,4)\text{,}\)</span> illustrated in <a href="" class="xref" data-knowl="./knowl/fig_vect1b_3D.html" title="Figure 11.2.7.(b)">Figure 11.2.7.(b)</a>. The magnitude of <span class="process-math">\(\vec u\)</span> is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_vect1b_3D.html">
+\begin{equation*}
+\norm{\vec u} = \sqrt{2^2+(-1)^2+3^2} = \sqrt{14}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article><p id="p-10882">Now that we have defined vectors, and have created a nice notation by which to describe them, we start considering how vectors interact with each other. That is, we define an <em class="emphasis">algebra</em> on vectors.</p>
+<article class="definition definition-like" id="def_vector_algebra"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Vector Algebra.</span>
+</h3>
+<ol id="p-10883" class="decimal">
+<li id="li-2204">
+<p id="p-10884">Let <span class="process-math">\(\vec u = \la u_1,u_2\ra\)</span> and <span class="process-math">\(\vec v = \la v_1,v_2\ra\)</span> be vectors in <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> and let <span class="process-math">\(c\)</span> be a scalar. </p>
+<ol id="p-10885" class="lower-alpha">
+<li id="li-2205">
+<p id="p-10886">The addition, or sum, of the vectors <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\)</span> is the vector</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec u+\vec v = \la u_1+v_1, u_2+v_2\ra\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-2206">
+<p id="p-10887">The scalar product of <span class="process-math">\(c\)</span> and <span class="process-math">\(\vec v\)</span> is the vector</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c\vec v = c\la v_1,v_2\ra = \la cv_1,cv_2\ra\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+</li>
+<li id="li-2207">
+<p id="p-10888">Let <span class="process-math">\(\vec u = \la u_1,u_2,u_3\ra\)</span> and <span class="process-math">\(\vec v = \la v_1,v_2,v_3\ra\)</span> be vectors in <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> and let <span class="process-math">\(c\)</span> be a scalar.</p>
+<ol id="p-10889" class="lower-alpha">
+<li id="li-2208">
+<p id="p-10890">The addition, or sum, of the vectors <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\)</span> is the vector</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec u+\vec v = \la u_1+v_1, u_2+v_2, u_3+v_3\ra\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-2209">
+<p id="p-10891">The scalar product of <span class="process-math">\(c\)</span> and <span class="process-math">\(\vec v\)</span> is the vector</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c\vec v = c\la v_1,v_2,v_3\ra = \la cv_1,cv_2,cv_3\ra\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+</li>
+</ol></article><p id="p-10892">In short, we say addition and scalar multiplication are computed “component-wise.”</p>
+<figure class="figure figure-like" id="vid-vectors-intro-algebra"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-419" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=F3Y0srvt9lk,eWCNYGeDYVA&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.9<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/def_vector_algebra.html" title="Definition 11.2.8: Vector Algebra">Definition 11.2.8</a> (2 videos)</figcaption></figure><article class="example example-like" id="ex_vect2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Adding vectors.</span>
+</h3>
+<p id="p-10893">Sketch the vectors <span class="process-math">\(\vec u = \la1,3\ra\text{,}\)</span> <span class="process-math">\(\vec v = \la 2,1\ra\)</span> and <span class="process-math">\(\vec u+\vec v\)</span> all with initial point at the origin.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-934" id="solution-934"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-934"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vectors-intro-addition" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/3MSwQJq_3s0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-10894">We first compute <span class="process-math">\(\vec u +\vec v\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-480">
+\begin{align*}
+\vec u+\vec v \amp = \la 1,3\ra + \la 2,1\ra\\
+\amp = \la 3,4\ra\text{.}
+\end{align*}
+</div>
+<figure class="figure figure-like" id="fig_vect2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_vect2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.11<span class="period">.</span></span><span class="space"> </span>Graphing the sum of vectors in <a href="" class="xref" data-knowl="./knowl/ex_vect2.html" title="Example 11.2.10: Adding vectors">Example 11.2.10</a></figcaption></figure><p id="p-10895">These are all sketched in <a href="" class="xref" data-knowl="./knowl/fig_vect2.html" title="Figure 11.2.11">Figure 11.2.11</a>.</p>
+</div></div>
+</div></article><p id="p-10896">As vectors convey magnitude and direction information, the sum of vectors also convey length and magnitude information. Adding <span class="process-math">\(\vec u+\vec v\)</span> suggests the following idea:</p>
+<blockquote class="blockquote" id="blockquote-8"><p id="p-10897">“Starting at an initial point, go out <span class="process-math">\(\vec u\text{,}\)</span> then go out <span class="process-math">\(\vec v\text{.}\)</span>”</p></blockquote>
+<p id="p-10898">This idea is sketched in <a href="" class="xref" data-knowl="./knowl/fig_vect2b.html" title="Figure 11.2.12">Figure 11.2.12</a>, where the initial point of <span class="process-math">\(\vec v\)</span> is the terminal point of <span class="process-math">\(\vec u\text{.}\)</span> This is known as the “Head to Tail Rule” of adding vectors. Vector addition is very important. For instance, if the vectors <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\)</span> represent forces acting on a body, the sum <span class="process-math">\(\vec u+\vec v\)</span> gives the resulting force. Because of various physical applications of vector addition, the sum <span class="process-math">\(\vec u+\vec v\)</span> is often referred to as the <em class="emphasis">resultant vector</em>, or just the “resultant.” </p>
+<figure class="figure figure-like" id="fig_vect2b"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_vect2b.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.12<span class="period">.</span></span><span class="space"> </span>Illustrating how to add vectors using the Head to Tail Rule and Parallelogram Law</figcaption></figure><p id="p-10899">Analytically, it is easy to see that <span class="process-math">\(\vec u+\vec v = \vec v+\vec u\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_vect2b.html" title="Figure 11.2.12">Figure 11.2.12</a> also gives a graphical representation of this, using gray vectors. Note that the vectors <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\text{,}\)</span> when arranged as in the figure, form a parallelogram. Because of this, the Head to Tail Rule is also known as the Parallelogram Law: the vector <span class="process-math">\(\vec u+\vec v\)</span> is defined by forming the parallelogram defined by the vectors <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\text{;}\)</span> the initial point of <span class="process-math">\(\vec u+\vec v\)</span> is the common initial point of parallelogram, and the terminal point of the sum is the common terminal point of the parallelogram.</p>
+<p id="p-10900">While not illustrated here, the Head to Tail Rule and Parallelogram Law hold for vectors in <span class="process-math">\(\mathbb{R}^3\)</span> as well.</p>
+<p id="p-10901">It follows from the properties of the real numbers and <a href="" class="xref" data-knowl="./knowl/def_vector_algebra.html" title="Definition 11.2.8: Vector Algebra">Definition 11.2.8</a> that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_vector_algebra.html">
+\begin{equation*}
+\vec u-\vec v = \vec u + (-1)\vec v\text{.}
+\end{equation*}
+</div>
+<p id="p-10902">The Parallelogram Law gives us a good way to visualize this subtraction. We demonstrate this in the following example.</p>
+<article class="example example-like" id="ex_vect4"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.13</span><span class="period">.</span><span class="space"> </span><span class="title">Vector Subtraction.</span>
+</h3>
+<p id="p-10903">Let <span class="process-math">\(\vec u = \la 3,1\ra\)</span> and <span class="process-math">\(\vec v=\la 1,2\ra\text{.}\)</span> Compute and sketch <span class="process-math">\(\vec u-\vec v\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-935" id="solution-935"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-935"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vectors-intro-subtraction" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/a_qRwTkQXYQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-10904">The computation of <span class="process-math">\(\vec u-\vec v\)</span> is straightforward, and we show all steps below. Usually the formal step of multiplying by <span class="process-math">\((-1)\)</span> is omitted and we “just subtract.”</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-481">
+\begin{align*}
+\vec u-\vec v \amp = \vec u + (-1)\vec v\\
+\amp = \la 3,1\ra + \la -1,-2\ra\\
+\amp = \la 2,-1\ra\text{.}
+\end{align*}
+</div>
+<figure class="figure figure-like" id="fig_vect4"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_vect4.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.14<span class="period">.</span></span><span class="space"> </span>Illustrating how to subtract vectors graphically</figcaption></figure><p id="p-10905"><a href="" class="xref" data-knowl="./knowl/fig_vect4.html" title="Figure 11.2.14">Figure 11.2.14</a> illustrates, using the Head to Tail Rule, how the subtraction can be viewed as the sum <span class="process-math">\(\vec u + (-\vec v)\text{.}\)</span> The figure also illustrates how <span class="process-math">\(\vec u-\vec v\)</span> can be obtained by looking only at the terminal points of <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\)</span> (when their initial points are the same).</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_vect3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.15</span><span class="period">.</span><span class="space"> </span><span class="title">Scaling vectors.</span>
+</h3>
+<ol id="p-10906" class="decimal">
+<li id="li-2210"><p id="p-10907">Sketch the vectors <span class="process-math">\(\vec v = \la 2,1\ra\)</span> and <span class="process-math">\(2\vec v\)</span> with initial point at the origin.</p></li>
+<li id="li-2211"><p id="p-10908">Compute the magnitudes of <span class="process-math">\(\vec v\)</span> and <span class="process-math">\(2\vec v\text{.}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-936" id="solution-936"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-936"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vectors-intro-scalarmult" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/-zvqs7hveXc?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-10909" class="decimal">
+<li id="li-2212">
+<p id="p-10910">We compute <span class="process-math">\(2\vec v\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-482">
+\begin{align*}
+2\vec v \amp = 2\la 2,1\ra\\
+\amp = \la 4,2\ra\text{.}
+\end{align*}
+</div>
+<figure class="figure figure-like" id="fig_vect3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_vect3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.16<span class="period">.</span></span><span class="space"> </span>Graphing vectors <span class="process-math">\(\vec v\)</span> and <span class="process-math">\(2\vec v\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_vect3.html" title="Example 11.2.15: Scaling vectors">Example 11.2.15</a></figcaption></figure><p id="p-10911">Both <span class="process-math">\(\vec v\)</span> and <span class="process-math">\(2\vec v\)</span> are sketched in <a href="" class="xref" data-knowl="./knowl/fig_vect3.html" title="Figure 11.2.16">Figure 11.2.16</a>. Make note that <span class="process-math">\(2\vec v\)</span> does not start at the terminal point of <span class="process-math">\(\vec v\text{;}\)</span> rather, its initial point is also the origin.</p>
+</li>
+<li id="li-2213">
+<p id="p-10912">The figure suggests that <span class="process-math">\(2\vec v\)</span> is twice as long as <span class="process-math">\(\vec v\text{.}\)</span> We compute their magnitudes to confirm this.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-483">
+\begin{align*}
+\norm{\vec v} \amp = \sqrt{2^2+1^2}\\
+\amp = \sqrt{5}.\\
+\norm{2\vec v}\amp =\sqrt{4^2+2^2}\\
+\amp = \sqrt{20}\\
+\amp = \sqrt{4\cdot 5} = 2\sqrt{5}\text{.}
+\end{align*}
+</div>
+<p class="continuation">As we suspected, <span class="process-math">\(2\vec v\)</span> is twice as long as <span class="process-math">\(\vec v\text{.}\)</span></p>
+</li>
+</ol>
+</div></div>
+</div></article><p id="p-10913">The <em class="emphasis">zero vector</em> is the vector whose initial point is also its terminal point. It is denoted by <span class="process-math">\(\vec 0\text{.}\)</span> Its component form, in <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> is <span class="process-math">\(\la 0,0\ra\text{;}\)</span> in <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> it is <span class="process-math">\(\la 0,0,0\ra\text{.}\)</span> Usually the context makes is clear whether <span class="process-math">\(\vec 0\)</span> is referring to a vector in the plane or in space.</p>
+<p id="p-10914">Our examples have illustrated key principles in vector algebra: how to add and subtract vectors and how to multiply vectors by a scalar. The following theorem states formally the properties of these operations.</p>
+<article class="theorem theorem-like" id="thm_vector_properties"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.2.17</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Vector Operations.</span>
+</h3>
+<p id="p-10915">The following are true for all scalars <span class="process-math">\(c\)</span> and <span class="process-math">\(d\text{,}\)</span> and for all vectors <span class="process-math">\(\vec u\text{,}\)</span> <span class="process-math">\(\vec v\)</span> and <span class="process-math">\(\vec w\text{,}\)</span> where <span class="process-math">\(\vec u\text{,}\)</span> <span class="process-math">\(\vec v\)</span> and <span class="process-math">\(\vec w\)</span> are all in <span class="process-math">\(\mathbb{R}^2\)</span> or where <span class="process-math">\(\vec u\text{,}\)</span> <span class="process-math">\(\vec v\)</span> and <span class="process-math">\(\vec w\)</span> are all in <span class="process-math">\(\mathbb{R}^3\text{:}\)</span> </p>
+<ol id="p-10916" class="decimal">
+<li id="li-2214"><p id="p-10917"><span class="process-math">\(\vec u+\vec v = \vec v+\vec u\)</span> Commutative Property</p></li>
+<li id="li-2215"><p id="p-10918"><span class="process-math">\((\vec u+\vec v)+\vec w = \vec u+(\vec v+\vec w)\)</span> Associative Property</p></li>
+<li id="li-2216"><p id="p-10919"><span class="process-math">\(\vec v+\vec 0 = \vec v\)</span> Additive Identity</p></li>
+<li id="li-2217"><p id="p-10920"><span class="process-math">\(\displaystyle (cd)\vec v= c(d\vec v)\)</span></p></li>
+<li id="li-2218"><p id="p-10921"><span class="process-math">\(c(\vec u+\vec v) = c\vec u+c\vec v\)</span> Distributive Property</p></li>
+<li id="li-2219"><p id="p-10922"><span class="process-math">\((c+d)\vec v = c\vec v+d\vec v\)</span> Distributive Property</p></li>
+<li id="li-2220"><p id="p-10923"><span class="process-math">\(\displaystyle 0\vec v = \vec 0\)</span></p></li>
+<li id="thm_norm_prop"><p id="p-10924"><span class="process-math">\(\displaystyle \norm{c\vec v} = \abs{c}\cdot\norm{\vec v}\)</span></p></li>
+<li id="thm_zero_norm"><p id="p-10925"><span class="process-math">\(\vnorm u = 0\)</span> if, and only if, <span class="process-math">\(\vecu = \vec 0\text{.}\)</span></p></li>
+</ol></article><figure class="figure figure-like" id="vid-vectors-intro-normprop"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-423" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/oixzQ2EGYPM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.18<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_zero_norm.html" title="Item 9">Part</a> of <a href="" class="xref" data-knowl="./knowl/thm_vector_properties.html" title="Theorem 11.2.17: Properties of Vector Operations">Theorem 11.2.17</a></figcaption></figure><p id="p-10926">As stated before, each nonzero vector <span class="process-math">\(\vec v\)</span> conveys magnitude and direction information. We have a method of extracting the magnitude, which we write as <span class="process-math">\(\norm{\vec v}\text{.}\)</span> <em class="emphasis">Unit vectors</em> are a way of extracting just the direction information from a vector.</p>
+<article class="definition definition-like" id="def_unit_vector"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.19</span><span class="period">.</span><span class="space"> </span><span class="title">Unit Vector.</span>
+</h3>
+<p id="p-10927">A <dfn class="terminology">unit vector</dfn> is a vector <span class="process-math">\(\vec v\)</span> with a magnitude of 1; that is, </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\norm{\vec v}=1\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="vid-vectors-intro-unitvec"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-424" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/6kKUB3OSurs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.20<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/def_unit_vector.html" title="Definition 11.2.19: Unit Vector">Definition 11.2.19</a></figcaption></figure><p id="p-10928">Consider this scenario: you are given a vector <span class="process-math">\(\vec v\)</span> and are told to create a vector of length 10 in the direction of <span class="process-math">\(\vec v\text{.}\)</span> How does one do that? If we knew that <span class="process-math">\(\vec u\)</span> was the unit vector in the direction of <span class="process-math">\(\vec v\text{,}\)</span> the answer would be easy: <span class="process-math">\(10\vec u\text{.}\)</span> So how do we find <span class="process-math">\(\vec u\)</span> ?</p>
+<p id="p-10929"><a href="" class="xref" data-knowl="./knowl/thm_norm_prop.html" title="Item 8">Property 8</a> of <a href="" class="xref" data-knowl="./knowl/thm_vector_properties.html" title="Theorem 11.2.17: Properties of Vector Operations">Theorem 11.2.17</a> holds the key. If we divide <span class="process-math">\(\vec v\)</span> by its magnitude, it becomes a vector of length 1. Consider:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_norm_prop.html ./knowl/thm_vector_properties.html" id="md-484">
+\begin{align*}
+\snorm{\frac{1}{\norm{\vec v}}\vec v} \amp = \frac{1}{\norm{\vec v}}\norm{\vec v} \amp  \text{ (we can pull out \(\ds \frac{1}{\norm{\vec v}}\) as it is a positive scalar)}\\
+\amp = 1\text{.}
+\end{align*}
+</div>
+<p id="p-10930">So the vector of length 10 in the direction of <span class="process-math">\(\vec v\)</span> is <span class="process-math">\(\ds 10\frac{1}{\norm{\vec v}}\vec v\text{.}\)</span> An example will make this more clear.</p>
+<article class="example example-like" id="ex_vect5"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.21</span><span class="period">.</span><span class="space"> </span><span class="title">Using Unit Vectors.</span>
+</h3>
+<p id="p-10931">Let <span class="process-math">\(\vec v= \la 3,1\ra\)</span> and let <span class="process-math">\(\vec w = \la 1,2,2\ra\text{.}\)</span></p>
+<ol id="p-10932" class="decimal">
+<li id="li-2223"><p id="p-10933">Find the unit vector in the direction of <span class="process-math">\(\vec v\text{.}\)</span></p></li>
+<li id="li-2224"><p id="p-10934">Find the unit vector in the direction of <span class="process-math">\(\vec w\text{.}\)</span></p></li>
+<li id="li-2225"><p id="p-10935">Find the vector in the direction of <span class="process-math">\(\vec v\)</span> with magnitude 5.</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-937" id="solution-937"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-937"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vectors-intro-unitvec-eg" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/B9OV0Dja6IY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-10936" class="decimal">
+<li id="li-2226">
+<p id="p-10937">We find <span class="process-math">\(\norm{\vec v} = \sqrt{10}\text{.}\)</span> So the unit vector <span class="process-math">\(\vec u\)</span> in the direction of <span class="process-math">\(\vec v\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec u = \frac{1}{\sqrt{10}}\vec v = \la \frac{3}{\sqrt{10}},\frac{1}{\sqrt{10}}\ra\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-2227">
+<p id="p-10938">We find <span class="process-math">\(\norm{\vec w} = 3\text{,}\)</span> so the unit vector <span class="process-math">\(\vec z\)</span> in the direction of <span class="process-math">\(\vec w\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec u = \frac13\vec w = \la \frac13,\frac23,\frac23\ra\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-2228">
+<p id="p-10939">To create a vector with magnitude 5 in the direction of <span class="process-math">\(\vec v\text{,}\)</span> we multiply the unit vector <span class="process-math">\(\vec u\)</span> by 5. Thus <span class="process-math">\(5\vec u = \la 15/\sqrt{10},5/\sqrt{10}\ra\)</span> is the vector we seek. This is sketched in <a href="" class="xref" data-knowl="./knowl/fig_vect5.html" title="Figure 11.2.22">Figure 11.2.22</a>.</p>
+<figure class="figure figure-like" id="fig_vect5"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_vect5.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.22<span class="period">.</span></span><span class="space"> </span>Graphing vectors in <a href="" class="xref" data-knowl="./knowl/ex_vect5.html" title="Example 11.2.21: Using Unit Vectors">Example 11.2.21</a>. All vectors shown have their initial point at the origin</figcaption></figure>
+</li>
+</ol>
+</div></div>
+</div></article><p id="p-10940">The basic formation of the unit vector <span class="process-math">\(\vec u\)</span> in the direction of a vector <span class="process-math">\(\vec v\)</span> leads to a interesting equation. It is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec v = \norm{\vec v}\frac{1}{\norm{\vec v}}\vec v\text{.}
+\end{equation*}
+</div>
+<p id="p-10941">We rewrite the equation with parentheses to make a point:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec v = \underbrace{\norm{\vec v}}_{\text{magnitude } }\cdot\underbrace{\left(\frac{1}{\norm{\vec v}}\vec v\right)}_{\text{direction } }\text{.}
+\end{equation*}
+</div>
+<p id="p-10942">This equation illustrates the fact that a nonzero vector has both magnitude and direction, where we view a unit vector as supplying <em class="emphasis">only</em> direction information. Identifying unit vectors with direction allows us to define <em class="emphasis">parallel vectors</em>.</p>
+<article class="definition definition-like" id="def_parallel_vectors"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.23</span><span class="period">.</span><span class="space"> </span><span class="title">Parallel Vectors.</span>
+</h3>
+<ol id="p-10943" class="decimal">
+<li id="li-2229"><p id="p-10944">Unit vectors <span class="process-math">\(\vec u_1\)</span> and <span class="process-math">\(\vec u_2\)</span> are <em class="emphasis">parallel</em> if <span class="process-math">\(\vec u_1 = \pm \vec u_2\text{.}\)</span> </p></li>
+<li id="li-2230"><p id="p-10945">Nonzero vectors <span class="process-math">\(\vec v_1\)</span> and <span class="process-math">\(\vec v_2\)</span> are <em class="emphasis">parallel</em> if their respective unit vectors are parallel.</p></li>
+</ol></article><figure class="figure figure-like" id="vid-vectors-intro-parallel"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-426" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/TZxf7vV1iuk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.24<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/def_parallel_vectors.html" title="Definition 11.2.23: Parallel Vectors">Definition 11.2.23</a></figcaption></figure><p id="p-10946">It is equivalent to say that vectors <span class="process-math">\(\vec v_1\)</span> and <span class="process-math">\(\vec v_2\)</span> are parallel if there is a scalar <span class="process-math">\(c\neq 0\)</span> such that <span class="process-math">\(\vec v_1 = c\vec v_2\)</span> (see marginal note).</p>
+<aside class="aside aside-like" id="aside-def-orthogonal"><h3 class="heading"><span class="title">Direction and the zero vector.</span></h3>
+<p id="p-10947"><span class="process-math">\(\vec 0\)</span> is directionless; because <span class="process-math">\(\vnorm{0}=0\text{,}\)</span> there is no unit vector in the “direction” of <span class="process-math">\(\vec 0\text{.}\)</span></p>
+<p id="p-10948">Some texts define two vectors as being parallel if one is a scalar multiple of the other. By this definition, <span class="process-math">\(\vec 0\)</span> is parallel to all vectors as <span class="process-math">\(\vec 0 = 0\vec v\)</span> for all <span class="process-math">\(\vec v\text{.}\)</span></p>
+<p id="p-10949">We define what it means for two vectors to be perpendicular in <a href="" class="xref" data-knowl="./knowl/def_orthogonal.html" title="Definition 11.3.14: Orthogonal">Definition 11.3.14</a>, which is written to exclude <span class="process-math">\(\vec 0\text{.}\)</span> It could be written to include <span class="process-math">\(\vec 0\text{;}\)</span> by such a definition, <span class="process-math">\(\vec 0\)</span> is perpendicular to all vectors. While counter-intuitive, it is mathematically sound to allow <span class="process-math">\(\vec 0\)</span> to be both parallel and perpendicular to all vectors.</p>
+<p id="p-10950">We prefer the given definition of parallel as it is grounded in the fact that unit vectors provide direction information. One may adopt the convention that <span class="process-math">\(\vec 0\)</span> is parallel to all vectors if they desire. (See also the <a href="" class="xref" data-knowl="./knowl/aside-cross-orthogonal.html" title="Aside: Parallel vectors and the cross product">aside</a> in <a href="sec_cross_product.html" class="internal" title="Section 11.4: The Cross Product">Section 11.4</a>.)</p></aside><p id="p-10951">If one graphed all unit vectors in <span class="process-math">\(\mathbb{R}^2\)</span> with the initial point at the origin, then the terminal points would all lie on the unit circle. Based on what we know from trigonometry, we can then say that the component form of all unit vectors in <span class="process-math">\(\mathbb{R}^2\)</span> is <span class="process-math">\(\la \cos(\theta) ,\sin(\theta) \ra\)</span> for some angle <span class="process-math">\(\theta\text{.}\)</span></p>
+<p id="p-10952">A similar construction in <span class="process-math">\(\mathbb{R}^3\)</span> shows that the terminal points all lie on the unit sphere. These vectors also have a particular component form, but its derivation is not as straightforward as the one for unit vectors in <span class="process-math">\(\mathbb{R}^2\text{.}\)</span> Important concepts about unit vectors are given in the following Key Idea.</p>
+<article class="insight remark-like" id="idea_unit_vectors"><h3 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">11.2.25</span><span class="period">.</span><span class="space"> </span><span class="title">Unit Vectors.</span>
+</h3>
+<ol id="p-10953" class="decimal">
+<li id="li-2231">
+<p id="p-10954">The unit vector in the direction of a nonzero vector <span class="process-math">\(\vec v\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec u = \frac1{\norm{\vec v}} \vec v\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-2232"><p id="p-10955">A vector <span class="process-math">\(\vec u\)</span> in <span class="process-math">\(\mathbb{R}^2\)</span> is a unit vector if, and only if, its component form is <span class="process-math">\(\la \cos\theta,\sin\theta\ra\)</span> for some angle <span class="process-math">\(\theta\text{.}\)</span> </p></li>
+<li id="li-2233"><p id="p-10956">A vector <span class="process-math">\(\vec u\)</span> in <span class="process-math">\(\mathbb{R}^3\)</span> is a unit vector if, and only if, its component form is <span class="process-math">\(\la \sin(\theta) \cos(\varphi) ,\sin(\theta) \sin(\varphi) ,\cos(\theta) \ra\)</span> for some angles <span class="process-math">\(\theta\)</span> and <span class="process-math">\(\varphi\text{.}\)</span></p></li>
+</ol></article><p id="p-10957">These formulas can come in handy in a variety of situations, especially the formula for unit vectors in the plane.</p>
+<article class="example example-like" id="ex_vect6"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.26</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Component Forces.</span>
+</h3>
+<p id="p-10958">Consider a weight of 50lb hanging from two chains, as shown in <a href="" class="xref" data-knowl="./knowl/fig_vect6.html" title="Figure 11.2.27">Figure 11.2.27</a>. One chain makes an angle of <span class="process-math">\(30^\circ\)</span> with the vertical, and the other an angle of <span class="process-math">\(45^\circ\text{.}\)</span> Find the force applied to each chain.</p>
+<figure class="figure figure-like" id="fig_vect6"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="generated/latex-image/img_vect6.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.27<span class="period">.</span></span><span class="space"> </span>A diagram of a weight hanging from 2 chains in <a href="" class="xref" data-knowl="./knowl/ex_vect6.html" title="Example 11.2.26: Finding Component Forces">Example 11.2.26</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-938" id="solution-938"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-938"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vectors-intro-weightchain" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/XxSQSU4Nvig?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-10959">Knowing that gravity is pulling the 50lb weight straight down, we can create a vector <span class="process-math">\(\vec F\)</span> to represent this force.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec F = 50\la 0,-1\ra = \la 0,-50\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-10960">We can view each chain as “pulling” the weight up, preventing it from falling. We can represent the force from each chain with a vector. Let <span class="process-math">\(\vec F_1\)</span> represent the force from the chain making an angle of <span class="process-math">\(30^\circ\)</span> with the vertical, and let <span class="process-math">\(\vec F_2\)</span> represent the force form the other chain. Convert all angles to be measured from the horizontal (as shown in <a href="" class="xref" data-knowl="./knowl/fig_vect6b.html" title="Figure 11.2.28">Figure 11.2.28</a>), and apply <a href="" class="xref" data-knowl="./knowl/idea_unit_vectors.html" title="Key Idea 11.2.25: Unit Vectors">Key Idea 11.2.25</a>. As we do not yet know the magnitudes of these vectors, (that is the problem at hand), we use <span class="process-math">\(m_1\)</span> and <span class="process-math">\(m_2\)</span> to represent them.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_vect6b.html ./knowl/idea_unit_vectors.html">
+\begin{equation*}
+\vec F_1 = m_1\la \cos(120^\circ) ,\sin(120^\circ) \ra
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_vect6b.html ./knowl/idea_unit_vectors.html">
+\begin{equation*}
+\vec F_2 = m_2\la \cos(45^\circ) ,\sin(45^\circ) \ra
+\end{equation*}
+</div>
+<p id="p-10961">As the weight is not moving, we know the sum of the forces is <span class="process-math">\(\vec 0\text{.}\)</span> This gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-485">
+\begin{align*}
+\vec F + \vec F_1 + \vec F_2 \amp  = \vec 0\\
+\la 0,-50\ra + m_1\la \cos(120^\circ) ,\sin(120^\circ) \ra + m_2\la \cos(45^\circ) ,\sin(45^\circ) \ra \amp =\vec 0
+\end{align*}
+</div>
+<figure class="figure figure-like" id="fig_vect6b"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_vect6b.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.28<span class="period">.</span></span><span class="space"> </span>A diagram of the force vectors from <a href="" class="xref" data-knowl="./knowl/ex_vect6.html" title="Example 11.2.26: Finding Component Forces">Example 11.2.26</a></figcaption></figure><p id="p-10962">The sum of the entries in the first component is 0, and the sum of the entries in the second component is also 0. This leads us to the following two equations:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-486">
+\begin{align*}
+m_1\cos(120^\circ) + m_2\cos(45^\circ) \amp =0\\
+m_1\sin(120^\circ) + m_2\sin(45^\circ) \amp =50
+\end{align*}
+</div>
+<p id="p-10963">This is a simple 2-equation, 2-unknown system of linear equations. We leave it to the reader to verify that the solution is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+m_1=50(\sqrt{3}-1) \approx 36.6;\qquad m_2=\frac{50\sqrt{2}}{1+\sqrt{3}} \approx 25.88\text{.}
+\end{equation*}
+</div>
+<p id="p-10964">It might seem odd that the sum of the forces applied to the chains is more than 50lb. We leave it to a physics class to discuss the full details, but offer this short explanation. Our equations were established so that the <em class="emphasis">vertical</em> components of each force sums to 50lb, thus supporting the weight. Since the chains are at an angle, they also pull against each other, creating an “additional” horizontal force while holding the weight in place.</p>
+</div></div>
+</div></article><p id="p-10965">Unit vectors were very important in the previous calculation; they allowed us to define a vector in the proper direction but with an unknown magnitude. Our computations were then computed component-wise. Because such calculations are often necessary, the <em class="emphasis">standard unit vectors</em> can be useful.</p>
+<article class="definition definition-like" id="def_standard_unit"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.2.29</span><span class="period">.</span><span class="space"> </span><span class="title">Standard Unit Vectors.</span>
+</h3>
+<ol id="p-10966" class="decimal">
+<li id="li-2234">
+<p id="p-10967">In <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> the standard unit vectors are </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec i = \la 1,0\ra  \text{ and }  \vec j = \la 0,1\ra\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-2235">
+<p id="p-10968">In <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> the standard unit vectors are</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec i = \la 1,0,0\ra  \text{ and }  \vec j = \la 0,1,0\ra  \text{ and }  \vec k = \la 0,0,1\ra\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="example example-like" id="ex_vect7"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.30</span><span class="period">.</span><span class="space"> </span><span class="title">Using standard unit vectors.</span>
+</h3>
+<ol id="p-10969" class="decimal">
+<li id="li-2236"><p id="p-10970">Rewrite <span class="process-math">\(\vec v = \la 2,-3\ra\)</span> using the standard unit vectors.</p></li>
+<li id="li-2237"><p id="p-10971">Rewrite <span class="process-math">\(\vec w = 4\vec i - 5\vec j +2\vec k\)</span> in component form.</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-939" id="solution-939"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-939"><div class="solution solution-like">
+<ol id="p-10972" class="decimal">
+<li id="li-2238"><p id="p-10973"><span class="process-math">\(\displaystyle \displaystyle \begin{aligned}\vec v \amp = \la 2,-3\ra \\
+\amp = \la 2,0\ra + \la 0,-3\ra \\
+\amp = 2\la 1,0\ra -3\la 0,1\ra\\
+\amp = 2\vec i - 3\vec j
+\end{aligned}\)</span></p></li>
+<li id="li-2239"><p id="p-10974"><span class="process-math">\(\displaystyle \displaystyle \begin{aligned}\vec w \amp = 4\vec i - 5\vec j +2\vec k\\
+\amp = \la 4,0,0\ra +\la 0,-5,0\ra + \la 0,0,2\ra \\
+\amp = \la 4,-5,2\ra
+\end{aligned}\)</span></p></li>
+</ol>
+<p id="p-10975">These two examples demonstrate that converting between component form and the standard unit vectors is rather straightforward. Many mathematicians prefer component form, and it is the preferred notation in this text. Many engineers prefer using the standard unit vectors, and many engineering text use that notation.</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_vect8"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.31</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Component Force.</span>
+</h3>
+<p id="p-10976">A weight of 25lb is suspended from a chain of length 2ft while a wind pushes the weight to the right with constant force of 5lb as shown in <a href="" class="xref" data-knowl="./knowl/fig_vect8.html" title="Figure 11.2.32">Figure 11.2.32</a>. What angle will the chain make with the vertical as a result of the wind's pushing? How much higher will the weight be?</p>
+<figure class="figure figure-like" id="fig_vect8"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="generated/latex-image/img_vect8.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.2.32<span class="period">.</span></span><span class="space"> </span>A figure of a weight being pushed by the wind in <a href="" class="xref" data-knowl="./knowl/ex_vect8.html" title="Example 11.2.31: Finding Component Force">Example 11.2.31</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-940" id="solution-940"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-940"><div class="solution solution-like">
+<p id="p-10977">The force of the wind is represented by the vector <span class="process-math">\(\vec F_w = 5\vec i\text{.}\)</span> The force of gravity on the weight is represented by <span class="process-math">\(\vec F_g = -25\vec j\text{.}\)</span> The direction and magnitude of the vector representing the force on the chain are both unknown. We represent this force with</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec F_c = m\la \cos(\varphi) ,\sin(\varphi) \ra = m\cos(\varphi) \, \vec i + m\sin(\varphi) \,\vec j
+\end{equation*}
+</div>
+<p class="continuation">for some magnitude <span class="process-math">\(m\)</span> and some angle with the horizontal <span class="process-math">\(\varphi\text{.}\)</span> (Note: <span class="process-math">\(\theta\)</span> is the angle the chain makes with the <em class="emphasis">vertical</em>; <span class="process-math">\(\varphi\)</span> is the angle with the <em class="emphasis">horizontal</em>.)</p>
+<p id="p-10978">As the weight is at equilibrium, the sum of the forces is <span class="process-math">\(\vec0\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-487">
+\begin{align*}
+\vec F_c + \vec F_w + \vec F_g \amp = \vec 0\\
+m\cos(\varphi) \, \vec i + m\sin(\varphi) \,\vec j + 5\vec i - 25\vec j \amp =\vec 0
+\end{align*}
+</div>
+<p id="p-10979">Thus the sum of the <span class="process-math">\(\vec i\)</span> and <span class="process-math">\(\vec j\)</span> components are 0, leading us to the following system of equations:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_vect8">
+\begin{equation}
+\begin{split}
+5+m\cos\varphi \amp = 0\\
+-25+m\sin\varphi \amp = 0
+\end{split}\tag{11.2.1}
+\end{equation}
+</div>
+<p id="p-10980">This is enough to determine <span class="process-math">\(\vec F_c\)</span> already, as we know <span class="process-math">\(m\cos(\varphi) = -5\)</span> and <span class="process-math">\(m\sin(\varphi) =25\text{.}\)</span> Thus <span class="process-math">\(F_c = \la -5,25\ra\text{.}\)</span> We can use this to find the magnitude <span class="process-math">\(m\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+m = \sqrt{(-5)^2+25^2} = 5\sqrt{26}\approx 25.5\text{ lb }\text{.}
+\end{equation*}
+</div>
+<p id="p-10981">We can then use either equality from Equation <a href="" class="xref" data-knowl="./knowl/eq_vect8.html" title="Equation 11.2.1">(11.2.1)</a> to solve for <span class="process-math">\(\varphi\text{.}\)</span> We choose the first equality as using arccosine will return an angle in the <span class="process-math">\(2\)</span>nd quadrant:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_vect8.html">
+\begin{equation*}
+5 + 5\sqrt{26}\cos(\varphi) = 0  \Rightarrow  \varphi = \cos^{-1}\left(\frac{-5}{5\sqrt{26}}\right) \approx 1.7682\approx 101.31^\circ\text{.}
+\end{equation*}
+</div>
+<p id="p-10982">Subtracting <span class="process-math">\(90^\circ\)</span> from this angle gives us an angle of <span class="process-math">\(11.31^\circ\)</span> with the vertical.</p>
+<p id="p-10983">We can now use trigonometry to find out how high the weight is lifted. The diagram shows that a right triangle is formed with the 2ft chain as the hypotenuse with an interior angle of <span class="process-math">\(11.31^\circ\text{.}\)</span> The length of the adjacent side (in the diagram, the dashed vertical line) is <span class="process-math">\(2\cos(11.31^\circ) \approx 1.96\)</span>ft. Thus the weight is lifted by about <span class="process-math">\(0.04\)</span>ft, almost 1/2in.</p>
+</div></div>
+</div></article><p id="p-10984">The algebra we have applied to vectors is already demonstrating itself to be very useful. There are two more fundamental operations we can perform with vectors, the <em class="emphasis">dot product</em> and the <em class="emphasis">cross product</em>. The next two sections explore each in turn.</p>
+<section class="exercises" id="exercises-60"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-130"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-2100"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<p id="p-10985">Name two different things that cannot be described with just one number, but rather need 2 or more numbers to fully describe them.</p></article><article class="exercise exercise-like" id="exercise-2101"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<p id="p-10987">What is the difference between <span class="process-math">\((1,2)\)</span> and <span class="process-math">\(\la 1,2\ra\text{?}\)</span></p></article><article class="exercise exercise-like" id="exercise-2102"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<p id="p-10989">What is a unit vector?</p></article><article class="exercise exercise-like" id="exercise-2103"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-10991">Unit vectors can be thought of as conveying what type of information?</p></article><article class="exercise exercise-like" id="exercise-2104"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<p id="p-10993">What does it mean for two vectors to be parallel?</p></article><article class="exercise exercise-like" id="exercise-2105"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<p id="p-10995">What effect does multiplying a vector by <span class="process-math">\(-2\)</span> have?</p></article></article><article class="subexercises" id="subexercises-131"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-238">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-280"><p id="p-10997">In the following exercises, points <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are given. Write the vector <span class="process-math">\(\overrightarrow{PQ}\)</span> in component form and using the standard unit vectors.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2106"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div id="webwork-1354" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1354" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiVmVjdG9yMkQiKTsKQ29udGV4dCgpLT5jb25zdGFudHMtPnVuZGVmaW5lKGksaik7CiRjb21wPVZlY3RvcigiPDEsNj4iKTsKQ29udGV4dCgiVmVjdG9yMkQiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KGlqaz0+MSk7CkNvbnRleHQoKS0+cGFyZW5zLT51bmRlZmluZSgnPCcsJygnLCd7Jyk7CiRzdGFuPVZlY3RvcigiaSs2aiIpOwoKQkVHSU5fUEdNTApJZiBbYFA9KDIsLTEpYF0gYW5kIFtgUSA9ICgzLDUpXHRleHR7LH1gXSB3cml0ZSB0aGUgdmVjdG9yIFtgXG92ZXJyaWdodGFycm93e1BRfVx0ZXh0ezp9YF0KCmEuICBpbiBjb21wb25lbnQgZm9ybTogW19deyRjb21wfXsxMH0KCgphLiAgdXNpbmcgdGhlIHN0YW5kYXJkIHVuaXQgdmVjdG9yczogW19deyRzdGFufXsxMH0KCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10998">If <span class="process-math">\(P=(2,-1)\)</span> and <span class="process-math">\(Q = (3,5)\text{,}\)</span> write the vector <span class="process-math">\(\overrightarrow{PQ}\text{:}\)</span></p>
+<ol id="p-10999" class="lower-alpha">
+<li id="li-2240"><p id="p-11000">in component form: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p></li>
+<li id="li-2241"><p id="p-11001">using the standard unit vectors: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1354')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2107"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-1355" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1355" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiVmVjdG9yMkQiKTsKQ29udGV4dCgpLT5jb25zdGFudHMtPnVuZGVmaW5lKGksaik7CiRjb21wPVZlY3RvcigiPDQsLTQ+Iik7CkNvbnRleHQoIlZlY3RvcjJEIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChpams9PjEpOwpDb250ZXh0KCktPnBhcmVucy0+dW5kZWZpbmUoJzwnLCcoJywneycpOwokc3Rhbj1WZWN0b3IoIjRpLTRqIik7CgpCRUdJTl9QR01MCklmIFtgUD0oMywyKWBdIGFuZCBbYFEgPSAoNywtMilcdGV4dHssfWBdIHdyaXRlIHRoZSB2ZWN0b3IgW2Bcb3ZlcnJpZ2h0YXJyb3d7UFF9XHRleHR7On1gXQoKYS4gIGluIGNvbXBvbmVudCBmb3JtOiBbX117JGNvbXB9ezEwfQoKCmEuICB1c2luZyB0aGUgc3RhbmRhcmQgdW5pdCB2ZWN0b3JzOiBbX117JHN0YW59ezEwfQoKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-11004">If <span class="process-math">\(P=(3,2)\)</span> and <span class="process-math">\(Q = (7,-2)\text{,}\)</span> write the vector <span class="process-math">\(\overrightarrow{PQ}\text{:}\)</span></p>
+<ol id="p-11005" class="lower-alpha">
+<li id="li-2242"><p id="p-11006">in component form: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p></li>
+<li id="li-2243"><p id="p-11007">using the standard unit vectors: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1355')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2108"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-1356" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1356" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiVmVjdG9yIik7CkNvbnRleHQoKS0+Y29uc3RhbnRzLT51bmRlZmluZShpLGosayk7CiRjb21wPVZlY3RvcigiPDYsLTEsNj4iKTsKQ29udGV4dCgiVmVjdG9yIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChpams9PjEpOwpDb250ZXh0KCktPnBhcmVucy0+dW5kZWZpbmUoJzwnLCcoJywneycpOwokc3Rhbj1WZWN0b3IoIjZpLWorNmsiKTsKCkJFR0lOX1BHTUwKSWYgW2BQPSgwLDMsLTEpYF0gYW5kIFtgUSA9ICg2LDIsNSlcdGV4dHssfWBdIHdyaXRlIHRoZSB2ZWN0b3IgW2Bcb3ZlcnJpZ2h0YXJyb3d7UFF9XHRleHR7On1gXQoKYS4gIGluIGNvbXBvbmVudCBmb3JtOiBbX117JGNvbXB9ezEwfQoKCmEuICB1c2luZyB0aGUgc3RhbmRhcmQgdW5pdCB2ZWN0b3JzOiBbX117JHN0YW59ezEwfQoKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-11010">If <span class="process-math">\(P=(0,3,-1)\)</span> and <span class="process-math">\(Q = (6,2,5)\text{,}\)</span> write the vector <span class="process-math">\(\overrightarrow{PQ}\text{:}\)</span></p>
+<ol id="p-11011" class="lower-alpha">
+<li id="li-2244"><p id="p-11012">in component form: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p></li>
+<li id="li-2245"><p id="p-11013">using the standard unit vectors: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1356')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2109"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-1357" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1357" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiVmVjdG9yIik7CkNvbnRleHQoKS0+Y29uc3RhbnRzLT51bmRlZmluZShpLGosayk7CiRjb21wPVZlY3RvcigiPDIsMiwwPiIpOwpDb250ZXh0KCJWZWN0b3IiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KGlqaz0+MSk7CkNvbnRleHQoKS0+cGFyZW5zLT51bmRlZmluZSgnPCcsJygnLCd7Jyk7CiRzdGFuPVZlY3RvcigiMmkrMmoiKTsKCkJFR0lOX1BHTUwKSWYgW2BQPSgyLDEsMilgXSBhbmQgW2BRID0gKDQsMywyKVx0ZXh0eyx9YF0gd3JpdGUgdGhlIHZlY3RvciBbYFxvdmVycmlnaHRhcnJvd3tQUX1cdGV4dHs6fWBdCgphLiAgaW4gY29tcG9uZW50IGZvcm06IFtfXXskY29tcH17MTB9CgoKYS4gIHVzaW5nIHRoZSBzdGFuZGFyZCB1bml0IHZlY3RvcnM6IFtfXXskc3Rhbn17MTB9CgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-11016">If <span class="process-math">\(P=(2,1,2)\)</span> and <span class="process-math">\(Q = (4,3,2)\text{,}\)</span> write the vector <span class="process-math">\(\overrightarrow{PQ}\text{:}\)</span></p>
+<ol id="p-11017" class="lower-alpha">
+<li id="li-2246"><p id="p-11018">in component form: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p></li>
+<li id="li-2247"><p id="p-11019">using the standard unit vectors: <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1357')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-2110"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<p id="p-11022">Let <span class="process-math">\(\vec u = \la 1,-2\ra\)</span> and <span class="process-math">\(\vec v= \la 1,1\ra\text{.}\)</span></p>
+<ol id="p-11023" class="lower-alpha">
+<li id="li-2248"><p id="p-11024">Find <span class="process-math">\(\vec u+\vec v\text{,}\)</span> <span class="process-math">\(\vec u-\vec v\text{,}\)</span> <span class="process-math">\(2\vec u-3\vec v\text{.}\)</span></p></li>
+<li id="li-2249"><p id="p-11025">Sketch the above vectors on the same axes, along with <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\text{.}\)</span></p></li>
+<li id="li-2250"><p id="p-11026">Find <span class="process-math">\(\vec x\)</span> where <span class="process-math">\(\vec u+\vec x = 2\vec v-\vec x\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-2111"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<p id="p-11030">Let <span class="process-math">\(\vec u = \la 1,1,-1\ra\)</span> and <span class="process-math">\(\vec v= \la 2,1,2\ra\text{.}\)</span></p>
+<ol id="p-11031" class="lower-alpha">
+<li id="li-2253"><p id="p-11032">Find <span class="process-math">\(\vec u+\vec v\text{,}\)</span> <span class="process-math">\(\vec u-\vec v\text{,}\)</span> <span class="process-math">\(\pi\vec u-\sqrt{2}\vec v\text{.}\)</span></p></li>
+<li id="li-2254"><p id="p-11033">Sketch the above vectors on the same axes, along with <span class="process-math">\(\vec u\)</span> and <span class="process-math">\(\vec v\text{.}\)</span></p></li>
+<li id="li-2255"><p id="p-11034">Find <span class="process-math">\(\vec x\)</span> where <span class="process-math">\(\vec u+\vec x = \vec v+2\vec x\text{.}\)</span></p></li>
+</ol></article><div class="exercisegroup" id="exercisegroup-239">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-281"><p id="p-11038">In the following exercises, sketch <span class="process-math">\(\vec u\text{,}\)</span> <span class="process-math">\(\vec v\text{,}\)</span> <span class="process-math">\(\vec u+\vec v\)</span> and <span class="process-math">\(\vec u-\vec v\)</span> on the same axes.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2112"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_10_02_ex_11.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-2113"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_10_02_ex_13.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-2114"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_10_02_ex_14.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-2115"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/img_10_02_ex_15.svg" role="img" class="contained"></div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-240">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-282"><p id="p-11040">In the following exercises, find <span class="process-math">\(\norm{\vec u}\text{,}\)</span> <span class="process-math">\(\norm{\vec v}\text{,}\)</span> <span class="process-math">\(\norm{\vec u+\vec v}\)</span> and <span class="process-math">\(\norm{\vec u-\vec v}\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2116"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-1358" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1358" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xub3JtfVsxXXtcbGVmdFxsVmVydCMxXHJpZ2h0XHJWZXJ0fVxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJG5vcm11PUZvcm11bGEoInNxcnQoNSkiKTsKJG5vcm12PUZvcm11bGEoInNxcnQoMTMpIik7CiRub3JtdXB2PUZvcm11bGEoInNxcnQoMjYpIik7CiRub3JtdW12PUZvcm11bGEoInNxcnQoMTApIik7CgpCRUdJTl9QR01MCkdpdmVuIFtgXHZlYyB1PVxsYSAyLDFccmFgXSBhbmQgW2BcdmVjIHYgPSBcbGEgMywtMlxyYVx0ZXh0eyx9YF0gZmluZDoKCltgXG5vcm17XHZlYyB1fT1gXVtfXXskbm9ybXV9ezV9CgpbYFxub3Jte1x2ZWMgdn09YF1bX117JG5vcm12fXs1fQoKW2Bcbm9ybXtcdmVjIHUrXHZlYyB2fT1gXVtfXXskbm9ybXVwdn17NX0KCltgXG5vcm17XHZlYyB1LVx2ZWMgdn09YF1bX117JG5vcm11bXZ9ezV9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-11041">Given <span class="process-math">\(\vec u=\la 2,1\ra\)</span> and <span class="process-math">\(\vec v = \la 3,-2\ra\text{,}\)</span> find:</p>
+<p id="p-11042"><span class="process-math">\(\norm{\vec u}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11043"><span class="process-math">\(\norm{\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11044"><span class="process-math">\(\norm{\vec u+\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11045"><span class="process-math">\(\norm{\vec u-\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1358')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2117"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-1359" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1359" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xub3JtfVsxXXtcbGVmdFxsVmVydCMxXHJpZ2h0XHJWZXJ0fVxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJG5vcm11PUZvcm11bGEoInNxcnQoMTcpIik7CiRub3Jtdj1Gb3JtdWxhKCJzcXJ0KDMpIik7CiRub3JtdXB2PUZvcm11bGEoInNxcnQoMTQpIik7CiRub3JtdW12PUZvcm11bGEoInNxcnQoMjYpIik7CgpCRUdJTl9QR01MCkdpdmVuIFtgXHZlYyB1PVxsYSAtMywyLDJccmFgXSBhbmQgW2BcdmVjIHYgPSBcbGEgMSwtMSwxXHJhXHRleHR7LH1gXSBmaW5kOgoKW2Bcbm9ybXtcdmVjIHV9PWBdW19deyRub3JtdX17NX0KCltgXG5vcm17XHZlYyB2fT1gXVtfXXskbm9ybXZ9ezV9CgpbYFxub3Jte1x2ZWMgdStcdmVjIHZ9PWBdW19deyRub3JtdXB2fXs1fQoKW2Bcbm9ybXtcdmVjIHUtXHZlYyB2fT1gXVtfXXskbm9ybXVtdn17NX0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-11050">Given <span class="process-math">\(\vec u=\la -3,2,2\ra\)</span> and <span class="process-math">\(\vec v = \la 1,-1,1\ra\text{,}\)</span> find:</p>
+<p id="p-11051"><span class="process-math">\(\norm{\vec u}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11052"><span class="process-math">\(\norm{\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11053"><span class="process-math">\(\norm{\vec u+\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11054"><span class="process-math">\(\norm{\vec u-\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1359')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2118"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-1360" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1360" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xub3JtfVsxXXtcbGVmdFxsVmVydCMxXHJpZ2h0XHJWZXJ0fVxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJG5vcm11PUZvcm11bGEoInNxcnQoNSkiKTsKJG5vcm12PUZvcm11bGEoIjNzcXJ0KDUpIik7CiRub3JtdXB2PUZvcm11bGEoIjJzcXJ0KDUpIik7CiRub3JtdW12PUZvcm11bGEoIjRzcXJ0KDUpIik7CgpCRUdJTl9QR01MCkdpdmVuIFtgXHZlYyB1PVxsYSAxLDJccmFgXSBhbmQgW2BcdmVjIHYgPSBcbGEgLTMsLTZccmFcdGV4dHssfWBdIGZpbmQ6CgpbYFxub3Jte1x2ZWMgdX09YF1bX117JG5vcm11fXs1fQoKW2Bcbm9ybXtcdmVjIHZ9PWBdW19deyRub3Jtdn17NX0KCltgXG5vcm17XHZlYyB1K1x2ZWMgdn09YF1bX117JG5vcm11cHZ9ezV9CgpbYFxub3Jte1x2ZWMgdS1cdmVjIHZ9PWBdW19deyRub3JtdW12fXs1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-11059">Given <span class="process-math">\(\vec u=\la 1,2\ra\)</span> and <span class="process-math">\(\vec v = \la -3,-6\ra\text{,}\)</span> find:</p>
+<p id="p-11060"><span class="process-math">\(\norm{\vec u}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11061"><span class="process-math">\(\norm{\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11062"><span class="process-math">\(\norm{\vec u+\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11063"><span class="process-math">\(\norm{\vec u-\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1360')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2119"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-1361" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1361" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xub3JtfVsxXXtcbGVmdFxsVmVydCMxXHJpZ2h0XHJWZXJ0fVxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJG5vcm11PUZvcm11bGEoIjciKTsKJG5vcm12PUZvcm11bGEoIjM1Iik7CiRub3JtdXB2PUZvcm11bGEoIjQyIik7CiRub3JtdW12PUZvcm11bGEoIjI4Iik7CgpCRUdJTl9QR01MCkdpdmVuIFtgXHZlYyB1PVxsYSAyLC0zLDZccmFgXSBhbmQgW2BcdmVjIHYgPSBcbGEgMTAsLTE1LDMwXHJhXHRleHR7LH1gXSBmaW5kOgoKW2Bcbm9ybXtcdmVjIHV9PWBdW19deyRub3JtdX17NX0KCltgXG5vcm17XHZlYyB2fT1gXVtfXXskbm9ybXZ9ezV9CgpbYFxub3Jte1x2ZWMgdStcdmVjIHZ9PWBdW19deyRub3JtdXB2fXs1fQoKW2Bcbm9ybXtcdmVjIHUtXHZlYyB2fT1gXVtfXXskbm9ybXVtdn17NX0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-11068">Given <span class="process-math">\(\vec u=\la 2,-3,6\ra\)</span> and <span class="process-math">\(\vec v = \la 10,-15,30\ra\text{,}\)</span> find:</p>
+<p id="p-11069"><span class="process-math">\(\norm{\vec u}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11070"><span class="process-math">\(\norm{\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11071"><span class="process-math">\(\norm{\vec u+\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+<p id="p-11072"><span class="process-math">\(\norm{\vec u-\vec v}=\)</span><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1361')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-2120"><h5 class="heading"><span class="codenumber">21<span class="period">.</span></span></h5>
+<p id="p-11077">Under what conditions is <span class="process-math">\(\norm{\vec u}+\norm{\vec v} = \norm{\vec u+\vec v}\text{?}\)</span></p></article><div class="exercisegroup" id="exercisegroup-241">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-283"><p id="p-11079">In the following exercises, find the unit vector <span class="process-math">\(\vec u\)</span> in the direction of <span class="process-math">\(\vec v\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2121"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-1362" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1362" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgiVmVjdG9yMkQiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJHU9Q29tcHV0ZSgiPDMvc3FydCg1OCksIDcvc3FydCg1OCk+Iik7CgpCRUdJTl9QR01MCkZpbmQgdGhlIHVuaXQgdmVjdG9yIFtgXHZlYyB1YF0gaW4gdGhlIGRpcmVjdGlvbiBvZiBbYFx2ZWMgdiA9IFxsYSAzLDdccmFcdGV4dHsufWBdCgpbYFx2ZWMgdT1gXVtfXXskdX17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-11080">Find the unit vector <span class="process-math">\(\vec u\)</span> in the direction of <span class="process-math">\(\vec v = \la 3,7\ra\text{.}\)</span></p>
+<p id="p-11081"><span class="process-math">\(\vec u=\)</span><span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1362')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2122"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div id="webwork-1363" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1363" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgiVmVjdG9yMkQiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJHU9Q29tcHV0ZSgiPDAuNiwgMC44PiIpOwoKQkVHSU5fUEdNTApGaW5kIHRoZSB1bml0IHZlY3RvciBbYFx2ZWMgdWBdIGluIHRoZSBkaXJlY3Rpb24gb2YgW2BcdmVjIHYgPSBcbGEgNiw4XHJhXHRleHR7Ln1gXQoKW2BcdmVjIHU9YF1bX117JHV9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-11083">Find the unit vector <span class="process-math">\(\vec u\)</span> in the direction of <span class="process-math">\(\vec v = \la 6,8\ra\text{.}\)</span></p>
+<p id="p-11084"><span class="process-math">\(\vec u=\)</span><span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1363')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2123"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-1364" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1364" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgiVmVjdG9yIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCxyZWR1Y2VDb25zdGFudHM9PjApOwokdT1Db21wdXRlKCI8MS8zLC0yLzMsMi8zPiIpOwoKQkVHSU5fUEdNTApGaW5kIHRoZSB1bml0IHZlY3RvciBbYFx2ZWMgdWBdIGluIHRoZSBkaXJlY3Rpb24gb2YgW2BcdmVjIHYgPSBcbGEgMSwtMiwyXHJhXHRleHR7Ln1gXQoKW2BcdmVjIHU9YF1bX117JHV9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-11086">Find the unit vector <span class="process-math">\(\vec u\)</span> in the direction of <span class="process-math">\(\vec v = \la 1,-2,2\ra\text{.}\)</span></p>
+<p id="p-11087"><span class="process-math">\(\vec u=\)</span><span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1364')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2124"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div id="webwork-1365" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1365" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgiVmVjdG9yIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCxyZWR1Y2VDb25zdGFudHM9PjApOwokdT1Db21wdXRlKCI8MS9zcXJ0KDMpLC0xL3NxcnQoMyksMS9zcXJ0KDMpPiIpOwoKQkVHSU5fUEdNTApGaW5kIHRoZSB1bml0IHZlY3RvciBbYFx2ZWMgdWBdIGluIHRoZSBkaXJlY3Rpb24gb2YgW2BcdmVjIHYgPSBcbGEgMiwtMiwyXHJhXHRleHR7Ln1gXQoKW2BcdmVjIHU9YF1bX117JHV9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-11089">Find the unit vector <span class="process-math">\(\vec u\)</span> in the direction of <span class="process-math">\(\vec v = \la 2,-2,2\ra\text{.}\)</span></p>
+<p id="p-11090"><span class="process-math">\(\vec u=\)</span><span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1365')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-2125"><h5 class="heading"><span class="codenumber">26<span class="period">.</span></span></h5>
+<div id="webwork-1366" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1366" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiVmVjdG9yMkQiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wLHJlZHVjZUNvbnN0YW50cz0+MCk7CiR1PUNvbXB1dGUoIjxjb3MoNTAqcGkvMTgwKSxzaW4oNTAqcGkvMTgwKT4iKTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgdW5pdCB2ZWN0b3IgaW4gdGhlIGZpcnN0IHF1YWRyYW50IG9mIFtgXG1hdGhiYntSfV4yYF0gdGhhdCBtYWtlcyBhIFtgNTBee1xjaXJjfWBdIGFuZ2xlIHdpdGggdGhlIFtgeGBdLWF4aXMuCgpbX117JHV9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-11092">Find the unit vector in the first quadrant of <span class="process-math">\(\mathbb{R}^2\)</span> that makes a <span class="process-math">\(50^{\circ}\)</span> angle with the <span class="process-math">\(x\)</span>-axis.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1366')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2126"><h5 class="heading"><span class="codenumber">27<span class="period">.</span></span></h5>
+<div id="webwork-1367" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1367" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiVmVjdG9yMkQiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wLHJlZHVjZUNvbnN0YW50cz0+MCk7CiR1PUNvbXB1dGUoIjwtMS8yLHNxcnQoMykvMj4iKTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgdW5pdCB2ZWN0b3IgaW4gdGhlIHNlY29uZCBxdWFkcmFudCBvZiBbYFxtYXRoYmJ7Un1eMmBdIHRoYXQgbWFrZXMgYSBbYDMwXntcY2lyY31gXSBhbmdsZSB3aXRoIHRoZSBbYHlgXS1heGlzLgoKW19deyR1fXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-11094">Find the unit vector in the second quadrant of <span class="process-math">\(\mathbb{R}^2\)</span> that makes a <span class="process-math">\(30^{\circ}\)</span> angle with the <span class="process-math">\(y\)</span>-axis.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1367')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2127"><h5 class="heading"><span class="codenumber">28<span class="period">.</span></span></h5>
+<p id="p-11096">Verify, from <a href="" class="xref" data-knowl="./knowl/idea_unit_vectors.html" title="Key Idea 11.2.25: Unit Vectors">Key Idea 11.2.25</a>, that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_unit_vectors.html">
+\begin{equation*}
+\vec u=\la \sin(\theta) \cos(\varphi) ,\sin(\theta) \sin(\varphi) ,\cos(\theta) \ra
+\end{equation*}
+</div>
+<p class="continuation">is a unit vector for all angles <span class="process-math">\(\theta\)</span> and <span class="process-math">\(\varphi\text{.}\)</span></p></article><div class="exercisegroup" id="exercisegroup-242">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-284">
+<p id="p-11098">A weight of 100lb is suspended from two chains, making angles with the vertical of <span class="process-math">\(\theta\)</span> and <span class="process-math">\(\varphi\)</span> as shown in the figure below.</p>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/img-10-02-exset-05.svg" role="img" class="contained"></div>
+<p id="p-11099">In the following exercises, the angles <span class="process-math">\(\theta\)</span> and <span class="process-math">\(\varphi\)</span> are given. Find the magnitude of the force applied to each chain.</p>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2128"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-11100"><span class="process-math">\(\theta = 30^\circ\text{,}\)</span><span class="process-math">\(\varphi=30^\circ\)</span></p></article><article class="exercise exercise-like" id="exercise-2129"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<p id="p-11102"><span class="process-math">\(\theta = 60^\circ\text{,}\)</span><span class="process-math">\(\varphi=60^\circ\)</span></p></article><article class="exercise exercise-like" id="exercise-2130"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<p id="p-11104"><span class="process-math">\(\theta = 20^\circ\text{,}\)</span><span class="process-math">\(\varphi=15^\circ\)</span></p></article><article class="exercise exercise-like" id="exercise-2131"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<p id="p-11106"><span class="process-math">\(\theta = 0^\circ\text{,}\)</span><span class="process-math">\(\varphi=0^\circ\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-243">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-285">
+<p id="p-11108">A weight of <span class="process-math">\(p\)</span>lb is suspended from a chain of length <span class="process-math">\(\ell\)</span> while a constant force of <span class="process-math">\(\vec F_w\)</span> pushes the weight to the right, making an angle of <span class="process-math">\(\theta\)</span> with the vertical, as shown in the figure below.</p>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/img-10-02-exset-06.svg" role="img" class="contained"></div>
+<p id="p-11109">In the following exercises, a force <span class="process-math">\(\vec F_w\)</span> and length <span class="process-math">\(\ell\)</span> are given. Find the angle <span class="process-math">\(\theta\)</span> and the height the weight is lifted as it moves to the right.</p>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2132"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<p id="p-11110"><span class="process-math">\(\vec F_w=1\)</span>lb, <span class="process-math">\(\ell = 1\)</span>ft, <span class="process-math">\(p = 1\)</span>lb</p></article><article class="exercise exercise-like" id="exercise-2133"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<p id="p-11112"><span class="process-math">\(\vec F_w=1\)</span>lb, <span class="process-math">\(\ell = 1\)</span>ft, <span class="process-math">\(p = 10\)</span>lb</p></article><article class="exercise exercise-like" id="exercise-2134"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<p id="p-11114"><span class="process-math">\(\vec F_w=1\)</span>lb, <span class="process-math">\(\ell = 10\)</span>ft, <span class="process-math">\(p = 1\)</span>lb</p></article><article class="exercise exercise-like" id="exercise-2135"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<p id="p-11116"><span class="process-math">\(\vec F_w=10\)</span>lb, <span class="process-math">\(\ell = 10\)</span>ft, <span class="process-math">\(p = 1\)</span>lb</p></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

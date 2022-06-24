@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:49Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>We approach this problem in two different ways to illustrate the different ways <a href="" class="xref" data-knowl="./knowl/idea_fluid_force.html" title="Key Idea 7.6.6: Fluid Force on a Vertically Oriented Plate">Key Idea 7.6.6</a> can be implemented. First we will let <span class="process-math">\(y=0\)</span> represent the surface of the water, then we will consider an alternate convention.</p>
+<ol class="decimal">
+<li>
+<p>We let <span class="process-math">\(y=0\)</span> represent the surface of the water; therefore the bottom of the plate is at <span class="process-math">\(y=-10\text{.}\)</span> We center the triangle on the <span class="process-math">\(y\)</span>-axis as shown in <a href="" class="xref" data-knowl="./knowl/fig_fluid2b.html" title="Figure 7.6.9">Figure 7.6.9</a>. The depth of the plate at <span class="process-math">\(y\)</span> is <span class="process-math">\(-y\)</span> as indicated by the Key Idea. We now consider the length of the plate at <span class="process-math">\(y\text{.}\)</span> We need to find equations of the left and right edges of the plate. The right hand side is a line that connects the points <span class="process-math">\((0,-10)\)</span> and <span class="process-math">\((2,-6)\text{:}\)</span> that line has equation <span class="process-math">\(x=1/2(y+10)\text{.}\)</span> (Find the equation in the familiar <span class="process-math">\(y=mx+b\)</span> format and solve for <span class="process-math">\(x\text{.}\)</span>) Likewise, the left hand side is described by the line <span class="process-math">\(x=-1/2(y+10)\text{.}\)</span> The total length is the distance between these two lines: <span class="process-math">\(\ell(y)=1/2(y+10) - (-1/2(y+10)) = y+10\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_fluid2b.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.6.9<span class="period">.</span></span><span class="space"> </span>Sketching the triangular plate in <a href="" class="xref" data-knowl="./knowl/ex_fluid2.html" title="Example 7.6.7: Finding fluid force">Example 7.6.7</a> with the convention that the water level is at <span class="process-math">\(y=0\)</span></figcaption></figure><p>The total fluid force is then:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+F   \amp =  \int_{-10}^{-6} 62.4(-y)(y+10)\, dy\\
+\amp =  62.4\cdot \frac{176}{3} \approx  3660.8\,\text{lb} \text{.}
+\end{align*}
+</div>
+</li>
+<li>
+<p>Sometimes it seems easier to orient the thin plate nearer the origin. For instance, consider the convention that the bottom of the triangular plate is at <span class="process-math">\((0,0)\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_fluid2c.html" title="Figure 7.6.10">Figure 7.6.10</a>. The equations of the left and right hand sides are easy to find. They are <span class="process-math">\(y=2x\)</span> and <span class="process-math">\(y=-2x\text{,}\)</span> respectively, which we rewrite as <span class="process-math">\(x= 1/2y\)</span> and <span class="process-math">\(x=-1/2y\text{.}\)</span> Thus the length function is <span class="process-math">\(\ell(y) = 1/2y-(-1/2y) = y\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_fluid2c.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.6.10<span class="period">.</span></span><span class="space"> </span>Sketching the triangular plate in <a href="" class="xref" data-knowl="./knowl/ex_fluid2.html" title="Example 7.6.7: Finding fluid force">Example 7.6.7</a> with the convention that the base of the triangle is at <span class="process-math">\((0,0)\)</span></figcaption></figure><p>As the surface of the water is <span class="quantity">10 ft</span> above the base of the plate, we have that the surface of the water is at <span class="process-math">\(y=10\text{.}\)</span> Thus the depth function is the distance between <span class="process-math">\(y=10\)</span> and <span class="process-math">\(y\text{;}\)</span> <span class="process-math">\(d(y) = 10-y\text{.}\)</span> We compute the total fluid force as:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+F  \amp =\int_0^4 62.4(10-y)(y)\, dy\\
+\amp \approx 3660.8\,\text{lb}\text{.}
+\end{align*}
+</div>
+</li>
+</ol>
+<p>The correct answer is, of course, independent of the placement of the plate in the coordinate plane as long as we are consistent.</p>
+</div></body>
+</html>

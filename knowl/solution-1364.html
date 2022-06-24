@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:47:57Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">14.2.24.1</span><span class="period">.</span>
+</h3>
+<p>Once again we make a sketch of the region over which we are integrating to facilitate changing the order. The bounds on <span class="process-math">\(x\)</span> are from <span class="process-math">\(x=y\)</span> to <span class="process-math">\(x=3\text{;}\)</span> the bounds on <span class="process-math">\(y\)</span> are from <span class="process-math">\(y=0\)</span> to <span class="process-math">\(y=3\text{.}\)</span> These curves are sketched in <a href="" class="xref" data-knowl="./knowl/fig_double6.html" title="Figure 14.2.25">Figure 14.2.25</a>, enclosing the region <span class="process-math">\(R\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_double6.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.2.25<span class="period">.</span></span><span class="space"> </span>Determining the region <span class="process-math">\(R\)</span> determined by the bounds of integration in <a href="" class="xref" data-knowl="./knowl/ex_double6.html" title="Example 14.2.24: Changing the order of integration">Example 14.2.24</a></figcaption></figure><p>To change the bounds, note that the curves bounding <span class="process-math">\(y\)</span> are <span class="process-math">\(y=0\)</span> up to <span class="process-math">\(y=x\text{;}\)</span> the triangle is enclosed between <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=3\text{.}\)</span> Thus the new bounds of integration are <span class="process-math">\(0\leq y\leq x\)</span> and <span class="process-math">\(0\leq x\leq 3\text{,}\)</span> giving the iterated integral <span class="process-math">\(\ds \int_0^3\int_0^x e^{-x^2}\, dy\, dx\text{.}\)</span></p>
+<p>How easy is it to evaluate each iterated integral? Consider the order of integrating <span class="process-math">\(dx\, dy\text{,}\)</span> as given in the original problem. The first indefinite integral we need to evaluate is <span class="process-math">\(\int e^{-x^2}\, dx\text{;}\)</span> we have stated before (see <a href="sec_numerical_integration.html" class="internal" title="Section 5.5: Numerical Integration">Section 5.5</a>) that this integral cannot be evaluated in terms of elementary functions. We are stuck.</p>
+<p>Changing the order of integration makes a big difference here. In the second iterated integral, we are faced with <span class="process-math">\(\int e^{-x^2}\, dy\text{;}\)</span> integrating with respect to <span class="process-math">\(y\)</span> gives us <span class="process-math">\(ye^{-x^2}+C\text{,}\)</span> and the first definite integral evaluates to</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^x e^{-x^2}\, dy = xe^{-x^2}\text{.}
+\end{equation*}
+</div>
+<p>Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^3\int_0^x e^{-x^2}\, dy\, dx = \int_0^3\Big(xe^{-x^2}\Big)dx\text{.}
+\end{equation*}
+</div>
+<p>This last integral is easy to evaluate with substitution, giving a final answer of <span class="process-math">\(\frac12(1-e^{-9})\approx 0.5\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_double6b.html" title="Figure 14.2.26">Figure 14.2.26</a> shows the surface over <span class="process-math">\(R\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 99.5049504950495%"><iframe src="generated/asymptote/img_double6b.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_double6b.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">14.2.26<span class="period">.</span></span><span class="space"> </span>Showing the surface <span class="process-math">\(f\)</span> defined in <a href="" class="xref" data-knowl="./knowl/ex_double6.html" title="Example 14.2.24: Changing the order of integration">Example 14.2.24</a> over its region <span class="process-math">\(R\)</span></figcaption></figure><p>In short, evaluating one iterated integral is impossible; the other iterated integral is relatively simple.</p>
+</div>
+<span class="incontext"><a href="sec_double_int_volume.html#solution-1364" class="internal">in-context</a></span>
+</body>
+</html>

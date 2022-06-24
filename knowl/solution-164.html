@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:12Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.6.17.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_impl_second_deriv" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/V6piqsjn2mk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We found that <span class="process-math">\(y' = \lz{y}{x} = -x/y\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_implicit7.html" title="Example 2.6.11: Finding slopes of tangent lines to a circle">Example 2.6.11</a>. To find <span class="process-math">\(y''\text{,}\)</span> we apply implicit differentiation to <span class="process-math">\(y'\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_implicit7.html">
+\begin{align*}
+y'' \amp = \lzoo{x}{y'}\\
+\amp = \lzoo{x}{-\frac{x}{y}}\amp\amp\text{(Now use the Quotient Rule.)}\\
+\amp = -\frac{y\cdot1 - x(y')}{y^2}\amp\amp\text{replace }y'\text{ with }-x/y\text{:}\\
+\amp = -\frac{y-x(-x/y)}{y^2}\\
+\amp = -\frac{y+x^2/y}{y^2}\text{.}
+\end{align*}
+</div>
+<p>While this is not a particularly simple expression, it is usable. We can see that <span class="process-math">\(y'' \gt 0\)</span> when <span class="process-math">\(y\lt 0\)</span> and <span class="process-math">\(y''\lt 0\)</span> when <span class="process-math">\(y \gt 0\text{.}\)</span> In <a href="sec_concavity.html" class="internal" title="Section 3.4: Concavity and the Second Derivative">Section 3.4</a>, we will see how this relates to the shape of the graph.</p>
+<p>Also, if we remember that we are only considering points on the curve <span class="process-math">\(x^2+y^2=1\text{,}\)</span> then we know that <span class="process-math">\(x^2=1-y^2\text{.}\)</span> So we can replace the <span class="process-math">\(x^2\)</span> in the expression for <span class="process-math">\(y''\)</span> to get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y''=-\frac{y+\left(1-y^2\right)/y}{y^2}=-\frac{1}{y^3}
+\end{equation*}
+</div>
+<p class="continuation">which is a simpler expression. Recognizing when simplifications like this are possible is not always easy.</p>
+</div>
+<span class="incontext"><a href="sec_imp_deriv.html#solution-164" class="internal">in-context</a></span>
+</body>
+</html>

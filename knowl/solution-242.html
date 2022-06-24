@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:47Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.2.7.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_apps_rel_rates_speed_radar" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/8fFao8XCQC0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>The important quantities that are changing are: the distance of the officer to the intersection, the distance of the car to the intersection, and the distance of the officer to the car. (There are other quantities that are changing as well such as the angles and area of the triangle, but these are not important to this problem.)</p>
+<p>Using the diagram in <a href="" class="xref" data-knowl="./knowl/fig_rr3.html" title="Figure 4.2.8">Figure 4.2.8</a>, let's label what we know about the situation. As both the police officer and other driver are <span class="process-math">\(1/2\)</span> mile from the intersection, we have <span class="process-math">\(A = 1/2\text{,}\)</span> <span class="process-math">\(B = 1/2\text{,}\)</span> and through the Pythagorean Theorem, <span class="process-math">\(C = 1/\sqrt{2}\approx 0.707\text{.}\)</span> These values are “instantaneous” values for our variables, so we won't use them until the <em class="emphasis">end</em> of the problem. Instead, we will use the variables <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\text{.}\)</span></p>
+<p>We need an equation that relates <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\text{.}\)</span> The Pythagorean Theorem is a good choice: <span class="process-math">\(A^2+B^2 = C^2\text{.}\)</span> Differentiate both sides with respect to <span class="process-math">\(t\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+A^2 + B^2 \amp = C^2\\
+\lzoo{t}{A^2+B^2} \amp = \lzoo{t}{C^2}\\
+2A\lz{A}{t} + 2B\lz{B}{t} \amp = 2C\lz{C}{t}
+\end{align*}
+</div>
+<p>We know the police officer is traveling at <span class="quantity">30 mph</span>; that is, <span class="process-math">\(\lz{A}{t} = -30\text{.}\)</span> The reason this rate of change is negative is that <span class="process-math">\(A\)</span> is getting smaller; the distance between the officer and the intersection is shrinking. The radar measurement is <span class="process-math">\(\lz{C}{t} = 20\text{.}\)</span> We want to find <span class="process-math">\(\lz{B}{t}\text{.}\)</span></p>
+<p>We have values for everything except <span class="process-math">\(\lz{B}{t}\text{.}\)</span> Solving for this we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lz{B}{t} = \frac{C\lz{C}{t}- A\lz{A}{t}}{B}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Now we substitue in our known rates and instantaneous values of our variables:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lz{B}{t} \amp \approx \frac{0.707(20)- 0.5(-30)}{(0.5)}\\
+\amp= 58.28 \text{ mph }\text{.}
+\end{align*}
+</div>
+<p>The other driver appears to be speeding slightly.</p>
+</div>
+<span class="incontext"><a href="sec_related_rates.html#solution-242" class="internal">in-context</a></span>
+</body>
+</html>

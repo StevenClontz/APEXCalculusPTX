@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:50:43Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.6.10.1</span><span class="period">.</span>
+</h4>
+<p>We begin by parametrizing each surface.</p>
+<p>The boundary of the unit disk in the <span class="process-math">\(xy\)</span>-plane is the unit circle, which can be described with <span class="process-math">\(\langle \cos u,\sin u,0\rangle\text{,}\)</span> <span class="process-math">\(0\leq u\leq 2\pi\text{.}\)</span> To obtain the interior of the circle as well, we can scale by <span class="process-math">\(v\text{,}\)</span> giving</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec r_1(u,v) = \langle v\cos u,v\sin u, 0\rangle,  0\leq u\leq 2\pi 0\leq v\leq 1\text{.}
+\end{equation*}
+</div>
+<p>As the boundary of <span class="process-math">\(\surfaceS_2\)</span> is also the unit circle, the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> components of <span class="process-math">\(\vec r_2\)</span> will be the same as those of <span class="process-math">\(\vec r_1\text{;}\)</span> we just need a different <span class="process-math">\(z\)</span> component. With <span class="process-math">\(z = 1-x^2-y^2\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec r_2(u,v) = \langle v\cos u,v\sin u, 1-v^2\cos^2u-v^2\sin^2u\rangle = \langle v\cos u,v\sin u, 1-v^2\rangle\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(0\leq u\leq 2\pi\)</span> and <span class="process-math">\(0\leq v\leq 1\text{.}\)</span></p>
+<p>We now compute the normal vectors <span class="process-math">\(\vec n_1\)</span> and <span class="process-math">\(\vec n_2\text{.}\)</span></p>
+<p>For <span class="process-math">\(\vec n_1\text{:}\)</span> <span class="process-math">\(\vec r_{1u}= \langle -v\sin u, v\cos u,0\rangle\text{,}\)</span> <span class="process-math">\(\vec r_{1v} = \langle \cos u,\sin u,0\rangle\text{,}\)</span> so</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec n_1 = \vec r_{1u}\times \vec r_{1v} = \langle 0,0,-v\rangle\text{.}
+\end{equation*}
+</div>
+<p>As this vector has a negative <span class="process-math">\(z\)</span>-component, we instead use</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec n_1 = \vec r_{1v}\times \vec r_{1u} = \langle 0,0,v\rangle\text{.}
+\end{equation*}
+</div>
+<p>Similarly, <span class="process-math">\(\vec n_2\text{:}\)</span> <span class="process-math">\(\vec r_{2u}= \langle -v\sin u, v\cos u,0\rangle\text{,}\)</span> <span class="process-math">\(\vec r_{2v} = \langle \cos u,\sin u,-2v\rangle\text{,}\)</span> so</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec n_2 = \vec r_{2u}\times \vec r_{2v} = \langle -2v^2\cos u,-2v^2\sin u,-v\rangle\text{.}
+\end{equation*}
+</div>
+<p>Again, this normal vector has a negative <span class="process-math">\(z\)</span>-component so we use</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec n_2 = \vec r_{2v}\times \vec r_{2u} = \langle 2v^2\cos u,2v^2\sin u,v\rangle\text{.}
+\end{equation*}
+</div>
+<p>We are now set to compute flux. Over field <span class="process-math">\(\vec F_1=\langle 0,0,1\rangle\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\text{ Flux across } \surfaceS_1  \amp = \iint_{\surfaceS_1} \vec F_1\cdot \vec n_1\, dS\\
+\amp = \iint_R\langle 0,0,1\rangle\cdot\langle 0,0,v\rangle\, dA\\
+\amp = \int_0^1\int_0^{2\pi} (v)\, du\, dv\\
+\amp = \pi\text{.}
+\end{align*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\text{ Flux across } \surfaceS_2  \amp = \iint_{\surfaceS_2} \vec F_1\cdot \vec n_2\, dS\\
+\amp = \iint_R\langle 0,0,1\rangle\cdot\langle 2v^2\cos u,2v^2\sin u,v\rangle\, dA\\
+\amp = \int_0^1\int_0^{2\pi} (v)\, du\, dv\\
+\amp = \pi\text{.}
+\end{align*}
+</div>
+<p>These two results are equal and positive. Each are positive because both normal vectors are pointing in the positive <span class="process-math">\(z\)</span>-directions, as does <span class="process-math">\(\vec F_1\text{.}\)</span> As the field passes through each surface in the direction of their normal vectors, the flux is measured as positive.</p>
+<p>We can also intuitively understand why the results are equal. Consider <span class="process-math">\(\vec F_1\)</span> to represent the flow of air, and let each surface represent a filter. Since <span class="process-math">\(\vec F_1\)</span> is constant, and moving “straight up,” it makes sense that all air passing through <span class="process-math">\(\surfaceS_1\)</span> also passes through <span class="process-math">\(\surfaceS_2\text{,}\)</span> and vice-versa.</p>
+<p>If we treated the surfaces as creating one piecewise-smooth surface <span class="process-math">\(\surfaceS\text{,}\)</span> we would find the total flux across <span class="process-math">\(\surfaceS\)</span> by finding the flux across each piece, being sure that each normal vector pointed to the outside of the closed surface. Above, <span class="process-math">\(\vec n_1\)</span> does not point outside the surface, though <span class="process-math">\(\vec n_2\)</span> does. We would instead want to use <span class="process-math">\(-\vec n_1\)</span> in our computation. We would then find that the flux across <span class="process-math">\(\surfaceS_1\)</span> is <span class="process-math">\(-\pi\text{,}\)</span> and hence the total flux across <span class="process-math">\(\surfaceS\)</span> is <span class="process-math">\(-\pi + \pi = 0\text{.}\)</span> (As <span class="process-math">\(0\)</span> is a special number, we should wonder if this answer has special significance. It does, which is briefly discussed following this example and will be more fully developed in the next section.)</p>
+<p>We now compute the flux across each surface with <span class="process-math">\(\vec F_2=\langle 0,0,z\rangle\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\text{ Flux across } \surfaceS_1  \amp = \iint_{\surfaceS_1} \vec F_2\cdot \vec n_1\, dS .\\
+\end{align*}
+<p class="intertext">Over <span class="process-math">\(\surfaceS_1\text{,}\)</span> <span class="process-math">\(\vec F_2 = \vec F_2\big(\vec r_2(u,v)\big) = \langle 0,0,0\rangle\text{.}\)</span> Therefore,</p>
+\begin{align*}
+\amp = \iint_R\langle 0,0,0\rangle\cdot\langle 0,0,v\rangle\, dA\\
+\amp = \int_0^1\int_0^{2\pi} (0)\, du\, dv\\
+\amp = 0\text{.}
+\end{align*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\text{ Flux across } \surfaceS_2  \amp = \iint_{\surfaceS_2} \vec F_2\cdot \vec n_2\, dS .\\
+\end{align*}
+<p class="intertext">Over <span class="process-math">\(\surfaceS_2\text{,}\)</span> <span class="process-math">\(\vec F_2 = \vec F_2\big(\vec r_2(u,v)\big) = \langle 0,0,1-v^2\rangle\text{.}\)</span> Therefore,</p>
+\begin{align*}
+\amp = \iint_R\langle 0,0,1-v^2\rangle\cdot\langle 2v^2\cos u,2v^2\sin u,v\rangle\, dA\\
+\amp = \int_0^1\int_0^{2\pi} (v^3-v)\, du\, dv\\
+\amp = \pi/2\text{.}
+\end{align*}
+</div>
+<p>This time the measurements of flux differ. Over <span class="process-math">\(\surfaceS_1\text{,}\)</span> the field <span class="process-math">\(\vec F_2\)</span> is just <span class="process-math">\(\vec 0\text{,}\)</span> hence there is no flux. Over <span class="process-math">\(\surfaceS_2\text{,}\)</span> the flux is again positive as <span class="process-math">\(\vec F_2\)</span> points in the positive <span class="process-math">\(z\)</span> direction over <span class="process-math">\(\surfaceS_2\text{,}\)</span> as does <span class="process-math">\(\vec n_2\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_surface_integral.html#solution-1561" class="internal">in-context</a></span>
+</body>
+</html>

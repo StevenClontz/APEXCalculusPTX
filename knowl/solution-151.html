@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:08Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.5.11.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_chain_examples_2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/2QJLR-Y-Ht8?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol class="decimal">
+<li>
+<p>We must use the <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a> and <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>. Do not think that you must be able to “see” the whole answer immediately; rather, just proceed step-by-step.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_ProductRule.html ./knowl/thm_chain_rule.html">
+\begin{align*}
+\fp(x) \amp = x^5 \cdot \lzoo{x}{\sin\mathopen{}\left(2x^3\right)\mathclose{}} + \sin\mathopen{}\left(2x^3\right)\mathclose{}\cdot \lzoo{x}{x^5}\\
+\amp = x^5\left(\cos\mathopen{}\left(2x^3\right)\mathclose{}\cdot \lzoo{x}{2x^3} \right) + 5x^4\left(\sin\mathopen{}\left(2x^3\right)\mathclose{} \right)\\
+\amp = x^5\big(6x^2\cos\left(2x^3\right) \big) + 5x^4\big(\sin\left(2x^3\right) \big)\\
+\amp = 6x^7\cos\mathopen{}\left(2x^3\right)\mathclose{}+5x^4\sin\mathopen{}\left(2x^3\right)\mathclose{}\text{.}
+\end{align*}
+</div>
+</li>
+<li>
+<p>We must employ the <a href="" class="xref" data-knowl="./knowl/thm_QuotientRule.html" title="Theorem 2.4.10: Quotient Rule">Quotient Rule</a> along with the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a>. Again, proceed step-by-step.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_QuotientRule.html ./knowl/thm_chain_rule.html">
+\begin{align*}
+\fp(x) \amp= \frac{e^{-x^2}\cdot \lzoo{x}{5x^3} - 5x^3\cdot \lzoo{x}{e^{-x^2}}}{\left(e^{-x^2}\right)^2}\\
+\amp= \frac{e^{-x^2}\cdot 15x^2 - 5x^3\cdot e^{-x^2}\cdot \lzoo{x}{-x^2}}{\left(e^{-x^2}\right)^2}\\
+\amp= \frac{e^{-x^2}\left(15x^2\right) - 5x^3\left((-2x)e^{-x^2}\right)}{\left(e^{-x^2}\right)^2}\\
+\amp =\frac{e^{-x^2}\left(10x^4+15x^2\right)}{e^{-2x^2}}\\
+\amp = e^{x^2}\left(10x^4+15x^2\right)\text{.}
+\end{align*}
+</div>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sec_chainrule.html#solution-151" class="internal">in-context</a></span>
+</body>
+</html>

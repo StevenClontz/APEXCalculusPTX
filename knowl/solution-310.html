@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:49Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.1.15.1</span><span class="period">.</span>
+</h4>
+<p>We have a composition of functions as <span class="process-math">\(\cos^2(x) = \big(\cos(x) \big)^2\text{.}\)</span> However, setting <span class="process-math">\(u = \cos(x)\)</span> means <span class="process-math">\(du = -\sin(x) \, dx\text{,}\)</span> which we do not have in the integral. Another technique is needed.</p>
+<aside class="aside aside-like"><p>The power reduction identities can be found in <a href="" class="xref" data-knowl="./knowl/reference-trig-power-reduction.html" title="List B.3.5: Power-Reducing Formulas">List B.3.5</a> in <a href="appendix-reference.html" class="internal" title="Appendix B: Quick Reference">Appendix B</a>.</p></aside><p>The process we'll employ is to use a Power Reducing formula for <span class="process-math">\(\cos^2(x)\text{,}\)</span> which states</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\cos^2(x) = \frac{1+\cos(2x)}{2}\text{.}
+\end{equation*}
+</div>
+<p>The right hand side of this equation is not difficult to integrate. We have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_linearsub.html">
+\begin{align*}
+\int \cos^2(x) \, dx \amp = \int \frac{1+\cos(2x)}2\, dx\\
+\amp =	\int \left( \frac12 + \frac12\cos(2x)\right)\, dx\\
+\amp = \frac12x + \frac12\frac{\sin(2x)}{2} + C\\
+\amp = \frac12x + \frac{\sin(2x)}4 + C\text{,}
+\end{align*}
+</div>
+<p class="continuation">where we used <a href="" class="xref" data-knowl="./knowl/idea_linearsub.html" title="Key Idea 6.1.5: Substitution With A Linear Function">Key Idea 6.1.5</a> for the antiderivative of <span class="process-math">\(\cos(2x)\text{.}\)</span></p>
+<p>We'll make significant use of this power-reducing technique in future sections.</p>
+</div>
+<span class="incontext"><a href="sec_substitution.html#solution-310" class="internal">in-context</a></span>
+</body>
+</html>

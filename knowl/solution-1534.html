@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:49:39Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.1.16.1</span><span class="period">.</span>
+</h4>
+<p>We compute the density of the wire as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\delta(x,y,z) = \delta\big(1+\cos t,1+\sin t, 1+\sin(2t)\big) = 2+\sin t+\sin(2t)\text{.}
+\end{equation*}
+</div>
+<p>We compute <span class="process-math">\(ds\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+ds = \norm{\vrp(t)}\, dt = \sqrt{\sin^2t+\cos^2t+4\cos^2(2t)}\, dt = \sqrt{1+4\cos^2(2t)}\, dt\text{.}
+\end{equation*}
+</div>
+<p>Thus the mass is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+M = \oint_C \delta(s)\, ds = \int_0^{2\pi} \big(2+\sin t+\sin(2t)\big)\sqrt{1+4\cos^2(2t)}\, dt \approx 21.08\text{ gm }\text{.}
+\end{equation*}
+</div>
+<p>We compute the moments about the coordinate planes:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+M_{yz} \amp = \oint_C x\delta(s)\, ds\\
+\amp = \int_0^{2\pi}(1+\cos t)\big(2+\sin t+\sin(2t)\big)\sqrt{1+4\cos^2(2t)}\, dt\\
+\amp \approx 21.08.\\
+M_{xz} \amp = \oint_C y\delta(s)\, ds\\
+\amp = \int_0^{2\pi}(1+\sin t)\big(2+\sin t+\sin(2t)\big)\sqrt{1+4\cos^2(2t)}\, dt\\
+\amp \approx 26.35\\
+M_{xy} \amp = \oint_C z\delta(s)\, ds\\
+\amp = \int_0^{2\pi}\big(1+\sin(2 t)\big)\big(2+\sin t+\sin(2t)\big)\sqrt{1+4\cos^2(2t)}\, dt\\
+\amp \approx 25.40
+\end{align*}
+</div>
+<p>Thus the center of mass of the wire is located at</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_linescalarfield6.html">
+\begin{equation*}
+(\overline{x},\overline{y},\overline{z}) = \left(\frac{M_{yz}}M, \frac{M_{xz}}M,\frac{M_{xy}}M\right) \approx (1,1.25,1.20)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">as indicated by the dot in <a href="" class="xref" data-knowl="./knowl/fig_linescalarfield6.html" title="Figure 15.1.17">Figure 15.1.17</a>. Note how in this example, the curve <span class="process-math">\(C\)</span> is “centered” about the point <span class="process-math">\((1,1,1)\text{,}\)</span> though the variable density of the wire pulls the center of mass out along the <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> axes.</p>
+</div>
+<span class="incontext"><a href="sec_line_int_intro.html#solution-1534" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:50Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.1.22.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-sub-ex-complet-square" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/wSrXvtTvUjI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Initially, this integral seems to have nothing in common with the integrals in <a href="" class="xref" data-knowl="./knowl/thm_int_inverse_trig.html" title="Theorem 6.1.20: Integrals Involving Inverse Trigonometric Functions">Theorem 6.1.20</a>. As it lacks a square root, it almost certainly is not related to arcsine or arcsecant. It is, however, related to the arctangent function.</p>
+<p>We see this by <em class="emphasis">completing the square</em> in the denominator. We give a brief reminder of the process here.</p>
+<p>Start with a quadratic with a leading coefficient of 1. It will have the form of <span class="process-math">\(x^2 + bx + c\text{.}\)</span> Take 1/2 of <span class="process-math">\(b\text{,}\)</span> square it, and add/subtract it back into the expression. i.e.,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x^2+bx+ c \amp = \underbrace{x^2 + bx + \frac{b^2}4}_{(x+b/2)^2} - \frac{b^2}4 + c\\
+\amp = \left(x+\frac b2\right)^2 + c-\frac{b^2}4
+\end{align*}
+</div>
+<p>In our example, we take half of <span class="process-math">\(-4\)</span> and square it, getting <span class="process-math">\(4\text{.}\)</span> We add/subtract it into the denominator as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\frac{1}{x^2-4x+13} \amp = \frac{1}{\underbrace{x^2-4x+4}_{(x-2)^2}-4+13}\\
+\amp =\frac{1}{(x-2)^2 + 9}
+\end{align*}
+</div>
+<p>We can now integrate this using the arctangent rule. Technically, we need to substitute first with <span class="process-math">\(u=x-2\text{,}\)</span> but we can employ <a href="" class="xref" data-knowl="./knowl/idea_linearsub.html" title="Key Idea 6.1.5: Substitution With A Linear Function">Key Idea 6.1.5</a> instead. Thus we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_linearsub.html">
+\begin{align*}
+\int \frac{1}{x^2-4x+13}\, dx \amp = \int \frac{1}{(x-2)^2+9}\, dx\\
+\amp = \frac13\tan^{-1}\left(\frac{x-2}{3}\right)+C\text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_substitution.html#solution-315" class="internal">in-context</a></span>
+</body>
+</html>

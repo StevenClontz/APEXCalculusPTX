@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:33:20Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Flow, Flux, Green's Theorem and the Divergence Theorem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_line_int_vf.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_vector_calc.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_parametric_surfaces.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_line_int_vf.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_vector_calc.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_parametric_surfaces.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="active">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_greensthm"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">15.4</span> <span class="title">Flow, Flux, Green's Theorem and the Divergence Theorem</span>
+</h2>
+<section class="subsection" id="subsection-158"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.4.1</span> <span class="title">Flow and Flux</span>
+</h3>
+<p id="p-15746">Line integrals over vector fields have the natural interpretation of computing work when <span class="process-math">\(\vec F\)</span> represents a force field. It is also common to use vector fields to represent velocities. In these cases, the line integral <span class="process-math">\(\int_C \vec F\cdot d\vec r\)</span> is said to represent <em class="emphasis">flow</em>. </p>
+<figure class="figure figure-like" id="fig_flowfluxintro"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 98.7135074468085%"><iframe src="generated/asymptote/img_flowfluxintro.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_flowfluxintro.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.1<span class="period">.</span></span><span class="space"> </span>Illustrating the principles of flow and flux</figcaption></figure><p id="p-15747">Let the vector field <span class="process-math">\(\vec F = \la 1,0\ra\)</span> represent the velocity of water as it moves across a smooth surface, depicted in <a href="" class="xref" data-knowl="./knowl/fig_flowfluxintro.html" title="Figure 15.4.1">Figure 15.4.1</a>. A line integral over <span class="process-math">\(C\)</span> will compute “how much water is moving <em class="emphasis">along</em> the path <span class="process-math">\(C\text{.}\)</span>”</p>
+<p id="p-15748">In the figure, “all” of the water above <span class="process-math">\(C_1\)</span> is moving along that curve, whereas “none” of the water above <span class="process-math">\(C_2\)</span> is moving along that curve (the curve and the flow of water are at right angles to each other). Because <span class="process-math">\(C_3\)</span> has nonzero horizontal and vertical components, “some” of the water above that curve is moving along the curve.</p>
+<p id="p-15749">When <span class="process-math">\(C\)</span> is a closed curve, we call flow <em class="emphasis">circulation</em>, represented by <span class="process-math">\(\oint_C \vec F\cdot d\vec r\text{.}\)</span></p>
+<p id="p-15750">The “opposite” of flow is <em class="emphasis">flux</em>, a measure of “how much water is moving <em class="emphasis">across</em> the path <span class="process-math">\(C\text{.}\)</span>” If a curve represents a filter in flowing water, flux measures how much water will pass through the filter. Considering again <a href="" class="xref" data-knowl="./knowl/fig_flowfluxintro.html" title="Figure 15.4.1">Figure 15.4.1</a>, we see that a screen along <span class="process-math">\(C_1\)</span> will not filter any water as no water passes across that curve. Because of the nature of this field, <span class="process-math">\(C_2\)</span> and <span class="process-math">\(C_3\)</span> each filter the same amount of water per second.</p>
+<p id="p-15751">The terms “flow” and “flux” are used apart from velocity fields, too. Flow is measured by <span class="process-math">\(\int_C \vec F\cdot d\vec r\text{,}\)</span> which is the same as <span class="process-math">\(\int_C \vec F\cdot\vec T\, ds\)</span> by <a href="" class="xref" data-knowl="./knowl/def_line_integral2.html" title="Definition 15.3.2: Line Integral Over A Vector Field">Definition 15.3.2</a>. That is, flow is a summation of the amount of <span class="process-math">\(\vec F\)</span> that is <em class="emphasis">tangent</em> to the curve <span class="process-math">\(C\text{.}\)</span></p>
+<p id="p-15752">By contrast, flux is a summation of the amount of <span class="process-math">\(\vec F\)</span> that is <em class="emphasis">orthogonal</em> to the direction of travel. To capture this orthogonal amount of <span class="process-math">\(\vec F\text{,}\)</span> we use <span class="process-math">\(\int_C \vec F \cdot \vec n\, ds\)</span> to measure flux, where <span class="process-math">\(\vec n\)</span> is a unit vector orthogonal to the curve <span class="process-math">\(C\text{.}\)</span> (Later, we'll measure flux across surfaces, too. For example, in physics it is useful to measure the amount of a magnetic field that passes through a surface.)</p>
+<figure class="figure figure-like" id="vid-veccalc-greens-curves"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-567" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/setRFQrIgC4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.2<span class="period">.</span></span><span class="space"> </span>Further terminology for curves: closed, simple, positively oriented</figcaption></figure><p id="p-15753">How is <span class="process-math">\(\vec n\)</span> determined? We'll later see that if <span class="process-math">\(C\)</span> is a closed curve, we'll want <span class="process-math">\(\vec n\)</span> to point to the outside of the curve (measuring how much is “going out”). We'll also adopt the convention that closed curves should be traversed counterclockwise.</p>
+<p id="p-15754">(If <span class="process-math">\(C\)</span> is a complicated closed curve, it can be difficult to determine what “counterclockwise” means. Consider <a href="" class="xref" data-knowl="./knowl/fig_fluxcounterclockwise.html" title="Figure 15.4.3">Figure 15.4.3</a>. Seeing the curve as a whole, we know which way “counterclockwise” is. If we zoom in on point <span class="process-math">\(A\text{,}\)</span> one might incorrectly choose to traverse the path in the wrong direction. So we offer this definition: <em class="emphasis">a closed curve is being traversed counterclockwise if the outside is to the right of the path and the inside is to the left.</em>)</p>
+<figure class="figure figure-like" id="fig_fluxcounterclockwise"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100.038033254111%"><iframe src="generated/asymptote/img_fluxcounterclockwise.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_fluxcounterclockwise.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.3<span class="period">.</span></span><span class="space"> </span>Determining “counterclockwise” is not always simple without a good definition</figcaption></figure><p id="p-15755">When a curve <span class="process-math">\(C\)</span> is traversed counterclockwise by <span class="process-math">\(\vrt = \la f(t),
+g(t)\ra\text{,}\)</span> we rotate <span class="process-math">\(\vec T\)</span> clockwise 90<span class="process-math">\(^\circ\)</span> to obtain <span class="process-math">\(\vec n\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec T = \frac{\la \fp(t),g'(t)\ra}{\norm{\vrp(t)}}  \Rightarrow  \vec n = \frac{\la g'(t),-\fp(t)\ra}{\norm{\vrp(t)}}\text{.}
+\end{equation*}
+</div>
+<p id="p-15756">Letting <span class="process-math">\(\vec F = \la M, N\ra\text{,}\)</span> we calculate flux as:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-729">
+\begin{align*}
+\int_C \vec F\cdot \vec n\, ds \amp = \int_C \vec F\cdot \frac{\la g'(t),-\fp(t)\ra}{\norm{\vrp(t)}} \norm{\vrp(t)}\, dt\\
+\amp = \int_C \la M, N\ra \cdot \la g'(t),-\fp(t)\ra\, dt\\
+\amp = \int_C \Big(M\,g'(t) - N\,\fp(t)\Big)dt\\
+\amp = \int_C M\,g'(t)\, dt - \int_C N\,\fp(t)\, dt.\\
+\end{align*}
+<p class="intertext">As the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> components of <span class="process-math">\(\vrt\)</span> are <span class="process-math">\(f(t)\)</span> and <span class="process-math">\(g(t)\)</span> respectively, the differentials of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are <span class="process-math">\(dx = \fp(t)dt\)</span> and <span class="process-math">\(dy=g'(t)dt\text{.}\)</span> We can then write the above integrals as:</p>
+\begin{align*}
+\amp = \int_C M\, dy - \int_C N\, dx.\\
+\end{align*}
+<p class="intertext">This is often written as one integral (not incorrectly, though somewhat confusingly, as this one integral has two “<span class="process-math">\(d\)</span> 's”):</p>
+\begin{align*}
+\amp =\int_CM\, dy -N\, dx\text{.}
+\end{align*}
+</div>
+<p id="p-15757">We summarize the above in the following definition.</p>
+<article class="definition definition-like" id="def_flowflux"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">15.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Flow, Flux.</span>
+</h4>
+<p id="p-15758">Let <span class="process-math">\(\vec F=\la M,N\ra\)</span> be a vector field with continuous components defined on a smooth curve <span class="process-math">\(C\text{,}\)</span> parametrized by <span class="process-math">\(\vrt =\la f(t),g(t)\ra\text{,}\)</span> let <span class="process-math">\(\vec T\)</span> be the unit tangent vector of <span class="process-math">\(\vrt\text{,}\)</span> and let <span class="process-math">\(\vec n\)</span> be the clockwise 90<span class="process-math">\(^\circ\)</span>degree rotation of <span class="process-math">\(\vec T\text{.}\)</span> </p>
+<ul class="disc">
+<li id="li-2862">
+<p id="p-15759">The <em class="emphasis">flow</em> of <span class="process-math">\(\vec F\)</span> along <span class="process-math">\(C\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_C \vec F\cdot\vec T\, ds=\int_C \vec F\cdot d\vec r\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-2863">
+<p id="p-15760">The <em class="emphasis">flux</em> of <span class="process-math">\(\vec F\)</span> across <span class="process-math">\(C\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_C \vec F\cdot \vec n\, ds =  \int_C M\, dy -N\, dx = \int_C\Big(M\,g'(t) - N\,\fp(t)\Big)dt\text{.}
+\end{equation*}
+</div>
+</li>
+</ul></article><p id="p-15761">This definition of flow also holds for curves in space, though it does not make sense to measure “flux across a curve” in space.</p>
+<p id="p-15762">Measuring flow is essentially the same as finding work performed by a force as done in the previous examples. Therefore we practice finding only flux in the following example.</p>
+<article class="example example-like" id="ex_flux1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Finding flux across curves in the plane.</span>
+</h4>
+<p id="p-15763">Curves <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> each start at <span class="process-math">\((1,0)\)</span> and end at <span class="process-math">\((0,1)\text{,}\)</span> where <span class="process-math">\(C_1\)</span> follows the line <span class="process-math">\(y=1-x\)</span> and <span class="process-math">\(C_2\)</span> follows the unit circle, as shown in <a href="" class="xref" data-knowl="./knowl/fig_flux1.html" title="Figure 15.4.6">Figure 15.4.6</a>. Find the flux across both curves for the vector fields <span class="process-math">\(\vec F_1 = \la y, -x+1\ra\)</span> and <span class="process-math">\(\vec F_2 = \la -x, 2y-x\ra\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_flux1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_flux1a"><div class="asymptote-box" style="padding-top: 100.038033254111%"><iframe src="generated/asymptote/img_flux1a.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_flux1a.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_flux1b"><div class="asymptote-box" style="padding-top: 100.038033254111%"><iframe src="generated/asymptote/img_flux1b.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_flux1b.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.6<span class="period">.</span></span><span class="space"> </span>Illustrating the curves and vector fields in <a href="" class="xref" data-knowl="./knowl/ex_flux1.html" title="Example 15.4.5: Finding flux across curves in the plane">Example 15.4.5</a>. In (a) the vector field is <span class="process-math">\(\vec F_1\text{,}\)</span> and in (b) the vector field is <span class="process-math">\(\vec F_2\text{.}\)</span></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1545" id="solution-1545"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1545"><div class="solution solution-like">
+<p id="p-15764">We begin by finding parametrizations of <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\text{.}\)</span> As done in <a href="" class="xref" data-knowl="./knowl/ex_livf3.html" title="Example 15.3.12: Using properties of line integrals over vector fields">Example 15.3.12</a>, parametrize <span class="process-math">\(C_1\)</span> by creating the line that starts at <span class="process-math">\((1,0)\)</span> and moves in the <span class="process-math">\(\la -1,1\ra\)</span> direction: <span class="process-math">\(\vec r_1(t) = \la 1,0\ra + t\la -1,1\ra = \la 1-t, t\ra\text{,}\)</span> for <span class="process-math">\(0\leq t\leq 1\text{.}\)</span> We parametrize <span class="process-math">\(C_2\)</span> with the familiar <span class="process-math">\(\vec r_2(t) = \la \cos t,\sin t\ra\)</span> on <span class="process-math">\(0\leq t\leq \pi/2\text{.}\)</span> For reference later, we give each function and its derivative below:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_livf3.html">
+\begin{equation*}
+\vec r_1(t) = \la 1-t, t\ra,  \vrp_1(t) = \la -1,1\ra\text{.}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_livf3.html">
+\begin{equation*}
+\vec r_2(t) = \la \cos t, \sin t\ra,  \vrp_2(t) = \la -\sin t ,\cos t\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-15765">When <span class="process-math">\(\vec F = \vec F_1 = \la y, -x+1\ra\)</span> (as shown in <a href="" class="xref" data-knowl="./knowl/fig_flux1a.html" title="Figure 15.4.6.(a)">Figure 15.4.6.(a)</a>), over <span class="process-math">\(C_1\)</span> we have <span class="process-math">\(M = y =t\)</span> and <span class="process-math">\(N = -x+1 = -(1-t)+1 = t\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/def_flowflux.html" title="Definition 15.4.4: Flow, Flux">Definition 15.4.4</a>, we compute the flux:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_flux1a.html ./knowl/def_flowflux.html" id="md-730">
+\begin{align*}
+\int_{C_1} \vec F\cdot \vec n\, ds \amp  = \int_{C_1} \Big(M\,g'(t) - N\,\fp(t)\Big)\, dt\\
+\amp = \int_0^1 \Big( t(1) - t(-1)\Big)\, dt\\
+\amp = \int_0^1 2t\, dt\\
+\amp = 1\text{.}
+\end{align*}
+</div>
+<p id="p-15766">Over <span class="process-math">\(C_2\text{,}\)</span> we have <span class="process-math">\(M = y = \sin t\)</span> and <span class="process-math">\(N = -x+1 = 1-\cos t\text{.}\)</span> Thus the flux across <span class="process-math">\(C_2\)</span> is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-731">
+\begin{align*}
+\int_{C_1} \vec F\cdot \vec n\, ds \amp  = \int_{C_1} \Big(M\,g'(t) - N\,\fp(t)\Big)\, dt\\
+\amp = \int_0^{\pi/2}\Big((\sin t)(\cos t) - (1-\cos t)(-\sin t)\Big)\, dt\\
+\amp = \int_0^{\pi/2} \sin t\, dt\\
+\amp =1\text{.}
+\end{align*}
+</div>
+<p id="p-15767">Notice how the flux was the same across both curves. This won't hold true when we change the vector field.</p>
+<p id="p-15768">When <span class="process-math">\(\vec F = \vec F_2 = \la -x,2y-x\ra\)</span> (as shown in <a href="" class="xref" data-knowl="./knowl/fig_flux1b.html" title="Figure 15.4.6.(b)">Figure 15.4.6.(b)</a>), over <span class="process-math">\(C_1\)</span> we have <span class="process-math">\(M = -x = t-1\)</span> and <span class="process-math">\(N = 2y-x = 2t-(1-t) = 3t-1\text{.}\)</span> Computing the flux across <span class="process-math">\(C_1\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_flux1b.html" id="md-732">
+\begin{align*}
+\int_{C_1} \vec F\cdot \vec n\, ds \amp  = \int_{C_1} \Big(M\,g'(t) - N\,\fp(t)\Big)\, dt\\
+\amp = \int_0^1 \Big( (t-1)(1) - (3t-1)(-1)\Big)\, dt\\
+\amp = \int_0^1 (4t-2)\, dt\\
+\amp = 0\text{.}
+\end{align*}
+</div>
+<p id="p-15769">Over <span class="process-math">\(C_2\text{,}\)</span> we have <span class="process-math">\(M = -x = -\cos t\)</span> and <span class="process-math">\(N = 2y-x = 2\sin t-\cos t\text{.}\)</span> Thus the flux across <span class="process-math">\(C_2\)</span> is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-733">
+\begin{align*}
+\int_{C_1} \vec F\cdot \vec n\, ds \amp  = \int_{C_1} \Big(M\,g'(t) - N\,\fp(t)\Big)\, dt\\
+\amp = \int_0^{\pi/2}\Big((-\cos t)(\cos t) - (2\sin t-\cos t)(-\sin t)\Big)\, dt\\
+\amp = \int_0^{\pi/2} \big(2\sin^2 t-\sin t\cos t-\cos^2t\big)\, dt\\
+\amp =\pi/4 - 1/2\approx 0.285\text{.}
+\end{align*}
+</div>
+<p id="p-15770">We analyze the results of this example below.</p>
+</div></div>
+</div></article><p id="p-15771">In <a href="" class="xref" data-knowl="./knowl/ex_flux1.html" title="Example 15.4.5: Finding flux across curves in the plane">Example 15.4.5</a>, we saw that the flux across the two curves was the same when the vector field was <span class="process-math">\(\vec F_1 = \la y, -x+1\ra\text{.}\)</span> This is not a coincidence. We show why they are equal in <a href="" class="xref" data-knowl="./knowl/ex_div2.html" title="Example 15.4.23: Flux when \divv \vec F = 0">Example 15.4.23</a>. In short, the reason is this: the divergence of <span class="process-math">\(\vec F_1\)</span> is 0, and when <span class="process-math">\(\divv \vec F = 0\text{,}\)</span> the flux across any two paths with common beginning and ending points will be the same.</p>
+<p id="p-15772">We also saw in the example that the flux across <span class="process-math">\(C_1\)</span> was 0 when the field was <span class="process-math">\(\vec F_2 = \la -x, 2y-x\ra\text{.}\)</span> Flux measures “how much” of the field crosses the path from left to right (following the conventions established before). Positive flux means most of the field is crossing from left to right; negative flux means most of the field is crossing from right to left; zero flux means the same amount crosses from each side. When we consider <a href="" class="xref" data-knowl="./knowl/fig_flux1b.html" title="Figure 15.4.6.(b)">Figure 15.4.6.(b)</a>, it seems plausible that the same amount of <span class="process-math">\(\vec F_2\)</span> was crossing <span class="process-math">\(C_1\)</span> from left to right as from right to left.</p></section><section class="subsection" id="subsection-159"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.4.2</span> <span class="title">Green's Theorem</span>
+</h3>
+<p id="p-15773">There is an important connection between the circulation around a closed region <span class="process-math">\(R\)</span> and the curl of the vector field inside of <span class="process-math">\(R\text{,}\)</span> as well as a connection between the flux across the boundary of <span class="process-math">\(R\)</span> and the divergence of the field inside <span class="process-math">\(R\text{.}\)</span> These connections are described by Green's Theorem and the Divergence Theorem, respectively. We'll explore each in turn. </p>
+<figure class="figure figure-like" id="vid-veccalc-greens-statement"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-568" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/JOFBkUN5Dis?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.7<span class="period">.</span></span><span class="space"> </span>Introducing Green's Theorem</figcaption></figure><p id="p-15774">Green's Theorem states “the counterclockwise circulation around a closed region <span class="process-math">\(R\)</span> is equal to the sum of the curls over <span class="process-math">\(R\text{.}\)</span>”</p>
+<article class="theorem theorem-like" id="thm_greens"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Green's Theorem.</span>
+</h4>
+<p id="p-15775">Let <span class="process-math">\(R\)</span> be a closed, bounded region of the plane whose boundary <span class="process-math">\(C\)</span> is composed of finitely many smooth curves, let <span class="process-math">\(\vec r(t)\)</span> be a counterclockwise parametrization of <span class="process-math">\(C\text{,}\)</span> and let <span class="process-math">\(\vec F =\la M,N\ra\)</span> where <span class="process-math">\(N_x\)</span> and <span class="process-math">\(M_y\)</span> are continuous over <span class="process-math">\(R\text{.}\)</span> Then </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\oint_C \vec F\cdot d\vec r = \iint_R\curl \vec F\, dA\text{.}
+\end{equation*}
+</div></article><p id="p-15776">We'll explore Green's Theorem through an example.</p>
+<article class="example example-like" id="ex_green1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Confirming Green's Theorem.</span>
+</h4>
+<p id="p-15777">Let <span class="process-math">\(\vec F =\la -y,x^2+1\ra\)</span> and let <span class="process-math">\(R\)</span> be the region of the plane bounded by the triangle with vertices <span class="process-math">\((-1,0)\text{,}\)</span> <span class="process-math">\((1,0)\)</span> and <span class="process-math">\((0,2)\text{,}\)</span> shown in <a href="" class="xref" data-knowl="./knowl/fig_green1.html" title="Figure 15.4.10">Figure 15.4.10</a>. Verify Green's Theorem; that is, find the circulation of <span class="process-math">\(\vec F\)</span> around the boundary of <span class="process-math">\(R\)</span> and show that is equal to the double integral of <span class="process-math">\(\curl \vec F\)</span> over <span class="process-math">\(R\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_green1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100.038033254111%"><iframe src="generated/asymptote/img_green1.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_green1.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.10<span class="period">.</span></span><span class="space"> </span>The vector field and planar region used in <a href="" class="xref" data-knowl="./knowl/ex_green1.html" title="Example 15.4.9: Confirming Green's Theorem">Example 15.4.9</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-tabular" data-refid="hk-solution-1546" id="solution-1546"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1546"><div class="solution solution-like">
+<p id="p-15778">The curve <span class="process-math">\(C\)</span> that bounds <span class="process-math">\(R\)</span> is composed of 3 lines. While we need to traverse the boundary of <span class="process-math">\(R\)</span> in a counterclockwise fashion, we may start anywhere we choose. We arbitrarily choose to start at <span class="process-math">\((-1,0)\text{,}\)</span> move to <span class="process-math">\((1,0)\text{,}\)</span> etc., with each line parametrized by <span class="process-math">\(\vec r_1(t)\text{,}\)</span> <span class="process-math">\(\vec r_2(t)\)</span> and <span class="process-math">\(\vec r_3(t)\text{,}\)</span> respectively.</p>
+<p id="p-15779">We leave it to the reader to confirm that the following parametrizations of the three lines are accurate:</p>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vec r_1(t) = \la 2t-1,0\ra\text{,}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">for <span class="process-math">\(0\leq t\leq 1\text{,}\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">with <span class="process-math">\(\vrp_1(t) = \la 2,0\ra\text{,}\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vec r_2(t) = \la 1-t,2t\ra\text{,}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">for <span class="process-math">\(0\leq t\leq 1\text{,}\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">with <span class="process-math">\(\vrp_2(t) = \la -1,2\ra\text{,}\)</span> and</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vec r_3(t) = \la -t,2-2t\ra\text{,}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">for <span class="process-math">\(0\leq t\leq 1\text{,}\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">with <span class="process-math">\(\vrp_3(t) = \la -1,-2\ra\text{.}\)</span>
+</td>
+</tr>
+</table></div>
+<p id="p-15780">The circulation around <span class="process-math">\(C\)</span> is found by summing the flow along each of the sides of the triangle. We again leave it to the reader to confirm the following computations:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-734">
+\begin{align*}
+\int_{C_1}\vec F\cdot d\vec r_1 \amp = \int_0^1 \la 0,(2t-1)^2+1\ra\cdot \la 2,0\ra dt = 0,\\
+\int_{C_2}\vec F\cdot d\vec r_2 \amp = \int_0^1 \la -2t,(1-t)^2+1\ra\cdot \la -1,2\ra dt = 11/3, \text{ and }\\
+\int_{C_3}\vec F\cdot d\vec r_3 \amp = \int_0^1 \la 2t-2,t^2+1\ra\cdot \la -1,-2\ra dt = -5/3\text{.}
+\end{align*}
+</div>
+<p id="p-15781">The circulation is the sum of the flows: <span class="process-math">\(2\text{.}\)</span></p>
+<p id="p-15782">We confirm Green's Theorem by computing <span class="process-math">\(\iint_R \curl \vec F\, dA\text{.}\)</span> We find <span class="process-math">\(\curl \vec F = 2x+1\text{.}\)</span> The region <span class="process-math">\(R\)</span> is bounded by the lines <span class="process-math">\(y = 2x+2\text{,}\)</span> <span class="process-math">\(y=-2x+2\)</span> and <span class="process-math">\(y=0\text{.}\)</span> Integrating with the order <span class="process-math">\(dx\, dy\)</span> is most straightforward, leading to</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^2\int_{y/2-1}^{1-y/2} (2x+1)\, dx\, dy = \int_0^2 (2-y)\, dy = 2\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which matches our previous measurement of circulation.</p>
+</div></div>
+</div></article><figure class="figure figure-like" id="vid-veccalc-greens-example-verify"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-569" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/K2lPAvWyH4Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.11<span class="period">.</span></span><span class="space"> </span>Verifying Green's Theorem with an example</figcaption></figure><article class="example example-like" id="ex_green2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Using Green's Theorem.</span>
+</h4>
+<p id="p-15783">Let <span class="process-math">\(\vec F = \la \sin x,\cos y\ra\)</span> and let <span class="process-math">\(R\)</span> be the region enclosed by the curve <span class="process-math">\(C\)</span> parametrized by <span class="process-math">\(\vec r(t) = \la 2\cos t+ \frac1{10}\cos(10t),2\sin t+\frac1{10}\sin(10t)\ra\)</span> on <span class="process-math">\(0\leq t\leq 2\pi\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_green2.html" title="Figure 15.4.13">Figure 15.4.13</a>. Find the circulation around <span class="process-math">\(C\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_green2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100.038033254111%"><iframe src="generated/asymptote/img_green2.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_green2.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.13<span class="period">.</span></span><span class="space"> </span>The vector field and planar region used in <a href="" class="xref" data-knowl="./knowl/ex_green2.html" title="Example 15.4.12: Using Green's Theorem">Example 15.4.12</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1547" id="solution-1547"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1547"><div class="solution solution-like">
+<p id="p-15784">Computing the circulation directly using the line integral looks difficult, as the integrand will include terms like “<span class="process-math">\(\sin\big(2\cos t + \frac1{10}\cos(10t)\big)\text{.}\)</span>”</p>
+<p id="p-15785">Green's Theorem states that <span class="process-math">\(\oint_C\vec F\cdot d\vec r = \iint_R \curl\vec F\, dA\text{;}\)</span> since <span class="process-math">\(\curl \vec F = 0\)</span> in this example, the double integral is simply 0 and hence the circulation is 0.</p>
+<p id="p-15786">Since <span class="process-math">\(\curl \vec F = 0\text{,}\)</span> we can conclude that the circulation is 0 in two ways. One method is to employ Green's Theorem as done above. The second way is to recognize that <span class="process-math">\(\vec F\)</span> is a conservative field, hence there is a function <span class="process-math">\(f(x,y)\)</span> wherein <span class="process-math">\(\vec F = \nabla f\text{.}\)</span> Let <span class="process-math">\(A\)</span> be any point on the curve <span class="process-math">\(C\text{;}\)</span> since <span class="process-math">\(C\)</span> is closed, we can say that <span class="process-math">\(C\)</span> “begins” and “ends” at <span class="process-math">\(A\text{.}\)</span> By the Fundamental Theorem of Line Integrals, <span class="process-math">\(\oint_C \vec F\, d\vec r = f(A)-f(A) = 0\text{.}\)</span></p>
+</div></div>
+</div></article><p id="vidint-veccalc-greens-proof">Since Green's Theorem is an important result, it's worth taking a minute (or 12) to see why it's true, in the following video.</p>
+<figure class="figure figure-like" id="vid-veccalc-greens-proof"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-570" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/l9RaOCx4r1g?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.14<span class="period">.</span></span><span class="space"> </span>Sketching the proof of Green's Theorem</figcaption></figure><p id="p-15788">One can use Green's Theorem to find the area of an enclosed region by integrating along its boundary. Let <span class="process-math">\(C\)</span> be a closed curve, enclosing the region <span class="process-math">\(R\text{,}\)</span> parametrized by <span class="process-math">\(\vec r(t) = \la f(t),g(t)\ra\text{.}\)</span> We know the area of <span class="process-math">\(R\)</span> is computed by the double integral <span class="process-math">\(\iint_R \, dA\text{,}\)</span> where the integrand is <span class="process-math">\(1\text{.}\)</span> By creating a field <span class="process-math">\(\vec F\)</span> where <span class="process-math">\(\curl \vec F =1\text{,}\)</span> we can employ Green's Theorem to compute the area of <span class="process-math">\(R\)</span> as <span class="process-math">\(\oint_C \vec F\cdot d\vec r\text{.}\)</span></p>
+<p id="p-15789">One is free to choose any field <span class="process-math">\(\vec F\)</span> to use as long as <span class="process-math">\(\curl\vec F = 1\text{.}\)</span> Common choices are <span class="process-math">\(\vec F = \la 0,x\ra\text{,}\)</span> <span class="process-math">\(\vec F = \la -y,0\ra\)</span> and <span class="process-math">\(\vec F = \la -y/2,x/2\ra\text{.}\)</span> We demonstrate this below.</p>
+<article class="example example-like" id="ex_green3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Using Green's Theorem to find area.</span>
+</h4>
+<p id="p-15790">Let <span class="process-math">\(C\)</span> be the closed curve parametrized by <span class="process-math">\(\vrt = \la t-t^3,t^2\ra\)</span> on <span class="process-math">\(-1\leq t\leq 1\text{,}\)</span> enclosing the region <span class="process-math">\(R\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_green3.html" title="Figure 15.4.16">Figure 15.4.16</a>. Find the area of <span class="process-math">\(R\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_green3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_green3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.16<span class="period">.</span></span><span class="space"> </span>The region <span class="process-math">\(R\text{,}\)</span> whose area is found in <a href="" class="xref" data-knowl="./knowl/ex_green3.html" title="Example 15.4.15: Using Green's Theorem to find area">Example 15.4.15</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1548" id="solution-1548"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1548"><div class="solution solution-like">
+<p id="p-15791">We can choose any field <span class="process-math">\(\vec F\text{,}\)</span> as long as <span class="process-math">\(\curl \vec F = 1\text{.}\)</span> We choose <span class="process-math">\(\vec F = \la -y,0\ra\text{.}\)</span> We also confirm (left to the reader) that <span class="process-math">\(\vrt\)</span> traverses the region <span class="process-math">\(R\)</span> in a counterclockwise fashion. Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-735">
+\begin{align*}
+\text{ Area of \(R\) }  \amp = \iint_R\, dA\\
+\amp = \oint_C \vec F\cdot d\vec r\\
+\amp = \int_{-1}^1 \la -t^2,0\ra\cdot \la 1-3t^2,2t\ra\, dt\\
+\amp = \int_{-1}^1 (-t^2)(1-3t^2)\, dt\\
+\amp = \frac8{15}\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><figure class="figure figure-like" id="vid-veccalc-greens-cylcoid-area"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-571" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/g8iULyP0alk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.17<span class="period">.</span></span><span class="space"> </span>Using Green's Theorem to find the area under a cycloid</figcaption></figure><figure class="figure figure-like" id="vid-veccalc-greens-polygon"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-572" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/x1bIGtNu-0M?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.18<span class="period">.</span></span><span class="space"> </span>Using Green's Theorem to derive a polygon area formula</figcaption></figure><p id="vidint-veccalc-greens-multiply">Another interesting scenario that comes up is the case of multiply-connected regions (as opposed to simply-connected). If a bounded region has a “hole”, its boundary will consist of more than one curve: the outer boundary, as well as the boundary of the hole. Green's Theorem applies in this situation as well, as the following video explains.</p>
+<figure class="figure figure-like" id="vid-veccalc-greens-multiply"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-573" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/PaW_ZF-js-M?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.19<span class="period">.</span></span><span class="space"> </span>Green's Theorem and multiply-connected regions</figcaption></figure></section><section class="subsection" id="subsection-160"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.4.3</span> <span class="title">The Divergence Theorem</span>
+</h3>
+<p id="p-15793">Green's Theorem makes a connection between the circulation around a closed region <span class="process-math">\(R\)</span> and the sum of the curls over <span class="process-math">\(R\text{.}\)</span> The Divergence Theorem makes a somewhat “opposite” connection: the total flux across the boundary of <span class="process-math">\(R\)</span> is equal to the sum of the divergences over <span class="process-math">\(R\text{.}\)</span></p>
+<article class="theorem theorem-like" id="thm_divergence1"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.4.20</span><span class="period">.</span><span class="space"> </span><span class="title">The Divergence Theorem (in the plane).</span>
+</h4>
+<p id="p-15794">Let <span class="process-math">\(R\)</span> be a closed, bounded region of the plane whose boundary <span class="process-math">\(C\)</span> is composed of finitely many smooth curves, let <span class="process-math">\(\vec r(t)\)</span> be a counterclockwise parametrization of <span class="process-math">\(C\text{,}\)</span> and let <span class="process-math">\(\vec F =\la M,N\ra\)</span> where <span class="process-math">\(M_x\)</span> and <span class="process-math">\(N_y\)</span> are continuous over <span class="process-math">\(R\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\oint_C \vec F\cdot \vec n\, ds = \iint_R\divv \vec F\, dA\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="ex_div1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.4.21</span><span class="period">.</span><span class="space"> </span><span class="title">Confirming the Divergence Theorem.</span>
+</h4>
+<p id="p-15795">Let <span class="process-math">\(\vec F = \la x-y,x+y\ra\text{,}\)</span> let <span class="process-math">\(C\)</span> be the circle of radius 2 centered at the origin and define <span class="process-math">\(R\)</span> to be the interior of that circle, as shown in <a href="" class="xref" data-knowl="./knowl/fig_div1.html" title="Figure 15.4.22">Figure 15.4.22</a>. Verify the Divergence Theorem; that is, find the flux across <span class="process-math">\(C\)</span> and show it is equal to the double integral of <span class="process-math">\(\divv \vec F\)</span> over <span class="process-math">\(R\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_div1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100.038033254111%"><iframe src="generated/asymptote/img_div1.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_div1.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.22<span class="period">.</span></span><span class="space"> </span>The region <span class="process-math">\(R\)</span> used in <a href="" class="xref" data-knowl="./knowl/ex_div1.html" title="Example 15.4.21: Confirming the Divergence Theorem">Example 15.4.21</a></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1549" id="solution-1549"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1549"><div class="solution solution-like">
+<p id="p-15796">We parametrize the circle in the usual way, with <span class="process-math">\(\vrt =\)</span></p>
+<p id="p-15797"><span class="process-math">\(\la 2\cos t,2\sin t\ra\text{,}\)</span> <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span> The flux across <span class="process-math">\(C\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-736">
+\begin{align*}
+\oint_C \vec F\cdot \vec n\, ds \amp = \oint_C\big(M\gp(t)-N\fp(t)\big)\, dt\\
+\amp = \int_0^{2\pi} \big((2\cos t-2\sin t)(2\cos t) - (2\cos t+2\sin t)(-2\sin t)\big)\, dt\\
+\amp = \int_0^{2\pi} 4\, dt = 8\pi\text{.}
+\end{align*}
+</div>
+<p id="p-15798">We compute the divergence of <span class="process-math">\(\vec F\)</span> as <span class="process-math">\(\divv \vec F = M_x+N_y = 2\text{.}\)</span> Since the divergence is constant, we can compute the following double integral easily:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint_R \divv \vec F\, dA = \iint_R 2\, dA = 2\iint_R\, dA = 2(\text{ area of \(R\) } ) = 8\pi\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which matches our previous result.</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_div2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.4.23</span><span class="period">.</span><span class="space"> </span><span class="title">Flux when <span class="process-math">\(\divv \vec F = 0\)</span>.</span>
+</h4>
+<p id="p-15799">Let <span class="process-math">\(\vec F\)</span> be any field where <span class="process-math">\(\divv \vec F = 0\text{,}\)</span> and let <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> be any two nonintersecting paths, except that each begin at point <span class="process-math">\(A\)</span> and end at point <span class="process-math">\(B\)</span> (see <a href="" class="xref" data-knowl="./knowl/fig_div2.html" title="Figure 15.4.24">Figure 15.4.24</a>). Show why the flux across <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> is the same.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-1550" id="solution-1550"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1550"><div class="solution solution-like">
+<p id="p-15800">By referencing <a href="" class="xref" data-knowl="./knowl/fig_div2.html" title="Figure 15.4.24">Figure 15.4.24</a>, we see we can make a closed path <span class="process-math">\(C\)</span> that combines <span class="process-math">\(C_1\)</span> with <span class="process-math">\(C_2\text{,}\)</span> where <span class="process-math">\(C_2\)</span> is traversed with its opposite orientation. We label the enclosed region <span class="process-math">\(R\text{.}\)</span> Since <span class="process-math">\(\divv \vec F = 0\text{,}\)</span> the Divergence Theorem states that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_div2.html">
+\begin{equation*}
+\oint_C \vec F\cdot \vec n\, ds = \iint_R \divv \vec F\, dA = \iint_R 0\, dA = 0\text{.}
+\end{equation*}
+</div>
+<p id="p-15801">Using the properties and notation given in <a href="" class="xref" data-knowl="./knowl/thm_line_int_properties_vector.html" title="Theorem 15.3.10: Properties of Line Integrals Over Vector Fields">Theorem 15.3.10</a>, consider:</p>
+<figure class="figure figure-like" id="fig_div2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 99.9741201418967%"><iframe src="generated/asymptote/img_div2.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_div2.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.4.24<span class="period">.</span></span><span class="space"> </span>As used in <a href="" class="xref" data-knowl="./knowl/ex_div2.html" title="Example 15.4.23: Flux when \divv \vec F = 0">Example 15.4.23</a>, the vector field has a divergence of 0 and the two paths only intersect at their initial and terminal points.</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="" id="md-737">
+\begin{align*}
+0 \amp = \oint_C \vec F\cdot \vec n\, ds\\
+\amp = \int_{C_1} \vec F\cdot \vec n\, ds +\int_{C_2^*} \vec F\cdot \vec n\, ds\\
+\end{align*}
+<p class="intertext">(where <span class="process-math">\(C_2^*\)</span> is the path <span class="process-math">\(C_2\)</span> traversed with opposite orientation)</p>
+\begin{align*}
+\amp = \int_{C_1} \vec F\cdot \vec n\, ds -\int_{C_2} \vec F\cdot \vec n\, ds.\\
+\int_{C_2} \vec F\cdot \vec n\, ds\amp = \int_{C_1} \vec F\cdot \vec n\, ds\text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus the flux across each path is equal.</p>
+</div></div>
+</div></article><p id="p-15803">In this section, we have investigated flow and flux, quantities that measure interactions between a vector field and a planar curve. We can also measure flow along spatial curves, though as mentioned before, it does not make sense to measure flux across spatial curves.</p>
+<p id="p-15804">It does, however, make sense to measure the amount of a vector field that passes across a surface in space — i.e, the flux across a surface. We will study this, though in the next section we first learn about a more powerful way to describe surfaces than using functions of the form <span class="process-math">\(z=f(x,y)\text{.}\)</span></p></section><section class="exercises" id="exercises-88"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">15.4.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-186"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-2912"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<p id="p-15805">Let <span class="process-math">\(\vec F\)</span> be a vector field and let <span class="process-math">\(C\)</span> be a curve. <em class="emphasis">Flow</em> is a measure of the amount of <span class="process-math">\(\vec F\)</span> going <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(C\text{;}\)</span> <em class="emphasis">flux</em> is a measure of the amount of <span class="process-math">\(\vec F\)</span> going <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(C\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2913"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<p id="p-15807">What is circulation?</p></article><article class="exercise exercise-like" id="exercise-2914"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<p id="p-15809">Green's Theorem states, informally, that the circulation around a closed curve that bounds a region <span class="process-math">\(R\)</span> is equal to the sum of <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> across <span class="process-math">\(R\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2915"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-15811">The Divergence Theorem states, informally, that the outward flux across a closed curve that bounds a region <span class="process-math">\(R\)</span> is equal to the sum of <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> across <span class="process-math">\(R\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2916"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<p id="p-15813">Let <span class="process-math">\(\vec F\)</span> be a vector field and let <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> be any nonintersecting paths except that each starts at point <span class="process-math">\(A\)</span> and ends at point <span class="process-math">\(B\text{.}\)</span> If <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span><span class="process-math">\(=0\text{,}\)</span> then <span class="process-math">\(\int_{C_1} \vec F\cdot \vec T\, ds = \int_{C_2} \vec F\cdot \vec T\, ds\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2917"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<p id="p-15815">Let <span class="process-math">\(\vec F\)</span> be a vector field and let <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> be any nonintersecting paths except that each starts at point <span class="process-math">\(A\)</span> and ends at point <span class="process-math">\(B\text{.}\)</span> If <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span><span class="process-math">\(=0\text{,}\)</span> then <span class="process-math">\(\int_{C_1} \vec F\cdot \vec n\, ds = \int_{C_2} \vec F\cdot \vec n\, ds\text{.}\)</span></p></article></article><article class="subexercises" id="subexercises-187"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-370">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-435"><p id="p-15817">In the following exercises, a vector field <span class="process-math">\(\vec F\)</span> and a curve <span class="process-math">\(C\)</span> are given. Evaluate <span class="process-math">\(\int_C \vec F\cdot\vec n\, ds\text{,}\)</span> the flux of <span class="process-math">\(\vec F\)</span> over <span class="process-math">\(C\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2918"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-15818"><span class="process-math">\(\vec F = \langle x+y,x-y\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> is the curve with initial and terminal points <span class="process-math">\((3,-2)\)</span> and <span class="process-math">\((3,2)\text{,}\)</span> respectively, parametrized by <span class="process-math">\(\vec r(t) = \langle 3t^2,2t\rangle\)</span> on <span class="process-math">\(-1\leq t\leq 1\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2919"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-15820"><span class="process-math">\(\vec F = \langle x+y,x-y\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> is the curve with initial and terminal points <span class="process-math">\((3,-2)\)</span> and <span class="process-math">\((3,2)\text{,}\)</span> respectively, parametrized by <span class="process-math">\(\vec r(t) = \langle 3,t\rangle\)</span> on <span class="process-math">\(-2\leq t\leq 2\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2920"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-15822"><span class="process-math">\(\vec F = \langle x^2,y+1\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> is line segment from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((2,4)\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2921"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-15824"><span class="process-math">\(\vec F = \langle x^2,y+1\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> is the portion of the parabola <span class="process-math">\(y=x^2\)</span> from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((2,4)\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2922"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-15826"><span class="process-math">\(\vec F = \langle y,0\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((0,1)\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2923"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-15828"><span class="process-math">\(\vec F = \langle y,0\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((1,1)\text{.}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-371">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-436"><p id="p-15830">In the following exercises, a vector field <span class="process-math">\(\vec F\)</span> and a closed curve <span class="process-math">\(C\text{,}\)</span> enclosing a region <span class="process-math">\(R\text{,}\)</span> are given. Verify Green's Theorem by evaluating <span class="process-math">\(\oint_C\vec F\cdot d\vec r\)</span> and <span class="process-math">\(\iint_R \curl \vec F\, dA\text{,}\)</span> showing they are equal.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2924"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-15831"><span class="process-math">\(\vec F = \langle x-y,x+y\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> is the closed curve composed of the parabola <span class="process-math">\(y=x^2\)</span> on <span class="process-math">\(0\leq x\leq 2\)</span> followed by the line segment from <span class="process-math">\((2,4)\)</span> to <span class="process-math">\((0,0)\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2925"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-15833"><span class="process-math">\(\vec F = \langle -y,x\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> is the unit circle.</p></article><article class="exercise exercise-like" id="exercise-2926"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-15835"><span class="process-math">\(\vec F = \langle 0,x^2\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> the triangle with corners at <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((2,0)\)</span> and <span class="process-math">\((1,1)\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2927"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-15839"><span class="process-math">\(\vec F = \langle x+y,2x\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> the curve that starts at <span class="process-math">\((0,1)\text{,}\)</span> follows the parabola <span class="process-math">\(y=(x-1)^2\)</span> to <span class="process-math">\((3,4)\text{,}\)</span> then follows a line back to <span class="process-math">\((0,1)\text{.}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-372">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-437"><p id="p-15842">In the following exercises, a closed curve <span class="process-math">\(C\)</span> enclosing a region <span class="process-math">\(R\)</span> is given. Find the area of <span class="process-math">\(R\)</span> by computing <span class="process-math">\(\oint_C \vec F\cdot d\vec r\)</span> for an appropriate choice of vector field <span class="process-math">\(\vec F\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2928"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-15843"><span class="process-math">\(C\)</span> is the ellipse parametrized by <span class="process-math">\(\vec r(t) = \langle 4\cos t,3\sin t\rangle\)</span> on <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2929"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-15845"><span class="process-math">\(C\)</span> is the curve parametrized by <span class="process-math">\(\vec r(t) = \langle \cos t,\sin (2t)\rangle\)</span> on <span class="process-math">\(-\pi/2\leq t\leq \pi/2\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2930"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-15847"><span class="process-math">\(C\)</span> is the curve parametrized by <span class="process-math">\(\vec r(t) = \langle \cos t,\sin (2t)\rangle\)</span> on <span class="process-math">\(0\leq t\leq 2\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2931"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-15849"><span class="process-math">\(C\)</span> is the curve parametrized by <span class="process-math">\(\vec r(t) = \langle 2\cos t+\frac1{10}\cos(10t),2\sin t+\frac1{10}\sin (10t)\rangle\)</span> on <span class="process-math">\(0\leq t\leq 2\pi\text{.}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-373">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-438"><p id="p-15851">In the following exercises, a vector field <span class="process-math">\(\vec F\)</span> and a closed curve <span class="process-math">\(C\text{,}\)</span> enclosing a region <span class="process-math">\(R\text{,}\)</span> are given. Verify the Divergence Theorem by evaluating <span class="process-math">\(\oint_C\vec F\cdot \vec n\, ds\)</span> and <span class="process-math">\(\iint_R \divv \vec F\, dA\text{,}\)</span> showing they are equal.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2932"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-15852"><span class="process-math">\(\vec F = \langle x-y,x+y\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> is the closed curve composed of the parabola <span class="process-math">\(y=x^2\)</span> on <span class="process-math">\(0\leq x\leq 2\)</span> followed by the line segment from <span class="process-math">\((2,4)\)</span> to <span class="process-math">\((0,0)\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2933"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-15854"><span class="process-math">\(\vec F = \langle -y,x\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> is the unit circle.</p></article><article class="exercise exercise-like" id="exercise-2934"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-15856"><span class="process-math">\(\vec F = \langle 0,y^2\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> the triangle with corners at <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((2,0)\)</span> and <span class="process-math">\((1,1)\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2935"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-15860"><span class="process-math">\(\vec F = \langle x^2/2,y^2/2\rangle\text{;}\)</span> <span class="process-math">\(C\)</span> the curve that starts at <span class="process-math">\((0,1)\text{,}\)</span> follows the parabola <span class="process-math">\(y=(x-1)^2\)</span> to <span class="process-math">\((3,4)\text{,}\)</span> then follows a line back to <span class="process-math">\((0,1)\text{.}\)</span></p></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

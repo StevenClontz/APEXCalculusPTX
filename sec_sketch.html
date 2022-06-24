@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:28:14Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Curve Sketching</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_concavity.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_graphbehavior.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter_deriv_apps.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_concavity.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_graphbehavior.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter_deriv_apps.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="active">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_sketch"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">Curve Sketching</span>
+</h2>
+<p id="p-3409">We have been learning how we can understand the behavior of a function based on its first and second derivatives. While we have been treating the properties of a function separately (increasing and decreasing, concave up and concave down, etc.), we combine them here to produce an accurate graph of the function without plotting lots of extraneous points.</p>
+<p id="p-3410">Why bother? Graphing utilities are very accessible, whether on a computer, a hand-held calculator, or a smartphone. These resources are usually very fast and accurate. We will see that our method is not particularly fast — it will require time (but it is not <em class="emphasis">hard</em>). So again: why bother?</p>
+<p id="p-3411">We are attempting to understand the behavior of a function <span class="process-math">\(f\)</span> based on the information given by its derivatives. While all of a function's derivatives relay information about it, it turns out that “most” of the behavior we care about is explained by <span class="process-math">\(\fp\)</span>and <span class="process-math">\(\fpp\text{.}\)</span> Understanding the interactions between the graph of <span class="process-math">\(f\)</span> and <span class="process-math">\(\fp\)</span>and <span class="process-math">\(\fpp\)</span>is important. To gain this understanding, one might argue that all that is needed is to look at lots of graphs. This is true to a point, but is somewhat similar to stating that one understands how an engine works after looking only at pictures. It is true that the basic ideas will be conveyed, but “hands-on” access increases understanding.</p>
+<p id="p-3412"><a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> summarizes what we have learned so far that is applicable to sketching graphs of functions and gives a framework for putting that information together. It is followed by several examples.</p>
+<article class="insight remark-like" id="idea_sketch"><h3 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Curve Sketching.</span>
+</h3>
+<p id="p-3413">To produce an accurate sketch a given function <span class="process-math">\(f\text{,}\)</span> consider the following steps. </p>
+<ol class="decimal">
+<li id="item-find-domain"><p id="p-3414">Find the domain of <span class="process-math">\(f\text{.}\)</span> Generally, we assume that the domain is the entire real line then find restrictions, such as where a denominator is <span class="process-math">\(0\)</span> or where negatives appear under the radical.</p></li>
+<li id="li-781"><p id="p-3415">Find the critical values of <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-782"><p id="p-3416">Find the possible points of inflection of <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-783"><p id="p-3417">Find the location of any vertical asymptotes of <span class="process-math">\(f\)</span> (usually done in conjunction with <a href="" class="xref" data-knowl="./knowl/item-find-domain.html" title="Item 1">Item 1</a>).</p></li>
+<li id="li-784"><p id="p-3418">Consider the limits <span class="process-math">\(\lim\limits_{x\to-\infty}f(x)\)</span> and <span class="process-math">\(\lim\limits_{x\to\infty}f(x)\)</span> to determine the end behavior of the function.</p></li>
+<li id="li-785"><p id="p-3419">Create a number line that includes all critical points, possible points of inflection, and locations of vertical asymptotes. For each interval created, determine whether <span class="process-math">\(f\)</span> is increasing or decreasing, concave up or down.</p></li>
+<li id="li-786"><p id="p-3420">Evaluate <span class="process-math">\(f\)</span> at each critical point and possible point of inflection. Plot these points on a set of axes. Connect these points with curves exhibiting the proper concavity. Sketch asymptotes and <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> intercepts where applicable.</p></li>
+</ol></article><article class="example example-like" id="ex_sketch1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Curve sketching.</span>
+</h3>
+<p id="p-3421">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch <span class="process-math">\(f(x) = 3x^3-10x^2+7x+5\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-204" id="solution-204"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-204"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_graphs_sketch_poly" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/41XMvSHgl-Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-3422">We follow the steps outlined in <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a>.</p>
+<ol class="decimal">
+<li id="li-787"><p id="p-3423">The domain of <span class="process-math">\(f\)</span> is the entire real line; there are no values <span class="process-math">\(x\)</span> for which <span class="process-math">\(f(x)\)</span> is not defined.</p></li>
+<li id="li-788">
+<p id="p-3424">Find the critical values of <span class="process-math">\(f\text{.}\)</span> We compute <span class="process-math">\(\fp(x) = 9x^2-20x+7\text{.}\)</span> Use the Quadratic Formula to find the roots of <span class="process-math">\(\fp\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-113">
+\begin{align*}
+x \amp= \frac{20\pm \sqrt{(-20)^2-4(9)(7)}}{2(9)}\\
+\amp = \frac19\left(10\pm\sqrt{37}\right)\\
+x \amp \approx 0.435, 1.787\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-789">
+<p id="p-3425">Find the possible points of inflection of <span class="process-math">\(f\text{.}\)</span> Compute <span class="process-math">\(\fpp(x) = 18x-20\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-114">
+\begin{align*}
+\fpp(x) \amp = 0\\
+18x-20 \amp =0\\
+x \amp = 10/9\\
+\amp \approx 1.111\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-790"><p id="p-3426">There are no vertical asymptotes.</p></li>
+<li id="li-791">
+<p id="p-3427">We determine the end behavior using limits as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(\pm \infty \text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to -\infty} f(x) = -\infty \qquad \lim_{x\to \infty}f(x) = \infty\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We do not have any horizontal asymptotes.</p>
+</li>
+<li id="li-792"><p id="p-3428">We place the values <span class="process-math">\(x=(10\pm\sqrt{37})/9\)</span> and <span class="process-math">\(x=10/9\)</span> on a number line, as shown in <a href="" class="xref" data-knowl="./knowl/fig_sketchline1.html" title="Figure 3.5.3">Figure 3.5.3</a>. We mark each subinterval as increasing or decreasing, concave up or down, using the techniques used in <a href="sec_incr_decr.html" class="internal" title="Section 3.3: Increasing and Decreasing Functions">Sections 3.3–3.4</a>.</p></li>
+<li id="li-793">
+<p id="p-3429">Evaluate <span class="process-math">\(f\)</span> at each critical number and possible inflection point.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-115">
+\begin{align*}
+f(0.435)\amp\approx6.400\amp f(1.111)\amp\approx4.547\amp f(1.787)\amp\approx 2.695
+\end{align*}
+</div>
+<p id="p-3430">We plot the appropriate points on axes as shown in <a href="" class="xref" data-knowl="./knowl/fig_sketch1a.html" title="Figure 3.5.4.(a)">Figure 3.5.4.(a)</a> and connect the points with straight lines (to show increasing/decreasig behavior). In <a href="" class="xref" data-knowl="./knowl/fig_sketch1b.html" title="Figure 3.5.4.(b)">Figure 3.5.4.(b)</a> we adjust these lines to demonstrate the proper concavity. In <a href="" class="xref" data-knowl="./knowl/fig_sketch1c.html" title="Figure 3.5.4.(c)">Figure 3.5.4.(c)</a> we show a graph of <span class="process-math">\(f\)</span> drawn with a computer program, verifying the accuracy of our sketch.</p>
+</li>
+</ol>
+<figure class="figure figure-like" id="fig_sketchline1"><div class="image-box" style="width: 67%; margin-left: 16.5%; margin-right: 16.5%;"><img src="generated/latex-image/img_sketchline1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.3<span class="period">.</span></span><span class="space"> </span>Number line for <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_sketch1.html" title="Example 3.5.2: Curve sketching">Example 3.5.2</a></figcaption></figure><figure class="figure figure-like" id="fig_sketch1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:31%;"><figure class="figure figure-like" id="fig_sketch1a"><img src="generated/latex-image/img_sketch1a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:31%;"><figure class="figure figure-like" id="fig_sketch1b"><img src="generated/latex-image/img_sketch1b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:31%;"><figure class="figure figure-like" id="fig_sketch1c"><img src="generated/sageplot/img_sketch1c.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.4<span class="period">.</span></span><span class="space"> </span>Sketching <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_sketch1.html" title="Example 3.5.2: Curve sketching">Example 3.5.2</a></figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="ex_sketch2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Curve sketching.</span>
+</h3>
+<p id="p-3431">Sketch <span class="process-math">\(\ds f(x) = \frac{x^2-x-2}{x^2-x-6}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-205" id="solution-205"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-205"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_graphs_sketch_rational" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/t3VI2oTmOiA?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-3432">We again follow the steps outlined in <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a>.</p>
+<ol id="p-3433" class="decimal">
+<li id="li-794"><p id="p-3434">In determining the domain, we assume it is all real numbers and look for restrictions. We find that at <span class="process-math">\(x=-2\)</span> and <span class="process-math">\(x=3\text{,}\)</span> <span class="process-math">\(f(x)\)</span> is not defined. So the domain of <span class="process-math">\(f\)</span> is <span class="process-math">\(D = \{ x \mid x\neq -2,3\}\text{.}\)</span></p></li>
+<li id="li-795">
+<p id="p-3435">To find the critical values of <span class="process-math">\(f\text{,}\)</span> we first find <span class="process-math">\(\fp(x)\text{.}\)</span> Using the <a href="" class="xref" data-knowl="./knowl/thm_QuotientRule.html" title="Theorem 2.4.10: Quotient Rule">Quotient Rule</a>, we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_QuotientRule.html">
+\begin{equation*}
+\fp(x) = \frac{-8x+4}{(x^2+x-6)^2} = \frac{-8x+4}{(x-3)^2(x+2)^2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We get <span class="process-math">\(\fp(x) = 0\)</span> when <span class="process-math">\(x = 1/2\text{,}\)</span> and <span class="process-math">\(\fp\)</span> is undefined when <span class="process-math">\(x=-2,3\text{.}\)</span> Since <span class="process-math">\(\fp\)</span>is undefined only when <span class="process-math">\(f\)</span> is also undefined, these are not critical values. The only critical value is <span class="process-math">\(x=1/2\text{.}\)</span></p>
+</li>
+<li id="li-796">
+<p id="p-3436">To find the possible points of inflection, we find <span class="process-math">\(\fpp(x)\text{,}\)</span> again employing the <a href="" class="xref" data-knowl="./knowl/thm_QuotientRule.html" title="Theorem 2.4.10: Quotient Rule">Quotient Rule</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_QuotientRule.html">
+\begin{equation*}
+\fpp(x) = \frac{24x^2-24x+56}{(x-3)^3(x+2)^3}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We find that <span class="process-math">\(\fpp(x)\)</span> is never <span class="process-math">\(0\)</span> (setting the numerator equal to <span class="process-math">\(0\)</span> and solving for <span class="process-math">\(x\text{,}\)</span> we find the only roots to this quadratic are not real numbers) and <span class="process-math">\(\fpp\)</span>is undefined when <span class="process-math">\(x=-2,3\text{.}\)</span> Thus concavity will possibly only change at <span class="process-math">\(x=-2\)</span> and <span class="process-math">\(x=3\)</span> (which are not in the domain of <span class="process-math">\(f\text{,}\)</span> so these won't be inflection points).</p>
+</li>
+<li id="li-797"><p id="p-3437">The vertical asymptotes of <span class="process-math">\(f\)</span> are at <span class="process-math">\(x=-2\)</span> and <span class="process-math">\(x=3\text{,}\)</span> the places where <span class="process-math">\(f\)</span> is undefined.</p></li>
+<li id="li-798"><p id="p-3438">There is a horizontal asymptote of <span class="process-math">\(y=1\text{,}\)</span> as <span class="process-math">\(\lim\limits_{x\to -\infty}f(x) = 1\)</span> and <span class="process-math">\(\lim\limits_{x\to\infty}f(x) =1\text{.}\)</span></p></li>
+<li id="li-799"><p id="p-3439">We place the values <span class="process-math">\(x=1/2\text{,}\)</span> <span class="process-math">\(x=-2\)</span> and <span class="process-math">\(x=3\)</span> on a number line as shown in <a href="" class="xref" data-knowl="./knowl/fig_sketchline2.html" title="Figure 3.5.6">Figure 3.5.6</a>. We mark in each interval whether <span class="process-math">\(f\)</span> is increasing or decreasing, concave up or down. We see that <span class="process-math">\(f\)</span> has a relative maximum at <span class="process-math">\(x=1/2\text{;}\)</span> concavity changes only at the vertical asymptotes.</p></li>
+<li id="li-800">
+<p id="p-3440">Evaluate <span class="process-math">\(f\)</span> at each critical number.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-116">
+\begin{align*}
+f(0)\amp=1/3\amp f(1/2)\amp=9/25
+\end{align*}
+</div>
+<p id="p-3441">In <a href="" class="xref" data-knowl="./knowl/fig_sketch2a.html" title="Figure 3.5.7.(a)">Figure 3.5.7.(a)</a>, we plot the points from the number line on a set of axes and connect the points with straight lines to get a general idea of what the function looks like (these lines effectively only convey increasing/decreasing information). In <a href="" class="xref" data-knowl="./knowl/fig_sketch2b.html" title="Figure 3.5.7.(b)">Figure 3.5.7.(b)</a>, we adjust the graph with the appropriate concavity. We also show <span class="process-math">\(f\)</span> crossing the <span class="process-math">\(x\)</span>-axis at <span class="process-math">\(x=-1\)</span> and <span class="process-math">\(x=2\)</span> and crossing the <span class="process-math">\(y\)</span>-axis at <span class="process-math">\(y=1/3\text{.}\)</span> Finally, <a href="" class="xref" data-knowl="./knowl/fig_sketch2c.html" title="Figure 3.5.7.(c)">Figure 3.5.7.(c)</a> shows a computer generated graph of <span class="process-math">\(f\text{,}\)</span> which verifies the accuracy of our sketch.</p>
+</li>
+</ol>
+<figure class="figure figure-like" id="fig_sketchline2"><div class="image-box" style="width: 67%; margin-left: 16.5%; margin-right: 16.5%;"><img src="generated/latex-image/img_sketchline2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.6<span class="period">.</span></span><span class="space"> </span>Number line for <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_sketch2.html" title="Example 3.5.5: Curve sketching">Example 3.5.5</a></figcaption></figure><figure class="figure figure-like" id="fig_sketch2"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:31%;"><figure class="figure figure-like" id="fig_sketch2a"><img src="generated/latex-image/img_sketch2a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:31%;"><figure class="figure figure-like" id="fig_sketch2b"><img src="generated/latex-image/img_sketch2b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:31%;"><figure class="figure figure-like" id="fig_sketch2c"><img src="generated/sageplot/img_sketch2c.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.7<span class="period">.</span></span><span class="space"> </span>Sketching <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_sketch2.html" title="Example 3.5.5: Curve sketching">Example 3.5.5</a></figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="ex_sketch3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Curve sketching.</span>
+</h3>
+<p id="p-3442">Sketch <span class="process-math">\(f(x) = \dfrac{5(x-2)(x+1)}{x^2+2x+4}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-206" id="solution-206"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-206"><div class="solution solution-like">
+<p id="p-3443">We again follow <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a>.</p>
+<ol id="p-3444" class="decimal">
+<li id="li-801"><p id="p-3445">We assume that the domain of <span class="process-math">\(f\)</span> is all real numbers and consider restrictions. The only restrictions could come when the denominator is <span class="process-math">\(0\text{,}\)</span> but this never occurs because the denominator is a quadratic polynomial with no real roots. Therefore the domain of <span class="process-math">\(f\)</span> is all real numbers, <span class="process-math">\(\mathbb{R}\text{.}\)</span></p></li>
+<li id="li-802">
+<p id="p-3446">We find the critical values of <span class="process-math">\(f\)</span> by setting <span class="process-math">\(\fp(x)=0\)</span> and solving for <span class="process-math">\(x\text{.}\)</span> We find</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-117">
+\begin{align*}
+\fp(x) \amp = \frac{15x(x+4)}{(x^2+2x+4)^2}\\
+0 \amp =\frac{15x(x+4)}{(x^2+2x+4)^2}\\
+x \amp =-4,0\text{.}
+\end{align*}
+</div>
+<p class="continuation">Since the denominator of <span class="process-math">\(\fp\)</span> is just the square of the denominator of <span class="process-math">\(f\text{,}\)</span> there are no values of <span class="process-math">\(x\)</span> for which <span class="process-math">\(\fp\)</span> is undefined.</p>
+</li>
+<li id="li-803">
+<p id="p-3447">We find the possible points of inflection by solving <span class="process-math">\(\fpp(x) = 0\)</span> for <span class="process-math">\(x\)</span> (again, there are no values of <span class="process-math">\(x\)</span> for which <span class="process-math">\(\fpp\)</span> is undefined.) We find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fpp(x) = -\frac{30x^3+180x^2-240}{(x^2+2x+4)^3}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The cubic in the numerator does not factor very “nicely.” We instead approximate the roots (using a <abbr class="initialism">CAS</abbr>) at <span class="process-math">\(x= -5.759\text{,}\)</span> <span class="process-math">\(x=-1.305\)</span> and <span class="process-math">\(x=1.064\text{.}\)</span></p>
+</li>
+<li id="li-804"><p id="p-3448">There are no vertical asymptotes as the denominator never equals zero.</p></li>
+<li id="li-805"><p id="p-3449">We have a horizontal asymptote of <span class="process-math">\(y=5\text{,}\)</span> as <span class="process-math">\(\lim\limits_{x\to-\infty}f(x) = \lim\limits_{x\to\infty}f(x) = 5\text{.}\)</span></p></li>
+<li id="li-806"><p id="p-3450">We place the critical points and possible points on a number line as shown in <a href="" class="xref" data-knowl="./knowl/fig_sketchline3.html" title="Figure 3.5.9">Figure 3.5.9</a> and mark each interval as increasing/decreasing, concave up/down appropriately.</p></li>
+<li id="li-807">
+<p id="p-3451">Evaluate <span class="process-math">\(f\)</span> at each critical number, possible inflection point.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-118">
+\begin{align*}
+f(-5.759)\amp\approx7.200\amp f(-4)\amp=7.5\\
+f(-1.305)\amp\approx1.630\amp f(0)\amp=2.5\\
+f(1.064)\amp\approx-1.331
+\end{align*}
+</div>
+<p id="p-3452">In <a href="" class="xref" data-knowl="./knowl/fig_sketch3a.html" title="Figure 3.5.10.(a)">Figure 3.5.10.(a)</a> we plot the significant points from the number line as well as the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-intercepts, and connect the points with straight lines to get a general impression about the graph (this graph only includes increasing/decreasing information). In <a href="" class="xref" data-knowl="./knowl/fig_sketch3b.html" title="Figure 3.5.10.(b)">Figure 3.5.10.(b)</a>, we add concavity, drawing the function so that it is smooth (since <span class="process-math">\(f\)</span> is differentiable everywhere, there should be no kinks or corners). <a href="" class="xref" data-knowl="./knowl/fig_sketch3c.html" title="Figure 3.5.10.(c)">Figure 3.5.10.(c)</a> shows a computer generated graph of <span class="process-math">\(f\text{,}\)</span> affirming our results.</p>
+</li>
+</ol>
+<figure class="figure figure-like" id="fig_sketchline3"><div class="image-box" style="width: 82%; margin-left: 9%; margin-right: 9%;"><img src="generated/latex-image/img_sketchline3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.9<span class="period">.</span></span><span class="space"> </span>Number line for <span class="process-math">\(f\)</span> in Example <a href="" class="xref" data-knowl="./knowl/ex_sketch3.html" title="Example 3.5.8: Curve sketching">Example 3.5.8</a></figcaption></figure><figure class="figure figure-like" id="fig_sketch3"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:31%;"><figure class="figure figure-like" id="fig_sketch3a"><img src="generated/latex-image/img_sketch3a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:31%;"><figure class="figure figure-like" id="fig_sketch3b"><img src="generated/latex-image/img_sketch3b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:31%;"><figure class="figure figure-like" id="fig_sketch3c"><img src="generated/sageplot/img_sketch3c.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.10<span class="period">.</span></span><span class="space"> </span>Sketching <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_sketch3.html" title="Example 3.5.8: Curve sketching">Example 3.5.8</a></figcaption></figure>
+</div></div>
+</div></article><p id="vidint-graphing-further">To get some more practice with curve sketching, we include a few more video examples to illustrate the process. (The last of these could be considered “archival footage”: it was from a first run at using our new lightboard.)</p>
+<figure class="figure figure-like" id="vid_graphs_sketch_poly_fact"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-128" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/S3j-vuUZPjE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.11<span class="period">.</span></span><span class="space"> </span>Sketching the polynomial <span class="process-math">\(f(x)=x^2(5-x)^3\)</span></figcaption></figure><figure class="figure figure-like" id="vid_graphs_sketch_trig"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-129" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/fdnoec_9Yw4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.12<span class="period">.</span></span><span class="space"> </span>Sketching the graph of the trigonometric function <span class="process-math">\(f(x)=\sin(2x)-2\sin(x)\)</span></figcaption></figure><figure class="figure figure-like" id="vid_graphs_sketch_frac_powers"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-130" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/JR31YX5N3M8?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.13<span class="period">.</span></span><span class="space"> </span>Sketching the graph of <span class="process-math">\(f(x)=x^{4/3}-4x^{1/3}\)</span></figcaption></figure><p id="p-3454">In each of our examples, we found a few significant points on the graph of <span class="process-math">\(f\)</span> that corresponded to changes in increasing/decreasing or concavity. We connected these points with straight lines, then adjusted for concavity, and finished by showing a very accurate, computer generated graph.</p>
+<p id="p-3455">Why are computer graphics so good? It is not because computers are “smarter” than we are. Rather, it is largely because computers are much faster at computing than we are. In general, computers graph functions much like most students do when first learning to draw graphs: they plot equally spaced points, then connect the dots using lines. By using lots of points, the connecting lines are short and the graph looks smooth.</p>
+<p id="p-3456">This does a fine job of graphing in most cases (in fact, this is the method used for many graphs in this text). However, in regions where the graph is very “curvy,” this can generate noticeable sharp edges on the graph unless a large number of points are used. High quality computer algebra systems, such as <span class="booktitle">Mathematica</span> and <span class="booktitle">Sage</span>, use special algorithms to plot lots of points only where the graph is “curvy.”</p>
+<p id="p-3457">In <a href="" class="xref" data-knowl="./knowl/fig_sage_sinx.html" title="Figure 3.5.14">Figure 3.5.14</a>, two graph of <span class="process-math">\(y=\sin(x)\)</span> is given, generated by <span class="booktitle">Sage</span> and <span class="booktitle">Mathematica</span>. The small points represent each of the places where each <abbr class="initialism">CAS</abbr> sampled the function. Notice how at the “bends” of <span class="process-math">\(\sin(x)\text{,}\)</span> lots of points are used; where <span class="process-math">\(\sin(x)\)</span> is relatively straight, fewer points are used. (In the <span class="booktitle">Mathematica</span> plot, many points are also used at the endpoints to ensure the “end behavior” is accurate.)</p>
+<figure class="figure figure-like" id="fig_sage_sinx"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="figure-224"><img src="generated/sageplot/img_sage_sinx.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span><span class="booktitle">Sage</span> output</figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="img_mathematica_sinx"><img src="external/images/figmathematica_sinx.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span><span class="booktitle">Mathematica</span> output</figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.14<span class="period">.</span></span><span class="space"> </span>CAS plots of <span class="process-math">\(y=\sin(x)\)</span> illustrating the sample points</figcaption></figure><p id="p-3458">How does <span class="booktitle">Sage</span> know where the graph is “curvy”? Calculus. When we study <em class="emphasis">curvature</em> in a later chapter, we will see how the first and second derivatives of a function work together to provide a measurement of “curviness.” <span class="booktitle">Sage</span> employs algorithms to determine regions of “high curvature” and plots extra points there.</p>
+<p id="p-3459">Again, the goal of this section is not “How to graph a function when there is no computer to help.” Rather, the goal is “Understand that the shape of the graph of a function is largely determined by understanding the behavior of the function at a few key places.” In <a href="" class="xref" data-knowl="./knowl/ex_sketch3.html" title="Example 3.5.8: Curve sketching">Example 3.5.8</a>, we were able to accurately sketch a complicated graph using only five points and knowledge of asymptotes!</p>
+<p id="p-3460">There are many applications of our understanding of derivatives beyond curve sketching. The next chapter explores some of these applications, demonstrating just a few kinds of problems that can be solved with a basic knowledge of differentiation.</p>
+<section class="exercises" id="exercises-18"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-64">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="introduction-73"><p id="p-3461">Terms and Concepts</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-595"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-561" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="561" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKV2h5IGlzIHNrZXRjaGluZyBjdXJ2ZXMgYnkgaGFuZCBiZW5lZmljaWFsIGV2ZW4gdGhvdWdoIHRlY2hub2xvZ3kgaXMgdWJpcXVpdG91cz8KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpBbnN3ZXJzIHdpbGwgdmFyeS4KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3462">Why is sketching curves by hand beneficial even though technology is ubiquitous?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-561')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-596"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-562" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="562" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKV2hhdCBkb2VzICJ1YmlxdWl0b3VzIiBtZWFuPwoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCkZvdW5kIGV2ZXJ5d2hlcmUuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3464">What does “ubiquitous” mean?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-562')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-597"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-563" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="563" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JHRmPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwoKQkVHSU5fUEdNTApUL0Y6IFdoZW4gc2tldGNoaW5nIGdyYXBocyBvZiBmdW5jdGlvbnMsIGl0IGlzIHVzZWZ1bCB0byBmaW5kIHRoZSBjcml0aWNhbCBwb2ludHMuW19deyR0Zn17NX0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpUcnVlCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3466">T/F: When sketching graphs of functions, it is useful to find the critical points.<ul style="list-style:circle;">
+<li id="li-809"><p id="p-3468">True</p></li>
+<li id="li-810"><p id="p-3469">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-563')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-598"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-564" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="564" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JHRmPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwoKQkVHSU5fUEdNTApUL0Y6IFdoZW4gc2tldGNoaW5nIGdyYXBocyBvZiBmdW5jdGlvbnMsIGl0IGlzIHVzZWZ1bCB0byBmaW5kIHRoZSBwb3NzaWJsZSBwb2ludHMgb2YgaW5mbGVjdGlvbi5bX117JHRmfXs1fQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClRydWUKCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3472">T/F: When sketching graphs of functions, it is useful to find the possible points of inflection.<ul style="list-style:circle;">
+<li id="li-812"><p id="p-3474">True</p></li>
+<li id="li-813"><p id="p-3475">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-564')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-599"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div id="webwork-565" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="565" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JHRmPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwoKQkVHSU5fUEdNTApUL0Y6IFdoZW4gc2tldGNoaW5nIGdyYXBocyBvZiBmdW5jdGlvbnMsIGl0IGlzIHVzZWZ1bCB0byBmaW5kIHRoZSBob3Jpem9udGFsIGFuZCB2ZXJ0aWNhbCBhc3ltcHRvdGVzLltfXXskdGZ9ezV9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KVHJ1ZQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-3478">T/F: When sketching graphs of functions, it is useful to find the horizontal and vertical asymptotes.<ul style="list-style:circle;">
+<li id="li-815"><p id="p-3480">True</p></li>
+<li id="li-816"><p id="p-3481">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-565')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-65">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="introduction-74"><p id="p-3484">In the following exercises, practice using <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> by applying the principles to the given functions with familiar graphs.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-600"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<p id="p-3485">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(f(x) = 2x+4\)</span></p></article><article class="exercise exercise-like" id="exercise-601"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<p id="p-3487">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(f(x) = -x^2+1\)</span></p></article><article class="exercise exercise-like" id="exercise-602"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<p id="p-3489">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(f(x) = \sin(x)\)</span></p></article><article class="exercise exercise-like" id="exercise-603"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<p id="p-3491">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(f(x) = e^x\)</span></p></article><article class="exercise exercise-like" id="exercise-604"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<p id="p-3493">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = \frac{1}{x}\)</span></p></article><article class="exercise exercise-like" id="exercise-605"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<p id="p-3495">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = \frac{1}{x^2}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-66">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="introduction-75"><p id="p-3497">In the following exercises, sketch a graph of the given function using <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a>. Show all work; check your answer with technology.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-606"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<p id="p-3498">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = x^3-2x^2+4x+1\)</span></p></article><article class="exercise exercise-like" id="exercise-607"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<p id="p-3500">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = -x^3+5x^2-3x+2\)</span></p></article><article class="exercise exercise-like" id="exercise-608"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
+<p id="p-3502">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = x^3+3x^2+3x+1\)</span></p></article><article class="exercise exercise-like" id="exercise-609"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
+<p id="p-3504">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = x^3-x^2-x+1\)</span></p></article><article class="exercise exercise-like" id="exercise-610"><h5 class="heading"><span class="codenumber">16<span class="period">.</span></span></h5>
+<p id="p-3506">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = (x-2)\ln(x-2)\)</span></p></article><article class="exercise exercise-like" id="exercise-611"><h5 class="heading"><span class="codenumber">17<span class="period">.</span></span></h5>
+<p id="p-3508">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = (x-2)^2\ln(x-2)\)</span></p></article><article class="exercise exercise-like" id="exercise-612"><h5 class="heading"><span class="codenumber">18<span class="period">.</span></span></h5>
+<p id="p-3510">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = \frac{x^2-4}{x^2}\)</span></p></article><article class="exercise exercise-like" id="exercise-613"><h5 class="heading"><span class="codenumber">19<span class="period">.</span></span></h5>
+<p id="p-3512">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = \frac{x^2-4x+3}{x^2-6x+8}\)</span></p></article><article class="exercise exercise-like" id="exercise-614"><h5 class="heading"><span class="codenumber">20<span class="period">.</span></span></h5>
+<p id="p-3514">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = \frac{x^2-2x+1}{x^2-6x+8}\)</span></p></article><article class="exercise exercise-like" id="exercise-615"><h5 class="heading"><span class="codenumber">21<span class="period">.</span></span></h5>
+<p id="p-3516">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = x\sqrt{x+1}\)</span></p></article><article class="exercise exercise-like" id="exercise-616"><h5 class="heading"><span class="codenumber">22<span class="period">.</span></span></h5>
+<p id="p-3518">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = x^2e^x\)</span></p></article><article class="exercise exercise-like" id="exercise-617"><h5 class="heading"><span class="codenumber">23<span class="period">.</span></span></h5>
+<p id="p-3520">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = \sin(x) \cos(x)\)</span> on <span class="process-math">\([-\pi,\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-618"><h5 class="heading"><span class="codenumber">24<span class="period">.</span></span></h5>
+<p id="p-3522">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = (x-3)^{2/3} + 2\)</span></p></article><article class="exercise exercise-like" id="exercise-619"><h5 class="heading"><span class="codenumber">25<span class="period">.</span></span></h5>
+<p id="p-3524">Use <a href="" class="xref" data-knowl="./knowl/idea_sketch.html" title="Key Idea 3.5.1: Curve Sketching">Key Idea 3.5.1</a> to sketch a graph of <span class="process-math">\(\ds f(x) = \frac{(x-1)^{2/3}}{x}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-67">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="introduction-76"><p id="p-3526">In the following exercises, a function with the parameters <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are given. Describe the critical points and possible points of inflection of <span class="process-math">\(f\)</span> in terms of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-620"><h5 class="heading"><span class="codenumber">26<span class="period">.</span></span></h5>
+<p id="p-3527"><span class="process-math">\(\ds f(x) = \frac{a}{x^2+b^2}\)</span></p>
+<ol id="p-3528" class="lower-alpha">
+<li id="li-817"><p id="p-3529">Find the critical points of <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-818"><p id="p-3530">Find the inflection points of <span class="process-math">\(f\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-621"><h5 class="heading"><span class="codenumber">27<span class="period">.</span></span></h5>
+<p id="p-3532"><span class="process-math">\(\ds f(x) = \sin(ax+b)\)</span></p>
+<ol id="p-3533" class="lower-alpha">
+<li id="li-819"><p id="p-3534">Find the critical points of <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-820"><p id="p-3535">Find the inflection points of <span class="process-math">\(f\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-622"><h5 class="heading"><span class="codenumber">28<span class="period">.</span></span></h5>
+<p id="p-3537"><span class="process-math">\(\ds f(x) = (x-a)(x-b)\)</span></p>
+<ol id="p-3538" class="lower-alpha">
+<li id="li-821"><p id="p-3539">Find the critical points of <span class="process-math">\(f\text{.}\)</span></p></li>
+<li id="li-822"><p id="p-3540">Find the inflection points of <span class="process-math">\(f\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-623"><h5 class="heading"><span class="codenumber">29<span class="period">.</span></span></h5>
+<p id="p-3542">Given <span class="process-math">\(x^2+y^2=1\text{,}\)</span> use implicit differentiation to find <span class="process-math">\(\frac{dy}{dx}\)</span> and <span class="process-math">\(\frac{d^2y}{dx^2}\text{.}\)</span> Use this information to justify the sketch of the unit circle.</p></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

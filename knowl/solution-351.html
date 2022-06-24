@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:26Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.5.9.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-partfrac-ex-quadroot" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=Oa3-0K34UvM,OLcNjryNC1A&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>The degree of the numerator is less than the degree of the denominator so we begin by applying <a href="" class="xref" data-knowl="./knowl/idea_partial_fraction.html" title="Key Idea 6.5.2: Partial Fraction Decomposition">Key Idea 6.5.2</a>. We have: </p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_partial_fraction.html">
+\begin{align*}
+\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)} \amp = \frac{A}{x+1} + \frac{Bx+C}{x^2+6x+11}.\\
+\end{align*}
+<p class="intertext">Now clear the denominators.</p>
+\begin{align*}
+7x^2+31x+54 \amp = A(x^2+6x+11) + (Bx+C)(x+1)
+\end{align*}
+</div>
+<p class="continuation">Now, letting <span class="process-math">\(x=-1\)</span> we have <span class="process-math">\(30 = 6A \Rightarrow A=5\text{.}\)</span> When <span class="process-math">\(x=0\text{,}\)</span> <span class="process-math">\(54 = 11A+C\text{.}\)</span> But we know that <span class="process-math">\(A=5\text{,}\)</span> so <span class="process-math">\(54 =55+C \Rightarrow C=-1\)</span> Finally, we choose <span class="process-math">\(x=1\)</span> (with <span class="process-math">\(A=5, C=-1\)</span>) we have <span class="process-math">\(92=90+(B-1)(2)\Rightarrow B=2\text{.}\)</span></p>
+<p> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)}\, dx = \int\left(\frac{5}{x+1} + \frac{2x-1}{x^2+6x+11}\right)\, dx\text{.}
+\end{equation*}
+</div>
+<p>The first term of this new integrand is easy to evaluate; it leads to a <span class="process-math">\(5\ln\abs{x+1}\)</span> term. The second term is not hard, but takes several steps and uses substitution techniques.</p>
+<p>The integrand <span class="process-math">\(\ds \frac{2x-1}{x^2+6x+11}\)</span> has a quadratic in the denominator and a linear term in the numerator. This leads us to try substitution. Let <span class="process-math">\(u = x^2+6x+11\text{,}\)</span> so <span class="process-math">\(du = (2x+6)\, dx\text{.}\)</span> The numerator is <span class="process-math">\(2x-1\text{,}\)</span> not <span class="process-math">\(2x+6\text{,}\)</span> but we can get a <span class="process-math">\(2x+6\)</span> term in the numerator by adding 0 in the form of “<span class="process-math">\(7-7\text{.}\)</span>”</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\frac{2x-1}{x^2+6x+11} \amp = \frac{2x-1+7-7}{x^2+6x+11}\\
+\amp = \frac{2x+6}{x^2+6x+11} - \frac{7}{x^2+6x+11}\text{.}
+\end{align*}
+</div>
+<p>We can now integrate the first term with substitution, leading to a <span class="process-math">\(\ln\abs{x^2+6x+11}\)</span> term. The final term can be integrated using arctangent. (We can tell there is no further factoring for this quadratic since the denominator has no real solutions). First, complete the square in the denominator:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{7}{x^2+6x+11} = \frac{7}{(x+3)^2+2}\text{.}
+\end{equation*}
+</div>
+<p>An antiderivative of the latter term can be found using <a href="" class="xref" data-knowl="./knowl/thm_int_inverse_trig.html" title="Theorem 6.1.20: Integrals Involving Inverse Trigonometric Functions">Theorem 6.1.20</a> and substitution:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_int_inverse_trig.html">
+\begin{equation*}
+\int \frac{7}{x^2+6x+11}\, dx = \frac{7}{\sqrt{2}}\tan^{-1}\left(\frac{x+3}{\sqrt{2}}\right)+C\text{.}
+\end{equation*}
+</div>
+<p>Let's start at the beginning and put all of the steps together.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\amp \int\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)}\, dx\\
+\amp = \int\left(\frac{5}{x+1} + \frac{2x-1}{x^2+6x+11}\right)\, dx\\
+\amp = \int\frac{5}{x+1}\, dx  + \int\frac{2x+6}{x^2+6x+11}\, dx -\int\frac{7}{(x+3)^2+2}\, dx\\
+\amp = 5\ln\abs{x+1}+ \ln\abs{x^2+6x+11} -\frac{7}{\sqrt{2}}\tan^{-1}\left(\frac{x+3}{\sqrt{2}}\right)+C\text{.}
+\end{align*}
+</div>
+<p>As with many other problems in calculus, it is important to remember that one is not expected to “see” the final answer immediately after seeing the problem. Rather, given the initial problem, we break it down into smaller problems that are easier to solve. The final answer is a combination of the answers of the smaller problems.</p>
+</div>
+<span class="incontext"><a href="sec_partial_fraction.html#solution-351" class="internal">in-context</a></span>
+</body>
+</html>

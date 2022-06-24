@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:48:36Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">14.5.8.1</span><span class="period">.</span>
+</h3>
+<p>It is straightforward to compute <span class="process-math">\(f_x(x,y) = 2x\)</span> and <span class="process-math">\(f_y(x,y) = -3\text{.}\)</span> Thus the surface area is described by the double integral</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iint_R \sqrt{1+(2x)^2+(-3)^2}\, dA = \iint_R \sqrt{10+4x^2}\, dA\text{.}
+\end{equation*}
+</div>
+<p>As with integrals describing arc length, double integrals describing surface area are in general hard to evaluate directly because of the square-root. This particular integral can be easily evaluated, though, with judicious choice of our order of integration.</p>
+<p>Integrating with order <span class="process-math">\(dx\, dy\)</span> requires us to evaluate <span class="process-math">\(\int \sqrt{10+4x^2}\, dx\text{.}\)</span> This can be done, though it involves Integration By Parts and <span class="process-math">\(\sinh^{-1}(x)\text{.}\)</span> Integrating with order <span class="process-math">\(dy\, dx\)</span> has as its first integral <span class="process-math">\(\int \sqrt{10+4x^2}\, dy\text{,}\)</span> which is easy to evaluate: it is simply <span class="process-math">\(y\sqrt{10+4x^2}+C\text{.}\)</span> So we proceed with the order <span class="process-math">\(dy\, dx\text{;}\)</span> the bounds are already given in the statement of the problem.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint_R\sqrt{10+4x^2}\, dA \amp = \int_0^4\int_{-x}^x\sqrt{10+4x^2}\, dy \, dx\\
+\amp = \int_0^4\left.\big(y\sqrt{10+4x^2}\big)\right|_{-x}^x dx\\
+\amp =\int_0^4\big(2x\sqrt{10+4x^2}\big)\, dx.\\
+\end{align*}
+<p class="intertext">Apply substitution with <span class="process-math">\(u = 10+4x^2\text{:}\)</span></p>
+\begin{align*}
+\amp = \left.\left(\frac16\big(10+4x^2\big)^{3/2}\right)\right|_0^4\\
+\amp = \frac13\big(37\sqrt{74}-5\sqrt{10}\big) \approx 100.825\,\text{units}^2\text{.}
+\end{align*}
+</div>
+<p>So while the region <span class="process-math">\(R\)</span> over which we integrate has an area of 16 square units, the surface has a much greater area as its <span class="process-math">\(z\)</span>-values change dramatically over <span class="process-math">\(R\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_surface_area.html#solution-1448" class="internal">in-context</a></span>
+</body>
+</html>

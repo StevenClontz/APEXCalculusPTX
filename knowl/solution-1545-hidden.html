@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:50:12Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>We begin by finding parametrizations of <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\text{.}\)</span> As done in <a href="" class="xref" data-knowl="./knowl/ex_livf3.html" title="Example 15.3.12: Using properties of line integrals over vector fields">Example 15.3.12</a>, parametrize <span class="process-math">\(C_1\)</span> by creating the line that starts at <span class="process-math">\((1,0)\)</span> and moves in the <span class="process-math">\(\la -1,1\ra\)</span> direction: <span class="process-math">\(\vec r_1(t) = \la 1,0\ra + t\la -1,1\ra = \la 1-t, t\ra\text{,}\)</span> for <span class="process-math">\(0\leq t\leq 1\text{.}\)</span> We parametrize <span class="process-math">\(C_2\)</span> with the familiar <span class="process-math">\(\vec r_2(t) = \la \cos t,\sin t\ra\)</span> on <span class="process-math">\(0\leq t\leq \pi/2\text{.}\)</span> For reference later, we give each function and its derivative below:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_livf3.html">
+\begin{equation*}
+\vec r_1(t) = \la 1-t, t\ra,  \vrp_1(t) = \la -1,1\ra\text{.}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_livf3.html">
+\begin{equation*}
+\vec r_2(t) = \la \cos t, \sin t\ra,  \vrp_2(t) = \la -\sin t ,\cos t\ra\text{.}
+\end{equation*}
+</div>
+<p>When <span class="process-math">\(\vec F = \vec F_1 = \la y, -x+1\ra\)</span> (as shown in <a href="" class="xref" data-knowl="./knowl/fig_flux1a.html" title="Figure 15.4.6.(a)">Figure 15.4.6.(a)</a>), over <span class="process-math">\(C_1\)</span> we have <span class="process-math">\(M = y =t\)</span> and <span class="process-math">\(N = -x+1 = -(1-t)+1 = t\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/def_flowflux.html" title="Definition 15.4.4: Flow, Flux">Definition 15.4.4</a>, we compute the flux:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_flux1a.html ./knowl/def_flowflux.html">
+\begin{align*}
+\int_{C_1} \vec F\cdot \vec n\, ds \amp  = \int_{C_1} \Big(M\,g'(t) - N\,\fp(t)\Big)\, dt\\
+\amp = \int_0^1 \Big( t(1) - t(-1)\Big)\, dt\\
+\amp = \int_0^1 2t\, dt\\
+\amp = 1\text{.}
+\end{align*}
+</div>
+<p>Over <span class="process-math">\(C_2\text{,}\)</span> we have <span class="process-math">\(M = y = \sin t\)</span> and <span class="process-math">\(N = -x+1 = 1-\cos t\text{.}\)</span> Thus the flux across <span class="process-math">\(C_2\)</span> is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_{C_1} \vec F\cdot \vec n\, ds \amp  = \int_{C_1} \Big(M\,g'(t) - N\,\fp(t)\Big)\, dt\\
+\amp = \int_0^{\pi/2}\Big((\sin t)(\cos t) - (1-\cos t)(-\sin t)\Big)\, dt\\
+\amp = \int_0^{\pi/2} \sin t\, dt\\
+\amp =1\text{.}
+\end{align*}
+</div>
+<p>Notice how the flux was the same across both curves. This won't hold true when we change the vector field.</p>
+<p>When <span class="process-math">\(\vec F = \vec F_2 = \la -x,2y-x\ra\)</span> (as shown in <a href="" class="xref" data-knowl="./knowl/fig_flux1b.html" title="Figure 15.4.6.(b)">Figure 15.4.6.(b)</a>), over <span class="process-math">\(C_1\)</span> we have <span class="process-math">\(M = -x = t-1\)</span> and <span class="process-math">\(N = 2y-x = 2t-(1-t) = 3t-1\text{.}\)</span> Computing the flux across <span class="process-math">\(C_1\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_flux1b.html">
+\begin{align*}
+\int_{C_1} \vec F\cdot \vec n\, ds \amp  = \int_{C_1} \Big(M\,g'(t) - N\,\fp(t)\Big)\, dt\\
+\amp = \int_0^1 \Big( (t-1)(1) - (3t-1)(-1)\Big)\, dt\\
+\amp = \int_0^1 (4t-2)\, dt\\
+\amp = 0\text{.}
+\end{align*}
+</div>
+<p>Over <span class="process-math">\(C_2\text{,}\)</span> we have <span class="process-math">\(M = -x = -\cos t\)</span> and <span class="process-math">\(N = 2y-x = 2\sin t-\cos t\text{.}\)</span> Thus the flux across <span class="process-math">\(C_2\)</span> is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_{C_1} \vec F\cdot \vec n\, ds \amp  = \int_{C_1} \Big(M\,g'(t) - N\,\fp(t)\Big)\, dt\\
+\amp = \int_0^{\pi/2}\Big((-\cos t)(\cos t) - (2\sin t-\cos t)(-\sin t)\Big)\, dt\\
+\amp = \int_0^{\pi/2} \big(2\sin^2 t-\sin t\cos t-\cos^2t\big)\, dt\\
+\amp =\pi/4 - 1/2\approx 0.285\text{.}
+\end{align*}
+</div>
+<p>We analyze the results of this example below.</p>
+</div></body>
+</html>

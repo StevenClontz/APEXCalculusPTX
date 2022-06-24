@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:24Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-intapp-shell-example1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/WQ3rUzAhgPw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>This is the region used to introduce the Shell Method in <a href="" class="xref" data-knowl="./knowl/fig_shell_intro.html" title="Figure 7.3.2">Figure 7.3.2</a>, but is sketched again in <a href="" class="xref" data-knowl="./knowl/fig_shell1.html" title="Figure 7.3.6">Figure 7.3.6</a> for closer reference. A line is drawn in the region parallel to the axis of rotation representing a shell that will be carved out as the region is rotated about the <span class="process-math">\(y\)</span>-axis. (This is the differential element.)</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_shell1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.6<span class="period">.</span></span><span class="space"> </span>Graphing a region in <a href="" class="xref" data-knowl="./knowl/ex_shell1.html" title="Example 7.3.5: Finding volume using the Shell Method">Example 7.3.5</a></figcaption></figure><p>The distance this line is from the axis of rotation determines <span class="process-math">\(r(x)\text{;}\)</span> as the distance from <span class="process-math">\(x\)</span> to the <span class="process-math">\(y\)</span>-axis is <span class="process-math">\(x\text{,}\)</span> we have <span class="process-math">\(r(x)=x\text{.}\)</span> The height of this line determines <span class="process-math">\(h(x)\text{;}\)</span> the top of the line is at <span class="process-math">\(y=1/(1+x^2)\text{,}\)</span> whereas the bottom of the line is at <span class="process-math">\(y=0\text{.}\)</span> Thus <span class="process-math">\(h(x) = 1/(1+x^2)-0 = 1/(1+x^2)\text{.}\)</span> The region is bounded from <span class="process-math">\(x=0\)</span> to <span class="process-math">\(x=1\text{,}\)</span> so the volume is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+V   \amp = 2\pi\int_0^1 \frac{x}{1+x^2}\, dx.\\
+\end{align*}
+<p class="intertext">This requires substitution. Let <span class="process-math">\(u=1+x^2\text{,}\)</span> so <span class="process-math">\(du = 2x\, dx\text{.}\)</span> We also change the bounds: <span class="process-math">\(u(0) = 1\)</span> and <span class="process-math">\(u(1) = 2\text{.}\)</span> Thus we have:</p>
+\begin{align*}
+\amp = \pi\int_1^2 \frac{1}{u}\, du\\
+\amp = \pi\ln(u)\Big|_1^2\\
+\amp = \pi\ln(2) \approx 2.178 \,\text{units}^3\text{.}
+\end{align*}
+</div>
+<p>Note: in order to find this volume using the Disk Method, two integrals would be needed to account for the regions above and below <span class="process-math">\(y=1/2\text{.}\)</span></p>
+</div></body>
+</html>

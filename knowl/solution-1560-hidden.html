@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:50:42Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>Using our work from the previous example, we have <span class="process-math">\(\vec n = \vec r_u\times\vec r_v = \langle 4-4u,2-2u,2-2u\rangle\text{.}\)</span> We also need <span class="process-math">\(\vec F\big(\vec r(u,v)\big) = \langle 1, u, -v(2-2u)\rangle\text{.}\)</span></p>
+<p>Thus the flux of <span class="process-math">\(\vec F\)</span> across <span class="process-math">\(\surfaceS\)</span> is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\text{ Flux }  \amp = \iint_\surfaceS \vec F\cdot \vec n\, dS\\
+\amp = \iint_R \langle 1,u,-v(2-2u)\rangle\cdot\langle 4-4u,2-2u,2-2u\rangle\, dA\\
+\amp = \int_0^1\int_0^1 \big(-4u^2v-2u^2+8uv-2u-4v+4\big)\, du\, dv\\
+\amp = 5/3\text{.}
+\end{align*}
+</div>
+<p>To make full use of this numeric answer, we need to know the direction in which the field is passing across <span class="process-math">\(\surfaceS\text{.}\)</span> The graph in <a href="" class="xref" data-knowl="./knowl/fig_surfflux1.html" title="Figure 15.6.8">Figure 15.6.8</a> helps, but we need a method that is not dependent on a graph.</p>
+<p>Pick a point <span class="process-math">\((u,v)\)</span> in the interior of <span class="process-math">\(R\)</span> and consider <span class="process-math">\(\vec n(u,v)\text{.}\)</span> For instance, choose <span class="process-math">\((1/2,1/2)\)</span> and look at <span class="process-math">\(\vec n(1/2,1/2) = \langle 2,1,1\rangle/\sqrt{6}\text{.}\)</span> This vector has positive <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> components. Generally speaking, one has <em class="emphasis">some</em> idea of what the surface <span class="process-math">\(\surfaceS\)</span> looks like, as that surface is for some reason important. In our case, we know <span class="process-math">\(\surfaceS\)</span> is a plane with <span class="process-math">\(z\)</span>-intercept of <span class="process-math">\(z=3\text{.}\)</span> Knowing <span class="process-math">\(\vec n\)</span> and the flux measurement of positive <span class="process-math">\(5/3\text{,}\)</span> we know that the field must be passing from “behind” <span class="process-math">\(\surfaceS\text{,}\)</span> i.e., the side the origin is on, to the “front” of <span class="process-math">\(\surfaceS\text{.}\)</span></p>
+</div></body>
+</html>

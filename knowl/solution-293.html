@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:37Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.5.12.1</span><span class="period">.</span>
+</h4>
+<p>We cannot use the same table (<a href="" class="xref" data-knowl="./knowl/fig_num3b.html" title="Table 5.5.10: A table of values of e^{-x^2}">Table 5.5.10</a>) that we used for the Trapezoidal, Right and Left Hand Rules when using the Midpoint Rule. The Trapezoidal rule averages the <em class="emphasis">outputs</em> of the function to obtain a more accurate estimate of the definite integral. The Midpoint Rule averages the <em class="emphasis">inputs</em> of each subinterval to create a rectangle with height <span class="process-math">\(f\left(\frac{x_{i-1}+x_{i}}{2}\right)\text{.}\)</span> Generally <span class="process-math">\(f\left(\frac{x_{i-1}+x_{i}}{2}\right)\neq \frac{f(x_{i-1})+f(x_{i})}{2}\text{.}\)</span></p>
+<p>So we will create a new table of values as shown in <a href="" class="xref" data-knowl="./knowl/fig_num3_2b.html" title="Table 5.5.13: A table of values of e^{-x^2}">Table 5.5.13</a>. We have <span class="process-math">\(\dx=(1-0)/5=0.2\text{.}\)</span> The midpoint of the first subinteval is at <span class="process-math">\(0+0.2(1/2)=0.1\)</span> and each successive midpoint is <span class="process-math">\(0.2\)</span> from the last.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.5.13<span class="period">.</span></span><span class="space"> </span>A table of values of <span class="process-math">\(e^{-x^2}\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(x_i\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(e^{-x_i^2}\)</span></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.9900\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.3\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.9139\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.5\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.7788\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.7\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.6126\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.4449\)</span></td>
+</tr>
+</table></div></figure><p>So we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_0^1 e^{-x^2}\, dx \amp \approx 0.2(0.99+0.9139+0.7788+0.6126+0.4449)\\
+\amp \approx 0.7480
+\end{align*}
+</div>
+<p>We approximate <span class="process-math">\(\ds \int_0^1 e^{-x^2}\, dx \approx 0.7480\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_numerical_integration.html#solution-293" class="internal">in-context</a></span>
+</body>
+</html>

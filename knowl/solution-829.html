@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:41:36Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">10.3.14.1</span><span class="period">.</span>
+</h4>
+<p>We need to compute <span class="process-math">\(\frac{dy}{dx}\)</span> and <span class="process-math">\(\frac{d^2y}{dx^2}\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx} = \frac{y'(t)}{x'(t)} = \frac{\cos(t) }{1/(2\sqrt{t})} = 2\sqrt{t}\cos(t)\text{.}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d^2y}{dx^2} = \frac{\frac{d}{dt}\left[\frac{dy}{dx}\right]}{x'(t)} = \frac{\cos(t) /\sqrt{t}-2\sqrt{t}\sin(t) }{1/(2\sqrt{t})}=2\cos(t) -4t\sin(t)\text{.}
+\end{equation*}
+</div>
+<p>The points of inflection are found by setting <span class="process-math">\(\frac{d^2y}{dx^2}=0\text{.}\)</span> This is not trivial, as equations that mix polynomials and trigonometric functions generally do not have “nice” solutions.</p>
+<p>In <a href="" class="xref" data-knowl="./knowl/fig_parcalc5a.html" title="Figure 10.3.15.(a)">Figure 10.3.15.(a)</a> we see a plot of the second derivative. It shows that it has zeros at approximately <span class="process-math">\(t=0.5,\,3.5,\,6.5,\,9.5,\,12.5\)</span> and <span class="process-math">\(16\text{.}\)</span> These approximations are not very good, made only by looking at the graph. Newton's Method provides more accurate approximations. Accurate to 2 decimal places, we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_parcalc5a.html">
+\begin{equation*}
+t=0.65,\,3.29,\,6.36,\,9.48,\,12.61\,\text{ and } \,15.74\text{.}
+\end{equation*}
+</div>
+<p>The corresponding points have been plotted on the graph of the parametric equations in <a href="" class="xref" data-knowl="./knowl/fig_parcalc5b.html" title="Figure 10.3.15.(b)">Figure 10.3.15.(b)</a>. Note how most occur near the <span class="process-math">\(x\)</span>-axis, but not exactly on the axis.</p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like"><img src="generated/latex-image/img_parcalc5a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like"><img src="generated/latex-image/img_parcalc5.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.15<span class="period">.</span></span><span class="space"> </span>In (a), a graph of <span class="process-math">\(\frac{d^2y}{dx^2}\text{,}\)</span> showing where it is approximately 0. In (b), graph of the parametric equations in <a href="" class="xref" data-knowl="./knowl/ex_parcalc5.html" title="Example 10.3.14: Concavity of Plane Curves">Example 10.3.14</a> along with the points of inflection</figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_par_calc.html#solution-829" class="internal">in-context</a></span>
+</body>
+</html>

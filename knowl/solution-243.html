@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:47Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.2.9.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_apps_rel_rates_turning_camera" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/B85LlGHgVQo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>The quantities that changing are <span class="process-math">\(x\)</span> and <span class="process-math">\(\theta\)</span> as drawn on <a href="" class="xref" data-knowl="./knowl/fig_rr4.html" title="Figure 4.2.10">Figure 4.2.10</a>. (The hypotenuse of the triangle is also changing, but this isn't important to the problem). We seek information about how fast the camera is to <em class="emphasis">turn</em>; therefore, we need an equation that will relate an angle <span class="process-math">\(\theta\)</span> to the position of the camera and the speed and position of the car.</p>
+<p><a href="" class="xref" data-knowl="./knowl/fig_rr4.html" title="Figure 4.2.10">Figure 4.2.10</a> suggests we use a trigonometric equation. Letting <span class="process-math">\(x\)</span> represent the distance the car is from the point on the road directly in front of the camera, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_rr4.html">
+\begin{equation}
+\tan(\theta) = \frac{x}{10}\text{.}\tag{4.2.1}
+\end{equation}
+</div>
+<p>Now take the derivative of both sides of Equation <a href="" class="xref" data-knowl="./knowl/eq_rr4.html" title="Equation 4.2.1">(4.2.1)</a> using implicit differentiation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_rr4.html">
+\begin{align*}
+\tan(\theta) \amp = \frac{x}{10}\\
+\lzoo{t}{\tan(\theta)} \amp = \lzoo{t}{\frac{x}{10}}\\
+\sec^2(\theta)\lz{\theta}{t} \amp = \frac{1}{10}\lz{x}{t}
+\end{align*}
+</div>
+<p class="continuation">Now we solve for <span class="process-math">\(\lz{\theta}{t}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_rr4.html">
+\begin{equation}
+\lz{\theta}{t} = \frac{\cos^2(\theta)}{10}\lz{x}{t}\tag{4.2.2}
+\end{equation}
+</div>
+<p>As the car is moving at <span class="quantity">100 mph</span>, we have that <span class="process-math">\(\lz{x}{t}\)</span> is <span class="quantity">-100 mph</span> (as in the last example, since <span class="process-math">\(x\)</span> is getting smaller as the car travels, <span class="process-math">\(\lz{x}{t}\)</span> is negative). We need to convert the measurements so they use the same units (we chose <span class="quantity">ft</span>); rewrite <span class="quantity">-100 mph</span> in terms of <span class="quantity"><sup>ft</sup>⁄<sub>s</sub></span>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lz{x}{t} \amp = -100\frac{\text{mi} }{\text{ hr } }\\
+\amp = -100\frac{\text{mi} }{\text{ hr } }\cdot5280\frac{\text{ ft } }{\text{mi} }\cdot\frac{1}{3600}\frac{\text{ hr } }{\text{s} }\\
+\amp =-146.\overline{6}\text{ ft/s }\text{.}
+\end{align*}
+</div>
+<p>We want to know the fastest the camera has to turn. Common sense tells us this is when the car is directly in front of the camera (i.e., when <span class="process-math">\(\theta = 0\)</span>). Our mathematics bears this out. In <a href="" class="xref" data-knowl="./knowl/eq_rr4b.html" title="Equation 4.2.2">Equation (4.2.2)</a> we see this is when <span class="process-math">\(\cos^2(\theta)\)</span> is largest; this is when <span class="process-math">\(\cos(\theta) = 1\text{,}\)</span> or when <span class="process-math">\(\theta = 0\text{.}\)</span> We also know that we should get an answer that is in <span class="quantity"><sup>rad</sup>⁄<sub>s</sub></span>. Since <span class="process-math">\(\cos(\theta)\)</span> is a “dimensionless” measure, it won't contribute to the units. However, radians are also dimensionless. This means we can write (or erase) the word “radian” without any unit consequences. (The same is not true of degrees — always convert degress to radians).</p>
+<p>With <span class="process-math">\(\lz{x}{t}\)</span> approximately <span class="quantity">-146.7 <sup>ft</sup>⁄<sub>s</sub></span>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lz{\theta}{t} \amp \approx -\frac{1}{10\text{ ft } }146.67\text{ ft/s }\\
+\amp = -14.667\text{ radians/s }
+\end{align*}
+</div>
+<p>We find that <span class="process-math">\(\lz{\theta}{t}\)</span> is negative; this matches our diagram in <a href="" class="xref" data-knowl="./knowl/fig_rr4.html" title="Figure 4.2.10">Figure 4.2.10</a> for <span class="process-math">\(\theta\)</span> is getting smaller as the car approaches the camera.</p>
+<p>What is the practical meaning of <span class="quantity">-14.667 <sup>rad</sup>⁄<sub>s</sub></span>? Recall that <span class="process-math">\(1\)</span> circular revolution goes through <span class="process-math">\(2\pi\)</span> radians, thus <span class="quantity">14.667 <sup>rad</sup>⁄<sub>s</sub></span> means <span class="process-math">\(14.667/(2\pi)\approx 2.33\)</span> revolutions per second. The negative sign indicates the camera is rotating in a clockwise fashion.</p>
+</div>
+<span class="incontext"><a href="sec_related_rates.html#solution-243" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:44:18Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>To compute <span class="process-math">\(\vec u\,'(t)\text{,}\)</span> we use <a href="" class="xref" data-knowl="./knowl/thm_vvf_deriv_prop.html" title="Theorem 12.2.25: Properties of Derivatives of Vector-Valued Functions">Theorem 12.2.25</a>, writing</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_vvf_deriv_prop.html ./knowl/thm_vvf_deriv_prop.html">
+\begin{equation*}
+\vec u(t) = f(t)\vec r(t),  \text{ where }  f(t) = \frac{1}{\sqrt{t^2+(t^2-1)^2}}=\big(t^2+(t^2-1)^2\big)^{-1/2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">(We <em class="emphasis">could</em> write</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_vvf_deriv_prop.html ./knowl/thm_vvf_deriv_prop.html">
+\begin{equation*}
+\vec u(t) = \la \frac{t}{\sqrt{t^2+(t^2-1)^2}}, \frac{t^2-1}{\sqrt{t^2+(t^2-1)^2}}\ra
+\end{equation*}
+</div>
+<p class="continuation">and then take the derivative. It is a matter of preference; this latter method requires two applications of the Quotient Rule where our method uses the Product and Chain Rules.)  We find <span class="process-math">\(\fp(t)\)</span> using the Chain Rule:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_vvf_deriv_prop.html ./knowl/thm_vvf_deriv_prop.html">
+\begin{align*}
+\fp(t) \amp = -\frac12\big(t^2+(t^2-1)^2\big)^{-3/2}\big(2t+2(t^2-1)(2t)\big)\\
+\amp = -\frac{2t(2t^2-1)}{2\big(\sqrt{t^2+(t^2-1)^2}\,\big)^3}
+\end{align*}
+</div>
+<p class="continuation">We now find <span class="process-math">\(\vec u\,'(t)\)</span> using part 3 of <a href="" class="xref" data-knowl="./knowl/thm_vvf_deriv_prop.html" title="Theorem 12.2.25: Properties of Derivatives of Vector-Valued Functions">Theorem 12.2.25</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_vvf_deriv_prop.html ./knowl/thm_vvf_deriv_prop.html">
+\begin{align*}
+\vec u\,'(t) \amp =  \fp(t)\vec u(t) + f(t)\vec u\,'(t)\\
+\amp =  -\frac{2t(2t^2-1)}{2\big(\sqrt{t^2+(t^2-1)^2}\,\big)^3}\la t,t^2-1\ra + \frac{1}{\sqrt{t^2+(t^2-1)^2}}\la 1,2t\ra\text{.}
+\end{align*}
+</div>
+<p class="continuation">This is admittedly very “messy;” such is usually the case when we deal with unit vectors. We can use this formula to compute <span class="process-math">\(\vec u\,'(-2)\text{,}\)</span> <span class="process-math">\(\vec u\,'(-1)\)</span> and <span class="process-math">\(\vec u\,'(0)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_vvf_deriv_prop.html ./knowl/thm_vvf_deriv_prop.html">
+\begin{align*}
+\vec u\,'(-2) \amp = \la-\frac{15}{13 \sqrt{13}},-\frac{10}{13 \sqrt{13}}\ra \approx \la -0.320,-0.213\ra\\
+\vec u\,'(-1) \amp = \la 0,-2\ra\\
+\vec u\,'(0) \amp = \la 1,0\ra
+\end{align*}
+</div>
+<span class="incontext"><a href="sec_vvf_calc.html#p-12040" class="internal">in-context</a></span>
+</body>
+</html>

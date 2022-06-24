@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:27:51Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Finding Limits Analytically</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_limit_def.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_limits.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_limits_one_sided.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_limit_def.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_limits.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_limits_one_sided.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="active">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_limit_analytically"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Finding Limits Analytically</span>
+</h2>
+<p id="p-375">In <a href="sec_limit_intro.html" class="internal" title="Section 1.1: An Introduction To Limits">Section 1.1</a> we explored the concept of the limit without a strict definition, meaning we could only make approximations. In the previous section we gave the definition of the limit and demonstrated how to use it to verify our approximations were correct. Thus far, our method of finding a limit is</p>
+<ol class="decimal">
+<li id="li-39"><p id="p-derived-li-39">make a really good approximation either graphically or numerically, and</p></li>
+<li id="li-40"><p id="p-derived-li-40">verify our approximation is correct using a <span class="process-math">\(\varepsilon\)</span>-<span class="process-math">\(\delta\)</span> proof.</p></li>
+</ol>
+<p id="p-376">Recognizing that <span class="process-math">\(\varepsilon\)</span>-<span class="process-math">\(\delta\)</span> proofs are cumbersome, this section gives a series of theorems which allow us to find limits much more quickly and intuitively.</p>
+<p id="p-377">Suppose that <span class="process-math">\(\lim_{x\to 2} f(x)=2\)</span> and <span class="process-math">\(\lim_{x\to 2} g(x) = 3\text{.}\)</span> What is <span class="process-math">\(\lim_{x\to 2}(f(x)+g(x))\text{?}\)</span> Intuition tells us that the limit should be <span class="process-math">\(5\text{,}\)</span> as we expect limits to behave in a nice way. The following theorem states that already established limits do behave nicely.</p>
+<article class="theorem theorem-like" id="thm_limit_algebra"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Basic Limit Properties.</span>
+</h3>
+<p id="p-378">Let <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\text{,}\)</span> <span class="process-math">\(L\)</span> and <span class="process-math">\(K\)</span> be real numbers, let <span class="process-math">\(n\)</span> be a positive integer, and let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be functions defined on an open interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(c\)</span> with the following limits: </p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-13">
+\begin{align*}
+\lim_{x\to c}f(x)\amp = L\amp \lim_{x\to c} g(x)\amp = K\text{.}
+\end{align*}
+</div>
+<p id="p-379">The following limits hold.</p>
+<dl class="description-list">
+<dt id="constant-limit-rule">Constants</dt>
+<dd><p id="p-380"><span class="process-math">\(\displaystyle \lim\limits_{x\to c} b = b\)</span></p></dd>
+<dt id="identity-limit-rule">Identity</dt>
+<dd><p id="p-381"><span class="process-math">\(\displaystyle \lim\limits_{x\to c} x = c\)</span></p></dd>
+<dt id="sum-difference-limit-rule">Sums/Differences</dt>
+<dd><p id="p-382"><span class="process-math">\(\displaystyle \lim\limits_{x\to c}(f(x)\pm g(x)) = L\pm K\)</span></p></dd>
+<dt id="scalar-multiple-limit-rule">Scalar Multiples</dt>
+<dd><p id="p-383"><span class="process-math">\(\displaystyle \lim\limits_{x\to c}(b\cdot f(x)) = bL\)</span></p></dd>
+<dt id="product-limit-rule">Products</dt>
+<dd><p id="p-384"><span class="process-math">\(\displaystyle \lim\limits_{x\to c} (f(x)\cdot g(x)) = LK\)</span></p></dd>
+<dt id="quotient-limit-rule">Quotients</dt>
+<dd><p id="p-385"><span class="process-math">\(\lim\limits_{x\to c} (f(x)/g(x)) = L/K\text{,}\)</span> when <span class="process-math">\(K\neq 0\)</span></p></dd>
+<dt id="power-limit-rule">Powers</dt>
+<dd><p id="p-386"><span class="process-math">\(\displaystyle \lim\limits_{x\to c} f(x)^n = L^n\)</span></p></dd>
+<dt id="root-limit-rule">Roots</dt>
+<dd>
+<p id="p-387"><span class="process-math">\(\lim\limits_{x\to c} \sqrt[n]{f(x)} = \sqrt[n]{L}\)</span></p>
+<p id="p-388">(If <span class="process-math">\(n\)</span> is even then require <span class="process-math">\(f(x)\geq 0\)</span> on <span class="process-math">\(I\text{.}\)</span>)</p>
+</dd>
+<dt id="composition-limit-rule">Compositions</dt>
+<dd>
+<p id="p-389">Adjust the limit requirements to</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-14">
+\begin{align*}
+\lim_{x\to c}f(x)\amp=L\amp\lim_{x\to L}g(x)\amp=K\amp g(L)\amp=K\text{.}
+\end{align*}
+</div>
+<p class="continuation">Then <span class="process-math">\(\lim\limits_{x\to c}g(f(x)) = K\text{.}\)</span></p>
+</dd>
+</dl></article><figure class="figure figure-like" id="vid_limit_analytic_algebra"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-16" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=idVyYI9XH-A,5P2Zac-_Xhg,lNbLZ2BR1gQ&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.2<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_limit_algebra.html" title="Theorem 1.3.1: Basic Limit Properties">Theorem 1.3.1</a> (three videos)</figcaption></figure><aside class="aside aside-like" id="aside-3"><p id="p-390">Many people like to remember the <a href="" class="xref" data-knowl="./knowl/sum-difference-limit-rule.html" title="Item: Sums/Differences">Sum Property</a> as stating that “the limit of the sum is the sum of the limits”, and the <a href="" class="xref" data-knowl="./knowl/product-limit-rule.html" title="Item: Products">Product Property</a> as stating that the “limit of a product is the product of the limits.”</p>
+<p id="p-391">In practice, the <a href="" class="xref" data-knowl="./knowl/scalar-multiple-limit-rule.html" title="Item: Scalar Multiples">Scalar Multiple Property</a> is often viewed as telling us that we can “take constants out of limits”:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/scalar-multiple-limit-rule.html">
+\begin{equation*}
+\lim_{x\to c}(b\cdot f(x)) = b\cdot\lim_{x\to c}f(x).
+\end{equation*}
+</div></aside><p id="p-392">We apply the theorem to an example.</p>
+<article class="example example-like" id="ex_basic_limit_1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Using basic limit properties.</span>
+</h3>
+<p id="p-393">Let</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-15">
+\begin{align*}
+\lim_{x\to 2} f(x)\amp=2\amp\lim_{x\to 2} g(x)\amp= 3\amp p(x)\amp = 3x^2-5x+7\text{.}
+\end{align*}
+</div>
+<p class="continuation">Find the following limits:</p>
+<ol class="lower-alpha cols3">
+<li id="li-50"><p id="p-derived-li-50"><span class="process-math">\(\displaystyle \lim\limits_{x\to 2}(f(x) + g(x))\)</span></p></li>
+<li id="li-51"><p id="p-derived-li-51"><span class="process-math">\(\displaystyle \lim\limits_{x\to 2}(5f(x) + g(x)^2)\)</span></p></li>
+<li id="polynomial-limit-example"><p id="p-394"><span class="process-math">\(\displaystyle \lim\limits_{x\to 2}p(x)\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-46" id="solution-46"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-46"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_limit_analytic_using_prop" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/8x42kGfu9ts?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-395" class="lower-alpha">
+<li id="li-53">
+<p id="p-396">Using the <a href="" class="xref" data-knowl="./knowl/sum-difference-limit-rule.html" title="Item: Sums/Differences">Sums/Differences</a> property, we know that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sum-difference-limit-rule.html" id="md-16">
+\begin{align*}
+\lim_{x\to 2}(f(x) + g(x)) \amp = \lim_{x\to 2}f(x) + \lim_{x\to 2}g(x)\\
+\amp = 2+3 =5\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-54">
+<p id="p-397">Using the <a href="" class="xref" data-knowl="./knowl/scalar-multiple-limit-rule.html" title="Item: Scalar Multiples">Scalar Multiples</a>, <a href="" class="xref" data-knowl="./knowl/sum-difference-limit-rule.html" title="Item: Sums/Differences">Sums/Differences</a>, and <a href="" class="xref" data-knowl="./knowl/power-limit-rule.html" title="Item: Powers">Powers</a> properties, we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/scalar-multiple-limit-rule.html ./knowl/sum-difference-limit-rule.html ./knowl/power-limit-rule.html" id="md-17">
+\begin{align*}
+\lim_{x\to 2}(5f(x) + g(x)^2) \amp = \lim_{x\to 2}(5f(x))+\lim_{x\to 2}(g(x)^2)\\
+\amp = 5\lim_{x\to 2}f(x) + \mathopen{}\left(\lim_{x\to 2}g(x)\right)\mathclose{}\\
+\amp = 5\cdot 2 + 3^2 = 19\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-55">
+<p id="p-398">Here we combine the <a href="" class="xref" data-knowl="./knowl/power-limit-rule.html" title="Item: Powers">Powers</a>, <a href="" class="xref" data-knowl="./knowl/scalar-multiple-limit-rule.html" title="Item: Scalar Multiples">Scalar Multiples</a>, <a href="" class="xref" data-knowl="./knowl/sum-difference-limit-rule.html" title="Item: Sums/Differences">Sums/Differences</a> and <a href="" class="xref" data-knowl="./knowl/constant-limit-rule.html" title="Item: Constants">Constants</a> properties. We show quite a few steps, but in general these can be omitted:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/power-limit-rule.html ./knowl/scalar-multiple-limit-rule.html ./knowl/sum-difference-limit-rule.html ./knowl/constant-limit-rule.html" id="md-18">
+\begin{align*}
+\lim_{x\to 2} p(x) \amp = \lim_{x\to 2}\left(3x^2-5x+7\right)\\
+\amp = \lim_{x\to 2}\mathopen{}\left(3x^2\right)\mathclose{}-\lim_{x\to 2}(5x)+\lim_{x\to 2}7\\
+\amp = 3\bigl(\lim_{x\to 2}x\bigr)^2-5\lim_{x\to 2}(x) +7\\
+\amp = 3\cdot 2^2 - 5\cdot 2+7\\
+\amp = 9
+\end{align*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article><p id="p-399"><a href="" class="xref" data-knowl="./knowl/polynomial-limit-example.html" title="Item c">Part c</a> of the previous example demonstrates how the limit of a quadratic polynomial can be determined using the properties of <a href="" class="xref" data-knowl="./knowl/thm_limit_algebra.html" title="Theorem 1.3.1: Basic Limit Properties">Theorem 1.3.1</a>. Not only that, recognize that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/polynomial-limit-example.html ./knowl/thm_limit_algebra.html">
+\begin{equation*}
+\lim_{x\to 2} p(x) = 9 = p(2);
+\end{equation*}
+</div>
+<p class="continuation">i.e., the limit at <span class="process-math">\(2\)</span> could have been found just by plugging <span class="process-math">\(2\)</span> into the function. This holds true for all polynomials, and also for rational functions (which are quotients of polynomials), as stated in the following theorem.</p>
+<article class="theorem theorem-like" id="thm_poly_rat"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Limits of Polynomial and Rational Functions.</span>
+</h3>
+<p id="p-400">Let <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> be polynomials and <span class="process-math">\(c\)</span> a real number. Then: </p>
+<ol class="decimal">
+<li id="li-56"><p id="p-401"><span class="process-math">\(\displaystyle \lim\limits_{x\to c} p(x) = p(c)\)</span></p></li>
+<li id="li-57"><p id="p-402"><span class="process-math">\(\lim\limits_{x\to c} \frac{p(x)}{q(x)} = \frac{p(c)}{q(c)}\text{,}\)</span> when <span class="process-math">\(q(c) \neq 0\text{.}\)</span></p></li>
+</ol></article><figure class="figure figure-like" id="vid_limit_analytic_imp_thms"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-18" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/NGoUHZESPso?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.5<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_poly_rat.html" title="Theorem 1.3.4: Limits of Polynomial and Rational Functions">Theorem 1.3.4</a> and <a href="" class="xref" data-knowl="./knowl/thm_limit_allbut1.html" title="Theorem 1.3.20: Limits of Functions Equal At All But One Point">Theorem 1.3.20</a></figcaption></figure><article class="example example-like" id="ex_limit_rat"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a limit of a rational function.</span>
+</h3>
+<p id="p-403">Using <a href="" class="xref" data-knowl="./knowl/thm_poly_rat.html" title="Theorem 1.3.4: Limits of Polynomial and Rational Functions">Theorem 1.3.4</a>, find</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_poly_rat.html">
+\begin{equation*}
+\lim_{x\to -1} \frac{3x^2-5x+1}{x^4-x^2+3}\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-47" id="solution-47"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-47"><div class="solution solution-like">
+<p id="p-404">Using <a href="" class="xref" data-knowl="./knowl/thm_poly_rat.html" title="Theorem 1.3.4: Limits of Polynomial and Rational Functions">Theorem 1.3.4</a>, we can quickly state that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_poly_rat.html" id="md-19">
+\begin{align*}
+\lim_{x\to -1}\frac{3x^2-5x+1}{x^4-x^2+3} \amp = \frac{3(-1)^2-5(-1)+1}{(-1)^4-(-1)^2+3}\\
+\amp = \frac{9}{3} =3\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="p-405">It was likely frustrating in <a href="sec_limit_def.html" class="internal" title="Section 1.2: Epsilon-Delta Definition of a Limit">Section 1.2</a> to do a lot of work with <span class="process-math">\(\varepsilon\)</span> and <span class="process-math">\(\delta\)</span> to prove that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_limit_def.html ./knowl/ex_limit_rat.html">
+\begin{equation*}
+\lim_{x\to 2} x^2 = 4
+\end{equation*}
+</div>
+<p class="continuation">as it seemed fairly obvious. The previous theorems state that many functions behave in such an “obvious” fashion, as demonstrated by the rational function in <a href="" class="xref" data-knowl="./knowl/ex_limit_rat.html" title="Example 1.3.6: Finding a limit of a rational function">Example 1.3.6</a>.</p>
+<p id="p-406">Polynomial and rational functions are not the only functions to behave in such a predictable way. The following theorem gives a list of functions whose behavior is particularly “nice” in terms of limits. In <a href="sec_continuity.html" class="internal" title="Section 1.5: Continuity">Section 1.5</a>, we will give a formal name to these functions that behave “nicely.”</p>
+<article class="theorem theorem-like" id="thm_lim_continuous"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Limits of Common Functions.</span>
+</h3>
+<p id="p-407">Let <span class="process-math">\(c\)</span> be a real number in the domain of the given function and let <span class="process-math">\(n\)</span> be a positive integer. The following limits hold: </p>
+<ol class="decimal cols2">
+<li id="item_sin_continuous"><p id="p-derived-item_sin_continuous"><span class="process-math">\(\displaystyle \lim\limits_{x\to c}\sin(x) = \sin(c)\)</span></p></li>
+<li id="li-59"><p id="p-derived-li-59"><span class="process-math">\(\displaystyle \lim_{x\to c}\cos(x) = \cos(c)\)</span></p></li>
+<li id="li-60"><p id="p-derived-li-60"><span class="process-math">\(\displaystyle \lim_{x\to c}\tan(x)= \tan(c)\)</span></p></li>
+<li id="li-61"><p id="p-derived-li-61"><span class="process-math">\(\displaystyle \lim_{x\to c}\csc(x) = \csc(c)\)</span></p></li>
+<li id="li-62"><p id="p-derived-li-62"><span class="process-math">\(\displaystyle \lim_{x\to c}\sec(x) = \sec(c)\)</span></p></li>
+<li id="li-63"><p id="p-derived-li-63"><span class="process-math">\(\displaystyle \lim_{x\to c}\cot(x) = \cot(c)\)</span></p></li>
+<li id="li-64"><p id="p-derived-li-64"><span class="process-math">\(\lim_{x\to c}a^x = a^c\text{,}\)</span> if <span class="process-math">\(a \gt 0\)</span></p></li>
+<li id="li-65"><p id="p-derived-li-65"><span class="process-math">\(\displaystyle \lim_{x\to c}\ln(x) = \ln(c)\)</span></p></li>
+<li id="li_root_limit"><p id="p-derived-li_root_limit"><span class="process-math">\(\displaystyle \lim_{x\to c}\sqrt[n]{x} = \sqrt[n]{c}\)</span></p></li>
+</ol>
+<p class="continuation">(<a href="" class="xref" data-knowl="./knowl/li_root_limit.html" title="Item 9">Item 9</a> follows from the <a href="" class="xref" data-knowl="./knowl/identity-limit-rule.html" title="Item: Identity">Identity</a> and <a href="" class="xref" data-knowl="./knowl/root-limit-rule.html" title="Item: Roots">Roots</a> rules.)</p></article><article class="example example-like" id="ex_limit_1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating limits analytically.</span>
+</h3>
+<p id="p-408">Evaluate the following limits.</p>
+<ol class="lower-alpha cols2">
+<li id="li-67"><p id="p-derived-li-67"><span class="process-math">\(\displaystyle \lim\limits_{x\to \pi} \cos(x)\)</span></p></li>
+<li id="li-68"><p id="p-derived-li-68"><span class="process-math">\(\displaystyle \lim\limits_{x\to 3} \left(\sec^2(x) - \tan^2(x)\right)\)</span></p></li>
+<li id="li-69"><p id="p-derived-li-69"><span class="process-math">\(\displaystyle \lim\limits_{x\to \pi/2}(\cos(x)\sin(x))\)</span></p></li>
+<li id="li-70"><p id="p-derived-li-70"><span class="process-math">\(\displaystyle \lim\limits_{x\to 1} e^{\ln(x)}\)</span></p></li>
+<li id="li-71"><p id="p-derived-li-71"><span class="process-math">\(\displaystyle \lim\limits_{x\to 0} \dfrac{\sin(x)}{x}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-48" id="solution-48"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-48"><div class="solution solution-like"><ol id="p-409" class="lower-alpha">
+<li id="li-72"><p id="p-410">This is a straightforward application of <a href="" class="xref" data-knowl="./knowl/thm_lim_continuous.html" title="Theorem 1.3.7: Limits of Common Functions">Theorem 1.3.7</a>: <span class="process-math">\(\lim\limits_{x\to \pi} \cos(x) = \cos(\pi) = -1\text{.}\)</span></p></li>
+<li id="li-73">
+<p id="p-411">We can approach this in at least two ways. First, by directly applying <a href="" class="xref" data-knowl="./knowl/thm_lim_continuous.html" title="Theorem 1.3.7: Limits of Common Functions">Theorem 1.3.7</a>, we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_lim_continuous.html">
+\begin{equation*}
+\lim_{x\to 3} \left(\sec^2(x) - \tan^2(x)\right) = \sec^2(3)-\tan^2(3)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Using the Pythagorean Theorem, this last expression is <span class="process-math">\(1\text{;}\)</span> therefore</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_lim_continuous.html">
+\begin{equation*}
+\lim_{x\to 3} \left(\sec^2(x) - \tan^2(x)\right) = 1\text{.}
+\end{equation*}
+</div>
+<p id="p-412">We can also use the Pythagorean Theorem from the start.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/constant-limit-rule.html">
+\begin{equation*}
+\lim_{x\to 3} \left(\sec^2(x) - \tan^2(x)\right) = \lim_{x\to 3} 1 = 1\text{,}
+\end{equation*}
+</div>
+<p class="continuation">using the <a href="" class="xref" data-knowl="./knowl/constant-limit-rule.html" title="Item: Constants">Constants</a> rule. Either way, we find the limit is <span class="process-math">\(1\text{.}\)</span></p>
+</li>
+<li id="li-74">
+<p id="p-413">Applying the <a href="" class="xref" data-knowl="./knowl/product-limit-rule.html" title="Item: Products">Products</a> rule and <a href="" class="xref" data-knowl="./knowl/thm_lim_continuous.html" title="Theorem 1.3.7: Limits of Common Functions">Theorem 1.3.7</a> gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/product-limit-rule.html ./knowl/thm_lim_continuous.html">
+\begin{equation*}
+\lim\limits_{x\to \pi/2} \cos(x)\sin(x) = \cos(\pi/2)\sin(\pi/2) = 0\cdot 1 = 0\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-75">
+<p id="p-414">Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that <span class="process-math">\(e^{\ln(x)} = x\)</span> and evaluate <span class="process-math">\(\lim\limits_{x\to 1} e^{\ln(x)} = \lim\limits_{x\to 1} x = 1\text{.}\)</span></p>
+<p id="p-415">We can also use the <a href="" class="xref" data-knowl="./knowl/composition-limit-rule.html" title="Item: Compositions">Compositions</a> rule. Using <a href="" class="xref" data-knowl="./knowl/thm_lim_continuous.html" title="Theorem 1.3.7: Limits of Common Functions">Theorem 1.3.7</a>, we have <span class="process-math">\(\lim\limits_{x\to 1}\ln(x) = \ln(1) = 0\)</span> and <span class="process-math">\(\lim_{x\to 0} e^x= e^0=1\text{,}\)</span> satisfying the conditions of the <a href="" class="xref" data-knowl="./knowl/composition-limit-rule.html" title="Item: Compositions">Compositions</a> rule. Applying this rule,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/composition-limit-rule.html ./knowl/thm_lim_continuous.html ./knowl/composition-limit-rule.html">
+\begin{equation*}
+\lim_{x\to 1} e^{\ln(x)} = e^{\lim_{x\to 1} \ln(x)}=e^{\ln(1)}  = e^0 = 1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Both approaches are valid, giving the same result.</p>
+</li>
+<li id="li-76">
+<p id="p-416">We encountered this limit in <a href="sec_limit_intro.html" class="internal" title="Section 1.1: An Introduction To Limits">Section 1.1</a>. Applying our theorems, we attempt to find the limit as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_limit_intro.html ./knowl/quotient-limit-rule.html">
+\begin{equation*}
+\lim_{x\to 0}\frac{\sin(x)}{x}\rightarrow \frac{\sin(0) }{0}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which is of the form <span class="process-math">\(\frac{0}{0}\text{.}\)</span> This, of course, violates a condition of the <a href="" class="xref" data-knowl="./knowl/quotient-limit-rule.html" title="Item: Quotients">Quotients</a> rule, as the limit of the denominator is not allowed to be <span class="process-math">\(0\text{.}\)</span> Therefore, we are still unable to evaluate this limit with tools we currently have at hand.</p>
+</li>
+</ol></div></div>
+</div></article><p id="p-417">Based on what we've done so far, this section could have been titled “Using Known Limits to Find Unknown Limits.” By knowing certain limits of functions, we can find limits involving sums, products, powers, etc., of these functions. We further the development of such comparative tools with the Squeeze Theorem, a clever and intuitive way to find the value of some limits.</p>
+<p id="p-418">Before stating this theorem formally, suppose we have functions <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\(g\text{,}\)</span> and <span class="process-math">\(h\)</span> where <span class="process-math">\(g\)</span> always takes on values between <span class="process-math">\(f\)</span> and <span class="process-math">\(h\text{;}\)</span> that is, for all <span class="process-math">\(x\)</span> in an interval,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x) \leq g(x) \leq h(x)\text{.}
+\end{equation*}
+</div>
+<p id="p-419">If <span class="process-math">\(f\)</span> and <span class="process-math">\(h\)</span> have the same limit at <span class="process-math">\(c\text{,}\)</span> and <span class="process-math">\(g\)</span> is always “squeezed” between them, then <span class="process-math">\(g\)</span> must have the same limit as well. That is what the Squeeze Theorem states. This is illustrated in <a href="" class="xref" data-knowl="./knowl/fig-squeeze-theorem.html" title="Figure 1.3.9">Figure 1.3.9</a>.</p>
+<figure class="figure figure-like" id="fig-squeeze-theorem"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img-squeeze-theorem.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.9<span class="period">.</span></span><span class="space"> </span>An illustration of the Squeeze Theorem</figcaption></figure><article class="theorem theorem-like" id="thm_sqz"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Squeeze Theorem.</span>
+</h3>
+<p id="p-420">Let <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> be functions on an open interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(c\)</span> such that for all <span class="process-math">\(x\)</span> in <span class="process-math">\(I\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x)\leq g(x) \leq h(x)\text{.}
+\end{equation*}
+</div>
+<p class="continuation"> If</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to c} f(x) = L = \lim_{x\to c} h(x)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to c} g(x) = L\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="vid_limit_analytic_squeeze_thm"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-19" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/8Tv-GRQdAVA?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.11<span class="period">.</span></span><span class="space"> </span>Explaining the Squeeze Theorem</figcaption></figure><p id="p-421">It can take some work to figure out appropriate functions by which to “squeeze” a given function. However, that is generally the only place where work is necessary; the theorem makes the “evaluating the limit part” very simple.</p>
+<p id="vidint_limit_analytic_lim_sin_props">The Squeeze Theorem can be used to show that limits of <span class="process-math">\(\sin(x)\)</span> can be done by direct substitution, as the following videos illustrate.</p>
+<figure class="figure figure-like" id="vid_limit_analytic_lim_sin_0"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-20" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=S0VmjueQn5k,L2ohy96L-F4&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.12<span class="period">.</span></span><span class="space"> </span>Using the Squeeze Theorem to take limits of <span class="process-math">\(\sin(x)\)</span></figcaption></figure><p id="p-423">We use the <a href="" class="xref" data-knowl="./knowl/thm_sqz.html" title="Theorem 1.3.10: Squeeze Theorem">Squeeze Theorem</a> in the following example to finally prove that <span class="process-math">\(\lim\limits_{x\to 0} \frac{\sin(x)}{x} = 1\text{.}\)</span></p>
+<article class="example example-like" id="ex_limit_sinx_prove"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Squeeze Theorem.</span>
+</h3>
+<p id="p-424">Use the <a href="" class="xref" data-knowl="./knowl/thm_sqz.html" title="Theorem 1.3.10: Squeeze Theorem">Squeeze Theorem</a> to show that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_sqz.html">
+\begin{equation*}
+\lim_{x\to 0} \frac{\sin(x)}{x} = 1\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-49" id="solution-49"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-49"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_limit_analytic_sinxoverx" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/pgjv3ojtXh4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-425">We begin by considering the unit circle. Each point on the unit circle has coordinates <span class="process-math">\((\cos(\theta),\sin(\theta))\)</span> for some angle <span class="process-math">\(\theta\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_squeeze_sinx.html" title="Figure 1.3.14">Figure 1.3.14</a>. Using similar triangles, we can extend the line from the origin through the point to the point <span class="process-math">\((1,\tan(\theta))\text{,}\)</span> as shown. (Here we are assuming that <span class="process-math">\(0\leq \theta \leq \pi/2\text{.}\)</span> Later we will show that we can also consider <span class="process-math">\(\theta \leq 0\text{.}\)</span>)</p>
+<figure class="figure figure-like" id="fig_squeeze_sinx"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_squeeze_sinx.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.14<span class="period">.</span></span><span class="space"> </span>The unit circle and related triangles</figcaption></figure><p id="p-426"><a href="" class="xref" data-knowl="./knowl/fig_squeeze_sinx.html" title="Figure 1.3.14">Figure 1.3.14</a> shows three regions have been constructed in the first quadrant, two triangles and a sector of a circle, which are also drawn below. The area of the large triangle is <span class="process-math">\(\frac{1}{2}\tan(\theta)\text{;}\)</span> the area of the sector is <span class="process-math">\(\theta/2\text{;}\)</span> the area of the triangle contained inside the sector is <span class="process-math">\(\frac{1}{2}\sin(\theta)\text{.}\)</span> It is then clear from <a href="" class="xref" data-knowl="./knowl/fig_squeeze1.html" title="Figure 1.3.15">Figure 1.3.15</a> that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_squeeze_sinx.html ./knowl/fig_squeeze1.html">
+\begin{equation*}
+\frac{\tan(\theta)}{2}\geq\frac{\theta}{2}\geq\frac{\sin(\theta)}{2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">(You may need to recall that the area of a sector of a circle is <span class="process-math">\(\frac{1}{2}r^2 \theta\)</span> with <span class="process-math">\(\theta\)</span> measured in radians.)</p>
+<figure class="figure figure-like" id="fig_squeeze1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:32%;"><img src="generated/latex-image/img_squeeze1a.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:32%;"><img src="generated/latex-image/img_squeeze1b.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:32%;"><img src="generated/latex-image/img_squeeze1c.svg" role="img" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.15<span class="period">.</span></span><span class="space"> </span>Bounding the sector between two triangles</figcaption></figure><p id="p-427">Multiply all terms by <span class="process-math">\(\frac{2}{\sin(\theta)}\text{,}\)</span> giving</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{\cos(\theta)} \geq \frac{\theta}{\sin(\theta)} \geq 1\text{.}
+\end{equation*}
+</div>
+<p id="p-428">Taking reciprocals reverses the inequalities, giving</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\cos(\theta) \leq \frac{\sin(\theta)}{\theta} \leq 1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">(These inequalities hold for all values of <span class="process-math">\(\theta\)</span> near <span class="process-math">\(0\text{,}\)</span> even negative values, since <span class="process-math">\(\cos(-\theta) = \cos(\theta)\)</span> and <span class="process-math">\(\sin(-\theta) = -\sin(\theta)\text{.}\)</span>)</p>
+<p id="p-429">Now take limits.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-20">
+\begin{align*}
+\lim_{\theta\to 0} \cos(\theta)\amp \leq \lim_{\theta\to 0} \frac{\sin(\theta)}{\theta} \leq \lim_{\theta\to 0}  1\\
+\cos(0) \amp\leq \lim_{\theta\to 0} \frac{\sin(\theta)}{\theta} \leq  1\\
+1\amp \leq \lim_{\theta\to 0} \frac{\sin(\theta)}{\theta} \leq  1
+\end{align*}
+</div>
+<p id="p-430">Clearly this means that <span class="process-math">\(\lim\limits_{\theta\to 0} \frac{\sin(\theta)}{\theta}=1\text{.}\)</span></p>
+</div></div>
+</div></article><p id="vidint_limit_analytic_trig_lim">With the limit <span class="process-math">\(\lim\limits_{\theta\to 0} \frac{\sin(\theta)}{\theta}=1\)</span> finally established, we can move on to other limits involving trigonometric functions, as the following video demonstrates.</p>
+<figure class="figure figure-like" id="vid_limit_analytic_trig_lim"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-22" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Wd464IIls5Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.16<span class="period">.</span></span><span class="space"> </span>Finding limits involving trigonometric functions</figcaption></figure><p id="p-432">Two notes about the <a href="" class="xref" data-knowl="./knowl/ex_limit_sinx_prove.html" title="Example 1.3.13: Using the Squeeze Theorem">Example 1.3.13</a> are worth mentioning. First, one might be discouraged by this application, thinking “I would <em class="emphasis">never</em> have come up with that on my own. This is too hard!” Don't be discouraged; within this text we will guide you in your use of the <a href="" class="xref" data-knowl="./knowl/thm_sqz.html" title="Theorem 1.3.10: Squeeze Theorem">Squeeze Theorem</a>. As one gains mathematical maturity, clever proofs like this are easier and easier to create.</p>
+<p id="p-433">Second, this limit tells us more than just that as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(\sin(x)/x\)</span> approaches <span class="process-math">\(1\text{.}\)</span> Both <span class="process-math">\(x\)</span> and <span class="process-math">\(\sin(x)\)</span> are approaching <span class="process-math">\(0\text{,}\)</span> but the <em class="emphasis">ratio</em> of <span class="process-math">\(x\)</span> and <span class="process-math">\(\sin(x)\)</span> approaches <span class="process-math">\(1\text{,}\)</span> meaning that they are approaching <span class="process-math">\(0\)</span> in essentially the same way. Another way of viewing this is: for small <span class="process-math">\(x\text{,}\)</span> the functions <span class="process-math">\(y=x\)</span> and <span class="process-math">\(y=\sin(x)\)</span> are essentially indistinguishable.</p>
+<p id="p-434">We include this special limit, along with three others, in the following theorem.</p>
+<article class="theorem theorem-like" id="thm_special_limits"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.17</span><span class="period">.</span><span class="space"> </span><span class="title">Special Limits.</span>
+</h3>
+<ol id="p-435" class="decimal cols2">
+<li id="li-77"><p id="p-derived-li-77"><span class="process-math">\(\displaystyle \lim\limits_{x\to 0} \dfrac{\sin(x)}{x} = 1\)</span></p></li>
+<li id="li-78"><p id="p-derived-li-78"><span class="process-math">\(\displaystyle \lim\limits_{x\to 0} \dfrac{\cos(x)-1}{x} = 0\)</span></p></li>
+<li id="li-79"><p id="p-derived-li-79"><span class="process-math">\(\displaystyle \lim\limits_{x\to 0} (1+x)^{1/x} = e\)</span></p></li>
+<li id="li-80"><p id="p-derived-li-80"><span class="process-math">\(\displaystyle \lim\limits_{x\to 0} \dfrac{e^x-1}{x} = 1\)</span></p></li>
+</ol></article><p id="p-436">A short word on how to interpret the latter three limits. We know that as <span class="process-math">\(x\)</span> goes to <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(\cos(x)\)</span> goes to <span class="process-math">\(1\text{.}\)</span> So, in the second limit, both the numerator and denominator are approaching <span class="process-math">\(0\text{.}\)</span> However, since the limit is <span class="process-math">\(0\text{,}\)</span> we can interpret this as saying that “<span class="process-math">\(\cos(x)\)</span> is approaching <span class="process-math">\(1\)</span> faster than <span class="process-math">\(x\)</span> is approaching <span class="process-math">\(0\text{.}\)</span>”</p>
+<p id="p-437">In the third limit, inside the parentheses we have an expression that is approaching <span class="process-math">\(1\)</span> (though never equaling <span class="process-math">\(1\)</span>), and we know that <span class="process-math">\(1\)</span> raised to any power is still <span class="process-math">\(1\text{.}\)</span> At the same time, the power is growing toward infinity. What happens to a number near <span class="process-math">\(1\)</span> raised to a very large power? In this particular case, the result approaches Euler's number, <span class="process-math">\(e\text{,}\)</span> approximately <span class="process-math">\(2.718\text{.}\)</span></p>
+<p id="p-438">In the fourth limit, we see that as <span class="process-math">\(x\to 0\text{,}\)</span> <span class="process-math">\(e^x\)</span> approaches <span class="process-math">\(1\)</span> “just as fast” as <span class="process-math">\(x\to 0\text{,}\)</span> resulting in a limit of <span class="process-math">\(1\text{.}\)</span></p>
+<p id="p-439">The special limits stated in <a href="" class="xref" data-knowl="./knowl/thm_special_limits.html" title="Theorem 1.3.17: Special Limits">Theorem 1.3.17</a> are called <em class="emphasis">indeterminate forms</em>;  in this case they are of the form <span class="process-math">\(0/0\text{,}\)</span> except the third limit, which is of a different form. You'll learn techniques to find these limits exactly using calculus in <a href="sec_lhopitals_rule.html" class="internal" title="Section 6.7: L'Hospital's Rule">Section 6.7</a>.</p>
+<p id="p-440">Our final theorem for this section will be motivated by the following example.</p>
+<article class="example example-like" id="ex_limit_onept"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Using algebra to evaluate a limit.</span>
+</h3>
+<p id="p-441">Evaluate the following limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 1}\frac{x^2-1}{x-1}\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-50" id="solution-50"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like">
+<p id="p-442">We begin by attempting to apply <a href="" class="xref" data-knowl="./knowl/thm_poly_rat.html" title="Theorem 1.3.4: Limits of Polynomial and Rational Functions">Theorem 1.3.4</a> and substituting <span class="process-math">\(1\)</span> for <span class="process-math">\(x\)</span> in the quotient. This gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_poly_rat.html">
+\begin{equation*}
+\lim_{x\to 1}\frac{x^2-1}{x-1} = \frac{1^2-1}{1-1}
+\end{equation*}
+</div>
+<p class="continuation">which is of the form <span class="process-math">\(\frac{0}{0}\text{,}\)</span> an indeterminate form. We cannot apply the theorem.</p>
+<p id="p-443">By graphing the function, as in <a href="" class="xref" data-knowl="./knowl/fig_limitxplus1.html" title="Figure 1.3.19">Figure 1.3.19</a>, we see that the function seems to be linear, implying that the limit should be easy to evaluate. Recognize that the numerator of our quotient can be factored:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_limitxplus1.html">
+\begin{equation*}
+\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The function is not defined when <span class="process-math">\(x=1\text{,}\)</span> but for all other <span class="process-math">\(x\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_limitxplus1.html" id="md-21">
+\begin{align*}
+\frac{x^2-1}{x-1}\amp = \frac{(x-1)(x+1)}{x-1}\\
+\amp = \frac{\cancel{(x-1)}(x+1)}{\cancel{(x-1)} }\\
+\amp = x+1, \quad \text{if } x \neq 1
+\end{align*}
+</div>
+<figure class="figure figure-like" id="fig_limitxplus1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_limitxplus1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.19<span class="period">.</span></span><span class="space"> </span>Graphing <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_limit_onept.html" title="Example 1.3.18: Using algebra to evaluate a limit">Example 1.3.18</a> to understand a limit</figcaption></figure><p id="p-444">Clearly <span class="process-math">\(\lim\limits_{x\to 1}(x+1) = 2\text{.}\)</span> Recall that when considering limits, we are not concerned with the value of the function at <span class="process-math">\(1\text{,}\)</span> only the value the function approaches as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(1\text{.}\)</span> Since <span class="process-math">\((x^2-1)/(x-1)\)</span> and <span class="process-math">\(x+1\)</span> are the same at all points except at <span class="process-math">\(x=1\text{,}\)</span> they both approach the same value as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(1\text{.}\)</span> Therefore we can conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-22">
+\begin{align*}
+\lim_{x \to 1} \frac{x^2-1}{x-1} \amp =\lim_{x \to 1} (x+1)\\
+\amp =2
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="p-445">The key to <a href="" class="xref" data-knowl="./knowl/ex_limit_onept.html" title="Example 1.3.18: Using algebra to evaluate a limit">Example 1.3.18</a> is that the functions <span class="process-math">\(y=(x^2-1)/(x-1)\)</span> and <span class="process-math">\(y=x+1\)</span> are identical except at <span class="process-math">\(x=1\text{.}\)</span> Since limits describe a value the function is approaching, not the value the function actually attains, the limits of the two functions are always equal.</p>
+<article class="theorem theorem-like" id="thm_limit_allbut1"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.20</span><span class="period">.</span><span class="space"> </span><span class="title">Limits of Functions Equal At All But One Point.</span>
+</h3>
+<p id="p-446">Let <span class="process-math">\(g(x) = f(x)\)</span> for all <span class="process-math">\(x\)</span> in an open interval, except possibly at <span class="process-math">\(c\text{,}\)</span> and let <span class="process-math">\(\lim\limits_{x\to c} g(x) = L\)</span> for some real number <span class="process-math">\(L\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to c}f(x) = L\text{.}
+\end{equation*}
+</div></article><p id="p-447">The <a href="" class="xref" data-knowl="./knowl/reference-algebra-fta.html" title="Assemblage: Fundamental Theorem of Algebra">Fundamental Theorem of Algebra</a> tells us that when dealing with a rational function of the form <span class="process-math">\(g(x)/f(x)\)</span> and directly evaluating the limit <span class="process-math">\(\lim\limits_{x\to c} \frac{g(x)}{f(x)}\)</span> returns “0/0”, then <span class="process-math">\((x-c)\)</span> is a factor of both <span class="process-math">\(g(x)\)</span> and <span class="process-math">\(f(x)\text{.}\)</span> One can then use algebra to factor this binomial out, cancel, then apply <a href="" class="xref" data-knowl="./knowl/thm_limit_allbut1.html" title="Theorem 1.3.20: Limits of Functions Equal At All But One Point">Theorem 1.3.20</a>. We demonstrate this once more.</p>
+<article class="example example-like" id="ex_limit_allbut1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.21</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a limit using Theorem 1.3.20.</span>
+</h3>
+<p id="p-448">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim\limits_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15}\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-51" id="solution-51"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_limit_analytic_alg_ex_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/MSckoYqdKH4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-449">We attempt to apply <a href="" class="xref" data-knowl="./knowl/thm_poly_rat.html" title="Theorem 1.3.4: Limits of Polynomial and Rational Functions">Theorem 1.3.4</a> by substituting <span class="process-math">\(3\)</span> for <span class="process-math">\(x\text{.}\)</span> This returns the familiar indeterminate form of “0/0”. Since the numerator and denominator are each polynomials, we know that <span class="process-math">\((x-3)\)</span> is factor of each. Using whatever method is most comfortable to you, factor out <span class="process-math">\((x-3)\)</span> from each (using polynomial division, synthetic division, a computer algebra system, etc.). We find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_poly_rat.html ./knowl/thm_limit_allbut1.html">
+\begin{equation*}
+\frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} = \frac{(x-3)\left(x^2+x-2\right)}{(x-3)\left(2 x^2+9 x-5\right)}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We can cancel the <span class="process-math">\((x-3)\)</span> factors as long as <span class="process-math">\(x\neq 3\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/thm_limit_allbut1.html" title="Theorem 1.3.20: Limits of Functions Equal At All But One Point">Theorem 1.3.20</a> we conclude:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_poly_rat.html ./knowl/thm_limit_allbut1.html" id="md-23">
+\begin{align*}
+\lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} \amp = \lim_{x\to 3}\frac{(x-3)\left(x^2+x-2\right)}{(x-3)\left(2 x^2+9 x-5\right)}\\
+\amp =\lim_{x\to 3} \frac{x^2+x-2}{2 x^2+9 x-5}\\
+\amp = \frac{10}{40}\\
+\amp = \frac{1}{4}\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="ex_limit_allbut2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.22</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a Limit with a Hole.</span>
+</h3>
+<p id="p-450">Evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim\limits_{x\to 9} \frac{\sqrt{x}-3}{x-9}\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-52" id="solution-52"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-52"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_limit_analytic_alg_ex_2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/vOW92eipOu4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-451">We begin by trying to apply the <a href="" class="xref" data-knowl="./knowl/quotient-limit-rule.html" title="Item: Quotients">Quotients</a> limit rule, but the denominator evaluates to zero. In fact, this limit is of the indeterminate form <span class="process-math">\(0/0\text{.}\)</span> We will do some algebra to resolve the indeterminate form. In this case, we multiply the numerator and denominator by the conjugate of the numerator.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/quotient-limit-rule.html ./knowl/thm_limit_allbut1.html" id="md-24">
+\begin{align*}
+\frac{\sqrt{x}-3}{x-9} \amp = \frac{\sqrt{x}-3}{x-9} \cdot \frac{\left(\sqrt{x}+3\right)}{\left(\sqrt{x}+3\right)}\\
+\amp= \frac{x-9}{(x-9)(\sqrt{x}+3)}
+\end{align*}
+</div>
+<p class="continuation">We can cancel the <span class="process-math">\((x-9)\)</span> factors as long as <span class="process-math">\(x\neq 9\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/thm_limit_allbut1.html" title="Theorem 1.3.20: Limits of Functions Equal At All But One Point">Theorem 1.3.20</a> we conclude:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/quotient-limit-rule.html ./knowl/thm_limit_allbut1.html" id="md-25">
+\begin{align*}
+\lim_{x\to 9} \frac{\sqrt{x}-3}{x-9} \amp =\lim_{x\to 9} \frac{x-9}{(x-9)\left(\sqrt{x}+3\right)}\\
+\amp = \lim_{x\to 9 }\frac{1}{\sqrt{x}+3}\\
+\amp = \frac{1}{\lim_{x\to 9}\sqrt{x}+\lim_{x \to 9}3}\\
+\amp = \frac{1}{\sqrt{\lim_{x\to 9}x}+3}\\
+\amp = \frac{1}{\sqrt{3+3}}\\
+\amp = \frac{1}{6}\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="p-452">We end this section by revisiting a limit first seen in <a href="sec_limit_intro.html" class="internal" title="Section 1.1: An Introduction To Limits">Section 1.1</a>, a limit of a difference quotient. Let <span class="process-math">\(f(x) = -1.5x^2+11.5x\text{;}\)</span> we approximated the limit <span class="process-math">\(\lim\limits_{h\to 0}\frac{f(1+h)-f(1)}{h}\approx 8.5\text{.}\)</span> We formally evaluate this limit in the following example.</p>
+<article class="example example-like" id="ex_limit_diffquot"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.23</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating the limit of a difference quotient.</span>
+</h3>
+<p id="p-453">Let <span class="process-math">\(f(x) = -1.5x^2+11.5x\text{;}\)</span> find <span class="process-math">\(\lim\limits_{h\to 0}\frac{f(1+h)-f(1)}{h}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like">
+<p id="p-454">Since <span class="process-math">\(f\)</span> is a polynomial, our first attempt should be to employ <a href="" class="xref" data-knowl="./knowl/thm_poly_rat.html" title="Theorem 1.3.4: Limits of Polynomial and Rational Functions">Theorem 1.3.4</a> and substitute <span class="process-math">\(0\)</span> for <span class="process-math">\(h\text{.}\)</span> However, we see that this gives us “<span class="process-math">\(0/0\text{.}\)</span>” Knowing that we have a rational function hints that some algebra will help. Consider the following steps:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_poly_rat.html ./knowl/thm_limit_allbut1.html ./knowl/thm_poly_rat.html" id="md-26">
+\begin{align*}
+\lim_{h\to 0}\frac{f(1+h)-f(1)}{h}\amp = \lim_{h\to 0}\frac{-1.5(1+h)^2 + 11.5(1+h) - \left(-1.5(1)^2+11.5(1)\right)}{h}\\
+\amp =\lim_{h\to 0}\frac{-1.5(1+2h+h^2) + 11.5+11.5h - 10}{h}\\
+\amp =\lim_{h\to 0}\frac{-1.5h^2 +8.5h}{h}\\
+\amp =\lim_{h\to 0}\frac{h(-1.5h+8.5)}h\\
+\amp =\lim_{h\to 0}(-1.5h+8.5)  \quad (\text{using } \knowl{./knowl/thm_limit_allbut1.html}{\text{Theorem 1.3.20}}, \text{ as } h\neq 0  )\\
+\amp =8.5  \quad (\text{using } \knowl{./knowl/thm_poly_rat.html}{\text{Theorem 1.3.4}}  )
+\end{align*}
+</div>
+<p class="continuation">This matches our previous approximation.</p>
+</div></div>
+</div></article><p id="p-455">This section contains several valuable tools for evaluating limits. One of the main results of this section is <a href="" class="xref" data-knowl="./knowl/thm_lim_continuous.html" title="Theorem 1.3.7: Limits of Common Functions">Theorem 1.3.7</a>; it states that many functions that we use regularly behave in a very nice, predictable way. In <a href="sec_continuity.html" class="internal" title="Section 1.5: Continuity">Section 1.5</a> we give a name to this nice behavior; we label such functions as <dfn class="terminology">continuous</dfn>. Defining that term will require us to look again at what a limit is and what causes limits to not exist.</p>
+<section class="exercises" id="exercises-3"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-5"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-43"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-43" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="43" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRXhwbGFpbiBpbiB5b3VyIG93biB3b3Jkcywgd2l0aG91dCB1c2luZyBbYFx2YXJlcHNpbG9uYF0tW2BcZGVsdGFgXSBmb3JtYWxpdHksIHdoeSBbYFxsaW1cbGltaXRzX3t4XHRvIGN9Yj1iXHRleHR7Ln1gXQoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-456">Explain in your own words, without using <span class="process-math">\(\varepsilon\)</span>-<span class="process-math">\(\delta\)</span> formality, why <span class="process-math">\(\lim\limits_{x\to c}b=b\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-43')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-44"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-44" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="44" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRXhwbGFpbiBpbiB5b3VyIG93biB3b3Jkcywgd2l0aG91dCB1c2luZyBbYFx2YXJlcHNpbG9uYF0tW2BcZGVsdGFgXSBmb3JtYWxpdHksIHdoeSBbYFxsaW1cbGltaXRzX3t4XHRvIGN9eD1jXHRleHR7Ln1gXQoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-457">Explain in your own words, without using <span class="process-math">\(\varepsilon\)</span>-<span class="process-math">\(\delta\)</span> formality, why <span class="process-math">\(\lim\limits_{x\to c}x=c\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-44')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-45"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-45" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="45" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKV2hhdCBkb2VzIHRoZSB0ZXh0IG1lYW4gd2hlbiBpdCBzYXlzIHRoYXQgY2VydGFpbiBmdW5jdGlvbnMnICJiZWhhdmlvciBpcyAnbmljZScgaW4gdGVybXMgb2YgbGltaXRzIj8gV2hhdCwgaW4gcGFydGljdWxhciwgaXMgIm5pY2UiPwoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-458">What does the text mean when it says that certain functions’ “behavior is ‘nice’ in terms of limits”? What, in particular, is “nice”?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-45')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-46"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-459">Sketch a graph that visually demonstrates the Squeeze Theorem.</p></article><article class="exercise exercise-like" id="exercise-47"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div id="webwork-46" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="46" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcYW1wfXsmfVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCllvdSBhcmUgZ2l2ZW4gdGhlIGZvbGxvd2luZyBpbmZvcm1hdGlvbjoKCltgYGBcYmVnaW57YWxpZ25lZH0KXGxpbV97eFx0byAxfWYoeClcYW1wPTBcYW1wXGxpbV97eFx0byAxfWcoeClcYW1wPTBcYW1wXGxpbV97eFx0byAxfVxmcmFje2YoeCl9e2coeCl9XGFtcD0yClxlbmR7YWxpZ25lZH0KYGBgXQoKV2hhdCBjYW4gYmUgc2FpZCBhYm91dCB0aGUgcmVsYXRpdmUgc2l6ZXMgb2YgW2BmKHgpYF0gYW5kIFtgZyh4KWBdIGFzIFtgeGBdIGFwcHJvYWNoZXMgW2AxXHRleHR7P31gXQoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCkFzIFtgeGBdIGlzIG5lYXIgW2AxXHRleHR7LH1gXSBib3RoIFtgZmBdIGFuZCBbYGdgXSBhcmUgbmVhciBbYDBcdGV4dHssfWBdIGJ1dCBbYGZgXSBpcyBhcHByb3hpbWF0ZWx5IHR3aWNlIHRoZSBzaXplIG9mIFtgZ1x0ZXh0ey59YF0gKFRoYXQgaXMsIFtgZih4KVxhcHByb3gyZyh4KVx0ZXh0ey59YF0pCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-460">You are given the following information:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-461">
+\begin{equation*}
+\begin{aligned}
+\lim_{x\to 1}f(x)\amp=0\amp\lim_{x\to 1}g(x)\amp=0\amp\lim_{x\to 1}\frac{f(x)}{g(x)}\amp=2
+\end{aligned}
+\end{equation*}
+</div>
+<p id="p-462">What can be said about the relative sizes of <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(1\text{?}\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-46')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-48"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div id="webwork-47" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="47" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwicGFyc2VyUG9wVXAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRpc3plcm89UG9wVXAoWyc/JywnVHJ1ZScsJ0ZhbHNlJ10sJ1RydWUnKTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJVc2UgYSB0aGVvcmVtIHRvIGRlZmVuZCB5b3VyIGFuc3dlci4iKSBAXSonOwoKQkVHSU5fUEdNTApbX117JGlzemVyb317NX0gW2BcbGltXGxpbWl0c197eFx0byAxfVxsbiB4ID0gMFx0ZXh0ey59YF0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpUcnVlLiBXZSBrbm93IHRoYXQgbGltaXRzIGludm9sdmluZyBbYFxsbih4KWBdIGNhbiBiZSBldmFsdWF0ZWQgYnkgZGlyZWN0IHN1YnN0aXR1dGlvbjsgdGhlcmVmb3JlLCBbYFxsaW1fe3hcdG8gMX1cbG4geCA9IFxsbiAxID0wXHRleHR7Ln1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-464"><ul style="list-style:circle;">
+<li id="li-82"><p id="p-466">True</p></li>
+<li id="li-83"><p id="p-467">False</p></li>
+</ul> <span class="process-math">\(\lim\limits_{x\to 1}\ln x = 0\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-47')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-6"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-4">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-6">
+<p id="p-470">Use the following information to evaluate the given limit, when possible.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-27">
+\begin{align*}
+\lim\limits_{x\to9}f(x)\amp=6\amp\lim\limits_{x\to6}f(x)\amp=9\amp f(9)\amp=6\\
+\lim\limits_{x\to9}g(x)\amp=3\amp\lim\limits_{x\to6}g(x)\amp=3\amp g(6)\amp=9
+\end{align*}
+</div>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-49"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div id="webwork-48" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="48" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdub3QgcG9zc2libGUgdG8ga25vdyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ05QSyc9PnthbGlhcz0+J25vdCBwb3NzaWJsZSB0byBrbm93J30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgZXhpc3QnPT57YWxpYXM9PidETkUnfSk7CiRwID0gOTsKJHEgPSA2OwokciA9IDM7CiVMZiA9ICgkcCA9PiAkcSwgJHEgPT4gJHApOwolTGcgPSAoJHAgPT4gJHIsICRxID0+ICRyKTsKJWYgPSAoJHAgPT4gJHEpOwolZyA9ICgkcSA9PiAkcCk7CiRhID0gJHA7CmlmIChleGlzdHMgJExmeyRhfSBhbmQgZXhpc3RzICRMZ3skYX0pCiAgeyRMPSRMZnskYX0rJExneyRhfTt9CmVsc2UKICB7JEw9Q29tcHV0ZSgnbm90IHBvc3NpYmxlIHRvIGtub3cnKTt9CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiSWYgaXQgaXMgbm90IHBvc3NpYmxlIHRvIGRldGVybWluZSB0aGUgbGltaXQsIHN0YXRlIHdoeSBub3QuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfShmKHgpK2coeCkpYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZpbml0eXxdKiwgb3IganVzdCBbfElORnxdKi4gSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xkb2VzIG5vdCBleGlzdHxdKiwgb3IganVzdCBbfERORXxdKi4gSWYgaXQgaXMgbm90IHBvc3NpYmxlIHRvIGtub3cgd2hldGhlciBvciBub3QgaXQgZXhpc3RzLCB5b3UgbWF5IHR5cGUgW3xub3QgcG9zc2libGUgdG8ga25vd3xdKiwgb3IganVzdCBbfE5QS3xdKi4nKUBdKioKCltfXXskTH17MTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-471"><span class="process-math">\(\lim\limits_{x\to 9}(f(x)+g(x))\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-48')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-49" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="49" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcYW1wfXsmfVwpPC9kaXY+JykpOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnbm90IHBvc3NpYmxlIHRvIGtub3cnPT57fSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdOUEsnPT57YWxpYXM9Pidub3QgcG9zc2libGUgdG8ga25vdyd9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ2RvZXMgbm90IGV4aXN0Jz0+e2FsaWFzPT4nRE5FJ30pOwokcCA9IDk7CiRxID0gNjsKJHIgPSAzOwolTGYgPSAoJHAgPT4gJHEsICRxID0+ICRwKTsKJUxnID0gKCRwID0+ICRyLCAkcSA9PiAkcik7CiVmID0gKCRwID0+ICRxKTsKJWcgPSAoJHEgPT4gJHApOwokYSA9ICRwOwppZiAoZXhpc3RzICRMZnskYX0gYW5kIGV4aXN0cyAkTGd7JGF9IGFuZCAoJExneyRhfSAhPSAwKSkKICB7JEw9MyokTGZ7JGF9LyRMZ3skYX07fQplbHNpZiAoZXhpc3RzICRMZnskYX0gYW5kIGV4aXN0cyAkTGd7JGF9IGFuZCAoJExneyRhfSA9PSAwKSBhbmQgKCRMZnskYX0gIT0gMCkpCiAgeyRMPUNvbXB1dGUoJ2RvZXMgbm90IGV4aXN0Jyk7fQplbHNlCiAgeyRMPUNvbXB1dGUoJ25vdCBwb3NzaWJsZSB0byBrbm93Jyk7fQokc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2UgPT4gIklmIGl0IGlzIG5vdCBwb3NzaWJsZSB0byBkZXRlcm1pbmUgdGhlIGxpbWl0LCBzdGF0ZSB3aHkgbm90LiIpIEBdKic7CgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG8gWyRhXX1cbGVmdChcZnJhY3szZih4KX17Zyh4KX1ccmlnaHQpYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZpbml0eXxdKiwgb3IganVzdCBbfElORnxdKi4gSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xkb2VzIG5vdCBleGlzdHxdKiwgb3IganVzdCBbfERORXxdKi4gSWYgaXQgaXMgbm90IHBvc3NpYmxlIHRvIGtub3cgd2hldGhlciBvciBub3QgaXQgZXhpc3RzLCB5b3UgbWF5IHR5cGUgW3xub3QgcG9zc2libGUgdG8ga25vd3xdKiwgb3IganVzdCBbfE5QS3xdKi4nKUBdKioKCltfXXskTH17MTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KVXNpbmcgdGhlIGNvbnN0YW50IGFuZCBxdW90aWVudCBydWxlcywKCltgYGBcYmVnaW57YWxpZ25lZH0KIFxsaW1cbGltaXRzX3t4XHRvIFskYV19XGxlZnQoXGZyYWN7M2YoeCl9e2coeCl9XHJpZ2h0KVxhbXAgPQogICAgICAgICAgICAgICAgICAgICAgICAgXGZyYWN7XGxpbVxsaW1pdHNfe3hcdG8gWyRhXX0oM2YoeCkpfXtcbGltXGxpbWl0c197eFx0byBbJGFdfWcoeCl9XFwKIFxhbXAgPSBcZnJhY3szXGxpbVxsaW1pdHNfe3hcdG8gWyRhXX1mKHgpfXtcbGltXGxpbWl0c197eFx0byBbJGFdfWcoeCl9IFxcCiAgXGFtcCBcZnJhY3szKDYpfXszfSA9IDYgXHRleHR7Ln0KXGVuZHthbGlnbmVkfQpgYGBdCgoKCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-473"><span class="process-math">\(\lim\limits_{x\to 9}\left(\frac{3f(x)}{g(x)}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-49')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-51"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-50" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="50" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdub3QgcG9zc2libGUgdG8ga25vdyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ05QSyc9PnthbGlhcz0+J25vdCBwb3NzaWJsZSB0byBrbm93J30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgZXhpc3QnPT57YWxpYXM9PidETkUnfSk7CiRwID0gOTsKJHEgPSA2OwokciA9IDM7CiVMZiA9ICgkcCA9PiAkcSwgJHEgPT4gJHApOwolTGcgPSAoJHAgPT4gJHIsICRxID0+ICRyKTsKJWYgPSAoJHAgPT4gJHEpOwolZyA9ICgkcSA9PiAkcCk7CiRhID0gJHA7CmlmIChleGlzdHMgJExmeyRhfSBhbmQgZXhpc3RzICRMZ3skYX0gYW5kICgkTGd7JGF9ICE9IDApKQogIHskTD0oJExmeyRhfS0yKiRMZ3skYX0pLyRMZ3skYX07fQplbHNpZiAoZXhpc3RzICRMZnskYX0gYW5kIGV4aXN0cyAkTGd7JGF9IGFuZCAoJExneyRhfSA9PSAwKSBhbmQgKCRMZnskYX0tMiokTGd7JGF9ICE9IDApKQogIHskTD1Db21wdXRlKCdkb2VzIG5vdCBleGlzdCcpO30KZWxzZQogIHskTD1Db21wdXRlKCdub3QgcG9zc2libGUgdG8ga25vdycpO30KJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJJZiBpdCBpcyBub3QgcG9zc2libGUgdG8gZGV0ZXJtaW5lIHRoZSBsaW1pdCwgc3RhdGUgd2h5IG5vdC4iKSBAXSonOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19XGxlZnQoXGZyYWN7Zih4KS0yZyh4KX17Zyh4KX1ccmlnaHQpYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZpbml0eXxdKiwgb3IganVzdCBbfElORnxdKi4gSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xkb2VzIG5vdCBleGlzdHxdKiwgb3IganVzdCBbfERORXxdKi4gSWYgaXQgaXMgbm90IHBvc3NpYmxlIHRvIGtub3cgd2hldGhlciBvciBub3QgaXQgZXhpc3RzLCB5b3UgbWF5IHR5cGUgW3xub3QgcG9zc2libGUgdG8ga25vd3xdKiwgb3IganVzdCBbfE5QS3xdKi4nKUBdKioKCltfXXskTH17MTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-477"><span class="process-math">\(\lim\limits_{x\to 9}\left(\frac{f(x)-2g(x)}{g(x)}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-50')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-51" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="51" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdub3QgcG9zc2libGUgdG8ga25vdyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ05QSyc9PnthbGlhcz0+J25vdCBwb3NzaWJsZSB0byBrbm93J30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgZXhpc3QnPT57YWxpYXM9PidETkUnfSk7CiRwID0gOTsKJHEgPSA2OwokciA9IDM7CiVMZiA9ICgkcCA9PiAkcSwgJHEgPT4gJHApOwolTGcgPSAoJHAgPT4gJHIsICRxID0+ICRyKTsKJWYgPSAoJHAgPT4gJHEpOwolZyA9ICgkcSA9PiAkcCk7CiRhID0gJHE7CmlmIChleGlzdHMgJExmeyRhfSBhbmQgZXhpc3RzICRMZ3skYX0gYW5kICgkTGd7JGF9ICE9IDMpKQogIHskTD0kTGZ7JGF9LygzLSRMZ3skYX0pO30KZWxzaWYgKGV4aXN0cyAkTGZ7JGF9IGFuZCBleGlzdHMgJExneyRhfSBhbmQgKCRMZ3skYX0gPT0gMykgYW5kICgkTGZ7JGF9ICE9IDApKQogIHskTD1Db21wdXRlKCdkb2VzIG5vdCBleGlzdCcpO30KZWxzZQogIHskTD1Db21wdXRlKCdub3QgcG9zc2libGUgdG8ga25vdycpO30KJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJJZiBpdCBpcyBub3QgcG9zc2libGUgdG8gZGV0ZXJtaW5lIHRoZSBsaW1pdCwgc3RhdGUgd2h5IG5vdC4iKSBAXSonOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19XGxlZnQoXGZyYWN7Zih4KX17My1nKHgpfVxyaWdodClgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLiBJZiBpdCBpcyBub3QgcG9zc2libGUgdG8ga25vdyB3aGV0aGVyIG9yIG5vdCBpdCBleGlzdHMsIHlvdSBtYXkgdHlwZSBbfG5vdCBwb3NzaWJsZSB0byBrbm93fF0qLCBvciBqdXN0IFt8TlBLfF0qLicpQF0qKgoKW19deyRMfXsxMH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-479"><span class="process-math">\(\lim\limits_{x\to 6}\left(\frac{f(x)}{3-g(x)}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-51')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-53"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<div id="webwork-52" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="52" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdub3QgcG9zc2libGUgdG8ga25vdyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ05QSyc9PnthbGlhcz0+J25vdCBwb3NzaWJsZSB0byBrbm93J30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgZXhpc3QnPT57YWxpYXM9PidETkUnfSk7CiRwID0gOTsKJHEgPSA2OwokciA9IDM7CiVMZiA9ICgkcCA9PiAkcSwgJHEgPT4gJHApOwolTGcgPSAoJHAgPT4gJHIsICRxID0+ICRyKTsKJWYgPSAoJHAgPT4gJHEpOwolZyA9ICgkcSA9PiAkcCk7CiRhID0gJHA7CmlmIChleGlzdHMgJExmeyRhfSBhbmQgZXhpc3RzICRMZ3skTGZ7JGF9fSBhbmQgKCRneyRMZnskYX19ID09ICRMZ3skTGZ7JGF9fSkpCiAgeyRMPSRMZ3skTGZ7JGF9fTt9CmVsc2UKICB7JEw9Q29tcHV0ZSgnbm90IHBvc3NpYmxlIHRvIGtub3cnKTt9CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiSWYgaXQgaXMgbm90IHBvc3NpYmxlIHRvIGRldGVybWluZSB0aGUgbGltaXQsIHN0YXRlIHdoeSBub3QuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfWcoZih4KSlgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLiBJZiBpdCBpcyBub3QgcG9zc2libGUgdG8ga25vdyB3aGV0aGVyIG9yIG5vdCBpdCBleGlzdHMsIHlvdSBtYXkgdHlwZSBbfG5vdCBwb3NzaWJsZSB0byBrbm93fF0qLCBvciBqdXN0IFt8TlBLfF0qLicpQF0qKgoKW19deyRMfXsxMH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-481"><span class="process-math">\(\lim\limits_{x\to 9}g(f(x))\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-52')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-54"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-53" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="53" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdub3QgcG9zc2libGUgdG8ga25vdyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ05QSyc9PnthbGlhcz0+J25vdCBwb3NzaWJsZSB0byBrbm93J30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgZXhpc3QnPT57YWxpYXM9PidETkUnfSk7CiRwID0gOTsKJHEgPSA2OwokciA9IDM7CiVMZiA9ICgkcCA9PiAkcSwgJHEgPT4gJHApOwolTGcgPSAoJHAgPT4gJHIsICRxID0+ICRyKTsKJWYgPSAoJHAgPT4gJHEpOwolZyA9ICgkcSA9PiAkcCk7CiRhID0gJHE7CmlmIChleGlzdHMgJExneyRhfSBhbmQgZXhpc3RzICRMZnskTGd7JGF9fSBhbmQgKCRmeyRMZ3skYX19ID09ICRMZnskTGd7JGF9fSkpCiAgeyRMPSRMZnskTGd7JGF9fTt9CmVsc2UKICB7JEw9Q29tcHV0ZSgnbm90IHBvc3NpYmxlIHRvIGtub3cnKTt9CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiSWYgaXQgaXMgbm90IHBvc3NpYmxlIHRvIGRldGVybWluZSB0aGUgbGltaXQsIHN0YXRlIHdoeSBub3QuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfWYoZyh4KSlgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLiBJZiBpdCBpcyBub3QgcG9zc2libGUgdG8ga25vdyB3aGV0aGVyIG9yIG5vdCBpdCBleGlzdHMsIHlvdSBtYXkgdHlwZSBbfG5vdCBwb3NzaWJsZSB0byBrbm93fF0qLCBvciBqdXN0IFt8TlBLfF0qLicpQF0qKgoKW19deyRMfXsxMH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-483"><span class="process-math">\(\lim\limits_{x\to 6}f(g(x))\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-53')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-55"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div id="webwork-54" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="54" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdub3QgcG9zc2libGUgdG8ga25vdyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ05QSyc9PnthbGlhcz0+J25vdCBwb3NzaWJsZSB0byBrbm93J30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgZXhpc3QnPT57YWxpYXM9PidETkUnfSk7CiRwID0gOTsKJHEgPSA2OwokciA9IDM7CiVMZiA9ICgkcCA9PiAkcSwgJHEgPT4gJHApOwolTGcgPSAoJHAgPT4gJHIsICRxID0+ICRyKTsKJWYgPSAoJHAgPT4gJHEpOwolZyA9ICgkcSA9PiAkcCk7CiRhID0gJHE7CmlmIChleGlzdHMgJExmeyRhfSBhbmQgZXhpc3RzICRMZnskTGZ7JGF9fSBhbmQgZXhpc3RzICRMZ3skTGZ7JExmeyRhfX19IGFuZCAoJGZ7JExmeyRhfX0gPT0gJExmeyRMZnskYX19KSBhbmQgKCRneyRMZnskTGZ7JGF9fX0gPT0gJExneyRMZnskTGZ7JGF9fX0pKQogIHskTD0kTGd7JExmeyRMZnskYX19fTt9CmVsc2UKICB7JEw9Q29tcHV0ZSgnbm90IHBvc3NpYmxlIHRvIGtub3cnKTt9CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiSWYgaXQgaXMgbm90IHBvc3NpYmxlIHRvIGRldGVybWluZSB0aGUgbGltaXQsIHN0YXRlIHdoeSBub3QuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfWcoZihmKHgpKSlgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLiBJZiBpdCBpcyBub3QgcG9zc2libGUgdG8ga25vdyB3aGV0aGVyIG9yIG5vdCBpdCBleGlzdHMsIHlvdSBtYXkgdHlwZSBbfG5vdCBwb3NzaWJsZSB0byBrbm93fF0qLCBvciBqdXN0IFt8TlBLfF0qLicpQF0qKgoKW19deyRMfXsxMH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-485"><span class="process-math">\(\lim\limits_{x\to 6}g(f(f(x)))\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-54')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-56"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-55" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="55" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdub3QgcG9zc2libGUgdG8ga25vdyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ05QSyc9PnthbGlhcz0+J25vdCBwb3NzaWJsZSB0byBrbm93J30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgZXhpc3QnPT57YWxpYXM9PidETkUnfSk7CiRwID0gOTsKJHEgPSA2OwokciA9IDM7CiVMZiA9ICgkcCA9PiAkcSwgJHEgPT4gJHApOwolTGcgPSAoJHAgPT4gJHIsICRxID0+ICRyKTsKJWYgPSAoJHAgPT4gJHEpOwolZyA9ICgkcSA9PiAkcCk7CiRhID0gJHE7CmlmIChleGlzdHMgJExmeyRhfSBhbmQgZXhpc3RzICRMZ3skYX0pCiAgeyRMPSRMZnskYX0qJExneyRhfSAtICgkTGZ7JGF9KSoqMiArICgkTGd7JGF9KSoqMjt9CmVsc2UKICB7JEw9Q29tcHV0ZSgnbm90IHBvc3NpYmxlIHRvIGtub3cnKTt9CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiSWYgaXQgaXMgbm90IHBvc3NpYmxlIHRvIGRldGVybWluZSB0aGUgbGltaXQsIHN0YXRlIHdoeSBub3QuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfVxsZWZ0KGYoeClnKHgpLWYoeCleMitnKHgpXjJccmlnaHQpYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZpbml0eXxdKiwgb3IganVzdCBbfElORnxdKi4gSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xkb2VzIG5vdCBleGlzdHxdKiwgb3IganVzdCBbfERORXxdKi4gSWYgaXQgaXMgbm90IHBvc3NpYmxlIHRvIGtub3cgd2hldGhlciBvciBub3QgaXQgZXhpc3RzLCB5b3UgbWF5IHR5cGUgW3xub3QgcG9zc2libGUgdG8ga25vd3xdKiwgb3IganVzdCBbfE5QS3xdKi4nKUBdKioKCltfXXskTH17MTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-487"><span class="process-math">\(\lim\limits_{x\to 6}\left(f(x)g(x)-f(x)^2+g(x)^2\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-55')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-5">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-7">
+<p id="p-489">Use the following information to evaluate the given limit, when possible. If it is not possible to determine the limit, state why not.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-28">
+\begin{align*}
+\lim_{x\to1}f(x)\amp=2\amp\lim_{x\to10}f(x)\amp=1\amp f(1)\amp=1/5\\
+\lim_{x\to1}g(x)\amp=0\amp\lim_{x\to10}g(x)\amp=\pi\amp g(10)\amp=\pi
+\end{align*}
+</div>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-57"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-56" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="56" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdub3QgcG9zc2libGUgdG8ga25vdyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ05QSyc9PnthbGlhcz0+J25vdCBwb3NzaWJsZSB0byBrbm93J30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgZXhpc3QnPT57YWxpYXM9PidETkUnfSk7CiRwID0gMTsKJHEgPSAxMDsKJHIgPSAyOwokcyA9IDA7CiR0ID0gQ29tcHV0ZSgicGkiKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJHUgPSBGcmFjdGlvbigiMS81Iik7CiVMZiA9ICgkcCA9PiAkciwgJHEgPT4gJHApOwolTGcgPSAoJHAgPT4gJHMsICRxID0+ICR0KTsKJWYgPSAoJHAgPT4gJHUpOwolZyA9ICgkcSA9PiAkdCk7CiRhID0gJHA7CmlmIChleGlzdHMgJExmeyRhfSBhbmQgZXhpc3RzICRMZ3skYX0pCiAgeyRMPSRMZnskYX0qJExneyRhfX0KZWxzZQogIHskTD1Db21wdXRlKCdub3QgcG9zc2libGUgdG8ga25vdycpO30KJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJJZiBpdCBpcyBub3QgcG9zc2libGUgdG8gZGV0ZXJtaW5lIHRoZSBsaW1pdCwgc3RhdGUgd2h5IG5vdC4iKSBAXSonOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19XGxlZnQoZih4KWcoeClccmlnaHQpYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZpbml0eXxdKiwgb3IganVzdCBbfElORnxdKi4gSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xkb2VzIG5vdCBleGlzdHxdKiwgb3IganVzdCBbfERORXxdKi4gSWYgaXQgaXMgbm90IHBvc3NpYmxlIHRvIGtub3cgd2hldGhlciBvciBub3QgaXQgZXhpc3RzLCB5b3UgbWF5IHR5cGUgW3xub3QgcG9zc2libGUgdG8ga25vd3xdKiwgb3IganVzdCBbfE5QS3xdKi4nKUBdKioKCltfXXskTH17MTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-490"><span class="process-math">\(\lim\limits_{x\to 1}\left(f(x)g(x)\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-56')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-58"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-57" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="57" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdub3QgcG9zc2libGUgdG8ga25vdyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ05QSyc9PnthbGlhcz0+J25vdCBwb3NzaWJsZSB0byBrbm93J30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgZXhpc3QnPT57YWxpYXM9PidETkUnfSk7CiRwID0gMTsKJHEgPSAxMDsKJHIgPSAyOwokcyA9IDA7CiR0ID0gQ29tcHV0ZSgicGkiKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJHUgPSBGcmFjdGlvbigiMS81Iik7CiVMZiA9ICgkcCA9PiAkciwgJHEgPT4gJHApOwolTGcgPSAoJHAgPT4gJHMsICRxID0+ICR0KTsKJWYgPSAoJHAgPT4gJHUpOwolZyA9ICgkcSA9PiAkdCk7CiRhID0gJHE7CmlmIChleGlzdHMgJExneyRhfSkKICB7JEw9Q29tcHV0ZSgiY29zKCRMZ3skYX0pIil9CmVsc2UKICB7JEw9Q29tcHV0ZSgnbm90IHBvc3NpYmxlIHRvIGtub3cnKTt9CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiSWYgaXQgaXMgbm90IHBvc3NpYmxlIHRvIGRldGVybWluZSB0aGUgbGltaXQsIHN0YXRlIHdoeSBub3QuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfVxjb3MoZyh4KSlgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLiBJZiBpdCBpcyBub3QgcG9zc2libGUgdG8ga25vdyB3aGV0aGVyIG9yIG5vdCBpdCBleGlzdHMsIHlvdSBtYXkgdHlwZSBbfG5vdCBwb3NzaWJsZSB0byBrbm93fF0qLCBvciBqdXN0IFt8TlBLfF0qLicpQF0qKgoKW19deyRMfXsxMH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-492"><span class="process-math">\(\lim\limits_{x\to 10}\cos(g(x))\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-57')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-59"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-58" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="58" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdub3QgcG9zc2libGUgdG8ga25vdyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ05QSyc9PnthbGlhcz0+J25vdCBwb3NzaWJsZSB0byBrbm93J30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgZXhpc3QnPT57YWxpYXM9PidETkUnfSk7CiRwID0gMTsKJHEgPSAxMDsKJHIgPSAyOwokcyA9IDA7CiR0ID0gQ29tcHV0ZSgicGkiKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJHUgPSBGcmFjdGlvbigiMS81Iik7CiVMZiA9ICgkcCA9PiAkciwgJHEgPT4gJHApOwolTGcgPSAoJHAgPT4gJHMsICRxID0+ICR0KTsKJWYgPSAoJHAgPT4gJHUpOwolZyA9ICgkcSA9PiAkdCk7CiRhID0gJHA7CmlmIChleGlzdHMgJExmeyRhfSBhbmQgZXhpc3RzICRMZ3s1KiRMZnskYX19IGFuZCAoJExnezUqJExmeyRhfX0gPT0gJGd7NSokTGZ7JGF9fSkpCiAgeyRMPSRMZ3s1KiRMZnskYX19fQplbHNlCiAgeyRMPUNvbXB1dGUoJ25vdCBwb3NzaWJsZSB0byBrbm93Jyk7fQokc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2UgPT4gIklmIGl0IGlzIG5vdCBwb3NzaWJsZSB0byBkZXRlcm1pbmUgdGhlIGxpbWl0LCBzdGF0ZSB3aHkgbm90LiIpIEBdKic7CgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG8gWyRhXX1nKDVmKHgpKWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB5b3UgbmVlZCB0byBlbnRlciBbYFxpbmZ0eVx0ZXh0eyx9YF0geW91IG1heSB0eXBlIFt8aW5maW5pdHl8XSosIG9yIGp1c3QgW3xJTkZ8XSouIElmIHRoZSBsaW1pdCBkb2VzIG5vdCBleGlzdCwgeW91IG1heSB0eXBlIFt8ZG9lcyBub3QgZXhpc3R8XSosIG9yIGp1c3QgW3xETkV8XSouIElmIGl0IGlzIG5vdCBwb3NzaWJsZSB0byBrbm93IHdoZXRoZXIgb3Igbm90IGl0IGV4aXN0cywgeW91IG1heSB0eXBlIFt8bm90IHBvc3NpYmxlIHRvIGtub3d8XSosIG9yIGp1c3QgW3xOUEt8XSouJylAXSoqCgpbX117JEx9ezEwfQoKWyRzaG93d29ya10qKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-494"><span class="process-math">\(\lim\limits_{x\to 1}g(5f(x))\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-58')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-60"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-59" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="59" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdub3QgcG9zc2libGUgdG8ga25vdyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ05QSyc9PnthbGlhcz0+J25vdCBwb3NzaWJsZSB0byBrbm93J30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgnZG9lcyBub3QgZXhpc3QnPT57YWxpYXM9PidETkUnfSk7CiRwID0gMTsKJHEgPSAxMDsKJHIgPSAyOwokcyA9IDA7CiR0ID0gQ29tcHV0ZSgicGkiKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJHUgPSBGcmFjdGlvbigiMS81Iik7CiVMZiA9ICgkcCA9PiAkciwgJHEgPT4gJHApOwolTGcgPSAoJHAgPT4gJHMsICRxID0+ICR0KTsKJWYgPSAoJHAgPT4gJHUpOwolZyA9ICgkcSA9PiAkdCk7CiRhID0gJHA7CmlmIChleGlzdHMgJExmeyRhfSBhbmQgZXhpc3RzICRMZ3skYX0gYW5kICgkTGZ7JGF9ID4gMCkpCiAgeyRMPSgkTGZ7JGF9KSoqKCRMZ3skYX0pO30KZWxzZQogIHskTD1Db21wdXRlKCdub3QgcG9zc2libGUgdG8ga25vdycpO30KJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJJZiBpdCBpcyBub3QgcG9zc2libGUgdG8gZGV0ZXJtaW5lIHRoZSBsaW1pdCwgc3RhdGUgd2h5IG5vdC4iKSBAXSonOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19NV57Zyh4KX1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLiBJZiBpdCBpcyBub3QgcG9zc2libGUgdG8ga25vdyB3aGV0aGVyIG9yIG5vdCBpdCBleGlzdHMsIHlvdSBtYXkgdHlwZSBbfG5vdCBwb3NzaWJsZSB0byBrbm93fF0qLCBvciBqdXN0IFt8TlBLfF0qLicpQF0qKgoKW19deyRMfXsxMH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-496"><span class="process-math">\(\lim\limits_{x\to 1}5^{g(x)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-59')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-6">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-8"><p id="p-498">Evaluate the given limit.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-61"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-60" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="60" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xhbXB9eyZ9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskYT1yYW5kb20oMiw4LDEpOwokYj1ub25femVyb19yYW5kb20oLTUsNSwxKTsKJGM9bm9uX3plcm9fcmFuZG9tKC05LDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRhPTM7JGI9LTM7JGM9N307CiRmPUZvcm11bGEoInheMiskYiB4KyRjIiktPnJlZHVjZTsKJEw9JGYtPmV2YWwoeD0+JGEpOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19XGxlZnQoWyRmXVxyaWdodClgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLicpQF0qKgoKW19deyRMfXsyMH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgoKCltgYGBcYmVnaW57YWxpZ25lZH0KXGxpbVxsaW1pdHNfe3hcdG8gWyRhXX1cbGVmdChbJGZdXHJpZ2h0KVxhbXA9XGxpbVxsaW1pdHNfe3hcdG8gWyRhXX14XjIrXGxpbVxsaW1pdHNfe3hcdG8gWyRhXX1bJGJdeCtcbGltXGxpbWl0c197eFx0byBbJGFdfVskY11cXApcYW1wPVxsZWZ0KFxsaW1cbGltaXRzX3t4XHRvIFskYV19eFxyaWdodCleMitcbGltXGxpbWl0c197eFx0byBbJGFdfVskYl14K1xsaW1cbGltaXRzX3t4XHRvIFskYV19WyRhXVxcClxhbXA9XGxlZnQoWyRhXVxyaWdodCleMisgWyRiXVxsZWZ0KFskYV1ccmlnaHQpKyBbJGNdXFwKXGFtcD1bJExdClxlbmR7YWxpZ25lZH0KYGBgXQoKCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-499"><span class="process-math">\(\lim\limits_{x\to 6}\left({x^{2}-3x+5}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-60')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-62"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-61" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="61" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGFtcH17Jn1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOygkYiwkYyk9KC05Li4tMSwxLi45KVtOY2hvb3NlSygxOCwyKV07CiRuPXJhbmRvbSgzLDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRiPTM7JGM9NTskbj03fTsKJGY9Rm9ybXVsYSgiKCh4LSRiKS8oeC0kYykpXigkbikiKS0+cmVkdWNlOwokTD0kZi0+c3Vic3RpdHV0ZSh4PT5Gb3JtdWxhKCJwaSIpKTsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0b1xwaX1bJGZdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZpbml0eXxdKiwgb3IganVzdCBbfElORnxdKi4gSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xkb2VzIG5vdCBleGlzdHxdKiwgb3IganVzdCBbfERORXxdKi4nKUBdKioKCltfXXskTH17MjB9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KCgpbYGBgXGJlZ2lue2FsaWduZWR9ClxsaW1cbGltaXRzX3t4XHRvXHBpfVskZl1cYW1wPVxsZWZ0KFxsaW1cbGltaXRzX3t4XHRvXHBpfVxmcmFje3gtIFskYl19e3gtIFskY119XHJpZ2h0KV57WyRuXX1cXApcYW1wPVxsZWZ0KFxmcmFje1xsaW1cbGltaXRzX3t4XHRvXHBpfSh4LSBbJGJdKX17XGxpbVxsaW1pdHNfe3hcdG9ccGl9KHgtIFskY10pfVxyaWdodClee1skbl19XFwKXGFtcD1cbGVmdChcZnJhY3tcbGltXGxpbWl0c197eFx0b1xwaX14LVxsaW1cbGltaXRzX3t4XHRvXHBpfVskYl19e1xsaW1cbGltaXRzX3t4XHRvXHBpfXgtXGxpbVxsaW1pdHNfe3hcdG9ccGl9WyRjXX1ccmlnaHQpXntbJG5dfVxcClxhbXA9WyRMXQpcZW5ke2FsaWduZWR9CmBgYF0KCgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-502"><span class="process-math">\(\lim\limits_{x\to\pi}{\left(\frac{x-5}{x-8}\right)^{4}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-61')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-63"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-62" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="62" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xhbXB9eyZ9XCk8L2Rpdj4nKSk7CiRkPWxpc3RfcmFuZG9tKDMsNCw2KTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGQ9NDt9OwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRzPT4wLHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJGE9Rm9ybXVsYSgicGkvJGQiKTsKJWY9KDM9PkZvcm11bGEoInNxcnQoMykvNCIpLDQ9PkZvcm11bGEoIjEvMiIpLDY9PkZvcm11bGEoInNxcnQoMykvNCIpKTsKJEw9JGZ7JGR9OwolcD0oMz0+Rm9ybXVsYSgiMS8yIiksND0+Rm9ybXVsYSgic3FydCgyKS8yIiksNj0+Rm9ybXVsYSgic3FydCgzKS8yIikpOwokbD0kcHskZH07CiRyPSRweyRkKioyLzItNS41KiRkKzE4fTsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfVxjb3MoeClcc2luKHgpYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZpbml0eXxdKiwgb3IganVzdCBbfElORnxdKi4gSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xkb2VzIG5vdCBleGlzdHxdKiwgb3IganVzdCBbfERORXxdKi4nKUBdKioKCltfXXskTH17MjB9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KCgpbYGBgXGJlZ2lue2FsaWduZWR9ClxsaW1fe3hcdG8gWyRhXX1cY29zKHgpXHNpbih4KVxhbXA9XGxpbV97eFx0byBbJGFdfVxjb3MoeClcY2RvdFxsaW1fe3hcdG8gWyRhXX1cc2luKHgpXFwKXGFtcD1cY29zXG1hdGhvcGVue31cbGVmdChbJGFdXHJpZ2h0KVxtYXRoY2xvc2V7fVxjZG90XHNpblxtYXRob3Blbnt9XGxlZnQoWyRhXVxyaWdodClcbWF0aGNsb3Nle31cXApcYW1wPVskbF1cY2RvdCBbJHJdXFwKXGFtcD1bJExdClxlbmR7YWxpZ25lZH0KYGBgXQoKCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-505"><span class="process-math">\(\lim\limits_{x\to {\frac{\pi }{6}}}\cos(x)\sin(x)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-62')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-64"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-63" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="63" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGFtcH17Jn1cKTwvZGl2PicpKTsKKCRhLCRkKT0oLTYuLi0xLDEuLjYpW05jaG9vc2VLKDEyLDIpXTsKJGI9bm9uX3plcm9fcmFuZG9tKC01LDUsMSk7CiRjPW5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYT0xOyRiPTI7JGM9MjskZD00fTsKJGY9Rm9ybXVsYSgiJGIqeC0kYyIpLT5yZWR1Y2U7CiRnPUZvcm11bGEoIngtJGQiKS0+cmVkdWNlOwokaD0kZi8kZzsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJEw9RnJhY3Rpb24oJGIqJGEtJGMsJGEtJGQpOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvWyRhXX1bJGhdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZpbml0eXxdKiwgb3IganVzdCBbfElORnxdKi4gSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xkb2VzIG5vdCBleGlzdHxdKiwgb3IganVzdCBbfERORXxdKi4nKUBdKioKCltfXXskTH17MjB9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KCgpbYGBgXGJlZ2lue2FsaWduZWR9ClxsaW1fe3hcdG9bJGFdfVskaF0gXGFtcCA9IFxmcmFje1skYl1bJGFdLVskY119e1skYV0tWyRkXX0gXFwKIFxhbXAgPSBbJExdClxlbmR7YWxpZ25lZH0KYGBgXQoKCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-508"><span class="process-math">\(\lim\limits_{x\to6}{\frac{-\left(5x+2\right)}{x+4}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-63')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-65"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div id="webwork-64" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="64" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRMPUNvbXB1dGUoIkRORSIpOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvMH1cbG4oeClgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLicpQF0qKgoKW19deyRMfXsyMH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpUaGlzIGxpbWl0IGRvZXMgbm90IGV4aXN0IGZvciBhdCBsZWFzdCB0d28gcmVhc29ucy4gRm9yIG9uZSByZWFzb24sIFtgXGxuKHgpYF0gY2FuIGJlIGFyYml0cmFyaWx5IGxhcmdlIG5lZ2F0aXZlIGlmIHlvdSBhbGxvdyBbYHhgXSB0byBiZSBwb3NpdGl2ZSBhbmQgY2xvc2UgZW5vdWdoIHRvIFtgMFx0ZXh0ey59YF0gQWxzbywgc2luY2UgW2BcbG4oeClgXSBpcyB1bmRlZmluZWQgZm9yIG5lZ2F0aXZlIFtgeGBdIGFuZCBbYFxsaW1cbGltaXRzX3t4XHRvMH1cbG4oeClgXSBpcyBhbiBleHByZXNzaW9uIHRoYXQgZGVwZW5kcyBvbiBvdXRwdXRzIG9mIFtgXGxuYF0gdXNpbmcgaW5wdXRzIF9ib3RoXyBzbGlnaHRseSBzbWFsbGVyIF9hbmRfIHNsaWdodGx5IGxhcmdlciB0aGFuIFtgMFx0ZXh0eyx9YF0gd2UgY2Fubm90IGhvcGUgdG8gZ2l2ZSBtZWFuaW5nIHRvIFtgXGxpbVxsaW1pdHNfe3hcdG8wfVxsbih4KVx0ZXh0ey59YF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-511"><span class="process-math">\(\lim\limits_{x\to0}\ln(x)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-64')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-66"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-65" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="65" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGFtcH17Jn1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOygkYSwkYik9KDIsMyw0KVtOY2hvb3NlSygzLDIpXTsKJGM9JGEqKjItcmFuZG9tKDEsMiwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGE9MzskYj00OyRjPTg7fTsKJGY9Rm9ybXVsYSgiKCRiKV4oeF4zLSRjIHgpIik7CiRMPSRmLT5ldmFsKHg9PiRhKTsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfVskZl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLicpQF0qKgoKW19deyRMfXsyMH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgoKCltgYGBcYmVnaW57YWxpZ25lZH0KXGxpbVxsaW1pdHNfe3hcdG8gWyRhXX1bJGZdXGFtcD1bJGJdXntcbGltXGxpbWl0c197eFx0byBbJGFdfVxsZWZ0KHheMy0gWyRjXXhccmlnaHQpfVxcClxhbXA9WyRiXV57XGxpbVxsaW1pdHNfe3hcdG8gWyRhXX14XjMtXGxpbVxsaW1pdHNfe3hcdG8gWyRhXX1bJGNdeH1cXApcYW1wPVskYl1ee1xsZWZ0KFxsaW1cbGltaXRzX3t4XHRvIFskYV19eFxyaWdodCleMy0gWyRjXVxsaW1cbGltaXRzX3t4XHRvIFskYV19eH1cXApcYW1wPVskYl1ee1skYV1eMy0gWyRjXVxjZG90IFskYV19XFwKXGFtcD1bJExdClxlbmR7YWxpZ25lZH0KYGBgXQoKCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-514"><span class="process-math">\(\lim\limits_{x\to 2}{4^{x^{3}-2x}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-65')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-67"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div id="webwork-66" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="66" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xhbXB9eyZ9XCk8L2Rpdj4nKSk7CiRkPWxpc3RfcmFuZG9tKDMsNCw2KTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGQ9Njt9OwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRzPT4wLHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJGE9Rm9ybXVsYSgicGkvJGQiKTsKJWY9KDM9PkZvcm11bGEoIjJzcXJ0KDMpLzMiKSw0PT5Gb3JtdWxhKCJzcXJ0KDIpIiksNj0+Rm9ybXVsYSgiMiIpKTsKJEw9JGZ7JGR9OwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19XGNzYyh4KWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB5b3UgbmVlZCB0byBlbnRlciBbYFxpbmZ0eVx0ZXh0eyx9YF0geW91IG1heSB0eXBlIFt8aW5maW5pdHl8XSosIG9yIGp1c3QgW3xJTkZ8XSouIElmIHRoZSBsaW1pdCBkb2VzIG5vdCBleGlzdCwgeW91IG1heSB0eXBlIFt8ZG9lcyBub3QgZXhpc3R8XSosIG9yIGp1c3QgW3xETkV8XSouJylAXSoqCgpbX117JEx9ezIwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCgoKW2BgYFxiZWdpbnthbGlnbmVkfQpcbGltX3t4XHRvIFskYV19XGNzYyh4KVxhbXA9XGNzY1xtYXRob3Blbnt9XGxlZnQoWyRhXVxyaWdodClcbWF0aGNsb3Nle31cXApcYW1wPVskTF0KXGVuZHthbGlnbmVkfQpgYGBdCgoKCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-517"><span class="process-math">\(\lim\limits_{x\to {\frac{\pi }{3}}}\csc(x)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-66')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-68"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<div id="webwork-67" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="67" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJGE9cmFuZG9tKDEsOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGE9MTt9OwokZj1Gb3JtdWxhKCJsbigkYSt4KSIpOwokTD0oJGE9PTEpPzA6Rm9ybXVsYSgibG4oJGEpIik7CgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG8wfVskZl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLicpQF0qKgoKW19deyRMfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-520"><span class="process-math">\(\lim\limits_{x\to0}{\ln\!\left(4+x\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-67')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-69"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<div id="webwork-68" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="68" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xhbXB9eyZ9XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwojZW5zdXJlIHJhdGlvbmFsIGZ1bmN0aW9uIGRvZXNuJ3QgcmVkdWNlCmRveyRhPW5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpOwokYj1ub25femVyb19yYW5kb20oLTUsNSwxKTsKJGM9cmFuZG9tKDIsNSwxKTsKZG97JGQ9bm9uX3plcm9fcmFuZG9tKC01LDUsMSk7fXVudGlsKCRkIT0tJGEqJGMpOwokZT1ub25femVyb19yYW5kb20oLTUsNSwxKTsKfXVudGlsKCgoJGIqJGMrJGUpLygtJGEqJGMtJGQpKSoqMiskYSooKCRiKiRjKyRlKS8oLSRhKiRjLSRkKSkrJGIpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYT0zOyRiPTU7JGM9NTskZD0yOyRlPTJ9OwokZj1Gb3JtdWxhKCJ4XjIrJGEgeCskYiIpLT5yZWR1Y2U7CiRnPUZvcm11bGEoIiRjIHheMi0kZCB4LSRlIiktPnJlZHVjZTsKJHI9JGYvJGc7CiRMPSRyLT5zdWJzdGl0dXRlKHg9PkZvcm11bGEoInBpIikpOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvXHBpfVskcl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLicpQF0qKgoKW19deyRMfXsyMH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgoKCltgYGBcYmVnaW57YWxpZ25lZH0KXGxpbVxsaW1pdHNfe3hcdG9ccGl9WyRyXVxhbXA9XGZyYWN7XGxpbVxsaW1pdHNfe3hcdG9ccGl9XGxlZnQoWyRmXVxyaWdodCl9e1xsaW1cbGltaXRzX3t4XHRvXHBpfVxsZWZ0KFskZ11ccmlnaHQpfVxcClxhbXA9XGZyYWN7XGxpbVxsaW1pdHNfe3hcdG9ccGl9eF4yK1xsaW1cbGltaXRzX3t4XHRvXHBpfShbJGFdeCkrXGxpbVxsaW1pdHNfe3hcdG9ccGl9KFskYl0pfXtcbGltXGxpbWl0c197eFx0b1xwaX0oWyRjXXheMikrXGxpbVxsaW1pdHNfe3hcdG9ccGl9KC0gWyRkXXgpK1xsaW1cbGltaXRzX3t4XHRvXHBpfS0gWyRlXX1cXApcYW1wPVxmcmFje1xsaW1cbGltaXRzX3t4XHRvXHBpfXheMisgWyRhXVxsaW1cbGltaXRzX3t4XHRvXHBpfXgrXGxpbVxsaW1pdHNfe3hcdG9ccGl9KFskYl0pfXtbJGNdXGxpbVxsaW1pdHNfe3hcdG9ccGl9eF4yLSBbJGRdXGxpbVxsaW1pdHNfe3hcdG9ccGl9eC1cbGltXGxpbWl0c197eFx0b1xwaX1bJGVdfVxcClxhbXA9WyRMXQpcZW5ke2FsaWduZWR9CmBgYF0KCgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-522"><span class="process-math">\(\lim\limits_{x\to\pi}{\frac{x^{2}-4x-2}{2x^{2}-2x+1}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-68')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-70"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-69" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="69" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRhPW5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpOwokYj1ub25femVyb19yYW5kb20oLTUsNSwxKTsKJGM9bm9uX3plcm9fcmFuZG9tKC01LDUsMSk7CmRveyRkPW5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpO311bnRpbCgkYSokYyE9LSRiKiRkKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGE9MzskYj0xOyRjPTE7JGQ9LTE7fTsKJGY9Rm9ybXVsYSgiJGEgeCskYiIpLT5yZWR1Y2U7CiRnPUZvcm11bGEoIiRjLSRkIHgiKS0+cmVkdWNlOwokcj0kZi8kZzsKJEw9JHItPnN1YnN0aXR1dGUoeD0+Rm9ybXVsYSgicGkiKSk7CgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG9ccGl9WyRyXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB5b3UgbmVlZCB0byBlbnRlciBbYFxpbmZ0eVx0ZXh0eyx9YF0geW91IG1heSB0eXBlIFt8aW5maW5pdHl8XSosIG9yIGp1c3QgW3xJTkZ8XSouIElmIHRoZSBsaW1pdCBkb2VzIG5vdCBleGlzdCwgeW91IG1heSB0eXBlIFt8ZG9lcyBub3QgZXhpc3R8XSosIG9yIGp1c3QgW3xETkV8XSouJylAXSoqCgpbX117JEx9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-525"><span class="process-math">\(\lim\limits_{x\to\pi}{\frac{2x-4}{5x-5}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-69')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-71"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<div id="webwork-70" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="70" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwooJGEsJGIsJGMpPSgtOS4uLTEsMS4uOSlbTmNob29zZUsoMTgsMyldOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYT02OyRiPS0yOyRjPTc7fTsKJGY9Rm9ybXVsYSgieF4yLSgkYSskYil4KyRhKiRiIiktPnJlZHVjZTsKJGc9Rm9ybXVsYSgieF4yLSgkYSskYyl4KyRhKiRjIiktPnJlZHVjZTsKJHI9JGYvJGc7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRMPUZyYWN0aW9uKCRhLSRiLCRhLSRjKTsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfVskcl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLicpQF0qKgoKW19deyRMfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-527"><span class="process-math">\(\lim\limits_{x\to 5}{\frac{x^{2}-11x+30}{x^{2}-14x+45}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-70')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-72"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<div id="webwork-71" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="71" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwooJGIsJGMpPSgtOS4uLTEsMS4uOSlbTmNob29zZUsoMTgsMildOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYj0tMjskYz0yO307CiRmPUZvcm11bGEoInheMi0oJGIpeCIpLT5yZWR1Y2U7CiRnPUZvcm11bGEoInheMi0oJGMpeCIpLT5yZWR1Y2U7CiRyPSRmLyRnOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokTD1GcmFjdGlvbigkYiwkYyk7CgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG8wfVskcl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLicpQF0qKgoKW19deyRMfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-529"><span class="process-math">\(\lim\limits_{x\to0}{\frac{x^{2}-7x}{x^{2}+2x}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-71')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-73"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<div id="webwork-72" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="72" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwooJGEsJGIsJGMpPSgtOS4uLTEsMS4uOSlbTmNob29zZUsoMTgsMyldOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYT0yOyRiPS04OyRjPTE7fTsKJGY9Rm9ybXVsYSgieF4yLSgkYSskYil4KyRhKiRiIiktPnJlZHVjZTsKJGc9Rm9ybXVsYSgieF4yLSgkYSskYyl4KyRhKiRjIiktPnJlZHVjZTsKJHI9JGYvJGc7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRMPUZyYWN0aW9uKCRhLSRiLCRhLSRjKTsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfVskcl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLicpQF0qKgoKW19deyRMfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-531"><span class="process-math">\(\lim\limits_{x\to 9}{\frac{x^{2}-x-72}{x^{2}-14x+45}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-72')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-74"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<div id="webwork-73" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="73" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwooJGEsJGIsJGMpPSgtOS4uLTEsMS4uOSlbTmNob29zZUsoMTgsMyldOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYT0yOyRiPTg7JGM9LTE7fTsKJGY9Rm9ybXVsYSgieF4yLSgkYSskYil4KyRhKiRiIiktPnJlZHVjZTsKJGc9Rm9ybXVsYSgieF4yLSgkYSskYyl4KyRhKiRjIiktPnJlZHVjZTsKJHI9JGYvJGc7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRMPUZyYWN0aW9uKCRhLSRiLCRhLSRjKTsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfVskcl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLicpQF0qKgoKW19deyRMfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-533"><span class="process-math">\(\lim\limits_{x\to -8}{\frac{x^{2}+3x-40}{x^{2}+13x+40}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-73')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-75"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<div id="webwork-74" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="74" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwooJGEsJGIsJGMpPSgtOS4uLTEsMS4uOSlbTmNob29zZUsoMTgsMyldOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYT0tMjskYj03OyRjPS04O307CiRmPUZvcm11bGEoInheMi0oJGErJGIpeCskYSokYiIpLT5yZWR1Y2U7CiRnPUZvcm11bGEoInheMi0oJGErJGMpeCskYSokYyIpLT5yZWR1Y2U7CiRyPSRmLyRnOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokTD1GcmFjdGlvbigkYS0kYiwkYS0kYyk7CgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG8gWyRhXX1bJHJdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZpbml0eXxdKiwgb3IganVzdCBbfElORnxdKi4gSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xkb2VzIG5vdCBleGlzdHxdKiwgb3IganVzdCBbfERORXxdKi4nKUBdKioKCltfXXskTH17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-535"><span class="process-math">\(\lim\limits_{x\to -6}{\frac{x^{2}+8x+12}{x^{2}+3x-18}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-74')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-76"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<div id="webwork-75" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="75" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwooJGEsJGIsJGMpPSgtOS4uLTEsMS4uOSlbTmNob29zZUsoMTgsMyldOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYT0tMTskYj0tODskYz03O307CiRmPUZvcm11bGEoInheMi0oJGErJGIpeCskYSokYiIpLT5yZWR1Y2U7CiRnPUZvcm11bGEoInheMi0oJGErJGMpeCskYSokYyIpLT5yZWR1Y2U7CiRyPSRmLyRnOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokTD1GcmFjdGlvbigkYS0kYiwkYS0kYyk7CgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG8gWyRhXX1bJHJdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZpbml0eXxdKiwgb3IganVzdCBbfElORnxdKi4gSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xkb2VzIG5vdCBleGlzdHxdKiwgb3IganVzdCBbfERORXxdKi4nKUBdKioKCltfXXskTH17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-537"><span class="process-math">\(\lim\limits_{x\to -4}{\frac{x^{2}+13x+36}{x^{2}+12x+32}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-75')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-7">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-9"><p id="p-539">Use the Squeeze Theorem to evaluate the limit.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-77"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<div id="webwork-76" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="76" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2U9PiJTaG93IHlvdXIgd29yay4iKSBAXSonOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvMH1cbGVmdCh4XHNpblxtYXRob3Blbnt9XGxlZnQoXGZyYWN7MX17eH1ccmlnaHQpXG1hdGhjbG9zZXt9XHJpZ2h0KWBdCgpbX117JzAnfXsyMH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-540"><span class="process-math">\(\lim\limits_{x\to0}\left(x\sin\mathopen{}\left(\frac{1}{x}\right)\mathclose{}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-76')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-78"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<div id="webwork-77" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="77" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2U9PiJTaG93IHlvdXIgd29yay4iKSBAXSonOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvMH1cbGVmdChcc2luKHgpXGNvc1xtYXRob3Blbnt9XGxlZnQoXGZyYWN7MX17eF4yfVxyaWdodClcbWF0aGNsb3Nle31ccmlnaHQpYF0KCltfXXsnMCd9ezIwfQoKWyRzaG93d29ya10qKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-542"><span class="process-math">\(\lim\limits_{x\to0}\left(\sin(x)\cos\mathopen{}\left(\frac{1}{x^2}\right)\mathclose{}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-77')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-79"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<div id="webwork-78" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="78" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2U9PiJTaG93IHlvdXIgd29yay4iKSBAXSonOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvMX0gZih4KVx0ZXh0eyx9YF0gd2hlcmUgW2AzeC0yXGxlcSBmKHgpIFxsZXEgeF4zYF0KCltfXXsnMSd9ezIwfQoKWyRzaG93d29ya10qKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-544"><span class="process-math">\(\lim\limits_{x\to1} f(x)\text{,}\)</span> where <span class="process-math">\(3x-2\leq f(x) \leq x^3\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-78')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-80"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<div id="webwork-79" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="79" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2U9PiJTaG93IHlvdXIgd29yay4iKSBAXSonOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvM30gZih4KVx0ZXh0eyx9YF0gd2hlcmUgW2A2eC05XGxlcSBmKHgpIFxsZXEgeF4yYF0KCltfXXsnOSd9ezIwfQoKWyRzaG93d29ya10qKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-546"><span class="process-math">\(\lim\limits_{x\to3} f(x)\text{,}\)</span> where <span class="process-math">\(6x-9\leq f(x) \leq x^2\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-79')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-8">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-10"><p id="p-548">The following exercises challenge your understanding of limits but can be evaluated using the knowledge gained in <a href="sec_limit_analytically.html" class="internal" title="Section 1.3: Finding Limits Analytically">Section 1.3</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-81"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<div id="webwork-80" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="80" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRMPXJhbmRvbSgyLDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRMPTM7fTsKJGY9Rm9ybXVsYSgic2luKCRMIHgpL3giKTsKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0bzB9WyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB5b3UgbmVlZCB0byBlbnRlciBbYFxpbmZ0eVx0ZXh0eyx9YF0geW91IG1heSB0eXBlIFt8aW5maW5pdHl8XSosIG9yIGp1c3QgW3xJTkZ8XSouIElmIHRoZSBsaW1pdCBkb2VzIG5vdCBleGlzdCwgeW91IG1heSB0eXBlIFt8ZG9lcyBub3QgZXhpc3R8XSosIG9yIGp1c3QgW3xETkV8XSouJylAXSoqCgpbX117JEx9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-549"><span class="process-math">\(\lim\limits_{x\to0}{\frac{\sin\!\left(8x\right)}{x}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-80')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-82"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<div id="webwork-81" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="81" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwooJGEsJGIpPSgyLi45KVtOY2hvb3NlSyg4LDIpXTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGE9NTskYj04fTsKJGY9Rm9ybXVsYSgic2luKCRhIHgpLygkYiB4KSIpOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokTD1GcmFjdGlvbigkYSwkYik7CgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG8wfVskZl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZmluaXR5fF0qLCBvciBqdXN0IFt8SU5GfF0qLiBJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfGRvZXMgbm90IGV4aXN0fF0qLCBvciBqdXN0IFt8RE5FfF0qLicpQF0qKgoKW19deyRMfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-551"><span class="process-math">\(\lim\limits_{x\to0}{\frac{\sin\!\left(9x\right)}{8x}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-81')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-83"><h6 class="heading"><span class="codenumber">41<span class="period">.</span></span></h6>
+<div id="webwork-82" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="82" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRMPTE7CgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG8wfVxmcmFje1xsbigxK3gpfXt4fWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB5b3UgbmVlZCB0byBlbnRlciBbYFxpbmZ0eVx0ZXh0eyx9YF0geW91IG1heSB0eXBlIFt8aW5maW5pdHl8XSosIG9yIGp1c3QgW3xJTkZ8XSouIElmIHRoZSBsaW1pdCBkb2VzIG5vdCBleGlzdCwgeW91IG1heSB0eXBlIFt8ZG9lcyBub3QgZXhpc3R8XSosIG9yIGp1c3QgW3xETkV8XSouJylAXSoqCgpbX117JEx9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-553"><span class="process-math">\(\lim\limits_{x\to0}\frac{\ln(1+x)}{x}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-82')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-84"><h6 class="heading"><span class="codenumber">42<span class="period">.</span></span></h6>
+<div id="webwork-83" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="83" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCk7CiRMPUZvcm11bGEoInBpLzE4MCIpOwoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvMH1cZnJhY3tcc2luKHgpfXt4fVx0ZXh0eyx9YF0gd2hlcmUgW2B4YF0gaXMgbWVhc3VyZWQgaW4gZGVncmVlcywgbm90IHJhZGlhbnMuCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB5b3UgbmVlZCB0byBlbnRlciBbYFxpbmZ0eVx0ZXh0eyx9YF0geW91IG1heSB0eXBlIFt8aW5maW5pdHl8XSosIG9yIGp1c3QgW3xJTkZ8XSouIElmIHRoZSBsaW1pdCBkb2VzIG5vdCBleGlzdCwgeW91IG1heSB0eXBlIFt8ZG9lcyBub3QgZXhpc3R8XSosIG9yIGp1c3QgW3xETkV8XSouJylAXSoqCgpbX117JEx9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-555"><span class="process-math">\(\lim\limits_{x\to0}\frac{\sin(x)}{x}\text{,}\)</span> where <span class="process-math">\(x\)</span> is measured in degrees, not radians.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-83')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-85"><h5 class="heading"><span class="codenumber">43<span class="period">.</span></span></h5>
+<div id="webwork-84" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="84" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKTGV0IFtgZih4KT0wYF0gYW5kIFtgZyh4KT1cZnJhY3t4fXt4fVx0ZXh0ey59YF0KYS4gIEV4cGxhaW4gd2h5IFtgXGxpbVxsaW1pdHNfe3hcdG8yfWYoeCk9MFx0ZXh0ey59YF0KCiAgICBbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKYS4gIEV4cGxhaW4gd2h5IFtgXGxpbVxsaW1pdHNfe3hcdG8wfWcoeCk9MVx0ZXh0ey59YF0KCiAgICBbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKYS4gIEV4cGxhaW4gd2h5IFtgXGxpbVxsaW1pdHNfe3hcdG8yfSBnKGYoeCkpYF0gZG9lcyBub3QgZXhpc3QuCgogICAgW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCmEuICBFeHBsYWluIHdoeSB0aGUgcHJldmlvdXMgc3RhdGVtZW50IGRvZXMgbm90IHZpb2xhdGUgdGhlIENvbXBvc2l0aW9uIFJ1bGUgb2YgVGhlb3JlbVskTkJTUF0qMS4zLjEuCgogICAgW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgphLiAgQXBwbHkgUGFydCAxIG9mIFRoZW9yZW1bJE5CU1BdKjEuMy4xLgoKCmEuICBBcHBseSBUaGVvcmVtWyROQlNQXSoxLjMuMjA7IFtgZyh4KT1cZnJhY3t4fXt4fWBdIGlzIHRoZSBzYW1lIGFzIFtgZyh4KT0xYF0gZXZlcnl3aGVyZSBleGNlcHQgYXQgW2B4PTBcdGV4dHsufWBdIFRodXMgW2BcbGltXGxpbWl0c197eFx0bzB9Zyh4KT1cbGltX3t4XHRvMH0xPTFcdGV4dHsufWBdCgoKYS4gIFRoZSBmdW5jdGlvbiBbYGZgXSBhbHdheXMgZ2l2ZXMgb3V0cHV0IFtgMFx0ZXh0eyx9YF0gc28gW2BnKGYoeCkpYF0gaXMgbmV2ZXIgZGVmaW5lZCBhcyBbYGdgXSBpcyBub3QgZGVmaW5lZCBmb3IgYW4gaW5wdXQgb2YgW2AwXHRleHR7Ln1gXSBUaGVyZWZvcmUgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LgoKCmEuICBUaGUgQ29tcG9zaXRpb24gUnVsZSByZXF1aXJlcyB0aGF0IFtgXGxpbVxsaW1pdHNfe3hcdG8wfWcoeClgXSBiZSBlcXVhbCB0byBbYGcoMClcdGV4dHsufWBdIFRoZXkgYXJlIG5vdCBlcXVhbCwgc28gdGhlIGNvbmRpdGlvbnMgb2YgdGhlIENvbXBvc2l0aW9uIFJ1bGUgYXJlIG5vdCBzYXRpc2ZpZWQsIGFuZCBoZW5jZSB0aGUgcnVsZSBpcyBub3QgdmlvbGF0ZWQuCgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-557">Let <span class="process-math">\(f(x)=0\)</span> and <span class="process-math">\(g(x)=\frac{x}{x}\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-84"><p id="p-558">Explain why <span class="process-math">\(\lim\limits_{x\to2}f(x)=0\text{.}\)</span></p></li>
+<li id="li-85"><p id="p-559">Explain why <span class="process-math">\(\lim\limits_{x\to0}g(x)=1\text{.}\)</span></p></li>
+<li id="li-86"><p id="p-560">Explain why <span class="process-math">\(\lim\limits_{x\to2} g(f(x))\)</span> does not exist.</p></li>
+<li id="li-87"><p id="p-561">Explain why the previous statement does not violate the Composition Rule of Theorem 1.3.1.</p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-84')">Make Interactive</button></div>
+</div></article></article></section></section></div></main>
+</div>
+</body>
+</html>

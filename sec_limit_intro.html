@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:27:50Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX An Introduction To Limits</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter_limits.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_limits.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_limit_def.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter_limits.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_limits.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_limit_def.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="active">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_limit_intro"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">An Introduction To Limits</span>
+</h2>
+<section class="introduction" id="introduction-2"><p id="p-36">We begin our study of <em class="emphasis">limits</em> by considering examples that demonstrate key concepts that will be explained as we progress.</p>
+<figure class="figure figure-like" id="vid_limit_intro_limit_concept"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/rG3XVvFIZPY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>The concept of a limit</figcaption></figure><p id="p-37">Consider the function <span class="process-math">\(y = \frac{\sin(x) }{x}\text{.}\)</span> When <span class="process-math">\(x\)</span> is near the value 1, what value (if any) is <span class="process-math">\(y\)</span> near?</p>
+<p id="p-38">While our question is not precisely formed (what constitutes “near the value 1”?), the answer does not seem difficult to find. One might think first to look at a graph of this function to approximate the appropriate <span class="process-math">\(y\)</span> values. Consider <a href="" class="xref" data-knowl="./knowl/fig_zoom_sinx_over_x.html" title="Figure 1.1.3">Figure 1.1.3</a>, where <span class="process-math">\(y = \frac{\sin(x) }{x}\)</span> is graphed. For values of <span class="process-math">\(x\)</span> near 1, it seems that <span class="process-math">\(y\)</span> takes on values near <span class="process-math">\(0.85\text{.}\)</span> In fact, when <span class="process-math">\(x=1\text{,}\)</span> then <span class="process-math">\(y=\frac{\sin(1) }{1} \approx 0.84\text{,}\)</span> so it makes sense that when <span class="process-math">\(x\)</span> is “near” 1, <span class="process-math">\(y\)</span> will be “near” <span class="process-math">\(0.84\text{.}\)</span></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_sinx_over_x_full"><img src="generated/latex-image/img_sinx_over_x_full.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(\sin(x)/x\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_zoom_sinx_over_x"><img src="generated/latex-image/img_zoom_sinx_over_x.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.3<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(\sin(x)/x\)</span> near <span class="process-math">\(x=1\)</span></figcaption></figure></div>
+</div></div>
+<p id="p-39">Consider this same function again at a different value for <span class="process-math">\(x\text{.}\)</span> When <span class="process-math">\(x\)</span> is near <span class="process-math">\(0\text{,}\)</span> what value (if any) is <span class="process-math">\(y\)</span> near? By considering <a href="" class="xref" data-knowl="./knowl/fig_sinx_over_x.html" title="Figure 1.1.4">Figure 1.1.4</a>, one can see that it seems that <span class="process-math">\(y\)</span> takes on values near <span class="process-math">\(1\text{.}\)</span> But what happens when <span class="process-math">\(x=0\text{?}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_sinx_over_x.html">
+\begin{equation*}
+y \rightarrow \frac{\sin(0) }{0} \rightarrow {\genfrac{}{}{0pt}{0}{\text{“}}{}}\frac{0}{0}{\genfrac{}{}{0pt}{0}{\text{”}}{}}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The expression <span class="process-math">\(0/0\)</span> has no value; it is  <dfn class="terminology">indeterminate</dfn>. Such an expression gives no information about what is going on with the function nearby. We cannot find out how <span class="process-math">\(y\)</span> behaves near <span class="process-math">\(x=0\)</span> for this function simply by letting <span class="process-math">\(x=0\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_sinx_over_x"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_sinx_over_x_2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.4<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(\sin(x)/x\)</span> near <span class="process-math">\(x=0\)</span></figcaption></figure><p id="p-40"><em class="emphasis">Finding a limit</em> entails understanding how a function behaves near a particular value of <span class="process-math">\(x\text{.}\)</span> Before continuing, it will be useful to establish some notation. Let <span class="process-math">\(y=f(x)\text{;}\)</span> that is, let <span class="process-math">\(y\)</span> be a function of <span class="process-math">\(x\)</span> for some function <span class="process-math">\(f\text{.}\)</span> The expression “the limit of <span class="process-math">\(y\)</span> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(1\)</span>” describes a number, often referred to as <span class="process-math">\(L\text{,}\)</span> that <span class="process-math">\(y\)</span> nears as <span class="process-math">\(x\)</span> nears <span class="process-math">\(1\text{.}\)</span> We write all this as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 1} y = \lim_{x\to 1} f(x) = L\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This is not a complete definition (that will come in the next section); this is a pseudo-definition that will allow us to explore the idea of a limit. </p>
+<p id="p-41">Above, where <span class="process-math">\(f(x) = \sin(x)/x\text{,}\)</span> we approximated</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 1} \frac{\sin(x) }{x} \approx 0.84 \quad \text{ and } \quad \lim_{x\to 0}\frac{\sin(x) }{x} \approx 1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">(We <em class="emphasis">approximated</em> these limits, hence used the “<span class="process-math">\(\approx\)</span>” symbol, since we are working with the pseudo-definition of a limit, not the actual definition.)</p>
+<figure class="figure figure-like" id="vid_limit_intro_sinxoverx"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/__qzaSg4y1I?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.5<span class="period">.</span></span><span class="space"> </span>Investigating <span class="process-math">\(\sin(x)/x\)</span></figcaption></figure><p id="p-42">Once we have the true definition of a limit, we will find limits <em class="emphasis">analytically</em>; that is, exactly using a variety of mathematical tools. For now, we will <em class="emphasis">approximate</em> limits both graphically and numerically. Graphing a function can provide a good approximation, though often not very precise. Numerical methods can provide a more accurate approximation. We have already approximated limits graphically, so we now turn our attention to numerical approximations.</p>
+<p id="p-43">Consider again <span class="process-math">\(\lim_{x\to 1}\frac{\sin(x)}{x}\text{.}\)</span> To approximate this limit numerically, we can create a table of <span class="process-math">\(x\)</span> and <span class="process-math">\(f(x)\)</span> values where <span class="process-math">\(x\)</span> is “near” <span class="process-math">\(1\text{.}\)</span> This is done in <a href="" class="xref" data-knowl="./knowl/table_sinx_1.html" title="Table 1.1.6: Values of \sin(x)/x with x near 1">Figure 1.1.6</a>.</p>
+<p id="p-44">Notice that for values of <span class="process-math">\(x\)</span> near <span class="process-math">\(1\text{,}\)</span> we have <span class="process-math">\(\sin(x)/x\)</span> near <span class="process-math">\(0.841\text{.}\)</span> The <span class="process-math">\(x=1\)</span> row is included, but we stress the fact that when considering limits, we are <em class="emphasis">not</em> concerned with the value of the function at that particular <span class="process-math">\(x\)</span> value; we are only concerned with the values of the function when <span class="process-math">\(x\)</span> is <em class="emphasis">near</em> 1.</p>
+<figure class="table table-like" id="table_sinx_1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.6<span class="period">.</span></span><span class="space"> </span>Values of <span class="process-math">\(\sin(x)/x\)</span> with <span class="process-math">\(x\)</span> near <span class="process-math">\(1\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\sin(x)/x\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0.9</td>
+<td class="l m b0 r0 l0 t0 lines">0.870363</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0.99</td>
+<td class="l m b0 r0 l0 t0 lines">0.844471</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0.999</td>
+<td class="l m b0 r0 l0 t0 lines">0.841772</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><em class="alert">1</em></td>
+<td class="l m b0 r0 l0 t0 lines"><em class="alert">0.841471</em></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1.001</td>
+<td class="l m b0 r0 l0 t0 lines">0.841170</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1.01</td>
+<td class="l m b0 r0 l0 t0 lines">0.838447</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1.1</td>
+<td class="l m b0 r0 l0 t0 lines">0.810189</td>
+</tr>
+</table></div></figure><p id="p-45">Now approximate <span class="process-math">\(\lim_{x\to 0} \frac{\sin(x)}{x}\)</span> numerically. We already approximated the value of this limit as <span class="process-math">\(1\)</span> graphically in <a href="" class="xref" data-knowl="./knowl/fig_sinx_over_x.html" title="Figure 1.1.4">Figure 1.1.4</a>. <a href="" class="xref" data-knowl="./knowl/table_sinx_2.html" title="Table 1.1.7: Values of \sin(x)/x with x near 0">Figure 1.1.7</a> shows the value of <span class="process-math">\(\sin(x)/x\)</span> for values of <span class="process-math">\(x\)</span> near <span class="process-math">\(0\text{.}\)</span> Ten places after the decimal point are shown to highlight how close to <span class="process-math">\(1\)</span> the value of <span class="process-math">\(\sin(x)/x\)</span> gets as <span class="process-math">\(x\)</span> takes on values very near <span class="process-math">\(0\text{.}\)</span> We include the <span class="process-math">\(x=0\)</span> row but again stress that we are not concerned with the value of our function at <span class="process-math">\(x=0\text{,}\)</span> only on the behavior of the function <em class="emphasis">near</em> <span class="process-math">\(0\text{.}\)</span></p>
+<figure class="table table-like" id="table_sinx_2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.7<span class="period">.</span></span><span class="space"> </span>Values of <span class="process-math">\(\sin(x)/x\)</span> with <span class="process-math">\(x\)</span> near <span class="process-math">\(0\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\sin(x)/x\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">-0.1</td>
+<td class="l m b0 r0 l0 t0 lines">0.9983341665</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">-0.01</td>
+<td class="l m b0 r0 l0 t0 lines">0.9999833334</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">-0.001</td>
+<td class="l m b0 r0 l0 t0 lines">0.9999998333</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><em class="alert">0</em></td>
+<td class="l m b0 r0 l0 t0 lines"><em class="alert">not defined</em></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0.001</td>
+<td class="l m b0 r0 l0 t0 lines">0.9999998333</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0.01</td>
+<td class="l m b0 r0 l0 t0 lines">0.9999833334</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0.1</td>
+<td class="l m b0 r0 l0 t0 lines">0.9983341665</td>
+</tr>
+</table></div></figure><p id="p-46">This numerical method gives confidence to say that <span class="process-math">\(1\)</span> is a good approximation of <span class="process-math">\(\lim_{x\to 0} \frac{\sin(x)}{x}\text{;}\)</span> that is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 0} \frac{\sin(x)}{x} \approx 1\text{.}
+\end{equation*}
+</div>
+<p id="p-47">Later we will be able to prove that the limit is <em class="emphasis">exactly</em> <span class="process-math">\(1\text{.}\)</span></p>
+<p id="p-48">We now consider several examples that allow us explore different aspects of the limit concept.</p>
+<article class="example example-like" id="ex_limit1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating the value of a limit.</span>
+</h3>
+<p id="p-49">Use graphical and numerical methods to approximate</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 3} \frac{x^2-x-6}{6x^2-19x+3}\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video has-tabular" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_limit_intro_rational_func" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/eHx3LmrQZXM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-50">To graphically approximate the limit, graph</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_limit1.html ./knowl/table_limit1.html">
+\begin{equation*}
+y = \frac{x^2-x-6}{6x^2-19x+3}
+\end{equation*}
+</div>
+<p class="continuation">on a small interval that contains <span class="process-math">\(3\text{.}\)</span> To numerically approximate the limit, create a table of values where the <span class="process-math">\(x\)</span> values are near <span class="process-math">\(3\text{.}\)</span> This is done in <a href="" class="xref" data-knowl="./knowl/fig_limit1.html" title="Figure 1.1.9">Figure 1.1.9</a> and <a href="" class="xref" data-knowl="./knowl/table_limit1.html" title="Table 1.1.10: Numerically approximating a limit in Example 1.1.8">Figure 1.1.10</a>, respectively.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_limit1"><img src="generated/latex-image/img_limit1.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.9<span class="period">.</span></span><span class="space"> </span>Graphically approximating a limit in <a href="" class="xref" data-knowl="./knowl/ex_limit1.html" title="Example 1.1.8: Approximating the value of a limit">Example 1.1.8</a></figcaption></figure></div>
+<div class="sbspanel fixed-width bottom" style="width:47%;"><figure class="table table-like" id="table_limit1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.10<span class="period">.</span></span><span class="space"> </span>Numerically approximating a limit in Example 1.1.8</figcaption><table class="tabular">
+<tr>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\frac{x^2-x-6}{6x^2-19x+3}\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2.9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.29878\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2.99\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.294569\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2.999\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.294163\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><em class="emphasis">3</em></td>
+<td class="l m b0 r0 l0 t0 lines"><em class="emphasis">not defined</em></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(3.001\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.294073\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(3.01\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.293669\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(3.1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.289773\)</span></td>
+</tr>
+</table></figure></div>
+</div></div>
+<p id="p-51">The graph shows that when <span class="process-math">\(x\)</span> is near <span class="process-math">\(3\text{,}\)</span> the value of <span class="process-math">\(y\)</span> is very near <span class="process-math">\(0.3\text{.}\)</span> By considering values of <span class="process-math">\(x\)</span> near <span class="process-math">\(3\text{,}\)</span> we see that <span class="process-math">\(y=0.294\)</span> is a better approximation. The graph and the table imply that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 3} \frac{x^2-x-6}{6x^2-19x+3} \approx 0.294\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><p id="p-52">This example may bring up a few questions about approximating limits (and the nature of limits themselves).</p>
+<ol class="decimal">
+<li id="li-13"><p id="p-53">If a graph does not produce as good an approximation as a table, why bother with it?</p></li>
+<li id="li-14"><p id="p-54">How many values of <span class="process-math">\(x\)</span> in a table are “enough?” In the previous example, could we have just used <span class="process-math">\(x=3.001\)</span> and found a fine approximation?</p></li>
+</ol>
+<p id="p-55">Graphs are useful since they give a visual understanding concerning the behavior of a function. Sometimes a function may act “erratically” near certain <span class="process-math">\(x\)</span> values which is hard to discern numerically but very plain graphically (see <a href="" class="xref" data-knowl="./knowl/ex_no_limit3.html" title="Example 1.1.22: The Function Oscillates">Example 1.1.22</a>). Since graphing utilities are very accessible, it makes sense to make proper use of them.</p>
+<p id="p-56">Since tables and graphs are used only to <em class="emphasis">approximate</em> the value of a limit, there is not a firm answer to how many data points are “enough.” Include enough so that a trend is clear, and use values (when possible) both less than and greater than the value in question. In <a href="" class="xref" data-knowl="./knowl/ex_limit1.html" title="Example 1.1.8: Approximating the value of a limit">Example 1.1.8</a>, we used both values less than and greater than <span class="process-math">\(3\text{.}\)</span> Had we used just <span class="process-math">\(x=3.001\text{,}\)</span> we might have been tempted to conclude that the limit had a value of <span class="process-math">\(0.3\text{.}\)</span> While this is not far off, we could do better. Using values “on both sides of 3” helps us identify trends.</p>
+<article class="example example-like" id="ex_limit2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating the value of a limit.</span>
+</h3>
+<p id="p-57">Graphically and numerically approximate the limit of <span class="process-math">\(f(x)\)</span> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(0\text{,}\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x) = \begin{cases}x+1 \amp  x\lt  0 \\ -x^2+1 \amp  x \gt 0\end{cases}\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video has-tabular" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_limit_intro_piecewise_func" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/7RAiKoLCpgU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-58">Again we graph <span class="process-math">\(f(x)\)</span> and create a table of its values near <span class="process-math">\(x=0\)</span> to approximate the limit. Note that this is a piecewise defined function, so it behaves differently on either side of <span class="process-math">\(0\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_limit2.html" title="Figure 1.1.12">Figure 1.1.12</a> shows a graph of <span class="process-math">\(f(x)\text{,}\)</span> and on either side of <span class="process-math">\(0\)</span> it seems the <span class="process-math">\(y\)</span> values approach <span class="process-math">\(1\text{.}\)</span> Note that <span class="process-math">\(f(0)\)</span> is not actually defined, as indicated in the graph with the open circle.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_limit2"><img src="generated/latex-image/img_limit2.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.12<span class="period">.</span></span><span class="space"> </span>Graphically approximating a limit in <a href="" class="xref" data-knowl="./knowl/ex_limit2.html" title="Example 1.1.11: Approximating the value of a limit">Example 1.1.11</a></figcaption></figure></div>
+<div class="sbspanel fixed-width bottom" style="width:47%;"><figure class="table table-like" id="table_limit2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.13<span class="period">.</span></span><span class="space"> </span>Numerically approximating a limit in Example 1.1.11</figcaption><table class="tabular">
+<tr>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(f(x)\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.9\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.01\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.99\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.001\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.999\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.001\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.999999\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.01\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.9999\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.99\)</span></td>
+</tr>
+</table></figure></div>
+</div></div>
+<p id="p-59"><a href="" class="xref" data-knowl="./knowl/table_limit2.html" title="Table 1.1.13: Numerically approximating a limit in Example 1.1.11">Figure 1.1.13</a> shows values of <span class="process-math">\(f(x)\)</span> for values of <span class="process-math">\(x\)</span> near <span class="process-math">\(0\text{.}\)</span> It is clear that as <span class="process-math">\(x\)</span> takes on values very near <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(f(x)\)</span> takes on values very near <span class="process-math">\(1\text{.}\)</span> It turns out that if we let <span class="process-math">\(x=0\)</span> for either “piece” of <span class="process-math">\(f(x)\text{,}\)</span> <span class="process-math">\(1\)</span> is returned; this is significant and we'll return to this idea later.</p>
+<p id="p-60">The graph and table allow us to say that <span class="process-math">\(\lim_{x\to 0}f(x) \approx 1\text{;}\)</span> in fact, we are probably very sure it <em class="emphasis">equals</em> 1.</p>
+</div></div>
+</div></article></section><section class="subsection" id="subsec_nolimit3"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.1</span> <span class="title">Identifying When Limits Do Not Exist</span>
+</h3>
+<figure class="figure figure-like" id="vid_limit_intro_limit_dne"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-6" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/DSIaDa_ABxo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.14<span class="period">.</span></span><span class="space"> </span>Video introduction for <a href="sec_limit_intro.html#subsec_nolimit3" class="internal" title="Subsection 1.1.1: Identifying When Limits Do Not Exist">Subsection 1.1.1</a></figcaption></figure><p id="p-61">A function may not have a limit for all values of <span class="process-math">\(x\text{.}\)</span> That is, we cannot write that <span class="process-math">\(\lim_{x\to c}f(x)=L\)</span> (where <span class="process-math">\(L\)</span> is some real number) for all values of <span class="process-math">\(c\text{,}\)</span> for there may not be a number that <span class="process-math">\(f(x)\)</span> is approaching. There are three common ways in which a limit may fail to exist. </p>
+<ol class="decimal">
+<li id="li-15"><p id="p-62">The function <span class="process-math">\(f(x)\)</span> may approach different values on either side of <span class="process-math">\(c\text{.}\)</span></p></li>
+<li id="li-16"><p id="p-63">The function may grow without upper or lower bound as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(c\text{.}\)</span></p></li>
+<li id="li-17"><p id="p-64">The function may oscillate as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(c\)</span> without approaching a specific value.</p></li>
+</ol>
+<p class="continuation">We'll explore each of these in turn.</p>
+<article class="example example-like" id="ex_no_limit1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Different Values Approached From Left and Right.</span>
+</h4>
+<p id="p-65">Explore why <span class="process-math">\(\lim_{x\to 1} f(x)\)</span> does not exist, where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x) = \begin{cases}x^2-2x+3 \amp  x\leq 1 \\ x \amp  x \gt 1\end{cases}\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-tabular" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
+<p id="p-66">A graph of <span class="process-math">\(f(x)\)</span> around <span class="process-math">\(x=1\)</span> and a table are given in Figures <a href="" class="xref" data-knowl="./knowl/fig_nolimit1.html" title="Figure 1.1.16">Figure 1.1.16</a> and <a href="" class="xref" data-knowl="./knowl/table_nolimit1.html" title="Table 1.1.17: Values of f(x) near x=1 in Example 1.1.15">Table 1.1.17</a>, respectively. It is clear that as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(f(x)\)</span> does not seem to approach a single number. Instead, it seems as though <span class="process-math">\(f(x)\)</span> approaches two different numbers. When considering values of <span class="process-math">\(x\)</span> less than <span class="process-math">\(1\)</span> (approaching <span class="process-math">\(1\)</span> from the left), it seems that <span class="process-math">\(f(x)\)</span> is approaching <span class="process-math">\(2\text{;}\)</span> when considering values of <span class="process-math">\(x\)</span> greater than <span class="process-math">\(1\)</span> (approaching <span class="process-math">\(1\)</span> from the right), it seems that <span class="process-math">\(f(x)\)</span> is approaching <span class="process-math">\(1\text{.}\)</span> Recognizing this behavior is important; we'll study this in greater depth later. Right now, it suffices to say that the limit does not exist since <span class="process-math">\(f(x)\)</span> is approaching two <em class="emphasis">different</em> values as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(1\text{.}\)</span></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_nolimit1"><img src="generated/latex-image/img_nolimit1.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.16<span class="period">.</span></span><span class="space"> </span>Observing no limit as <span class="process-math">\(x\to 1\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_no_limit1.html" title="Example 1.1.15: Different Values Approached From Left and Right">Example 1.1.15</a></figcaption></figure></div>
+<div class="sbspanel fixed-width bottom" style="width:47%;"><figure class="table table-like" id="table_nolimit1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.17<span class="period">.</span></span><span class="space"> </span>Values of <span class="process-math">\(f(x)\)</span> near <span class="process-math">\(x=1\)</span> in Example 1.1.15</figcaption><table class="tabular">
+<tr>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(f(x)\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2.01\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.99\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2.0001\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.999\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2.000001\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.001\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.001\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.01\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.01\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.1\)</span></td>
+</tr>
+</table></figure></div>
+</div></div>
+</div></div>
+</div></article><article class="example example-like" id="ex_no_limit2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">The Function Grows Without Bound.</span>
+</h4>
+<p id="p-67">Explore why <span class="process-math">\(\lim_{x\to 1} \frac{1}{(x-1)^2}\)</span> does not exist.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-tabular" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
+<p id="p-68">A graph and table of <span class="process-math">\(f(x) = \frac{1}{(x-1)^2}\)</span> are given in <a href="" class="xref" data-knowl="./knowl/fig_nolimit2.html" title="Figure 1.1.19">Figure 1.1.19</a> and <a href="" class="xref" data-knowl="./knowl/table_nolimit2.html" title="Table 1.1.20: Values of f(x) near x=1 in Example 1.1.18">Figure 1.1.20</a>, respectively. Both show that as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(f(x)\)</span> grows larger and larger.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_nolimit2"><img src="generated/latex-image/img_nolimit2.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.19<span class="period">.</span></span><span class="space"> </span>Observing no limit as <span class="process-math">\(x\to 1\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_no_limit2.html" title="Example 1.1.18: The Function Grows Without Bound">Example 1.1.18</a></figcaption></figure></div>
+<div class="sbspanel fixed-width bottom" style="width:47%;"><figure class="table table-like" id="table_nolimit2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.20<span class="period">.</span></span><span class="space"> </span>Values of <span class="process-math">\(f(x)\)</span> near <span class="process-math">\(x=1\)</span> in Example 1.1.18</figcaption><table class="tabular">
+<tr>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(f(x)\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(100\text{.}\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.99\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10000\text{.}\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.999\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.\times 10^6\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.001\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.\times 10^6\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.01\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10000\text{.}\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(100\text{.}\)</span></td>
+</tr>
+</table></figure></div>
+</div></div>
+<p id="p-69">We can deduce this on our own, without the aid of the graph and table. If <span class="process-math">\(x\)</span> is near 1, then <span class="process-math">\((x-1)^2\)</span> is very small, and:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{\text{ very small number } } = \text{ very large number }\text{.}
+\end{equation*}
+</div>
+<p id="p-70">Since <span class="process-math">\(f(x)\)</span> is not approaching a single number, we conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 1}\frac{1}{(x-1)^2}
+\end{equation*}
+</div>
+<p class="continuation">does not exist.</p>
+</div></div>
+</div></article><figure class="figure figure-like" id="vid_limit_intro_jumps_asymptotes"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-7" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/NnV1A1KTbg0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.21<span class="period">.</span></span><span class="space"> </span>Video presentation for <a href="" class="xref" data-knowl="./knowl/ex_no_limit1.html" title="Example 1.1.15: Different Values Approached From Left and Right">Examples 1.1.15–1.1.18</a></figcaption></figure><article class="example example-like" id="ex_no_limit3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.22</span><span class="period">.</span><span class="space"> </span><span class="title">The Function Oscillates.</span>
+</h4>
+<p id="p-71">Explore why <span class="process-math">\(\lim_{x\to 0}\sin(1/x)\)</span> does not exist.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video has-tabular" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_limit_intro_limit_oscillation" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/gGvvFX5QyjE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-72">Two graphs of <span class="process-math">\(f(x) = \sin(1/x)\)</span> are given in <a href="" class="xref" data-knowl="./knowl/fig_nolimit3.html" title="Figure 1.1.23">Figure 1.1.23</a>. <a href="" class="xref" data-knowl="./knowl/fig_nolimit3a.html" title="Figure 1.1.23.(a)">Figure 1.1.23.(a)</a> shows <span class="process-math">\(f(x)\)</span> on the interval <span class="process-math">\([-1,1]\text{;}\)</span> notice how <span class="process-math">\(f(x)\)</span> seems to oscillate near <span class="process-math">\(x=0\text{.}\)</span> One might think that despite the oscillation, as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(f(x)\)</span> approaches <span class="process-math">\(0\text{.}\)</span> However, <a href="" class="xref" data-knowl="./knowl/fig_nolimit3b.html" title="Figure 1.1.23.(b)">Figure 1.1.23.(b)</a> zooms in on <span class="process-math">\(\sin(1/x)\text{,}\)</span> on the interval <span class="process-math">\([-0.1,0.1]\text{.}\)</span> Here the oscillation is even more pronounced. Finally, in <a href="" class="xref" data-knowl="./knowl/table_nolimit3c.html" title="Table 1.1.24: Observing that f(x)=\sin(1/x) has no limit as x\to0 in Example 1.1.22">Figure 1.1.24</a>, we see <span class="process-math">\(\sin(1/x)\)</span> evaluated for values of <span class="process-math">\(x\)</span> near <span class="process-math">\(0\text{.}\)</span> As <span class="process-math">\(x\)</span> approaches <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(f(x)\)</span> does not appear to approach any value.</p>
+<figure class="figure figure-like" id="fig_nolimit3"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_nolimit3a"><img src="generated/latex-image/img_nolimit3a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_nolimit3b"><img src="generated/latex-image/img_nolimit3b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.23<span class="period">.</span></span><span class="space"> </span>Observing that <span class="process-math">\(f(x)=\sin(1/x)\)</span> has no limit as <span class="process-math">\(x\to0\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_no_limit3.html" title="Example 1.1.22: The Function Oscillates">Example 1.1.22</a></figcaption></figure><figure class="table table-like" id="table_nolimit3c"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.24<span class="period">.</span></span><span class="space"> </span>Observing that <span class="process-math">\(f(x)=\sin(1/x)\)</span> has no limit as <span class="process-math">\(x\to0\)</span> in Example 1.1.22</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\sin(1/x)\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.544021\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.01\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.506366\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.001\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.82688\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.0001\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.305614\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.\times 10^{-5}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.0357488\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.\times 10^{-6}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.349994\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.\times 10^{-7}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.420548\)</span></td>
+</tr>
+</table></div></figure><p id="p-73">It can be shown that in reality, as <span class="process-math">\(x\)</span> approaches 0, <span class="process-math">\(\sin(1/x)\)</span> takes on all values between <span class="process-math">\(-1\)</span> and <span class="process-math">\(1\)</span> infinitely many times! Because of this oscillation, <span class="process-math">\(\lim_{x\to 0}\sin(1/x)\)</span> does not exist.</p>
+</div></div>
+</div></article></section><section class="subsection" id="sec_diff_quot_intro"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.2</span> <span class="title">Limits of Difference Quotients</span>
+</h3>
+<p id="p-74">We have approximated limits of functions as <span class="process-math">\(x\)</span> approached a particular number. We will consider another important kind of limit after explaining a few key ideas. </p>
+<figure class="figure figure-like" id="vid_limit_intro_limit_diff_quot"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-9" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/2NJmd0Jrt4U?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.25<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_limit_intro.html#sec_diff_quot_intro" class="internal" title="Subsection 1.1.2: Limits of Difference Quotients">Subsection 1.1.2</a></figcaption></figure><p id="p-75">Let <span class="process-math">\(f(x)\)</span> represent the position function, in feet, of some particle that is moving in a straight line, where <span class="process-math">\(x\)</span> is measured in seconds. Let's say that when <span class="process-math">\(x=1\text{,}\)</span> the particle is at position <span class="process-math">\(10\)</span> ft., and when <span class="process-math">\(x=5\text{,}\)</span> the particle is at <span class="process-math">\(20\)</span> ft. Another way of expressing this is to say</p>
+<blockquote class="blockquote" id="blockquote-1"><p id="p-76"><span class="process-math">\(f(1)=10\)</span> and <span class="process-math">\(f(5) = 20\text{.}\)</span></p></blockquote>
+<p id="p-77">Since the particle traveled <span class="process-math">\(10\)</span> feet in <span class="process-math">\(4\)</span> seconds, we can say the particle's  <dfn class="terminology">average velocity</dfn> was <span class="process-math">\(2.5\)</span> ft/s. We write this calculation using a “quotient of differences,” or, a  <dfn class="terminology">difference quotient</dfn>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{f(5) - f(1)}{5-1} \frac{\text{ ft}}{\text{s}} = \frac{10 \text{ ft}}{4\text{ s}} = 2.5 \text{ ft/s }\text{.}
+\end{equation*}
+</div>
+<p id="p-78">This difference quotient can be thought of as the familiar “rise over run” used to compute the slopes of lines. In fact, that is essentially what we are doing: given two points on the graph of <span class="process-math">\(f\text{,}\)</span> we are finding the slope of the <em class="emphasis">secant line</em> through those two points. See <a href="" class="xref" data-knowl="./knowl/fig_diffquot1.html" title="Figure 1.1.26">Figure 1.1.26</a>.</p>
+<figure class="figure figure-like" id="fig_diffquot1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_diffquot1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.26<span class="period">.</span></span><span class="space"> </span>Interpreting a difference quotient as the slope of a secant line</figcaption></figure><p id="p-79">Now consider finding the average speed on another time interval. We again start at <span class="process-math">\(x=1\text{,}\)</span> but consider the position of the particle <span class="process-math">\(h\)</span> seconds later. That is, consider the positions of the particle when <span class="process-math">\(x=1\)</span> and when <span class="process-math">\(x=1+h\text{.}\)</span> The difference quotient (excluding units) is now</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{f(1+h)-f(1)}{(1+h)-1} = \frac{f(1+h)-f(1)}{h}\text{.}
+\end{equation*}
+</div>
+<p id="p-80">Let <span class="process-math">\(f(x) = -1.5x^2+11.5x\text{;}\)</span> note that <span class="process-math">\(f(1)=10\)</span> and <span class="process-math">\(f(5) = 20\text{,}\)</span> as in our discussion. We can compute this difference quotient for all values of <span class="process-math">\(h\)</span> (even negative values!) except <span class="process-math">\(h=0\text{,}\)</span> for then we get “0/0,” the indeterminate form introduced earlier. For all values <span class="process-math">\(h\neq 0\text{,}\)</span> the difference quotient computes the average velocity of the particle over an interval of time of length <span class="process-math">\(h\)</span> starting at <span class="process-math">\(x=1\text{.}\)</span></p>
+<p id="p-81">For small values of <span class="process-math">\(h\text{,}\)</span> i.e., values of <span class="process-math">\(h\)</span> close to <span class="process-math">\(0\text{,}\)</span> we get average velocities over very short time periods and compute secant lines over small intervals. See <a href="" class="xref" data-knowl="./knowl/fig_diff_quot_smallh.html" title="Figure 1.1.27">Figure 1.1.27</a>. This leads us to wonder what the limit of the difference quotient is as <span class="process-math">\(h\)</span> approaches <span class="process-math">\(0\text{.}\)</span> That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_diff_quot_smallh.html">
+\begin{equation*}
+\lim_{h\to 0} \frac{f(1+h)-f(1)}{h} = \text{ ? }
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig_diff_quot_smallh"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_diff_quot_smallha"><img src="generated/latex-image/img_diff_quot_smallha.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span><span class="process-math">\(h=2\)</span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_diff_quot_smallhb"><img src="generated/latex-image/img_diff_quot_smallhb.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span><span class="process-math">\(h=1\)</span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_diff_quot_smallhc"><img src="generated/latex-image/img_diff_quot_smallhc.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span><span class="process-math">\(h=0.5\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.27<span class="period">.</span></span><span class="space"> </span>Secant lines of <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(x=1\)</span> and <span class="process-math">\(x=1+h\text{,}\)</span> for shrinking values of <span class="process-math">\(h\)</span> (i.e., <span class="process-math">\(h\rightarrow 0\)</span>)</figcaption></figure><p id="p-82">As we do not yet have a true definition of a limit nor an exact method for computing it, we settle for approximating the value. While we could graph the difference quotient (where the <span class="process-math">\(x\)</span>-axis would represent <span class="process-math">\(h\)</span> values and the <span class="process-math">\(y\)</span>-axis would represent values of the difference quotient) we settle for making a table. See <a href="" class="xref" data-knowl="./knowl/table_diff_quot_smallh.html" title="Table 1.1.28: The difference quotient evaluated at values of h near 0">Figure 1.1.28</a>. The table gives us reason to assume the value of the limit is about <span class="process-math">\(8.5\text{.}\)</span></p>
+<figure class="table table-like" id="table_diff_quot_smallh"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.28<span class="period">.</span></span><span class="space"> </span>The difference quotient evaluated at values of <span class="process-math">\(h\)</span> near <span class="process-math">\(0\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(h\)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\frac{f(1+h)-f(1)}{h}\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.5\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(9.25\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(8.65\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-0.01\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(8.515\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.01\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(8.485\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(8.35\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.5\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(7.75\)</span></td>
+</tr>
+</table></div></figure><figure class="figure figure-like" id="vid_limit_intro_limit_diff_quot_ex"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-10" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=lNI90Y321b0,uUyZHfTYlBQ&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.29<span class="period">.</span></span><span class="space"> </span>Video examples for difference quotients: once with direct computation, and then by simplifying first</figcaption></figure><p id="p-83">Proper understanding of limits is key to understanding calculus. With limits, we can accomplish seemingly impossible mathematical things, like adding up an infinite number of numbers (and not get infinity) and finding the slope of a line between two points, where the “two points” are actually the same point. These are not just mathematical curiosities; they allow us to link position, velocity and acceleration together, connect cross-sectional areas to volume, find the work done by a variable force, and much more.</p>
+<p id="p-84">In the next section we give the formal definition of the limit and begin our study of finding limits analytically. In the following exercises, we continue our introduction and approximate the value of limits.</p></section><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.1.3</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-1"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-1"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-1" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKSW4geW91ciBvd24gd29yZHMsIHdoYXQgZG9lcyBpdCBtZWFuIHRvICJmaW5kIHRoZSBsaW1pdCBvZiBbYGYoeClgXSBhcyBbYHhgXSBhcHByb2FjaGVzIDMiPwoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-85">In your own words, what does it mean to “find the limit of <span class="process-math">\(f(x)\)</span> as <span class="process-math">\(x\)</span> approaches 3”?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-2" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="2" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJhbnN3ZXJIaW50cy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokYW5zd2VyID0gImFuIGluZGV0ZXJtaW5hdGUgZm9ybSI7CiR1bmRlZmluZWQgPSAiYW4gdW5kZWZpbmVkIGV4cHJlc3Npb24iOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgKICAkYW5zd2VyID0+IHt9LAogIGluZGV0ZXJtaW5hdGUgPT4ge2FsaWFzID0+ICRhbnN3ZXJ9LAogICR1bmRlZmluZWQgPT4ge30sCiAgdW5kZWZpbmVkID0+IHthbGlhcyA9PiAkdW5kZWZpbmVkfQopOwokZXZhbHVhdG9yID0gQ29tcHV0ZSgkYW5zd2VyKS0+Y21wKCktPndpdGhQb3N0RmlsdGVyKAogIEFuc3dlckhpbnRzKAogICAgW0NvbXB1dGUoInVuZGVmaW5lZCIpXSA9PiAiWWVzLCBidXQgdGhlcmUgaXMgYSBtb3JlIHNwZWNpZmljIGFuc3dlci4iCiAgKQopOwoKQkVHSU5fUEdNTApBbiBleHByZXNzaW9uIG9mIHRoZSBmb3JtIFtgXGZyYWN7MH17MH1gXSBpcyBjYWxsZWQgW19deyRldmFsdWF0b3J9ezEzfS4KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-86">An expression of the form <span class="process-math">\(\frac{0}{0}\)</span> is called <span class="fillin underline" role="img" aria-label="13-character blank" style="width: 5.909090909090909em;"></span>.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-2')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-3"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-3" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="3" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JGxpbWl0ZXF1YWxzdmFsdWUgPSBQb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwyKTsKCkJFR0lOX1BHTUwKW19deyRsaW1pdGVxdWFsc3ZhbHVlfXs1fSBUaGUgbGltaXQgb2YgW2BmKHgpYF0gYXMgW2B4YF0gYXBwcm9hY2hlcyBbYDVgXSBpcyBbYGYoNSlcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KRmFsc2U6IHRoZSBsaW1pdCBjb25zaWRlcnMgdmFsdWVzIG9mIFtgeGBdIF9uZWFyXyB0byBbYDVcdGV4dHssfWBdIGJ1dCBub3QgX2VxdWFsXyB0byBbYDVcdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-88"><ul style="list-style:circle;">
+<li id="li-19"><p id="p-90">True</p></li>
+<li id="li-20"><p id="p-91">False</p></li>
+</ul> The limit of <span class="process-math">\(f(x)\)</span> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(5\)</span> is <span class="process-math">\(f(5)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-3')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-4"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-4" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="4" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRGVzY3JpYmUgdGhyZWUgc2l0dWF0aW9ucyB3aGVyZSBbYFxsaW1cbGltaXRzX3t4XHRvIGN9Zih4KWBdIGRvZXMgbm90IGV4aXN0LgoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClRoZSBmdW5jdGlvbiBtYXkgYXBwcm9hY2ggZGlmZmVyZW50IHZhbHVlcyBmcm9tIHRoZSBsZWZ0IGFuZCByaWdodCwgdGhlIGZ1bmN0aW9uIG1heSBncm93IHdpdGhvdXQgYm91bmQsIG9yIHRoZSBmdW5jdGlvbiBtaWdodCBvc2NpbGxhdGUuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-94">Describe three situations where <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> does not exist.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-4')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-5"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div id="webwork-5" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="5" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKSW4geW91ciBvd24gd29yZHMsIHdoYXQgaXMgYSBkaWZmZXJlbmNlIHF1b3RpZW50PwoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-96">In your own words, what is a difference quotient?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-5')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-6"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div id="webwork-6" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="6" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOwoKQkVHSU5fUEdNTApXaGVuIFtgeGBdIGlzIG5lYXIgW2AwXHRleHR7LH1gXSBbYFxkZnJhY3tcc2luIHh9e3h9YF0gaXMgbmVhciB3aGF0IHZhbHVlPwoKW19dezF9ezEwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClRyeSB2YWx1ZXMgb2YgW2B4YF0gY2xvc2UgdG8gW2AwXHRleHR7LH1gXSBzdWNoIGFzIFtgMC4wMDAxXHRleHR7Ln1gXSBBIGNhbGN1bGF0b3IgcmV2ZWFscyB0aGF0IFtgXGRmcmFje1xzaW4gMC4wMDAxfXswLjAwMDF9XGFwcHJveDAuOTk5OTk5OTk4XGxkb3RzXHRleHR7Ln1gXSBUaGlzIGlzIG5lYXIgW2AxXHRleHR7Ln1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-97">When <span class="process-math">\(x\)</span> is near <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(\dfrac{\sin x}{x}\)</span> is near what value?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-6')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-2"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-1">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-3"><p id="p-100">Approximate the limit numerically and graphically.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-7"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div id="webwork-7" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="7" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEd0aWt6LnBsIiwiUENDbWFjcm9zLnBsIiwiQVBFWC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7ZG8gewogICRhID0gbGlzdF9yYW5kb20oLTEsMSk7CiAgJGIgPSBub25femVyb19yYW5kb20oLTUsNSwxKTsKICAkYyA9IG5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpOwogIGlmICgkZW52aXJ7cHJvYmxlbVNlZWR9ID09IDEpewogICAgKCRhLCRiLCRjKSA9ICgxLDMsLTUpOwogIH07CiAgJGYgPSBGb3JtdWxhKCJ4XjIgKyAkYiB4ICsgJGMiKS0+cmVkdWNlOwogICRsID0gJGYtPmV2YWwoeCA9PiAkYSk7Cn0gdW50aWwoJGwgIT0gMCk7CkB0YWJpbiA9ICgkYSAtIDAuMSwgJGEgLSAwLjAxLCAkYSAtIDAuMDAxLCAkYSArIDAuMDAxLCAkYSArIDAuMDEsICRhICsgMC4xKTsKQHRhYm91dCA9IG1hcHskZi0+ZXZhbCh4ID0+ICRfKX0gKEB0YWJpbik7CiRpbWFnZV8xNCA9IGNyZWF0ZVRpa1pJbWFnZSgpOwokaW1hZ2VfMTQtPmFkZFRvUHJlYW1ibGUobGF0ZXhJbWFnZVByZWFtYmxlKCkpOwokaW1hZ2VfMTQtPkJFR0lOX1RJS1oKXGJlZ2lue2F4aXN9W2dyaWQ9Ym90aF0KICBcYWRkcGxvdCtbZG9tYWluPS0yOjJdIHskZn07ClxlbmR7YXhpc30KCkVORF9USUtaCgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG8gWyRhXX1cbGVmdChbJGZdXHJpZ2h0KWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfERORXxdKi4gSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZnxdKi4nKUBdKioKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KRm9yIGEgbnVtZXJpY2FsIGFwcHJveGltYXRpb24sIG1ha2UgYSB0YWJsZToKCj4+IFtARGF0YVRhYmxlKFtbW1BHTUwoJ1tgeGBdJyksbWlkcnVsZT0+JzEnLHJvd2Nzcz0+J2JvcmRlci1ib3R0b206MnB4IHNvbGlkOycsXSxbUEdNTCgnW2BbJGZdYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMF1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzBdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzFdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsxXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsyXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMl1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bM11dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzNdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzRdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFs0XV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls1XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNV1dYF0nKSxdLF0sXSxhbGlnbj0+J2xsJyxjZW50ZXI9PjAsKTtAXSogPDwKCkZvciBhIGdyYXBoaWNhbCBhcHByb3hpbWF0aW9uOgoKPj4gW0BpbWFnZShpbnNlcnRHcmFwaCgkaW1hZ2VfMTQpLCB3aWR0aD0+NjAwKUBdKiAgPDwKCkl0IGFwcGVhcnMgdGhhdCB3aGVuIFtgeGBdIGlzIGNsb3NlIHRvIFtgWyRhXVx0ZXh0eyx9YF0gdGhhdCBbYFskZl1gXSBpcyBjbG9zZSB0byBbYFskbF1cdGV4dHsufWBdIFNvIFtgXGxpbV97eFx0byBbJGFdfVxsZWZ0KFskZl1ccmlnaHQpPVskbF1cdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-101"><span class="process-math">\(\lim\limits_{x\to 1}\left({x^{2}+2x+2}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-7')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-8"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-8" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="8" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEd0aWt6LnBsIiwiUENDbWFjcm9zLnBsIiwiQVBFWC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7ZG8gewogICRhID0gcmFuZG9tKC0xLDEsMSk7CiAgJGIgPSBub25femVyb19yYW5kb20oLTUsNSwxKTsKICAkYyA9IG5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpOwogICRkID0gbm9uX3plcm9fcmFuZG9tKC01LDUsMSk7CiAgaWYgKCRlbnZpcntwcm9ibGVtU2VlZH0gPT0gMSl7CiAgICAoJGEsJGIsJGMsJGQpID0gKDAsLTMsMSwtNSk7CiAgfTsKICAkZiA9IEZvcm11bGEoInheMyArICRiIHheMiArICRjIHggKyAkZCIpLT5yZWR1Y2U7CiAgJGwgPSAkZi0+ZXZhbCh4ID0+ICRhKTsKfSB1bnRpbCAoJGwgIT0gMCk7CkB0YWJpbiA9ICgkYSAtIDAuMSwgJGEgLSAwLjAxLCAkYSAtIDAuMDAxLCAkYSArIDAuMDAxLCAkYSArIDAuMDEsICRhICsgMC4xKTsKQHRhYm91dCA9IG1hcHskZi0+ZXZhbCh4ID0+ICRfKX0gKEB0YWJpbik7CiRpbWFnZV8xNSA9IGNyZWF0ZVRpa1pJbWFnZSgpOwokaW1hZ2VfMTUtPmFkZFRvUHJlYW1ibGUobGF0ZXhJbWFnZVByZWFtYmxlKCkpOwokaW1hZ2VfMTUtPkJFR0lOX1RJS1oKXGJlZ2lue2F4aXN9W2dyaWQ9Ym90aF0KICBcYWRkcGxvdCtbZG9tYWluPS0yOjJdIHskZn07CiAgJSBCZSBzdXJlIHRvIGluY2x1ZGUgc29tZSBhcmVhIGFib3ZlIGFuZCBiZWxvdyB4LWF4aXMKICBcYWRkcGxvdFttYXJrPW5vbmVdIGNvb3JkaW5hdGVzIHsoMCw1KSAoMCwtNSl9OwpcZW5ke2F4aXN9CgpFTkRfVElLWgoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19XGxlZnQoWyRmXVxyaWdodClgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xETkV8XSouIElmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZ8XSouJylAXSoqCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCkZvciBhIG51bWVyaWNhbCBhcHByb3hpbWF0aW9uLCBtYWtlIGEgdGFibGU6Cgo+PiBbQERhdGFUYWJsZShbW1tQR01MKCdbYHhgXScpLG1pZHJ1bGU9PicxJyxyb3djc3M9Pidib3JkZXItYm90dG9tOjJweCBzb2xpZDsnLF0sW1BHTUwoJ1tgWyRmXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzBdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFswXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsxXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMV1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMl1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzJdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzNdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFszXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls0XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNF1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bNV1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzVdXWBdJyksXSxdLF0sYWxpZ249PidsbCcsY2VudGVyPT4wLCk7QF0qIDw8CgpGb3IgYSBncmFwaGljYWwgYXBwcm94aW1hdGlvbjoKCj4+IFtAaW1hZ2UoaW5zZXJ0R3JhcGgoJGltYWdlXzE1KSwgd2lkdGg9PjYwMClAXSogIDw8CgpJdCBhcHBlYXJzIHRoYXQgd2hlbiBbYHhgXSBpcyBjbG9zZSB0byBbYFskYV1cdGV4dHssfWBdIHRoYXQgW2BbJGZdYF0gaXMgY2xvc2UgdG8gW2BbJGxdXHRleHR7Ln1gXSBTbyBbYFxsaW1fe3hcdG8gWyRhXX1cbGVmdChbJGZdXHJpZ2h0KT1bJGxdXHRleHR7Ln1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-106"><span class="process-math">\(\lim\limits_{x\to 1}\left({x^{3}+4x^{2}-4x+2}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-8')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-9"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-9" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="9" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdjaG9pY2VtYWNyb3MucGwiLCJQR3Rpa3oucGwiLCJQQ0NtYWNyb3MucGwiLCJBUEVYLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskYSA9IDA7CigkYiwkYykgPSAoLTUuLi0xLDEuLjUpW05jaG9vc2VLKDEwLDIpXTsKaWYgKCRlbnZpcntwcm9ibGVtU2VlZH0gPT0gMSl7CiAgKCRiLCRjKSA9ICgtMSwtMyk7Cn07CigkbGVmdCwkcmlnaHQpID0gbnVtX3NvcnQoMCwkYyk7CiMgZm9yIGdyYXBoaW5nCiR4bWluID0gJGxlZnQgLSAyOwokeG1heCA9ICRyaWdodCArIDI7CkBkID0gKCRsZWZ0IC0gMC4wMSwgJGxlZnQgKyAwLjAxLCAkcmlnaHQgLSAwLjAxLCAkcmlnaHQgKyAwLjAxKTsKJGYgPSBGb3JtdWxhKCIoeCAtICRiKS8oeF4yIC0gJGMgeCkiKS0+cmVkdWNlOwokbCA9IENvbXB1dGUoIkRORSIpOwpAdGFiaW4gPSAoJGEgLSAwLjEsICRhIC0gMC4wMSwgJGEgLSAwLjAwMSwgJGEgKyAwLjAwMSwgJGEgKyAwLjAxLCAkYSArIDAuMSk7CkB0YWJvdXQgPSBtYXB7JGYtPmV2YWwoeCA9PiAkXyl9IChAdGFiaW4pOwokaW1hZ2VfMTYgPSBjcmVhdGVUaWtaSW1hZ2UoKTsKJGltYWdlXzE2LT5hZGRUb1ByZWFtYmxlKGxhdGV4SW1hZ2VQcmVhbWJsZSgpKTsKJGltYWdlXzE2LT5CRUdJTl9USUtaClxiZWdpbntheGlzfVsKICAgIGdyaWQ9Ym90aCwKICAgIHhtaW49JHhtaW4sCiAgICB4bWF4PSR4bWF4LAogICAgeW1pbj0tMjUsCiAgICB5bWF4PTI1LAogIF0KICBcYWRkcGxvdFtmaXJzdGN1cnZlc3R5bGUsIGRvbWFpbj0keG1pbjokZFswXV0geyRmfTsKICBcYWRkcGxvdFtmaXJzdGN1cnZlc3R5bGUsIGRvbWFpbj0kZFsxXTokZFsyXV0geyRmfTsKICBcYWRkcGxvdFtmaXJzdGN1cnZlc3R5bGUsIGRvbWFpbj0kZFszXTokeG1heF0geyRmfTsKICBcYWRkcGxvdFthc3ltcHRvdGVdIGNvb3JkaW5hdGVzIHsoJGxlZnQsLTI1KSAoJGxlZnQsMjUpfTsKICBcYWRkcGxvdFthc3ltcHRvdGVdIGNvb3JkaW5hdGVzIHsoJHJpZ2h0LC0yNSkgKCRyaWdodCwyNSl9OwpcZW5ke2F4aXN9CgpFTkRfVElLWgoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19XGxlZnQoWyRmXVxyaWdodClgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xETkV8XSouIElmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZ8XSouJylAXSoqCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCkZvciBhIG51bWVyaWNhbCBhcHByb3hpbWF0aW9uLCBtYWtlIGEgdGFibGU6Cgo+PiBbQERhdGFUYWJsZShbW1tQR01MKCdbYHhgXScpLG1pZHJ1bGU9PicxJyxyb3djc3M9Pidib3JkZXItYm90dG9tOjJweCBzb2xpZDsnLF0sW1BHTUwoJ1tgWyRmXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzBdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFswXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsxXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMV1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMl1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzJdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzNdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFszXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls0XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNF1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bNV1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzVdXWBdJyksXSxdLF0sYWxpZ249PidsbCcsY2VudGVyPT4wLCk7QF0qIDw8CgpGb3IgYSBncmFwaGljYWwgYXBwcm94aW1hdGlvbjoKCj4+IFtAaW1hZ2UoaW5zZXJ0R3JhcGgoJGltYWdlXzE2KSwgd2lkdGg9PjYwMClAXSogIDw8CgpJdCBhcHBlYXJzIHRoYXQgd2hlbiBbYHhgXSBpcyBjbG9zZSB0byBbYFskYV1cdGV4dHssfWBdIHRoYXQgW2BbJGZdYF0gZ3Jvd3Mgd2l0aG91dCBib3VuZC4gU28gW2BcbGltX3t4XHRvIFskYV19XGxlZnQoWyRmXVxyaWdodClgXSBkb2VzIG5vdCBleGlzdCAoRE5FKS4KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-111"><span class="process-math">\(\lim\limits_{x\to 0}\left({\frac{x-5}{x^{2}-4x}}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-9')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-10"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-10" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="10" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdjaG9pY2VtYWNyb3MucGwiLCJQR3Rpa3oucGwiLCJQQ0NtYWNyb3MucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJBUEVYLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CigkYSwkYiwkYykgPSAoLTUuLi0xLDEuLjUpW05jaG9vc2VLKDEwLDMpXTsKaWYgKCRlbnZpcntwcm9ibGVtU2VlZH0gPT0gMSl7CiAgKCRhLCRiLCRjKSA9ICgzLC0xLDEpOwp9OwokZiA9IEZvcm11bGEoIih4XjIgLSAoJGEgKyAkYil4ICsgJGEqJGIpLyh4XjIgLSAoJGEgKyAkYyl4ICsgJGEqJGMpIiktPnJlZHVjZTsKKCRsZWZ0LCRyaWdodCkgPSBudW1fc29ydCgkYSwkYyk7CiMgZm9yIGdyYXBoaW5nCkBkID0gKCRjIC0gMC4wMSwgJGMgKyAwLjAxKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJGwgPSBGcmFjdGlvbigoJGEgLSAkYikvKCRhIC0gJGMpKTsKJGxyZWFsPSAoJGEgLSAkYikvKCRhIC0gJGMpOwpAdGFiaW4gPSAoJGEgLSAwLjEsICRhIC0gMC4wMSwgJGEgLSAwLjAwMSwgJGEgKyAwLjAwMSwgJGEgKyAwLjAxLCAkYSArIDAuMSk7CkB0YWJvdXQgPSBtYXB7JGYtPmV2YWwoeCA9PiAkXyl9IChAdGFiaW4pOwokeG1pbiA9IC1hYnMoJGEpIC0gMjsKJHhtYXggPSBhYnMoJGEpICsgMjsKJHhtaWQxID0gJGMgLSAwLjAxOwokeG1pZDIgPSAkYyArIDAuMDE7CiR5bWluID0gLWNlaWwoYWJzKFJlYWwoJGwpKSkgLSAyOwokeW1heCA9IGNlaWwoYWJzKFJlYWwoJGwpKSkgKyAyOwokaW1hZ2VfMTcgPSBjcmVhdGVUaWtaSW1hZ2UoKTsKJGltYWdlXzE3LT5hZGRUb1ByZWFtYmxlKGxhdGV4SW1hZ2VQcmVhbWJsZSgpKTsKJGltYWdlXzE3LT5CRUdJTl9USUtaClxiZWdpbntheGlzfVsKICAgIGdyaWQ9Ym90aCwKICAgIHhtaW49JHhtaW4sCiAgICB4bWF4PSR4bWF4LAogICAgeW1pbj0keW1pbiwKICAgIHltYXg9JHltYXgsCiAgXQogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgZG9tYWluPSR4bWluOiRkWzBdXSB7JGZ9OwogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgZG9tYWluPSRkWzFdOiR4bWF4XSB7JGZ9OwogIFxhZGRwbG90W2FzeW1wdG90ZV0gY29vcmRpbmF0ZXMgeygkYywkeW1pbikgKCRjLCR5bWF4KX07CiAgXGFkZHBsb3RbaG9sbG93ZG90XSBjb29yZGluYXRlcyB7KCRhLCRscmVhbCl9OwpcZW5ke2F4aXN9CgpFTkRfVElLWgoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19XGxlZnQoWyRmXVxyaWdodClgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xETkV8XSouIElmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZ8XSouJylAXSoqCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCkZvciBhIG51bWVyaWNhbCBhcHByb3hpbWF0aW9uLCBtYWtlIGEgdGFibGU6Cgo+PiBbQERhdGFUYWJsZShbW1tQR01MKCdbYHhgXScpLG1pZHJ1bGU9PicxJyxyb3djc3M9Pidib3JkZXItYm90dG9tOjJweCBzb2xpZDsnLF0sW1BHTUwoJ1tgWyRmXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzBdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFswXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsxXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMV1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMl1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzJdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzNdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFszXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls0XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNF1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bNV1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzVdXWBdJyksXSxdLF0sYWxpZ249PidsbCcsY2VudGVyPT4wLCk7QF0qIDw8CgpGb3IgYSBncmFwaGljYWwgYXBwcm94aW1hdGlvbjoKCj4+IFtAaW1hZ2UoaW5zZXJ0R3JhcGgoJGltYWdlXzE3KSwgd2lkdGg9PjYwMClAXSogIDw8CgpJdCBhcHBlYXJzIHRoYXQgd2hlbiBbYHhgXSBpcyBjbG9zZSB0byBbYFskYV1cdGV4dHssfWBdIHRoYXQgW2BbJGZdYF0gaXMgY2xvc2UgdG8gW2BbJGxdXHRleHR7Ln1gXSBTbyBbYFxsaW1fe3hcdG8gWyRhXX1cbGVmdChbJGZdXHJpZ2h0KT1bJGxdXHRleHR7Ln1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-116"><span class="process-math">\(\lim\limits_{x\to -4}\left({\frac{x^{2}+2x-8}{x^{2}-x-20}}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-10')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-11"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<div id="webwork-11" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="11" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdjaG9pY2VtYWNyb3MucGwiLCJQR3Rpa3oucGwiLCJQQ0NtYWNyb3MucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJBUEVYLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CigkYSwkYykgPSAoLTUuLi0xLDEuLjUpW05jaG9vc2VLKDEwLDIpXTsKJGIgPSBsaXN0X3JhbmRvbSgtOS4uLTYsNi4uOSk7CmlmICgkZW52aXJ7cHJvYmxlbVNlZWR9ID09IDEpewogICgkYSwkYiwkYykgPSAoLTEsLTcsLTUpOwp9OwokZiA9IEZvcm11bGEoIih4XjIgLSAoJGEgKyAkYil4ICsgJGEqJGIpLyh4XjIgLSAoJGEgKyAkYyl4ICsgJGEqJGMpIiktPnJlZHVjZTsKKCRsZWZ0LCRyaWdodCkgPSBudW1fc29ydCgkYSwkYyk7CiMgZm9yIGdyYXBoaW5nCkBkID0gKCRjIC0gMC4wMSwgJGMgKyAwLjAxKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJGwgPSBGcmFjdGlvbigoJGEgLSAkYikvKCRhIC0gJGMpKTsKJGxyZWFsID0gKCRhIC0gJGIpLygkYSAtICRjKTsKQHRhYmluID0gKCRhIC0gMC4xLCAkYSAtIDAuMDEsICRhIC0gMC4wMDEsICRhICsgMC4wMDEsICRhICsgMC4wMSwgJGEgKyAwLjEpOwpAdGFib3V0ID0gbWFweyRmLT5ldmFsKHggPT4gJF8pfSAoQHRhYmluKTsKJHhtaW4gPSAkbGVmdCAtIDI7CiR4bWF4ID0gJHJpZ2h0ICsgMjsKJHhtaWQxID0gJGMgLSAwLjAxOwokeG1pZDIgPSAkYyArIDAuMDE7CiR5bWluID0gLWNlaWwoYWJzKFJlYWwoJGwpKSkgLSAyOwokeW1heCA9IGNlaWwoYWJzKFJlYWwoJGwpKSkgKyAyOwokaW1hZ2VfMTggPSBjcmVhdGVUaWtaSW1hZ2UoKTsKJGltYWdlXzE4LT5hZGRUb1ByZWFtYmxlKGxhdGV4SW1hZ2VQcmVhbWJsZSgpKTsKJGltYWdlXzE4LT5CRUdJTl9USUtaClxiZWdpbntheGlzfVsKICAgIGdyaWQ9Ym90aCwKICAgIHhtaW49JHhtaW4sCiAgICB4bWF4PSR4bWF4LAogICAgeW1pbj0keW1pbiwKICAgIHltYXg9JHltYXgsCiAgXQogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgZG9tYWluPSR4bWluOiRkWzBdXSB7JGZ9OwogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgZG9tYWluPSRkWzFdOiR4bWF4XSB7JGZ9OwogIFxhZGRwbG90W2FzeW1wdG90ZV0gY29vcmRpbmF0ZXMgeygkYywkeW1pbikgKCRjLCR5bWF4KX07CiAgXGFkZHBsb3RbaG9sbG93ZG90XSBjb29yZGluYXRlcyB7KCRhLCRscmVhbCl9OwpcZW5ke2F4aXN9CgpFTkRfVElLWgoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19XGxlZnQoWyRmXVxyaWdodClgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xETkV8XSouIElmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZ8XSouJylAXSoqCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCkZvciBhIG51bWVyaWNhbCBhcHByb3hpbWF0aW9uLCBtYWtlIGEgdGFibGU6Cgo+PiBbQERhdGFUYWJsZShbW1tQR01MKCdbYHhgXScpLG1pZHJ1bGU9PicxJyxyb3djc3M9Pidib3JkZXItYm90dG9tOjJweCBzb2xpZDsnLF0sW1BHTUwoJ1tgWyRmXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzBdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFswXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsxXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMV1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMl1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzJdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzNdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFszXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls0XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNF1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bNV1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzVdXWBdJyksXSxdLF0sYWxpZ249PidsbCcsY2VudGVyPT4wLCk7QF0qIDw8CgpGb3IgYSBncmFwaGljYWwgYXBwcm94aW1hdGlvbjoKCj4+IFtAaW1hZ2UoaW5zZXJ0R3JhcGgoJGltYWdlXzE4KSwgd2lkdGg9PjYwMClAXSogIDw8CgpJdCBhcHBlYXJzIHRoYXQgd2hlbiBbYHhgXSBpcyBjbG9zZSB0byBbYFskYV1cdGV4dHssfWBdIHRoYXQgW2BbJGZdYF0gaXMgY2xvc2UgdG8gW2BbJGxdXHRleHR7Ln1gXSBTbyBbYFxsaW1fe3hcdG8gWyRhXX1cbGVmdChbJGZdXHJpZ2h0KT1bJGxdXHRleHR7Ln1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-121"><span class="process-math">\(\lim\limits_{x\to -3}\left({\frac{x^{2}+10x+21}{x^{2}+5x+6}}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-11')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-12" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="12" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdjaG9pY2VtYWNyb3MucGwiLCJQR3Rpa3oucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJPbmVPZi5wbCIsIkFQRVgucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOygkYSwkYiwkYykgPSAoLTkuLi0xLDEuLjkpW05jaG9vc2VLKDE4LDMpXTsKaWYgKCRlbnZpcntwcm9ibGVtU2VlZH0gPT0gMSl7CiAgKCRhLCRiLCRjKSA9ICgyLC01LC0yKTsKfTsKJGYgPSBGb3JtdWxhKCIoeF4yLSgkYyskYil4KyRhKiRiKS8oeF4yLSgyKiRhKXgrKCRhKV4yKSIpLT5yZWR1Y2U7CiRsID0gKCgkYS0kYykqKCRhLSRiKSA+IDApID8gT25lT2YoIkRORSIsImluZiIpIDogT25lT2YoIkRORSIsIi1pbmYiKTsKIyBmb3IgZ3JhcGhpbmcKQGQgPSAoJGEgLSAwLjEsICRhICsgMC4xKTsKQHRhYmluID0gKCRhIC0gMC4xLCAkYSAtIDAuMDEsICRhIC0gMC4wMDEsICRhICsgMC4wMDEsICRhICsgMC4wMSwgJGEgKyAwLjEpOwpAdGFib3V0ID0gbWFweyRmLT5ldmFsKHggPT4gJF8pfSAoQHRhYmluKTsKJHhtaW4gPSAtYWJzKCRhKSAtIDI7CiR4bWF4ID0gYWJzKCRhKSArIDI7CiR4bWlkMSA9ICRhIC0gMC4wMTsKJHhtaWQyID0gJGEgKyAwLjAxOwokeW1pbiA9IC0xMDA7CiR5bWF4ID0gMTAwOwokaW1hZ2VfMTkgPSBjcmVhdGVUaWtaSW1hZ2UoKTsKJGltYWdlXzE5LT5hZGRUb1ByZWFtYmxlKGxhdGV4SW1hZ2VQcmVhbWJsZSgpKTsKJGltYWdlXzE5LT5CRUdJTl9USUtaClxiZWdpbntheGlzfVsKICAgIGdyaWQ9Ym90aCwKICAgIHhtaW49JHhtaW4sCiAgICB4bWF4PSR4bWF4LAogICAgeW1pbj0keW1pbiwKICAgIHltYXg9JHltYXgsCiAgXQogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgZG9tYWluPSR4bWluOiRkWzBdLCBzYW1wbGVzPTQwXSB7JGZ9OwogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgZG9tYWluPSRkWzFdOiR4bWF4LCBzYW1wbGVzPTQwXSB7JGZ9OwogIFxhZGRwbG90W2FzeW1wdG90ZV0gY29vcmRpbmF0ZXMgeygkYSwkeW1pbikgKCRhLCR5bWF4KX07ClxlbmR7YXhpc30KCkVORF9USUtaCgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG8gWyRhXX1cbGVmdChbJGZdXHJpZ2h0KWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfERORXxdKi4gSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZnxdKi4nKUBdKioKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KRm9yIGEgbnVtZXJpY2FsIGFwcHJveGltYXRpb24sIG1ha2UgYSB0YWJsZToKCj4+IFtARGF0YVRhYmxlKFtbW1BHTUwoJ1tgeGBdJyksbWlkcnVsZT0+JzEnLHJvd2Nzcz0+J2JvcmRlci1ib3R0b206MnB4IHNvbGlkOycsXSxbUEdNTCgnW2BbJGZdYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMF1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzBdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzFdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsxXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsyXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMl1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bM11dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzNdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzRdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFs0XV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls1XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNV1dYF0nKSxdLF0sXSxhbGlnbj0+J2xsJyxjZW50ZXI9PjAsKTtAXSogPDwKCkZvciBhIGdyYXBoaWNhbCBhcHByb3hpbWF0aW9uOgoKPj4gW0BpbWFnZShpbnNlcnRHcmFwaCgkaW1hZ2VfMTkpLCB3aWR0aD0+NjAwKUBdKiAgPDwKCkl0IGFwcGVhcnMgdGhhdCB3aGVuIFtgeGBdIGlzIGNsb3NlIHRvIFtgWyRhXVx0ZXh0eyx9YF0gdGhhdCBbYFskZl1gXSBncm93cyB3aXRob3V0IGJvdW5kLiBTbyBbYFxsaW1fe3hcdG8gWyRhXX1cbGVmdChbJGZdXHJpZ2h0KWBdIGRvZXMgbm90IGV4aXN0IChETkUpLgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-126"><span class="process-math">\(\lim\limits_{x\to -4}\left({\frac{x^{2}-13x-32}{x^{2}+8x+16}}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-12')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div id="webwork-13" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="13" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEd0aWt6LnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dFBpZWNld2lzZUZ1bmN0aW9uLnBsIiwiQVBFWC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokYSA9IG5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpOwokYiA9IG5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpOwokYyA9IGxpc3RfcmFuZG9tKC00Li4tMSwyLi40KTsKJGRpZmYgPSBub25femVyb19yYW5kb20oLTMsMywxKTsKJGQgPSAkYSArICRiIC0gKCRjKiRhKSAtICRkaWZmOwppZiAoJGVudmlye3Byb2JsZW1TZWVkfSA9PSAxKXsKICAoJGEsJGIsJGMsJGQpID0gKDIsMiwzLC01KTsKfTsKJGYxID0gRm9ybXVsYSgieCArICRiIiktPnJlZHVjZTsKJGYyID0gRm9ybXVsYSgiJGMqeCArICRkIiktPnJlZHVjZTsKQ29udGV4dCgiUGllY2V3aXNlRnVuY3Rpb24iKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHRvbFR5cGU9PiJhYnNvbHV0ZSIsdG9sZXJhbmNlID0+IDAuMDAwMDEpOwokZiA9IFBpZWNld2lzZUZ1bmN0aW9uKCJ4IDw9ICRhIiA9PiAiJGYxIiwgInggPiAkYSIgPT4gIiRmMiIpOwokbCA9IENvbXB1dGUoIkRORSIpOwpAdGFiaW4gPSAoJGEgLSAwLjEsICRhIC0gMC4wMSwgJGEgLSAwLjAwMSwgJGEgKyAwLjAwMSwgJGEgKyAwLjAxLCAkYSArIDAuMSk7CkB0YWJvdXQgPSBtYXB7JGYtPmV2YWwoeCA9PiAkXyl9IChAdGFiaW4pOwokeG1pbiA9IC1hYnMoJGEpIC0gMjsKJHhtYXggPSBhYnMoJGEpICsgMjsKJGltYWdlXzIwID0gY3JlYXRlVGlrWkltYWdlKCk7CiRpbWFnZV8yMC0+YWRkVG9QcmVhbWJsZShsYXRleEltYWdlUHJlYW1ibGUoKSk7CiRpbWFnZV8yMC0+QkVHSU5fVElLWgpcYmVnaW57YXhpc31bCiAgICBncmlkPWJvdGgsCiAgICB4bWluPSR4bWluLAogICAgeG1heD0keG1heCwKICBdCiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBkb21haW49JHhtaW46JGEsIGluZmluaXRlb3Blbl0geyRmMX07CiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBkb21haW49JGE6JHhtYXgsIGNsb3NlZGluZmluaXRlXSB7JGYyfTsKXGVuZHtheGlzfQoKRU5EX1RJS1oKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfWYoeClcdGV4dHssfWBdIHdoZXJlIFtgZih4KT1bJGZdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBsaW1pdCBkb2VzIG5vdCBleGlzdCwgeW91IG1heSB0eXBlIFt8RE5FfF0qLiBJZiB5b3UgbmVlZCB0byBlbnRlciBbYFxpbmZ0eVx0ZXh0eyx9YF0geW91IG1heSB0eXBlIFt8aW5mfF0qLicpQF0qKgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpGb3IgYSBudW1lcmljYWwgYXBwcm94aW1hdGlvbiwgbWFrZSBhIHRhYmxlOgoKPj4gW0BEYXRhVGFibGUoW1tbUEdNTCgnW2B4YF0nKSxtaWRydWxlPT4nMScscm93Y3NzPT4nYm9yZGVyLWJvdHRvbToycHggc29saWQ7JyxdLFtQR01MKCdbYFskZl1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblswXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMF1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMV1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzFdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzJdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsyXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblszXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbM11dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bNF1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzRdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzVdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFs1XV1gXScpLF0sXSxdLGFsaWduPT4nbGwnLGNlbnRlcj0+MCwpO0BdKiA8PAoKRm9yIGEgZ3JhcGhpY2FsIGFwcHJveGltYXRpb246Cgo+PiBbQGltYWdlKGluc2VydEdyYXBoKCRpbWFnZV8yMCksIHdpZHRoPT42MDApQF0qICA8PAoKSXQgYXBwZWFycyB0aGF0IHdoZW4gW2B4YF0gaXMgY2xvc2UgdG8gW2BbJGFdXHRleHR7LH1gXSB0aGF0IFtgZih4KWBdIGFwcHJvYWNoZXMgZGlmZmVyZW50IHZhbHVlcyBmcm9tIHRoZSBsZWZ0IGFuZCByaWdodC4gU28gW2BcbGltX3t4XHRvIFskYV19Zih4KWBdIGRvZXMgbm90IGV4aXN0LgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-131"><span class="process-math">\(\lim\limits_{x\to -1}f(x)\text{,}\)</span> where <span class="process-math">\(f(x)={\begin{cases}\displaystyle{x+1}\amp \text{if}\ x \le -1\cr
+\displaystyle{-\left(3x+4\right)}\amp \text{if}\ x &gt; -1\end{cases}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-13')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-14" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="14" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEd0aWt6LnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dFBpZWNld2lzZUZ1bmN0aW9uLnBsIiwiQVBFWC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpkbyB7CiAgJGEgPSBub25femVyb19yYW5kb20oLTMsMywxKTsKICAkYiA9IHJhbmRvbSgtNCwtMSwxKTsKICAkYyA9IG5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpOwogICRkID0gbm9uX3plcm9fcmFuZG9tKC0zLDMsMSk7CiAgaWYgKCRlbnZpcntwcm9ibGVtU2VlZH0gPT0gMSl7CiAgICAoJGEsJGIsJGMsJGQpID0gKDMsLTEsMSwyKTsKICB9OwogICRlID0gJGEqKjIgKyAkYiokYSArICRjIC0gJGQqJGE7CiAgJGYxID0gRm9ybXVsYSgieF4yKyRiKngrJGMiKS0+cmVkdWNlOwogICRmMiA9IEZvcm11bGEoIiRkKngrJGUiKS0+cmVkdWNlOwogIENvbnRleHQoIlBpZWNld2lzZUZ1bmN0aW9uIik7CiAgQ29udGV4dCgpLT5mbGFncy0+c2V0KHRvbFR5cGU9PiJhYnNvbHV0ZSIsdG9sZXJhbmNlID0+IDAuMDAwMDEpOwogICRmID0gUGllY2V3aXNlRnVuY3Rpb24oInggPD0gJGEiID0+ICIkZjEiLCAieCA+ICRhIiA9PiAiJGYyIik7CiAgJGwgPSAkZjEtPmV2YWwoeCA9PiAkYSk7Cn0gdW50aWwgKCRsIT0wKTsKQHRhYmluID0gKCRhIC0gMC4xLCAkYSAtIDAuMDEsICRhIC0gMC4wMDEsICRhICsgMC4wMDEsICRhICsgMC4wMSwgJGEgKyAwLjEpOwpAdGFib3V0ID0gbWFweyRmLT5ldmFsKHggPT4gJF8pfSAoQHRhYmluKTsKJHhtaW4gPSAtNDsKJHhtYXggPSA0OwokaW1hZ2VfMjEgPSBjcmVhdGVUaWtaSW1hZ2UoKTsKJGltYWdlXzIxLT5hZGRUb1ByZWFtYmxlKGxhdGV4SW1hZ2VQcmVhbWJsZSgpKTsKJGltYWdlXzIxLT5CRUdJTl9USUtaClxiZWdpbntheGlzfVsKICAgIGdyaWQ9Ym90aCwKICAgIHhtaW49JHhtaW4sCiAgICB4bWF4PSR4bWF4LAogIF0KICBcYWRkcGxvdFtmaXJzdGN1cnZlc3R5bGUsIGRvbWFpbj0keG1pbjokYSwgaW5maW5pdGVsZWZ0XSB7JGYxfTsKICBcYWRkcGxvdFtmaXJzdGN1cnZlc3R5bGUsIGRvbWFpbj0kYTokeG1heCwgaW5maW5pdGVyaWdodF0geyRmMn07CiAgJSBCZSBzdXJlIHRvIGluY2x1ZGUgc29tZSBhcmVhIGFib3ZlIGFuZCBiZWxvdyB4LWF4aXMKICBcYWRkcGxvdFttYXJrPW5vbmVdIGNvb3JkaW5hdGVzIHsoMCw1KSAoMCwtNSl9OwpcZW5ke2F4aXN9CgpFTkRfVElLWgoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19Zih4KVx0ZXh0eyx9YF0gd2hlcmUgW2BmKHgpPVskZl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xETkV8XSouIElmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZ8XSouJylAXSoqCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCkZvciBhIG51bWVyaWNhbCBhcHByb3hpbWF0aW9uLCBtYWtlIGEgdGFibGU6Cgo+PiBbQERhdGFUYWJsZShbW1tQR01MKCdbYHhgXScpLG1pZHJ1bGU9PicxJyxyb3djc3M9Pidib3JkZXItYm90dG9tOjJweCBzb2xpZDsnLF0sW1BHTUwoJ1tgWyRmXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzBdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFswXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsxXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMV1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMl1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzJdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzNdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFszXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls0XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNF1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bNV1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzVdXWBdJyksXSxdLF0sYWxpZ249PidsbCcsY2VudGVyPT4wLCk7QF0qIDw8CgpGb3IgYSBncmFwaGljYWwgYXBwcm94aW1hdGlvbjoKCj4+IFtAaW1hZ2UoaW5zZXJ0R3JhcGgoJGltYWdlXzIxKSwgd2lkdGg9PjYwMClAXSogIDw8CgpJdCBhcHBlYXJzIHRoYXQgd2hlbiBbYHhgXSBpcyBjbG9zZSB0byBbYFskYV1cdGV4dHssfWBdIHRoYXQgW2BmKHgpYF0gYXBwcm9hY2hlcyBbJGxdLiBTbyBbYFxsaW1fe3hcdG8gWyRhXX1mKHgpPVskbF1cdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-136"><span class="process-math">\(\lim\limits_{x\to -2}f(x)\text{,}\)</span> where <span class="process-math">\(f(x)={\begin{cases}\displaystyle{x^{2}-2x-2}\amp \text{if}\ x \le -2\cr
+\displaystyle{2x+10}\amp \text{if}\ x &gt; -2\end{cases}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-14')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-15"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-15" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="15" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEd0aWt6LnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dFBpZWNld2lzZUZ1bmN0aW9uLnBsIiwiQVBFWC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokYT0wOwokYiA9IG5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpOwppZiAoJGVudmlye3Byb2JsZW1TZWVkfSA9PSAxKXsKICAkYiA9IDM7Cn07CiRmMSA9IEZvcm11bGEoImNvcyh4KSIpLT5yZWR1Y2U7CiRmMiA9IEZvcm11bGEoInheMiskYip4KzEiKS0+cmVkdWNlOwpDb250ZXh0KCJQaWVjZXdpc2VGdW5jdGlvbiIpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQodG9sVHlwZT0+ImFic29sdXRlIix0b2xlcmFuY2UgPT4gMC4wMDAwMSk7CiRmID0gUGllY2V3aXNlRnVuY3Rpb24oInggPD0gJGEiID0+ICIkZjEiLCAieCA+ICRhIiA9PiAiJGYyIik7CiRsID0gJGYxLT5ldmFsKHggPT4gJGEpOwpAdGFiaW4gPSAoJGEgLSAwLjEsICRhIC0gMC4wMSwgJGEgLSAwLjAwMSwgJGEgKyAwLjAwMSwgJGEgKyAwLjAxLCAkYSArIDAuMSk7CkB0YWJvdXQgPSBtYXB7JGYtPmV2YWwoeCA9PiAkXyl9IChAdGFiaW4pOwokeG1pbiA9IC0zOwokeG1heCA9IDM7CiRpbWFnZV8yMiA9IGNyZWF0ZVRpa1pJbWFnZSgpOwokaW1hZ2VfMjItPmFkZFRvUHJlYW1ibGUobGF0ZXhJbWFnZVByZWFtYmxlKCkpOwokaW1hZ2VfMjItPkJFR0lOX1RJS1oKXGJlZ2lue2F4aXN9WwogICAgZ3JpZD1ib3RoLAogICAgeG1pbj0keG1pbiwKICAgIHhtYXg9JHhtYXgsCiAgXQogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgZG9tYWluPSR4bWluOiRhLCBpbmZpbml0ZWxlZnRdIHtjb3MoeCoxODAvcGkpfTsKICBcYWRkcGxvdFtmaXJzdGN1cnZlc3R5bGUsIGRvbWFpbj0kYTokeG1heCwgaW5maW5pdGVyaWdodF0geyRmMn07CiAgJSBCZSBzdXJlIHRvIGluY2x1ZGUgc29tZSBhcmVhIGFib3ZlIGFuZCBiZWxvdyB4LWF4aXMKICBcYWRkcGxvdFttYXJrPW5vbmVdIGNvb3JkaW5hdGVzIHsoMCwyKSAoMCwtMil9OwpcZW5ke2F4aXN9CgpFTkRfVElLWgoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIFskYV19Zih4KVx0ZXh0eyx9YF0gd2hlcmUgW2BmKHgpPVskZl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xETkV8XSouIElmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZ8XSouJylAXSoqCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCkZvciBhIG51bWVyaWNhbCBhcHByb3hpbWF0aW9uLCBtYWtlIGEgdGFibGU6Cgo+PiBbQERhdGFUYWJsZShbW1tQR01MKCdbYHhgXScpLG1pZHJ1bGU9PicxJyxyb3djc3M9Pidib3JkZXItYm90dG9tOjJweCBzb2xpZDsnLF0sW1BHTUwoJ1tgWyRmXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzBdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFswXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsxXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMV1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMl1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzJdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzNdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFszXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls0XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNF1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bNV1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzVdXWBdJyksXSxdLF0sYWxpZ249PidsbCcsY2VudGVyPT4wLCk7QF0qIDw8CgpGb3IgYSBncmFwaGljYWwgYXBwcm94aW1hdGlvbjoKCj4+IFtAaW1hZ2UoaW5zZXJ0R3JhcGgoJGltYWdlXzIyKSwgd2lkdGg9PjYwMClAXSogIDw8CgpJdCBhcHBlYXJzIHRoYXQgd2hlbiBbYHhgXSBpcyBjbG9zZSB0byBbYFskYV1cdGV4dHssfWBdIHRoYXQgW2BmKHgpYF0gYXBwcm9hY2hlcyBbJGxdLiBTbyBbYFxsaW1fe3hcdG8gWyRhXX1mKHgpPVskbF1cdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-141"><span class="process-math">\(\lim\limits_{x\to 0}f(x)\text{,}\)</span> where <span class="process-math">\(f(x)={\begin{cases}\displaystyle{\cos\!\left(x\right)}\amp \text{if}\ x \le 0\cr
+\displaystyle{x^{2}+2x+1}\amp \text{if}\ x &gt; 0\end{cases}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-15')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-16"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-16" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="16" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEd0aWt6LnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dFBpZWNld2lzZUZ1bmN0aW9uLnBsIiwiQVBFWC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGd0fXs+fVxuZXdjb21tYW5ke1xhbXB9eyZ9XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHMgPT4gMCk7CiRhID0gbGlzdF9yYW5kb20oRm9ybXVsYSgicGkvMiIpLEZvcm11bGEoInBpLzMiKSxGb3JtdWxhKCJwaS82IikpOwppZiAoJGVudmlye3Byb2JsZW1TZWVkfSA9PSAxKXsKICAkYSA9IEZvcm11bGEoInBpLzIiKQp9OwokZjE9Rm9ybXVsYSgic2luKHgpIiktPnJlZHVjZTsKJGYyPUZvcm11bGEoImNvcyh4KSIpLT5yZWR1Y2U7CkNvbnRleHQoIlBpZWNld2lzZUZ1bmN0aW9uIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldCh0b2xUeXBlPT4iYWJzb2x1dGUiLHRvbGVyYW5jZSA9PiAwLjAwMDAxKTsKJGFyZWFsID0gJGEtPmV2YWwoeCA9PiAwKTsKJGYgPSBQaWVjZXdpc2VGdW5jdGlvbigieCA8PSAkYXJlYWwiID0+ICIkZjEiLCAieCA+ICRhcmVhbCIgPT4gIiRmMiIpOwokbCA9IENvbXB1dGUoIkRORSIpOwpAdGFiaW4gPSAoJGEgLSAwLjEsICRhIC0gMC4wMSwgJGEgLSAwLjAwMSwgJGEgKyAwLjAwMSwgJGEgKyAwLjAxLCAkYSArIDAuMSk7CkB0YWJvdXQgPSBtYXB7JGYtPmV2YWwoeCA9PiAkXy0+ZXZhbCh4ID0+IDApKX0gKEB0YWJpbik7CiR4bWluID0gLTE7CiR4bWF4ID0gMzsKJGltYWdlXzIzID0gY3JlYXRlVGlrWkltYWdlKCk7CiRpbWFnZV8yMy0+YWRkVG9QcmVhbWJsZShsYXRleEltYWdlUHJlYW1ibGUoKSk7CiRpbWFnZV8yMy0+QkVHSU5fVElLWgpcYmVnaW57YXhpc31bCiAgICBncmlkPWJvdGgsCiAgICB4bWluPSR4bWluLAogICAgeG1heD0keG1heCwKICBdCiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBkb21haW49JHhtaW46JGEsIGluZmluaXRlb3Blbl0ge3Npbih4KjE4MC9waSl9OwogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgZG9tYWluPSRhOiR4bWF4LCBjbG9zZWRpbmZpbml0ZV0ge2Nvcyh4KjE4MC9waSl9OwogICUgQmUgc3VyZSB0byBpbmNsdWRlIHNvbWUgYXJlYSBhYm92ZSBhbmQgYmVsb3cgeC1heGlzCiAgXGFkZHBsb3RbbWFyaz1ub25lXSBjb29yZGluYXRlcyB7KDAsMikgKDAsLTIpfTsKXGVuZHtheGlzfQoKRU5EX1RJS1oKCkJFR0lOX1BHTUwKW2BcbGltXGxpbWl0c197eFx0byBbJGFdfWYoeClcdGV4dHssfWBdIHdoZXJlIFtgZih4KT1cYmVnaW57Y2FzZXN9XHNpbih4KVxhbXAgeFxsZXEgWyRhXVxcXGNvcyh4KVxhbXAgeFxndCBbJGFdXGVuZHtjYXNlc31gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xETkV8XSouIElmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZ8XSouJylAXSoqCgpbX117JGx9ezEwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCkZvciBhIG51bWVyaWNhbCBhcHByb3hpbWF0aW9uLCBtYWtlIGEgdGFibGU6Cgo+PiBbQERhdGFUYWJsZShbW1tQR01MKCdbYHhgXScpLG1pZHJ1bGU9PicxJyxyb3djc3M9Pidib3JkZXItYm90dG9tOjJweCBzb2xpZDsnLF0sW1BHTUwoJ1tgWyRmXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzBdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFswXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsxXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMV1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMl1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzJdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzNdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFszXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls0XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNF1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bNV1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzVdXWBdJyksXSxdLF0sYWxpZ249PidsbCcsY2VudGVyPT4wLCk7QF0qIDw8CgpGb3IgYSBncmFwaGljYWwgYXBwcm94aW1hdGlvbjoKCj4+IFtAaW1hZ2UoaW5zZXJ0R3JhcGgoJGltYWdlXzIzKSwgd2lkdGg9PjYwMClAXSogIDw8CgpJdCBhcHBlYXJzIHRoYXQgd2hlbiBbYHhgXSBpcyBjbG9zZSB0byBbYFskYV1cdGV4dHssfWBdIHRoYXQgW2BmKHgpYF0gYXBwcm9hY2hlcyBkaWZmZXJlbnQgdmFsdWVzIGZyb20gdGhlIGxlZnQgYW5kIHJpZ2h0LiBTbyBbYFxsaW1fe3hcdG8gWyRhXX1mKHgpYF0gZG9lcyBub3QgZXhpc3QuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-146"><span class="process-math">\(\lim\limits_{x\to {\frac{\pi }{6}}}f(x)\text{,}\)</span> where <span class="process-math">\(f(x)=\begin{cases}\sin(x)\amp x\leq {\frac{\pi }{6}}\\\cos(x)\amp x\gt {\frac{\pi }{6}}\end{cases}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-16')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-17"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-17" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="17" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEd0aWt6LnBsIiwiUENDbWFjcm9zLnBsIiwiQVBFWC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JGYgPSBGb3JtdWxhKCJhYnMoeCleeCIpOwokYSA9IDA7CiRsID0gMTsKQHRhYmluID0gKCRhIC0gMC4xLCAkYSAtIDAuMDEsICRhIC0gMC4wMDEsICRhICsgMC4wMDEsICRhICsgMC4wMSwgJGEgKyAwLjEpOwpAdGFib3V0ID0gbWFweyRmLT5ldmFsKHggPT4gJF8pfSAoQHRhYmluKTsKJGltYWdlXzI0ID0gY3JlYXRlVGlrWkltYWdlKCk7CiRpbWFnZV8yNC0+YWRkVG9QcmVhbWJsZShsYXRleEltYWdlUHJlYW1ibGUoKSk7CiRpbWFnZV8yNC0+QkVHSU5fVElLWgpcYmVnaW57YXhpc31bCiAgICBncmlkPWJvdGgsCiAgICB5bWluPS0xLAogICAgeW1heD0yLAogIF0KICBcYWRkcGxvdCtbZG9tYWluPS0xLjU6LTAuMDAxLCBpbmZpbml0ZW9wZW5dIHsoLXgpXnh9OwogIFxhZGRwbG90K1tkb21haW49MC4wMDE6MS41LCBvcGVuaW5maW5pdGVdIHt4Xnh9OwpcZW5ke2F4aXN9CgpFTkRfVElLWgoKQkVHSU5fUEdNTApbYFxsaW1cbGltaXRzX3t4XHRvIDB9XGx2ZXJ0IHhccnZlcnReeGBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfERORXxdKi4gSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZnxdKi4nKUBdKioKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KRm9yIGEgbnVtZXJpY2FsIGFwcHJveGltYXRpb24sIG1ha2UgYSB0YWJsZToKCj4+IFtARGF0YVRhYmxlKFtbW1BHTUwoJ1tgeGBdJyksbWlkcnVsZT0+JzEnLHJvd2Nzcz0+J2JvcmRlci1ib3R0b206MnB4IHNvbGlkOycsXSxbUEdNTCgnW2BbJGZdYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMF1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzBdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzFdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsxXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsyXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMl1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bM11dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzNdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzRdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFs0XV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls1XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNV1dYF0nKSxdLF0sXSxhbGlnbj0+J2xsJyxjZW50ZXI9PjAsKTtAXSogPDwKCkZvciBhIGdyYXBoaWNhbCBhcHByb3hpbWF0aW9uOgoKPj4gW0BpbWFnZShpbnNlcnRHcmFwaCgkaW1hZ2VfMjQpLCB3aWR0aD0+NjAwKUBdKiAgPDwKCkl0IGFwcGVhcnMgdGhhdCB3aGVuIFtgeGBdIGlzIGNsb3NlIHRvIFtgMFx0ZXh0eyx9YF0gdGhhdCBbYFxsdmVydCB4IFxydmVydF54YF0gaXMgY2xvc2UgdG8gW2AxXHRleHR7Ln1gXSBTbyBbYFxsaW1fe3hcdG8gMH1cbHZlcnQgeFxydmVydF54PTFcdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-151"><span class="process-math">\(\lim\limits_{x\to 0}\lvert x\rvert^x\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-17')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-18"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-18" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="18" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEd0aWt6LnBsIiwiUENDbWFjcm9zLnBsIiwiQVBFWC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JGYgPSBGb3JtdWxhKCJlXigtZV4oMS94KSkiKTsKJGEgPSAwOwokbCA9IENvbXB1dGUoIkRORSIpOwpAdGFiaW4gPSAoJGEgLSAwLjEsICRhIC0gMC4wMSwgJGEgLSAwLjAwMSwgJGEgKyAwLjAwMSwgJGEgKyAwLjAxLCAkYSArIDAuMSk7CkB0YWJvdXQgPSBtYXB7JGYtPmV2YWwoeCA9PiAkXyl9IChAdGFiaW4pOwokaW1hZ2VfMjUgPSBjcmVhdGVUaWtaSW1hZ2UoKTsKJGltYWdlXzI1LT5hZGRUb1ByZWFtYmxlKGxhdGV4SW1hZ2VQcmVhbWJsZSgpKTsKJGltYWdlXzI1LT5CRUdJTl9USUtaClxiZWdpbntheGlzfVsKICAgIGdyaWQ9Ym90aCwKICAgIHltaW49LTIsCiAgICB5bWF4PTIsCiAgXQogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgZG9tYWluPS0yOi0wLjAwMDEsIGluZmluaXRlb3Blbl0ge2VeKC1lXigxL3gpKX07CiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBkb21haW49MC4yOjIsIGluZmluaXRlcmlnaHRdIHtlXigtZV4oMS94KSl9OwogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgLSwgZG9tYWluPTAuMDAwMTowLjIsIG9wZW5sZWZ0XSB7MH07ClxlbmR7YXhpc30KCkVORF9USUtaCgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG8wfWVeey1lXnsxL3h9fWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfERORXxdKi4gSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZnxdKi4nKUBdKioKCltfXXskbH17MTB9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KRm9yIGEgbnVtZXJpY2FsIGFwcHJveGltYXRpb24sIG1ha2UgYSB0YWJsZToKCj4+IFtARGF0YVRhYmxlKFtbW1BHTUwoJ1tgeGBdJyksbWlkcnVsZT0+JzEnLHJvd2Nzcz0+J2JvcmRlci1ib3R0b206MnB4IHNvbGlkOycsXSxbUEdNTCgnW2BbJGZdYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMF1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzBdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzFdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsxXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsyXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMl1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bM11dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzNdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzRdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFs0XV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls1XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNV1dYF0nKSxdLF0sXSxhbGlnbj0+J2xsJyxjZW50ZXI9PjAsKTtAXSogPDwKCkZvciBhIGdyYXBoaWNhbCBhcHByb3hpbWF0aW9uOgoKPj4gW0BpbWFnZShpbnNlcnRHcmFwaCgkaW1hZ2VfMjUpLCB3aWR0aD0+NjAwKUBdKiAgPDwKCkl0IGFwcGVhcnMgdGhhdCB3aGVuIFtgeGBdIGlzIGNsb3NlIHRvIFtgMFx0ZXh0eyx9YF0gdGhhdCBbYGVeey1lXnsxL3h9fWBdIGFwcHJvYWNoZXMgZGlmZmVyZW50IHZhbHVlcyBmcm9tIHRoZSBsZWZ0IGFuZCByaWdodC4gU28gW2BcbGltX3t4XHRvIDB9ZV57LWVeezEveH19YF0gZG9lcyBub3QgZXhpc3QuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-156"><span class="process-math">\(\lim\limits_{x\to0}e^{-e^{1/x}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-18')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-19"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-19" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="19" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEd0aWt6LnBsIiwiUENDbWFjcm9zLnBsIiwiQVBFWC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JWZhY3QgPSAoMCA9PiAxLCAxID0+IDEsIDIgPT4gMiwgMyA9PiA2LCA0ID0+IDI0LCA1ID0+IDEyMCwgNiA9PiA3MjApOwpzdWIgZiB7CiAgbXkgJHggPSBzaGlmdDsKICByZXR1cm4gJGZhY3R7aW50KGFicygkeCkpfTsKfQokYSA9IGxpc3RfcmFuZG9tKC01Li4tMiwyLi41KTsKJGwgPSAoYWJzKCRhKSA8PSAxKSA/IFJlYWwoMSkgOiBDb21wdXRlKCJETkUiKTsKQHRhYmluID0gKCRhIC0gMC4xLCAkYSAtIDAuMDEsICRhIC0gMC4wMDEsICRhICsgMC4wMDEsICRhICsgMC4wMSwgJGEgKyAwLjEpOwpAdGFib3V0ID0gbWFwe2YoJF8pfSAoQHRhYmluKTsKJHltYXggPSBmKGFicygkYSkrMC41KSsxMDsKJHltaW4gPSBtYXgoLTEwLCAtMSpmKGFicygkYSkrMC41KSk7CiRpbWFnZV8yNiA9IGNyZWF0ZVRpa1pJbWFnZSgpOwokaW1hZ2VfMjYtPmFkZFRvUHJlYW1ibGUobGF0ZXhJbWFnZVByZWFtYmxlKCkpOwokaW1hZ2VfMjYtPkJFR0lOX1RJS1oKXGJlZ2lue2F4aXN9WwogICAgZ3JpZD1ib3RoLAogICAgeG1pbj0keG1pbiwKICAgIHhtYXg9JHhtYXgsCiAgICB5bWluPSR5bWluLAogICAgeW1heD0keW1heCwKICBdCiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBvcGVuXSBjb29yZGluYXRlcyB7KC0yLDEpICgyLDEpfTsKICBcYWRkcGxvdFtmaXJzdGN1cnZlc3R5bGUsIGNsb3NlZG9wZW5dIGNvb3JkaW5hdGVzIHsoMiwyKSAoMywyKX07CiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBjbG9zZWRvcGVuXSBjb29yZGluYXRlcyB7KDMsNikgKDQsNil9OwogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgY2xvc2Vkb3Blbl0gY29vcmRpbmF0ZXMgeyg0LDI0KSAoNSwyNCl9OwogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgY2xvc2Vkb3Blbl0gY29vcmRpbmF0ZXMgeyg1LDEyMCkgKDYsMTIwKX07CiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBjbG9zZWRvcGVuXSBjb29yZGluYXRlcyB7KC0yLDIpICgtMywyKX07CiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBjbG9zZWRvcGVuXSBjb29yZGluYXRlcyB7KC0zLDYpICgtNCw2KX07CiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBjbG9zZWRvcGVuXSBjb29yZGluYXRlcyB7KC00LDI0KSAoLTUsMjQpfTsKICBcYWRkcGxvdFtmaXJzdGN1cnZlc3R5bGUsIGNsb3NlZG9wZW5dIGNvb3JkaW5hdGVzIHsoLTUsMTIwKSAoLTYsMTIwKX07ClxlbmR7YXhpc30KCkVORF9USUtaCgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG9bJGFdfVxiaWdcbGZsb29yXGx2ZXJ0IHhccnZlcnRcYmlnXHJmbG9vciAhXHRleHR7LH1gXSB3aGVyZSBbYFxsdmVydCB4XHJ2ZXJ0YF0gaXMgdGhlIGFic29sdXRlIHZhbHVlIG9mIFtgeFx0ZXh0eyx9YF0gW2BcbGZsb29yIHhccmZsb29yYF0gaXMgdGhlIGZsb29yIG9mIFtgeGBdICh0aGUgZ3JlYXRlc3QgaW50ZWdlciBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gW2B4YF0pLCBhbmQgW2B4IWBdIGlzIFtgeGBdIGZhY3RvcmlhbC4KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBsaW1pdCBkb2VzIG5vdCBleGlzdCwgeW91IG1heSB0eXBlIFt8RE5FfF0qLiBJZiB5b3UgbmVlZCB0byBlbnRlciBbYFxpbmZ0eVx0ZXh0eyx9YF0geW91IG1heSB0eXBlIFt8aW5mfF0qLicpQF0qKgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpGb3IgYSBudW1lcmljYWwgYXBwcm94aW1hdGlvbiwgbWFrZSBhIHRhYmxlOgoKPj4gW0BEYXRhVGFibGUoW1tbUEdNTCgnW2B4YF0nKSxtaWRydWxlPT4nMScscm93Y3NzPT4nYm9yZGVyLWJvdHRvbToycHggc29saWQ7JyxdLFtQR01MKCdbYFxiaWdcbGZsb29yXGx2ZXJ0IHhccnZlcnRcYmlnXHJmbG9vciAhYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMF1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzBdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzFdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsxXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsyXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMl1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bM11dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzNdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzRdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFs0XV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls1XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNV1dYF0nKSxdLF0sXSxhbGlnbj0+J2xsJyxjZW50ZXI9PjAsKTtAXSogPDwKCkZvciBhIGdyYXBoaWNhbCBhcHByb3hpbWF0aW9uOgoKPj4gW0BpbWFnZShpbnNlcnRHcmFwaCgkaW1hZ2VfMjYpLCB3aWR0aD0+NjAwKUBdKiAgPDwKCkl0IGFwcGVhcnMgdGhhdCB3aGVuIFtgeGBdIGlzIGNsb3NlIHRvIFtgWyRhXVx0ZXh0eyx9YF0gdGhhdCBbYFxiaWdcbGZsb29yXGx2ZXJ0IHhccnZlcnRcYmlnXHJmbG9vciAhYF0gYXBwcm9hY2hlcyBkaWZmZXJlbnQgdmFsdWVzIGZyb20gdGhlIGxlZnQgYW5kIHJpZ2h0LiBTbwoKW2BgYAogICAgICAgICAgICAgICAgICBcbGltX3t4XHRvWyRhXX1cYmlnXGxmbG9vclxsdmVydCB4XHJ2ZXJ0XGJpZ1xyZmxvb3IgIVx0ZXh0eyBkb2VzIG5vdCBleGlzdCAoRE5FKS59CiAgICAgICAgICAgICAgICBgYGBdCgoKCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-161"><span class="process-math">\(\lim\limits_{x\to-5}\big\lfloor\lvert x\rvert\big\rfloor !\text{,}\)</span> where <span class="process-math">\(\lvert x\rvert\)</span> is the absolute value of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(\lfloor x\rfloor\)</span> is the floor of <span class="process-math">\(x\)</span> (the greatest integer less than or equal to <span class="process-math">\(x\)</span>), and <span class="process-math">\(x!\)</span> is <span class="process-math">\(x\)</span> factorial.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-19')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-20"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-20" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="20" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEd0aWt6LnBsIiwiUENDbWFjcm9zLnBsIiwiQVBFWC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JWZhY3QgPSAoMCA9PiAxLCAxID0+IDEsIDIgPT4gMiwgMyA9PiA2LCA0ID0+IDI0LCA1ID0+IDEyMCwgNiA9PiA3MjApOwpzdWIgZiB7CiAgbXkgJHggPSBzaGlmdDsKICByZXR1cm4gJGZhY3R7aW50KGFicygkeCkpfTsKfQokYSA9IHJhbmRvbSgtMSwxLDEpOwokbCA9IChhYnMoJGEpIDw9IDEpID8gUmVhbCgxKSA6IENvbXB1dGUoIkRORSIpOwpAdGFiaW4gPSAoJGEgLSAwLjEsICRhIC0gMC4wMSwgJGEgLSAwLjAwMSwgJGEgKyAwLjAwMSwgJGEgKyAwLjAxLCAkYSArIDAuMSk7CkB0YWJvdXQgPSBtYXB7ZigkXyl9IChAdGFiaW4pOwokaW1hZ2VfMjcgPSBjcmVhdGVUaWtaSW1hZ2UoKTsKJGltYWdlXzI3LT5hZGRUb1ByZWFtYmxlKGxhdGV4SW1hZ2VQcmVhbWJsZSgpKTsKJGltYWdlXzI3LT5CRUdJTl9USUtaClxiZWdpbntheGlzfVsKICAgIGdyaWQ9Ym90aCwKICAgIHhtaW49JHhtaW4sCiAgICB4bWF4PSR4bWF4LAogICAgeW1pbj0tMSwKICAgIHltYXg9MywKICBdCiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBvcGVuXSBjb29yZGluYXRlcyB7KC0yLDEpICgyLDEpfTsKICBcYWRkcGxvdFtmaXJzdGN1cnZlc3R5bGUsIGNsb3NlZG9wZW5dIGNvb3JkaW5hdGVzIHsoMiwyKSAoMywyKX07CiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBjbG9zZWRvcGVuXSBjb29yZGluYXRlcyB7KDMsNikgKDQsNil9OwogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgY2xvc2Vkb3Blbl0gY29vcmRpbmF0ZXMgeyg0LDI0KSAoNSwyNCl9OwogIFxhZGRwbG90W2ZpcnN0Y3VydmVzdHlsZSwgY2xvc2Vkb3Blbl0gY29vcmRpbmF0ZXMgeyg1LDEyMCkgKDYsMTIwKX07CiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBjbG9zZWRvcGVuXSBjb29yZGluYXRlcyB7KC0yLDIpICgtMywyKX07CiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBjbG9zZWRvcGVuXSBjb29yZGluYXRlcyB7KC0zLDYpICgtNCw2KX07CiAgXGFkZHBsb3RbZmlyc3RjdXJ2ZXN0eWxlLCBjbG9zZWRvcGVuXSBjb29yZGluYXRlcyB7KC00LDI0KSAoLTUsMjQpfTsKICBcYWRkcGxvdFtmaXJzdGN1cnZlc3R5bGUsIGNsb3NlZG9wZW5dIGNvb3JkaW5hdGVzIHsoLTUsMTIwKSAoLTYsMTIwKX07ClxlbmR7YXhpc30KCkVORF9USUtaCgpCRUdJTl9QR01MCltgXGxpbVxsaW1pdHNfe3hcdG9bJGFdfVxiaWdcbGZsb29yXGx2ZXJ0IHhccnZlcnRcYmlnXHJmbG9vciAhXHRleHR7LH1gXSB3aGVyZSBbYFxsdmVydCB4XHJ2ZXJ0YF0gaXMgdGhlIGFic29sdXRlIHZhbHVlIG9mIFtgeFx0ZXh0eyx9YF0gW2BcbGZsb29yIHhccmZsb29yYF0gaXMgdGhlIGZsb29yIG9mIFtgeGBdICh0aGUgZ3JlYXRlc3QgaW50ZWdlciBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gW2B4YF0pLCBhbmQgW2B4IWBdIGlzIFtgeGBdIGZhY3RvcmlhbC4KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBsaW1pdCBkb2VzIG5vdCBleGlzdCwgeW91IG1heSB0eXBlIFt8RE5FfF0qLiBJZiB5b3UgbmVlZCB0byBlbnRlciBbYFxpbmZ0eVx0ZXh0eyx9YF0geW91IG1heSB0eXBlIFt8aW5mfF0qLicpQF0qKgoKW19deyRsfXsxMH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpGb3IgYSBudW1lcmljYWwgYXBwcm94aW1hdGlvbiwgbWFrZSBhIHRhYmxlOgoKPj4gW0BEYXRhVGFibGUoW1tbUEdNTCgnW2B4YF0nKSxtaWRydWxlPT4nMScscm93Y3NzPT4nYm9yZGVyLWJvdHRvbToycHggc29saWQ7JyxdLFtQR01MKCdbYFxiaWdcbGZsb29yXGx2ZXJ0IHhccnZlcnRcYmlnXHJmbG9vciAhYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bMF1dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzBdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzFdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsxXV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpblsyXV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMl1dYF0nKSxdLF0sW1tQR01MKCdbYFskdGFiaW5bM11dYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzNdXWBdJyksXSxdLFtbUEdNTCgnW2BbJHRhYmluWzRdXWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFs0XV1gXScpLF0sXSxbW1BHTUwoJ1tgWyR0YWJpbls1XV1gXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbNV1dYF0nKSxdLF0sXSxhbGlnbj0+J2xsJyxjZW50ZXI9PjAsKTtAXSogPDwKCkZvciBhIGdyYXBoaWNhbCBhcHByb3hpbWF0aW9uOgoKPj4gW0BpbWFnZShpbnNlcnRHcmFwaCgkaW1hZ2VfMjcpLCB3aWR0aD0+NjAwKUBdKiAgPDwKCkl0IGFwcGVhcnMgdGhhdCB3aGVuIFtgeGBdIGlzIGNsb3NlIHRvIFtgWyRhXVx0ZXh0eyx9YF0gdGhhdCBbYFxiaWdcbGZsb29yXGx2ZXJ0IHhccnZlcnRcYmlnXHJmbG9vciAhYF0gaXMgYWx3YXlzIGVxdWFsIHRvIFtgMVx0ZXh0ey59YF0gU28KCltgYGAKICAgICAgICAgICAgICAgICAgXGxpbV97eFx0b1skYV19XGJpZ1xsZmxvb3JcbHZlcnQgeFxydmVydFxiaWdccmZsb29yICE9MQogICAgICAgICAgICAgICAgYGBgXQoKCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-167"><span class="process-math">\(\lim\limits_{x\to-1}\big\lfloor\lvert x\rvert\big\rfloor !\text{,}\)</span> where <span class="process-math">\(\lvert x\rvert\)</span> is the absolute value of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(\lfloor x\rfloor\)</span> is the floor of <span class="process-math">\(x\)</span> (the greatest integer less than or equal to <span class="process-math">\(x\)</span>), and <span class="process-math">\(x!\)</span> is <span class="process-math">\(x\)</span> factorial.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-20')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-2">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-4"><p id="p-173">Approximate the limit of the difference quotient, <span class="process-math">\(\lim\limits_{h\to 0}\frac{f(a+h)-f(a)}{h}\text{,}\)</span> using <span class="process-math">\(h = \pm 0.1, \pm 0.01\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-21"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-21" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="21" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdlc3NheW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsInBhcnNlck11bHRpQW5zd2VyLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiMkbSA9IG5vbl96ZXJvX3JhbmRvbSgtOSw5LDEpOwojZG8gewojICAkYiA9IG5vbl96ZXJvX3JhbmRvbSgtOSw5LDEpOwojfSB1bnRpbCAoYWJzKCRtKSAhPSBhYnMoJGIpKTsKIyRhID0gcmFuZG9tKDEsNSwxKTsKI2lmICgkZW52aXJ7cHJvYmxlbVNlZWR9ID09IDEpewogICRhPTM7CiAgJG09LTc7CiAgJGI9MjsKI307CiRmID0gRm9ybXVsYSgiJG0qeCArICRiIiktPnJlZHVjZTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZChoID0+ICdSZWFsJyk7CiRkcSA9ICgkZi0+c3Vic3RpdHV0ZSh4ID0+IEZvcm11bGEoIiRhICsgaCIpKSAtICgkZi0+ZXZhbCh4ID0+ICRhKSkpL0Zvcm11bGEoImgiKTsKQHRhYmluID0gKFJlYWwoLTAuMSksIFJlYWwoLTAuMDEpLCBSZWFsKDAuMDEpLCBSZWFsKDAuMSkpOwpAdGFib3V0ID0gbWFweyRkcS0+ZXZhbChoID0+ICRfLCB4ID0+IDEpfSAoQHRhYmluKTsKQHRhYmxlID0gbWFweygkdGFiaW5bJF9dLCAkdGFib3V0WyRfXSl9ICgwIC4uICQjdGFiaW4pOwokdGFibGVhbnN3ZXJzID0gTXVsdGlBbnN3ZXIoQHRhYmxlKS0+d2l0aChhbGxvd0JsYW5rQW5zd2VycyA9PiAxLGNoZWNrZXIgPT4gc3ViewogIG15ICgkY29ycmVjdCwkc3R1ZGVudCwkc2VsZik9QF87CiAgbXkgQGNvciA9IEB7JGNvcnJlY3R9OwogIG15IEBzdHUgPSBAeyRzdHVkZW50fTsKICBteSBAcmV0dXJuID0gKDEsMSwxLDEsMSwxLDEsMSk7CiAgZm9yIG15ICRpICgwLDIsNCw2KSB7CiAgICAgIGRvIHsKICAgICAgICAkcmV0dXJuWyRpKzFdID0gMDsKICAgICAgICAkc2VsZi0+c2V0TWVzc2FnZSgkaSsyLCAnVGhpcyBpcyBub3QgdGhlIGRpZmZlcmVuY2UgcXVvdGllbnQgd2hlbiBoPScuIiRzdHVbJGldIi4nLicpOwogICAgICB9IHVubGVzcyAoJHN0dVskaV0gbmUgIiIgYW5kICRkcS0+ZXZhbChoID0+ICRzdHVbJGldKSA9PSAkc3R1WyRpKzFdKTsKICAgICAgZG8gewogICAgICAgICRyZXR1cm5bJGldID0gMDsKICAgICAgICAkc2VsZi0+c2V0TWVzc2FnZSgkaSsxLCAnWW91IHNob3VsZCB1c2UgaC12YWx1ZXMgJy4iJGNvclswXSIuJywgJy4iJGNvclsyXSIuJywgJy4iJGNvcls0XSIuJywgYW5kICcuIiRjb3JbNl0iLicuJyk7CiAgICAgIH0gdW5sZXNzICgkc3R1WyRpXSA9PSAkY29yWzBdIG9yICRzdHVbJGldID09ICRjb3JbMl0gb3IgJHN0dVskaV0gPT0gJGNvcls0XSBvciAkc3R1WyRpXSA9PSAkY29yWzZdKTsKICB9OwogIGRvIHsKICAgICRyZXR1cm5bMl0gPSAwOwogICAgJHNlbGYtPnNldE1lc3NhZ2UoMywnWW91IGFscmVhZHkgdXNlZCB0aGlzIGgtdmFsdWUuJyk7CiAgfSB1bmxlc3MgKCRzdHVbMl0gIT0gJHN0dVswXSBvciAkc3R1WzJdIGVxICIiKTsKICBkbyB7CiAgICAkcmV0dXJuWzRdID0gMDsKICAgICRzZWxmLT5zZXRNZXNzYWdlKDUsJ1lvdSBhbHJlYWR5IHVzZWQgdGhpcyBoLXZhbHVlLicpOwogIH0gdW5sZXNzICgkc3R1WzRdICE9ICRzdHVbMF0gYW5kICRzdHVbNF0gIT0gJHN0dVsyXSBvciAkc3R1WzJdIGVxICIiKTsKICBkbyB7CiAgICAkcmV0dXJuWzZdID0gMDsKICAgICRzZWxmLT5zZXRNZXNzYWdlKDcsJ1lvdSBhbHJlYWR5IHVzZWQgdGhpcyBoLXZhbHVlLicpOwogIH0gdW5sZXNzICgkc3R1WzZdICE9ICRzdHVbMF0gYW5kICRzdHVbNl0gIT0gJHN0dVsyXSBhbmQgJHN0dVs2XSAhPSAkc3R1WzRdIG9yICRzdHVbMl0gZXEgIiIpOwogIHJldHVybiBbQHJldHVybl07Cn0pOwokc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2UgPT4gIlNob3cgeW91ciB3b3JrLiIpIEBdKic7CgpCRUdJTl9QR01MCltgZih4KT1bJGZdXHRleHR7LH1gXSBbYGE9WyRhXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfERORXxdKi4gSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZnxdKi4nKUBdKioKCltfXXskbX17MTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KPj4gW0BEYXRhVGFibGUoW1tbUEdNTCgnW2BoYF0nKSxtaWRydWxlPT4nMScscm93Y3NzPT4nYm9yZGVyLWJvdHRvbToycHggc29saWQ7JyxjZWxsY3NzPT4nYm9yZGVyLXRvcDozcHggc29saWQ7JyxdLFtQR01MKCdbYFxmcmFje2YoYStoKS1mKGEpfXtofWBdJyksY2VsbGNzcz0+J2JvcmRlci10b3A6M3B4IHNvbGlkOycsXSxdLFtbUEdNTCgnW2AtMC4xYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzBdXWBdJyksXSxdLFtbUEdNTCgnW2AtMC4wMWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsxXV1gXScpLF0sXSxbW1BHTUwoJ1tgMC4wMWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsyXV1gXScpLF0sXSxbW1BHTUwoJ1tgMC4xYF0nKSxyb3djc3M9Pidib3JkZXItYm90dG9tOjNweCBzb2xpZDsnLF0sW1BHTUwoJ1tgWyR0YWJvdXRbM11dYF0nKSxdLF0sXSxhbGlnbj0+J2NjJyxjZW50ZXI9PjAsKTtAXSogPDwKCltgXGxpbVxsaW1pdHNfe2hcdG8wfVxmcmFje2YoYStoKS1mKGEpfXtofT1gXVskbV0uCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-174"><span class="process-math">\(f(x)={2-7x}\text{,}\)</span> <span class="process-math">\(a=3\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-21')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-22"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-22" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="22" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdlc3NheW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsInBhcnNlck11bHRpQW5zd2VyLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiMkbSA9IG5vbl96ZXJvX3JhbmRvbSgtOSw5LDEpOwojJGIgPSByYW5kb20oMC4wMSwwLjA5LDAuMDEpICsgcmFuZG9tKDAuMSwwLjksMC4xKSArIHJhbmRvbSgtOSw5LDEpOwojJGEgPSByYW5kb20oLTUsNSwxKTsKI2lmICgkZW52aXJ7cHJvYmxlbVNlZWR9ID09IDEpewogICRhID0gLTE7CiAgJG0gPSA5OwogICRiID0gMC4wNjsKI307CiRmID0gRm9ybXVsYSgiJG0qeCArICRiIiktPnJlZHVjZTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZChoID0+ICdSZWFsJyk7CiRkcSA9ICgkZi0+c3Vic3RpdHV0ZSh4ID0+IEZvcm11bGEoIiRhICsgaCIpKSAtICgkZi0+ZXZhbCh4ID0+ICRhKSkpL0Zvcm11bGEoImgiKTsKQHRhYmluID0gKFJlYWwoLTAuMSksUmVhbCgtMC4wMSksUmVhbCgwLjAxKSxSZWFsKDAuMSkpOwpAdGFib3V0ID0gbWFweyRkcS0+ZXZhbChoID0+ICRfLCB4ID0+IDEpfSAoQHRhYmluKTsKQHRhYmxlID0gbWFweygkdGFiaW5bJF9dLCAkdGFib3V0WyRfXSl9ICgwIC4uICQjdGFiaW4pOwokdGFibGVhbnN3ZXJzID0gTXVsdGlBbnN3ZXIoQHRhYmxlKS0+d2l0aChhbGxvd0JsYW5rQW5zd2VycyA9PiAxLGNoZWNrZXIgPT4gc3ViewogIG15ICgkY29ycmVjdCwkc3R1ZGVudCwkc2VsZik9QF87CiAgbXkgQGNvciA9IEB7JGNvcnJlY3R9OwogIG15IEBzdHUgPSBAeyRzdHVkZW50fTsKICBteSBAcmV0dXJuID0gKDEsMSwxLDEsMSwxLDEsMSk7CiAgZm9yIG15ICRpICgwLDIsNCw2KSB7CiAgICAgIGRvIHsKICAgICAgICAkcmV0dXJuWyRpKzFdID0gMDsKICAgICAgICAkc2VsZi0+c2V0TWVzc2FnZSgkaSsyLCAnVGhpcyBpcyBub3QgdGhlIGRpZmZlcmVuY2UgcXVvdGllbnQgd2hlbiBoPScuIiRzdHVbJGldIi4nLicpOwogICAgICB9IHVubGVzcyAoJHN0dVskaV0gbmUgIiIgYW5kICRkcS0+ZXZhbChoID0+ICRzdHVbJGldKSA9PSAkc3R1WyRpKzFdKTsKICAgICAgZG8gewogICAgICAgICRyZXR1cm5bJGldID0gMDsKICAgICAgICAkc2VsZi0+c2V0TWVzc2FnZSgkaSsxLCAnWW91IHNob3VsZCB1c2UgaC12YWx1ZXMgJy4iJGNvclswXSIuJywgJy4iJGNvclsyXSIuJywgJy4iJGNvcls0XSIuJywgYW5kICcuIiRjb3JbNl0iLicuJyk7CiAgICAgIH0gdW5sZXNzICgkc3R1WyRpXSA9PSAkY29yWzBdIG9yICRzdHVbJGldID09ICRjb3JbMl0gb3IgJHN0dVskaV0gPT0gJGNvcls0XSBvciAkc3R1WyRpXSA9PSAkY29yWzZdKTsKICB9OwogIGRvIHsKICAgICRyZXR1cm5bMl0gPSAwOwogICAgJHNlbGYtPnNldE1lc3NhZ2UoMywnWW91IGFscmVhZHkgdXNlZCB0aGlzIGgtdmFsdWUuJyk7CiAgfSB1bmxlc3MgKCRzdHVbMl0gIT0gJHN0dVswXSBvciAkc3R1WzJdIGVxICIiKTsKICBkbyB7CiAgICAkcmV0dXJuWzRdID0gMDsKICAgICRzZWxmLT5zZXRNZXNzYWdlKDUsJ1lvdSBhbHJlYWR5IHVzZWQgdGhpcyBoLXZhbHVlLicpOwogIH0gdW5sZXNzICgkc3R1WzRdICE9ICRzdHVbMF0gYW5kICRzdHVbNF0gIT0gJHN0dVsyXSBvciAkc3R1WzJdIGVxICIiKTsKICBkbyB7CiAgICAkcmV0dXJuWzZdID0gMDsKICAgICRzZWxmLT5zZXRNZXNzYWdlKDcsJ1lvdSBhbHJlYWR5IHVzZWQgdGhpcyBoLXZhbHVlLicpOwogIH0gdW5sZXNzICgkc3R1WzZdICE9ICRzdHVbMF0gYW5kICRzdHVbNl0gIT0gJHN0dVsyXSBhbmQgJHN0dVs2XSAhPSAkc3R1WzRdIG9yICRzdHVbMl0gZXEgIiIpOwogIHJldHVybiBbQHJldHVybl07Cn0pOwokc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2UgPT4gIlNob3cgeW91ciB3b3JrLiIpIEBdKic7CgpCRUdJTl9QR01MCltgZih4KT1bJGZdXHRleHR7LH1gXSBbYGE9WyRhXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfERORXxdKi4gSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZnxdKi4nKUBdKioKCltfXXskbX17MTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KPj4gW0BEYXRhVGFibGUoW1tbUEdNTCgnW2BoYF0nKSxtaWRydWxlPT4nMScscm93Y3NzPT4nYm9yZGVyLWJvdHRvbToycHggc29saWQ7JyxjZWxsY3NzPT4nYm9yZGVyLXRvcDozcHggc29saWQ7JyxdLFtQR01MKCdbYFxmcmFje2YoYStoKS1mKGEpfXtofWBdJyksY2VsbGNzcz0+J2JvcmRlci10b3A6M3B4IHNvbGlkOycsXSxdLFtbUEdNTCgnW2AtMC4xYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzBdXWBdJyksXSxdLFtbUEdNTCgnW2AtMC4wMWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsxXV1gXScpLF0sXSxbW1BHTUwoJ1tgMC4wMWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsyXV1gXScpLF0sXSxbW1BHTUwoJ1tgMC4xYF0nKSxyb3djc3M9Pidib3JkZXItYm90dG9tOjNweCBzb2xpZDsnLF0sW1BHTUwoJ1tgWyR0YWJvdXRbM11dYF0nKSxdLF0sXSxhbGlnbj0+J2NjJyxjZW50ZXI9PjAsKTtAXSogPDwKCkl0IGFwcGVhcnMgdGhhdCBbYFxsaW1cbGltaXRzX3toXHRvMH1cZnJhY3tmKGEraCktZihhKX17aH09WyRtXVx0ZXh0ey59YF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-177"><span class="process-math">\(f(x)={9x+0.06}\text{,}\)</span> <span class="process-math">\(a=-1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-22')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-23"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div id="webwork-23" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="23" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdlc3NheW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsInBhcnNlck11bHRpQW5zd2VyLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiNkbyB7CiMgICRiID0gbm9uX3plcm9fcmFuZG9tKC01LDUsMSk7CiMgICRjID0gbm9uX3plcm9fcmFuZG9tKC05LDksMSk7CiMgICRhID0gcmFuZG9tKC01LDUsMSk7CiMgIGlmICgkZW52aXJ7cHJvYmxlbVNlZWR9ID09IDEpewogICAgJGEgPSAxOwogICAgJGIgPSAzOwogICAgJGMgPSAtNzsKIyAgfTsKICAkZiA9IEZvcm11bGEoInheMiskYip4KyRjIiktPnJlZHVjZTsKICAkbSA9ICRmLT5EKCd4JyktPmV2YWwoeCA9PiAkYSk7CiN9IHVudGlsICgkbSE9MCk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoaCA9PiAnUmVhbCcpOwokZHEgPSAoJGYtPnN1YnN0aXR1dGUoeCA9PiBGb3JtdWxhKCIkYStoIikpLSgkZi0+ZXZhbCh4ID0+ICRhKSkpL0Zvcm11bGEoImgiKTsKQHRhYmluID0gKFJlYWwoLTAuMSksUmVhbCgtMC4wMSksUmVhbCgwLjAxKSxSZWFsKDAuMSkpOwpAdGFib3V0ID0gbWFweyRkcS0+ZXZhbChoID0+ICRfLCB4ID0+IDEpfSAoQHRhYmluKTsKQHRhYmxlID0gbWFweygkdGFiaW5bJF9dLCAkdGFib3V0WyRfXSl9ICgwIC4uICQjdGFiaW4pOwokdGFibGVhbnN3ZXJzID0gTXVsdGlBbnN3ZXIoQHRhYmxlKS0+d2l0aChhbGxvd0JsYW5rQW5zd2VycyA9PiAxLGNoZWNrZXIgPT4gc3ViewogIG15ICgkY29ycmVjdCwkc3R1ZGVudCwkc2VsZik9QF87CiAgbXkgQGNvciA9IEB7JGNvcnJlY3R9OwogIG15IEBzdHUgPSBAeyRzdHVkZW50fTsKICBteSBAcmV0dXJuID0gKDEsMSwxLDEsMSwxLDEsMSk7CiAgZm9yIG15ICRpICgwLDIsNCw2KSB7CiAgICAgIGRvIHsKICAgICAgICAkcmV0dXJuWyRpKzFdID0gMDsKICAgICAgICAkc2VsZi0+c2V0TWVzc2FnZSgkaSsyLCAnVGhpcyBpcyBub3QgdGhlIGRpZmZlcmVuY2UgcXVvdGllbnQgd2hlbiBoPScuIiRzdHVbJGldIi4nLicpOwogICAgICB9IHVubGVzcyAoJHN0dVskaV0gbmUgIiIgYW5kICRkcS0+ZXZhbChoID0+ICRzdHVbJGldKSA9PSAkc3R1WyRpKzFdKTsKICAgICAgZG8gewogICAgICAgICRyZXR1cm5bJGldID0gMDsKICAgICAgICAkc2VsZi0+c2V0TWVzc2FnZSgkaSsxLCAnWW91IHNob3VsZCB1c2UgaC12YWx1ZXMgJy4iJGNvclswXSIuJywgJy4iJGNvclsyXSIuJywgJy4iJGNvcls0XSIuJywgYW5kICcuIiRjb3JbNl0iLicuJyk7CiAgICAgIH0gdW5sZXNzICgkc3R1WyRpXSA9PSAkY29yWzBdIG9yICRzdHVbJGldID09ICRjb3JbMl0gb3IgJHN0dVskaV0gPT0gJGNvcls0XSBvciAkc3R1WyRpXSA9PSAkY29yWzZdKTsKICB9OwogIGRvIHsKICAgICRyZXR1cm5bMl0gPSAwOwogICAgJHNlbGYtPnNldE1lc3NhZ2UoMywnWW91IGFscmVhZHkgdXNlZCB0aGlzIGgtdmFsdWUuJyk7CiAgfSB1bmxlc3MgKCRzdHVbMl0gIT0gJHN0dVswXSBvciAkc3R1WzJdIGVxICIiKTsKICBkbyB7CiAgICAkcmV0dXJuWzRdID0gMDsKICAgICRzZWxmLT5zZXRNZXNzYWdlKDUsJ1lvdSBhbHJlYWR5IHVzZWQgdGhpcyBoLXZhbHVlLicpOwogIH0gdW5sZXNzICgkc3R1WzRdICE9ICRzdHVbMF0gYW5kICRzdHVbNF0gIT0gJHN0dVsyXSBvciAkc3R1WzJdIGVxICIiKTsKICBkbyB7CiAgICAkcmV0dXJuWzZdID0gMDsKICAgICRzZWxmLT5zZXRNZXNzYWdlKDcsJ1lvdSBhbHJlYWR5IHVzZWQgdGhpcyBoLXZhbHVlLicpOwogIH0gdW5sZXNzICgkc3R1WzZdICE9ICRzdHVbMF0gYW5kICRzdHVbNl0gIT0gJHN0dVsyXSBhbmQgJHN0dVs2XSAhPSAkc3R1WzRdIG9yICRzdHVbMl0gZXEgIiIpOwogIHJldHVybiBbQHJldHVybl07Cn0pOwokc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2UgPT4gIlNob3cgeW91ciB3b3JrLiIpIEBdKic7CgpCRUdJTl9QR01MCltgZih4KT1bJGZdXHRleHR7LH1gXSBbYGE9WyRhXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgbGltaXQgZG9lcyBub3QgZXhpc3QsIHlvdSBtYXkgdHlwZSBbfERORXxdKi4gSWYgeW91IG5lZWQgdG8gZW50ZXIgW2BcaW5mdHlcdGV4dHssfWBdIHlvdSBtYXkgdHlwZSBbfGluZnxdKi4nKUBdKioKCltfXXskbX17MTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KPj4gW0BEYXRhVGFibGUoW1tbUEdNTCgnW2BoYF0nKSxtaWRydWxlPT4nMScscm93Y3NzPT4nYm9yZGVyLWJvdHRvbToycHggc29saWQ7JyxjZWxsY3NzPT4nYm9yZGVyLXRvcDozcHggc29saWQ7JyxdLFtQR01MKCdbYFxmcmFje2YoYStoKS1mKGEpfXtofWBdJyksY2VsbGNzcz0+J2JvcmRlci10b3A6M3B4IHNvbGlkOycsXSxdLFtbUEdNTCgnW2AtMC4xYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzBdXWBdJyksXSxdLFtbUEdNTCgnW2AtMC4wMWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsxXV1gXScpLF0sXSxbW1BHTUwoJ1tgMC4wMWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFsyXV1gXScpLF0sXSxbW1BHTUwoJ1tgMC4xYF0nKSxyb3djc3M9Pidib3JkZXItYm90dG9tOjNweCBzb2xpZDsnLF0sW1BHTUwoJ1tgWyR0YWJvdXRbM11dYF0nKSxdLF0sXSxhbGlnbj0+J2NjJyxjZW50ZXI9PjAsKTtAXSogPDwKCkl0IGFwcGVhcnMgdGhhdCBbYFxsaW1cbGltaXRzX3toXHRvMH1cZnJhY3tmKGEraCktZihhKX17aH09WyRtXVx0ZXh0ey59YF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-180"><span class="process-math">\(f(x)={x^{2}+3x-7}\text{,}\)</span> <span class="process-math">\(a=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-23')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-24"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-24" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="24" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdlc3NheW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsInBhcnNlck11bHRpQW5zd2VyLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiNkbyB7CiMgICRiID0gbm9uX3plcm9fcmFuZG9tKC01LDUsMSk7CiMgICRhID0gcmFuZG9tKC01LDUsMSk7CiN9IHVudGlsICgkYSArICRiIT0gMCk7CiNpZiAoJGVudmlye3Byb2JsZW1TZWVkfSA9PSAxKXsKICAkYSA9IDI7CiAgJGIgPSAxOwojfTsKJGYgPSBGb3JtdWxhKCIxLyh4KyRiKSIpLT5yZWR1Y2U7CiRtID0gJGYtPkQoJ3gnKS0+ZXZhbCh4ID0+ICRhKS0+d2l0aCh0b2xlcmFuY2UgPT4gLjAxKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZChoID0+ICdSZWFsJyk7CiRkcSA9ICgkZi0+c3Vic3RpdHV0ZSh4ID0+IEZvcm11bGEoIiRhK2giKSktKCRmLT5ldmFsKHggPT4gJGEpKSkvRm9ybXVsYSgiaCIpOwpAdGFiaW4gPSAoUmVhbCgtMC4xKSxSZWFsKC0wLjAxKSxSZWFsKDAuMDEpLFJlYWwoMC4xKSk7CkB0YWJvdXQgPSBtYXB7JGRxLT5ldmFsKGggPT4gJF8sIHggPT4gMSl9IChAdGFiaW4pOwpAdGFibGUgPSBtYXB7KCR0YWJpblskX10sICR0YWJvdXRbJF9dKX0gKDAgLi4gJCN0YWJpbik7CiR0YWJsZWFuc3dlcnMgPSBNdWx0aUFuc3dlcihAdGFibGUpLT53aXRoKGFsbG93QmxhbmtBbnN3ZXJzID0+IDEsY2hlY2tlciA9PiBzdWJ7CiAgbXkgKCRjb3JyZWN0LCRzdHVkZW50LCRzZWxmKT1AXzsKICBteSBAY29yID0gQHskY29ycmVjdH07CiAgbXkgQHN0dSA9IEB7JHN0dWRlbnR9OwogIG15IEByZXR1cm4gPSAoMSwxLDEsMSwxLDEsMSwxKTsKICBmb3IgbXkgJGkgKDAsMiw0LDYpIHsKICAgICAgZG8gewogICAgICAgICRyZXR1cm5bJGkrMV0gPSAwOwogICAgICAgICRzZWxmLT5zZXRNZXNzYWdlKCRpKzIsICdUaGlzIGlzIG5vdCB0aGUgZGlmZmVyZW5jZSBxdW90aWVudCB3aGVuIGg9Jy4iJHN0dVskaV0iLicuJyk7CiAgICAgIH0gdW5sZXNzICgkc3R1WyRpXSBuZSAiIiBhbmQgJGRxLT5ldmFsKGggPT4gJHN0dVskaV0pID09ICRzdHVbJGkrMV0pOwogICAgICBkbyB7CiAgICAgICAgJHJldHVyblskaV0gPSAwOwogICAgICAgICRzZWxmLT5zZXRNZXNzYWdlKCRpKzEsICdZb3Ugc2hvdWxkIHVzZSBoLXZhbHVlcyAnLiIkY29yWzBdIi4nLCAnLiIkY29yWzJdIi4nLCAnLiIkY29yWzRdIi4nLCBhbmQgJy4iJGNvcls2XSIuJy4nKTsKICAgICAgfSB1bmxlc3MgKCRzdHVbJGldID09ICRjb3JbMF0gb3IgJHN0dVskaV0gPT0gJGNvclsyXSBvciAkc3R1WyRpXSA9PSAkY29yWzRdIG9yICRzdHVbJGldID09ICRjb3JbNl0pOwogIH07CiAgZG8gewogICAgJHJldHVyblsyXSA9IDA7CiAgICAkc2VsZi0+c2V0TWVzc2FnZSgzLCdZb3UgYWxyZWFkeSB1c2VkIHRoaXMgaC12YWx1ZS4nKTsKICB9IHVubGVzcyAoJHN0dVsyXSAhPSAkc3R1WzBdIG9yICRzdHVbMl0gZXEgIiIpOwogIGRvIHsKICAgICRyZXR1cm5bNF0gPSAwOwogICAgJHNlbGYtPnNldE1lc3NhZ2UoNSwnWW91IGFscmVhZHkgdXNlZCB0aGlzIGgtdmFsdWUuJyk7CiAgfSB1bmxlc3MgKCRzdHVbNF0gIT0gJHN0dVswXSBhbmQgJHN0dVs0XSAhPSAkc3R1WzJdIG9yICRzdHVbMl0gZXEgIiIpOwogIGRvIHsKICAgICRyZXR1cm5bNl0gPSAwOwogICAgJHNlbGYtPnNldE1lc3NhZ2UoNywnWW91IGFscmVhZHkgdXNlZCB0aGlzIGgtdmFsdWUuJyk7CiAgfSB1bmxlc3MgKCRzdHVbNl0gIT0gJHN0dVswXSBhbmQgJHN0dVs2XSAhPSAkc3R1WzJdIGFuZCAkc3R1WzZdICE9ICRzdHVbNF0gb3IgJHN0dVsyXSBlcSAiIik7CiAgcmV0dXJuIFtAcmV0dXJuXTsKfSk7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiU2hvdyB5b3VyIHdvcmsuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BmKHgpPVskZl1cdGV4dHssfWBdIFtgYT1bJGFdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBsaW1pdCBkb2VzIG5vdCBleGlzdCwgeW91IG1heSB0eXBlIFt8RE5FfF0qLiBJZiB5b3UgbmVlZCB0byBlbnRlciBbYFxpbmZ0eVx0ZXh0eyx9YF0geW91IG1heSB0eXBlIFt8aW5mfF0qLicpQF0qKgoKW19deyRtfXsxMH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgo+PiBbQERhdGFUYWJsZShbW1tQR01MKCdbYGhgXScpLG1pZHJ1bGU9PicxJyxyb3djc3M9Pidib3JkZXItYm90dG9tOjJweCBzb2xpZDsnLGNlbGxjc3M9Pidib3JkZXItdG9wOjNweCBzb2xpZDsnLF0sW1BHTUwoJ1tgXGZyYWN7ZihhK2gpLWYoYSl9e2h9YF0nKSxjZWxsY3NzPT4nYm9yZGVyLXRvcDozcHggc29saWQ7JyxdLF0sW1tQR01MKCdbYC0wLjFgXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMF1dYF0nKSxdLF0sW1tQR01MKCdbYC0wLjAxYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzFdXWBdJyksXSxdLFtbUEdNTCgnW2AwLjAxYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzJdXWBdJyksXSxdLFtbUEdNTCgnW2AwLjFgXScpLHJvd2Nzcz0+J2JvcmRlci1ib3R0b206M3B4IHNvbGlkOycsXSxbUEdNTCgnW2BbJHRhYm91dFszXV1gXScpLF0sXSxdLGFsaWduPT4nY2MnLGNlbnRlcj0+MCwpO0BdKiA8PAoKSXQgYXBwZWFycyB0aGF0IFtgXGxpbVxsaW1pdHNfe2hcdG8wfVxmcmFje2YoYStoKS1mKGEpfXtofT1bJG1dXHRleHR7Ln1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-183"><span class="process-math">\(f(x)={\frac{1}{x+1}}\text{,}\)</span> <span class="process-math">\(a=2\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-24')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-25"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div id="webwork-25" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="25" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdlc3NheW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsInBhcnNlck11bHRpQW5zd2VyLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiNkbyB7CiMgIGRvIHsKIyAgICAkZCA9IG5vbl96ZXJvX3JhbmRvbSgtNSw1LDEpOwojICAgICRiID0gbm9uX3plcm9fcmFuZG9tKC01LDUsMSk7CiMgICAgJGMgPSBub25femVyb19yYW5kb20oLTUsNSwxKTsKIyAgfSB1bnRpbCAoZ2NkKCRkLGdjZCgkYiwkYykpPT0xKTsKIyAgJGEgPSByYW5kb20oLTUsNSwxKTsKIyAgaWYgKCRlbnZpcntwcm9ibGVtU2VlZH0gPT0gMSl7CiAgICAkYSA9IC0zOwogICAgJGQgPSAtNDsKICAgICRiID0gNTsKICAgICRjID0gLTE7CiMgIH07CiAgJGYgPSBGb3JtdWxhKCIkZCp4XjIrJGIqeCskYyIpLT5yZWR1Y2U7CiAgJG0gPSAkZi0+RCgneCcpLT5ldmFsKHggPT4gJGEpOwojfSB1bnRpbCAoJG0hPTApOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKGggPT4gJ1JlYWwnKTsKJGRxID0gKCRmLT5zdWJzdGl0dXRlKHggPT4gRm9ybXVsYSgiJGEraCIpKS0oJGYtPmV2YWwoeCA9PiAkYSkpKS9Gb3JtdWxhKCJoIik7CkB0YWJpbiA9IChSZWFsKC0wLjEpLFJlYWwoLTAuMDEpLFJlYWwoMC4wMSksUmVhbCgwLjEpKTsKQHRhYm91dCA9IG1hcHskZHEtPmV2YWwoaCA9PiAkXywgeCA9PiAxKX0gKEB0YWJpbik7CkB0YWJsZSA9IG1hcHsoJHRhYmluWyRfXSwgJHRhYm91dFskX10pfSAoMCAuLiAkI3RhYmluKTsKJHRhYmxlYW5zd2VycyA9IE11bHRpQW5zd2VyKEB0YWJsZSktPndpdGgoYWxsb3dCbGFua0Fuc3dlcnMgPT4gMSxjaGVja2VyID0+IHN1YnsKICBteSAoJGNvcnJlY3QsJHN0dWRlbnQsJHNlbGYpPUBfOwogIG15IEBjb3IgPSBAeyRjb3JyZWN0fTsKICBteSBAc3R1ID0gQHskc3R1ZGVudH07CiAgbXkgQHJldHVybiA9ICgxLDEsMSwxLDEsMSwxLDEpOwogIGZvciBteSAkaSAoMCwyLDQsNikgewogICAgICBkbyB7CiAgICAgICAgJHJldHVyblskaSsxXSA9IDA7CiAgICAgICAgJHNlbGYtPnNldE1lc3NhZ2UoJGkrMiwgJ1RoaXMgaXMgbm90IHRoZSBkaWZmZXJlbmNlIHF1b3RpZW50IHdoZW4gaD0nLiIkc3R1WyRpXSIuJy4nKTsKICAgICAgfSB1bmxlc3MgKCRzdHVbJGldIG5lICIiIGFuZCAkZHEtPmV2YWwoaCA9PiAkc3R1WyRpXSkgPT0gJHN0dVskaSsxXSk7CiAgICAgIGRvIHsKICAgICAgICAkcmV0dXJuWyRpXSA9IDA7CiAgICAgICAgJHNlbGYtPnNldE1lc3NhZ2UoJGkrMSwgJ1lvdSBzaG91bGQgdXNlIGgtdmFsdWVzICcuIiRjb3JbMF0iLicsICcuIiRjb3JbMl0iLicsICcuIiRjb3JbNF0iLicsIGFuZCAnLiIkY29yWzZdIi4nLicpOwogICAgICB9IHVubGVzcyAoJHN0dVskaV0gPT0gJGNvclswXSBvciAkc3R1WyRpXSA9PSAkY29yWzJdIG9yICRzdHVbJGldID09ICRjb3JbNF0gb3IgJHN0dVskaV0gPT0gJGNvcls2XSk7CiAgfTsKICBkbyB7CiAgICAkcmV0dXJuWzJdID0gMDsKICAgICRzZWxmLT5zZXRNZXNzYWdlKDMsJ1lvdSBhbHJlYWR5IHVzZWQgdGhpcyBoLXZhbHVlLicpOwogIH0gdW5sZXNzICgkc3R1WzJdICE9ICRzdHVbMF0gb3IgJHN0dVsyXSBlcSAiIik7CiAgZG8gewogICAgJHJldHVybls0XSA9IDA7CiAgICAkc2VsZi0+c2V0TWVzc2FnZSg1LCdZb3UgYWxyZWFkeSB1c2VkIHRoaXMgaC12YWx1ZS4nKTsKICB9IHVubGVzcyAoJHN0dVs0XSAhPSAkc3R1WzBdIGFuZCAkc3R1WzRdICE9ICRzdHVbMl0gb3IgJHN0dVsyXSBlcSAiIik7CiAgZG8gewogICAgJHJldHVybls2XSA9IDA7CiAgICAkc2VsZi0+c2V0TWVzc2FnZSg3LCdZb3UgYWxyZWFkeSB1c2VkIHRoaXMgaC12YWx1ZS4nKTsKICB9IHVubGVzcyAoJHN0dVs2XSAhPSAkc3R1WzBdIGFuZCAkc3R1WzZdICE9ICRzdHVbMl0gYW5kICRzdHVbNl0gIT0gJHN0dVs0XSBvciAkc3R1WzJdIGVxICIiKTsKICByZXR1cm4gW0ByZXR1cm5dOwp9KTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yay4iKSBAXSonOwoKQkVHSU5fUEdNTApbYGYoeCk9WyRmXVx0ZXh0eyx9YF0gW2BhPVskYV1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xETkV8XSouIElmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZ8XSouJylAXSoqCgpbX117JG19ezEwfQoKWyRzaG93d29ya10qKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCj4+IFtARGF0YVRhYmxlKFtbW1BHTUwoJ1tgaGBdJyksbWlkcnVsZT0+JzEnLHJvd2Nzcz0+J2JvcmRlci1ib3R0b206MnB4IHNvbGlkOycsY2VsbGNzcz0+J2JvcmRlci10b3A6M3B4IHNvbGlkOycsXSxbUEdNTCgnW2BcZnJhY3tmKGEraCktZihhKX17aH1gXScpLGNlbGxjc3M9Pidib3JkZXItdG9wOjNweCBzb2xpZDsnLF0sXSxbW1BHTUwoJ1tgLTAuMWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFswXV1gXScpLF0sXSxbW1BHTUwoJ1tgLTAuMDFgXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMV1dYF0nKSxdLF0sW1tQR01MKCdbYDAuMDFgXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMl1dYF0nKSxdLF0sW1tQR01MKCdbYDAuMWBdJykscm93Y3NzPT4nYm9yZGVyLWJvdHRvbTozcHggc29saWQ7JyxdLFtQR01MKCdbYFskdGFib3V0WzNdXWBdJyksXSxdLF0sYWxpZ249PidjYycsY2VudGVyPT4wLCk7QF0qIDw8CgpJdCBhcHBlYXJzIHRoYXQgW2BcbGltXGxpbWl0c197aFx0bzB9XGZyYWN7ZihhK2gpLWYoYSl9e2h9PVskbV1cdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-186"><span class="process-math">\(f(x)={5x-4x^{2}-1}\text{,}\)</span> <span class="process-math">\(a=-3\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-25')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-26"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<div id="webwork-26" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="26" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdlc3NheW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsInBhcnNlck11bHRpQW5zd2VyLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiMkYSA9IHJhbmRvbSgyLDksMSk7CiNpZiAoJGVudmlye3Byb2JsZW1TZWVkfSA9PSAxKXsKICAkYSA9IDU7CiN9OwokZiA9IEZvcm11bGEoImxuKHgpIik7CiRtID0gJGYtPkQoJ3gnKS0+ZXZhbCh4ID0+ICRhKS0+d2l0aCh0b2xlcmFuY2UgPT4gLjAxKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZChoID0+ICdSZWFsJyk7CiRkcSA9ICgkZi0+c3Vic3RpdHV0ZSh4ID0+IEZvcm11bGEoIiRhK2giKSktKCRmLT5ldmFsKHggPT4gJGEpKSkvRm9ybXVsYSgiaCIpOwpAdGFiaW4gPSAoUmVhbCgtMC4xKSxSZWFsKC0wLjAxKSxSZWFsKDAuMDEpLFJlYWwoMC4xKSk7CkB0YWJvdXQgPSBtYXB7JGRxLT5ldmFsKGggPT4gJF8sIHggPT4gMSl9IChAdGFiaW4pOwpAdGFibGUgPSBtYXB7KCR0YWJpblskX10sICR0YWJvdXRbJF9dKX0gKDAgLi4gJCN0YWJpbik7CiR0YWJsZWFuc3dlcnMgPSBNdWx0aUFuc3dlcihAdGFibGUpLT53aXRoKGFsbG93QmxhbmtBbnN3ZXJzID0+IDEsY2hlY2tlciA9PiBzdWJ7CiAgbXkgKCRjb3JyZWN0LCRzdHVkZW50LCRzZWxmKT1AXzsKICBteSBAY29yID0gQHskY29ycmVjdH07CiAgbXkgQHN0dSA9IEB7JHN0dWRlbnR9OwogIG15IEByZXR1cm4gPSAoMSwxLDEsMSwxLDEsMSwxKTsKICBmb3IgbXkgJGkgKDAsMiw0LDYpIHsKICAgICAgZG8gewogICAgICAgICRyZXR1cm5bJGkrMV0gPSAwOwogICAgICAgICRzZWxmLT5zZXRNZXNzYWdlKCRpKzIsICdUaGlzIGlzIG5vdCB0aGUgZGlmZmVyZW5jZSBxdW90aWVudCB3aGVuIGg9Jy4iJHN0dVskaV0iLicuJyk7CiAgICAgIH0gdW5sZXNzICgkc3R1WyRpXSBuZSAiIiBhbmQgJGRxLT5ldmFsKGggPT4gJHN0dVskaV0pID09ICRzdHVbJGkrMV0pOwogICAgICBkbyB7CiAgICAgICAgJHJldHVyblskaV0gPSAwOwogICAgICAgICRzZWxmLT5zZXRNZXNzYWdlKCRpKzEsICdZb3Ugc2hvdWxkIHVzZSBoLXZhbHVlcyAnLiIkY29yWzBdIi4nLCAnLiIkY29yWzJdIi4nLCAnLiIkY29yWzRdIi4nLCBhbmQgJy4iJGNvcls2XSIuJy4nKTsKICAgICAgfSB1bmxlc3MgKCRzdHVbJGldID09ICRjb3JbMF0gb3IgJHN0dVskaV0gPT0gJGNvclsyXSBvciAkc3R1WyRpXSA9PSAkY29yWzRdIG9yICRzdHVbJGldID09ICRjb3JbNl0pOwogIH07CiAgZG8gewogICAgJHJldHVyblsyXSA9IDA7CiAgICAkc2VsZi0+c2V0TWVzc2FnZSgzLCdZb3UgYWxyZWFkeSB1c2VkIHRoaXMgaC12YWx1ZS4nKTsKICB9IHVubGVzcyAoJHN0dVsyXSAhPSAkc3R1WzBdIG9yICRzdHVbMl0gZXEgIiIpOwogIGRvIHsKICAgICRyZXR1cm5bNF0gPSAwOwogICAgJHNlbGYtPnNldE1lc3NhZ2UoNSwnWW91IGFscmVhZHkgdXNlZCB0aGlzIGgtdmFsdWUuJyk7CiAgfSB1bmxlc3MgKCRzdHVbNF0gIT0gJHN0dVswXSBhbmQgJHN0dVs0XSAhPSAkc3R1WzJdIG9yICRzdHVbMl0gZXEgIiIpOwogIGRvIHsKICAgICRyZXR1cm5bNl0gPSAwOwogICAgJHNlbGYtPnNldE1lc3NhZ2UoNywnWW91IGFscmVhZHkgdXNlZCB0aGlzIGgtdmFsdWUuJyk7CiAgfSB1bmxlc3MgKCRzdHVbNl0gIT0gJHN0dVswXSBhbmQgJHN0dVs2XSAhPSAkc3R1WzJdIGFuZCAkc3R1WzZdICE9ICRzdHVbNF0gb3IgJHN0dVsyXSBlcSAiIik7CiAgcmV0dXJuIFtAcmV0dXJuXTsKfSk7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiU2hvdyB5b3VyIHdvcmsuIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BmKHgpPVskZl1cdGV4dHssfWBdIFtgYT1bJGFdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBsaW1pdCBkb2VzIG5vdCBleGlzdCwgeW91IG1heSB0eXBlIFt8RE5FfF0qLiBJZiB5b3UgbmVlZCB0byBlbnRlciBbYFxpbmZ0eVx0ZXh0eyx9YF0geW91IG1heSB0eXBlIFt8aW5mfF0qLicpQF0qKgoKW19deyRtfXsxMH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgo+PiBbQERhdGFUYWJsZShbW1tQR01MKCdbYGhgXScpLG1pZHJ1bGU9PicxJyxyb3djc3M9Pidib3JkZXItYm90dG9tOjJweCBzb2xpZDsnLGNlbGxjc3M9Pidib3JkZXItdG9wOjNweCBzb2xpZDsnLF0sW1BHTUwoJ1tgXGZyYWN7ZihhK2gpLWYoYSl9e2h9YF0nKSxjZWxsY3NzPT4nYm9yZGVyLXRvcDozcHggc29saWQ7JyxdLF0sW1tQR01MKCdbYC0wLjFgXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMF1dYF0nKSxdLF0sW1tQR01MKCdbYC0wLjAxYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzFdXWBdJyksXSxdLFtbUEdNTCgnW2AwLjAxYF0nKSxdLFtQR01MKCdbYFskdGFib3V0WzJdXWBdJyksXSxdLFtbUEdNTCgnW2AwLjFgXScpLHJvd2Nzcz0+J2JvcmRlci1ib3R0b206M3B4IHNvbGlkOycsXSxbUEdNTCgnW2BbJHRhYm91dFszXV1gXScpLF0sXSxdLGFsaWduPT4nY2MnLGNlbnRlcj0+MCwpO0BdKiA8PAoKSXQgYXBwZWFycyB0aGF0IFtgXGxpbVxsaW1pdHNfe2hcdG8wfVxmcmFje2YoYStoKS1mKGEpfXtofT1bJG1dXHRleHR7Ln1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-189"><span class="process-math">\(f(x)={\ln\!\left(x\right)}\text{,}\)</span> <span class="process-math">\(a=5\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-26')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<div id="webwork-27" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="27" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdlc3NheW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsInBhcnNlck11bHRpQW5zd2VyLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHMgPT4gMCk7CiMkYSA9IGxpc3RfcmFuZG9tKEZvcm11bGEoInBpLzMiKSxGb3JtdWxhKCIycGkvMyIpLEZvcm11bGEoInBpIiksRm9ybXVsYSgiNHBpLzMiKSxGb3JtdWxhKCI1cGkvMyIpLCk7CiNpZiAoJGVudmlye3Byb2JsZW1TZWVkfSA9PSAxKXsKICAkYSA9IEZvcm11bGEoInBpIik7CiN9OwokZiA9IEZvcm11bGEoInNpbih4KSIpOwokbSA9ICRmLT5EKCd4JyktPmV2YWwoeCA9PiAkYS0+ZXZhbCh4ID0+IDApKS0+d2l0aCh0b2xlcmFuY2UgPT4gLjAxKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZChoID0+ICdSZWFsJyk7CiRkcSA9ICgkZi0+c3Vic3RpdHV0ZSh4ID0+IEZvcm11bGEoIiRhK2giKSktKCRmLT5ldmFsKHggPT4gJGEtPmV2YWwoeCA9PiAwKSkpKS9Gb3JtdWxhKCJoIik7CkB0YWJpbiA9IChSZWFsKC0wLjEpLFJlYWwoLTAuMDEpLFJlYWwoMC4wMSksUmVhbCgwLjEpKTsKQHRhYm91dCA9IG1hcHskZHEtPmV2YWwoaCA9PiAkXywgeCA9PiAxKX0gKEB0YWJpbik7CkB0YWJsZSA9IG1hcHsoJHRhYmluWyRfXSwgJHRhYm91dFskX10pfSAoMCAuLiAkI3RhYmluKTsKJHRhYmxlYW5zd2VycyA9IE11bHRpQW5zd2VyKEB0YWJsZSktPndpdGgoYWxsb3dCbGFua0Fuc3dlcnMgPT4gMSxjaGVja2VyID0+IHN1YnsKICBteSAoJGNvcnJlY3QsJHN0dWRlbnQsJHNlbGYpPUBfOwogIG15IEBjb3IgPSBAeyRjb3JyZWN0fTsKICBteSBAc3R1ID0gQHskc3R1ZGVudH07CiAgbXkgQHJldHVybiA9ICgxLDEsMSwxLDEsMSwxLDEpOwogIGZvciBteSAkaSAoMCwyLDQsNikgewogICAgICBkbyB7CiAgICAgICAgJHJldHVyblskaSsxXSA9IDA7CiAgICAgICAgJHNlbGYtPnNldE1lc3NhZ2UoJGkrMiwgJ1RoaXMgaXMgbm90IHRoZSBkaWZmZXJlbmNlIHF1b3RpZW50IHdoZW4gaD0nLiIkc3R1WyRpXSIuJy4nKTsKICAgICAgfSB1bmxlc3MgKCRzdHVbJGldIG5lICIiIGFuZCAkZHEtPmV2YWwoaCA9PiAkc3R1WyRpXSkgPT0gJHN0dVskaSsxXSk7CiAgICAgIGRvIHsKICAgICAgICAkcmV0dXJuWyRpXSA9IDA7CiAgICAgICAgJHNlbGYtPnNldE1lc3NhZ2UoJGkrMSwgJ1lvdSBzaG91bGQgdXNlIGgtdmFsdWVzICcuIiRjb3JbMF0iLicsICcuIiRjb3JbMl0iLicsICcuIiRjb3JbNF0iLicsIGFuZCAnLiIkY29yWzZdIi4nLicpOwogICAgICB9IHVubGVzcyAoJHN0dVskaV0gPT0gJGNvclswXSBvciAkc3R1WyRpXSA9PSAkY29yWzJdIG9yICRzdHVbJGldID09ICRjb3JbNF0gb3IgJHN0dVskaV0gPT0gJGNvcls2XSk7CiAgfTsKICBkbyB7CiAgICAkcmV0dXJuWzJdID0gMDsKICAgICRzZWxmLT5zZXRNZXNzYWdlKDMsJ1lvdSBhbHJlYWR5IHVzZWQgdGhpcyBoLXZhbHVlLicpOwogIH0gdW5sZXNzICgkc3R1WzJdICE9ICRzdHVbMF0gb3IgJHN0dVsyXSBlcSAiIik7CiAgZG8gewogICAgJHJldHVybls0XSA9IDA7CiAgICAkc2VsZi0+c2V0TWVzc2FnZSg1LCdZb3UgYWxyZWFkeSB1c2VkIHRoaXMgaC12YWx1ZS4nKTsKICB9IHVubGVzcyAoJHN0dVs0XSAhPSAkc3R1WzBdIGFuZCAkc3R1WzRdICE9ICRzdHVbMl0gb3IgJHN0dVsyXSBlcSAiIik7CiAgZG8gewogICAgJHJldHVybls2XSA9IDA7CiAgICAkc2VsZi0+c2V0TWVzc2FnZSg3LCdZb3UgYWxyZWFkeSB1c2VkIHRoaXMgaC12YWx1ZS4nKTsKICB9IHVubGVzcyAoJHN0dVs2XSAhPSAkc3R1WzBdIGFuZCAkc3R1WzZdICE9ICRzdHVbMl0gYW5kICRzdHVbNl0gIT0gJHN0dVs0XSBvciAkc3R1WzJdIGVxICIiKTsKICByZXR1cm4gW0ByZXR1cm5dOwp9KTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yay4iKSBAXSonOwoKQkVHSU5fUEdNTApbYGYoeCk9WyRmXVx0ZXh0eyx9YF0gW2BhPVskYV1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xETkV8XSouIElmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZ8XSouJylAXSoqCgpbX117JG19ezEwfQoKWyRzaG93d29ya10qKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCj4+IFtARGF0YVRhYmxlKFtbW1BHTUwoJ1tgaGBdJyksbWlkcnVsZT0+JzEnLHJvd2Nzcz0+J2JvcmRlci1ib3R0b206MnB4IHNvbGlkOycsY2VsbGNzcz0+J2JvcmRlci10b3A6M3B4IHNvbGlkOycsXSxbUEdNTCgnW2BcZnJhY3tmKGEraCktZihhKX17aH1gXScpLGNlbGxjc3M9Pidib3JkZXItdG9wOjNweCBzb2xpZDsnLF0sXSxbW1BHTUwoJ1tgLTAuMWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFswXV1gXScpLF0sXSxbW1BHTUwoJ1tgLTAuMDFgXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMV1dYF0nKSxdLF0sW1tQR01MKCdbYDAuMDFgXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMl1dYF0nKSxdLF0sW1tQR01MKCdbYDAuMWBdJykscm93Y3NzPT4nYm9yZGVyLWJvdHRvbTozcHggc29saWQ7JyxdLFtQR01MKCdbYFskdGFib3V0WzNdXWBdJyksXSxdLF0sYWxpZ249PidjYycsY2VudGVyPT4wLCk7QF0qIDw8CgpJdCBhcHBlYXJzIHRoYXQgW2BcbGltXGxpbWl0c197aFx0bzB9XGZyYWN7ZihhK2gpLWYoYSl9e2h9PVskbV1cdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-192"><span class="process-math">\(f(x)={\sin\!\left(x\right)}\text{,}\)</span> <span class="process-math">\(a={\pi }\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-27')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-28" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="28" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdlc3NheW1hY3Jvcy5wbCIsIlBDQ21hY3Jvcy5wbCIsInBhcnNlck11bHRpQW5zd2VyLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHMgPT4gMCk7CiMkYSA9IGxpc3RfcmFuZG9tKEZvcm11bGEoInBpLzMiKSxGb3JtdWxhKCIycGkvMyIpLEZvcm11bGEoInBpIiksRm9ybXVsYSgiNHBpLzMiKSxGb3JtdWxhKCI1cGkvMyIpLCk7CiNpZiAoJGVudmlye3Byb2JsZW1TZWVkfSA9PSAxKXsKICAkYSA9IEZvcm11bGEoInBpIik7CiN9OwokZiA9IEZvcm11bGEoImNvcyh4KSIpOwokbSA9ICRmLT5EKCd4JyktPmV2YWwoeCA9PiAkYS0+ZXZhbCh4ID0+IDApKS0+d2l0aCh0b2xlcmFuY2UgPT4gLjAxKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZChoID0+ICdSZWFsJyk7CiRkcSA9ICgkZi0+c3Vic3RpdHV0ZSh4ID0+IEZvcm11bGEoIiRhK2giKSktKCRmLT5ldmFsKHggPT4gJGEtPmV2YWwoeCA9PiAwKSkpKS9Gb3JtdWxhKCJoIik7CkB0YWJpbiA9IChSZWFsKC0wLjEpLFJlYWwoLTAuMDEpLFJlYWwoMC4wMSksUmVhbCgwLjEpKTsKQHRhYm91dCA9IG1hcHskZHEtPmV2YWwoaCA9PiAkXywgeCA9PiAxKX0gKEB0YWJpbik7CkB0YWJsZSA9IG1hcHsoJHRhYmluWyRfXSwgJHRhYm91dFskX10pfSAoMCAuLiAkI3RhYmluKTsKJHRhYmxlYW5zd2VycyA9IE11bHRpQW5zd2VyKEB0YWJsZSktPndpdGgoYWxsb3dCbGFua0Fuc3dlcnMgPT4gMSxjaGVja2VyID0+IHN1YnsKICBteSAoJGNvcnJlY3QsJHN0dWRlbnQsJHNlbGYpPUBfOwogIG15IEBjb3IgPSBAeyRjb3JyZWN0fTsKICBteSBAc3R1ID0gQHskc3R1ZGVudH07CiAgbXkgQHJldHVybiA9ICgxLDEsMSwxLDEsMSwxLDEpOwogIGZvciBteSAkaSAoMCwyLDQsNikgewogICAgICBkbyB7CiAgICAgICAgJHJldHVyblskaSsxXSA9IDA7CiAgICAgICAgJHNlbGYtPnNldE1lc3NhZ2UoJGkrMiwgJ1RoaXMgaXMgbm90IHRoZSBkaWZmZXJlbmNlIHF1b3RpZW50IHdoZW4gaD0nLiIkc3R1WyRpXSIuJy4nKTsKICAgICAgfSB1bmxlc3MgKCRzdHVbJGldIG5lICIiIGFuZCAkZHEtPmV2YWwoaCA9PiAkc3R1WyRpXSkgPT0gJHN0dVskaSsxXSk7CiAgICAgIGRvIHsKICAgICAgICAkcmV0dXJuWyRpXSA9IDA7CiAgICAgICAgJHNlbGYtPnNldE1lc3NhZ2UoJGkrMSwgJ1lvdSBzaG91bGQgdXNlIGgtdmFsdWVzICcuIiRjb3JbMF0iLicsICcuIiRjb3JbMl0iLicsICcuIiRjb3JbNF0iLicsIGFuZCAnLiIkY29yWzZdIi4nLicpOwogICAgICB9IHVubGVzcyAoJHN0dVskaV0gPT0gJGNvclswXSBvciAkc3R1WyRpXSA9PSAkY29yWzJdIG9yICRzdHVbJGldID09ICRjb3JbNF0gb3IgJHN0dVskaV0gPT0gJGNvcls2XSk7CiAgfTsKICBkbyB7CiAgICAkcmV0dXJuWzJdID0gMDsKICAgICRzZWxmLT5zZXRNZXNzYWdlKDMsJ1lvdSBhbHJlYWR5IHVzZWQgdGhpcyBoLXZhbHVlLicpOwogIH0gdW5sZXNzICgkc3R1WzJdICE9ICRzdHVbMF0gb3IgJHN0dVsyXSBlcSAiIik7CiAgZG8gewogICAgJHJldHVybls0XSA9IDA7CiAgICAkc2VsZi0+c2V0TWVzc2FnZSg1LCdZb3UgYWxyZWFkeSB1c2VkIHRoaXMgaC12YWx1ZS4nKTsKICB9IHVubGVzcyAoJHN0dVs0XSAhPSAkc3R1WzBdIGFuZCAkc3R1WzRdICE9ICRzdHVbMl0gb3IgJHN0dVsyXSBlcSAiIik7CiAgZG8gewogICAgJHJldHVybls2XSA9IDA7CiAgICAkc2VsZi0+c2V0TWVzc2FnZSg3LCdZb3UgYWxyZWFkeSB1c2VkIHRoaXMgaC12YWx1ZS4nKTsKICB9IHVubGVzcyAoJHN0dVs2XSAhPSAkc3R1WzBdIGFuZCAkc3R1WzZdICE9ICRzdHVbMl0gYW5kICRzdHVbNl0gIT0gJHN0dVs0XSBvciAkc3R1WzJdIGVxICIiKTsKICByZXR1cm4gW0ByZXR1cm5dOwp9KTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yay4iKSBAXSonOwoKQkVHSU5fUEdNTApbYGYoeCk9WyRmXVx0ZXh0eyx9YF0gW2BhPVskYV1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIGxpbWl0IGRvZXMgbm90IGV4aXN0LCB5b3UgbWF5IHR5cGUgW3xETkV8XSouIElmIHlvdSBuZWVkIHRvIGVudGVyIFtgXGluZnR5XHRleHR7LH1gXSB5b3UgbWF5IHR5cGUgW3xpbmZ8XSouJylAXSoqCgpbX117JG19ezEwfQoKWyRzaG93d29ya10qKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCj4+IFtARGF0YVRhYmxlKFtbW1BHTUwoJ1tgaGBdJyksbWlkcnVsZT0+JzEnLHJvd2Nzcz0+J2JvcmRlci1ib3R0b206MnB4IHNvbGlkOycsY2VsbGNzcz0+J2JvcmRlci10b3A6M3B4IHNvbGlkOycsXSxbUEdNTCgnW2BcZnJhY3tmKGEraCktZihhKX17aH1gXScpLGNlbGxjc3M9Pidib3JkZXItdG9wOjNweCBzb2xpZDsnLF0sXSxbW1BHTUwoJ1tgLTAuMWBdJyksXSxbUEdNTCgnW2BbJHRhYm91dFswXV1gXScpLF0sXSxbW1BHTUwoJ1tgLTAuMDFgXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMV1dYF0nKSxdLF0sW1tQR01MKCdbYDAuMDFgXScpLF0sW1BHTUwoJ1tgWyR0YWJvdXRbMl1dYF0nKSxdLF0sW1tQR01MKCdbYDAuMWBdJykscm93Y3NzPT4nYm9yZGVyLWJvdHRvbTozcHggc29saWQ7JyxdLFtQR01MKCdbYFskdGFib3V0WzNdXWBdJyksXSxdLF0sYWxpZ249PidjYycsY2VudGVyPT4wLCk7QF0qIDw8CgpJdCBhcHBlYXJzIHRoYXQgW2BcbGltXGxpbWl0c197aFx0bzB9XGZyYWN7ZihhK2gpLWYoYSl9e2h9PVskbV1cdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-195"><span class="process-math">\(f(x)={\cos\!\left(x\right)}\text{,}\)</span> <span class="process-math">\(a={\pi }\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-28')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

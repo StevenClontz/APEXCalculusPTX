@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:11Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-trig-ex-cos4sin2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/EXODR17otIw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>The powers of sine and cosine are both even, so we employ the power-reducing formulas and algebra as follows.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\amp \int \cos^4(x) \sin^2(x) \, dx = \int\left(\frac{1+\cos(2x)}{2}\right)^2\left(\frac{1-\cos(2x)}2\right)\, dx\\
+\amp = \int\frac{1+2\cos(2x)+\cos^2(2x)}4\cdot\frac{1-\cos(2x)}2\, dx\\
+\amp =	\int \frac18\big(1+\cos(2x)+\cos^2(2x)-\cos^3(2x)\big)\, dx\\
+\amp = \frac18 \left(\underbrace{\int 1 \, dx}_{a}+\underbrace{\int \cos(2x)\, dx}_{b}-\underbrace{\int \cos^2(2x)\, dx}_{c}-\underbrace{\int \cos^3(2x)\, dx}_{d}\right)
+\end{align*}
+</div>
+<p>The first integral labeled <span class="process-math">\(a\)</span> is easy to integrate. The <span class="process-math">\(\cos(2x)\)</span> term is also easy to integrate, especially with <a href="" class="xref" data-knowl="./knowl/idea_linearsub.html" title="Key Idea 6.1.5: Substitution With A Linear Function">Key Idea 6.1.5</a>. The <span class="process-math">\(\cos^2(2x)\)</span> term is another trigonometric integral with an even power, requiring the power-reducing formula again. The <span class="process-math">\(\cos^3(2x)\)</span> term is a cosine function with an odd power, requiring a substitution as done before. We integrate each in turn below.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_linearsub.html">
+\begin{align*}
+\underbrace{\int\cos(2x)\, dx}_{b} \amp = \frac12\sin(2x)+C\\
+\underbrace{\int\cos^2(2x)\, dx}_{c} \amp = \int \frac{1+\cos(4x)}2\, dx\\
+\amp = \frac12\big(x+\frac14\sin(4x)\big)+C\text{.}
+\end{align*}
+</div>
+<p>Finally, we rewrite <span class="process-math">\(\cos^3(2x)\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\cos^3(2x) \amp = \cos^2(2x)\cos(2x)\\
+\amp = \big(1-\sin^2(2x)\big)\cos(2x)\text{.}
+\end{align*}
+</div>
+<p>Letting <span class="process-math">\(u=\sin(2x)\text{,}\)</span> we have <span class="process-math">\(du = 2\cos(2x)\, dx\text{,}\)</span> hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\underbrace{\int \cos^3(2x)\, dx}_{d} \amp = \int\big(1-\sin^2(2x)\big)\cos(2x)\, dx\\
+\amp = \int \frac12(1-u^2)\,du\\
+\amp = \frac12\Big(u-\frac13u^3\Big)+C\\
+\amp =	\frac12\Big(\sin(2x)-\frac13\sin^3(2x)\Big)+C\text{.}
+\end{align*}
+</div>
+<p>Putting all the pieces together, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\amp \int \cos^4(x) \sin^2(x) \, dx\\
+\amp =\int \frac18\big(1+\cos(2x)-\cos^2(2x)-\cos^3(2x)\big)\, dx\\
+\amp = \frac18\Big[x+\frac12\sin(2x)-\frac12\big(x+\frac14\sin(4x)\big)-\frac12\Big(\sin(2x)-\frac13\sin^3(2x)\Big)\Big]+C\\
+\amp =\frac18\Big[\frac12x-\frac18\sin(4x)+\frac16\sin^3(2x)\Big]+C\text{.}
+\end{align*}
+</div>
+</div></body>
+</html>

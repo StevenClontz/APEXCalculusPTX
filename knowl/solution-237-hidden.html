@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:43Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>Newton's Method provides a method of solving <span class="process-math">\(f(x) = 0\text{;}\)</span> it is not (directly) a method for solving equations like <span class="process-math">\(f(x) = g(x)\text{.}\)</span> However, this is not a problem; we can rewrite the latter equation as <span class="process-math">\(f(x) - g(x)=0\)</span> and then use Newton's Method.</p>
+<p>So we rewrite <span class="process-math">\(\cos(x) =x\)</span> as <span class="process-math">\(\cos(x)-x=0\text{.}\)</span> Written this way, we are finding a root of <span class="process-math">\(f(x)=\cos(x) -x\text{.}\)</span> We compute <span class="process-math">\(\fp(x)=-\sin(x) - 1\text{.}\)</span> Next we need a starting value, <span class="process-math">\(x_0\text{.}\)</span> Consider <a href="" class="xref" data-knowl="./knowl/fig_newt3.html" title="Figure 4.1.6">Figure 4.1.6</a>, where <span class="process-math">\(f(x) = \cos(x) -x\)</span> is graphed. It seems that <span class="process-math">\(x_0=0.75\)</span> is pretty close to the root, so we will use that as our <span class="process-math">\(x_0\text{.}\)</span> (The figure also shows the graphs of <span class="process-math">\(y=\cos(x)\)</span> and <span class="process-math">\(y=x\text{.}\)</span> Note how they intersect at the same <span class="process-math">\(x\)</span> value as when <span class="process-math">\(f(x) = 0\text{.}\)</span>)</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_newt3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.6<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(f(x)=\cos(x) -x\)</span> used to find an initial approximation of its root</figcaption></figure><p>We now compute <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(x_2\text{,}\)</span> etc. The formula for <span class="process-math">\(x_1\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x_1 \amp= 0.75 - \frac{\cos(0.75)-0.75}{-\sin(0.75)-1}\\
+\amp \approx 0.7391111388\text{.}
+\end{align*}
+</div>
+<p>Apply Newton's Method again to find <span class="process-math">\(x_2\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x_2 \amp= 0.7391111388 - \frac{\cos(0.7391111388)-0.7391111388}{-\sin(0.7391111388)-1}\\
+\amp \approx 0.7390851334\text{.}
+\end{align*}
+</div>
+<p>We can continue this way, but it is really best to automate this process. On a calculator with an <code class="code-inline tex2jax_ignore">ANS</code> key, we would start by entering <code class="code-inline tex2jax_ignore">0.75</code>, then <code class="code-inline tex2jax_ignore">Enter</code>, inputting our initial approximation. We then enter:</p>
+<pre class="code-display tex2jax_ignore">ANS - (cos(ANS)-ANS)/(-sin(ANS)-1)
+</pre>
+<p>Repeatedly pressing the <code class="code-inline tex2jax_ignore">Enter</code> key gives successive approximations. We quickly find:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x_3 \amp = 0.7390851332\\
+x_4 \amp = 0.7390851332\text{.}
+\end{align*}
+</div>
+<p>Our approximations <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_3\)</span> did not differ for at least the first five places after the decimal, so we could have stopped. However, using our calculator in the manner described is easy, so finding <span class="process-math">\(x_4\)</span> was not hard. It is interesting to see how we found an approximation, accurate to as many decimal places as our calculator displays, in just four iterations.</p>
+</div></body>
+</html>

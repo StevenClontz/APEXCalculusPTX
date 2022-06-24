@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:42Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<ol class="decimal">
+<li>
+<p>As <span class="process-math">\(x\rightarrow 0^+\text{,}\)</span> <span class="process-math">\(x\rightarrow 0\)</span> and <span class="process-math">\(e^{1/x}\rightarrow \infty\text{.}\)</span> Thus we have the indeterminate form <span class="process-math">\(0\cdot\infty\text{.}\)</span> We rewrite the expression <span class="process-math">\(x\cdot e^{1/x}\)</span> as <span class="process-math">\(\ds\frac{e^{1/x}}{1/x}\text{;}\)</span> now, as <span class="process-math">\(x\rightarrow 0^+\text{,}\)</span> we get the indeterminate form <span class="process-math">\(\infty/\infty\)</span> to which l'Hospital's Rule can be applied.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to0^+} x\cdot e^{1/x} = \lim_{x\to 0^+} \frac{e^{1/x}}{1/x} \stackrel{\,\text{ by LHR }  \,}{=} \lim_{x\to 0^+}\frac{(-1/x^2)e^{1/x}}{-1/x^2} =\lim_{x\to 0^+}e^{1/x} =\infty\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Interpretation: <span class="process-math">\(e^{1/x}\)</span> grows “faster” than <span class="process-math">\(x\)</span> shrinks to zero, meaning their product grows without bound.</p>
+</li>
+<li>
+<p>As <span class="process-math">\(x\rightarrow 0^-\text{,}\)</span> <span class="process-math">\(x\rightarrow 0\)</span> and <span class="process-math">\(e^{1/x}\rightarrow e^{-\infty}\rightarrow 0\text{.}\)</span> The the limit evaluates to <span class="process-math">\(0\cdot 0\)</span> which is not an indeterminate form. We conclude then that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 0^-}x\cdot e^{1/x} = 0\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>This limit initially evaluates to the indeterminate form <span class="process-math">\(\infty-\infty\text{.}\)</span> By applying a logarithmic rule, we can rewrite the limit as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to\infty} \ln(x+1)-\ln(x) = \lim_{x\to \infty} \ln\left(\frac{x+1}x\right)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">As <span class="process-math">\(x\rightarrow \infty\text{,}\)</span> the argument of the <span class="process-math">\(\ln\)</span> term approaches <span class="process-math">\(\infty/\infty\text{,}\)</span> to which we can apply l'Hospital's Rule.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to\infty} \frac{x+1}x \stackrel{\,\text{ by LHR }  \,}{=} \frac11=1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since <span class="process-math">\(x\rightarrow \infty\)</span> implies <span class="process-math">\(\ds\frac{x+1}x\rightarrow 1\text{,}\)</span> it follows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x\rightarrow \infty  \text{ implies }  \ln\left(\frac{x+1}x\right)\rightarrow \ln(1) =0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to\infty} \ln(x+1)-\ln(x) = \lim_{x\to \infty} \ln\left(\frac{x+1}x\right)=0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Interpretation: since this limit evaluates to 0, it means that for large <span class="process-math">\(x\text{,}\)</span> there is essentially no difference between <span class="process-math">\(\ln(x+1)\)</span> and <span class="process-math">\(\ln(x)\text{;}\)</span> their difference is essentially 0.</p>
+</li>
+<li>
+<p>The limit <span class="process-math">\(\lim\limits_{x\to\infty} x^2-e^x\)</span> initially returns the indeterminate form <span class="process-math">\(\infty-\infty\text{.}\)</span> We can rewrite the expression by factoring out <span class="process-math">\(x^2\text{;}\)</span> <span class="process-math">\(\ds x^2-e^x = x^2\left(1-\frac{e^x}{x^2}\right)\text{.}\)</span> We need to evaluate how <span class="process-math">\(e^x/x^2\)</span> behaves as <span class="process-math">\(x\rightarrow \infty\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to\infty}\frac{e^x}{x^2} \stackrel{\,\text{ by LHR }  \,}{=} \lim_{x\to\infty} \frac{e^x}{2x} \stackrel{\,\text{ by LHR }  \,}{=} \lim_{x\to\infty} \frac{e^x}{2} = \infty\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(\lim_{x\to\infty}x^2(1-e^x/x^2)\)</span> evaluates to <span class="process-math">\(\infty\cdot(-\infty)\text{,}\)</span> which is not an indeterminate form; rather, <span class="process-math">\(\infty\cdot(-\infty)\)</span> evaluates to <span class="process-math">\(-\infty\text{.}\)</span> We conclude that <span class="process-math">\(\lim\limits_{x\to\infty} x^2-e^x = -\infty\text{.}\)</span> Interpretation: as <span class="process-math">\(x\)</span> gets large, the difference between <span class="process-math">\(x^2\)</span> and <span class="process-math">\(e^x\)</span> grows very large.</p>
+</li>
+</ol>
+<span class="incontext"><a href="sec_lhopitals_rule.html#p-6370" class="internal">in-context</a></span>
+</body>
+</html>

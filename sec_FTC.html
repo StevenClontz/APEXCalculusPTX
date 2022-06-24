@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:28:33Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX The Fundamental Theorem of Calculus</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_riemann.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_integration.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_numerical_integration.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_riemann.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_integration.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_numerical_integration.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="active">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_FTC"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">The Fundamental Theorem of Calculus</span>
+</h2>
+<section class="introduction" id="introduction-101"><figure class="figure figure-like" id="vid_int_FTC_intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-174" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/8d3R9MSwKuk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_FTC.html" class="internal" title="Section 5.4: The Fundamental Theorem of Calculus">Section 5.4</a></figcaption></figure><p id="p-4781">Let <span class="process-math">\(f(t)\)</span> be a continuous function defined on <span class="process-math">\([a,b]\text{.}\)</span> The definite integral <span class="process-math">\(\int_a^b f(x)\, dx\)</span> is the “area under <span class="process-math">\(f\)</span>” on <span class="process-math">\([a,b]\text{.}\)</span> We can turn this concept into a function by letting the upper (or lower) bound vary.</p>
+<p id="p-4782">Let <span class="process-math">\(F(x) = \int_a^x f(t)\, dt\text{.}\)</span> It computes the area under <span class="process-math">\(f\)</span> on <span class="process-math">\([a,x]\)</span> as illustrated in <a href="" class="xref" data-knowl="./knowl/fig_ftc0.html" title="Figure 5.4.2">Figure 5.4.2</a>. We can study this function using our knowledge of the definite integral. For instance, <span class="process-math">\(F(a)=0\)</span> since <span class="process-math">\(\int_a^af(t)\, dt=0\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_ftc0"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_ftc0.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.2<span class="period">.</span></span><span class="space"> </span>The area of the shaded region is <span class="process-math">\(F(x) = \int_a^x f(t)\, dt\)</span></figcaption></figure><article class="example example-like" id="ex_ftc1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Exploring the “Area so far” function.</span>
+</h3>
+<p id="p-4783">Consider <span class="process-math">\(f(t)=2t\)</span> pictured in Figure <a href="" class="xref" data-knowl="./knowl/fig_ftc1.html" title="Figure 5.4.4">Figure 5.4.4</a> and its associated “area so far” function, <span class="process-math">\(F(x)=\int_1^x 2t\, dt\text{.}\)</span> Using the graph of <span class="process-math">\(f\)</span> and geometry, find an explicit formula for <span class="process-math">\(F\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_ftc1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_ftc1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.4<span class="period">.</span></span><span class="space"> </span>The area of the shaded region is <span class="process-math">\(F(x) = \int_1^x 2t\, dt\)</span></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-279" id="solution-279"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-279"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_FTC_ex_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/zVyMghQRLcI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-4784">We can see from <a href="" class="xref" data-knowl="./knowl/fig_ftc1b.html" title="Figure 5.4.5">Figure 5.4.5</a> that for <span class="process-math">\(x \geq 1\text{,}\)</span> the area under the curve can be found by subtracting the area of two triangles. The larger triangle will have a base of <span class="process-math">\(x\)</span> and a height of <span class="process-math">\(f(x)=2x\text{,}\)</span> while the smaller triangle will have a base of <span class="process-math">\(1\)</span> and a height of <span class="process-math">\(2\text{.}\)</span> Therefore, the area under the curve for <span class="process-math">\(x \geq 1\)</span> is given by <span class="process-math">\(A(x)=\frac12 (x)(2x)-\frac12 (1)(2)=x^2-1\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_ftc1b"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_ftc1b.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.5<span class="period">.</span></span><span class="space"> </span>The area of the shaded region is <span class="process-math">\(F(x) = \int_1^x 2t\, dt\)</span></figcaption></figure><p id="p-4785">Note that this same formula holds for <span class="process-math">\(x\lt 1\text{.}\)</span> If <span class="process-math">\(x \lt 1\text{,}\)</span> then <span class="process-math">\(F(x) = \int_1^x 2t\, dt=-\int_x^1 2t\, dt\text{.}\)</span> The areas to the left of <span class="process-math">\(x=1\)</span> will have opposite signs (since they areas are accumulated <em class="emphasis">before</em> <span class="process-math">\(x=1\)</span>). For example, when <span class="process-math">\(x=0\text{,}\)</span> <span class="process-math">\(F(0) = -\int_0^1 2t\, dt=-\frac12 (1)(2)=-1\text{.}\)</span> This is the same value we get from evaluating <span class="process-math">\(x^2-1\)</span> for <span class="process-math">\(x=0\text{.}\)</span> Also notice that <span class="process-math">\(F(-1)=\int_1^{-1} 2t \, dt=-\int_{-1}^1 2t\, dt\text{.}\)</span> This integral is clearly <span class="process-math">\(0\)</span> since the areas over <span class="process-math">\([-1,0]\)</span> and <span class="process-math">\([0,1]\)</span> will sum to zero. Again, this is the same answer obtained by evaluating <span class="process-math">\(x^2-1\)</span> for <span class="process-math">\(x=-1\text{.}\)</span></p>
+<p id="p-4786">Therefore, we can reasonably say that <span class="process-math">\(F(x)=x^2-1\text{.}\)</span> A plot of both <span class="process-math">\(f(x)=2x\)</span> and <span class="process-math">\(F(x)=x^2-1\)</span> are given in Figure <a href="" class="xref" data-knowl="./knowl/fig_ftc1c.html" title="Figure 5.4.6">Figure 5.4.6</a>. You should notice a familiar relationship between these two functions. This relationship is formally stated in <a href="" class="xref" data-knowl="./knowl/thm_FTC1.html" title="Theorem 5.4.7: The Fundamental Theorem of Calculus, Part 1">Theorem 5.4.7</a>.</p>
+<figure class="figure figure-like" id="fig_ftc1c"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_ftc1c.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.6<span class="period">.</span></span><span class="space"> </span>Graphs of <span class="process-math">\(f(x)=2x\)</span> and <span class="process-math">\(F(x)=x^2-1\)</span></figcaption></figure>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.4.1</span> <span class="title">Fundamental Theorem of Calculus, Parts 1 and 2</span>
+</h3>
+<p id="p-4787">As <a href="" class="xref" data-knowl="./knowl/ex_ftc1.html" title='Example 5.4.3: Exploring the "Area so far" function'>Example 5.4.3</a> hinted, we can apply calculus ideas to <span class="process-math">\(F(x)\text{;}\)</span> in particular, we can compute its derivative. In <a href="" class="xref" data-knowl="./knowl/ex_ftc1.html" title='Example 5.4.3: Exploring the "Area so far" function'>Example 5.4.3</a>, <span class="process-math">\(F(x)=x^2-1\text{,}\)</span> so <span class="process-math">\(F'(x)=2x=f(x)\text{.}\)</span> While this may seem like an innocuous thing to do, it has far-reaching implications, as demonstrated by the fact that the result is given as an important theorem.</p>
+<article class="theorem theorem-like" id="thm_FTC1"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">The Fundamental Theorem of Calculus, Part 1.</span>
+</h4>
+<p id="p-4788">Let <span class="process-math">\(f\)</span> be continuous on <span class="process-math">\([a,b]\)</span> and let <span class="process-math">\(F(x) = \int_a^x f(t)\, dt\text{.}\)</span> Then <span class="process-math">\(F\)</span> is a differentiable function on <span class="process-math">\((a,b)\text{,}\)</span> and </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\Fp(x)=f(x)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In other words:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{\int_a^x f(t)\, dt}=f(x)\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="vid_int_FTC_part_I"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-176" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/TE3kZRIso-Q?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.8<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_FTC1.html" title="Theorem 5.4.7: The Fundamental Theorem of Calculus, Part 1">Theorem 5.4.7</a></figcaption></figure><p id="p-4789">Initially this seems simple, as demonstrated in the following example.</p>
+<article class="example example-like" id="ex_ftc2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Fundamental Theorem of Calculus, Part 1.</span>
+</h4>
+<p id="p-4790">Let <span class="process-math">\(\ds F(x) = \int_{-5}^x (t^2+\sin(t) )\, dt\text{.}\)</span> What is <span class="process-math">\(\Fp(x)\text{?}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-280" id="solution-280"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-280"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_FTC_ex_2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/7tHmgPcUZG4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-4791">Using the Fundamental Theorem of Calculus, we have <span class="process-math">\(\Fp(x) = x^2+\sin(x)\text{.}\)</span> That is, the derivative of the “area so far” function, is simply the integrand replacing <span class="process-math">\(x\)</span> with <span class="process-math">\(t\text{.}\)</span></p>
+<p id="p-4792">This simple example reveals something incredible: <span class="process-math">\(F(x)\)</span> is an antiderivative of <span class="process-math">\(x^2+\sin(x)\text{!}\)</span> Therefore, <span class="process-math">\(F(x) = \frac13x^3-\cos(x) +C\)</span> for some value of <span class="process-math">\(C\text{.}\)</span> (We can find <span class="process-math">\(C\text{,}\)</span> but generally we do not care. We know that <span class="process-math">\(F(-5)=0\text{,}\)</span> which allows us to compute <span class="process-math">\(C\text{.}\)</span> In this case, <span class="process-math">\(C=\cos(-5)+\frac{125}3\text{.}\)</span>)</p>
+</div></div>
+</div></article><p id="p-4793">What we have done in <a href="" class="xref" data-knowl="./knowl/ex_ftc2.html" title="Example 5.4.9: Using the Fundamental Theorem of Calculus, Part 1">Example 5.4.9</a> was more than finding a complicated way of computing an antiderivative. Consider a function <span class="process-math">\(f\)</span> defined on an open interval containing <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\)</span> and <span class="process-math">\(c\text{.}\)</span> Suppose we want to compute <span class="process-math">\(\int_a^b f(t)\, dt\text{.}\)</span> First, let</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_ftc2.html ./knowl/thm_defintprop.html ./knowl/eq_ftc_c.html" id="eq_ftc_c">
+\begin{equation}
+F(x) = \int_c^x f(t)\, dt\text{.}\tag{5.4.1}
+\end{equation}
+</div>
+<p class="continuation">Using the properties of the definite integral found in <a href="" class="xref" data-knowl="./knowl/thm_defintprop.html" title="Theorem 5.2.11: Properties of the Definite Integral">Theorem 5.2.11</a>, we know</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_ftc2.html ./knowl/thm_defintprop.html ./knowl/eq_ftc_c.html" id="md-165">
+\begin{align*}
+\int_a^b f(t)\, dt \amp = \int_a^c f(t)\, dt + \int_c^b f(t)\, dt\\
+\amp = -\int_c^a f(t)\, dt + \int_c^b f(t)\, dt
+\end{align*}
+</div>
+<p class="continuation">Using <a href="" class="xref" data-knowl="./knowl/eq_ftc_c.html" title="Equation 5.4.1">Equation (5.4.1)</a>, let <span class="process-math">\(x=a\)</span> in the first integral and <span class="process-math">\(x=b\)</span> in the second integral so that <span class="process-math">\(\int_c^a f(t)\, dt =F(a)\)</span> and <span class="process-math">\(\int_c^b f(t)\, dt =F(b)\text{.}\)</span> Therefore:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_ftc2.html ./knowl/thm_defintprop.html ./knowl/eq_ftc_c.html" id="md-166">
+\begin{align*}
+\int_a^b f(t)\, dt \amp =-F(a) + F(b)\\
+\amp = F(b) - F(a)\text{.}
+\end{align*}
+</div>
+<p id="p-4794">We now see how indefinite integrals and definite integrals are related: we can evaluate a definite integral using antiderivatives! In fact, this is exactly what we noticed in <a href="" class="xref" data-knowl="./knowl/ex_ftc1.html" title='Example 5.4.3: Exploring the "Area so far" function'>Example 5.4.3</a>. The “area so far” function was indeed an anti-derivative of the integrand. This is the second part of the Fundamental Theorem of Calculus.</p>
+<article class="theorem theorem-like" id="thm_FTC2"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental Theorem of Calculus, Part 2.</span>
+</h4>
+<p id="p-4795">Let <span class="process-math">\(f\)</span> be continuous on <span class="process-math">\([a,b]\)</span> and let <span class="process-math">\(F\)</span> be <em class="emphasis">any</em> antiderivative of <span class="process-math">\(f\text{.}\)</span> Then </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_a^b f(x)\, dx = F(b) - F(a)\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="vid_int_FTC_part_II"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-178" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/jU_WUPjamFQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.11<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_FTC2.html" title="Theorem 5.4.10: Fundamental Theorem of Calculus, Part 2">Theorem 5.4.10</a></figcaption></figure><p id="vidint_int_FTC_proof">As its name suggests, the Fundamental Theorem of Calculus is an important result. In fact, it's sufficiently important that it's worth taking a moment to understand why it's true.</p>
+<figure class="figure figure-like" id="vid_int_FTC_proof"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-179" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/8doi_Al_lmg?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.12<span class="period">.</span></span><span class="space"> </span>Proving the Fundamental Theorem of Calculus</figcaption></figure><article class="example example-like" id="ex_ftc3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Fundamental Theorem of Calculus, Part 2.</span>
+</h4>
+<p id="p-4797">We spent a great deal of time in the previous section studying <span class="process-math">\(\int_0^4(4x-x^2)\, dx\text{.}\)</span> Using the Fundamental Theorem of Calculus, evaluate this definite integral.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-281" id="solution-281"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-281"><div class="solution solution-like">
+<p id="p-4798">We need an antiderivative of <span class="process-math">\(f(x)=4x-x^2\text{.}\)</span> All antiderivatives of <span class="process-math">\(f\)</span> have the form <span class="process-math">\(F(x) = 2x^2-\frac13x^3+C\text{;}\)</span> for simplicity, choose <span class="process-math">\(C=0\text{.}\)</span></p>
+<p id="p-4799">The Fundamental Theorem of Calculus states</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-167">
+\begin{align*}
+\int_0^4(4x-x^2)\, dx \amp= F(4)-F(0)\\
+\amp = \big(2(4)^2-\frac134^3\big)-\big(0-0\big)\\
+\amp = 32-\frac{64}3 = 32/3\text{.}
+\end{align*}
+</div>
+<p id="p-4800">This is the same answer we obtained using limits in the previous section, just with much less work.</p>
+</div></div>
+</div></article><p id="p-4801"><em class="emphasis">Notation:</em>  A special notation is often used in the process of evaluating definite integrals using the Fundamental Theorem of Calculus. Instead of explicitly writing <span class="process-math">\(F(b)-F(a)\text{,}\)</span> the notation <span class="process-math">\(F(x)\Big|_a^b\)</span> is used. Thus the solution to <a href="" class="xref" data-knowl="./knowl/ex_ftc3.html" title="Example 5.4.13: Using the Fundamental Theorem of Calculus, Part 2">Example 5.4.13</a> would be written as:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_ftc3.html" id="md-168">
+\begin{align*}
+\int_0^4(4x-x^2)\, dx \amp = \left.\left(2x^2-\frac13x^3\right)\right|_0^4\\
+\amp = \big(2(4)^2-\frac134^3\big)-\big(0-0\big) =  32/3\text{.}
+\end{align*}
+</div>
+<p id="p-4802"><em class="emphasis">The Constant <span class="process-math">\(C\text{:}\)</span></em> <em class="emphasis">Any</em> antiderivative <span class="process-math">\(F(x)\)</span> can be chosen when using the Fundamental Theorem of Calculus to evaluate a definite integral, meaning any value of <span class="process-math">\(C\)</span> can be picked. The constant <em class="emphasis">always</em> cancels out of the expression when evaluating <span class="process-math">\(F(b)-F(a)\text{,}\)</span> so it does not matter what value is picked. This being the case, we might as well let <span class="process-math">\(C=0\text{.}\)</span></p>
+<article class="example example-like" id="ex_ftc4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Fundamental Theorem of Calculus, Part 2.</span>
+</h4>
+<p id="p-4803">Evaluate the following definite integrals.</p>
+<ol class="decimal">
+<li id="li-1101"><p id="p-derived-li-1101"><span class="process-math">\(\displaystyle \int_{-2}^2 x^3\, dx\)</span></p></li>
+<li id="li-1102"><p id="p-derived-li-1102"><span class="process-math">\(\displaystyle \int_0^\pi \sin(x) \, dx\)</span></p></li>
+<li id="li-1103"><p id="p-derived-li-1103"><span class="process-math">\(\displaystyle \int_0^5 e^t\, dt\)</span></p></li>
+<li id="li-1104"><p id="p-derived-li-1104"><span class="process-math">\(\displaystyle \int_4^9 \sqrt{u}\, du\)</span></p></li>
+<li id="li-1105"><p id="p-derived-li-1105"><span class="process-math">\(\displaystyle \int_1^5 2\, dx\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-282" id="solution-282"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-282"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_FTC_ex_3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=FbansQszRDI,LeYpAXQS5cI&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-4804" class="decimal">
+<li id="li-1106"><div class="displaymath process-math" data-contains-math-knowls="" id="md-169">
+\begin{align*}
+\int_{-2}^2 x^3\, dx \amp = \left.\frac14x^4\right|_{-2}^2 \amp\\
+\amp = \left(\frac142^4\right) - \left(\frac14(-2)^4\right)\\
+\amp = 0\text{.}
+\end{align*}
+</div></li>
+<li id="li-1107">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-170">
+\begin{align*}
+\int_0^\pi \sin(x) \, dx \amp = -\cos(x) \Big|_0^\pi\\
+\amp = -\cos(\pi) - \big(-\cos(0) \big)\\
+\amp = 1+1=2\text{.}
+\end{align*}
+</div>
+<p class="continuation">(This is interesting; it says that the area under one “hump” of a sine curve is 2.)</p>
+</li>
+<li id="li-1108"><div class="displaymath process-math" data-contains-math-knowls="" id="md-171">
+\begin{align*}
+\int_0^5e^t\, dt \amp = e^t\Big|_0^5\\
+\amp = e^5 - e^0\\
+\amp= e^5-1 \approx 147.41\text{.}
+\end{align*}
+</div></li>
+<li id="li-1109"><div class="displaymath process-math" data-contains-math-knowls="" id="md-172">
+\begin{align*}
+\int_4^9 \sqrt{u}\, du \amp= \int_4^9 u^\frac12\, du\\
+\amp = \frac23u^\frac32\Big|_4^9\\
+\amp = \frac23\left(9^\frac32-4^\frac32\right)\\
+\amp = \frac23\big(27-8\big) =\frac{38}3\text{.}
+\end{align*}
+</div></li>
+<li id="li-1110">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-173">
+\begin{align*}
+\int_1^5 2\, dx \amp = 2x\Big|_1^5\\
+\amp = 2(5)-2\\
+\amp =2(5-1)=8\text{.}
+\end{align*}
+</div>
+<p class="continuation">This integral is interesting; the integrand is a constant function, hence we are finding the area of a rectangle with width <span class="process-math">\((5-1)=4\)</span> and height 2. Notice how the evaluation of the definite integral led to <span class="process-math">\(2(4)=8\text{.}\)</span> In general, if <span class="process-math">\(c\)</span> is a constant, then <span class="process-math">\(\int_a^b c\, dx = c(b-a)\text{.}\)</span></p>
+</li>
+</ol>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.4.2</span> <span class="title">Understanding Motion with the Fundamental Theorem of Calculus</span>
+</h3>
+<p id="p-4810">We established, starting with <a href="" class="xref" data-knowl="./knowl/idea_motion.html" title="Key Idea 2.2.3: The Derivative and Motion">Key Idea 2.2.3</a>, that the derivative of a position function is a velocity function, and the derivative of a velocity function is an acceleration function. Now consider definite integrals of velocity and acceleration functions. Specifically, if <span class="process-math">\(v(t)\)</span> is a velocity function, what does <span class="process-math">\(\ds \int_a^b v(t)\, dt\)</span> mean? </p>
+<p id="p-4811">The Fundamental Theorem of Calculus states that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_a^b v(t)\, dt = V(b) - V(a)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(V(t)\)</span> is any antiderivative of <span class="process-math">\(v(t)\text{.}\)</span> Since <span class="process-math">\(v(t)\)</span> is a velocity function, <span class="process-math">\(V(t)\)</span> must be a position function, and <span class="process-math">\(V(b) - V(a)\)</span> measures a change in position, or <em class="emphasis">displacement</em>.</p>
+<article class="example example-like" id="ex_ftcmotion1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Finding displacement and distance.</span>
+</h4>
+<p id="p-4812">A ball is thrown straight up with velocity given by <span class="process-math">\(v(t) = -32t+20\)</span>ft/s, where <span class="process-math">\(t\)</span> is measured in seconds. Find, and interpret, <span class="process-math">\(\int_0^1 v(t)\, dt\)</span> and <span class="process-math">\(\int_0^1 \abs{v(t)}\, dt\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-283" id="solution-283"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-283"><div class="solution solution-like">
+<p id="p-4813">Using the Fundamental Theorem of Calculus, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-174">
+\begin{align*}
+\int_0^1 v(t)\, dt \amp = \int_0^1 (-32t+20)\, dt\\
+\amp = \left(-16t^2 + 20t\right)\Big|_0^1\\
+\amp = 4\text{.}
+\end{align*}
+</div>
+<p id="p-4814">Thus if a ball is thrown straight up into the air with velocity <span class="process-math">\(v(t) = -32t+20\text{,}\)</span> the height of the ball, 1 second later, will be 4 feet above the initial height.</p>
+<p id="p-4815">Note that the ball has <em class="emphasis">traveled</em> much farther. It has gone up to its peak and is falling down, but the difference between its height at <span class="process-math">\(t=0\)</span> and <span class="process-math">\(t=1\)</span> is 4ft.</p>
+<p id="p-4816">If we wish to find the total distance traveled, we must evaluate <span class="process-math">\(\int_0^1 \abs{v(t)}\, dt\)</span> (noting that negative velocities will reduce the diplacement, but we want <em class="emphasis">distance</em>, not displacement). In this case, we know that the velocity changes sign once when <span class="process-math">\(v(t)=0\text{,}\)</span>so <span class="process-math">\(t=20/32=5/8\)</span> seconds. The velocity is positive over <span class="process-math">\([0,5/8]\)</span> and negative over <span class="process-math">\([5/8,1]\text{.}\)</span> Therefore</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-175">
+\begin{align*}
+\int_0^1 \abs{v(t)}\, dt \amp = \int_0^{5/8}v(t)\,dt + \int_{5/8}^1 -v(t)\,dt\\
+\amp =\int_0^{5/8}(-32t+20)\, dt-\int_{5/8}^1 (-32t+20)\, dt\\
+\amp =\left(-16t^2 + 20t\right)\Big|_0^{5/8}-\left(-16t^2 + 20t\right)\Big|_0^1\\
+\amp = \frac{25}4-\left(-\frac94\right)=9\text{.}
+\end{align*}
+</div>
+<p class="continuation">So the total distance traveled over <span class="process-math">\([0,1]\)</span> is <span class="process-math">\(\int_0^1 \abs{-32t+20}\, dt=9 \text{ feet }\text{.}\)</span></p>
+<p id="p-4817">As we can see in <a href="" class="xref" data-knowl="./knowl/fig_ftcmotion1a.html" title="Figure 5.4.16">Figure 5.4.16</a>, the positive area between <span class="process-math">\(v(t)\)</span> and the <span class="process-math">\(t\)</span>-axis, <span class="process-math">\(A_1=25/4\text{,}\)</span> while the negative area, <span class="process-math">\(A_2=-9/4\text{.}\)</span> When we add these two areas, we get the displacement of <span class="process-math">\(4\)</span> ft. But when we add the absolute value of both of these areas (as in <a href="" class="xref" data-knowl="./knowl/fig_ftcmotion1b.html" title="Figure 5.4.17">Figure 5.4.17</a>), we get the total distance of <span class="process-math">\(9\)</span> ft.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_ftcmotion1a"><img src="generated/latex-image/img_ftcmotion1a.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.16<span class="period">.</span></span><span class="space"> </span>The area between <span class="process-math">\(v(t)\)</span> and the <span class="process-math">\(t\)</span>-axis can be used to represent displacement</figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_ftcmotion1b"><img src="generated/latex-image/img_ftcmotion1b.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.17<span class="period">.</span></span><span class="space"> </span>The area between <span class="process-math">\(\abs{v(t)}\)</span> and the <span class="process-math">\(t\)</span>-axis can be used to represent distance</figcaption></figure></div>
+</div></div>
+</div></div>
+</div></article><p id="p-4818">Integrating a rate of change function gives total change. Velocity is the rate of position change; integrating velocity gives the total change of position, i.e., displacement.</p>
+<p id="p-4819">Integrating a speed function gives a similar, though different, result. Speed is also the rate of position change, but does not account for direction. That is, the speed an object is the absolute value of its velocity. This is what we saw in <a href="" class="xref" data-knowl="./knowl/ex_ftcmotion1.html" title="Example 5.4.15: Finding displacement and distance">Example 5.4.15</a> when we evaluated <span class="process-math">\(\int_0^1 \abs{v(t)}\, dt\text{.}\)</span> So integrating a speed function gives total change of position, without the possibility of “negative position change.” Hence the integral of a speed function gives <em class="emphasis">distance traveled.</em></p>
+<p id="p-4820">As acceleration is the rate of velocity change, integrating an acceleration function gives total change in velocity. We do not have a simple term for this analogous to displacement. If <span class="process-math">\(a(t) = 5\)</span>miles/h<span class="process-math">\(^2\)</span> and <span class="process-math">\(t\)</span> is measured in hours, then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^3 a(t)\, dt = 15
+\end{equation*}
+</div>
+<p class="continuation">means the velocity has increased by 15m/h from <span class="process-math">\(t=0\)</span> to <span class="process-math">\(t=3\text{.}\)</span></p></section><section class="subsection" id="sec-FTC-chain"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.4.3</span> <span class="title">The Fundamental Theorem of Calculus and the Chain Rule</span>
+</h3>
+<p id="p-4821">Part 1 of the Fundamental Theorem of Calculus (FTC) states that given</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F(x) = \int_a^x f(t)\, dt\text{,}
+\end{equation*}
+</div>
+<p class="continuation">we have <span class="process-math">\(\Fp(x) = f(x)\text{.}\)</span> Using other notation,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{F(x)}=\lzoo{x}{\int_a^x f(t)\, dt} = f(x)\text{.}
+\end{equation*}
+</div>
+<p class="continuation">While we have just practiced evaluating definite integrals, sometimes finding antiderivatives is impossible and we need to rely on other techniques to approximate the value of a definite integral. Functions written as <span class="process-math">\(F(x) = \int_a^x f(t)\, dt\)</span> are useful in such situations.</p>
+<p id="p-4822">It may be of further use to compose such a function with another. As an example, we may compose <span class="process-math">\(F(x)\)</span> with <span class="process-math">\(g(x)\)</span> to get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F\big(g(x)\big) = \int_a^{g(x)} f(t)\, dt\text{.}
+\end{equation*}
+</div>
+<p id="p-4823">What is the derivative of such a function?  The Chain Rule can be employed to state</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}\Big(F\big(g(x)\big)\Big) = \Fp\big(g(x)\big)g'(x) = f\big(g(x)\big)g'(x)\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="vid_int_FTC_chain_rule_FTC"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-181" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/fywjn8-evpE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.18<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="sec_FTC.html#sec-FTC-chain" class="internal" title="Subsection 5.4.3: The Fundamental Theorem of Calculus and the Chain Rule">Subsection 5.4.3</a> and <a href="" class="xref" data-knowl="./knowl/ex_ftc11.html" title="Example 5.4.19: The FTC, Part 1, and the Chain Rule">Example 5.4.19</a></figcaption></figure><p id="p-4824">An example will help us understand this.</p>
+<article class="example example-like" id="ex_ftc11"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.19</span><span class="period">.</span><span class="space"> </span><span class="title">The FTC, Part 1, and the Chain Rule.</span>
+</h4>
+<p id="p-4825">Find the derivative of <span class="process-math">\(\ds F(x) = \int_2^{x^2} \ln(t) \, dt\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-284" id="solution-284"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-284"><div class="solution solution-like">
+<p id="p-4826">We can view <span class="process-math">\(F(x)\)</span> as being the function <span class="process-math">\(G(x) = \int_2^x \ln(t) \, dt\)</span> composed with <span class="process-math">\(g(x) = x^2\text{;}\)</span> that is, <span class="process-math">\(F(x) = G\big(g(x)\big)\text{.}\)</span> The Fundamental Theorem of Calculus states that <span class="process-math">\(G'(x) = \ln(x)\text{.}\)</span> The Chain Rule gives us</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-176">
+\begin{align*}
+F'(x) \amp = G'\big(g(x)\big) g'(x)\\
+\amp = \ln(g(x)) g'(x)\\
+\amp = \ln(x^2) 2x\\
+\amp =2x\ln(x^2)
+\end{align*}
+</div>
+<p id="p-4827">Normally, the steps defining <span class="process-math">\(G(x)\)</span> and <span class="process-math">\(g(x)\)</span> are skipped.</p>
+</div></div>
+</div></article><p id="p-4828">Let's practice this once more.</p>
+<article class="example example-like" id="ex_ftc12"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.20</span><span class="period">.</span><span class="space"> </span><span class="title">The FTC, Part 1, and the Chain Rule.</span>
+</h4>
+<p id="p-4829">Find the derivative of <span class="process-math">\(\ds F(x) = \int_{\cos(x) }^5 t^3\, dt\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-285" id="solution-285"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-285"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_FTC_examples_2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/nGS4ENM8arI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-4830">Note that <span class="process-math">\(\ds F(x) = -\int_5^{\cos(x) } t^3\, dt\text{.}\)</span> Viewed this way, the derivative of <span class="process-math">\(F\)</span> is straightforward:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-177">
+\begin{align*}
+F'(x) \amp= -\cos^3(x)\left(-\sin(x)\right)\\
+\amp= \cos^3(x)\sin(x)\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="sec-FTC-ABC"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.4.4</span> <span class="title">Area Between Curves</span>
+</h3>
+<figure class="figure figure-like" id="vid_int_FTC_area_between_curves"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-183" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/UufnFHBnv88?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.21<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_FTC.html#sec-FTC-ABC" class="internal" title="Subsection 5.4.4: Area Between Curves">Subsection 5.4.4</a></figcaption></figure><p id="p-4831">Consider continuous functions <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> defined on <span class="process-math">\([a,b]\text{,}\)</span> where <span class="process-math">\(f(x) \geq g(x)\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\([a,b]\text{,}\)</span> as demonstrated in <a href="" class="xref" data-knowl="./knowl/fig_ftc5.html" title="Figure 5.4.22">Figure 5.4.22</a>. What is the area of the shaded region bounded by the two curves over <span class="process-math">\([a,b]\text{?}\)</span> </p>
+<figure class="figure figure-like" id="fig_ftc5"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_ftc5a"><img src="generated/latex-image/img_ftc5a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_ftc5b"><img src="generated/latex-image/img_ftc5b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.22<span class="period">.</span></span><span class="space"> </span>Finding the area bounded by two functions on an interval by subtracting the area under <span class="process-math">\(g\)</span> from the area under <span class="process-math">\(f\)</span></figcaption></figure><p id="p-4832">The area can be found by recognizing that this area is “the area under <span class="process-math">\(f\)</span> <span class="process-math">\(-\)</span> the area under <span class="process-math">\(g\text{.}\)</span>” Using mathematical notation, the area is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_a^b f(x)\, dx - \int_a^b g(x)\, dx\text{.}
+\end{equation*}
+</div>
+<p id="p-4833">Properties of the definite integral allow us to simplify this expression to</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_a^b\big(f(x) - g(x)\big)\, dx\text{.}
+\end{equation*}
+</div>
+<article class="theorem theorem-like" id="thm_areabtwncurves"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.23</span><span class="period">.</span><span class="space"> </span><span class="title">Area Between Curves.</span>
+</h4>
+<p id="p-4834">Let <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> be continuous functions defined on <span class="process-math">\([a,b]\)</span> where <span class="process-math">\(f(x)\geq g(x)\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\([a,b]\text{.}\)</span> The area of the region bounded by the curves <span class="process-math">\(y=f(x)\text{,}\)</span> <span class="process-math">\(y=g(x)\)</span> and the lines <span class="process-math">\(x=a\)</span> and <span class="process-math">\(x=b\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_a^b \big(f(x)-g(x)\big)\, dx\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="ex_ftc6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.24</span><span class="period">.</span><span class="space"> </span><span class="title">Finding area between curves.</span>
+</h4>
+<p id="p-4835">Find the area of the region enclosed by <span class="process-math">\(y=x^2+x-5\)</span> and <span class="process-math">\(y=3x-2\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-286" id="solution-286"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-286"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_FTC_ex_4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/su2CXdpYPdo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-4836">It will help to sketch these two functions, as done in <a href="" class="xref" data-knowl="./knowl/fig_ftc6.html" title="Figure 5.4.25">Figure 5.4.25</a>.</p>
+<figure class="figure figure-like" id="fig_ftc6"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_ftc6.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.25<span class="period">.</span></span><span class="space"> </span>Sketching the region enclosed by <span class="process-math">\(y=x^2+x-5\)</span> and <span class="process-math">\(y=3x-2\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_ftc6.html" title="Example 5.4.24: Finding area between curves">Example 5.4.24</a></figcaption></figure><p id="p-4837">The region whose area we seek is completely bounded by these two functions; they seem to intersect at <span class="process-math">\(x=-1\)</span> and <span class="process-math">\(x=3\text{.}\)</span> To check, set <span class="process-math">\(x^2+x-5=3x-2\)</span> and solve for <span class="process-math">\(x\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-178">
+\begin{align*}
+x^2+x-5 \amp = 3x-2\\
+(x^2+x-5) - (3x-2) \amp = 0\\
+x^2-2x-3 \amp = 0\\
+(x-3)(x+1) \amp = 0\\
+x\amp =-1,\,3\text{.}
+\end{align*}
+</div>
+<p id="p-4838">Following <a href="" class="xref" data-knowl="./knowl/thm_areabtwncurves.html" title="Theorem 5.4.23: Area Between Curves">Theorem 5.4.23</a>, the area is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_areabtwncurves.html" id="md-179">
+\begin{align*}
+\int_{-1}^3\big(3x-2 -(x^2+x-5)\big)\, dx \amp = \int_{-1}^3 (-x^2+2x+3)\, dx\\
+\amp =\left.\left(-\frac13x^3+x^2+3x\right)\right|_{-1}^3\\
+\amp =-\frac13(27)+9+9-\left(\frac13+1-3\right)\\
+\amp = 10\frac23 = 10.\overline{6}
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="vidint_int_FTC_ex_5">One of the things we have to be careful about when finding the area between curves is that the curves might cross, so that the distinction between “upper curve” and “lower curve” can change. The following video example illustrates this phenomenon.</p>
+<figure class="figure figure-like" id="vid_int_FTC_ex_5"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-185" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Bgji1b7Wdr4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.26<span class="period">.</span></span><span class="space"> </span>Finding the area between curves that intersect multiple times</figcaption></figure></section><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.4.5</span> <span class="title">The Mean Value Theorem and Average Value</span>
+</h3>
+<figure class="figure figure-like" id="fig_ftc7a"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_ftc7a.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.27<span class="period">.</span></span><span class="space"> </span>A graph of a function <span class="process-math">\(f\)</span> to introduce the Mean Value Theorem</figcaption></figure><p id="p-4840">Consider the graph of a function <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_ftc7a.html" title="Figure 5.4.27">Figure 5.4.27</a> and the area defined by <span class="process-math">\(\int_1^4 f(x)\, dx\text{.}\)</span> Three rectangles are drawn in <a href="" class="xref" data-knowl="./knowl/fig_ftc7b.html" title="Figure 5.4.28">Figure 5.4.28</a>; in <a href="" class="xref" data-knowl="./knowl/fig_ftc7b2.html" title="Figure 5.4.28.(a)">Figure 5.4.28.(a)</a>, the height of the rectangle is greater than <span class="process-math">\(f\)</span> on <span class="process-math">\([1,4]\text{,}\)</span> hence the area of this rectangle is is greater than <span class="process-math">\(\int_0^4 f(x)\, dx\text{.}\)</span></p>
+<p id="p-4841">In <a href="" class="xref" data-knowl="./knowl/fig_ftc7b1.html" title="Figure 5.4.28.(b)">Figure 5.4.28.(b)</a>, the height of the rectangle is smaller than <span class="process-math">\(f\)</span> on <span class="process-math">\([1,4]\text{,}\)</span> hence the area of this rectangle is less than <span class="process-math">\(\int_1^4 f(x)\, dx\text{.}\)</span></p>
+<p id="p-4842">Finally, in <a href="" class="xref" data-knowl="./knowl/fig_ftc7b3.html" title="Figure 5.4.28.(c)">Figure 5.4.28.(c)</a> the height of the rectangle is such that the area of the rectangle is <em class="emphasis">exactly</em> that of <span class="process-math">\(\int_0^4 f(x)\, dx\text{.}\)</span> Since rectangles that are “too big”, as in (a), and rectangles that are “too little,” as in (b), give areas greater/lesser than <span class="process-math">\(\int_1^4 f(x)\, dx\text{,}\)</span> it makes sense that there is a rectangle, whose top intersects <span class="process-math">\(f(x)\)</span> somewhere on <span class="process-math">\([1,4]\text{,}\)</span> whose area is <em class="emphasis">exactly</em> that of the definite integral.</p>
+<figure class="figure figure-like" id="fig_ftc7b"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_ftc7b2"><img src="generated/latex-image/img_ftc7b2.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_ftc7b1"><img src="generated/latex-image/img_ftc7b1.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_ftc7b3"><img src="generated/latex-image/img_ftc7b3.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.28<span class="period">.</span></span><span class="space"> </span>Differently sized rectangles give upper and lower bounds on <span class="process-math">\(\int_1^4 f(x)\, dx\text{;}\)</span> the last rectangle matches the area exactly</figcaption></figure><p id="p-4843">We state this idea formally in a theorem.</p>
+<article class="theorem theorem-like" id="thm_mvt2"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.29</span><span class="period">.</span><span class="space"> </span><span class="title">The Mean Value Theorem of Integration.</span>
+</h4>
+<p id="p-4844">Let <span class="process-math">\(f\)</span> be continuous on <span class="process-math">\([a,b]\text{.}\)</span>  There exists a value <span class="process-math">\(c\)</span> in <span class="process-math">\([a,b]\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_a^bf(x)\, dx = f(c)(b-a)\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="vid_int_FTC_MVT_int"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-186" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/KD90CwK0PJk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.30<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_mvt2.html" title="Theorem 5.4.29: The Mean Value Theorem of Integration">Theorem 5.4.29</a></figcaption></figure><p id="p-4845">This is an <em class="emphasis">existential</em> statement; <span class="process-math">\(c\)</span> exists, but we do not provide a method of finding it. <a href="" class="xref" data-knowl="./knowl/thm_mvt2.html" title="Theorem 5.4.29: The Mean Value Theorem of Integration">Theorem 5.4.29</a> is directly connected to the Mean Value Theorem of Differentiation, given as <a href="" class="xref" data-knowl="./knowl/thm_mvt.html" title="Theorem 3.2.4: The Mean Value Theorem of Differentiation">Theorem 3.2.4</a>; we leave it to the reader to see how.</p>
+<aside class="aside aside-like" id="aside-28"><p id="p-4846">The <a href="" class="xref" data-knowl="./knowl/thm_mvt2.html" title="Theorem 5.4.29: The Mean Value Theorem of Integration">Theorem 5.4.29</a> simply says that there is a rectangle with height <span class="process-math">\(f(c)\)</span> and width <span class="process-math">\(b-a\text{,}\)</span> the area of which is the same as the area between <span class="process-math">\(f\)</span> and the <span class="process-math">\(x\)</span>-axis over<span class="process-math">\([a,b]\text{.}\)</span> Furthermore, we know that <span class="process-math">\(c\)</span> will be in the interval <span class="process-math">\([a,b]\text{.}\)</span></p></aside><p id="p-4847">We demonstrate the principles involved in this version of the Mean Value Theorem in the following example.</p>
+<article class="example example-like" id="ex_ftc8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.31</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Mean Value Theorem.</span>
+</h4>
+<p id="p-4848">Consider <span class="process-math">\(\int_0^\pi \sin(x) \, dx\text{.}\)</span> Find a value <span class="process-math">\(c\)</span> guaranteed by the Mean Value Theorem.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-287" id="solution-287"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-287"><div class="solution solution-like">
+<p id="p-4849">We first need to evaluate <span class="process-math">\(\int_0^\pi \sin(x) \, dx\text{.}\)</span> (This was previously done in <a href="" class="xref" data-knowl="./knowl/ex_ftc4.html" title="Example 5.4.14: Using the Fundamental Theorem of Calculus, Part 2">Example 5.4.14</a>.)</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_ftc4.html">
+\begin{equation*}
+\int_0^\pi\sin(x) \, dx =	-\cos(x) \Big|_0^\pi = 2\text{.}
+\end{equation*}
+</div>
+<p id="p-4850">Thus we seek a value <span class="process-math">\(c\)</span> in <span class="process-math">\([0,\pi]\)</span> such that <span class="process-math">\(\pi\sin(c) =2\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\pi\sin(c) = 2\,\,\Rightarrow\,\,\sin(c) = 2/\pi\,\,\Rightarrow\,\,c = \arcsin(2/\pi) \approx 0.69\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig_ftc8"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_ftc8.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.32<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(y=\sin(x)\)</span> on <span class="process-math">\([0,\pi]\)</span> and the rectangle guaranteed by the Mean Value Theorem</figcaption></figure><p id="p-4851">In <a href="" class="xref" data-knowl="./knowl/fig_ftc8.html" title="Figure 5.4.32">Figure 5.4.32</a> <span class="process-math">\(\sin(x)\)</span> is sketched along with a rectangle with height <span class="process-math">\(\sin(0.69)\text{.}\)</span> The area of the rectangle is the same as the area under <span class="process-math">\(\sin(x)\)</span> on <span class="process-math">\([0,\pi]\text{.}\)</span></p>
+</div></div>
+</div></article><p id="p-4852">We now turn our attention to a related topic —average value. Let <span class="process-math">\(f\)</span> be a function on <span class="process-math">\([a,b]\)</span> with <span class="process-math">\(c\)</span> such that <span class="process-math">\(f(c)(b-a) = \int_a^bf(x)\, dx\text{.}\)</span> Consider <span class="process-math">\(\int_a^b\big(f(x)-f(c)\big)\, dx\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-180">
+\begin{align*}
+\int_a^b\big(f(x)-f(c)\big)\, dx \amp =  \int_a^b f(x) - \int_a^b f(c)\, dx\\
+\amp = f(c)(b-a) - f(c)(b-a)\\
+\amp = 0\text{.}
+\end{align*}
+</div>
+<p id="p-4853">When <span class="process-math">\(f(x)\)</span> is shifted by <span class="process-math">\(-f(c)\text{,}\)</span> the amount of area under <span class="process-math">\(f\)</span> above the <span class="process-math">\(x\)</span>-axis on <span class="process-math">\([a,b]\)</span> is the same as the amount of area below the <span class="process-math">\(x\)</span>-axis above <span class="process-math">\(f\text{;}\)</span> see <a href="" class="xref" data-knowl="./knowl/fig_ftc9.html" title="Figure 5.4.33">Figure 5.4.33</a> for an illustration of this. In this sense, we can say that <span class="process-math">\(f(c)\)</span> is the <em class="emphasis">average value</em> of <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_ftc9"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><img src="generated/latex-image/img_ftc9a.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:47%;"><img src="generated/latex-image/img_ftc9b.svg" role="img" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.33<span class="period">.</span></span><span class="space"> </span>On the left, a graph of <span class="process-math">\(y=f(x)\)</span> and the rectangle guaranteed by the Mean Value Theorem. On the right, <span class="process-math">\(y=f(x)\)</span> is shifted down by <span class="process-math">\(f(c)\text{;}\)</span> the resulting “area under the curve” is 0</figcaption></figure><p id="p-4854">The value <span class="process-math">\(f(c)\)</span> is the average value in another sense. First, recognize that the Mean Value Theorem can be rewritten as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_riemann_sum.html ./knowl/thm_riemann_sum.html">
+\begin{equation*}
+f(c) = \frac{1}{b-a}\int_a^b f(x)\, dx\text{,}
+\end{equation*}
+</div>
+<p class="continuation">for some value of <span class="process-math">\(c\)</span> in <span class="process-math">\([a,b]\text{.}\)</span>  Replacing the integral with the limit of a Riemann sum (as in <a href="" class="xref" data-knowl="./knowl/thm_riemann_sum.html" title="Theorem 5.3.26: Definite Integrals and the Limit of Riemann Sums">Theorem 5.3.26</a>):</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_riemann_sum.html ./knowl/thm_riemann_sum.html" id="md-181">
+\begin{align*}
+f(c) \amp = \frac{1}{b-a}\int_a^b f(x)\, dx \amp\\
+\amp = \frac{1}{b-a} \lim\limits_{n \to \infty}\sum_{i=1}^n f(c_i)\,\Delta x \amp \text{Using } \knowl{./knowl/thm_riemann_sum.html}{\text{Theorem 5.3.26}}\\
+\amp =\frac{1}{b-a} \lim\limits_{n \to \infty}\sum_{i=1}^n f(c_i)\,\frac{b-a}{n}\amp \Delta x =\frac{b-a}{n}\\
+\amp =\lim\limits_{n \to \infty}\sum_{i=1}^n f(c_i)\frac{1}{n} \amp \text{Cancelling the common factor of } b-a\text{.}
+\end{align*}
+</div>
+<p id="p-4855">Examining this last line closely, the expression <span class="process-math">\(\sum_{i=1}^n f(c_i)\frac{1}{n}\)</span> represents adding up <span class="process-math">\(n\)</span> sample values of <span class="process-math">\(f(x)\)</span>and then dividing by <span class="process-math">\(n\text{.}\)</span> This is <em class="emphasis">exactly</em> what we do when we calculate the average of a set of <span class="process-math">\(n\)</span> numbers. Now when we consider taking the limit as <span class="process-math">\(n\)</span> goes to <span class="process-math">\(\infty\text{,}\)</span> <span class="process-math">\(\lim\limits_{n \to \infty}\sum_{i=1}^n f(c_i)\frac{1}{n}\text{,}\)</span> we are adding up <em class="emphasis">all</em> of the function's output values over <span class="process-math">\([a,b]\)</span> and dividing by the “number of numbers”. In a sense, we are adding up an infinite number of output values and then dividing by the number of terms we summed (which is again infinite).</p>
+<p id="p-4856">This leads us to a definition.</p>
+<article class="definition definition-like" id="def_av_val"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.34</span><span class="period">.</span><span class="space"> </span><span class="title">The Average Value of <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\)</span>.</span>
+</h4>
+<p id="p-4857">Let <span class="process-math">\(f\)</span> be continuous on <span class="process-math">\([a,b]\text{.}\)</span> The <dfn class="terminology">average value</dfn> of <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\)</span> is <span class="process-math">\(f(c)\text{,}\)</span> where <span class="process-math">\(c\)</span> is a value in <span class="process-math">\([a,b]\)</span> guaranteed by the Mean Value Theorem.  i.e.,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{ Average Value of \(f\) on \([a,b]\) }  = \frac{1}{b-a}\int_a^b f(x)\, dx\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="vid_int_FTC_avg_val"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-187" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Gz9r9zF5asU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.35<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/def_av_val.html" title="Definition 5.4.34: The Average Value of f on [a,b]">Definition 5.4.34</a></figcaption></figure><p id="p-4858">An application of this definition is given in the following example.</p>
+<article class="example example-like" id="ex_ftc10"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.36</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the average value of a function.</span>
+</h4>
+<p id="p-4859">An object moves back and forth along a straight line with a velocity given by <span class="process-math">\(v(t) = (t-1)^2\)</span> on <span class="process-math">\([0,3]\text{,}\)</span> where <span class="process-math">\(t\)</span> is measured in seconds and <span class="process-math">\(v(t)\)</span> is measured in ft/s.</p>
+<p id="p-4860">What is the average velocity of the object?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-288" id="solution-288"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-288"><div class="solution solution-like">
+<p id="p-4861">By our definition, the average velocity is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-182">
+\begin{align*}
+\frac{1}{3-0}\int_0^3 (t-1)^2\, dt \amp =\frac13 \int_0^3 \big(t^2-2t+1\big)\, dt\\
+\amp = \left.\frac13\left(\frac13t^3-t^2+t\right)\right|_0^3\\
+\amp =\frac13\left[\left(\frac13(3)^3-(3)^2+(3)\right)-\left(\frac13(0)^3-(0)^2+(0)\right)\right]\\
+\amp = 1\text{ ft/s }\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="p-4862">We can understand the above example through a simpler situation. Suppose you drove 100 miles in 2 hours. What was your average speed? The answer is simple: displacement/time = 100 miles/2 hours = 50 mph.</p>
+<p id="p-4863">What was the displacement of the object in <a href="" class="xref" data-knowl="./knowl/ex_ftc10.html" title="Example 5.4.36: Finding the average value of a function">Example 5.4.36</a>? We calculate this by integrating its velocity function: <span class="process-math">\(\int_0^3 (t-1)^2\, dt = 3\)</span> ft. Its final position was 3 feet from its initial position after 3 seconds: its average velocity was 1 ft/s.</p>
+<p id="p-4864">This section has laid the groundwork for a lot of great mathematics to follow. The most important lesson is this: definite integrals can be evaluated using antiderivatives. Since <a href="sec_riemann.html" class="internal" title="Section 5.3: Riemann Sums">Section 5.3</a> established that definite integrals are the limit of Riemann sums, we can later create Riemann sums to approximate values other than “area under the curve,” convert the sums to definite integrals, then evaluate these using the <a href="" class="xref" data-knowl="./knowl/thm_FTC2.html" title="Theorem 5.4.10: Fundamental Theorem of Calculus, Part 2">Theorem 5.4.10</a>. This will allow us to compute the work done by a variable force, the volume of certain solids, the arc length of curves, and more.</p>
+<p id="p-4865">The downside is this: generally speaking, computing antiderivatives is much more difficult than computing derivatives. <a href="chapter_anti_tech.html" class="internal" title="Chapter 6: Techniques of Antidifferentiation">Chapter 6</a> is devoted to techniques of finding antiderivatives so that a wide variety of definite integrals can be evaluated. Before that, <a href="sec_numerical_integration.html" class="internal" title="Section 5.5: Numerical Integration">Section 5.5</a> explores techniques of approximating the value of definite integrals beyond using the Left Hand, Right Hand and Midpoint Rules. These techniques are invaluable when antiderivatives cannot be computed, or when the actual function <span class="process-math">\(f\)</span> is unknown and all we know is the value of <span class="process-math">\(f\)</span> at certain <span class="process-math">\(x\)</span>-values.</p></section><section class="exercises" id="exercises-26"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.4.6</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-65"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-832"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-761" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="761" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKSG93IGFyZSBkZWZpbml0ZSBhbmQgaW5kZWZpbml0ZSBpbnRlZ3JhbHMgcmVsYXRlZD8KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4866">How are definite and indefinite integrals related?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-761')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-833"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-762" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="762" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOwoKQkVHSU5fUEdNTApXaGF0IGNvbnN0YW50IG9mIGludGVncmF0aW9uIGlzIG1vc3QgY29tbW9ubHkgdXNlZCB3aGVuIGV2YWx1YXRpbmcgZGVmaW5pdGUgaW50ZWdyYWxzPwoKW19deycwJ317MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4867">What constant of integration is most commonly used when evaluating definite integrals?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-762')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-834"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-763" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="763" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZT1Qb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKCkJFR0lOX1BHTUwKW19deyR0cnVlfXs1fSBJZiBbYGZgXSBpcyBhIGNvbnRpbnVvdXMgZnVuY3Rpb24sIHRoZW4gW2BcZHMgRih4KSA9IFxpbnRfYV54IGYodClcLCBkdGBdIGlzIGFsc28gYSBjb250aW51b3VzIGZ1bmN0aW9uLgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4869"><ul style="list-style:circle;">
+<li id="li-1112"><p id="p-4871">True</p></li>
+<li id="li-1113"><p id="p-4872">False</p></li>
+</ul> If <span class="process-math">\(f\)</span> is a continuous function, then <span class="process-math">\(\ds F(x) = \int_a^x f(t)\, dt\)</span> is also a continuous function.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-763')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-835"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-764" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="764" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKVGhlIGRlZmluaXRlIGludGVncmFsIGNhbiBiZSB1c2VkIHRvIGZpbmQgInRoZSBhcmVhIHVuZGVyIGEgY3VydmUuIiBHaXZlIHR3byBvdGhlciB1c2VzIGZvciBkZWZpbml0ZSBpbnRlZ3JhbHMuCgpbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4874">The definite integral can be used to find “the area under a curve.” Give two other uses for definite integrals.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-764')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-66"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-89">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-102"><p id="p-4875">Evaluate the definite integral.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-836"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<div id="webwork-765" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="765" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGIgPSBsaXN0X3JhbmRvbSgtMSwxKTsKJGMgPSBub25femVyb19yYW5kb20oLTksOSwxKTsKJGxvdyA9IHJhbmRvbSgxLDIsMSk7CiRoaWdoID0gJGxvdyArIHJhbmRvbSgxLDMsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRiPS0xOyRjPTE7JGxvdz0xOyRoaWdoPTN9OwpDb250ZXh0KCktPm5vcmVkdWNlKCcoLXgpLXknLCcoLXgpK3knKTsKJEYgPSBGb3JtdWxhKCJ4XjMgKyAkYiB4XjIgKyAkYyB4IiktPnJlZHVjZTsKJGYgPSAkRi0+RCgneCcpLT5yZWR1Y2U7CiRyID0gJEYtPmV2YWwoeD0+JGhpZ2gpIC0gJEYtPmV2YWwoeD0+JGxvdyk7CgpCRUdJTl9QR01MCltgXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gXGxlZnQoWyRmXVxyaWdodClcLCBkeGBdCgpbX117JHJ9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4876"><span class="process-math">\(\ds\int_{2}^{3} \left({3x^{2}+2x-7}\right)\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-765')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-837"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<div id="webwork-766" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="766" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGMgPSBub25femVyb19yYW5kb20oLTksOSwxKTsKJGxvdyA9IDA7CiRoaWdoID0gcmFuZG9tKDIsNiwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGM9LTE7JGhpZ2g9NDt9OwpDb250ZXh0KCJGcmFjdGlvbiIpOwpDb250ZXh0KCktPm5vcmVkdWNlKCcoLXgpLXknLCcoLXgpK3knKTsKJEYgPSBGb3JtdWxhKCIxLzMoeCArICRjKV4zIiktPnJlZHVjZTsKJGYgPSBGb3JtdWxhKCIoeCArICRjKV4yIiktPnJlZHVjZTsKJHIgPSBGcmFjdGlvbigkRi0+ZXZhbCh4PT4kaGlnaCkgLSAkRi0+ZXZhbCh4PT4kbG93KSk7CgpCRUdJTl9QR01MCltgXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gWyRmXVwsIGR4YF0KCltfXXskcn17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4878"><span class="process-math">\(\ds\int_{0}^{6} {\left(x+6\right)^{2}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-766')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-838"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div id="webwork-767" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="767" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGRzfXtcZGlzcGxheXN0eWxlfVwpPC9kaXY+JykpOwokYiA9IGxpc3RfcmFuZG9tKC0xLDEpOwokbG93ID0gcmFuZG9tKC00LC0xLDEpOwooJG0sJG4pID0gKDMsNSw3KVtOY2hvb3NlSygzLDIpXTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGI9LTE7JGxvdz0tMTt9OwokaGlnaCA9IC0kbG93OwpDb250ZXh0KCJGcmFjdGlvbiIpOwpDb250ZXh0KCktPm5vcmVkdWNlKCcoLXgpLXknLCcoLXgpK3knKTsKJEYgPSBGb3JtdWxhKCJ4XigkbSsxKS8oJG0rMSkgKyAkYiB4XigkbisxKS8oJG4rMSkiKS0+cmVkdWNlOwokZiA9IEZvcm11bGEoInheKCRtKSArICRiIHheKCRuKSIpLT5yZWR1Y2U7CiRyID0gJEYtPmV2YWwoeD0+JGhpZ2gpIC0gJEYtPmV2YWwoeD0+JGxvdyk7CgpCRUdJTl9QR01MCltgXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gXGxlZnQoWyRmXVxyaWdodClcLCBkeGBdCgpbX117JHJ9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4880"><span class="process-math">\(\ds\int_{-3}^{3} \left({x^{5}+x^{7}}\right)\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-767')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-839"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-768" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="768" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR0cmlnID0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycpOwokbGggPSBsaXN0X3JhbmRvbShbJzAnLCdwaS8yJ10sWycwJywncGknXSxbJ3BpLzInLCdwaSddKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JHRyaWc9J2Nvcyc7JGxoPVsncGkvMicsJ3BpJ107fTsKJGxvdyA9IEZvcm11bGEoJGxoLT5bMF0pOwokaGlnaCA9IEZvcm11bGEoJGxoLT5bMV0pOwokZiA9IEZvcm11bGEoIiR0cmlnKHgpIik7CiRGID0gLSRmLT5EKCd4JyktPnJlZHVjZTsKJHIgPSAkRi0+ZXZhbCh4PT5SZWFsKCIkaGlnaCIpKSAtICRGLT5ldmFsKHg9PlJlYWwoIiRsb3ciKSk7CgpCRUdJTl9QR01MCltgXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gWyRmXVwsIGR4YF0KCltfXXskcn17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4882"><span class="process-math">\(\ds\int_{{0}}^{{\frac{\pi }{2}}} {\sin\!\left(x\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-768')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-840"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-769" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="769" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJHRyaWcgPSBsaXN0X3JhbmRvbSgndGFuJywnc2VjJyk7CiRsaCA9IGxpc3RfcmFuZG9tKFsnMCcsJ3BpLzQnXSxbJzAnLCdwaS8zJ10sWydwaS80JywncGkvMyddKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JHRyaWc9J3Rhbic7JGxoPVsnMCcsJ3BpLzQnXTt9OwokbG93ID0gRm9ybXVsYSgkbGgtPlswXSk7CiRoaWdoID0gRm9ybXVsYSgkbGgtPlsxXSk7CiRGID0gRm9ybXVsYSgiJHRyaWcoeCkiKTsKJGYgPSAkRi0+RCgneCcpLT5yZWR1Y2U7CiRyID0gJEYtPmV2YWwoeD0+UmVhbCgiJGhpZ2giKSkgLSAkRi0+ZXZhbCh4PT5SZWFsKCIkbG93IikpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwppZiAoJHIgPT0gMSkgeyRyID0gMTt9CmVsc2lmICgkciA9PSBzcXJ0KDMpKSB7JHIgPSBGb3JtdWxhKCJzcXJ0KDMpIik7fQplbHNpZiAoJHIgPT0gc3FydCgzKSAtIDEpIHskciA9IEZvcm11bGEoInNxcnQoMykgLSAxIik7fQplbHNpZiAoJHIgPT0gc3FydCgyKSAtIDEpIHskciA9IEZvcm11bGEoInNxcnQoMikgLSAxIik7fQplbHNpZiAoJHIgPT0gMiAtIHNxcnQoMikpIHskciA9IEZvcm11bGEoIjIgLSBzcXJ0KDIpIik7fTsKCkJFR0lOX1BHTUwKW2BcZHNcaW50X3tbJGxvd119XntbJGhpZ2hdfSBbJGZdXCwgZHhgXQoKW19deyRyfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4884"><span class="process-math">\(\ds\int_{{\frac{\pi }{4}}}^{{\frac{\pi }{3}}} {\sec^{2}\!\left(x\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-769')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-841"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-770" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="770" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRuID0gcmFuZG9tKDEsOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JG49MTt9OwokbG93ID0gMTsKJGhpZ2ggPSBGb3JtdWxhKCJlXiRuIiktPnJlZHVjZTsKJEYgPSBGb3JtdWxhKCJsbih4KSIpLT5yZWR1Y2U7CiRmID0gRm9ybXVsYSgiMS94IiktPnJlZHVjZTsKJHIgPSAkbjsKCkJFR0lOX1BHTUwKW2BcZHNcaW50X3tbJGxvd119XntbJGhpZ2hdfSBbJGZdXCwgZHhgXQoKW19deyRyfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4886"><span class="process-math">\(\ds\int_{1}^{{e^{3}}} {\frac{1}{x}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-770')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-842"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<div id="webwork-771" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="771" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGIgPSByYW5kb20oMiw5LDEpOwokbG93ID0gcmFuZG9tKC0zLC0xLDEpOwokaGlnaCA9IHJhbmRvbSgxLDMsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRiPTU7JGxvdz0tMTskaGlnaD0xO307CiRmID0gRm9ybXVsYSgiJGJeeCIpLT5yZWR1Y2U7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRyID0gRm9ybXVsYSgiKCRiKiokaGlnaCAtIDEvJGIqKigtJGxvdykpL2xuKCRiKSIpOwoKQkVHSU5fUEdNTApbYFxkc1xpbnRfe1skbG93XX1ee1skaGlnaF19IFskZl1cLCBkeGBdCgpbX117JHJ9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4888"><span class="process-math">\(\ds\int_{-3}^{1} {4^{x}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-771')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-843"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-772" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="772" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGRzfXtcZGlzcGxheXN0eWxlfVwpPC9kaXY+JykpOwooJGxvdywkaGlnaCkgPSBudW1fc29ydCgoLTQuLi0xKVtOY2hvb3NlSyg0LDIpXSk7CigkYSwkYikgPSAoLTkuLi0xLDEuLjkpW05jaG9vc2VLKDE4LDIpXTsKJG0gPSByYW5kb20oMiw1LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskbG93PS0yOyRoaWdoPS0xOyRhPTQsJGI9LTI7JG09Mzt9OwokZiA9IEZvcm11bGEoIiRhICsgJGIgeF4kbSIpLT5yZWR1Y2U7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRyID0gRnJhY3Rpb24oKCRhKiRoaWdoICsgJGIvKCRtKzEpKiRoaWdoKiooJG0rMSkpIC0gKCRhKiRsb3cgKyAkYi8oJG0rMSkqJGxvdyoqKCRtKzEpKSk7CgpCRUdJTl9QR01MCltgXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gXGxlZnQoWyRmXVxyaWdodClcLCBkeGBdCgpbX117JHJ9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4890"><span class="process-math">\(\ds\int_{-3}^{-1} \left({2-5x^{5}}\right)\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-772')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-844"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div id="webwork-773" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="773" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGRzfXtcZGlzcGxheXN0eWxlfVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7KCRhLCRiKSA9ICgtOS4uLTEsMS4uOSlbTmNob29zZUsoMTgsMildOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYT0yOyRiPS0yO307CiRmID0gRm9ybXVsYSgiJGEgY29zKHgpICsgJGIgc2luKHgpIiktPnJlZHVjZTsKJHIgPSAyKiRiOwoKQkVHSU5fUEdNTApbYFxkc1xpbnRfezB9XntccGl9IFxsZWZ0KFskZl1ccmlnaHQpXCwgZHhgXQoKW19deyRyfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4892"><span class="process-math">\(\ds\int_{0}^{\pi} \left({2\cos\!\left(x\right)-3\sin\!\left(x\right)}\right)\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-773')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-845"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-774" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="774" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGRzfXtcZGlzcGxheXN0eWxlfVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7KCRsb3csJGhpZ2gpID0gbnVtX3NvcnQoKDEuLjQpW05jaG9vc2VLKDQsMildKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGxvdz0xOyRoaWdoPTQ7fTsKJGYgPSBGb3JtdWxhKCJlXngiKS0+cmVkdWNlOwokciA9IEZvcm11bGEoImVeJGhpZ2ggLSBlXiRsb3ciKTsKCkJFR0lOX1BHTUwKW2BcZHNcaW50X3tbJGxvd119XntbJGhpZ2hdfSBbJGZdXCwgZHhgXQoKW19deyRyfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4894"><span class="process-math">\(\ds\int_{1}^{3} {e^{x}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-774')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-846"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-775" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="775" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGRzfXtcZGlzcGxheXN0eWxlfVwpPC9kaXY+JykpOwooJGxvdywkaGlnaCkgPSBudW1fc29ydCgoMCwxLDQsOSwxNiwyNSlbTmNob29zZUsoNiwyKV0pOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskbG93PTA7JGhpZ2g9NDt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKHQ9PidSZWFsJyk7CiRmID0gRm9ybXVsYSgic3FydCh0KSIpLT5yZWR1Y2U7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRyID0gRnJhY3Rpb24oMi8zICogKCRoaWdoKiooMy8yKSAtICRsb3cqKigzLzIpKSk7CgpCRUdJTl9QR01MCltgXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gWyRmXVwsIGR0YF0KCltfXXskcn17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4896"><span class="process-math">\(\ds\int_{9}^{16} {\sqrt{t}}\, dt\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-775')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-847"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-776" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="776" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGRzfXtcZGlzcGxheXN0eWxlfVwpPC9kaXY+JykpOwooJGxvdywkaGlnaCkgPSBudW1fc29ydCgoMSw0LDksMTYsMjUpW05jaG9vc2VLKDUsMildKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGxvdz05OyRoaWdoPTI1O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhKCIxL3NxcnQodCkiKS0+cmVkdWNlOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokciA9IEZyYWN0aW9uKDIgKiAoJGhpZ2gqKigxLzIpIC0gJGxvdyoqKDEvMikpKTsKCkJFR0lOX1BHTUwKW2BcZHNcaW50X3tbJGxvd119XntbJGhpZ2hdfSBbJGZdXCwgZHRgXQoKW19deyRyfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4898"><span class="process-math">\(\ds\int_{4}^{25} {\frac{1}{\sqrt{t}}}\, dt\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-776')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-848"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-777" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="777" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsInBhcnNlclJvb3QucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJG4gPSByYW5kb20oMyw1LDEpOwooJGxvdywkaGlnaCkgPSBudW1fc29ydCgoMCoqJG4sMSoqJG4sMioqJG4sMyoqJG4sNCoqJG4pW05jaG9vc2VLKDUsMildKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JG49MzskbG93PTE7JGhpZ2g9ODt9OwpwYXJzZXI6OlJvb3QtPkVuYWJsZTsKJGYgPSBGb3JtdWxhKCJyb290KCRuLHgpIiktPnJlZHVjZTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJHIgPSBGcmFjdGlvbigkaGlnaCoqKDEvJG4gKyAxKS8oMS8kbiArIDEpIC0gJGxvdyoqKDEvJG4gKyAxKS8oMS8kbiArIDEpKTsKCkJFR0lOX1BHTUwKW2BcZHNcaW50X3tbJGxvd119XntbJGhpZ2hdfSBbJGZdXCwgZHhgXQoKW19deyRyfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4900"><span class="process-math">\(\ds\int_{8}^{64} {\sqrt[3]{x}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-777')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-849"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-778" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="778" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGxvdyA9IDE7CiRoaWdoID0gcmFuZG9tKDIsOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGhpZ2g9Mjt9OwokZiA9IEZvcm11bGEoIjEveCIpLT5yZWR1Y2U7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRyID0gRm9ybXVsYSgibG4oJGhpZ2gpIik7CgpCRUdJTl9QR01MCltgXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gWyRmXVwsIGR4YF0KCltfXXskcn17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4902"><span class="process-math">\(\ds\int_{1}^{3} {\frac{1}{x}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-778')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-850"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-779" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="779" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGxvdyA9IDE7CiRoaWdoID0gcmFuZG9tKDIsOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGhpZ2g9Mjt9OwokZiA9IEZvcm11bGEoIjEveF4yIiktPnJlZHVjZTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJHIgPSBGcmFjdGlvbigxLyRsb3cgLSAxLyRoaWdoKTsKCkJFR0lOX1BHTUwKW2BcZHNcaW50X3tbJGxvd119XntbJGhpZ2hdfSBbJGZdXCwgZHhgXQoKW19deyRyfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4904"><span class="process-math">\(\ds\int_{1}^{4} {\frac{1}{x^{2}}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-779')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-851"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-780" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="780" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJG4gPSByYW5kb20oMyw2LDEpOwokbG93ID0gMTsKJGhpZ2ggPSByYW5kb20oMiw5LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskbj0zOyRoaWdoPTI7fTsKJGYgPSBGb3JtdWxhKCIxL3heJG4iKS0+cmVkdWNlOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokciA9IEZyYWN0aW9uKCRoaWdoKiooLSRuKzEpLygtJG4rMSkgLSAkbG93KiooLSRuKzEpLygtJG4rMSkpOwoKQkVHSU5fUEdNTApbYFxkc1xpbnRfe1skbG93XX1ee1skaGlnaF19IFskZl1cLCBkeGBdCgpbX117JHJ9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4906"><span class="process-math">\(\ds\int_{1}^{9} {\frac{1}{x^{4}}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-780')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-852"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-781" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="781" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGxvdyA9IDA7CiRoaWdoID0gMTsKJGYgPSBGb3JtdWxhKCJ4IiktPnJlZHVjZTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJHIgPSBGcmFjdGlvbigxLzIpOwoKQkVHSU5fUEdNTApbYFxkc1xpbnRfe1skbG93XX1ee1skaGlnaF19IFskZl1cLCBkeGBdCgpbX117JHJ9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4908"><span class="process-math">\(\ds\int_{0}^{1} {x}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-781')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-853"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-782" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="782" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGxvdyA9IDA7CiRoaWdoID0gMTsKJGYgPSBGb3JtdWxhKCJ4XjIiKS0+cmVkdWNlOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokciA9IEZyYWN0aW9uKDEvMyk7CgpCRUdJTl9QR01MCltgXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gWyRmXVwsIGR4YF0KCltfXXskcn17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4910"><span class="process-math">\(\ds\int_{0}^{1} {x^{2}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-782')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-854"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div id="webwork-783" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="783" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGxvdyA9IDA7CiRoaWdoID0gMTsKJGYgPSBGb3JtdWxhKCJ4XjMiKS0+cmVkdWNlOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokciA9IEZyYWN0aW9uKDEvNCk7CgpCRUdJTl9QR01MCltgXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gWyRmXVwsIGR4YF0KCltfXXskcn17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4912"><span class="process-math">\(\ds\int_{0}^{1} {x^{3}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-783')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-855"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-784" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="784" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJG4gPSByYW5kb20oODAsMTIwLDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskbj0xMDA7fTsKJGxvdyA9IDA7CiRoaWdoID0gMTsKJGYgPSBGb3JtdWxhKCJ4XiRuIiktPnJlZHVjZTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJHIgPSBGcmFjdGlvbigxLygkbisxKSk7CgpCRUdJTl9QR01MCltgXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gWyRmXVwsIGR4YF0KCltfXXskcn17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4914"><span class="process-math">\(\ds\int_{0}^{1} {x^{113}}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-784')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-856"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div id="webwork-785" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="785" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRsb3cgPSByYW5kb20oLTksLTIsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRsb3c9LTQ7fTsKJGhpZ2ggPSAtJGxvdzsKJHIgPSBSZWFsKDIqJGhpZ2gpOwoKQkVHSU5fUEdNTApbYFxkc1xpbnRfe1skbG93XX1ee1skaGlnaF19IGR4YF0KCltfXXskcn17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4916"><span class="process-math">\(\ds\int_{-2}^{2} dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-785')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-857"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<div id="webwork-786" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="786" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGRzfXtcZGlzcGxheXN0eWxlfVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7KCRsb3csJGhpZ2gpID0gbnVtX3NvcnQoKC05Li4tMSlbTmNob29zZUsoOSwyKV0pOwokYyA9IHJhbmRvbSgyLDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRsb3c9LTEwOyRoaWdoPS01OyRjPTM7fTsKJGYgPSBGb3JtdWxhKCIkYyIpLT5yZWR1Y2U7CiRyID0gUmVhbCgkYyooJGhpZ2ggLSAkbG93KSk7CgpCRUdJTl9QR01MCltgXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gWyRmXVwsIGR4YF0KCltfXXskcn17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4918"><span class="process-math">\(\ds\int_{-9}^{-2} {5}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-786')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-858"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<div id="webwork-787" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="787" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRsb3cgPSByYW5kb20oLTksLTIsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRsb3c9LTI7fTsKJGhpZ2ggPSAtJGxvdzsKJGYgPSBGb3JtdWxhKCIwIiktPnJlZHVjZTsKJHIgPSBSZWFsKDApOwoKQkVHSU5fUEdNTApbYFxkc1xpbnRfe1skbG93XX1ee1skaGlnaF19IFskZl1cLCBkeGBdCgpbX117JHJ9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4920"><span class="process-math">\(\ds\int_{-8}^{8} {0}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-787')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-859"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-788" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="788" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJHRyaWcgPSBsaXN0X3JhbmRvbSgnLWNvdCcsJy1jc2MnKTsKJGxoID0gbGlzdF9yYW5kb20oWydwaS82JywncGkvNCddLFsncGkvNicsJ3BpLzMnXSxbJ3BpLzYnLCdwaS8yJ10sWydwaS80JywncGkvMyddLFsncGkvNCcsJ3BpLzInXSxbJ3BpLzMnLCdwaS8yJ10pOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskdHJpZz0nLWNzYyc7JGxoPVsncGkvNicsJ3BpLzMnXTt9OwokbG93ID0gRm9ybXVsYSgkbGgtPlswXSk7CiRoaWdoID0gRm9ybXVsYSgkbGgtPlsxXSk7CiRGID0gRm9ybXVsYSgiJHRyaWcoeCkiKTsKJGYgPSAkRi0+RCgneCcpLT5yZWR1Y2U7CiRyID0gJEYtPmV2YWwoeD0+UmVhbCgiJGhpZ2giKSkgLSAkRi0+ZXZhbCh4PT5SZWFsKCIkbG93IikpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwppZiAoJHIgPT0gMSkgeyRyID0gMTt9CmVsc2lmICgkciA9PSBzcXJ0KDMpIC0gMSkgeyRyID0gRm9ybXVsYSgic3FydCgzKSAtIDEiKTt9CmVsc2lmICgkciA9PSBzcXJ0KDMpIC0gMS9zcXJ0KDMpKSB7JHIgPSBGb3JtdWxhKCJzcXJ0KDMpIC0gMS9zcXJ0KDMpIik7fQplbHNpZiAoJHIgPT0gc3FydCgzKSkgeyRyID0gRm9ybXVsYSgic3FydCgzKSIpO30KZWxzaWYgKCRyID09IDEgLSAxL3NxcnQoMykpIHskciA9IEZvcm11bGEoIjEgLSAxL3NxcnQoMykiKTt9CmVsc2lmICgkciA9PSAxL3NxcnQoMykpIHskciA9IEZvcm11bGEoIjEvc3FydCgzKSIpO30KZWxzaWYgKCRyID09IDIgLSBzcXJ0KDIpKSB7JHIgPSBGb3JtdWxhKCIyIC0gc3FydCgyKSIpO30KZWxzaWYgKCRyID09IDIgLSAyL3NxcnQoMykpIHskciA9IEZvcm11bGEoIjIgLSAyL3NxcnQoMykiKTt9CmVsc2lmICgkciA9PSBzcXJ0KDIpIC0gMi9zcXJ0KDMpKSB7JHIgPSBGb3JtdWxhKCJzcXJ0KDIpIC0gMi9zcXJ0KDMpIik7fQplbHNpZiAoJHIgPT0gc3FydCgyKSAtIDEpIHskciA9IEZvcm11bGEoInNxcnQoMikgLSAxIik7fQplbHNpZiAoJHIgPT0gMi9zcXJ0KDMpIC0gMSkgeyRyID0gRm9ybXVsYSgiMi9zcXJ0KDMpIC0gMSIpO30KCkJFR0lOX1BHTUwKW2BcZHNcaW50X3tbJGxvd119XntbJGhpZ2hdfSBbJGZdXCwgZHhgXQoKW19deyRyfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4922"><span class="process-math">\(\ds\int_{{\frac{\pi }{6}}}^{{\frac{\pi }{4}}} {\csc^{2}\!\left(x\right)}\, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-788')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-860"><h5 class="heading"><span class="codenumber">29<span class="period">.</span></span></h5>
+<div id="webwork-789" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="789" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRXhwbGFpbiB3aHk6CmEuICBbYFxkc1xpbnRfey0xfV4xIHheblwsIGR4PTBcdGV4dHssfWBdIHdoZW4gW2BuYF0gaXMgYSBwb3NpdGl2ZSwgb2RkIGludGVnZXIsIGFuZAoKCmEuICBbYFxkc1xpbnRfey0xfV4xIHheblwsIGR4ID0gMlxpbnRfezB9XjEgeF5uXCwgZHhgXSB3aGVuIFtgbmBdIGlzIGEgcG9zaXRpdmUsIGV2ZW4gaW50ZWdlci4KCgpbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-4924">Explain why:</p>
+<ol class="lower-alpha">
+<li id="li-1114"><p id="p-4925"><span class="process-math">\(\ds\int_{-1}^1 x^n\, dx=0\text{,}\)</span> when <span class="process-math">\(n\)</span> is a positive, odd integer, and</p></li>
+<li id="li-1115"><p id="p-4926"><span class="process-math">\(\ds\int_{-1}^1 x^n\, dx = 2\int_{0}^1 x^n\, dx\)</span> when <span class="process-math">\(n\)</span> is a positive, even integer.</p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-789')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-861"><h5 class="heading"><span class="codenumber">30<span class="period">.</span></span></h5>
+<div id="webwork-790" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="790" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKRXhwbGFpbiB3aHkgW2BcZHNcaW50X3thfV57YSsyXHBpfSBcc2luIHRcLCBkdCA9IDBgXSBmb3IgYWxsIHZhbHVlcyBvZiBbYGFcdGV4dHsufWBdCgpbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4927">Explain why <span class="process-math">\(\ds\int_{a}^{a+2\pi} \sin t\, dt = 0\)</span> for all values of <span class="process-math">\(a\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-790')">Make Interactive</button></div>
+</div></article><div class="exercisegroup" id="exercisegroup-90">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-103"><p id="p-4928">Find all values <span class="process-math">\(c\)</span> such that <span class="process-math">\(\int_a^b f(x)\, dx = f(c)(b-a)\text{,}\)</span> as guaranteed by the <a href="" class="xref" data-knowl="./knowl/thm_mvt2.html" title="Theorem 5.4.29: The Mean Value Theorem of Integration">Theorem 5.4.29</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-862"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<div id="webwork-791" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="791" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRsb3cgPSAwOwokaGlnaCA9IHJhbmRvbSgyLDQsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRoaWdoPTI7fTsKJGYgPSBGb3JtdWxhKCJ4XjIiKTsKJEQgPSAkaGlnaCAtICRsb3c7CiRGID0gRm9ybXVsYSgieF4zLzMiKTsKJGZfaW52ID0gRm9ybXVsYSgic3FydCh4KSIpOwokZl9jID0gKCRGLT5ldmFsKHg9PiRoaWdoKSAtICRGLT5ldmFsKHg9PiRsb3cpKS8kRDsKJGMgPSBMaXN0KCRmX2ludi0+ZXZhbCh4PT4kZl9jKSk7CgpCRUdJTl9QR01MCltgXGludF97WyRhXX1ee1skYl19WyRmXSBcLCBkeGBdCgpbX117JGN9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4929"><span class="process-math">\(\int_{}^{}{x^{2}} \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-791')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-863"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<div id="webwork-792" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="792" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRsb3cgPSByYW5kb20oLTksLTEsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRsb3c9LTI7fTsKJGhpZ2ggPSAtJGxvdzsKJGYgPSBGb3JtdWxhKCJ4XjIiKTsKJEQgPSAkaGlnaCAtICRsb3c7CiRGID0gRm9ybXVsYSgieF4zLzMiKTsKJGZfaW52ID0gRm9ybXVsYSgic3FydCh4KSIpOwokZl9jID0gKCRGLT5ldmFsKHg9PiRoaWdoKSAtICRGLT5ldmFsKHg9PiRsb3cpKS8kRDsKJGMgPSAkZl9pbnYtPmV2YWwoeD0+JGZfYyk7CiRjID0gTGlzdCgtJGMsJGMpOwoKQkVHSU5fUEdNTApbYFxpbnRfe1skYV19XntbJGJdfVskZl0gXCwgZHhgXQoKW19deyRjfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4931"><span class="process-math">\(\int_{}^{}{x^{2}} \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-792')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-864"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<div id="webwork-793" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="793" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRsb3cgPSAwOwokaGlnaCA9IDE7CiRmID0gRm9ybXVsYSgiZV54Iik7CiREID0gJGhpZ2ggLSAkbG93OwokRiA9IEZvcm11bGEoImVeeCIpOwokZl9pbnYgPSBGb3JtdWxhKCJsbih4KSIpOwokZl9jID0gKCRGLT5ldmFsKHg9PiRoaWdoKSAtICRGLT5ldmFsKHg9PiRsb3cpKS8kRDsKJGMgPSAkZl9pbnYtPmV2YWwoeD0+JGZfYyk7CiRjID0gTGlzdCgkYyk7CgpCRUdJTl9QR01MCltgXGludF97WyRhXX1ee1skYl19WyRmXSBcLCBkeGBdCgpbX117JGN9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4933"><span class="process-math">\(\int_{}^{}{e^{x}} \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-793')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-865"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<div id="webwork-794" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="794" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRsb3cgPSAwOwokaGlnaCA9IGxpc3RfcmFuZG9tKDEsNCw5LDE2LDI1LDM2LDQ5KTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGhpZ2g9MTY7fTsKJGYgPSBGb3JtdWxhKCJzcXJ0KHgpIik7CiREID0gJGhpZ2ggLSAkbG93OwokRiA9IEZvcm11bGEoIjIvMyB4XigzLzIpIik7CiRmX2ludiA9IEZvcm11bGEoInheMiIpOwokZl9jID0gKCRGLT5ldmFsKHg9PiRoaWdoKSAtICRGLT5ldmFsKHg9PiRsb3cpKS8kRDsKJGMgPSAkZl9pbnYtPmV2YWwoeD0+JGZfYyk7CiRjID0gTGlzdCgkYyk7CgpCRUdJTl9QR01MCltgXGludF97WyRhXX1ee1skYl19WyRmXSBcLCBkeGBdCgpbX117JGN9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4935"><span class="process-math">\(\int_{}^{}{\sqrt{x}} \, dx\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-794')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-91">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-104"><p id="p-4937">Find the average value of the function on the given interval.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-866"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<div id="webwork-795" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="795" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR0cmlnID0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycpOwokbGggPSBsaXN0X3JhbmRvbShbJzAnLCdwaS8yJ10sWycwJywncGknXSxbJ3BpLzInLCdwaSddKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JHRyaWc9J3Npbic7JGxoPVsnMCcsJ3BpLzInXTt9OwokbG93ID0gRm9ybXVsYSgkbGgtPlswXSk7CiRoaWdoID0gRm9ybXVsYSgkbGgtPlsxXSk7CiREID0gJGhpZ2ggLSAkbG93OwokZiA9IEZvcm11bGEoIiR0cmlnKHgpIik7CiRGID0gLSRmLT5EKCd4JyktPnJlZHVjZTsKJEEgPSAoJEYtPmV2YWwoeD0+UmVhbCgiJGhpZ2giKSkgLSAkRi0+ZXZhbCh4PT5SZWFsKCIkbG93IikpKS8kRDsKJG51bSA9IFJlYWwoJEEqcGkpOwokQSA9IEZvcm11bGEoIiRudW0vcGkiKTsKCkJFR0lOX1BHTUwKW2BmKHgpPVskZl1gXSBvbiBbYFxsZWZ0W1skbG93XSxbJGhpZ2hdXHJpZ2h0XWBdCgpbX117JEF9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4938"><span class="process-math">\(f(x)={\sin\!\left(x\right)}\)</span> on <span class="process-math">\(\left[{\frac{\pi }{2}},{\pi }\right]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-795')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-867"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<div id="webwork-796" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="796" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR0cmlnID0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycpOwokbGggPSBsaXN0X3JhbmRvbShbJzAnLCdwaS8yJ10sWycwJywncGknXSxbJ3BpLzInLCdwaSddKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JHRyaWc9J3Npbic7JGxoPVsnMCcsJ3BpJ107fTsKJGxvdyA9IEZvcm11bGEoJGxoLT5bMF0pOwokaGlnaCA9IEZvcm11bGEoJGxoLT5bMV0pOwokRCA9ICRoaWdoIC0gJGxvdzsKJGYgPSBGb3JtdWxhKCIkdHJpZyh4KSIpOwokRiA9IC0kZi0+RCgneCcpLT5yZWR1Y2U7CiRBID0gKCRGLT5ldmFsKHg9PlJlYWwoIiRoaWdoIikpIC0gJEYtPmV2YWwoeD0+UmVhbCgiJGxvdyIpKSkvJEQ7CiRudW0gPSBSZWFsKCRBKnBpKTsKJEEgPSBGb3JtdWxhKCIkbnVtL3BpIik7CgpCRUdJTl9QR01MCltgeT1bJGZdYF0gb24gW2BbWyRsb3ddLFskaGlnaF1dYF0KCltfXXskQX17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4940"><span class="process-math">\(y={\sin\!\left(x\right)}\)</span> on <span class="process-math">\([{0},{\pi }]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-796')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-868"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<div id="webwork-797" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="797" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxvdyA9IDA7CiRoaWdoID0gcmFuZG9tKDEsOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGhpZ2g9NDt9OwokRCA9ICRoaWdoIC0gJGxvdzsKJGYgPSBGb3JtdWxhKCJ4Iik7CiRGID0gRm9ybXVsYSgieF4yLzIiKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKJEEgPSBGcmFjdGlvbigoJEYtPmV2YWwoeD0+UmVhbCgkaGlnaCkpIC0gJEYtPmV2YWwoeD0+UmVhbCgkbG93KSkpLyREKTsKCkJFR0lOX1BHTUwKW2B5PVskZl1gXSBvbiBbYFtbJGxvd10sWyRoaWdoXV1gXQoKW19deyRBfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4942"><span class="process-math">\(y={x}\)</span> on <span class="process-math">\([0,3]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-797')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-869"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<div id="webwork-798" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="798" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxvdyA9IDA7CiRoaWdoID0gcmFuZG9tKDEsOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGhpZ2g9NDt9OwokRCA9ICRoaWdoIC0gJGxvdzsKJGYgPSBGb3JtdWxhKCJ4XjIiKTsKJEYgPSBGb3JtdWxhKCJ4XjMvMyIpOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokQSA9IEZyYWN0aW9uKCgkRi0+ZXZhbCh4PT5SZWFsKCRoaWdoKSkgLSAkRi0+ZXZhbCh4PT5SZWFsKCRsb3cpKSkvJEQpOwoKQkVHSU5fUEdNTApbYHk9WyRmXWBdIG9uIFtgW1skbG93XSxbJGhpZ2hdXWBdCgpbX117JEF9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4944"><span class="process-math">\(y={x^{2}}\)</span> on <span class="process-math">\([0,4]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-798')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-870"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<div id="webwork-799" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="799" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxvdyA9IDA7CiRoaWdoID0gcmFuZG9tKDEsOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGhpZ2g9NDt9OwokRCA9ICRoaWdoIC0gJGxvdzsKJGYgPSBGb3JtdWxhKCJ4XjMiKTsKJEYgPSBGb3JtdWxhKCJ4XjQvNCIpOwpDb250ZXh0KCJGcmFjdGlvbiIpOwokQSA9IEZyYWN0aW9uKCgkRi0+ZXZhbCh4PT5SZWFsKCRoaWdoKSkgLSAkRi0+ZXZhbCh4PT5SZWFsKCRsb3cpKSkvJEQpOwoKQkVHSU5fUEdNTApbYHk9WyRmXWBdIG9uIFtgW1skbG93XSxbJGhpZ2hdXWBdCgpbX117JEF9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4946"><span class="process-math">\(y={x^{3}}\)</span> on <span class="process-math">\([0,5]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-799')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-871"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<div id="webwork-800" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="800" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGxvdyA9IDE7CiRtID0gcmFuZG9tKDEsOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JG09MTt9OwokaGlnaCA9IEZvcm11bGEoImVeJG0iKS0+cmVkdWNlOwokRCA9ICRoaWdoIC0gJGxvdzsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSh0PT4nUmVhbCcpOwokZiA9IEZvcm11bGEoIjEvdCIpOwokRiA9IEZvcm11bGEoImxuKHQpIik7CiRBID0gRm9ybXVsYSgiJG0vKGVeJG0gLSAxKSIpOwoKQkVHSU5fUEdNTApbYHk9XGRzWyRmXWBdIG9uIFtgXGxlZnRbWyRsb3ddLFskaGlnaF1ccmlnaHRdYF0KCltfXXskQX17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4948"><span class="process-math">\(y=\ds{\frac{1}{t}}\)</span> on <span class="process-math">\(\left[1,{e^{6}}\right]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-800')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-92">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-105"><p id="p-4950">A velocity function is given for an object moving along a straight line. Find the displacement of the object over the given time interval.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-872"><h6 class="heading"><span class="codenumber">41<span class="period">.</span></span></h6>
+<div id="webwork-801" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="801" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhV2l0aFVuaXRzLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsb3cgPSAwOwokaGlnaCA9IHJhbmRvbSg0LDgsMSk7CiR2MCA9IHJhbmRvbSgxMCwzMCwyKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGhpZ2g9NTskdjA9MjB9OwokYSA9IC0zMjsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSh0PT4nUmVhbCcpOwokZiA9IEZvcm11bGFXaXRoVW5pdHMoIiRhIHQgKyAkdjAgZnQvcyIpOwokRiA9IEZvcm11bGEoIiRhLzIgdF4yICsgJHYwIHQiKTsKJEQgPSBGb3JtdWxhV2l0aFVuaXRzKEZyYWN0aW9uKCRGLT5ldmFsKHQ9PlJlYWwoJGhpZ2gpKSAtICRGLT5ldmFsKHQ9PlJlYWwoJGxvdykpKSwgJ2Z0Jyk7CgpCRUdJTl9QR01MCltgdih0KT1bJGZdYF0gb24gW2BbWyRsb3ddLFskaGlnaF1dYF0KCltfXXskRH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4951"><span class="process-math">\(v(t)={-32t+22\ {\textstyle\frac{\rm\mathstrut ft}{\rm\mathstrut s}}}\)</span> on <span class="process-math">\([0,7]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-801')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-873"><h6 class="heading"><span class="codenumber">42<span class="period">.</span></span></h6>
+<div id="webwork-802" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="802" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhV2l0aFVuaXRzLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsb3cgPSAwOwokaGlnaCA9IHJhbmRvbSg3LDE1LDEpOwokdjAgPSByYW5kb20oMTAwLDMwMCwyMCk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRoaWdoPTEwOyR2MD0yMDB9OwokYSA9IC0zMjsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSh0PT4nUmVhbCcpOwokZiA9IEZvcm11bGFXaXRoVW5pdHMoIiRhIHQgKyAkdjAgZnQvcyIpOwokRiA9IEZvcm11bGEoIiRhLzIgdF4yICsgJHYwIHQiKTsKJEQgPSBGb3JtdWxhV2l0aFVuaXRzKEZyYWN0aW9uKCRGLT5ldmFsKHQ9PlJlYWwoJGhpZ2gpKSAtICRGLT5ldmFsKHQ9PlJlYWwoJGxvdykpKSwgJ2Z0Jyk7CgpCRUdJTl9QR01MCltgdih0KT1bJGZdYF0gb24gW2BbWyRsb3ddLFskaGlnaF1dYF0KCltfXXskRH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4953"><span class="process-math">\(v(t)={-32t+160\ {\textstyle\frac{\rm\mathstrut ft}{\rm\mathstrut s}}}\)</span> on <span class="process-math">\([0,14]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-802')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-874"><h6 class="heading"><span class="codenumber">43<span class="period">.</span></span></h6>
+<div id="webwork-803" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="803" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhV2l0aFVuaXRzLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsb3cgPSAwOwokaGlnaCA9IHJhbmRvbSgyLDksMSk7CiR2MCA9IHJhbmRvbSg1LDIwLDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskaGlnaD0zOyR2MD0xMH07CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhV2l0aFVuaXRzKCIkdjAgZnQvcyIpOwokRiA9IEZvcm11bGEoIiR2MCB0Iik7CiREID0gRm9ybXVsYVdpdGhVbml0cyhGcmFjdGlvbigkRi0+ZXZhbCh0PT5SZWFsKCRoaWdoKSkgLSAkRi0+ZXZhbCh0PT5SZWFsKCRsb3cpKSksICdmdCcpOwoKQkVHSU5fUEdNTApbYHYodCk9WyRmXWBdIG9uIFtgW1skbG93XSxbJGhpZ2hdXWBdCgpbX117JER9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4955"><span class="process-math">\(v(t)={20\ {\textstyle\frac{\rm\mathstrut ft}{\rm\mathstrut s}}}\)</span> on <span class="process-math">\([0,9]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-803')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-875"><h6 class="heading"><span class="codenumber">44<span class="period">.</span></span></h6>
+<div id="webwork-804" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="804" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhV2l0aFVuaXRzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsb3cgPSByYW5kb20oLTMsLTEsMSk7CiRoaWdoID0gcmFuZG9tKDEsMywxKTsKJGIgPSByYW5kb20oMiw5LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskbG93PS0xOyRoaWdoPTE7JGI9Mjt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKHQ9PidSZWFsJyk7CiRmID0gRm9ybXVsYVdpdGhVbml0cygiJGJedCBtcGgiKTsKJEYgPSBGb3JtdWxhKCIkYl50L2xuKCRiKSIpOwokRCA9IEZvcm11bGFXaXRoVW5pdHMoJEYtPmV2YWwodD0+UmVhbCgkaGlnaCkpIC0gJEYtPmV2YWwodD0+UmVhbCgkbG93KSksICdtaScpOwoKQkVHSU5fUEdNTApbYHYodCk9WyRmXWBdIG9uIFtgW1skbG93XSxbJGhpZ2hdXWBdCgpbX117JER9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4957"><span class="process-math">\(v(t)={9^{t}\ {\rm mph}}\)</span> on <span class="process-math">\([-3,2]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-804')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-876"><h6 class="heading"><span class="codenumber">45<span class="period">.</span></span></h6>
+<div id="webwork-805" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="805" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhV2l0aFVuaXRzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiR0cmlnID0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycpOwokbGggPSBsaXN0X3JhbmRvbShbJzAnLCdwaS8yJ10sWycwJywncGknXSxbJzAnLCczKnBpLzInXSxbJ3BpLzInLCdwaSddLFsncGkvMicsJzMqcGkvMiddLFsncGknLCczKnBpLzInXSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyR0cmlnPSdjb3MnOyRsaD1bJzAnLCczKnBpLzInXTt9OwokbG93ID0gRm9ybXVsYSgkbGgtPlswXSk7CiRoaWdoID0gRm9ybXVsYSgkbGgtPlsxXSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhV2l0aFVuaXRzKCIkdHJpZyh0KSBmdC9zIik7CiRGID0gRm9ybXVsYSgiLSR0cmlnKHQpIiktPkQoJ3QnKS0+cmVkdWNlOwokRCA9IEZvcm11bGFXaXRoVW5pdHMoJEYtPmV2YWwodD0+UmVhbCgiJGhpZ2giKSkgLSAkRi0+ZXZhbCh0PT5SZWFsKCIkbG93IikpLCAnZnQnKTsKCkJFR0lOX1BHTUwKW2B2KHQpPVskZl1gXSBvbiBbYFxsZWZ0W1skbG93XSxbJGhpZ2hdXHJpZ2h0XWBdCgpbX117JER9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4959"><span class="process-math">\(v(t)={\sin\!\left(t\right)\ {\textstyle\frac{\rm\mathstrut ft}{\rm\mathstrut s}}}\)</span> on <span class="process-math">\(\left[{0},{\pi }\right]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-805')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-877"><h6 class="heading"><span class="codenumber">46<span class="period">.</span></span></h6>
+<div id="webwork-806" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="806" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhV2l0aFVuaXRzLnBsIiwicGFyc2VyUm9vdC5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokbG93ID0gMDsKJG4gPSByYW5kb20oMyw1LDEpOwokaGlnaCA9IGxpc3RfcmFuZG9tKDIqKiRuLDMqKiRuLDQqKiRuKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGhpZ2g9MTskbj00OyRoaWdoPTE2O307CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKcGFyc2VyOjpSb290LT5FbmFibGU7CiRmID0gRm9ybXVsYVdpdGhVbml0cygicm9vdCgkbix0KSBmdC9zIik7CiRGID0gRm9ybXVsYSgidF4oMS8kbisxKS8oMS8kbisxKSIpOwokRCA9IEZvcm11bGFXaXRoVW5pdHMoRnJhY3Rpb24oJEYtPmV2YWwodD0+UmVhbCgkaGlnaCkpIC0gJEYtPmV2YWwodD0+UmVhbCgkbG93KSkpLCAnZnQnKTsKCkJFR0lOX1BHTUwKW2B2KHQpPVskZl1gXSBvbiBbYFtbJGxvd10sWyRoaWdoXV1gXQoKW19deyREfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4961"><span class="process-math">\(v(t)={\sqrt[3]{t}\ {\textstyle\frac{\rm\mathstrut ft}{\rm\mathstrut s}}}\)</span> on <span class="process-math">\([0,64]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-806')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-93">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-106"><p id="p-4963">An acceleration function of an object moving along a straight line is given. Find the change of the object's velocity over the given time interval.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-878"><h6 class="heading"><span class="codenumber">47<span class="period">.</span></span></h6>
+<div id="webwork-807" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="807" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhV2l0aFVuaXRzLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsb3cgPSAwOwokaGlnaCA9IHJhbmRvbSgxLDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRoaWdoPTI7fTsKJGEgPSAtMzI7CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhV2l0aFVuaXRzKCIkYSBmdC9zXjIiKTsKJEYgPSBGb3JtdWxhKCIkYSB0Iik7CiREID0gRm9ybXVsYVdpdGhVbml0cyhGcmFjdGlvbigkRi0+ZXZhbCh0PT5SZWFsKCRoaWdoKSkgLSAkRi0+ZXZhbCh0PT5SZWFsKCRsb3cpKSksICdmdC9zJyk7CgpCRUdJTl9QR01MCltgYSh0KT1bJGZdYF0gb24gW2BbWyRsb3ddLFskaGlnaF1dYF0KCltfXXskRH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4964"><span class="process-math">\(a(t)={-32\ {\textstyle\frac{\rm\mathstrut ft}{\rm\mathstrut s^{2}}}}\)</span> on <span class="process-math">\([0,4]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-807')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-879"><h6 class="heading"><span class="codenumber">48<span class="period">.</span></span></h6>
+<div id="webwork-808" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="808" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhV2l0aFVuaXRzLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsb3cgPSAwOwokaGlnaCA9IHJhbmRvbSgxLDksMSk7CiRhID0gcmFuZG9tKDUsMjAsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRoaWdoPTU7JGE9MTA7fTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSh0PT4nUmVhbCcpOwokZiA9IEZvcm11bGFXaXRoVW5pdHMoIiRhIGZ0L3NeMiIpOwokRiA9IEZvcm11bGEoIiRhIHQiKTsKJEQgPSBGb3JtdWxhV2l0aFVuaXRzKEZyYWN0aW9uKCRGLT5ldmFsKHQ9PlJlYWwoJGhpZ2gpKSAtICRGLT5ldmFsKHQ9PlJlYWwoJGxvdykpKSwgJ2Z0L3MnKTsKCkJFR0lOX1BHTUwKW2BhKHQpPVskZl1gXSBvbiBbYFtbJGxvd10sWyRoaWdoXV1gXQoKW19deyREfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4966"><span class="process-math">\(a(t)={8\ {\textstyle\frac{\rm\mathstrut ft}{\rm\mathstrut s^{2}}}}\)</span> on <span class="process-math">\([0,5]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-808')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-880"><h6 class="heading"><span class="codenumber">49<span class="period">.</span></span></h6>
+<div id="webwork-809" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="809" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhV2l0aFVuaXRzLnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsb3cgPSAwOwokaGlnaCA9IHJhbmRvbSgxLDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRoaWdoPTI7fTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSh0PT4nUmVhbCcpOwokZiA9IEZvcm11bGFXaXRoVW5pdHMoInQgZnQvc14yIik7CiRGID0gRm9ybXVsYSgidF4yLzIiKTsKJEQgPSBGb3JtdWxhV2l0aFVuaXRzKEZyYWN0aW9uKCRGLT5ldmFsKHQ9PlJlYWwoJGhpZ2gpKSAtICRGLT5ldmFsKHQ9PlJlYWwoJGxvdykpKSwgJ2Z0L3MnKTsKCkJFR0lOX1BHTUwKW2BhKHQpPVskZl1gXSBvbiBbYFtbJGxvd10sWyRoaWdoXV1gXQoKW19deyREfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4968"><span class="process-math">\(a(t)={t\ {\textstyle\frac{\rm\mathstrut ft}{\rm\mathstrut s^{2}}}}\)</span> on <span class="process-math">\([0,6]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-809')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-881"><h6 class="heading"><span class="codenumber">50<span class="period">.</span></span></h6>
+<div id="webwork-810" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="810" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhV2l0aFVuaXRzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiR0cmlnID0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycpOwokbGggPSBsaXN0X3JhbmRvbShbJzAnLCdwaS8yJ10sWycwJywncGknXSxbJzAnLCczKnBpLzInXSxbJ3BpLzInLCdwaSddLFsncGkvMicsJzMqcGkvMiddLFsncGknLCczKnBpLzInXSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyR0cmlnPSdjb3MnOyRsaD1bJzAnLCdwaS8yJ107fTsKJGxvdyA9IEZvcm11bGEoJGxoLT5bMF0pOwokaGlnaCA9IEZvcm11bGEoJGxoLT5bMV0pOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKHQ9PidSZWFsJyk7CiRmID0gRm9ybXVsYVdpdGhVbml0cygiJHRyaWcodCkgZnQvc14yIik7CiRGID0gRm9ybXVsYSgiLSR0cmlnKHQpIiktPkQoJ3QnKS0+cmVkdWNlOwokRCA9IEZvcm11bGFXaXRoVW5pdHMoJEYtPmV2YWwodD0+UmVhbCgiJGhpZ2giKSkgLSAkRi0+ZXZhbCh0PT5SZWFsKCIkbG93IikpLCAnZnQvcycpOwoKQkVHSU5fUEdNTApbYGEodCk9WyRmXWBdIG9uIFtgXGxlZnRbWyRsb3ddLFskaGlnaF1ccmlnaHRdYF0KCltfXXskRH17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4970"><span class="process-math">\(a(t)={\cos\!\left(t\right)\ {\textstyle\frac{\rm\mathstrut ft}{\rm\mathstrut s^{2}}}}\)</span> on <span class="process-math">\(\left[{\frac{\pi }{2}},{\pi }\right]\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-810')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-94">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-107"><p id="p-4972">Sketch the given relations and find the area of the enclosed region.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-882"><h6 class="heading"><span class="codenumber">51<span class="period">.</span></span></h6>
+<p id="p-4973"><span class="process-math">\(y=2x\text{,}\)</span> <span class="process-math">\(y=5x\text{,}\)</span> and <span class="process-math">\(x= 3\)</span></p></article><article class="exercise exercise-like" id="exercise-883"><h6 class="heading"><span class="codenumber">52<span class="period">.</span></span></h6>
+<p id="p-4974"><span class="process-math">\(y=-x+1\text{,}\)</span> <span class="process-math">\(y=3x+6\text{,}\)</span> <span class="process-math">\(x=2\)</span> and <span class="process-math">\(x= -1\)</span></p></article><article class="exercise exercise-like" id="exercise-884"><h6 class="heading"><span class="codenumber">53<span class="period">.</span></span></h6>
+<p id="p-4975"><span class="process-math">\(y=x^2-2x+5\text{,}\)</span> <span class="process-math">\(y=5x-5\)</span></p></article><article class="exercise exercise-like" id="exercise-885"><h6 class="heading"><span class="codenumber">54<span class="period">.</span></span></h6>
+<p id="p-4976"><span class="process-math">\(y=2x^2+2x-5\text{,}\)</span> <span class="process-math">\(y=x^2+3x+7\text{,}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-95">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-108"><p id="p-4977">Find <span class="process-math">\(F'(x)\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-886"><h6 class="heading"><span class="codenumber">55<span class="period">.</span></span></h6>
+<div id="webwork-811" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="811" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJG0gPSByYW5kb20oMyw1LDEpOwokYiA9IG5vbl96ZXJvX3JhbmRvbSgtOSw5LDEpOwokbG93ID0gcmFuZG9tKDEsOSwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JG09MzskYj0xOyRsb3c9Mjt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHQ9PidSZWFsJyk7CiRoaWdoID0gRm9ybXVsYSgieF4kbSArICRiIHgiKS0+cmVkdWNlOwokZiA9IEZvcm11bGEoIjEvdCIpOwokRCA9ICRoaWdoLT5EKCd4JyktPnJlZHVjZSAvICRoaWdoOwoKQkVHSU5fUEdNTApbYEYoeCkgPSBcZHNcaW50X3tbJGxvd119XntbJGhpZ2hdfSBbJGZdXCwgZHRgXQoKW19deyREfXszMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4978"><span class="process-math">\(F(x) = \ds\int_{8}^{{x^{5}-7x}} {\frac{1}{t}}\, dt\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-811')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-887"><h6 class="heading"><span class="codenumber">56<span class="period">.</span></span></h6>
+<div id="webwork-812" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="812" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJG0gPSByYW5kb20oMiw1LDEpOwokaGlnaCA9IHJhbmRvbSgtOSw5LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskbT0zOyRoaWdoPTA7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZCh0PT4nUmVhbCcpOwokbG93ID0gRm9ybXVsYSgieF4kbSIpOwokZiA9IEZvcm11bGEoInReJG0iKTsKJEQgPSBGb3JtdWxhKCItJG0geF4oJG0qKjIrJG0tMSkiKS0+cmVkdWNlOwoKQkVHSU5fUEdNTApbYEYoeCkgPSBcZHNcaW50X3tbJGxvd119XntbJGhpZ2hdfSBbJGZdXCwgZHRgXQoKW19deyREfXszMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4980"><span class="process-math">\(F(x) = \ds\int_{{x^{5}}}^{6} {t^{5}}\, dt\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-812')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-888"><h6 class="heading"><span class="codenumber">57<span class="period">.</span></span></h6>
+<div id="webwork-813" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="813" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGIgPSBub25femVyb19yYW5kb20oLTksOSwxKTsKJG0gPSByYW5kb20oMiw0LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskYj0xOyRtPTJ9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHQ9PidSZWFsJyk7CiRsb3cgPSBGb3JtdWxhKCJ4Iik7CiRoaWdoID0gRm9ybXVsYSgieF4kbSIpOwokZiA9IEZvcm11bGEoInQrJGIiKS0+cmVkdWNlOwokRCA9IEZvcm11bGEoIiRtIHheKCRtLTEpKHheJG0rJGIpIC0gKHgrJGIpIiktPnJlZHVjZTsKCkJFR0lOX1BHTUwKW2BGKHgpID0gXGRzXGludF97WyRsb3ddfV57WyRoaWdoXX0gWyRmXVwsIGR0YF0KCltfXXskRH17MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4982"><span class="process-math">\(F(x) = \ds\int_{{x}}^{{x^{3}}} {t-9}\, dt\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-813')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-889"><h6 class="heading"><span class="codenumber">58<span class="period">.</span></span></h6>
+<div id="webwork-814" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="814" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGRzfXtcZGlzcGxheXN0eWxlfVwpPC9kaXY+JykpOwooJGxvdywkaGlnaCwkZikgPSAoJ2VeJywnbG4nLCdzaW4nLCdjb3MnLCdzcXJ0JylbTmNob29zZUsoNSwzKV07CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRsb3c9J2xuJzskaGlnaD0nZV4nOyRmPSdzaW4nO307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQodD0+J1JlYWwnKTsKJGxvdyA9IEZvcm11bGEoIiRsb3coeCkiKTsKJGhpZ2ggPSBGb3JtdWxhKCIkaGlnaCh4KSIpOwokZiA9IEZvcm11bGEoIiRmKHQpIik7CiREID0gJGhpZ2gtPkQoJ3gnKSAqICRmLT5zdWJzdGl0dXRlKHQ9PiRoaWdoKSAtICRsb3ctPkQoJ3gnKSAqICRmLT5zdWJzdGl0dXRlKHQ9PiRsb3cpOwokRCA9ICRELT5yZWR1Y2U7CgpCRUdJTl9QR01MCltgRih4KSA9IFxkc1xpbnRfe1skbG93XX1ee1skaGlnaF19IFskZl1cLCBkdGBdCgpbX117JER9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4984"><span class="process-math">\(F(x) = \ds\int_{{e^{x}}}^{{\ln\!\left(x\right)}} {\sin\!\left(t\right)}\, dt\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-814')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

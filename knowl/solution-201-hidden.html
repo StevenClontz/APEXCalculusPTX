@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:30Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_graphs_concav_ex_2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/eC6QLbsuRVs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We need to find <span class="process-math">\(\fp\)</span>and <span class="process-math">\(\fpp\text{.}\)</span> Using the <a href="" class="xref" data-knowl="./knowl/thm_QuotientRule.html" title="Theorem 2.4.10: Quotient Rule">Quotient Rule 2.4.10</a> and simplifying, we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_QuotientRule.html">
+\begin{align*}
+\fp(x)\amp=\frac{-(1+x^2)}{(x^2-1)^2}\amp\fpp(x)\amp= \frac{2x(x^2+3)}{(x^2-1)^3}\text{.}
+\end{align*}
+</div>
+<p>To find the possible points of inflection, we seek to find where <span class="process-math">\(\fpp(x)=0\)</span> and where <span class="process-math">\(\fpp\)</span> is not defined. Solving <span class="process-math">\(\fpp(x)=0\)</span> reduces to solving <span class="process-math">\(2x(x^2+3)=0\text{;}\)</span> we find <span class="process-math">\(x=0\text{.}\)</span> We find that <span class="process-math">\(\fpp \)</span>is not defined when <span class="process-math">\(x=\pm 1\text{,}\)</span> for then the denominator of <span class="process-math">\(\fpp \)</span>is <span class="process-math">\(0\text{.}\)</span> We also note that <span class="process-math">\(f\)</span> itself is not defined at <span class="process-math">\(x=\pm1\text{,}\)</span> having a domain of <span class="process-math">\((-\infty,-1)\cup(-1,1)\cup(1,\infty)\text{.}\)</span> Since the domain of <span class="process-math">\(f\)</span> is the union of three intervals, it makes sense that the concavity of <span class="process-math">\(f\)</span> could switch across intervals. We technically cannot say that <span class="process-math">\(f\)</span> has a point of inflection at <span class="process-math">\(x=\pm1\)</span> as they are not part of the domain, but we must still consider these <span class="process-math">\(x\)</span>-values to be important and will include them in our number line.</p>
+<p>The important <span class="process-math">\(x\)</span>-values at which concavity might switch are <span class="process-math">\(x=-1\text{,}\)</span> <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=1\text{,}\)</span> which split the number line into four intervals as shown in <a href="" class="xref" data-knowl="./knowl/fig_concline2.html" title="Figure 3.4.16">Figure 3.4.16</a>. We determine the concavity on each. Keep in mind that all we are concerned with is the <em class="emphasis">sign</em> of <span class="process-math">\(\fpp \)</span>on the interval.</p>
+<dl class="description-list">
+<dt>Interval 1: <span class="process-math">\((-\infty,-1)\)</span>
+</dt>
+<dd><p>Select a number <span class="process-math">\(c\)</span> in this interval with a large magnitude (for instance, <span class="process-math">\(c=-100\)</span>). The denominator of <span class="process-math">\(\fp'(x)\)</span> will be positive. In the numerator, the <span class="process-math">\(\left(c^2+3\right)\)</span> factor will be positive and the <span class="process-math">\(2c\)</span> factor will be negative. Thus the numerator is negative and <span class="process-math">\(\fpp(c)\)</span> is negative. We conclude <span class="process-math">\(f\)</span> is concave down on <span class="process-math">\((-\infty,-1)\text{.}\)</span></p></dd>
+<dt>Interval 2: <span class="process-math">\((-1,0)\)</span>
+</dt>
+<dd><p>For any number <span class="process-math">\(c\)</span> in this interval, the factor <span class="process-math">\(2c\)</span> in the numerator will be negative, the factor <span class="process-math">\(\left(c^2+3\right)\)</span> in the numerator will be positive, and the factor <span class="process-math">\(\left(c^2-1\right)^3\)</span> in the denominator will be negative. Thus <span class="process-math">\(\fpp(c)\gt 0\)</span> and <span class="process-math">\(f\)</span> is concave up on this interval.</p></dd>
+<dt>Interval 3: <span class="process-math">\((0,1)\)</span>
+</dt>
+<dd><p>Any number <span class="process-math">\(c\)</span> in this interval will be positive and “small.” Thus the numerator is positive while the denominator is negative. Thus <span class="process-math">\(\fpp(c)\lt 0\)</span> and <span class="process-math">\(f\)</span> is concave down on this interval.</p></dd>
+<dt>Interval 4: <span class="process-math">\((1,\infty)\)</span>
+</dt>
+<dd><p>Choose a large value for <span class="process-math">\(c\text{.}\)</span> It is evident that <span class="process-math">\(\fpp(c)\gt 0\text{,}\)</span> so we conclude that <span class="process-math">\(f\)</span> is concave up on <span class="process-math">\((1,\infty)\text{.}\)</span></p></dd>
+</dl>
+<figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/img_concline2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.16<span class="period">.</span></span><span class="space"> </span>Number line for <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_conc2.html" title="Example 3.4.15: Finding intervals of concave up/down, inflection points">Example 3.4.15</a></figcaption></figure><p>We conclude that <span class="process-math">\(f\)</span> is concave up on <span class="process-math">\((-1,0)\)</span> and <span class="process-math">\((1,\infty)\)</span> and concave down on <span class="process-math">\((-\infty,-1)\)</span> and <span class="process-math">\((0,1)\text{.}\)</span> There is only one point of inflection, <span class="process-math">\((0,0)\text{,}\)</span> as <span class="process-math">\(f\)</span> is not defined at <span class="process-math">\(x=\pm 1\text{.}\)</span> Our work is confirmed by the graph of <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_conc2.html" title="Figure 3.4.17">Figure 3.4.17</a>. Notice how <span class="process-math">\(f\)</span> is concave up whenever <span class="process-math">\(\fpp\)</span>is positive, and concave down when <span class="process-math">\(\fpp\)</span>is negative. The inflection in <span class="process-math">\(f\)</span> occurs where <span class="process-math">\(\fpp\)</span> changes sign.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_conc2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.17<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(\fpp(x)\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_conc2.html" title="Example 3.4.15: Finding intervals of concave up/down, inflection points">Example 3.4.15</a></figcaption></figure>
+</div></body>
+</html>

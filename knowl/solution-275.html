@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:19Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.13.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_rie_ex_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/urkFFBmu9uQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Using the formula derived before, using 16 equally spaced intervals and the Right Hand Rule, we can approximate the definite integral as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{i=1}^{16}f(x_{i})\Delta x\text{.}
+\end{equation*}
+</div>
+<p>We have <span class="process-math">\(\Delta x = 4/16 = 0.25\text{.}\)</span> Since <span class="process-math">\(x_i = 0+i\Delta x\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_{i} = 0 + i\Delta x = i\Delta x\text{.}
+\end{equation*}
+</div>
+<p>Using the summation formulas, consider:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align}
+\int_0^4 (4x-x^2)\, dx \amp \approx \sum_{i=1}^{16} f(x_{i})\Delta x\notag\\
+\amp = \sum_{i=1}^{16} f(i\Delta x) \Delta x\notag\\
+\amp = \sum_{i=1}^{16} \big(4i\Delta x - (i\Delta x)^2\big)\Delta x\notag\\
+\amp = \sum_{i=1}^{16} (4i\Delta x^2 - i^2\Delta x^3)\notag\\
+\amp = (4\Delta x^2)\sum_{i=1}^{16} i - \Delta x^3 \sum_{i=1}^{16} i^2\tag{5.3.2}\\
+\amp = (4\Delta x^2)\frac{16\cdot 17}{2} - \Delta x^3 \frac{16(17)(33)}6\notag\\
+\amp =	4\cdot 0.25^2\cdot 136-0.25^3\cdot 1496\notag\\
+\amp =10.625\notag
+\end{align}
+</div>
+<p>We were able to sum up the areas of 16 rectangles with very little computation. In <a href="" class="xref" data-knowl="./knowl/fig_rie7.html" title="Figure 5.3.14">Figure 5.3.14</a> the function and the 16 rectangles are graphed. While some rectangles over-approximate the area, other under-approximate the area (by about the same amount). Thus our approximate area of 10.625 is likely a fairly good approximation.</p>
+<p>Notice Equation <a href="" class="xref" data-knowl="./knowl/eq_rie7.html" title="Equation 5.3.2">(5.3.2)</a>; by replacing 16 by 1,000 (and appropriately changing the value of <span class="process-math">\(\Delta x\)</span>), we can use that equation to sum up 1000 rectangles!</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rie7.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.14<span class="period">.</span></span><span class="space"> </span>Approximating <span class="process-math">\(\int_0^4(4x-x^2)\, dx\)</span> with the Right Hand Rule and 16 evenly spaced subintervals</figcaption></figure><p>We do so here, skipping from the original summand to the equivalent of Equation <a href="" class="xref" data-knowl="./knowl/eq_rie7.html" title="Equation 5.3.2">(5.3.2)</a> to save space. Note that <span class="process-math">\(\Delta x = 4/1000 = 0.004\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_rie7.html">
+\begin{align*}
+\int_0^4 (4x-x^2)\, dx \amp \approx \sum_{i=1}^{1000} f(x_{i})\Delta x\\
+\amp = (4\Delta x^2)\sum_{i=1}^{1000} i - \Delta x^3 \sum_{i=1}^{1000} i^2\\
+\amp = (4\Delta x^2)\frac{1000\cdot 1001}{2} - \Delta x^3 \frac{1000(1001)(2001)}6\\
+\amp =10.666656
+\end{align*}
+</div>
+<p>Using many, many rectangles, we have a likely good approximation of <span class="process-math">\(\int_0^4 (4x-x^2)\dx\text{.}\)</span> That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^4(4x-x^2)\, dx \approx 10.666656\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="sec_riemann.html#solution-275" class="internal">in-context</a></span>
+</body>
+</html>

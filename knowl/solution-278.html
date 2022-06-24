@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:21Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.3.24.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_rie_ex_lim" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/yvWSszI0Xvc?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Following <a href="" class="xref" data-knowl="./knowl/idea_riemann.html" title="Key Idea 5.3.20: Riemann Sum Concepts">Key Idea 5.3.20</a>, we have <span class="process-math">\(\Delta x = \frac{5-(-1)}{n} = 6/n\text{.}\)</span> We have <span class="process-math">\(x_i = (-1) + i\Delta x\text{,}\)</span> which is the right endpoint of the <span class="process-math">\(i\)</span>th subinterval.</p>
+<p>The Riemann sum corresponding to the Right Hand Rule is (followed by simplifications):</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_{-1}^5 x^3\, dx   \amp \approx \sum_{i=1}^n f(x_{i})\Delta x\\
+\amp = \sum_{i=1}^n f(-1+i\Delta x)\Delta x\\
+\amp = \sum_{i=1}^n (-1+i\Delta x)^3\Delta x\\
+\amp = \sum_{i=1}^n \big((i\Delta x)^3 -3(i\Delta x)^2 + 3i\Delta x -1\big)\Delta x  \text{ (now distribute \(\Delta x\)) }\\
+\amp = \sum_{i=1}^n \big(i^3\Delta x^4 - 3i^2\Delta x^3 + 3i\Delta x^2 -\Delta x\big)  \text{ (now split up summation) }\\
+\amp = \Delta x^4 \sum_{i=1}^ni^3 -3\Delta x^3 \sum_{i=1}^n i^2+ 3\Delta x^2 \sum_{i=1}^n i - \sum_{i=1}^n \Delta x\\
+\amp = \Delta x^4 \left(\frac{n(n+1)}{2}\right)^2 -3\Delta x^3 \frac{n(n+1)(2n+1)}{6}+ 3\Delta x^2 \frac{n(n+1)}{2} - n\Delta x\\
+\end{align*}
+<p class="intertext">(use <span class="process-math">\(\Delta x = 6/n\)</span>)</p>
+\begin{align*}
+\amp = \frac{1296}{n^4}\cdot\frac{n^2(n+1)^2}{4} - 3\frac{216}{n^3}\cdot\frac{n(n+1)(2n+1)}{6} + 3\frac{36}{n^2}\frac{n(n+1)}2 -6\\
+\end{align*}
+<p class="intertext">(now do a sizable amount of algebra to simplify)</p>
+\begin{align*}
+\amp =156 + \frac{378}n + \frac{216}{n^2}
+\end{align*}
+</div>
+<p>Once again, we have found a compact formula for approximating the definite integral with <span class="process-math">\(n\)</span> equally spaced subintervals and the Right Hand Rule. Using 10 subintervals, we have an approximation of <span class="process-math">\(195.96\)</span> (these rectangles are shown in <a href="" class="xref" data-knowl="./knowl/fig_rie9.html" title="Figure 5.3.25">Figure 5.3.25</a>). Using <span class="process-math">\(n=100\)</span> gives an approximation of <span class="process-math">\(159.802\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rie9.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.25<span class="period">.</span></span><span class="space"> </span>Approximating <span class="process-math">\(\int_{-1}^5 x^3\, dx\)</span> using the Right Hand Rule and 10 evenly spaced subintervals</figcaption></figure><p>Now find the exact answer using a limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{-1}^5 x^3\, dx = \lim_{n\to\infty} \left(156 + \frac{378}n + \frac{216}{n^2}\right) = 156\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="sec_riemann.html#solution-278" class="internal">in-context</a></span>
+</body>
+</html>

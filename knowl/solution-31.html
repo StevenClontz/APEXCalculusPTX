@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:34:40Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.2.4.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_limit_defn_sqrt_epsilon" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=pdu3nRE8x1I,zA_u1Hsd0Jg&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Before we use the formal definition, let's try some numerical tolerances. What if the <span class="process-math">\(y\)</span> tolerance is <span class="process-math">\(0.5\text{,}\)</span> or in other words <span class="process-math">\(\varepsilon =0.5\text{?}\)</span> How close to <span class="process-math">\(4\)</span> does <span class="process-math">\(x\)</span> have to be so that <span class="process-math">\(y\)</span> is within <span class="process-math">\(0.5\)</span> units of <span class="process-math">\(2\text{?}\)</span> That is, <span class="process-math">\(1.5 \lt  y \lt  2.5\text{?}\)</span> In this case, we can proceed as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+1.5 \amp\lt  y \lt  2.5\\
+1.5 \amp\lt  \sqrt{x} \lt  2.5 \amp\amp \text{(Let } y=\sqrt{x} \text{)}\\
+1.5^2 \amp\lt  x \lt  2.5^2\amp\amp \text{(Square the inequality)}\\
+2.25  \amp\lt  x \lt  6.25\\
+2.25-4 \amp\lt  x-4 \lt  6.25-4\amp\amp \text{(Subtract }4\text{ from both sides)}\\
+-1.75 \amp\lt  x-4 \lt  2.25
+\end{align*}
+</div>
+<p>So, what is the desired <span class="process-math">\(x\)</span> tolerance? Remember, we want to find a <span class="process-math">\(\delta\)</span> so that <span class="process-math">\(\abs{x-4}\)</span> is smaller than <span class="process-math">\(\delta\text{.}\)</span> Since <span class="process-math">\(1.75\lt2.25\text{,}\)</span> then if we require <span class="process-math">\(\abs{x-4}\lt 1.75\text{,}\)</span> then we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_choose_e_d.html">
+\begin{gather*}
+\abs{x-4}\lt1.75\\
+\implies-1.75\lt x-4\lt1.75\lt2.25
+\end{gather*}
+</div>
+<p class="continuation">Therefore we can have <span class="process-math">\(\delta \leq 1.75\text{.}\)</span> See <a href="" class="xref" data-knowl="./knowl/fig_choose_e_d.html" title="Figure 1.2.5">Figure 1.2.5</a>.</p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><img src="generated/latex-image/img_limit_proof1a.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:47%;"><img src="generated/latex-image/img_limit_proof1b.svg" role="img" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.5<span class="period">.</span></span><span class="space"> </span>Illustrating the <span class="process-math">\(\varepsilon-\delta\)</span> process. With <span class="process-math">\(\varepsilon=0.5\text{,}\)</span> we pick any <span class="process-math">\(\delta \lt  1.75\)</span></figcaption></figure><p>Given the <span class="process-math">\(y\)</span> tolerance <span class="process-math">\(\varepsilon =0.5\text{,}\)</span> we have found an <span class="process-math">\(x\)</span> tolerance, <span class="process-math">\(\delta \lt 1.75\text{,}\)</span> such that whenever <span class="process-math">\(x\)</span> is within <span class="process-math">\(\delta\)</span> units of <span class="process-math">\(4\text{,}\)</span> then <span class="process-math">\(y\)</span> is within <span class="process-math">\(\varepsilon\)</span> units of <span class="process-math">\(2\text{.}\)</span> That's what we were trying to find.</p>
+<p>Let's try another value of <span class="process-math">\(\varepsilon\text{.}\)</span></p>
+<p>What if the <span class="process-math">\(y\)</span> tolerance is <span class="process-math">\(0.01\text{,}\)</span> i.e. <span class="process-math">\(\varepsilon =0.01\text{?}\)</span> How close to <span class="process-math">\(4\)</span> does <span class="process-math">\(x\)</span> have to be in order for <span class="process-math">\(y\)</span> to be within <span class="process-math">\(0.01\)</span> units of <span class="process-math">\(2\text{?}\)</span> (In other words for <span class="process-math">\(1.99 \lt  y \lt  2.01\text{?}\)</span>) Again, we just square these values to get <span class="process-math">\(1.99^2 \lt  x \lt  2.01^2\text{,}\)</span> or</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+3.9601 \amp\lt  x \lt  4.0401\\
+-0.0399\amp\lt  x-4 \lt  0.0401
+\end{align*}
+</div>
+<p>What is the desired <span class="process-math">\(x\)</span> tolerance? In this case we must have <span class="process-math">\(\delta \lt 0.0399\text{,}\)</span> which is the minimum distance from <span class="process-math">\(4\)</span> of the two bounds given above.</p>
+<p>What we have so far: if <span class="process-math">\(\varepsilon =0.5\text{,}\)</span> then <span class="process-math">\(\delta \lt 1.75\)</span> leads to <span class="process-math">\(f(x)\)</span> being less than <span class="process-math">\(\varepsilon\)</span> from <span class="process-math">\(f(4)\)</span> and if <span class="process-math">\(\varepsilon = 0.01\text{,}\)</span> then <span class="process-math">\(\delta \lt 0.0399\)</span> being less than <span class="process-math">\(\varepsilon\)</span> from <span class="process-math">\(f(4)\text{.}\)</span> A pattern is not easy to see, so we switch to general <span class="process-math">\(\varepsilon\)</span> try to determine an adequate <span class="process-math">\(\delta\)</span> symbolically. We start by assuming <span class="process-math">\(y=\sqrt{x}\)</span> is within <span class="process-math">\(\varepsilon\)</span> units of <span class="process-math">\(2\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\amp\abs{y - 2} \lt  \varepsilon\\
+-\varepsilon \amp\lt  y - 2 \lt  \varepsilon\\
+-\varepsilon \amp\lt  \sqrt{x} - 2 \lt  \varepsilon  \amp\amp (y=\sqrt{x})\\
+2 - \varepsilon \amp\lt  \sqrt{x} \lt  2+ \varepsilon \amp\amp \text{(Add 2)}\\
+(2 - \varepsilon)^2 \amp\lt  x \lt  (2+ \varepsilon) ^2 \amp\amp \text{(Square all)}\\
+4 - 4\varepsilon + \varepsilon^2 \amp\lt  x \lt  4 + 4\varepsilon + \varepsilon^2 \amp\amp \text{(Expand)}\\
+-4\varepsilon + \varepsilon^2 \amp\lt  x-4 \lt   4\varepsilon + \varepsilon^2\amp\amp \text{(Subtract 4)}
+\end{align*}
+</div>
+<p>The “desired form” in the last step is “<span class="process-math">\(4-\textit{something} \lt  x \lt  4 + \textit{something}\text{.}\)</span>” Since we want this last interval to describe an <span class="process-math">\(x\)</span> tolerance around 4, we have that either <span class="process-math">\(\delta \lt  4\varepsilon - \varepsilon^2\)</span> or <span class="process-math">\(\delta \lt  4\varepsilon + \varepsilon^2\text{,}\)</span> whichever is smaller:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\delta \lt \min\{4\varepsilon - \varepsilon^2, 4\varepsilon + \varepsilon^2\}\text{.}
+\end{equation*}
+</div>
+<p>Since <span class="process-math">\(\varepsilon  \gt  0\text{,}\)</span> we have <span class="process-math">\(4\varepsilon - \varepsilon^2 \lt 4\varepsilon + \varepsilon^2\text{,}\)</span> the minimum is <span class="process-math">\(\delta \leq 4\varepsilon - \varepsilon^2\text{.}\)</span> That's the formula: given an <span class="process-math">\(\varepsilon\text{,}\)</span> set <span class="process-math">\(\delta \leq 4\varepsilon-\varepsilon^2\text{.}\)</span></p>
+<p>We can check this for our previous values. If <span class="process-math">\(\varepsilon=0.5\text{,}\)</span> the formula gives <span class="process-math">\(\delta \lt 4(0.5) - (0.5)^2 = 1.75\)</span> and when <span class="process-math">\(\varepsilon=0.01\text{,}\)</span> the formula gives <span class="process-math">\(\delta \lt 4(0.01) - (0.01)^2 = 0.399\text{.}\)</span></p>
+<p>So given any <span class="process-math">\(\varepsilon  \gt 0\text{,}\)</span> set <span class="process-math">\(\delta \lt 4\varepsilon - \varepsilon^2\text{.}\)</span> Then if <span class="process-math">\(\abs{x-4}\lt \delta\)</span> (and <span class="process-math">\(x\neq 4\)</span>), then <span class="process-math">\(\abs{f(x) - 2} \lt \varepsilon\text{,}\)</span> satisfying the definition of the limit. We have shown formally (and finally!) that <span class="process-math">\(\lim_{x\to 4} \sqrt{x} = 2\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_limit_def.html#solution-31" class="internal">in-context</a></span>
+</body>
+</html>

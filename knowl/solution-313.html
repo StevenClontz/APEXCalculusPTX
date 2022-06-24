@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:50Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.1.19.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-sub-ex-arctan" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/skYWHK8feRs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>The integrand looks similar to the derivative of the arctangent function. Note:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\frac{1}{25+x^2} \amp = \frac{1}{25\left(1+\frac{x^2}{25}\right)}\\
+\amp = \frac{1}{25(1+\left(\frac{x}{5}\right)^2)}\\
+\amp = \frac{1}{25}\frac{1}{1+\left(\frac{x}{5}\right)^2}\text{.}
+\end{align*}
+</div>
+<p>Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int\frac{1}{25+x^2}\, dx = \frac{1}{25}\int \frac{1}{1+\left(\frac{x}{5}\right)^2}\, dx\text{.}
+\end{equation*}
+</div>
+<p>This can be integrated using Substitution. Set <span class="process-math">\(u = x/5\text{,}\)</span> hence <span class="process-math">\(du = dx/5\)</span> or <span class="process-math">\(dx=5\, du\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int\frac{1}{25+x^2}\, dx \amp = \frac{1}{25}\int \frac{1}{1+\left(\frac{x}{5}\right)^2}\, dx\\
+\amp = \frac15\int \frac{1}{1+u^2}\, du\\
+\amp = \frac15\tan^{-1}(u) + C\\
+\amp = \frac15\tan^{-1}\left(\frac x5\right)+C
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_substitution.html#solution-313" class="internal">in-context</a></span>
+</body>
+</html>

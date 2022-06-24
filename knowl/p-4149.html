@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:02Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<ul class="disc">
+<li>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int c\cdot f(x)\,dx = c\cdot \int f(x)\,dx
+\end{equation*}
+</div>
+<p>This is the Constant Multiple Rule:  we can temporarily ignore constants when finding antiderivatives, just as we did when computing derivatives (i.e., <span class="process-math">\(\lzoo{x}{3x^2}\)</span> is just as easy to compute as <span class="process-math">\(\lzoo{x}{x^2}\)</span>). An example:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int 5\cos(x) \,dx = 5\cdot\int \cos(x) \,dx = 5\cdot (\sin(x) +C) = 5\sin(x) + C\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In the last step we can consider the constant as also being multiplied by 5, but “5 times a constant” is still a constant, so we just write “<span class="process-math">\(C\)</span>”.</p>
+</li>
+<li>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \big(f(x)\pm g(x)\big)\,dx =\int f(x)\,dx\pm \int g(x)\,dx
+\end{equation*}
+</div>
+<p>This is the Sum/Difference Rule:  we can split integrals apart when the integrand contains terms that are added/subtracted, as we did in <a href="" class="xref" data-knowl="./knowl/ex_anti3.html" title="Example 5.1.7: Evaluating indefinite integrals">Example 5.1.7</a>. So:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_anti3.html">
+\begin{align*}
+\int(3x^2+4x+5)\, dx \amp = \int 3x^2\, dx + \int 4x\,dx + \int 5\,dx\\
+\amp = 3\int x^2\, dx + 4\int x\,dx + \int 5 \,dx\\
+\amp = 3\cdot \frac13x^3 + 4\cdot \frac12x^2+5x+C\\
+\amp = x^3+2x^2+5x+C
+\end{align*}
+</div>
+<p class="continuation">In practice we generally do not write out all these steps, but we demonstrate them here for completeness.</p>
+</li>
+<li>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int x^n\,dx =\frac{1}{n+1}x^{n+1}+ C\quad(n\neq -1)
+\end{equation*}
+</div>
+<p>This is the Power Rule of indefinite integration.  There are two important things to keep in mind:</p>
+<ol class="decimal">
+<li><p>Notice the restriction that <span class="process-math">\(n\neq -1\text{.}\)</span> This is important: <span class="process-math">\(\int \frac{1}{x}\,dx \neq\)</span> “<span class="process-math">\(\frac{1}{0}x^0+C\)</span>”; rather, see the last rule from the list.</p></li>
+<li>
+<p>We are presenting antidifferentiation as the “inverse operation” of differentiation. Here is a useful quote to remember:</p>
+<blockquote class="blockquote"><p>“Inverse operations do the opposite things in the opposite order.”</p></blockquote>
+<p>When taking a derivative using the Power Rule, we <em class="emphasis">first</em> <em class="emphasis">multiply</em> by the power, then <em class="emphasis">second</em> <em class="emphasis">subtract</em> <span class="process-math">\(1\)</span> from the power. To find the antiderivative, do the opposite things in the opposite order: <em class="emphasis">first</em> <em class="emphasis">add</em> <span class="process-math">\(1\)</span> to the power, then <em class="emphasis">second</em> <em class="emphasis">divide</em> by the power.</p>
+</li>
+</ol>
+</li>
+<li>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{1}x\,dx = \ln\abs{x}+C
+\end{equation*}
+</div>
+<p>Note that this rule uses the absolute value of <span class="process-math">\(x\text{.}\)</span> The exercises will work the reader through why this is the case; for now, know the absolute value is important and cannot be ignored.</p>
+</li>
+</ul>
+<span class="incontext"><a href="sec_antider.html#p-4149" class="internal">in-context</a></span>
+</body>
+</html>

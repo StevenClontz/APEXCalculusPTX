@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:40:06Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.4.7.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-ratroot-root-example" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Y7IaFXjMLlw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol class="decimal">
+<li>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\inflim \left(a_n\right)^{1/n} \amp = \inflim \left(\left(\frac{3n+1}{5n-2}\right)^n\right)^{1/n}\\
+\amp =\inflim \frac{3n+1}{5n-2} = \frac 35\text{.}
+\end{align*}
+</div>
+<p class="continuation">Since the limit is less than 1, we conclude the series converges. Note: it is difficult to apply the Ratio Test to this series.</p>
+</li>
+<li>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\inflim \left(a_n \right)^{1/n} \amp =\inflim \left(\frac{n^4}{(\ln(n))^n}\right)^{1/n}\\
+\amp = \inflim \frac{\big(n^{4/n}\big)}{\ln(n)}\\
+\end{align*}
+<p class="intertext">The limit of the numerator must be found using L'Hospital's Rule for indeterminate powers</p>
+\begin{align*}
+\inflim \left(n^{4/n}\right) \amp = \inflim e^{\ln\left(n^{4/n}\right)}\\
+\amp = \inflim e^{{4\ln\left(n\right)}/n}\\
+\end{align*}
+<p class="intertext">Now apply L'Hospital's to the expression in the exponent:</p>
+\begin{align*}
+\amp \stackrel{\, \text{ by LHR }  \, }{=} \inflim e^{4/n}\\
+\amp = e^0=1\text{.}
+\end{align*}
+</div>
+<p class="continuation">Since the numerator approaches 1 (by L'Hospital's Rule) and the denominator grows to infinity, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\inflim \frac{\big(n^{4/n}\big)}{\ln(n)} =0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since the limit is less than 1, we conclude the series converges.</p>
+</li>
+<li>
+<p><span class="process-math">\(\inflim \left(\frac{2^n}{n^2}\right)^{1/n} = \inflim \frac{2}{\big(n^{2/n}\big)} = 2\text{.}\)</span> Since this is greater than 1, we conclude the series diverges. (Note: The <a href="" class="xref" data-knowl="./knowl/thm_ratio_test.html" title="Theorem 9.4.1: Ratio Test">Ratio Test</a> is easy to apply to this series.)</p>
+<p>(Also note: The limit in the denominator is found in a similar fashion as was illustrated in <a href="" class="xref" data-knowl="./knowl/ex_root1_b.html" title="Item 2">Part 2</a>. In general <span class="process-math">\(\inflim (n)^{b/n}=1\)</span> for any real number <span class="process-math">\(b\text{.}\)</span>)</p>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sec_ratio_root_tests.html#solution-605" class="internal">in-context</a></span>
+</body>
+</html>

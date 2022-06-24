@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:32Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<ol class="decimal">
+<li>
+<p>Using the Chain Rule directly, we have <span class="process-math">\(\frac{d}{dx} \big(\cosh(2x) \big) = 2\sinh(2x)\text{.}\)</span> Just to demonstrate that it works, let's also use the Basic Identity found in <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_identities.html" title="Key Idea 6.6.8: Useful Hyperbolic Function Properties">Key Idea 6.6.8</a>: <span class="process-math">\(\cosh(2x) = \cosh^2(x) +\sinh^2(x)\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_hyperbolic_identities.html">
+\begin{align*}
+\frac{d}{dx}\big(\cosh(2x) \big) \amp = \frac{d}{dx}\big(\cosh^2(x) +\sinh^2(x) \big)\\
+\amp = 2\cosh(x) \sinh(x) + 2\sinh(x) \cosh(x)\\
+\amp = 4\cosh(x) \sinh(x) \text{.}
+\end{align*}
+</div>
+<p class="continuation">Using another Basic Identity, we can see that <span class="process-math">\(4\cosh(x) \sinh(x) = 2\sinh(2x)\text{.}\)</span> We get the same answer either way.</p>
+</li>
+<li>
+<p>We employ substitution, with <span class="process-math">\(u = 7t-3\)</span> and <span class="process-math">\(du = 7dt\text{.}\)</span> Applying <a href="" class="xref" data-knowl="./knowl/idea_linearsub.html" title="Key Idea 6.1.5: Substitution With A Linear Function">Key Ideas 6.1.5</a> and <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_identities.html" title="Key Idea 6.6.8: Useful Hyperbolic Function Properties">Key Idea 6.6.8</a> we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_linearsub.html ./knowl/idea_hyperbolic_identities.html">
+\begin{equation*}
+\int \sech^2(7t-3)\,dt = \frac17\tanh(7t-3) + C\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_0^{\ln(2) } \cosh(x) \, dx \amp = \sinh(x) \Big|_0^{\ln(2) }\\
+\amp = \sinh(\ln(2) ) - \sinh(0)\\
+\amp  = \sinh(\ln(2) )\text{.}
+\end{align*}
+</div>
+<p class="continuation">We can simplify this last expression as <span class="process-math">\(\sinh(x)\)</span> is based on exponentials:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\sinh(\ln(2) ) \amp = \frac{e^{\ln(2) }-e^{-\ln(2) }}2\\
+\amp = \frac{2-1/2}{2}\\
+\amp = \frac34\text{.}
+\end{align*}
+</div>
+</li>
+</ol>
+<span class="incontext"><a href="sec_hyperbolic.html#p-6197" class="internal">in-context</a></span>
+</body>
+</html>

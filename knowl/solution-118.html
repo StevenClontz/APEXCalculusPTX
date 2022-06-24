@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:34:55Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.1.34.1</span><span class="period">.</span>
+</h4>
+<p>We start by considering <span class="process-math">\(f\)</span> and take the right-hand limit of the difference quotient:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h} \amp = \lim_{h\to0^+}\frac{\sqrt{0+h}-\sqrt{0}}h\\
+\amp = \lim_{h\to0^+}\frac{\sqrt{h}}h\\
+\amp = \lim_{h\to0^+}\frac{1}{h^{1/2}}\ =\ \infty\text{.}
+\end{align*}
+</div>
+<p>The one-sided limit of the difference quotient does not exist at <span class="process-math">\(x=0\)</span> for <span class="process-math">\(f\text{;}\)</span> therefore <span class="process-math">\(f\)</span> is differentiable on <span class="process-math">\((0,\infty)\)</span> and not differentiable on <span class="process-math">\([0,\infty)\text{.}\)</span></p>
+<p>We state (without proof) that <span class="process-math">\(\fp(x) = 1/\big(2\sqrt{x}\big)\text{.}\)</span> Note that <span class="process-math">\(\lim_{x\to 0^+}\fp(x) = \infty\text{;}\)</span> this limit was easier to evaluate than the limit of the difference quotient, though it required us to already know the derivative of <span class="process-math">\(f\text{.}\)</span></p>
+<p>Now consider <span class="process-math">\(g\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lim_{h\to0^+}\frac{g(a+h)-g(a)}{h} \amp = \lim_{h\to0^+}\frac{\sqrt{(0+h)^3}-\sqrt{0}}h\\
+\amp = \lim_{h\to0^+}\frac{h^{3/2}}h\\
+\amp = \lim_{h\to0^+}h^{1/2}\ =\ 0\text{.}
+\end{align*}
+</div>
+<p>As the one-sided limit exists at <span class="process-math">\(x=0\text{,}\)</span> we conclude <span class="process-math">\(g\)</span> is differentiable on its domain of <span class="process-math">\([0,\infty)\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_diff_closed1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.35<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(y=x^{1/2}\)</span> and <span class="process-math">\(y=x^{3/2}\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_diff_closed1.html" title="Example 2.1.34: Differentiability at an endpoint">Example 2.1.34</a></figcaption></figure><p>We state (without proof) that <span class="process-math">\(\gp(x) = 3\sqrt{x}/2\text{.}\)</span> Note that <span class="process-math">\(\lim_{x\to0^+}\gp(x) = 0\text{;}\)</span> again, this limit is easier to evaluate than the limit of the difference quotient.</p>
+<p>The two functions are graphed in <a href="" class="xref" data-knowl="./knowl/fig_diff_closed1.html" title="Figure 2.1.35">Figure 2.1.35</a>. Note how <span class="process-math">\(f(x) = \sqrt{x}\)</span> seems to “go vertical” as <span class="process-math">\(x\)</span> approaches 0, implying the slopes of its tangent lines are growing toward infinity. Also note how the slopes of the tangent lines to <span class="process-math">\(g(x)= \sqrt{x^3}\)</span> approach 0 as <span class="process-math">\(x\)</span> approaches 0.</p>
+</div>
+<span class="incontext"><a href="sec_derivative.html#solution-118" class="internal">in-context</a></span>
+</body>
+</html>

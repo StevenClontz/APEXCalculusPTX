@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:49:59Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.3.12.1</span><span class="period">.</span>
+</h4>
+<p>As <span class="process-math">\(C\)</span> is piecewise smooth, we break it into two components <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\text{,}\)</span> where <span class="process-math">\(C_1\)</span> follows the curve <span class="process-math">\(y=x^3\)</span> and <span class="process-math">\(C_2\)</span> follows the curve <span class="process-math">\(y=x\text{.}\)</span></p>
+<p>We parametrize <span class="process-math">\(C_1\)</span> with <span class="process-math">\(\vec r_1(t) = \la t, t^3\ra\)</span> on <span class="process-math">\(0\leq t\leq 1\text{,}\)</span> with <span class="process-math">\(\vrp_1(t) = \la 1,3t^2\ra\text{.}\)</span> We will use <span class="process-math">\(\vec F\big(\vec r_1(t)\big) = \la 3(t^3-1/2),1\ra\text{.}\)</span></p>
+<p>While we always have unlimited ways in which to parametrize a curve, there are 2 “direct” methods to choose from when parametrizing <span class="process-math">\(C_2\text{.}\)</span> The parametrization <span class="process-math">\(\vec r_2(t)=\la t,t\ra\text{,}\)</span> <span class="process-math">\(0\leq t\leq 1\)</span> traces the correct line segment but with the wrong orientation. Using Property 3 of <a href="" class="xref" data-knowl="./knowl/thm_line_int_properties_vector.html" title="Theorem 15.3.10: Properties of Line Integrals Over Vector Fields">Theorem 15.3.10</a>, we can use this parametrization and negate the result.</p>
+<p>Another choice is to use the techniques of <a href="sec_lines.html" class="internal" title="Section 11.5: Lines">Section 11.5</a> to create the line with the orientation we desire. We wish to start at <span class="process-math">\(( 1,1)\)</span> and travel in the <span class="process-math">\(\vec d = \la -1,-1\ra\)</span> direction for one length of <span class="process-math">\(\vec d\text{,}\)</span> giving equation <span class="process-math">\(\vec \ell(t) = \la 1,1\ra + t\la -1,-1\ra = \la 1-t,1-t\ra\)</span> on <span class="process-math">\(0\leq t\leq 1\text{.}\)</span></p>
+<p>Either choice is fine; we choose <span class="process-math">\(\vec r_2(t)\)</span> to practice using line integral properties. We find <span class="process-math">\(\vrp_2(t) = \la 1,1\ra\)</span> and <span class="process-math">\(\vec F\big(\vec r_2(t)\big) = \la 3(t-1/2),1\ra\text{.}\)</span></p>
+<p>Evaluating the line integral (note how we subtract the integral over <span class="process-math">\(C_2\)</span> as the orientation of <span class="process-math">\(\vec r_2(t)\)</span> is opposite):</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\oint_C \vec F\cdot d\vec r \amp = \int_{C_1}\vec F\cdot d\vec r_1 - \int_{C_2}\vec F\cdot d\vec r_2\\
+\amp = \int_0^1 \la 3(t^3-1/2),1\ra\cdot \la 1,3t^2\ra dt- \int_0^1 \la 3(t-1/2),1\ra\cdot\la 1,1\ra dt\\
+\amp = \int_0^1\Big(3t^3+3t^2-3/2\Big)\, dt - \int_0^1 \Big(3t-1/2\Big)\, dt\\
+\amp = \big(1/4 \big) - \big(1\big)\\
+\amp =  -3/4\text{.}
+\end{align*}
+</div>
+<p>If we interpret this integral as computing work, the negative work implies that the motion is mostly <em class="emphasis">against</em> the direction of the force, which seems plausible when we look at <a href="" class="xref" data-knowl="./knowl/fig_livf3.html" title="Figure 15.3.13">Figure 15.3.13</a>.</p>
+</div>
+<span class="incontext"><a href="sec_line_int_vf.html#solution-1541" class="internal">in-context</a></span>
+</body>
+</html>

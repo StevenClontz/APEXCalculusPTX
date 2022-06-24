@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:47:24Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.8.20.1</span><span class="period">.</span>
+</h4>
+<p>It can help to see a graph of <span class="process-math">\(f\)</span> along with the set <span class="process-math">\(S\text{.}\)</span> In <a href="" class="xref" data-knowl="./knowl/fig_conopt1a_3D.html" title="Figure 13.8.21.(a)">Figure 13.8.21.(a)</a> the triangle defining <span class="process-math">\(S\)</span> is shown in the <span class="process-math">\(xy\)</span>-plane in a dashed line. Above it is the surface of <span class="process-math">\(f\text{;}\)</span> we are only concerned with the portion of <span class="process-math">\(f\)</span> enclosed by the “triangle” on its surface.</p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_conopt1a_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_conopt1a_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like"><img src="generated/latex-image/img_conopt1b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.21<span class="period">.</span></span><span class="space"> </span>Plotting the surface of <span class="process-math">\(f\)</span> along with the restricted domain <span class="process-math">\(S\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_conopt1.html" title="Example 13.8.20: Finding extrema on a closed set">Example 13.8.20</a></figcaption></figure><p>We begin by finding the critical points of <span class="process-math">\(f\text{.}\)</span> With <span class="process-math">\(f_x = 2x\)</span> and <span class="process-math">\(f_y = -2y\text{,}\)</span> we find only one critical point, at <span class="process-math">\((0,0)\text{.}\)</span></p>
+<p>We now find the maximum and minimum values that <span class="process-math">\(f\)</span> attains along the boundary of <span class="process-math">\(S\text{,}\)</span> that is, along the edges of the triangle. In <a href="" class="xref" data-knowl="./knowl/fig_conopt1b.html" title="Figure 13.8.21.(b)">Figure 13.8.21.(b)</a> we see the triangle sketched in the plane with the equations of the lines forming its edges labeled.</p>
+<p>Start with the bottom edge, along the line <span class="process-math">\(y=-2\text{.}\)</span> If <span class="process-math">\(y\)</span> is <span class="process-math">\(-2\text{,}\)</span> then on the surface, we are considering points <span class="process-math">\(f(x,-2)\text{;}\)</span> that is, our function reduces to <span class="process-math">\(f(x,-2) = x^2-(-2)^2+5 = x^2+1=f_1(x)\text{.}\)</span> We want to maximize/minimize <span class="process-math">\(f_1(x)=x^2+1\)</span> on the interval <span class="process-math">\([-1,2]\text{.}\)</span> To do so, we evaluate <span class="process-math">\(f_1(x)\)</span> at its critical points and at the endpoints.</p>
+<p>The critical points of <span class="process-math">\(f_1\)</span> are found by setting its derivative equal to 0:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp_1(x)=0\qquad \Rightarrow x=0\text{.}
+\end{equation*}
+</div>
+<p>Evaluating <span class="process-math">\(f_1\)</span> at this critical point, and at the endpoints of <span class="process-math">\([-1,2]\)</span> gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+f_1(-1) = 2 \qquad\amp \Rightarrow\qquad f(-1,-2) = 2\\
+f_1(0) = 1 \qquad\amp \Rightarrow \qquad f(0,-2) = 1\\
+f_1(2) = 5 \qquad\amp \Rightarrow \qquad f(2,-2) = 5\text{.}
+\end{align*}
+</div>
+<p>Notice how evaluating <span class="process-math">\(f_1\)</span> at a point is the same as evaluating <span class="process-math">\(f\)</span> at its corresponding point.</p>
+<p>We need to do this process twice more, for the other two edges of the triangle.</p>
+<p>Along the left edge, along the line <span class="process-math">\(y=3x+1\text{,}\)</span> we substitute <span class="process-math">\(3x+1\)</span> in for <span class="process-math">\(y\)</span> in <span class="process-math">\(f(x,y)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x,y) = f(x,3x+1) = x^2-(3x+1)^2+5 = -8x^2-6x+4 = f_2(x)\text{.}
+\end{equation*}
+</div>
+<p>We want the maximum and minimum values of <span class="process-math">\(f_2\)</span> on the interval <span class="process-math">\([-1,0]\text{,}\)</span> so we evaluate <span class="process-math">\(f_2\)</span> at its critical points and the endpoints of the interval. We find the critical points:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp_2(x) = -16x-6=0 \qquad \Rightarrow \qquad x=-3/8\text{.}
+\end{equation*}
+</div>
+<p>Evaluate <span class="process-math">\(f_2\)</span> at its critical point and the endpoints of <span class="process-math">\([-1,0]\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+f_2(-1) = 2 \qquad\amp \Rightarrow\qquad f(-1,-2) = 2\\
+f_2(-3/8) = 41/8=5.125  \qquad\amp \Rightarrow \qquad f(-3/8,-0.125) = 5.125\\
+f_2(0) = 4 \qquad\amp \Rightarrow \qquad f(0,1) = 4\text{.}
+\end{align*}
+</div>
+<p>Finally, we evaluate <span class="process-math">\(f\)</span> along the right edge of the triangle, where <span class="process-math">\(y = -3/2x+1\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x,y) = f(x,-3/2x+1) = x^2-(-3/2x+1)^2+5 = -\frac54x^2+3x+4=f_3(x)\text{.}
+\end{equation*}
+</div>
+<p>The critical points of <span class="process-math">\(f_3(x)\)</span> are:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fp_3(x) = 0 \qquad \Rightarrow \qquad x=6/5=1.2\text{.}
+\end{equation*}
+</div>
+<p>We evaluate <span class="process-math">\(f_3\)</span> at this critical point and at the endpoints of the interval <span class="process-math">\([0,2]\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+f_3(0) = 4 \qquad\amp \Rightarrow\qquad f(0,1) = 4\\
+f_3(1.2) = 5.8  \qquad\amp \Rightarrow \qquad f(1.2,-0.8) = 5.8\\
+f_3(2) = 5 \qquad\amp \Rightarrow \qquad f(2,-2) = 5\text{.}
+\end{align*}
+</div>
+<p>One last point to test: the critical point of <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\((0,0)\text{.}\)</span> We find <span class="process-math">\(f(0,0) = 5\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_conopt1bX.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_conopt1bX.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.8.22<span class="period">.</span></span><span class="space"> </span>The surface of <span class="process-math">\(f\)</span> along with important points along the boundary of <span class="process-math">\(S\)</span> and the interior  in <a href="" class="xref" data-knowl="./knowl/ex_conopt1.html" title="Example 13.8.20: Finding extrema on a closed set">Example 13.8.20</a></figcaption></figure><p>We have evaluated <span class="process-math">\(f\)</span> at a total of 7 different places, all shown in <a href="" class="xref" data-knowl="./knowl/fig_conopt1b.html" title="Figure 13.8.21.(b)">Figure 13.8.21.(b)</a>. We checked each vertex of the triangle twice, as each showed up as the endpoint of an interval twice. Of all the <span class="process-math">\(z\)</span>-values found, the maximum is 5.8, found at <span class="process-math">\((1.2,-0.8)\text{;}\)</span> the minimum is 1, found at <span class="process-math">\((0,-2)\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_multi_extreme_values.html#solution-1327" class="internal">in-context</a></span>
+</body>
+</html>

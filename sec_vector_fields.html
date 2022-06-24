@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:33:09Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Vector Fields</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_line_int_intro.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_vector_calc.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_line_int_vf.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_line_int_intro.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_vector_calc.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_line_int_vf.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="active">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_vector_fields"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">15.2</span> <span class="title">Vector Fields</span>
+</h2>
+<section class="introduction" id="introduction-428"><p id="p-15492">We have studied functions of two and three variables, where the input of such functions is a point (either a point in the plane or in space) and the output is a number.</p>
+<p id="p-15493">We could also create functions where the input is a point (again, either in the plane or in space), but the output is a <em class="emphasis">vector</em>. For instance, we could create the following function: <span class="process-math">\(\vec F(x,y) = \langle x+y, x-y\rangle\text{,}\)</span> where <span class="process-math">\(\vec F(2,3) = \langle 5,-1\rangle\text{.}\)</span> We are to think of <span class="process-math">\(\vec F\)</span> assigning the vector <span class="process-math">\(\langle 5,-1\rangle\)</span> to the point <span class="process-math">\((2,3)\text{;}\)</span> in some sense, the vector <span class="process-math">\(\langle 5,-1\rangle\)</span> lies at the point <span class="process-math">\((2,3)\text{.}\)</span></p>
+<figure class="figure figure-like" id="vid-veccalc-vectorfield-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-551" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/hnQqjC0cwKY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.1<span class="period">.</span></span><span class="space"> </span>Introducing vector fields</figcaption></figure><p id="p-15494">Such functions are extremely useful in any context where magnitude and direction are important. For instance, we could create a function <span class="process-math">\(\vec F\)</span> that represents the electromagnetic force exerted at a point by a electromagnetic field, or the velocity of air as it moves across an airfoil.</p>
+<p id="p-15495">Because these functions are so important, we need to formally define them.</p>
+<article class="definition definition-like" id="def_vector_field"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">15.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Vector Field.</span>
+</h3>
+<ol id="p-15496" class="decimal">
+<li id="li-2817">
+<p id="p-15497">A <em class="emphasis">vector field in the plane</em> is a function <span class="process-math">\(\vec F(x,y)\)</span> whose domain is a subset of <span class="process-math">\(\mathbb{R}^2\)</span> and whose output is a two-dimensional vector: </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec F(x,y) = \langle M(x,y), N(x,y)\rangle\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-2818">
+<p id="p-15498">A <em class="emphasis">vector field in space</em> is a function <span class="process-math">\(\vec F(x,y,z)\)</span> whose domain is a subset of <span class="process-math">\(\mathbb{R}^3\)</span> and whose output is a three-dimensional vector:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec F(x,y,z) = \langle M(x,y,z), N(x,y,z), P(x,y,z)\rangle\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><p id="p-15499">This definition may seem odd at first, as a special type of function is called a “field.” However, as the function determines a “field of vectors”, we can say the field is <em class="emphasis">defined by</em> the function, and thus the field <em class="emphasis">is</em> a function.</p>
+<figure class="figure figure-like" id="fig_vectorfieldintro1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vectorfieldintro1a"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfieldintro1a.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfieldintro1a.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vectorfieldintro1b"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfieldintro1b.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfieldintro1b.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.3<span class="period">.</span></span><span class="space"> </span>Demonstrating methods of graphing vector fields</figcaption></figure><p id="p-15500">Visualizing vector fields helps cement this connection. When graphing a vector field in the plane, the general idea is to draw the vector <span class="process-math">\(\vec F(x,y)\)</span> at the point <span class="process-math">\((x,y)\text{.}\)</span> For instance, using <span class="process-math">\(\vec F(x,y) = \langle x+y,x-y\rangle\)</span> as before, at <span class="process-math">\((1,1)\)</span> we would draw <span class="process-math">\(\langle 2,0\rangle\text{.}\)</span></p>
+<p id="p-15501">In <a href="" class="xref" data-knowl="./knowl/fig_vectorfieldintro1a.html" title="Figure 15.2.3.(a)">Figure 15.2.3.(a)</a>, one can see that the vector <span class="process-math">\(\langle 2,0\rangle\)</span> is drawn <em class="emphasis">starting from</em> the point <span class="process-math">\((1,1)\text{.}\)</span> A total of 8 vectors are drawn, with the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-values of <span class="process-math">\(-1,0,1\text{.}\)</span> In many ways, the resulting graph is a mess; it is hard to tell what this field “looks like.”</p>
+<p id="p-15502">In <a href="" class="xref" data-knowl="./knowl/fig_vectorfieldintro1b.html" title="Figure 15.2.3.(b)">Figure 15.2.3.(b)</a>, the same field is redrawn with each vector <span class="process-math">\(\vec F(x,y)\)</span> drawn <em class="emphasis">centered on</em> the point <span class="process-math">\((x,y)\text{.}\)</span> This makes for a better looking image, though the long vectors can cause confusion: when one vector intersects another, the image looks cluttered.</p>
+<p id="p-15503">A common way to address this problem is limit the length of each arrow, and represent long vectors with thick arrows, as done in <a href="" class="xref" data-knowl="./knowl/fig_vectorfieldintro2a.html" title="Figure 15.2.4.(a)">Figure 15.2.4.(a)</a>. Usually we do not use a graph of a vector field to determine exactly the magnitude of a particular vector. Rather, we are more concerned with the relative magnitudes of vectors: which are bigger than others? Thus limiting the length of the vectors is not problematic.</p>
+<figure class="figure figure-like" id="fig_vectorfieldintro2"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vectorfieldintro2a"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfieldintro2a.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfieldintro2a.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vectorfieldintro2b"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfieldintro2b.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfieldintro2b.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.4<span class="period">.</span></span><span class="space"> </span>Demonstrating methods of graphing vector fields</figcaption></figure><p id="p-15504">Drawing arrows with variable thickness is best done with technology; search the documentation of your favorite graphing program for terms like “vector fields” or “slope fields” to learn how. Technology obviously allows us to plot many vectors in a vector field nicely; in <a href="" class="xref" data-knowl="./knowl/fig_vectorfieldintro2b.html" title="Figure 15.2.4.(b)">Figure 15.2.4.(b)</a>, we see the same vector field drawn with many vectors, and finally get a clear picture of how this vector field behaves. (If this vector field represented the velocity of air moving across a flat surface, we could see that the air tends to move either to the upper-right or lower-left, and moves very slowly near the origin.)</p>
+<p id="p-15505">We can similarly plot vector fields in space, as shown in <a href="" class="xref" data-knowl="./knowl/fig_vectorfieldintro3.html" title="Figure 15.2.5">Figure 15.2.5</a>, though it is not often done. The plots get very busy very quickly, as there are lots of arrows drawn in a small amount of space. In <a href="" class="xref" data-knowl="./knowl/fig_vectorfieldintro3.html" title="Figure 15.2.5">Figure 15.2.5</a> the field <span class="process-math">\(\vec F = \langle -y,x,z\rangle\)</span> is graphed. If one could view the graph from above, one could see the arrows point in a circle about the <span class="process-math">\(z\)</span>-axis. One should also note how the arrows far from the origin are larger than those close to the origin.</p>
+<p id="p-15506">It is good practice to try to visualize certain vector fields in one's head. For instance, consider a point mass at the origin and the vector field that represents the gravitational force exerted by the mass at any point in the room. The field would consist of arrows pointing toward the origin, increasing in size as they near the origin (as the gravitational pull is strongest near the point mass).</p>
+<figure class="figure figure-like" id="fig_vectorfieldintro3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100.497512437811%"><iframe src="generated/asymptote/img_vectorfieldintro3_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfieldintro3_3D.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.5<span class="period">.</span></span><span class="space"> </span>Graphing a vector field in space</figcaption></figure></section><section class="subsection" id="subsection-153"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.2.1</span> <span class="title">Vector Field Notation and Del Operator</span>
+</h3>
+<p id="p-15507"><a href="" class="xref" data-knowl="./knowl/def_vector_field.html" title="Definition 15.2.2: Vector Field">Definition 15.2.2</a> defines a vector field <span class="process-math">\(\vec F\)</span> using the notation</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_vector_field.html">
+\begin{equation*}
+\vec F(x,y) = \langle M(x,y), N(x,y)\rangle \text{ and }  \vec F(x,y,z) = \langle M(x,y,z), N(x,y,z),P(x,y,z)\rangle\text{.}
+\end{equation*}
+</div>
+<p id="p-15508">That is, the components of <span class="process-math">\(\vec F\)</span> are each functions of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> (and also <span class="process-math">\(z\)</span> in space). As done in other contexts, we will drop the “of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span>” portions of the notation and refer to vector fields in the plane and in space as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec F = \langle M, N\rangle  \text{ and }   \vec F  = \langle M,N,P\rangle\text{,}
+\end{equation*}
+</div>
+<p class="continuation">respectively, as this shorthand is quite convenient.</p>
+<p id="p-15509">Another item of notation will become useful: the “del operator.”  Recall in <a href="sec_directional_derivative.html" class="internal" title="Section 13.6: Directional Derivatives">Section 13.6</a> how we used the symbol <span class="process-math">\(\nabla\)</span> (pronounced “del”) to represent the gradient of a function of two variables. That is, if <span class="process-math">\(z = f(x,y)\text{,}\)</span> then “del <span class="process-math">\(f\)</span>” <span class="process-math">\(= \nabla f = \langle f_x, f_y\rangle\text{.}\)</span></p>
+<figure class="figure figure-like" id="vid-veccalc-vectorfield-del"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-552" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/L7AEW0NsyHA?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.6<span class="period">.</span></span><span class="space"> </span>Introducing the del operator</figcaption></figure><p id="p-15510">We now define <span class="process-math">\(\nabla\)</span> to be the “del operator.” It is a vector whose components are partial derivative operations.</p>
+<p id="p-15511">In the plane, <span class="process-math">\(\ds\nabla = \left\langle \frac{\partial}{\partial x}, \frac{\partial}{\partial y}\right\rangle\text{;}\)</span> in space, <span class="process-math">\(\ds\nabla = \left\langle \frac{\partial}{\partial x}, \frac{\partial}{\partial y},\frac{\partial}{\partial z}\right\rangle\text{.}\)</span></p>
+<p id="p-15512">With this definition of <span class="process-math">\(\nabla\text{,}\)</span> we can better understand the gradient <span class="process-math">\(\nabla f\text{.}\)</span> As <span class="process-math">\(f\)</span> returns a scalar, the properties of scalar and vector multiplication gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\nabla f = \left\langle \frac{\partial}{\partial x}, \frac{\partial}{\partial y}\right\rangle f = \left\langle \frac{\partial}{\partial x}\,f, \frac{\partial}{\partial y}\,f\right\rangle = \langle f_x, f_y\rangle\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="vid-veccalc-vectorfield-gradient"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-553" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/QbkbxwicFRI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.7<span class="period">.</span></span><span class="space"> </span>Del and the gradient</figcaption></figure><p id="p-15513">Now apply the del operator <span class="process-math">\(\nabla\)</span> to vector fields. Let <span class="process-math">\(\vec F = \langle x+\sin y,y^2+z,x^2\rangle\text{.}\)</span> We can use vector operations and find the dot product of <span class="process-math">\(\nabla\)</span> and <span class="process-math">\(\vec F\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-717">
+\begin{align*}
+\nabla \cdot \vec F \amp = \left\langle \frac{\partial}{\partial x}, \frac{\partial}{\partial y},\frac{\partial}{\partial z}\right\rangle\cdot  \langle x+\sin y,y^2+z,x^2\rangle\\
+\amp = \frac{\partial}{\partial x}(x+\sin y)+ \frac{\partial}{\partial y}(y^2+z) + \frac{\partial}{\partial z}(x^2)\\
+\amp =1+2y\text{.}
+\end{align*}
+</div>
+<p id="p-15514">We can also compute their cross products:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-718">
+\begin{align*}
+{\nabla\times \vec F }\amp = {\left\langle \frac{\partial}{\partial y}\big(x^2\big)-\frac{\partial}{\partial z}\big(y^2+z\big),\frac{\partial}{\partial z}\big(x+\sin y\big)-\frac{\partial}{\partial x}\big(x^2\big),\frac{\partial}{\partial x}\big(y^2+z\big)-\frac{\partial}{\partial y}\big(x+\sin y\big)\right\rangle }\\
+\amp =\langle -1,-2x,-\cos y\rangle\text{.}
+\end{align*}
+</div>
+<p id="p-15515">We do not yet know why we would want to compute the above. However, as we next learn about properties of vector fields, we will see how these dot and cross products with the del operator are quite useful.</p></section><section class="subsection" id="subsection-154"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.2.2</span> <span class="title">Divergence and Curl</span>
+</h3>
+<p id="p-15516">Two properties of vector fields will prove themselves to be very important: divergence and curl. Each is a special “derivative” of a vector field; that is, each measures an instantaneous rate of change of a vector field.</p>
+<figure class="figure figure-like" id="vid-veccalc-vectorfield-divergence"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-554" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/10Yh8JUGRYU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.8<span class="period">.</span></span><span class="space"> </span>Introducing the divergence</figcaption></figure><p id="p-15517">If the vector field represents the velocity of a fluid or gas, then the <em class="emphasis">divergence</em>  of the field is a measure of the “compressibility” of the fluid. If the divergence is negative at a point, it means that the fluid is compressing: more fluid is going into the point than is going out. If the divergence is positive, it means the fluid is expanding: more fluid is going out at that point than going in. A divergence of zero means the same amount of fluid is going in as is going out. If the divergence is zero at all points, we say the field is <em class="emphasis">incompressible</em>. </p>
+<p id="p-15518">It turns out that the proper measure of divergence is simply <span class="process-math">\(\nabla \cdot \vec F\text{,}\)</span> as stated in the following definition.</p>
+<article class="definition definition-like" id="def_divergence"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">15.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Divergence of a Vector Field.</span>
+</h4>
+<p id="p-15519">The <dfn class="terminology">divergence</dfn> of a vector field <span class="process-math">\(\vec F\)</span> is </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\divv \vec F = \nabla \cdot \vec F\text{.}
+\end{equation*}
+</div>
+<ul class="disc">
+<li id="li-2819"><p id="p-15520">In the plane, with <span class="process-math">\(\vec F = \langle M,N\rangle\text{,}\)</span> <span class="process-math">\(\divv \vec F = M_x+N_y\text{.}\)</span></p></li>
+<li id="li-2820"><p id="p-15521">In space, with <span class="process-math">\(\vec F = \langle M,N,P\rangle\text{,}\)</span> <span class="process-math">\(\divv \vec F = M_x+N_y+P_z\text{.}\)</span></p></li>
+</ul></article><figure class="figure figure-like" id="vid-veccalc-vectorfield-curl"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-555" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/PMZXQDhcA2I?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.10<span class="period">.</span></span><span class="space"> </span>Introducing the curl</figcaption></figure><p id="p-15522"><em class="emphasis">Curl</em> is a measure of the spinning action of the field. Let <span class="process-math">\(\vec F\)</span> represent the flow of water over a flat surface. If a small round cork were held in place at a point in the water, would the water cause the cork to spin? No spin corresponds to zero curl; counterclockwise spin corresponds to positive curl and clockwise spin corresponds to negative curl.</p>
+<p id="p-15523">In space, things are a bit more complicated. Again let <span class="process-math">\(\vec F\)</span> represent the flow of water, and imagine suspending a tennis ball in one location in this flow. The water may cause the ball to spin along an axis. If so, the curl of the vector field is a <em class="emphasis">vector</em> (not a <em class="emphasis">scalar</em>, as before), parallel to the axis of rotation, following a right hand rule: when the thumb of one's right hand points in the direction of the curl, the ball will spin in the direction of the curling fingers of the hand.</p>
+<p id="p-15524">In space, it turns out the proper measure of curl is <span class="process-math">\(\nabla \times \vec F\text{,}\)</span> as stated in the following definition. To find the curl of a planar vector field <span class="process-math">\(\vec F = \langle M,N\rangle\text{,}\)</span> embed it into space as <span class="process-math">\(\vec F = \langle M, N, 0\rangle\)</span> and apply the cross product definition. Since <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> are functions of just <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> (and not <span class="process-math">\(z\)</span>), all partial derivatives with respect to <span class="process-math">\(z\)</span> become 0 and the result is simply <span class="process-math">\(\langle 0,0,N_x-M_y\rangle\text{.}\)</span> The third component is the measure of curl of a planar vector field.</p>
+<article class="definition definition-like" id="def_curl"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">15.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Curl of a Vector Field.</span>
+</h4>
+<ul id="p-15525" class="disc">
+<li id="li-2821"><p id="p-15526">Let <span class="process-math">\(\vec F = \langle M,N\rangle\)</span> be a vector field in the plane. The <em class="emphasis">curl</em> of <span class="process-math">\(\vec F\)</span> is <span class="process-math">\(\curl \vec F = N_x - M_y\text{.}\)</span> </p></li>
+<li id="li-2822"><p id="p-15527">Let <span class="process-math">\(\vec F = \langle M,N,P\rangle\)</span> be a vector field in space. The <em class="emphasis">curl</em> of <span class="process-math">\(\vec F\)</span> is <span class="process-math">\(\curl \vec F = \nabla \times \vec F = \langle P_y-N_z,M_z-P_x,N_x - M_y\rangle\text{.}\)</span></p></li>
+</ul></article><p id="p-15528">We adopt the convention of referring to curl as <span class="process-math">\(\nabla \times \vec F\text{,}\)</span> regardless of whether <span class="process-math">\(\vec F\)</span> is a vector field in two or three dimensions.</p>
+<figure class="figure figure-like" id="vid-veccalc-vectorfield-curl-interpret"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-556" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/PXMWLny21CI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.12<span class="period">.</span></span><span class="space"> </span>Interpreting the curl of a vector field</figcaption></figure><p id="p-15529">We now practice computing these quantities.</p>
+<article class="example example-like" id="ex_vectorfield1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.2.13</span><span class="period">.</span><span class="space"> </span><span class="title">Computing divergence and curl of planar vector fields.</span>
+</h4>
+<p id="p-15530">For each of the planar vector fields given below, view its graph and try to visually determine if its divergence and curl are 0. Then compute the divergence and curl.</p>
+<ol class="decimal">
+<li id="li-2823"><p id="p-15531"><span class="process-math">\(\vec F = \langle y,0\rangle\)</span> (see <a href="" class="xref" data-knowl="./knowl/fig_vectorfield1a_a.html" title="Figure 15.2.14.(a)">Figure 15.2.14.(a)</a>)</p></li>
+<li id="li-2824"><p id="p-15532"><span class="process-math">\(\vec F = \langle -y,x\rangle\)</span> (see <a href="" class="xref" data-knowl="./knowl/fig_vectorfield1a_b.html" title="Figure 15.2.14.(b)">Figure 15.2.14.(b)</a>)</p></li>
+<li id="li-2825"><p id="p-15533"><span class="process-math">\(\vec F = \langle x,y\rangle\)</span> (see <a href="" class="xref" data-knowl="./knowl/fig_vectorfield1b_a.html" title="Figure 15.2.15.(a)">Figure 15.2.15.(a)</a>)</p></li>
+<li id="li-2826"><p id="p-15534"><span class="process-math">\(\vec F = \langle \cos y, \sin x\rangle\)</span> (see <a href="" class="xref" data-knowl="./knowl/fig_vectorfield1b_b.html" title="Figure 15.2.15.(b)">Figure 15.2.15.(b)</a>)</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-1535" id="solution-1535"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1535"><div class="solution solution-like"><ol id="p-15535" class="decimal">
+<li id="li-2827">
+<p id="p-15536">The arrow sizes are constant along any horizontal line, so if one were to draw a small box anywhere on the graph, it would seem that the same amount of fluid would enter the box as exit. Therefore it seems the divergence is zero; it is, as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\divv\vec F = \nabla \cdot \vec F = M_x + N_y = \frac{\partial}{\partial x}(y) + \frac{\partial}{\partial y}(0) = 0\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig_vectorfield1a"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vectorfield1a_a"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfield1a_a.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfield1a_a.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vectorfield1a_b"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfield1a_b.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfield1a_b.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.14<span class="period">.</span></span><span class="space"> </span>The vector fields in parts 1 and 2 in <a href="" class="xref" data-knowl="./knowl/ex_vectorfield1.html" title="Example 15.2.13: Computing divergence and curl of planar vector fields">Example 15.2.13</a></figcaption></figure><p id="p-15537">At any point on the <span class="process-math">\(x\)</span>-axis, arrows above it move to the right and arrows below it move to the left, indicating that a cork placed on the axis would spin clockwise. A cork placed anywhere above the <span class="process-math">\(x\)</span>-axis would have water above it moving to the right faster than the water below it, also creating a clockwise spin. A clockwise spin also appears to be created at points below the <span class="process-math">\(x\)</span>-axis. Thus it seems the curl should be negative (and not zero). Indeed, it is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\curl \vec F = \nabla\times\vec F = N_x-M_y = \frac{\partial}{\partial x}(0) - \frac{\partial}{\partial y}(y) = -1\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-2828">
+<p id="p-15538">It appears that all vectors that lie on a circle of radius <span class="process-math">\(r\text{,}\)</span> centered at the  origin, have the same length (and indeed this is true). That implies that the divergence should be zero: draw any box on the graph, and any fluid coming in will lie along a circle that takes the same amount of fluid out. Indeed, the divergence is zero, as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\divv\vec F = \nabla \cdot \vec F = M_x + N_y = \frac{\partial}{\partial x}(-y) + \frac{\partial}{\partial y}(x) = 0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Clearly this field moves objects in a circle, but would it induce a cork to spin? It appears that yes, it would: place a cork anywhere in the flow, and the point of the cork closest to the origin would feel less flow than the point on the cork farthest from the origin, which would induce a counterclockwise flow. Indeed, the curl is positive:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\curl \vec F = \nabla\times\vec F = N_x-M_y = \frac{\partial}{\partial x}(x) - \frac{\partial}{\partial y}(-y) = 1-(-1) = 2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since the curl is constant, we conclude the induced spin is the same no matter where one is in this field.</p>
+</li>
+<li id="li-2829">
+<p id="p-15539">At the origin, there are many arrows pointing out but no arrows pointing in. We conclude that at the origin, the divergence must be positive (and not zero). If one were to draw a box anywhere in the field, the edges farther from the origin would have larger arrows passing through them than the edges close to the origin, indicating that more is going from a point than going in. This indicates a positive (and not zero) divergence. This is correct:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\divv\vec F = \nabla \cdot \vec F = M_x + N_y = \frac{\partial}{\partial x}(x) + \frac{\partial}{\partial y}(y) = 1+1=2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">One may find this curl to be harder to determine visually than previous examples. One might note that any arrow that induces a clockwise spin on a cork will have an equally sized arrow inducing a counterclockwise spin on the other side, indicating no spin and no curl. This is correct, as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\curl \vec F = \nabla\times\vec F = N_x-M_y = \frac{\partial}{\partial x}(y) - \frac{\partial}{\partial y}(x) = 0\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig_vectorfield1b"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vectorfield1b_a"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfield1b_a.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfield1b_a.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vectorfield1b_b"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfield1b_b.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfield1b_b.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.15<span class="period">.</span></span><span class="space"> </span>The vector fields in parts 3 and 4 in <a href="" class="xref" data-knowl="./knowl/ex_vectorfield1.html" title="Example 15.2.13: Computing divergence and curl of planar vector fields">Example 15.2.13</a></figcaption></figure>
+</li>
+<li id="li-2830">
+<p id="p-15540">One might find this divergence hard to determine visually as large arrows appear in close proximity to small arrows, each pointing in different directions. Instead of trying to rationalize a guess, we compute the divergence:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\divv\vec F = \nabla \cdot \vec F = M_x + N_y = \frac{\partial}{\partial x}(\cos y) + \frac{\partial}{\partial y}(\sin x) = 0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Perhaps surprisingly, the divergence is 0. Will all the loops of different directions in the field, one is apt to reason the curl is variable. Indeed, it is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\curl \vec F = \nabla\times\vec F = N_x-M_y = \frac{\partial}{\partial x}(\sin x) - \frac{\partial}{\partial y}(\cos y) = \cos x + \sin y\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Depending on the values of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> the curl may be positive, negative, or zero.</p>
+</li>
+</ol></div></div>
+</div></article><article class="example example-like" id="ex_vectorfield2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.2.16</span><span class="period">.</span><span class="space"> </span><span class="title">Computing divergence and curl of vector fields in space.</span>
+</h4>
+<p id="p-15541">Compute the divergence and curl of each of the following vector fields.</p>
+<ol class="decimal">
+<li id="li-2831"><p id="p-15542"><span class="process-math">\(\displaystyle \vec F = \langle x^2+y+z, -x-z, x+y\rangle\)</span></p></li>
+<li id="li-2832"><p id="p-15543"><span class="process-math">\(\displaystyle \vec F = \langle e^{xy}, \sin(x+z),x^2+y\rangle\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1536" id="solution-1536"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1536"><div class="solution solution-like">
+<p id="p-15544">We compute the divergence and curl of each field following the definitions.</p>
+<ol class="decimal">
+<li id="li-2833">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-719">
+\begin{align*}
+\divv \vec F \amp = \nabla \cdot \vec F = M_x+N_y+P_z = 2x+0+0= 2x\\
+\curl\vec F \amp = \nabla \times \vec F = \langle P_y-N_z,M_z-P_x,N_x - M_y\rangle\\
+\amp = \langle 1 - (-1), 1-1,-1-(1)\rangle = \langle 2,0,-2\rangle\text{.}
+\end{align*}
+</div>
+<p class="continuation">For this particular field, no matter the location in space, a spin is induced with axis parallel to <span class="process-math">\(\langle 2,0,-2\rangle\text{.}\)</span></p>
+</li>
+<li id="li-2834"><div class="displaymath process-math" data-contains-math-knowls="" id="md-720">
+\begin{align*}
+\divv \vec F \amp = \nabla \cdot \vec F = M_x+N_y+P_z = ye^{xy}+0+0= ye^{xy}\\
+\curl\vec F \amp = \nabla \times \vec F = \langle P_y-N_z,M_z-P_x,N_x - M_y\rangle\\
+\amp = \langle 1-\cos(x+z), -2x, \cos(x+z) - xe^{xy}\rangle
+\end{align*}
+</div></li>
+</ol>
+</div></div>
+</div></article><figure class="figure figure-like" id="vid-veccalc-vectorfield-divergence-example"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-557" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/_QPgbwG_SHw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.17<span class="period">.</span></span><span class="space"> </span>Further examples with divergence</figcaption></figure><article class="example example-like" id="ex_vectorfield3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.2.18</span><span class="period">.</span><span class="space"> </span><span class="title">Creating a field representing gravitational force.</span>
+</h4>
+<p id="p-15547">The force of gravity between two objects is inversely proportional to the square of the distance between the objects. Locate a point mass at the origin. Create a vector field <span class="process-math">\(\vec F\)</span> that represents the gravitational pull of the point mass at any point <span class="process-math">\((x,y,z)\text{.}\)</span> Find the divergence and curl of this field.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1537" id="solution-1537"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1537"><div class="solution solution-like">
+<p id="p-15548">The point mass pulls toward the origin, so at <span class="process-math">\((x,y,z)\text{,}\)</span> the force will pull in the direction of <span class="process-math">\(\langle -x, -y, -z\rangle\text{.}\)</span> To get the proper magnitude, it will be useful to find the unit vector in this direction. Dividing by its magnitude, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec u = \left\langle \frac{-x}{\sqrt{x^2+y^2+z^2}}, \frac{-y}{\sqrt{x^2+y^2+z^2}},\frac{-z}{\sqrt{x^2+y^2+z^2}}\right\rangle\text{.}
+\end{equation*}
+</div>
+<p id="p-15549">The magnitude of the force is inversely proportional to the square of the distance between the two points. Letting <span class="process-math">\(k\)</span> be the constant of proportionality, we have the magnitude as <span class="process-math">\(\ds\frac{k}{x^2+y^2+z^2}\text{.}\)</span> Multiplying this magnitude by the unit vector above, we have the desired vector field:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec F = \left\langle \frac{-kx}{(x^2+y^2+z^2)^{3/2}}, \frac{-ky}{(x^2+y^2+z^2)^{3/2}},\frac{-kz}{(x^2+y^2+z^2)^{3/2}}\right\rangle\text{.}
+\end{equation*}
+</div>
+<p id="p-15550">We leave it to the reader to confirm that <span class="process-math">\(\divv \vec F = 0\)</span> and <span class="process-math">\(\curl \vec F = \vec 0\text{.}\)</span></p>
+<p id="p-15551">The analogous planar vector field is given in <a href="" class="xref" data-knowl="./knowl/fig_vectorfield3.html" title="Figure 15.2.19">Figure 15.2.19</a>. Note how all arrows point to the origin, and the magnitude gets very small when “far” from the origin.</p>
+</div></div>
+</div></article><figure class="figure figure-like" id="fig_vectorfield3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfield3.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfield3.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.19<span class="period">.</span></span><span class="space"> </span>A vector field representing a planar gravitational force</figcaption></figure><p id="p-15552">A function <span class="process-math">\(f(x,y)\)</span> naturally induces a vector field, <span class="process-math">\(\vec F = \nabla f = \langle f_x,f_y\rangle\text{.}\)</span> Given what we learned of the gradient in <a href="sec_directional_derivative.html" class="internal" title="Section 13.6: Directional Derivatives">Section 13.6</a>, we know that the vectors of <span class="process-math">\(\vec F\)</span> point in the direction of greatest increase of <span class="process-math">\(f\text{.}\)</span> Because of this, <span class="process-math">\(f\)</span> is said to be the <em class="emphasis">potential function</em>  of <span class="process-math">\(\vec F\text{.}\)</span> Vector fields that are the gradient of potential functions will play an important role in the next section.</p>
+<article class="example example-like" id="ex_vectorfield4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.2.20</span><span class="period">.</span><span class="space"> </span><span class="title">A vector field that is the gradient of a potential function.</span>
+</h4>
+<p id="p-15553">Let <span class="process-math">\(f(x,y) = 3-x^2-2y^2\)</span> and let <span class="process-math">\(\vec F = \nabla f\text{.}\)</span> Graph <span class="process-math">\(\vec F\text{,}\)</span> and find the divergence and curl of <span class="process-math">\(\vec F\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-1538" id="solution-1538"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1538"><div class="solution solution-like">
+<p id="p-15554">Given <span class="process-math">\(f\text{,}\)</span> we find <span class="process-math">\(\vec F = \nabla f = \langle -2x,-4y\rangle\text{.}\)</span> A graph of <span class="process-math">\(\vec F\)</span> is given in <a href="" class="xref" data-knowl="./knowl/fig_vectorfield4a.html" title="Figure 15.2.21.(a)">Figure 15.2.21.(a)</a>. In <a href="" class="xref" data-knowl="./knowl/fig_vectorfield4b_3D.html" title="Figure 15.2.21.(b)">Figure 15.2.21.(b)</a>, the vector field is given along with a graph of the surface itself; one can see how each vector is pointing in the direction of “steepest uphill”, which, in this case, is not simply just “toward the origin.”</p>
+<figure class="figure figure-like" id="fig_vectorfield4"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vectorfield4a"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfield4a.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfield4a.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_vectorfield4b_3D"><div class="asymptote-box" style="padding-top: 99.5049504950495%"><iframe src="generated/asymptote/img_vectorfield4b_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfield4b_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.21<span class="period">.</span></span><span class="space"> </span>A graph of a function <span class="process-math">\(f(x,y)\)</span> and the vector field <span class="process-math">\(\vec F = \nabla f\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_vectorfield4.html" title="Example 15.2.20: A vector field that is the gradient of a potential function">Example 15.2.20</a></figcaption></figure><p id="p-15555">We leave it to the reader to confirm that <span class="process-math">\(\divv \vec F = -6\)</span> and <span class="process-math">\(\curl \vec F = 0\text{.}\)</span></p>
+</div></div>
+</div></article><p id="p-15556">There are some important concepts visited in this section that will be revisited in subsequent sections and again at the very end of this chapter. One is: given a vector field <span class="process-math">\(\vec F\text{,}\)</span> both <span class="process-math">\(\divv\vec F\)</span> and <span class="process-math">\(\curl\vec F\)</span> are measures of rates of change of <span class="process-math">\(\vec F\text{.}\)</span> The divergence measures how much the field spreads (diverges) at a point, and the curl measures how much the field twists (curls) at a point. Another important concept is this: given <span class="process-math">\(z=f(x,y)\text{,}\)</span> the gradient <span class="process-math">\(\nabla f\)</span> is also a measure of a rate of change of <span class="process-math">\(f\text{.}\)</span> We will see how the integrals of these rates of change produce meaningful results.</p>
+<p id="p-15557">This section introduces the concept of a vector field. The next section “applies calculus” to vector fields. A common application is this: let <span class="process-math">\(\vec F\)</span> be a vector field representing a force (hence it is called a “force field,” though this name has a decidedly comic-book feel) and let a particle move along a curve <span class="process-math">\(C\)</span> under the influence of this force. What work is performed by the field on this particle? The solution lies in correctly applying the concepts of line integrals in the context of vector fields.</p></section><section class="exercises" id="exercises-86"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">15.2.3</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-182"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-2873"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<p id="p-15558">Give two quantities that can be represented by a vector field in the plane or in space.</p></article><article class="exercise exercise-like" id="exercise-2874"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<p id="p-15560">In your own words, describe what it means for a vector field to have a negative divergence at a point.</p></article><article class="exercise exercise-like" id="exercise-2875"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<p id="p-15562">In your own words, describe what it means for a vector field to have a negative curl at a point.</p></article><article class="exercise exercise-like" id="exercise-2876"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-15564">The divergence of a vector field <span class="process-math">\(\vec F\)</span> at a particular point is 0. Does this mean that <span class="process-math">\(\vec F\)</span> is incompressible? Why/why not?</p></article></article><article class="subexercises" id="subexercises-183"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-365">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-429"><p id="p-15566">In the following exercises, sketch the given vector field over the rectangle with opposite corners <span class="process-math">\((-2,-2)\)</span> and <span class="process-math">\((2,2)\text{,}\)</span> sketching one vector for every point with integer coordinates (i.e., at <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((1,2)\text{,}\)</span> etc.).</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2877"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-15567"><span class="process-math">\(\vec F = \langle x,0\rangle\)</span></p></article><article class="exercise exercise-like" id="exercise-2878"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-15569"><span class="process-math">\(\vec F = \langle 0,x\rangle\)</span></p></article><article class="exercise exercise-like" id="exercise-2879"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-15571"><span class="process-math">\(\vec F = \langle 1,-1\rangle\)</span></p></article><article class="exercise exercise-like" id="exercise-2880"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-15573"><span class="process-math">\(\vec F = \langle y^2,1\rangle\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-366">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-430"><p id="p-15575">In the following exercises, find the divergence and curl of the given vector field.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2881"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-15576"><span class="process-math">\(\vec F = \langle x,y^2\rangle\)</span></p></article><article class="exercise exercise-like" id="exercise-2882"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-15579"><span class="process-math">\(\vec F = \langle -y^2,x\rangle\)</span></p></article><article class="exercise exercise-like" id="exercise-2883"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-15582"><span class="process-math">\(\vec F = \langle \cos (xy), \sin (xy)\rangle\)</span></p></article><article class="exercise exercise-like" id="exercise-2884"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-15585"><span class="process-math">\(\ds\vec F = \la \frac{-2x}{(x^2+y^2)^2},\frac{-2y}{(x^2+y^2)^2}\ra\)</span></p></article><article class="exercise exercise-like" id="exercise-2885"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-15588"><span class="process-math">\(\ds\vec F = \la x+y,y+z,x+z\ra\)</span></p></article><article class="exercise exercise-like" id="exercise-2886"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-15591"><span class="process-math">\(\ds\vec F = \la x^2+z^2,x^2+y^2,y^2+z^2\ra\)</span></p></article><article class="exercise exercise-like" id="exercise-2887"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-15594"><span class="process-math">\(\vec F = \nabla f\text{,}\)</span> where <span class="process-math">\(f(x,y) = \frac12x^2+\frac13y^3\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2888"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-15597"><span class="process-math">\(\vec F = \nabla f\text{,}\)</span> where <span class="process-math">\(f(x,y) = x^2y\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2889"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-15600"><span class="process-math">\(\vec F = \nabla f\text{,}\)</span> where <span class="process-math">\(f(x,y,z) = x^2y+\sin z\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2890"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-15603"><span class="process-math">\(\vec F = \nabla f\text{,}\)</span> where <span class="process-math">\(\ds f(x,y,z) = \frac1{x^2+y^2+z^2}\text{.}\)</span></p></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

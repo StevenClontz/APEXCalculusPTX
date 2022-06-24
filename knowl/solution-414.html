@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:25Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.3.11.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-intapp-shell-example4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/nd16wB-0qIQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>The region and a differential element, the shell formed by this differential element, and the resulting solid are given in <a href="" class="xref" data-knowl="./knowl/fig_shell4.html" title="Figure 7.3.12">Figure 7.3.12</a>.</p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like"><img src="generated/latex-image/img_shell4a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_shell4b_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_shell4b_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_shell4c_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_shell4c_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(c)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.12<span class="period">.</span></span><span class="space"> </span>Graphing a region in <a href="" class="xref" data-knowl="./knowl/ex_shell4.html" title="Example 7.3.11: Finding volume using the Shell Method">Example 7.3.11</a></figcaption></figure><p>The radius of a sample shell is <span class="process-math">\(r(x) = x\text{;}\)</span> the height of a sample shell is <span class="process-math">\(h(x) = \sin(x)\text{,}\)</span> each from <span class="process-math">\(x=0\)</span> to <span class="process-math">\(x=\pi\text{.}\)</span> Thus the volume of the solid is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+V \amp =	2\pi\int_0^{\pi} x\sin(x) \, dx.\\
+\end{align*}
+<p class="intertext">This requires Integration By Parts. Set <span class="process-math">\(u=x\)</span> and <span class="process-math">\(dv=\sin(x) \, dx\text{;}\)</span> we leave it to the reader to fill in the rest. We have:</p>
+\begin{align*}
+\amp = 2\pi\Big[-x\cos(x) \Big|_0^{\pi} +\int_0^{\pi}\cos(x) \, dx \Big]\\
+\amp = 2\pi\Big[\pi + \sin(x) \Big|_0^{\pi}\,\Big]\\
+\amp = 2\pi\Big[\pi + 0 \Big]\\
+\amp = 2\pi^2 \approx 19.74 \,\text{units}^3\text{.}
+\end{align*}
+</div>
+<p>Note that in order to use the Washer Method, we would need to solve <span class="process-math">\(y=\sin x\)</span> for <span class="process-math">\(x\text{,}\)</span> requiring the use of the arcsine function. We leave it to the reader to verify that the outside radius function is <span class="process-math">\(R(y) = \pi-\arcsin y\)</span> and the inside radius function is <span class="process-math">\(r(y)=\arcsin y\text{.}\)</span> Thus the volume can be computed as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\pi\int_0^1 \Big[ (\pi-\arcsin y)^2-(\arcsin y)^2\Big]\, dy\text{.}
+\end{equation*}
+</div>
+<p>This integral isn't terrible given that the <span class="process-math">\(\arcsin^2 y\)</span> terms cancel, but it is more onerous than the integral created by the Shell Method.</p>
+</div>
+<span class="incontext"><a href="sec_shell_method.html#solution-414" class="internal">in-context</a></span>
+</body>
+</html>

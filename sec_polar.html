@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:30:31Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Introduction to Polar Coordinates</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_par_calc.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_planar_curves.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_polarcalc.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_par_calc.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_planar_curves.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_polarcalc.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="active">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_polar"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">10.4</span> <span class="title">Introduction to Polar Coordinates</span>
+</h2>
+<section class="introduction" id="introduction-261"><figure class="figure figure-like" id="vid-planecurves-polar-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-389" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/pyS8sweaJ9w?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_polar.html" class="internal" title="Section 10.4: Introduction to Polar Coordinates">Section 10.4</a></figcaption></figure><p id="p-10230">We are generally introduced to the idea of graphing curves by relating <span class="process-math">\(x\)</span>-values to <span class="process-math">\(y\)</span>-values through a function <span class="process-math">\(f\text{.}\)</span> That is, we set <span class="process-math">\(y=f(x)\text{,}\)</span> and plot lots of point pairs <span class="process-math">\((x,y)\)</span> to get a good notion of how the curve looks. This method is useful but has limitations, not least of which is that curves that “fail the vertical line test” cannot be graphed without using multiple functions.</p>
+<p id="p-10231">The previous two sections introduced and studied a new way of plotting points in the <span class="process-math">\(x,y\)</span>-plane. Using parametric equations, <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> values are computed independently and then plotted together. This method allows us to graph an extraordinary range of curves. This section introduces yet another way to plot points in the plane: using <em class="emphasis">polar coordinates</em>.</p></section><section class="subsection" id="subsection-76"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">10.4.1</span> <span class="title">Polar Coordinates</span>
+</h3>
+<p id="p-10232">Start with a point <span class="process-math">\(O\)</span> in the plane called the <em class="emphasis">pole</em> (we will always identify this point with the origin). From the pole, draw a ray, called the <em class="emphasis">initial ray</em> (we will always draw this ray horizontally, identifying it with the positive <span class="process-math">\(x\)</span>-axis). A point <span class="process-math">\(P\)</span> in the plane is determined by the distance <span class="process-math">\(r\)</span> that <span class="process-math">\(P\)</span> is from <span class="process-math">\(O\text{,}\)</span> and the angle <span class="process-math">\(\theta\)</span> formed between the initial ray and the segment <span class="process-math">\(\overline{OP}\)</span> (measured counter-clockwise). We record the distance and angle as an ordered pair <span class="process-math">\((r,\theta)\text{.}\)</span> To avoid confusion with rectangular coordinates, we will denote polar coordinates with the letter <span class="process-math">\(P\text{,}\)</span> as in <span class="process-math">\(P(r,\theta)\text{.}\)</span> This is illustrated in <a href="" class="xref" data-knowl="./knowl/fig_polar_intro1.html" title="Figure 10.4.2">Figure 10.4.2</a> </p>
+<figure class="figure figure-like" id="fig_polar_intro1"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="generated/latex-image/img_polar_intro1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.2<span class="period">.</span></span><span class="space"> </span>Illustrating polar coordinates</figcaption></figure><p id="p-10233">Practice will make this process more clear.</p>
+<article class="example example-like" id="ex_polar1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Plotting Polar Coordinates.</span>
+</h4>
+<p id="p-10234">Plot the following polar coordinates: </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = P(1,\pi/4) B=P(1.5,\pi) C = P(2,-\pi/3) D = P(-1,\pi/4)
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-865" id="solution-865"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-865"><div class="solution solution-like">
+<p id="p-10235">To aid in the drawing, a polar grid is provided below. To place the point <span class="process-math">\(A\text{,}\)</span> go out 1 unit along the initial ray (putting you on the inner circle shown on the grid), then rotate counter-clockwise <span class="process-math">\(\pi/4\)</span> radians (or <span class="process-math">\(45^\circ\)</span>). Alternately, one can consider the rotation first: think about the ray from <span class="process-math">\(O\)</span> that forms an angle of <span class="process-math">\(\pi/4\)</span> with the initial ray, then move out 1 unit along this ray (again placing you on the inner circle of the grid).</p>
+<div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_polar_grid.svg" role="img" class="contained"></div>
+<p id="p-10236">To plot <span class="process-math">\(B\text{,}\)</span> go out <span class="process-math">\(1.5\)</span> units along the initial ray and rotate <span class="process-math">\(\pi\)</span> radians (<span class="process-math">\(180^\circ\)</span>).</p>
+<p id="p-10237">To plot <span class="process-math">\(C\text{,}\)</span> go out 2 units along the initial ray then rotate <em class="emphasis">clockwise</em> <span class="process-math">\(\pi/3\)</span> radians, as the angle given is negative.</p>
+<p id="p-10238">To plot <span class="process-math">\(D\text{,}\)</span> move along the initial ray “<span class="process-math">\(-1\)</span>” units — in other words, “back up” 1 unit, then rotate counter-clockwise by <span class="process-math">\(\pi/4\text{.}\)</span> The results are given in <a href="" class="xref" data-knowl="./knowl/fig_polar1.html" title="Figure 10.4.4">Figure 10.4.4</a>.</p>
+<figure class="figure figure-like" id="fig_polar1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_polar1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.4<span class="period">.</span></span><span class="space"> </span>Plotting polar points in <a href="" class="xref" data-knowl="./knowl/ex_polar1.html" title="Example 10.4.3: Plotting Polar Coordinates">Example 10.4.3</a></figcaption></figure>
+</div></div>
+</div></article><p id="p-10239">Consider the following two points: <span class="process-math">\(A = P(1,\pi)\)</span> and <span class="process-math">\(B = P(-1,0)\text{.}\)</span> To locate <span class="process-math">\(A\text{,}\)</span> go out 1 unit on the initial ray then rotate <span class="process-math">\(\pi\)</span> radians; to locate <span class="process-math">\(B\text{,}\)</span> go out <span class="process-math">\(-1\)</span> units on the initial ray and don't rotate. One should see that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are located at the same point in the plane. We can also consider <span class="process-math">\(C=P(1,3\pi)\text{,}\)</span> or <span class="process-math">\(D = P(1,-\pi)\text{;}\)</span> all four of these points share the same location.</p>
+<p id="p-10240">This ability to identify a point in the plane with multiple polar coordinates is both a “blessing” and a “curse.” We will see that it is beneficial as we can plot beautiful functions that intersect themselves (much like we saw with parametric functions). The unfortunate part of this is that it can be difficult to determine when this happens. We'll explore this more later in this section.</p></section><section class="subsection" id="subsection-77"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">10.4.2</span> <span class="title">Polar to Rectangular Conversion</span>
+</h3>
+<p id="p-10241">It is useful to recognize both the rectangular (or, Cartesian) coordinates of a point in the plane and its polar coordinates. <a href="" class="xref" data-knowl="./knowl/fig_polar_intro2.html" title="Figure 10.4.5">Figure 10.4.5</a> shows a point <span class="process-math">\(P\)</span> in the plane with rectangular coordinates <span class="process-math">\((x,y)\)</span> and polar coordinates <span class="process-math">\(P(r,\theta)\text{.}\)</span> Using trigonometry, we can make the identities given in the following Key Idea.</p>
+<figure class="figure figure-like" id="fig_polar_intro2"><div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="generated/latex-image/img_polar_intro2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.5<span class="period">.</span></span><span class="space"> </span>Converting between rectangular and polar coordinates</figcaption></figure><article class="insight remark-like" id="idea_polarconvert"><h4 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">10.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Converting Between Rectangular and Polar Coordinates.</span>
+</h4>
+<p id="p-10242">Given the polar point <span class="process-math">\(P(r,\theta)\text{,}\)</span> the rectangular coordinates are determined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=r\cos(\theta) \qquad y=r\sin(\theta)\text{.}
+\end{equation*}
+</div>
+<p id="p-10243">Given the rectangular coordinates <span class="process-math">\((x,y)\text{,}\)</span> the polar coordinates are determined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+r^2=x^2+y^2\qquad \tan(\theta) = \frac yx\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="ex_polar2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Converting Between Polar and Rectangular Coordinates.</span>
+</h4>
+<ol id="p-10244" class="decimal">
+<li id="li-2106"><p id="p-10245">Convert the polar coordinates <span class="process-math">\(P(2,2\pi/3)\)</span> and <span class="process-math">\(P(-1,5\pi/4)\)</span> to rectangular coordinates.</p></li>
+<li id="li-2107"><p id="p-10246">Convert the rectangular coordinates <span class="process-math">\((1,2)\)</span> and <span class="process-math">\((-1,1)\)</span> to polar coordinates.</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-866" id="solution-866"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-866"><div class="solution solution-like"><ol id="p-10247" class="decimal">
+<li id="li-2108">
+<ol id="p-10248" class="lower-alpha">
+<li id="li-2109">
+<p id="p-10249">We start with <span class="process-math">\(P(2,2\pi/3)\text{.}\)</span> Using <a href="" class="xref" data-knowl="./knowl/idea_polarconvert.html" title="Key Idea 10.4.6: Converting Between Rectangular and Polar Coordinates">Key Idea 10.4.6</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_polarconvert.html">
+\begin{equation*}
+x= 2\cos(2\pi/3) = -1\qquad y = 2\sin(2\pi/3) = \sqrt{3}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">So the rectangular coordinates are <span class="process-math">\((-1,\sqrt{3}) \approx (-1,1.732)\text{.}\)</span></p>
+</li>
+<li id="li-2110">
+<p id="p-10250">The polar point <span class="process-math">\(P(-1,5\pi/4)\)</span> is converted to rectangular with:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=-1\cos(5\pi/4) = \sqrt{2}/2\qquad y= -1\sin(5\pi/4) = \sqrt{2}/2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">So the rectangular coordinates are <span class="process-math">\((\sqrt{2}/2,\sqrt{2}/2) \approx (0.707,0.707)\text{.}\)</span></p>
+</li>
+</ol>
+<p id="p-10251">These points are plotted in <a href="" class="xref" data-knowl="./knowl/fig_polar2a.html" title="Figure 10.4.8.(a)">Figure 10.4.8.(a)</a>. The rectangular coordinate system is drawn lightly under the polar coordinate system so that the relationship between the two can be seen.</p>
+<figure class="figure figure-like" id="fig_polar2"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_polar2a"><img src="generated/latex-image/img_polar2a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_polar2b"><img src="generated/latex-image/img_polar2b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.8<span class="period">.</span></span><span class="space"> </span>Plotting rectangular and polar points in <a href="" class="xref" data-knowl="./knowl/ex_polar2.html" title="Example 10.4.7: Converting Between Polar and Rectangular Coordinates">Example 10.4.7</a></figcaption></figure>
+</li>
+<li id="li-2111">
+<ol id="p-10252" class="lower-alpha">
+<li id="li-2112">
+<p id="p-10253">To convert the rectangular point <span class="process-math">\((1,2)\)</span> to polar coordinates, we use the Key Idea to form the following two equations:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+1^2+2^2 = r^2 \qquad \tan(\theta) = \frac{2}{1}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The first equation tells us that <span class="process-math">\(r=\sqrt{5}\text{.}\)</span> Using the inverse tangent function, we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\tan(\theta) = 2  \Rightarrow  \theta = \tan^{-1}(2) \approx 1.11\approx 63.43^\circ\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Thus polar coordinates of <span class="process-math">\((1,2)\)</span> are <span class="process-math">\(P(\sqrt{5},1.11)\text{.}\)</span></p>
+</li>
+<li id="li-2113">
+<p id="p-10254">To convert <span class="process-math">\((-1,1)\)</span> to polar coordinates, we form the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(-1)^2+1^2=r^2 \qquad \tan(\theta) = \frac{1}{-1}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(r=\sqrt{2}\text{.}\)</span> We need to be careful in computing <span class="process-math">\(\theta\text{:}\)</span> using the inverse tangent function, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\tan(\theta) = -1  \Rightarrow  \theta = \tan^{-1}(-1) = -\pi/4 = -45^\circ\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This is not the angle we desire. The range of <span class="process-math">\(\tan^{-1}(x)\)</span> is <span class="process-math">\((-\pi/2,\pi/2)\text{;}\)</span> that is, it returns angles that lie in the <span class="process-math">\(1\)</span>st and <span class="process-math">\(4\)</span>th quadrants. To find locations in the <span class="process-math">\(2\)</span>nd  and <span class="process-math">\(3\)</span>rd quadrants, add <span class="process-math">\(\pi\)</span> to the result of <span class="process-math">\(\tan^{-1}(x)\text{.}\)</span> So  <span class="process-math">\(\pi+(-\pi/4)\)</span> puts the angle at <span class="process-math">\(3\pi/4\text{.}\)</span> Thus the polar point is <span class="process-math">\(P(\sqrt{2},3\pi/4)\text{.}\)</span> An alternate method is to use the angle <span class="process-math">\(\theta\)</span> given by arctangent, but change the sign of <span class="process-math">\(r\text{.}\)</span> Thus we could also refer to <span class="process-math">\((-1,1)\)</span> as <span class="process-math">\(P(-\sqrt{2},-\pi/4)\text{.}\)</span></p>
+</li>
+</ol>
+<p id="p-10255">These points are plotted in <a href="" class="xref" data-knowl="./knowl/fig_polar2b.html" title="Figure 10.4.8.(b)">Figure 10.4.8.(b)</a>. The polar system is drawn lightly under the rectangular grid with rays to demonstrate the angles used.</p>
+</li>
+</ol></div></div>
+</div></article></section><section class="subsection" id="subsection-78"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">10.4.3</span> <span class="title">Polar Functions and Polar Graphs</span>
+</h3>
+<p id="p-10256">Defining a new coordinate system allows us to create a new kind of function, a <em class="emphasis">polar function.</em> Rectangular coordinates lent themselves well to creating functions that related <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> such as <span class="process-math">\(y=x^2\text{.}\)</span> Polar coordinates allow us to create functions that relate <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\text{.}\)</span> Normally these functions look like <span class="process-math">\(r=f(\theta)\text{,}\)</span> although we can create functions of the form <span class="process-math">\(\theta = f(r)\text{.}\)</span> The following examples introduce us to this concept. </p>
+<article class="example example-like" id="ex_polar3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Introduction to Graphing Polar Functions.</span>
+</h4>
+<p id="p-10257">Describe the graphs of the following polar functions.</p>
+<ol id="p-10258" class="decimal">
+<li id="li-2114"><p id="p-10259"><span class="process-math">\(\displaystyle r = 1.5\)</span></p></li>
+<li id="li-2115"><p id="p-10260"><span class="process-math">\(\displaystyle \theta = \pi/4\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-867" id="solution-867"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-867"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-planecurves-polar-basic-graphs" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/HTCbzFnW9KU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-10261" class="decimal">
+<li id="li-2116"><p id="p-10262">The equation <span class="process-math">\(r=1.5\)</span> describes all points that are 1.5 units from the pole; as the angle is not specified, any <span class="process-math">\(\theta\)</span> is allowable. All points 1.5 units from the pole describes a circle of radius 1.5. We can consider the rectangular equivalent of this equation; using <span class="process-math">\(r^2=x^2+y^2\text{,}\)</span> we see that <span class="process-math">\(1.5^2=x^2+y^2\text{,}\)</span> which we recognize as the equation of a circle centered at <span class="process-math">\((0,0)\)</span> with radius 1.5. This is sketched in <a href="" class="xref" data-knowl="./knowl/fig_polar3.html" title="Figure 10.4.10">Figure 10.4.10</a>.</p></li>
+<li id="li-2117">
+<p id="p-10263">The equation <span class="process-math">\(\theta = \pi/4\)</span> describes all points such that the line through them and the pole make an angle of <span class="process-math">\(\pi/4\)</span> with the initial ray. As the radius <span class="process-math">\(r\)</span> is not specified, it can be any value (even negative). Thus <span class="process-math">\(\theta = \pi/4\)</span> describes the line through the pole that makes an angle of <span class="process-math">\(\pi/4 = 45^\circ\)</span> with the initial ray. We can again consider the rectangular equivalent of this equation. Combine <span class="process-math">\(\tan(\theta) =y/x\)</span> and <span class="process-math">\(\theta =\pi/4\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_polar3.html">
+\begin{equation*}
+\tan(\pi) /4 = y/x  \Rightarrow x\tan(\pi) /4 = y  \Rightarrow y = x\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This graph is also plotted in <a href="" class="xref" data-knowl="./knowl/fig_polar3.html" title="Figure 10.4.10">Figure 10.4.10</a>.</p>
+<figure class="figure figure-like" id="fig_polar3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_polar3.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.10<span class="period">.</span></span><span class="space"> </span>Plotting standard polar plots</figcaption></figure>
+</li>
+</ol>
+</div></div>
+</div></article><p id="p-10264">The basic rectangular equations of the form <span class="process-math">\(x=h\)</span> and <span class="process-math">\(y=k\)</span> create vertical and horizontal lines, respectively; the basic polar equations <span class="process-math">\(r= h\)</span> and <span class="process-math">\(\theta =\alpha\)</span> create circles and lines through the pole, respectively. With this as a foundation, we can create more complicated polar functions of the form <span class="process-math">\(r=f(\theta)\text{.}\)</span> The input is an angle; the output is a length, how far in the direction of the angle to go out.</p>
+<p id="p-10265">We sketch these functions much like we sketch rectangular and parametric functions: we plot lots of points and “connect the dots” with curves. We demonstrate this in the following example.</p>
+<article class="example example-like" id="ex_polar4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.4.11</span><span class="period">.</span><span class="space"> </span><span class="title">Sketching Polar Functions.</span>
+</h4>
+<p id="p-10266">Sketch the polar function <span class="process-math">\(r=1+\cos(\theta)\)</span> on <span class="process-math">\([0,2\pi]\)</span> by plotting points.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video has-tabular" data-refid="hk-solution-868" id="solution-868"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-868"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-planecurves-polar-cardioid" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/1omaozpN7wI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-10267">A common question when sketching curves by plotting points is “Which points should I plot?” With rectangular equations, we often choose “easy” values — integers, then add more if needed. When plotting polar equations, start with the “common” angles — multiples of <span class="process-math">\(\pi/6\)</span> and <span class="process-math">\(\pi/4\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_polar4.html" title="Figure 10.4.12">Figure 10.4.12</a> gives a table of just a few values of <span class="process-math">\(\theta\)</span> in <span class="process-math">\([0,\pi]\text{.}\)</span></p>
+<p id="p-10268">Consider the point <span class="process-math">\(P(2,0)\)</span> determined by the first line of the table. The angle is 0 radians — we do not rotate from the initial ray — then we go out 2 units from the pole. When <span class="process-math">\(\theta=\pi/6\text{,}\)</span> <span class="process-math">\(r = 1.866\)</span> (actually, it is <span class="process-math">\(1+\sqrt{3}/2\)</span>); so rotate by <span class="process-math">\(\pi/6\)</span> radians and go out 1.866 units.</p>
+<p id="p-10269">The graph shown uses more points, connected with straight lines. (The points on the graph that correspond to points in the table are signified with larger dots.) Such a sketch is likely good enough to give one an idea of what the graph looks like.</p>
+<figure class="figure figure-like" id="fig_polar4"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel fixed-width bottom" style="width:47%;"><figure class="table table-like" id="fig_polar4a"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\theta\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(r=1+\cos(\theta)\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\pi/6\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1.86603\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\pi/2\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(4\pi/3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(7 \pi/4\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1.70711\)</span></td>
+</tr>
+</table>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like" id="fig_polar4b"><img src="generated/latex-image/img_polar4.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.12<span class="period">.</span></span><span class="space"> </span>Graphing a polar function in <a href="" class="xref" data-knowl="./knowl/ex_polar4.html" title="Example 10.4.11: Sketching Polar Functions">Example 10.4.11</a> by plotting points</figcaption></figure>
+</div></div>
+</div></article><p id="p-10270"><em class="emphasis">Technology Note:</em> Plotting functions in this way can be tedious, just as it was with rectangular functions. To obtain very accurate graphs, technology is a great aid. Most graphing calculators can plot polar functions; in the menu, set the plotting mode to something like <code class="code-inline tex2jax_ignore">polar</code> or <code class="code-inline tex2jax_ignore">POL</code>, depending on one's calculator. As with plotting parametric functions, the viewing “window” no longer determines the <span class="process-math">\(x\)</span>-values that are plotted, so additional information needs to be provided. Often with the “window” settings are the settings for the beginning and ending <span class="process-math">\(\theta\)</span> values (often called <span class="process-math">\(\theta_{\text{ min } }\)</span> and <span class="process-math">\(\theta_{\text{ max } }\)</span>) as well as the <span class="process-math">\(\theta_{\text{ step } }\)</span> — that is, how far apart the <span class="process-math">\(\theta\)</span> values are spaced. The smaller the <span class="process-math">\(\theta_{\text{ step } }\)</span> value, the more accurate the graph (which also increases plotting time). Using technology, we graphed the polar function <span class="process-math">\(r=1+\cos(\theta)\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_polar4.html" title="Example 10.4.11: Sketching Polar Functions">Example 10.4.11</a> in <a href="" class="xref" data-knowl="./knowl/fig_polar4c.html" title="Figure 10.4.13">Figure 10.4.13</a>.</p>
+<figure class="figure figure-like" id="fig_polar4c"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_polar4c.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.13<span class="period">.</span></span><span class="space"> </span>Using  technology to graph a polar function</figcaption></figure><article class="example example-like" id="ex_polar5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Sketching Polar Functions.</span>
+</h4>
+<p id="p-10271">Sketch the polar function <span class="process-math">\(r=\cos(2\theta)\)</span> on <span class="process-math">\([0,2\pi]\)</span> by plotting points.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video has-tabular" data-refid="hk-solution-869" id="solution-869"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-869"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-planecurves-polar-rose" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/DSmu6HQXiS4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-10272">We start by making a table of <span class="process-math">\(\cos(2\theta)\)</span> evaluated at common angles <span class="process-math">\(\theta\text{,}\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig_polar5table.html" title="Table 10.4.15: Table of points for plotting a polar curve in Example 10.4.14">Figure 10.4.15</a>. These points are then plotted in <a href="" class="xref" data-knowl="./knowl/fig_polar5a.html" title="Figure 10.4.16.(a)">Figure 10.4.16.(a)</a>. This particular graph “moves” around quite a bit and one can easily forget which points should be connected to each other. To help us with this, we numbered each point in the table and on the graph.</p>
+<figure class="table table-like" id="fig_polar5table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">10.4.15<span class="period">.</span></span><span class="space"> </span>Table of points for plotting a polar curve in Example 10.4.14</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Pt.</td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\theta\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\cos(2\theta)\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\pi/6\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\pi/4\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\pi/3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-0.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(5\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\pi/2\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-1\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(6\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2\pi/3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-0.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(7\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3\pi/4\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(8\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(5\pi/6\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(9\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\pi\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(10\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(7\pi/6\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(11\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(5\pi/4\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(12\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(4\pi/3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-0.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(13\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3\pi/2\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-1\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(14\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(5\pi/3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-0.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(15\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(7\pi/4\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(16\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(11\pi/6\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(17\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2\pi\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+</table></div></figure><p id="p-10273">Using more points (and the aid of technology) a smoother plot can be made as shown in <a href="" class="xref" data-knowl="./knowl/fig_polar5b.html" title="Figure 10.4.16.(b)">Figure 10.4.16.(b)</a>. This plot is an example of a <em class="emphasis">rose curve</em>.</p>
+<figure class="figure figure-like" id="fig_polar5"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_polar5a"><img src="generated/latex-image/img_polar5a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_polar5b"><img src="generated/latex-image/img_polar5b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.16<span class="period">.</span></span><span class="space"> </span>Polar plots from <a href="" class="xref" data-knowl="./knowl/ex_polar5.html" title="Example 10.4.14: Sketching Polar Functions">Example 10.4.14</a></figcaption></figure>
+</div></div>
+</div></article><p id="p-10274">It is sometimes desirable to refer to a graph via a polar equation, and other times by a rectangular equation. Therefore it is necessary to be able to convert between polar and rectangular functions, which we practice in the following example. We will make frequent use of the identities found in <a href="" class="xref" data-knowl="./knowl/idea_polarconvert.html" title="Key Idea 10.4.6: Converting Between Rectangular and Polar Coordinates">Key Idea 10.4.6</a>.</p>
+<article class="example example-like" id="ex_polar6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.4.17</span><span class="period">.</span><span class="space"> </span><span class="title">Converting between rectangular and polar equations.</span>
+</h4>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;">
+<p id="p-10275">Convert from rectangular to polar.</p>
+<ol class="decimal">
+<li id="li-2118"><p id="p-10276"><span class="process-math">\(\displaystyle y=x^2\)</span></p></li>
+<li id="li-2119"><p id="p-10277"><span class="process-math">\(\displaystyle xy = 1\)</span></p></li>
+</ol>
+</div>
+<div class="sbspanel top" style="width:50%;">
+<p id="p-10278">Convert from polar to rectangular.</p>
+<ol class="decimal">
+<li id="li-2120"><p id="p-10279"><span class="process-math">\(\displaystyle \ds r=\frac{2}{\sin(\theta) -\cos(\theta) }\)</span></p></li>
+<li id="li-2121"><p id="p-10280"><span class="process-math">\(\displaystyle r=2\cos(\theta)\)</span></p></li>
+</ol>
+</div>
+</div></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-870" id="solution-870"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-870"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-planecurves-polar-conversions" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/kWnHXtXTzSw?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-10281" class="decimal">
+<li id="li-2122">
+<p id="p-10282">Replace <span class="process-math">\(y\)</span> with <span class="process-math">\(r\sin(\theta)\)</span> and replace <span class="process-math">\(x\)</span> with <span class="process-math">\(r\cos(\theta)\text{,}\)</span> giving:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-462">
+\begin{align*}
+y \amp =x^2\\
+r\sin(\theta) \amp = r^2\cos^2(\theta)\\
+\frac{\sin(\theta) }{\cos^2(\theta) } \amp = r
+\end{align*}
+</div>
+<p class="continuation">We have found that <span class="process-math">\(r=\sin(\theta) /\cos^2(\theta) = \tan(\theta) \sec(\theta)\text{.}\)</span> The domain of this polar function is <span class="process-math">\((-\pi/2,\pi/2)\text{;}\)</span> plot a few points to see how the familiar parabola is traced out by the polar equation.</p>
+</li>
+<li id="li-2123">
+<p id="p-10283">We again replace <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> using the standard identities and work to solve for <span class="process-math">\(r\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_polar6.html" id="md-463">
+\begin{align*}
+xy \amp = 1\\
+r\cos(\theta) \cdot r\sin(\theta) \amp  = 1\\
+r^2 \amp  = \frac{1}{\cos(\theta) \sin(\theta) }\\
+r \amp  = \frac{1}{\sqrt{\cos(\theta) \sin(\theta) }}
+\end{align*}
+</div>
+<p class="continuation">This function is valid only when the product of <span class="process-math">\(\cos(\theta) \sin(\theta)\)</span> is positive. This occurs in the first and third quadrants, meaning the domain of this polar function is <span class="process-math">\((0,\pi/2) \cup (\pi,3\pi/2)\text{.}\)</span> We can rewrite the original rectangular equation <span class="process-math">\(xy=1\)</span> as <span class="process-math">\(y=1/x\text{.}\)</span> This is graphed in <a href="" class="xref" data-knowl="./knowl/fig_polar6.html" title="Figure 10.4.18">Figure 10.4.18</a>; note how it only exists in the first and third quadrants.</p>
+<figure class="figure figure-like" id="fig_polar6"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_polar6.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.18<span class="period">.</span></span><span class="space"> </span>Graphing <span class="process-math">\(xy=1\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_polar6.html" title="Example 10.4.17: Converting between rectangular and polar equations">Example 10.4.17</a></figcaption></figure>
+</li>
+<li id="li-2124">
+<p id="p-10284">There is no set way to convert from polar to rectangular; in general, we look to form the products <span class="process-math">\(r\cos(\theta)\)</span> and <span class="process-math">\(r\sin(\theta)\text{,}\)</span> and then replace these with <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> respectively. We start in this problem by multiplying both sides by <span class="process-math">\(\sin(\theta) -\cos(\theta)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-464">
+\begin{align*}
+r \amp = \frac{2}{\sin(\theta) -\cos(\theta) }\\
+r(\sin(\theta) -\cos(\theta) ) \amp = 2\\
+r\sin(\theta) -r\cos(\theta) \amp = 2. \qquad \text{ Now replace with \(y\) and \(x\): }\\
+y-x \amp = 2\\
+y \amp = x+2\text{.}
+\end{align*}
+</div>
+<p class="continuation">The original polar equation, <span class="process-math">\(r=2/(\sin(\theta) -\cos(\theta) )\)</span> does not easily reveal that its graph is simply a line. However, our conversion shows that it is. The upcoming gallery of polar curves gives the general equations of lines in polar form.</p>
+</li>
+<li id="li-2125">
+<p id="p-10285">By multiplying both sides by <span class="process-math">\(r\text{,}\)</span> we obtain both an <span class="process-math">\(r^2\)</span> term and an <span class="process-math">\(r\cos(\theta)\)</span> term, which we replace with <span class="process-math">\(x^2+y^2\)</span> and <span class="process-math">\(x\text{,}\)</span> respectively.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-465">
+\begin{align*}
+r \amp =2\cos(\theta)\\
+r^2 \amp = 2r\cos(\theta)\\
+x^2+y^2 \amp = 2x.\\
+\end{align*}
+<p class="intertext">We recognize this as a circle; by completing the square we can find its radius and center.</p>
+\begin{align*}
+x^2-2x+y^2 \amp = 0\\
+(x-1)^2 + y^2 \amp =1\text{.}
+\end{align*}
+</div>
+<p class="continuation">The circle is centered at <span class="process-math">\((1,0)\)</span> and has radius 1. The upcoming gallery of polar curves gives the equations of <em class="emphasis">some</em> circles in polar form; circles with arbitrary centers have a complicated polar equation that we do not consider here.</p>
+</li>
+</ol>
+</div></div>
+</div></article><p id="p-10286">Some curves have very simple polar equations but rather complicated rectangular ones. For instance, the equation <span class="process-math">\(r=1+\cos(\theta)\)</span> describes a <em class="emphasis">cardioid</em> (a shape important the sensitivity of microphones, among other things; one is graphed in the gallery in the Limaçon section). It's rectangular form is not nearly as simple; it is the implicit equation <span class="process-math">\(x^4+y^4+2x^2y^2-2xy^2-2x^3-y^2=0\text{.}\)</span> The conversion is not “hard,” but takes several steps, and is left as a problem in the Exercise section.</p>
+<p id="p-10287"><em class="emphasis">Gallery of Polar Curves</em></p>
+<p id="p-10288">There are a number of basic and “classic” polar curves, famous for their beauty and/or applicability to the sciences.  This section ends with a small gallery of some of these graphs. We encourage the reader to understand how these graphs are formed, and to investigate with technology other types of polar functions.</p>
+<p id="p-10289"><em class="emphasis">Lines</em></p>
+<figure class="figure figure-like" id="fig_polar_lines"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;">
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_lines1"><img src="generated/latex-image/img_polar_lines1.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Through the origin: <span class="process-math">\(\theta = \alpha\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_lines2"><img src="generated/latex-image/img_polar_lines2.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Horizontal line: <span class="process-math">\(r=a\csc(\theta)\)</span></figcaption></figure></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;">
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_lines3"><img src="generated/latex-image/img_polar_lines3.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span>Vertical line: <span class="process-math">\(r=a\sec(\theta)\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_lines4"><img src="generated/latex-image/img_polar_lines4.svg" role="img" class="contained"><figcaption><span class="codenumber">(d)</span><span class="space"> </span>Not through origin: <span class="process-math">\(\ds r=\frac{b}{\sin(\theta) -m\cos(\theta)}\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.19<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-10290"><em class="emphasis">Circles and Spirals</em></p>
+<figure class="figure figure-like" id="fig_polar_circle_spiral"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;">
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_circle1"><img src="generated/latex-image/img_polar_circle1.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Centered on <span class="process-math">\(x\)</span>-axis: <span class="process-math">\(r=a\cos(\theta)\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_circle2"><img src="generated/latex-image/img_polar_circle2.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Centered on <span class="process-math">\(y\)</span>-axis: <span class="process-math">\(r=a\sin(\theta)\)</span></figcaption></figure></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;">
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_circle3"><img src="generated/latex-image/img_polar_circle3.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span>Centered on origin: <span class="process-math">\(r=a\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_spiral"><img src="generated/latex-image/img_polar_spiral.svg" role="img" class="contained"><figcaption><span class="codenumber">(d)</span><span class="space"> </span>Archimedean spiral: <span class="process-math">\(r=\theta\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.20<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-10291"><em class="emphasis">Limaçons</em></p>
+<p id="p-10292">Symmetric about <span class="process-math">\(x\)</span>-axis: <span class="process-math">\(r=a\pm b\cos(\theta)\)</span></p>
+<p id="p-10293">Symmetric about <span class="process-math">\(y\)</span>-axis: <span class="process-math">\(r=a\pm b\sin(\theta)\text{;}\)</span> <span class="process-math">\(a,b \gt 0\)</span></p>
+<figure class="figure figure-like" id="fig_polar_limacons"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;">
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_limacon1"><img src="generated/latex-image/img_polar_limacon1.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>With inner loop: <span class="process-math">\(\ds \frac ab \lt  1\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_limacon2"><img src="generated/latex-image/img_polar_limacon2.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Cardioid: <span class="process-math">\(\ds \frac ab=1\)</span></figcaption></figure></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;">
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_limacon3"><img src="generated/latex-image/img_polar_limacon3.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span>Dimpled: <span class="process-math">\(\ds 1\lt \frac ab \lt 2\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_limacon4"><img src="generated/latex-image/img_polar_limacon4.svg" role="img" class="contained"><figcaption><span class="codenumber">(d)</span><span class="space"> </span>Convex: <span class="process-math">\(\ds \frac ab \gt 2\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-10294"><em class="emphasis">Rose Curves</em></p>
+<p id="p-10295">Symmetric about <span class="process-math">\(x\)</span>-axis: <span class="process-math">\(r=a \cos(n\theta)\)</span></p>
+<p id="p-10296">Symmetric about <span class="process-math">\(y\)</span>-axis: <span class="process-math">\(r=a\sin(n\theta)\)</span></p>
+<p id="p-10297">Curve contains <span class="process-math">\(2n\)</span> petals when <span class="process-math">\(n\)</span> is even and <span class="process-math">\(n\)</span> petals when <span class="process-math">\(n\)</span> is odd.</p>
+<figure class="figure figure-like" id="fig_polar_roses"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;">
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_rose1"><img src="generated/latex-image/img_polar_rose1.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span><span class="process-math">\(r=a\cos(2\theta)\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_rose2"><img src="generated/latex-image/img_polar_rose2.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span><span class="process-math">\(r=a\sin(2\theta)\)</span></figcaption></figure></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;">
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_rose3"><img src="generated/latex-image/img_polar_rose3.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span><span class="process-math">\(r=a\cos(3\theta)\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_rose4"><img src="generated/latex-image/img_polar_rose4.svg" role="img" class="contained"><figcaption><span class="codenumber">(d)</span><span class="space"> </span><span class="process-math">\(r=a\sin(3\theta)\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.22<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-10298"><em class="emphasis">Special Curves</em></p>
+<figure class="figure figure-like" id="fig_polar_special"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;">
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_special1"><img src="generated/latex-image/img_polar_special1.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Rose curve: <span class="process-math">\(r=a\sin(\theta/5)\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_special2"><img src="generated/latex-image/img_polar_special2.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Rose curve: <span class="process-math">\(r=a\sin(2\theta/5)\)</span></figcaption></figure></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;">
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_special3"><img src="generated/latex-image/img_polar_special3.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span>Lemniscate: <span class="process-math">\(r^2=a^2\cos(2\theta)\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:48.4536082474227%;"><figure class="figure figure-like" id="fig_polar_special4"><img src="generated/latex-image/img_polar_special4.svg" role="img" class="contained"><figcaption><span class="codenumber">(d)</span><span class="space"> </span>Eight Curve: <span class="process-math">\(r^2=a^2\sec^4(\theta) \cos(2\theta)\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.23<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-10299">Earlier we discussed how each point in the plane does not have a unique representation in polar form. This can be a “good” thing, as it allows for the beautiful and interesting curves seen in the preceding gallery. However, it can also be a “bad” thing, as it can be difficult to determine where two curves intersect.</p>
+<article class="example example-like" id="ex_polar7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.4.24</span><span class="period">.</span><span class="space"> </span><span class="title">Finding points of intersection with polar curves.</span>
+</h4>
+<p id="p-10300">Determine where the graphs of the polar equations <span class="process-math">\(r=1+3\cos(\theta)\)</span> and <span class="process-math">\(r=\cos(\theta)\)</span> intersect.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-871" id="solution-871"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-871"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-planecurves-polar-intersection" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/mI8vfQxub9g?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-10301">As technology is generally readily available, it is usually a good idea to start with a graph. We have graphed the two functions in <a href="" class="xref" data-knowl="./knowl/fig_polar7a.html" title="Figure 10.4.25.(a)">Figure 10.4.25.(a)</a>; to better discern the intersection points, <a href="" class="xref" data-knowl="./knowl/fig_polar7b.html" title="Figure 10.4.25.(b)">Figure 10.4.25.(b)</a> zooms in around the origin.</p>
+<figure class="figure figure-like" id="fig_polar7"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_polar7a"><img src="generated/latex-image/img_polar7.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_polar7b"><img src="generated/latex-image/img_polar7b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.4.25<span class="period">.</span></span><span class="space"> </span>Graphs to help determine the points of intersection of the polar functions given in <a href="" class="xref" data-knowl="./knowl/ex_polar7.html" title="Example 10.4.24: Finding points of intersection with polar curves">Example 10.4.24</a></figcaption></figure><p id="p-10302">We start by setting the two functions equal to each other and solving for <span class="process-math">\(\theta\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-466">
+\begin{align*}
+1+3\cos(\theta) \amp = \cos(\theta)\\
+2\cos(\theta) \amp = -1\\
+\cos(\theta) \amp = -\frac12\\
+\theta \amp = \frac{2\pi}{3}, \frac{4\pi}{3}\text{.}
+\end{align*}
+</div>
+<p id="p-10303">(There are, of course, infinite solutions to the equation <span class="process-math">\(\cos(\theta) =-1/2\text{;}\)</span> as the limaçon is traced out once on <span class="process-math">\([0,2\pi]\text{,}\)</span> we restrict our solutions to this interval.)</p>
+<p id="p-10304">We need to analyze this solution. When <span class="process-math">\(\theta = 2\pi/3\)</span> we obtain the point of intersection that lies in the <span class="process-math">\(4\)</span>th quadrant. When <span class="process-math">\(\theta = 4\pi/3\text{,}\)</span> we get the point of intersection that lies in the second quadrant. There is more to say about this second intersection point, however. The circle defined by <span class="process-math">\(r=\cos(\theta)\)</span> is traced out once on <span class="process-math">\([0,\pi]\text{,}\)</span> meaning that this point of intersection occurs while tracing out the circle a second time. It seems strange to pass by the point once and then recognize it as a point of intersection only when arriving there a “second time.” The first time the circle arrives at this point is when <span class="process-math">\(\theta = \pi/3\text{.}\)</span> It is key to understand that these two points are the same: <span class="process-math">\((\cos(\pi/3),\pi/3)\)</span> and <span class="process-math">\((\cos(4\pi/3),4\pi/3)\text{.}\)</span></p>
+<p id="p-10305">To summarize what we have done so far, we have found two points of intersection: when <span class="process-math">\(\theta=2\pi/3\)</span> and when <span class="process-math">\(\theta=4\pi/3\text{.}\)</span> When referencing the circle <span class="process-math">\(r=\cos(\theta)\text{,}\)</span> the latter point is better referenced as when <span class="process-math">\(\theta=\pi/3\text{.}\)</span></p>
+<p id="p-10306">There is yet another point of intersection: the pole (or, the origin). We did not recognize this intersection point using our work above as each graph arrives at the pole at a different <span class="process-math">\(\theta\)</span> value.</p>
+<p id="p-10307">A graph intersects the pole when <span class="process-math">\(r=0\text{.}\)</span> Considering the circle <span class="process-math">\(r=\cos(\theta)\text{,}\)</span> <span class="process-math">\(r=0\)</span> when <span class="process-math">\(\theta = \pi/2\)</span> (and odd multiples thereof, as the circle is repeatedly traced). The limaçon intersects the pole when <span class="process-math">\(1+3\cos(\theta) =0\text{;}\)</span> this occurs when <span class="process-math">\(\cos(\theta) = -1/3\text{,}\)</span> or for <span class="process-math">\(\theta = \cos^{-1}(-1/3)\text{.}\)</span> This is a nonstandard angle, approximately <span class="process-math">\(\theta = 1.9106 = 109.47^\circ\text{.}\)</span> The limaçon intersects the pole twice in <span class="process-math">\([0,2\pi]\text{;}\)</span> the other angle at which the limaçon is at the pole is the reflection of the first angle across the <span class="process-math">\(x\)</span>-axis. That is, <span class="process-math">\(\theta = 4.3726 = 250.53^\circ\text{.}\)</span></p>
+</div></div>
+</div></article><p id="p-10308">If all one is concerned with is the <span class="process-math">\((x,y)\)</span> coordinates at which the graphs intersect, much of the above work is extraneous. We know they intersect at <span class="process-math">\((0,0)\text{;}\)</span> we might not care at what <span class="process-math">\(\theta\)</span> value. Likewise, using <span class="process-math">\(\theta =2\pi/3\)</span> and <span class="process-math">\(\theta=4\pi/3\)</span> can give us the needed rectangular coordinates. However, in the next section we apply calculus concepts to polar functions. When computing the area of a region bounded by polar curves, understanding the nuances of the points of intersection becomes important.</p></section><section class="exercises" id="exercises-57"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">10.4.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-124"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-1970"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<p id="p-10309">In your own words, describe how to plot the polar point <span class="process-math">\(P(r,\theta)\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1971"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-1306" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1306" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7JHRydWU9UG9wVXAoWyc/JywnVHJ1ZScsJ0ZhbHNlJ10sMSk7CiRmYWxzZT1Qb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwyKTsKCkJFR0lOX1BHTUwKVHJ1ZSBvciBGYWxzZT8gV2hlbiBwbG90dGluZyBhIHBvaW50IHdpdGggcG9sYXIgY29vcmRpbmF0ZSBbYFAocixcdGhldGEpXHRleHR7LH1gXSBbYHJgXSBtdXN0IGJlIHBvc2l0aXZlLiBbX117JGZhbHNlfXs1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10311">True or False? When plotting a point with polar coordinate <span class="process-math">\(P(r,\theta)\text{,}\)</span> <span class="process-math">\(r\)</span> must be positive. <ul style="list-style:circle;">
+<li id="li-2127"><p id="p-10313">True</p></li>
+<li id="li-2128"><p id="p-10314">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1306')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1972"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-1307" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1307" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZT1Qb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKJGZhbHNlPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDIpOwoKQkVHSU5fUEdNTApUcnVlIG9yIEZhbHNlPyBFdmVyeSBwb2ludCBpbiB0aGUgQ2FydGVzaWFuIHBsYW5lIGNhbiBiZSByZXByZXNlbnRlZCBieSBhIHBvbGFyIGNvb3JkaW5hdGUuIFtfXXskdHJ1ZX17NX0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10316">True or False? Every point in the Cartesian plane can be represented by a polar coordinate. <ul style="list-style:circle;">
+<li id="li-2130"><p id="p-10318">True</p></li>
+<li id="li-2131"><p id="p-10319">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1307')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1973"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-1308" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1308" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZT1Qb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKJGZhbHNlPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDIpOwoKQkVHSU5fUEdNTApUcnVlIG9yIEZhbHNlPyBFdmVyeSBwb2ludCBpbiB0aGUgQ2FydGVzaWFuIHBsYW5lIGNhbiBiZSByZXByZXNlbnRlZCB1bmlxdWVseSBieSBhIHBvbGFyIGNvb3JkaW5hdGUuIFtfXXskZmFsc2V9ezV9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10321">True or False? Every point in the Cartesian plane can be represented uniquely by a polar coordinate. <ul style="list-style:circle;">
+<li id="li-2133"><p id="p-10323">True</p></li>
+<li id="li-2134"><p id="p-10324">False</p></li>
+</ul></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1308')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-125"><h4 class="heading"><span class="title">Problems</span></h4>
+<article class="exercise exercise-like" id="exercise-1974"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<p id="p-10326">Plot the points with the given polar coordinates.</p>
+<ol id="p-10327" class="lower-alpha cols2">
+<li id="li-2135"><p id="p-10328"><span class="process-math">\(\displaystyle A=P(2,0)\)</span></p></li>
+<li id="li-2136"><p id="p-10329"><span class="process-math">\(\displaystyle B=P(1,\pi)\)</span></p></li>
+<li id="li-2137"><p id="p-10330"><span class="process-math">\(\displaystyle C=P(-2,\pi/2)\)</span></p></li>
+<li id="li-2138"><p id="p-10331"><span class="process-math">\(\displaystyle D=P(1,\pi/4)\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-1975"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<p id="p-10332">Plot the points with the given polar coordinates.</p>
+<ol id="p-10333" class="lower-alpha cols2">
+<li id="li-2139"><p id="p-10334"><span class="process-math">\(\displaystyle A=P(2,3\pi)\)</span></p></li>
+<li id="li-2140"><p id="p-10335"><span class="process-math">\(\displaystyle B=P(1,-\pi)\)</span></p></li>
+<li id="li-2141"><p id="p-10336"><span class="process-math">\(\displaystyle C=P(1,2)\)</span></p></li>
+<li id="li-2142"><p id="p-10337"><span class="process-math">\(\displaystyle D=P(1/2,5\pi/6)\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-1976"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<p id="p-10338">For each of the given points give two sets of polar coordinates that identify it, where <span class="process-math">\(0\leq \theta\leq 2\pi\text{.}\)</span></p>
+<div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_polar7bX4.svg" role="img" class="contained"></div></article><article class="exercise exercise-like" id="exercise-1977"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div id="webwork-1309" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1309" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIm5pY2VUYWJsZXMucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUEdncmFwaG1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpOyRyZWZyZXNoQ2FjaGVkSW1hZ2VzPTE7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVxuZXdjb21tYW5ke1xsdH17PH1cKTwvZGl2PicpKTsKJGdyID0gaW5pdF9ncmFwaCgtMy41LC0zLjUsMy41LDMuNSxzaXplPT5bNDAwLDQwMF0pOwokZ3ItPm1vdmVUbygwLDApOyAkZ3ItPmFycm93VG8oMy40LDAsJ2JsYWNrJywxKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSh0PT4iUmVhbCIpOwokeCA9IEZvcm11bGEoImNvcyh0KSIpOwokeSA9IEZvcm11bGEoInNpbih0KSIpOwokY1swXSA9IG5ldyBGdW4oICR4LT5wZXJsRnVuY3Rpb24sICR5LT5wZXJsRnVuY3Rpb24sICRnciApOwokY1swXS0+ZG9tYWluKDAsNi4yODMxOCk7CiRjWzBdLT5zdGVwcyg5MCk7CiRjWzBdLT53ZWlnaHQoMSk7CiRjWzBdLT5jb2xvcignYmxhY2snKTsKJGNbMV0gPSBuZXcgRnVuKCAoMiokeCktPnBlcmxGdW5jdGlvbiwgKDIqJHkpLT5wZXJsRnVuY3Rpb24sICRnciApOwokY1sxXS0+ZG9tYWluKDAsNi4yODMxOCk7CiRjWzFdLT5zdGVwcyg5MCk7CiRjWzFdLT53ZWlnaHQoMSk7CiRjWzFdLT5jb2xvcignYmxhY2snKTsKJGNbMl0gPSBuZXcgRnVuKCAoMyokeCktPnBlcmxGdW5jdGlvbiwgKDMqJHkpLT5wZXJsRnVuY3Rpb24sICRnciApOwokY1syXS0+ZG9tYWluKDAsNi4yODMxOCk7CiRjWzJdLT5zdGVwcyg5MCk7CiRjWzJdLT53ZWlnaHQoMSk7CiRjWzJdLT5jb2xvcignYmxhY2snKTsKZm9yIG15JGkoMiwzLDQsNiw4LDksMTAsMTIsMTQsMTUsMTYsMTgsMjAsMjEsMjIpCiAgeyRnci0+bW92ZVRvKDAsMCk7ICRnci0+bGluZVRvKDMqY29zKCRpKnBpLzEyKSwzKnNpbigkaSpwaS8xMiksJ2dyYXknLDEsJ2Rhc2hlZCcpO307CmZvciBteSRpKDEsMiwzKQogIHskZ3ItPmxiKCBuZXcgTGFiZWwoJGkrMC4wNCwwLCRpLCdibGFjaycsJ2xlZnQnLCd0b3AnKSk7fTsKJGdyLT5sYiggbmV3IExhYmVsKDAsMCwnTycsJ2JsYWNrJywnY2VudGVyJywndG9wJykpOwokZ3ItPmxiKCBuZXcgTGFiZWwoMipjb3MocGkoKS82KSwyKnNpbihwaSgpLzYpLTAuMDQsJ0EnLCdibGFjaycsJ2NlbnRlcicsJ3RvcCcpKTsKJGdyLT5sYiggbmV3IExhYmVsKGNvcygtcGkoKS8zKSxzaW4oLXBpKCkvMyktMC4wNCwnQicsJ2JsYWNrJywnY2VudGVyJywndG9wJykpOwokZ3ItPmxiKCBuZXcgTGFiZWwoMipjb3MoMypwaSgpLzQpLDIqc2luKDMqcGkoKS80KS0wLjA0LCdDJywnYmxhY2snLCdjZW50ZXInLCd0b3AnKSk7CiRnci0+bGIoIG5ldyBMYWJlbCgyLjUqY29zKHBpKCkpLDIuNSpzaW4ocGkoKSktMC4wNCwnRCcsJ2JsYWNrJywnY2VudGVyJywndG9wJykpOwokZ3ItPnN0YW1wcyggY2xvc2VkX2NpcmNsZSgyKmNvcyhwaSgpLzYpLDIqc2luKHBpKCkvNiksJ2JsYWNrJykgKTsKJGdyLT5zdGFtcHMoIGNsb3NlZF9jaXJjbGUoY29zKC1waSgpLzMpLHNpbigtcGkoKS8zKSwnYmxhY2snKSApOwokZ3ItPnN0YW1wcyggY2xvc2VkX2NpcmNsZSgyKmNvcygzKnBpKCkvNCksMipzaW4oMypwaSgpLzQpLCdibGFjaycpICk7CiRnci0+c3RhbXBzKCBjbG9zZWRfY2lyY2xlKDIuNSpjb3MocGkoKSksMi41KnNpbihwaSgpKSwnYmxhY2snKSApOwoKQHI9KDIsMSwyLDIuNSk7CkBzPW1hcHstJF99KEByKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCk7CkB0PShGb3JtdWxhKCJwaS82IiksRm9ybXVsYSgiLXBpLzMiKSxGb3JtdWxhKCIoM3BpKS80IiksRm9ybXVsYSgicGkiKSk7CkB1PShGb3JtdWxhKCIoLTVwaSkvNiIpLEZvcm11bGEoIigycGkpLzMiKSxGb3JtdWxhKCIoLXBpKS80IiksRm9ybXVsYSgiMCIpKTsKCkJFR0lOX1BHTUwKRm9yIGVhY2ggb2YgdGhlIGdpdmVuIHBvaW50cyBnaXZlIHR3byBzZXRzIG9mIHBvbGFyIGNvb3JkaW5hdGVzIHRoYXQgaWRlbnRpZnkgaXQsIHdoZXJlIFtgLVxwaVxsdCBcdGhldGFcbGVxIFxwaVx0ZXh0ey59YF0KCj4+IFtAaW1hZ2UoaW5zZXJ0R3JhcGgoJGdyKSwgd2lkdGg9PjI4MilAXSogIDw8Cgo+PiBbQERhdGFUYWJsZShbW1tQR01MKCdQb2ludCcpLG1pZHJ1bGU9PicxJyxyb3djc3M9Pidib3JkZXItYm90dG9tOjJweCBzb2xpZDsnLGNlbGxjc3M9Pidib3JkZXItcmlnaHQ6MXB4IHNvbGlkOycsXSxbUEdNTCgnW2AocG9zaXRpdmUpIHJfMWBdJyksXSxbUEdNTCgnW2BcdGhldGFfMWBdJyksY2VsbGNzcz0+J2JvcmRlci1yaWdodDoxcHggc29saWQ7JyxdLFtQR01MKCdbYHJfMmBdJyksXSxbUEdNTCgnW2AobmVnYXRpdmUpIFx0aGV0YV8yYF0nKSxdLF0sW1tQR01MKCdbYEFgXScpLGNlbGxjc3M9Pidib3JkZXItcmlnaHQ6MXB4IHNvbGlkOycsXSxbUEdNTCgnW19deyRyWzBdfXs1fScpLF0sW1BHTUwoJ1tfXXskdFswXX17NX0nKSxjZWxsY3NzPT4nYm9yZGVyLXJpZ2h0OjFweCBzb2xpZDsnLF0sW1BHTUwoJ1tfXXskc1swXX17NX0nKSxdLFtQR01MKCdbX117JHVbMF19ezV9JyksXSxdLFtbUEdNTCgnW2BCYF0nKSxjZWxsY3NzPT4nYm9yZGVyLXJpZ2h0OjFweCBzb2xpZDsnLF0sW1BHTUwoJ1tfXXskclsxXX17NX0nKSxdLFtQR01MKCdbX117JHRbMV19ezV9JyksY2VsbGNzcz0+J2JvcmRlci1yaWdodDoxcHggc29saWQ7JyxdLFtQR01MKCdbX117JHNbMV19ezV9JyksXSxbUEdNTCgnW19deyR1WzFdfXs1fScpLF0sXSxbW1BHTUwoJ1tgQ2BdJyksY2VsbGNzcz0+J2JvcmRlci1yaWdodDoxcHggc29saWQ7JyxdLFtQR01MKCdbX117JHJbMl19ezV9JyksXSxbUEdNTCgnW19deyR0WzJdfXs1fScpLGNlbGxjc3M9Pidib3JkZXItcmlnaHQ6MXB4IHNvbGlkOycsXSxbUEdNTCgnW19deyRzWzJdfXs1fScpLF0sW1BHTUwoJ1tfXXskdVsyXX17NX0nKSxdLF0sW1tQR01MKCdbYERgXScpLGNlbGxjc3M9Pidib3JkZXItcmlnaHQ6MXB4IHNvbGlkOycsXSxbUEdNTCgnW19deyRyWzNdfXs1fScpLF0sW1BHTUwoJ1tfXXskdFszXX17NX0nKSxjZWxsY3NzPT4nYm9yZGVyLXJpZ2h0OjFweCBzb2xpZDsnLF0sW1BHTUwoJ1tfXXskc1szXX17NX0nKSxdLFtQR01MKCdbX117JHVbM119ezV9JyksXSxdLF0sYWxpZ249PidsfGNjfGNjJyxjb2x1bW5zY3NzPT5bJ2JvcmRlci1yaWdodDowcHggc29saWQ7JywnJywnYm9yZGVyLXJpZ2h0OjBweCBzb2xpZDsnLCcnLCcnLF0sY2VudGVyPT4wLCk7QF0qIDw8CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KW2BBPVAoMixccGkvNilgXSBhbmQgW2BQKC0yLC01XHBpLzYpXHRleHR7O31gXQoKW2BCPVAoMSwtXHBpLzMpYF0gYW5kIFtgUCgtMSwyXHBpLzMpXHRleHR7O31gXQoKW2BDPVAoMiwzXHBpLzQpYF0gYW5kIFtgUCgtMiwtXHBpLzQpXHRleHR7O31gXQoKW2BEPVAoMi41LFxwaSlgXSBhbmQgW2BQKDIuNSwtXHBpKVx0ZXh0ezt9YF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10343">For each of the given points give two sets of polar coordinates that identify it, where <span class="process-math">\(-\pi\lt \theta\leq \pi\text{.}\)</span></p>
+<div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/webwork/images/webwork-1309-image-1.png" class="contained"></div>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Point</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((positive) r_1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\theta_1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(r_2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((negative) \theta_2\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(A\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(B\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(C\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(D\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span></td>
+</tr>
+</table></div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1309')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1978"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div id="webwork-1310" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1310" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1x0aGV0fXtcdGhldGF9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlBvaW50Iik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpAeHk9KENvbXB1dGUoIihzcXJ0KDIpLHNxcnQoMikpIiksIENvbXB1dGUoIihzcXJ0KDIpLC1zcXJ0KDIpKSIpKTsKQHJ0PShDb21wdXRlKCIoc3FydCg1KSxhcmN0YW4oLTEvMikpIiksIENvbXB1dGUoIihzcXJ0KDUpLHBpK2FyY3RhbigtMS8yKSkiKSk7CkBydGV2PW1hcHskXy0+Y21wKHNob3dDb29yZGluYXRlSGludHMgPT4gMCwgY2hlY2tlciA9PiBzdWIgewogIG15ICgkY29ycmVjdCwkc3R1ZGVudCwkYW5zSGFzaCkgPSBAXzsKICBteSAoJHNyLCRzdCkgPSAkc3R1ZGVudC0+dmFsdWU7CiAgbXkgKCRjciwkY3QpID0gJGNvcnJlY3QtPnZhbHVlOwogIHJldHVybiAoKCRzcipjb3MoJHN0KSA9PSAkY3IqY29zKCRjdCkpIGFuZCAoJHNyKnNpbigkc3QpID09ICRjcipzaW4oJGN0KSkpOwp9KX0oQHJ0KTsKCkJFR0lOX1BHTUwKQ29udmVydCBlYWNoIG9mIHRoZSBmb2xsb3dpbmcgcG9sYXIgY29vcmRpbmF0ZXMgdG8gcmVjdGFuZ3VsYXIsIGFuZCBlYWNoIG9mIHRoZSBmb2xsb3dpbmcgcmVjdGFuZ3VsYXIgY29vcmRpbmF0ZXMgdG8gcG9sYXIuCgphLiAgW2BBPVAoMixccGkvNClgXQoKICAgIFtgKHgseSk9YF1bX117JHh5WzBdfXszMH0KCgphLiAgW2BCPVAoMiwtXHBpLzQpYF0KCiAgICBbYCh4LHkpPWBdW19deyR4eVsxXX17MzB9CgoKYS4gIFtgQz0oMiwtMSlgXQoKICAgIFtgUChyLFx0aGV0YSk9UGBdW19deyRydGV2WzBdfXszMH0KCgphLiAgW2BEPSgtMiwxKWBdCgogICAgW2BQKHIsXHRoZXRhKT1QYF1bX117JHJ0ZXZbMV19ezMwfQoKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpbYEE9KFxzcXJ0ezJ9LFxzcXJ0ezJ9KWBdCgpbYEI9KFxzcXJ0ezJ9LC1cc3FydHsyfSlgXQoKW2BDPVAoXHNxcnR7NX0sLTAuNDYpYF0KCltgRD1QKFxzcXJ0ezV9LDIuNjgpYF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10364">Convert each of the following polar coordinates to rectangular, and each of the following rectangular coordinates to polar.</p>
+<ol id="p-10365" class="lower-alpha">
+<li id="li-2143">
+<p id="p-10366"><span class="process-math">\(A=P(2,\pi/4)\)</span></p>
+<p id="p-10367"><span class="process-math">\((x,y)=\)</span><span class="fillin underline" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p>
+</li>
+<li id="li-2144">
+<p id="p-10368"><span class="process-math">\(B=P(2,-\pi/4)\)</span></p>
+<p id="p-10369"><span class="process-math">\((x,y)=\)</span><span class="fillin underline" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p>
+</li>
+<li id="li-2145">
+<p id="p-10370"><span class="process-math">\(C=(2,-1)\)</span></p>
+<p id="p-10371"><span class="process-math">\(P(r,\theta)=P\)</span><span class="fillin underline" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p>
+</li>
+<li id="li-2146">
+<p id="p-10372"><span class="process-math">\(D=(-2,1)\)</span></p>
+<p id="p-10373"><span class="process-math">\(P(r,\theta)=P\)</span><span class="fillin underline" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p>
+</li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1310')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1979"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div id="webwork-1311" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1311" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1x0aGV0fXtcdGhldGF9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlBvaW50Iik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpAeHk9KENvbXB1dGUoIigtMywwKSIpLCBDb21wdXRlKCIoLTEvMixzcXJ0KDMpLzIpIikpOwpAcnQ9KENvbXB1dGUoIig0LHBpLzIpIiksIENvbXB1dGUoIigyLC1waS8zKSIpKTsKQHJ0ZXY9bWFweyRfLT5jbXAoc2hvd0Nvb3JkaW5hdGVIaW50cyA9PiAwLCBjaGVja2VyID0+IHN1YiB7CiAgbXkgKCRjb3JyZWN0LCRzdHVkZW50LCRhbnNIYXNoKSA9IEBfOwogIG15ICgkc3IsJHN0KSA9ICRzdHVkZW50LT52YWx1ZTsKICBteSAoJGNyLCRjdCkgPSAkY29ycmVjdC0+dmFsdWU7CiAgcmV0dXJuICgoJHNyKmNvcygkc3QpID09ICRjcipjb3MoJGN0KSkgYW5kICgkc3Iqc2luKCRzdCkgPT0gJGNyKnNpbigkY3QpKSk7Cn0pfShAcnQpOwoKQkVHSU5fUEdNTApDb252ZXJ0IGVhY2ggb2YgdGhlIGZvbGxvd2luZyBwb2xhciBjb29yZGluYXRlcyB0byByZWN0YW5ndWxhciwgYW5kIGVhY2ggb2YgdGhlIGZvbGxvd2luZ3JlY3Rhbmd1bGFyIGNvb3JkaW5hdGVzIHRvIHBvbGFyLgoKYS4gIFtgQT1QKDMsXHBpKWBdCgogICAgW2AoeCx5KT1gXVtfXXskeHlbMF19ezMwfQoKCmEuICBbYEI9UCgxLDJccGkvMylgXQoKICAgIFtgKHgseSk9YF1bX117JHh5WzFdfXszMH0KCgphLiAgW2BDPSgwLDQpYF0KCiAgICBbYFAocixcdGhldGEpPVBgXVtfXXskcnRldlswXX17MzB9CgoKYS4gIFtgRD0oMSwtXHNxcnR7M30pYF0KCiAgICBbYFAocixcdGhldGEpPVBgXVtfXXskcnRldlsxXX17MzB9CgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCltgQT0oLTMsMClgXQoKW2BCPSgtMS8yLFxzcXJ0ezN9LzIpYF0KCltgQz1QKDQsXHBpLzIpYF0KCltgRD1QKDIsLVxwaS8zKWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10382">Convert each of the following polar coordinates to rectangular, and each of the followingrectangular coordinates to polar.</p>
+<ol id="p-10383" class="lower-alpha">
+<li id="li-2147">
+<p id="p-10384"><span class="process-math">\(A=P(3,\pi)\)</span></p>
+<p id="p-10385"><span class="process-math">\((x,y)=\)</span><span class="fillin underline" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p>
+</li>
+<li id="li-2148">
+<p id="p-10386"><span class="process-math">\(B=P(1,2\pi/3)\)</span></p>
+<p id="p-10387"><span class="process-math">\((x,y)=\)</span><span class="fillin underline" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p>
+</li>
+<li id="li-2149">
+<p id="p-10388"><span class="process-math">\(C=(0,4)\)</span></p>
+<p id="p-10389"><span class="process-math">\(P(r,\theta)=P\)</span><span class="fillin underline" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p>
+</li>
+<li id="li-2150">
+<p id="p-10390"><span class="process-math">\(D=(1,-\sqrt{3})\)</span></p>
+<p id="p-10391"><span class="process-math">\(P(r,\theta)=P\)</span><span class="fillin underline" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p>
+</li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1311')">Make Interactive</button></div>
+</div></article><div class="exercisegroup" id="exercisegroup-223">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-262"><p id="p-10400">In the following exercises, graph the polar function on the given interval.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1980"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-10401"><span class="process-math">\(r=2\text{,}\)</span><span class="process-math">\(0\leq \theta\leq \pi/2\)</span></p></article><article class="exercise exercise-like" id="exercise-1981"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-10402"><span class="process-math">\(\theta=\pi/6\text{,}\)</span><span class="process-math">\(-1\leq r\leq 2\)</span></p></article><article class="exercise exercise-like" id="exercise-1982"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-10403"><span class="process-math">\(r=1-\cos(\theta)\text{,}\)</span><span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1983"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-10404"><span class="process-math">\(r=2+\sin(\theta)\text{,}\)</span><span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1984"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-10405"><span class="process-math">\(r=2-\sin(\theta)\text{,}\)</span><span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1985"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-10406"><span class="process-math">\(r=1-2\sin(\theta)\text{,}\)</span><span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1986"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-10407"><span class="process-math">\(r=1+2\sin(\theta)\text{,}\)</span><span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1987"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-10408"><span class="process-math">\(r=\cos(2\theta)\text{,}\)</span><span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1988"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-10409"><span class="process-math">\(r=\sin(3\theta)\text{,}\)</span><span class="process-math">\([0,\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1989"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-10410"><span class="process-math">\(r=\cos(\theta/3)\text{,}\)</span><span class="process-math">\([0,3\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1990"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-10411"><span class="process-math">\(r=\cos(2\theta/3)\text{,}\)</span><span class="process-math">\([0,6\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1991"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-10412"><span class="process-math">\(r=\theta/2\text{,}\)</span><span class="process-math">\([0,4\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1992"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-10413"><span class="process-math">\(r=3\sin(\theta)\text{,}\)</span><span class="process-math">\([0,\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1993"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-10414"><span class="process-math">\(r=2\cos(\theta)\text{,}\)</span><span class="process-math">\([0,\pi/2]\)</span></p></article><article class="exercise exercise-like" id="exercise-1994"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-10415"><span class="process-math">\(r=\cos(\theta) \sin(\theta)\text{,}\)</span><span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1995"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-10416"><span class="process-math">\(r=\theta^2-(\pi/2)^2\text{,}\)</span><span class="process-math">\([-\pi,\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1996"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-10417"><span class="process-math">\(\ds r=\frac{3}{5\sin(\theta) -\cos(\theta) }\text{,}\)</span><span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1997"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-10418"><span class="process-math">\(\ds r=\frac{-2}{3\cos(\theta) -2\sin(\theta) }\text{,}\)</span><span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-1998"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-10419"><span class="process-math">\(\ds r=3\sec(\theta)\text{,}\)</span><span class="process-math">\((-\pi/2,\pi/2)\)</span></p></article><article class="exercise exercise-like" id="exercise-1999"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<p id="p-10420"><span class="process-math">\(\ds r=3\csc(\theta)\text{,}\)</span><span class="process-math">\((0,\pi)\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-224">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-263"><p id="p-10421">In the following exercises, convert the polar equation to a rectangular equation.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2000"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<div id="webwork-1312" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1312" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CiRlcT1JbXBsaWNpdEVxdWF0aW9uKCIoeC0zKV4yK3leMj05IiwgbGltaXRzPT5bWy0xLDddLFstNCw0XV0pOwoKQkVHSU5fUEdNTApDb252ZXJ0IHRoZSBwb2xhciBlcXVhdGlvbiB0byBhIHJlY3Rhbmd1bGFyIGVxdWF0aW9uLgoKW2ByPTZcY29zKFx0aGV0YSlgXQoKW19deyRlcX17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10422">Convert the polar equation to a rectangular equation.</p>
+<p id="p-10423"><span class="process-math">\(r=6\cos(\theta)\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1312')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2001"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<div id="webwork-1313" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1313" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CiRlcT1JbXBsaWNpdEVxdWF0aW9uKCJ4XjIrKHkrMileMj00IiwgbGltaXRzPT5bWy0zLDNdLFstNSwxXV0pOwoKQkVHSU5fUEdNTApDb252ZXJ0IHRoZSBwb2xhciBlcXVhdGlvbiB0byBhIHJlY3Rhbmd1bGFyIGVxdWF0aW9uLgoKW2ByPS00XHNpbihcdGhldGEpYF0KCltfXXskZXF9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10425">Convert the polar equation to a rectangular equation.</p>
+<p id="p-10426"><span class="process-math">\(r=-4\sin(\theta)\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1313')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2002"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<div id="webwork-1314" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1314" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CiRlcT1JbXBsaWNpdEVxdWF0aW9uKCIoeC0xLzIpXjIrKHktMS8yKV4yPTEvMiIsIGxpbWl0cz0+W1stMSwyXSxbLTEsMl1dKTsKCkJFR0lOX1BHTUwKQ29udmVydCB0aGUgcG9sYXIgZXF1YXRpb24gdG8gYSByZWN0YW5ndWxhciBlcXVhdGlvbi4KCltgcj1cY29zKFx0aGV0YSkgK1xzaW4oXHRoZXRhKWBdCgpbX117JGVxfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10428">Convert the polar equation to a rectangular equation.</p>
+<p id="p-10429"><span class="process-math">\(r=\cos(\theta) +\sin(\theta)\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1314')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2003"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<div id="webwork-1315" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1315" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CiRlcT1JbXBsaWNpdEVxdWF0aW9uKCJ5PTIvNXgrNy81IiwgbGltaXRzPT5bWy0zLDNdLFstMiw0XV0pOwoKQkVHSU5fUEdNTApDb252ZXJ0IHRoZSBwb2xhciBlcXVhdGlvbiB0byBhIHJlY3Rhbmd1bGFyIGVxdWF0aW9uLgoKW2ByPVxkZnJhY3s3fXs1XHNpbihcdGhldGEpLTJcY29zKFx0aGV0YSl9YF0KCltfXXskZXF9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10431">Convert the polar equation to a rectangular equation.</p>
+<p id="p-10432"><span class="process-math">\(r=\dfrac{7}{5\sin(\theta)-2\cos(\theta)}\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1315')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2004"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<div id="webwork-1316" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1316" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CiRlcT1JbXBsaWNpdEVxdWF0aW9uKCJ4PTMiLCBsaW1pdHM9PltbMCw2XSxbLTMsM11dKTsKCkJFR0lOX1BHTUwKQ29udmVydCB0aGUgcG9sYXIgZXF1YXRpb24gdG8gYSByZWN0YW5ndWxhciBlcXVhdGlvbi4KCltgcj1cZGZyYWN7M317XGNvcyhcdGhldGEpfWBdCgpbX117JGVxfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10434">Convert the polar equation to a rectangular equation.</p>
+<p id="p-10435"><span class="process-math">\(r=\dfrac{3}{\cos(\theta)}\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1316')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2005"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<div id="webwork-1317" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1317" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CiRlcT1JbXBsaWNpdEVxdWF0aW9uKCJ5PTQiLCBsaW1pdHM9PltbLTMsM10sWzEsN11dKTsKCkJFR0lOX1BHTUwKQ29udmVydCB0aGUgcG9sYXIgZXF1YXRpb24gdG8gYSByZWN0YW5ndWxhciBlcXVhdGlvbi4KCltgcj1cZGZyYWN7NH17XHNpbihcdGhldGEpfWBdCgpbX117JGVxfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10437">Convert the polar equation to a rectangular equation.</p>
+<p id="p-10438"><span class="process-math">\(r=\dfrac{4}{\sin(\theta)}\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1317')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2006"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<p id="p-10440"><span class="process-math">\(\ds r=\tan(\theta)\)</span></p></article><article class="exercise exercise-like" id="exercise-2007"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<p id="p-10442"><span class="process-math">\(\ds r=\cot\theta\)</span></p></article><article class="exercise exercise-like" id="exercise-2008"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<div id="webwork-1318" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1318" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkltcGxpY2l0RXF1YXRpb24iKTsKJGVxPUltcGxpY2l0RXF1YXRpb24oInheMit5XjI9NCIsIGxpbWl0cz0+W1stMywzXSxbLTMsM11dKTsKCkJFR0lOX1BHTUwKQ29udmVydCB0aGUgcG9sYXIgZXF1YXRpb24gdG8gYSByZWN0YW5ndWxhciBlcXVhdGlvbi4KCltgcj0yYF0KCltfXXskZXF9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10444">Convert the polar equation to a rectangular equation.</p>
+<p id="p-10445"><span class="process-math">\(r=2\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1318')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2009"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<div id="webwork-1319" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1319" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CiRlcT1JbXBsaWNpdEVxdWF0aW9uKCJ5PXgvc3FydCgzKSIsIGxpbWl0cz0+W1stMywzXSxbLTMsM11dKTsKCkJFR0lOX1BHTUwKQ29udmVydCB0aGUgcG9sYXIgZXF1YXRpb24gdG8gYSByZWN0YW5ndWxhciBlcXVhdGlvbi4KCltgXHRoZXRhPVxwaS82YF0KCltfXXskZXF9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10447">Convert the polar equation to a rectangular equation.</p>
+<p id="p-10448"><span class="process-math">\(\theta=\pi/6\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1319')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-225">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-264"><p id="p-10450">In the following exercises, convert the rectangular equation to a polar equation.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2010"><h6 class="heading"><span class="codenumber">41<span class="period">.</span></span></h6>
+<div id="webwork-1320" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1320" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUocj0+J1JlYWwnLHRoZXRhPT5bJ1JlYWwnLFRlWD0+J1x0aGV0YSddKTsKJGVxPUltcGxpY2l0RXF1YXRpb24oInRoZXRhPXBpLzQiLCBsaW1pdHM9PltbMCwzXSxbMCwzXV0pOwoKQkVHSU5fUEdNTApDb252ZXJ0IHRoZSByZWN0YW5ndWxhciBlcXVhdGlvbiB0byBhIHBvbGFyIGVxdWF0aW9uLiBUeXBlICdbfHRoZXRhfF0qJyBmb3IgW2BcdGhldGFcdGV4dHsufWBdCgpbYHk9eGBdCgpbX117JGVxfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10451">Convert the rectangular equation to a polar equation. Type ‘<code class="code-inline tex2jax_ignore">theta</code>’ for <span class="process-math">\(\theta\text{.}\)</span></p>
+<p id="p-10452"><span class="process-math">\(y=x\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1320')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2011"><h6 class="heading"><span class="codenumber">42<span class="period">.</span></span></h6>
+<div id="webwork-1321" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1321" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUocj0+J1JlYWwnLHRoZXRhPT5bJ1JlYWwnLFRlWD0+J1x0aGV0YSddKTsKJGVxPUltcGxpY2l0RXF1YXRpb24oInI9Ny8oc2luKHRoZXRhKSAtNGNvcyh0aGV0YSkgKSIsIGxpbWl0cz0+W1sxLjUsM10sW3BpKCkvMiwzKnBpKCkvMl1dKTsKCkJFR0lOX1BHTUwKQ29udmVydCB0aGUgcmVjdGFuZ3VsYXIgZXF1YXRpb24gdG8gYSBwb2xhciBlcXVhdGlvbi4gVHlwZSAnW3x0aGV0YXxdKicgZm9yIFtgXHRoZXRhXHRleHR7Ln1gXQoKW2B5PTR4KzdgXQoKW19deyRlcX17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10454">Convert the rectangular equation to a polar equation. Type ‘<code class="code-inline tex2jax_ignore">theta</code>’ for <span class="process-math">\(\theta\text{.}\)</span></p>
+<p id="p-10455"><span class="process-math">\(y=4x+7\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1321')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2012"><h6 class="heading"><span class="codenumber">43<span class="period">.</span></span></h6>
+<div id="webwork-1322" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1322" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUocj0+J1JlYWwnLHRoZXRhPT5bJ1JlYWwnLFRlWD0+J1x0aGV0YSddKTsKJGVxPUltcGxpY2l0RXF1YXRpb24oInI9NXNlYyh0aGV0YSkiLCBsaW1pdHM9PltbNCwxMF0sWy1waSgpLzQscGkoKS80XV0pOwoKQkVHSU5fUEdNTApDb252ZXJ0IHRoZSByZWN0YW5ndWxhciBlcXVhdGlvbiB0byBhIHBvbGFyIGVxdWF0aW9uLiBUeXBlICdbfHRoZXRhfF0qJyBmb3IgW2BcdGhldGFcdGV4dHsufWBdCgpbYHg9NWBdCgpbX117JGVxfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10457">Convert the rectangular equation to a polar equation. Type ‘<code class="code-inline tex2jax_ignore">theta</code>’ for <span class="process-math">\(\theta\text{.}\)</span></p>
+<p id="p-10458"><span class="process-math">\(x=5\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1322')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2013"><h6 class="heading"><span class="codenumber">44<span class="period">.</span></span></h6>
+<div id="webwork-1323" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1323" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUocj0+J1JlYWwnLHRoZXRhPT5bJ1JlYWwnLFRlWD0+J1x0aGV0YSddKTsKJGVxPUltcGxpY2l0RXF1YXRpb24oInI9NWNzYyh0aGV0YSkiLCBsaW1pdHM9PltbNCwxMF0sW3BpKCkvNCwzKnBpKCkvNF1dKTsKCkJFR0lOX1BHTUwKQ29udmVydCB0aGUgcmVjdGFuZ3VsYXIgZXF1YXRpb24gdG8gYSBwb2xhciBlcXVhdGlvbi4gVHlwZSAnW3x0aGV0YXxdKicgZm9yIFtgXHRoZXRhXHRleHR7Ln1gXQoKW2B5PTVgXQoKW19deyRlcX17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10460">Convert the rectangular equation to a polar equation. Type ‘<code class="code-inline tex2jax_ignore">theta</code>’ for <span class="process-math">\(\theta\text{.}\)</span></p>
+<p id="p-10461"><span class="process-math">\(y=5\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1323')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2014"><h6 class="heading"><span class="codenumber">45<span class="period">.</span></span></h6>
+<div id="webwork-1324" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1324" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUocj0+J1JlYWwnLHRoZXRhPT5bJ1JlYWwnLFRlWD0+J1x0aGV0YSddKTsKJGVxPUltcGxpY2l0RXF1YXRpb24oInI9Y29zKHRoZXRhKS9zaW5eMih0aGV0YSkiLCBsaW1pdHM9PltbMCw0XSxbLXBpKCkvMixwaSgpLzJdXSk7CgpCRUdJTl9QR01MCkNvbnZlcnQgdGhlIHJlY3Rhbmd1bGFyIGVxdWF0aW9uIHRvIGEgcG9sYXIgZXF1YXRpb24uIFR5cGUgJ1t8dGhldGF8XSonIGZvciBbYFx0aGV0YVx0ZXh0ey59YF0KCltgeD15XjJgXQoKW19deyRlcX17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10463">Convert the rectangular equation to a polar equation. Type ‘<code class="code-inline tex2jax_ignore">theta</code>’ for <span class="process-math">\(\theta\text{.}\)</span></p>
+<p id="p-10464"><span class="process-math">\(x=y^2\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1324')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2015"><h6 class="heading"><span class="codenumber">46<span class="period">.</span></span></h6>
+<p id="p-10466"><span class="process-math">\(\ds x^2y=1\)</span></p></article><article class="exercise exercise-like" id="exercise-2016"><h6 class="heading"><span class="codenumber">47<span class="period">.</span></span></h6>
+<div id="webwork-1325" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1325" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJJbXBsaWNpdEVxdWF0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdGhldH17XHRoZXRhfVwpPC9kaXY+JykpOwpDb250ZXh0KCJJbXBsaWNpdEVxdWF0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUocj0+J1JlYWwnLHRoZXRhPT5bJ1JlYWwnLFRlWD0+J1x0aGV0YSddKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRlcT1JbXBsaWNpdEVxdWF0aW9uKCJyPXNxcnQoNykiLCBsaW1pdHM9PltbMCw0XSxbMCwyKnBpKCldXSk7CgpCRUdJTl9QR01MCkNvbnZlcnQgdGhlIHJlY3Rhbmd1bGFyIGVxdWF0aW9uIHRvIGEgcG9sYXIgZXF1YXRpb24uIFR5cGUgJ1t8dGhldGF8XSonIGZvciBbYFx0aGV0YVx0ZXh0ey59YF0KCltgeF4yK3leMj03YF0KCltfXXskZXF9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-10468">Convert the rectangular equation to a polar equation. Type ‘<code class="code-inline tex2jax_ignore">theta</code>’ for <span class="process-math">\(\theta\text{.}\)</span></p>
+<p id="p-10469"><span class="process-math">\(x^2+y^2=7\)</span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1325')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2017"><h6 class="heading"><span class="codenumber">48<span class="period">.</span></span></h6>
+<p id="p-10471"><span class="process-math">\(\ds (x+1)^2+y^2=1\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-226">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-265"><p id="p-10473">In the following exercises, find the points of intersection of the polar graphs.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2018"><h6 class="heading"><span class="codenumber">49<span class="period">.</span></span></h6>
+<div id="webwork-1326" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1326" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1x0aGV0fXtcdGhldGF9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlBvaW50Iik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPm9wZXJhdG9ycy0+YWRkKCdQJz0+e3ByZWNlZGVuY2U9PjYsYXNzb2NpYXRpdml0eT0+J2xlZnQnLHR5cGU9Pid1bmFyeScsc3RyaW5nPT4iUCIsY2xhc3M9PidQYXJzZXI6OlVPUDo6cGx1cyd9KTsKJHJ0cz1Db21wdXRlKCJQKHNxcnQoMykvMixwaS82KSwgUCgwLHBpLzIpLCBQKC1zcXJ0KDMpLzIsNXBpLzYpIik7CiRydHNldj0kcnRzLT5jbXAoc2hvd0Nvb3JkaW5hdGVIaW50cyA9PiAwLCBjaGVja2VyID0+IHN1YiB7CiAgbXkgKCRjb3JyZWN0LCRzdHVkZW50LCRhbnNIYXNoKSA9IEBfOwogIG15ICgkc3IsJHN0KSA9ICRzdHVkZW50LT52YWx1ZTsKICBteSAoJGNyLCRjdCkgPSAkY29ycmVjdC0+dmFsdWU7CiAgcmV0dXJuICgoJHNyKmNvcygkc3QpID09ICRjcipjb3MoJGN0KSkgYW5kICgkc3Iqc2luKCRzdCkgPT0gJGNyKnNpbigkY3QpKSk7Cn0pOwoKQkVHSU5fUEdNTApGaW5kIHRoZSBwb2ludHMgd2hlcmUgW2ByPVxzaW4oMlx0aGV0YSlgXSBpbnRlcnNlY3RzIFtgcj1cY29zKFx0aGV0YSlgXSBvbiBbYFswLFxwaV1cdGV4dHssfWBdIGV4cHJlc3NlZCBpbiBwb2xhciBjb29yZGluYXRlcyB3aXRoIG5vdGF0aW9uIFtgUChyLFx0aGV0YSlcdGV4dHsufWBdCgpbX117JHJ0c2V2fXs2MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10474">Find the points where <span class="process-math">\(r=\sin(2\theta)\)</span> intersects <span class="process-math">\(r=\cos(\theta)\)</span> on <span class="process-math">\([0,\pi]\text{,}\)</span> expressed in polar coordinates with notation <span class="process-math">\(P(r,\theta)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1326')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2019"><h6 class="heading"><span class="codenumber">50<span class="period">.</span></span></h6>
+<p id="p-10476"><span class="process-math">\(r=\cos(2\theta)\)</span> and <span class="process-math">\(r=\cos(\theta)\)</span> on <span class="process-math">\([0,\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-2020"><h6 class="heading"><span class="codenumber">51<span class="period">.</span></span></h6>
+<div id="webwork-1327" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1327" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1x0aGV0fXtcdGhldGF9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlBvaW50Iik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPm9wZXJhdG9ycy0+YWRkKCdQJz0+e3ByZWNlZGVuY2U9PjYsYXNzb2NpYXRpdml0eT0+J2xlZnQnLHR5cGU9Pid1bmFyeScsc3RyaW5nPT4iUCIsY2xhc3M9PidQYXJzZXI6OlVPUDo6cGx1cyd9KTsKJHJ0cz1Db21wdXRlKCJQKDAsMCksIFAoc3FydCgyKSxwaS80KSIpOwokcnRzZXY9JHJ0cy0+Y21wKHNob3dDb29yZGluYXRlSGludHMgPT4gMCwgY2hlY2tlciA9PiBzdWIgewogIG15ICgkY29ycmVjdCwkc3R1ZGVudCwkYW5zSGFzaCkgPSBAXzsKICBteSAoJHNyLCRzdCkgPSAkc3R1ZGVudC0+dmFsdWU7CiAgbXkgKCRjciwkY3QpID0gJGNvcnJlY3QtPnZhbHVlOwogIHJldHVybiAoKCRzcipjb3MoJHN0KSA9PSAkY3IqY29zKCRjdCkpIGFuZCAoJHNyKnNpbigkc3QpID09ICRjcipzaW4oJGN0KSkpOwp9KTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgcG9pbnRzIHdoZXJlIFtgcj0yXGNvcyhcdGhldGEpYF0gaW50ZXJzZWN0cyBbYHI9MlxzaW4oXHRoZXRhKWBdIG9uIFtgWzAsXHBpXVx0ZXh0eyx9YF0gZXhwcmVzc2VkIGluIHBvbGFyIGNvb3JkaW5hdGVzIHdpdGggbm90YXRpb24gW2BQKHIsXHRoZXRhKVx0ZXh0ey59YF0KCltfXXskcnRzZXZ9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10478">Find the points where <span class="process-math">\(r=2\cos(\theta)\)</span> intersects <span class="process-math">\(r=2\sin(\theta)\)</span> on <span class="process-math">\([0,\pi]\text{,}\)</span> expressed in polar coordinates with notation <span class="process-math">\(P(r,\theta)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1327')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2021"><h6 class="heading"><span class="codenumber">52<span class="period">.</span></span></h6>
+<p id="p-10480"><span class="process-math">\(r=\sin(\theta)\)</span> and <span class="process-math">\(r=\sqrt{3}+3\sin(\theta)\)</span> on <span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-2022"><h6 class="heading"><span class="codenumber">53<span class="period">.</span></span></h6>
+<p id="p-10482"><span class="process-math">\(r=\sin(3\theta)\)</span> and <span class="process-math">\(r=\cos(3\theta)\)</span> on <span class="process-math">\([0,\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-2023"><h6 class="heading"><span class="codenumber">54<span class="period">.</span></span></h6>
+<div id="webwork-1328" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1328" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1x0aGV0fXtcdGhldGF9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlBvaW50Iik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPm9wZXJhdG9ycy0+YWRkKCdQJz0+e3ByZWNlZGVuY2U9PjYsYXNzb2NpYXRpdml0eT0+J2xlZnQnLHR5cGU9Pid1bmFyeScsc3RyaW5nPT4iUCIsY2xhc3M9PidQYXJzZXI6OlVPUDo6cGx1cyd9KTsKJHJ0cz1Db21wdXRlKCJQKDMvMixwaS8zKSwgUCgzLzIsLXBpLzMpLCBQKDAscGkpIik7CiRydHNldj0kcnRzLT5jbXAoc2hvd0Nvb3JkaW5hdGVIaW50cyA9PiAwLCBjaGVja2VyID0+IHN1YiB7CiAgbXkgKCRjb3JyZWN0LCRzdHVkZW50LCRhbnNIYXNoKSA9IEBfOwogIG15ICgkc3IsJHN0KSA9ICRzdHVkZW50LT52YWx1ZTsKICBteSAoJGNyLCRjdCkgPSAkY29ycmVjdC0+dmFsdWU7CiAgcmV0dXJuICgoJHNyKmNvcygkc3QpID09ICRjcipjb3MoJGN0KSkgYW5kICgkc3Iqc2luKCRzdCkgPT0gJGNyKnNpbigkY3QpKSk7Cn0pOwoKQkVHSU5fUEdNTApGaW5kIHRoZSBwb2ludHMgd2hlcmUgW2ByPTNcY29zKFx0aGV0YSlgXSBpbnRlcnNlY3RzIFtgcj0xK1xjb3MoXHRoZXRhKWBdIG9uIFtgWy1ccGksXHBpXVx0ZXh0eyx9YF0gZXhwcmVzc2VkIGluIHBvbGFyIGNvb3JkaW5hdGVzIHdpdGggbm90YXRpb24gW2BQKHIsXHRoZXRhKVx0ZXh0ey59YF0KCltfXXskcnRzZXZ9ezYwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-10484">Find the points where <span class="process-math">\(r=3\cos(\theta)\)</span> intersects <span class="process-math">\(r=1+\cos(\theta)\)</span> on <span class="process-math">\([-\pi,\pi]\text{,}\)</span> expressed in polar coordinates with notation <span class="process-math">\(P(r,\theta)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1328')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2024"><h6 class="heading"><span class="codenumber">55<span class="period">.</span></span></h6>
+<p id="p-10486"><span class="process-math">\(r=1\)</span> and <span class="process-math">\(r=2\sin(2\theta)\)</span> on <span class="process-math">\([0,2\pi]\)</span></p></article><article class="exercise exercise-like" id="exercise-2025"><h6 class="heading"><span class="codenumber">56<span class="period">.</span></span></h6>
+<p id="p-10488"><span class="process-math">\(r=1-\cos(\theta)\)</span> and <span class="process-math">\(r=1+\sin(\theta)\)</span> on <span class="process-math">\([0,2\pi]\)</span></p></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-2026"><h5 class="heading"><span class="codenumber">57<span class="period">.</span></span></h5>
+<p id="p-10490">Pick a integer value for <span class="process-math">\(n\text{,}\)</span> where <span class="process-math">\(n\neq 2,3\text{,}\)</span> and use technology to plot <span class="process-math">\(\ds r=\sin\left(\frac mn\theta\right)\)</span> for three different integer values of <span class="process-math">\(m\text{.}\)</span> Sketch these and determine a minimal interval on which the entire graph is shown.</p></article><article class="exercise exercise-like" id="exercise-2027"><h5 class="heading"><span class="codenumber">58<span class="period">.</span></span></h5>
+<p id="p-10492">Create your own polar function, <span class="process-math">\(r=f(\theta)\)</span> and sketch it. Describe why the graph looks as it does.</p></article></article></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:50:25Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.5.6.1</span><span class="period">.</span>
+</h4>
+<p>We can parametrize the circular boundary of <span class="process-math">\(R\)</span> with the vector-valued function <span class="process-math">\(\la 2\cos u,2\sin u\ra\text{,}\)</span> where <span class="process-math">\(0\leq u\leq 2\pi\text{.}\)</span> We can obtain the interior of <span class="process-math">\(R\)</span> by scaling this function by a variable amount, i.e., by multiplying by <span class="process-math">\(v\text{:}\)</span> <span class="process-math">\(\la 2v\cos u,2v\sin u\ra\text{,}\)</span> where <span class="process-math">\(0\leq v\leq 1\text{.}\)</span></p>
+<p>It is important to understand the role of <span class="process-math">\(v\)</span> in the above function. When <span class="process-math">\(v=1\text{,}\)</span> we get the boundary of <span class="process-math">\(R\text{,}\)</span> a circle of radius 2. When <span class="process-math">\(v=0\text{,}\)</span> we simply get the point <span class="process-math">\((0,0)\text{,}\)</span> the center of <span class="process-math">\(R\)</span> (which can be thought of as a circle with radius of 0). When <span class="process-math">\(v=1/2\text{,}\)</span> we get the circle of radius <span class="process-math">\(1\)</span> that is centered at the origin, which is the circle <em class="emphasis">halfway</em> between the boundary and the center. As <span class="process-math">\(v\)</span> varies from 0 to 1, we create a series of concentric circles that fill out all of <span class="process-math">\(R\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/fig_parsurf2_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/fig_parsurf2_3D.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.5.7<span class="period">.</span></span><span class="space"> </span>The surface parametrized in <a href="" class="xref" data-knowl="./knowl/ex_parsurf2.html" title="Example 15.5.6: Parametrizing a surface over a circular disk">Example 15.5.6</a></figcaption></figure><p>Thus far, we have determined the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> components of our parametrization of the surface: <span class="process-math">\(x=2v\cos u\)</span> and <span class="process-math">\(y=2v\sin u\text{.}\)</span> We find the <span class="process-math">\(z\)</span> component simply by using <span class="process-math">\(z = f(x,y) = x^2+2y^2\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+z = (2v\cos u)^2+2(2v\sin u)^2 = 4v^2\cos^2u+8v^2\sin^2u\text{.}
+\end{equation*}
+</div>
+<p>Thus <span class="process-math">\(\vec r(u,v) = \langle 2v\cos u,2v\sin u,4v^2\cos^2u+8v^2\sin^2u\rangle\text{,}\)</span> <span class="process-math">\(0\leq u\leq 2\pi\text{,}\)</span> <span class="process-math">\(0\leq v\leq 1\text{,}\)</span> which is graphed in <a href="" class="xref" data-knowl="./knowl/fig_parsurf2.html" title="Figure 15.5.7">Figure 15.5.7</a>. The way that this graphic was generated highlights how the surface was parametrized. When viewing from above, one can see lines emanating from the origin; they represent different values of <span class="process-math">\(u\)</span> as <span class="process-math">\(u\)</span> sweeps from an angle of 0 up to <span class="process-math">\(2\pi\text{.}\)</span> One can also see concentric circles, each corresponding to a different value of <span class="process-math">\(v\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_parametric_surfaces.html#solution-1552" class="internal">in-context</a></span>
+</body>
+</html>

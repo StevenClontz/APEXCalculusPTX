@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:48:12Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">14.3.13.1</span><span class="period">.</span>
+</h3>
+<p>From the outset, we should recognize that knowing <em class="emphasis">how to set up</em> this problem is probably more important than knowing <em class="emphasis">how to compute the integrals.</em> The iterated integral to come is not “hard” to evaluate, though it is long, requiring lots of algebra. Once the proper iterated integral is determined, one can use readily available technology to help compute the final answer.</p>
+<p>The region <span class="process-math">\(R\)</span> that we are integrating over is bound by <span class="process-math">\(0\leq r\leq \cos(3\theta)\text{,}\)</span> for <span class="process-math">\(0\leq \theta\leq\pi\)</span> (note that this rose curve is traced out on the interval <span class="process-math">\([0,\pi]\text{,}\)</span> not <span class="process-math">\([0,2\pi]\)</span>). This gives us our bounds of integration. The integrand is <span class="process-math">\(z=1-x+0.1y\text{;}\)</span> converting to polar, we have that the volume <span class="process-math">\(V\)</span> is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+V = \iint_R f(x,y)\, dA = \int_0^\pi\int_0^{\cos(3\theta)}\big(1-r\cos(\theta) +0.1r\sin(\theta) \big)r\, dr\, d\theta\text{.}
+\end{equation*}
+</div>
+<p>Distributing the <span class="process-math">\(r\text{,}\)</span> the inner integral is easy to evaluate, leading to</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^\pi \left(\frac12\cos^2(3\theta)-\frac13\cos^3(3\theta)\cos(\theta) +\frac{0.1}3\cos^3(3\theta)\sin(\theta) \right)\, d\theta\text{.}
+\end{equation*}
+</div>
+<p>This integral takes time to compute by hand; it is rather long and cumbersome. The powers of cosine need to be reduced, and products like <span class="process-math">\(\cos(3\theta)\cos(\theta)\)</span> need to be turned to sums using the Product To Sum formulas in the back cover of this text.</p>
+<p>We rewrite <span class="process-math">\(\frac12\cos^2(3\theta)\)</span> as <span class="process-math">\(\frac14(1+\cos(6\theta))\text{.}\)</span> We can also rewrite <span class="process-math">\(\frac13\cos^3(3\theta)\cos(\theta)\)</span> as:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\frac13\cos^3(3\theta)\cos(\theta) \amp = \frac13\cos^2(3\theta)\cos(3\theta)\cos(\theta)\\
+\amp = \frac13\frac{1+\cos(6\theta)}2\big(\cos(4\theta)+\cos(2\theta)\big)\text{.}
+\end{align*}
+</div>
+<p>This last expression still needs simplification, but eventually all terms can be reduced to the form <span class="process-math">\(a\cos(m\theta)\)</span> or <span class="process-math">\(a\sin(m\theta)\)</span> for various values of <span class="process-math">\(a\)</span> and <span class="process-math">\(m\text{.}\)</span></p>
+<p>We forgo the algebra and recommend the reader employ technology, such as WolframAlpha®, to compute the numeric answer. Such technology gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^\pi\int_0^{\cos(3\theta)}\big(1-r\cos(\theta) +0.1r\sin(\theta) \big)r\, dr\, d\theta = \frac{\pi}{4} \approx 0.785u^3\text{.}
+\end{equation*}
+</div>
+<p>Since the units were not specified, we leave the result as almost <span class="process-math">\(0.8\)</span> cubic units (meters, feet, etc.) Should the artist want to scale the piece uniformly, so that each rose petal had a length other than 1, she should keep in mind that scaling by a factor of <span class="process-math">\(k\)</span> scales the volume by a factor of <span class="process-math">\(k^3\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_double_int_polar.html#solution-1393" class="internal">in-context</a></span>
+</body>
+</html>

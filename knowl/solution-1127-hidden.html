@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:45:14Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>We use the third formula in <a href="" class="xref" data-knowl="./knowl/thm_curvature_formulas.html" title="Theorem 12.5.11: Formulas for Curvature">Theorem 12.5.11</a> as <span class="process-math">\(\vrt\)</span> is defined in space. We leave it to the reader to verify that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_curvature_formulas.html">
+\begin{equation*}
+\vrp(t) =\la 1,2t,6t^2\ra, \vrp'(t) = \la 0,2,12t\ra, \text{ and }  \vrp(t)\times \vrpp(t) = \la 12t^2,-12t,2\ra\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><img src="generated/latex-image/img_curvature4a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_curvature4b_3D.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_curvature4b_3D.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.5.18<span class="period">.</span></span><span class="space"> </span>Understanding the curvature of a curve in space</figcaption></figure><p>Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\kappa(t) \amp = \frac{\norm{\vrp(t)\times\vrp'(t)}}{\norm{\vrp(t)}^3}\\
+\amp = \frac{\norm{\la 12t^2,-12t,2\ra}}{\norm{\la 1,2t,6t^2\ra}^3}\\
+\amp = \frac{\sqrt{144t^4+144t^2+4}}{\left(\sqrt{1+4t^2+36t^4\ }\right)^3}
+\end{align*}
+</div>
+<p>While this is not a particularly “nice” formula, it does explicitly tell us what the curvature is at a given <span class="process-math">\(t\)</span> value. To maximize <span class="process-math">\(\kappa(t)\text{,}\)</span> we should solve <span class="process-math">\(\kappa'(t)=0\)</span> for <span class="process-math">\(t\text{.}\)</span> This is doable, but <em class="emphasis">very</em> time consuming. Instead, consider the graph of <span class="process-math">\(\kappa(t)\)</span> as given in <a href="" class="xref" data-knowl="./knowl/fig_curvature4a.html" title="Figure 12.5.18.(a)">Figure 12.5.18.(a)</a>. We see that <span class="process-math">\(\kappa\)</span> is maximized at two <span class="process-math">\(t\)</span> values; using a numerical solver, we find these values are <span class="process-math">\(t\approx\pm 0.189\text{.}\)</span> In <a href="" class="xref" data-knowl="./knowl/fig_curvature4b_3D.html" title="Figure 12.5.18.(b)">Figure 12.5.18.(b)</a> we graph <span class="process-math">\(\vrt\)</span> and indicate the points where curvature is maximized.</p>
+</div></body>
+</html>

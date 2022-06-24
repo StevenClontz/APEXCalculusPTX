@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:11Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.6.3.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_impl_ex_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/0baXlbhup0o?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We start by taking the derivative of both sides (thus maintaining the equality.) We have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{\sin(y) + y^3}=\lzoo{x}{6-x^3}\text{.}
+\end{equation*}
+</div>
+<p>The right hand side is easy; it returns <span class="process-math">\(-3x^2\text{.}\)</span></p>
+<p>The left hand side requires more consideration. We take the derivative term-by-term. Using the technique derived from <a href="" class="xref" data-knowl="./knowl/eq_implicit1.html" title="Equation 2.6.1">Equation (2.6.1)</a> above, we can see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_implicit1.html">
+\begin{equation*}
+\lzoo{x}{\sin(y)} = \cos(y) \cdot y'\text{.}
+\end{equation*}
+</div>
+<p>We apply the same process to the <span class="process-math">\(y^3\)</span> term.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{y^3} = \lzoo{(y)^3} = 3(y)^2\cdot y'\text{.}
+\end{equation*}
+</div>
+<p>Putting this together with the right hand side, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\cos(y)y'+3y^2y' = -3x^2\text{.}
+\end{equation*}
+</div>
+<p>Now solve for <span class="process-math">\(y'\text{.}\)</span> It's important to treat <span class="process-math">\(y'\)</span> as an algebraically independent variable from <span class="process-math">\(y\)</span> and <span class="process-math">\(x\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\cos(y)y'+3y^2y'\amp = -3x^2\\
+\left(\cos(y) +3y^2\right)y' \amp =-3x^2\\
+y'\amp =\frac{-3x^2}{\cos(y) +3y^2}
+\end{align*}
+</div>
+<p>This equation for <span class="process-math">\(y'\)</span> probably seems unusual for it contains both <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> terms. How is it to be used? We'll address that next.</p>
+</div>
+<span class="incontext"><a href="sec_imp_deriv.html#solution-158" class="internal">in-context</a></span>
+</body>
+</html>

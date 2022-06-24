@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:49:34Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="assemblage assemblage-like"><h2 class="heading"><span class="title">Integration review.</span></h2>
+<p>Recall from <a href="sec_iterated_integrals.html" class="internal" title="Section 14.1: Iterated Integrals and Area">Section 14.1</a> that when <span class="process-math">\(R\)</span> is a region in the <span class="process-math">\(xy\)</span>-plane, <span class="process-math">\(\iint_R dA\)</span> gives the area of the region <span class="process-math">\(R\text{.}\)</span> The integral symbols are “elongated esses” meaning “sum” and <span class="process-math">\(dA\)</span> represents “a small amount of area.” Taken together, <span class="process-math">\(\iint_R dA\)</span> means “sum up, over <span class="process-math">\(R\text{,}\)</span> small amounts of area.” This sum then gives the total area of <span class="process-math">\(R\text{.}\)</span> We use two integral symbols since <span class="process-math">\(R\)</span> is a two-dimensional region.</p>
+<p>Now let <span class="process-math">\(z=f(x,y)\)</span> represent a surface. The integral <span class="process-math">\(\iint_R f(x,y)\, dA\)</span> means “sum up, over <span class="process-math">\(R\text{,}\)</span> function values (heights) given by <span class="process-math">\(f\)</span> times small amounts of area.” Since “height <span class="times-sign">×</span> area = volume,” we are summing small amounts of volume over <span class="process-math">\(R\text{,}\)</span> giving the total signed volume under the surface <span class="process-math">\(z=f(x,y)\)</span> and above the <span class="process-math">\(xy\)</span>-plane.</p>
+<p>This notation does not directly inform us <em class="emphasis">how</em> to evaluate the double integrals to find an area or a volume. With additional work, we recognize that a small amount of area <span class="process-math">\(dA\)</span> can be measured as the area of a small rectangle, with one side length a small change in <span class="process-math">\(x\)</span> and the other side length a small change in <span class="process-math">\(y\text{.}\)</span> That is, <span class="process-math">\(dA = dx\,dy\)</span> or <span class="process-math">\(dA = dy\,dx\text{.}\)</span> We could also compute a small amount of area by thinking in terms of polar coordinates, where <span class="process-math">\(dA = r\,dr\,d\theta\text{.}\)</span> These understandings lead us to the iterated integrals we used in <a href="chapter_mult_int.html" class="internal" title="Chapter 14: Multiple Integration">Chapter 14</a>.</p>
+<p>Let us back our review up farther. Note that <span class="process-math">\(\int_1^3\, dx = x\big|_1^3 = 3-1 = 2\text{.}\)</span> We have simply measured the length of the interval <span class="process-math">\([1,3]\text{.}\)</span> We could rewrite the above integral using syntax similar to the double integral syntax above:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_1^3\, dx = \int_Idx, \text{ where \(I\) = \([1,3]\) }\text{.}
+\end{equation*}
+</div>
+<p>We interpret “<span class="process-math">\(\int_I dx\)</span>” as meaning “sum up, over the interval <span class="process-math">\(I\text{,}\)</span> small changes in <span class="process-math">\(x\text{.}\)</span>” A change in <span class="process-math">\(x\)</span> is a length along the <span class="process-math">\(x\)</span>-axis, so we are adding up along <span class="process-math">\(I\)</span> small lengths, giving the total length of <span class="process-math">\(I\text{.}\)</span></p>
+<p>We could also write <span class="process-math">\(\int_1^3f(x)\, dx\)</span> as <span class="process-math">\(\int_I f(x)\, dx\text{,}\)</span> interpreted as “sum up, over <span class="process-math">\(I\text{,}\)</span> heights given by <span class="process-math">\(y = f(x)\)</span> times small changes in <span class="process-math">\(x\text{.}\)</span>” Since “height<span class="times-sign">×</span>length = area,” we are summing up areas and finding the total signed area between <span class="process-math">\(y = f(x)\)</span> and the <span class="process-math">\(x\)</span>-axis.</p>
+<p>This method of referring to the process of integration can be very powerful. It is the core of our notion of the Riemann Sum. When faced with a quantity to compute, if one can think of a way to approximate its value through a sum, the one is well on their way to constructing an integral (or, double or triple integral) that computes the desired quantity. We will demonstrate this process throughout this chapter, starting with the next section.</p></article><span class="incontext"><a href="chapter_vector_calc.html#assemblage-integration-review" class="internal">in-context</a></span>
+</body>
+</html>

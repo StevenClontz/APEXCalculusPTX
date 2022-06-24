@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:19Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-trigsub-ex-tan-def" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Pz56QfleHX4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Using <a href="" class="xref" data-knowl="./knowl/idea_trigsub.html" title="Key Idea 6.4.3: Trigonometric Substitution">Key Idea 6.4.3</a>(b), we set <span class="process-math">\(x=5\tan(\theta)\text{,}\)</span> <span class="process-math">\(dx = 5\sec^2(\theta) \, d\theta\text{,}\)</span> and note that <span class="process-math">\(\sqrt{x^2+25} = 5\sec(\theta)\text{.}\)</span> As we substitute, we can also change the bounds of integration.</p>
+<p>The lower bound of the original integral is <span class="process-math">\(x=0\text{.}\)</span> As <span class="process-math">\(x=5\tan(\theta)\text{,}\)</span> we solve for <span class="process-math">\(\theta\)</span> and find <span class="process-math">\(\theta = \tan^{-1}(x/5)\text{.}\)</span> Thus the new lower bound is <span class="process-math">\(\theta = \tan^{-1}(0) = 0\text{.}\)</span> The original upper bound is <span class="process-math">\(x=5\text{,}\)</span> thus the new upper bound is <span class="process-math">\(\theta = \tan^{-1}(5/5) = \pi/4\text{.}\)</span></p>
+<p>Thus we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_0^5\frac{x^2}{\sqrt{x^2+25}}\, dx \amp = \int_0^{\pi/4} \frac{25\tan^2(\theta) }{5\sec(\theta) }5\sec^2(\theta) \, d\theta\\
+\amp = 25\int_0^{\pi/4} \tan^2(\theta) \sec(\theta) \, d\theta\text{.}
+\end{align*}
+</div>
+<p>We encountered this indefinite integral in <a href="" class="xref" data-knowl="./knowl/ex_trigsub2.html" title="Example 6.4.8: Using Trigonometric Substitution">Example 6.4.8</a> where we found</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_trigsub2.html">
+\begin{equation*}
+\int \tan^2(\theta) \sec(\theta) \, d\theta = \frac12\big(\sec(\theta) \tan(\theta) -\ln\abs{\sec(\theta) +\tan(\theta) }\big)\text{.}
+\end{equation*}
+</div>
+<p>So</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+25\int_0^{\pi/4} \tan^2(\theta) \sec(\theta) \, d\theta \amp = \left.\frac{25}2\big(\sec(\theta) \tan(\theta) -\ln\abs{\sec(\theta) +\tan(\theta) }\big)\right|_0^{\pi/4}\\
+\amp = \frac{25}2\big(\sqrt2-\ln(\sqrt2+1)\big)\\
+\amp \approx 6.661\text{.}
+\end{align*}
+</div>
+</div></body>
+</html>

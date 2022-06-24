@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:28:03Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Implicit Differentiation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_chainrule.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_derivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_deriv_inverse_function.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_chainrule.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_derivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_deriv_inverse_function.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="active">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_imp_deriv"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Implicit Differentiation</span>
+</h2>
+<section class="introduction" id="introduction-49"><p id="p-2414">In the previous sections we learned to find the derivative, <span class="process-math">\(\lz{y}{x}\text{,}\)</span> or <span class="process-math">\(y'\text{,}\)</span> when <span class="process-math">\(y\)</span> is given <em class="emphasis">explicitly</em> as a function of <span class="process-math">\(x\text{.}\)</span> That is, if we know <span class="process-math">\(y=f(x)\)</span> for some function <span class="process-math">\(f\text{,}\)</span> we can find <span class="process-math">\(y'\text{.}\)</span> For example, given <span class="process-math">\(y=3x^2-7\text{,}\)</span> we can easily find <span class="process-math">\(y'=6x\text{.}\)</span> (Here we explicitly state how <span class="process-math">\(y\)</span> depends on <span class="process-math">\(x\text{.}\)</span> Knowing <span class="process-math">\(x\text{,}\)</span> we can directly find <span class="process-math">\(y\text{.}\)</span>)</p>
+<figure class="figure figure-like" id="vid_deriv_impl_intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-84" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=JWOOMkaNbQg,A134hhXIF-0&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_imp_deriv.html" class="internal" title="Section 2.6: Implicit Differentiation">Section 2.6</a></figcaption></figure><p id="p-2415">Sometimes the relationship between <span class="process-math">\(y\)</span> and <span class="process-math">\(x\)</span> is not explicit; rather, it is <em class="emphasis">implicit</em>. For instance, we might know that <span class="process-math">\(x^2-y=4\text{.}\)</span> This equality defines a relationship between <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{;}\)</span> if we know <span class="process-math">\(x\text{,}\)</span> we could figure out <span class="process-math">\(y\text{.}\)</span> Can we still find <span class="process-math">\(y'\text{?}\)</span> In this case, sure; we solve for <span class="process-math">\(y\)</span> to get <span class="process-math">\(y=x^2-4\)</span> (hence we now know <span class="process-math">\(y\)</span> explicitly) and then differentiate to get <span class="process-math">\(y'=2x\text{.}\)</span></p>
+<p id="p-2416">Sometimes the <em class="emphasis">implicit</em> relationship between <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> is complicated. Suppose we are given <span class="process-math">\(\sin(y)+y^3=6-x^3\text{.}\)</span> A graph of this implicit relationship is given in <a href="" class="xref" data-knowl="./knowl/fig_implicit1.html" title="Figure 2.6.2">Figure 2.6.2</a>. In this case there is absolutely no way to solve for <span class="process-math">\(y\)</span> in terms of elementary functions. The surprising thing is, however, that we can still find <span class="process-math">\(y'\)</span> via a process known as <dfn class="terminology">implicit differentiation</dfn>. </p>
+<figure class="figure figure-like" id="fig_implicit1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.2<span class="period">.</span></span><span class="space"> </span>A graph of the implicit relationship <span class="process-math">\(\sin(y)+y^3=6-x^3\)</span></figcaption></figure></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">The method of implicit differentiation</span>
+</h3>
+<p id="p-2417">Implicit differentiation is a technique based on the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> that is used to find a derivative when the relationship between the variables is given implicitly rather than explicitly (solved for one variable in terms of the other).</p>
+<p id="p-2418">We begin by reviewing the Chain Rule. Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be functions of <span class="process-math">\(x\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{f(g(x))} = \fp(g(x))\cdot g'(x)\text{.}
+\end{equation*}
+</div>
+<p id="p-2419">Suppose now that <span class="process-math">\(y=g(x)\text{.}\)</span> We can rewrite the above as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="mdn-3">
+\begin{align}
+\lzoo{x}{f(y)}\amp=\fp(y)\cdot y',\amp\amp\text{ or }\amp\lzoo{x}{f(y)}\amp=\fp(y)\cdot\lz{y}{x}\text{.}\tag{2.6.1}
+\end{align}
+</div>
+<p id="p-2420">These equations look strange; the key concept to learn here is that we can find <span class="process-math">\(y'\)</span> even if we don't exactly know how <span class="process-math">\(y\)</span> and <span class="process-math">\(x\)</span> relate.</p>
+<p id="p-2421">We demonstrate this process in the following example.</p>
+<article class="example example-like" id="ex_implicit1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Using Implicit Differentiation.</span>
+</h4>
+<p id="p-2422">Find <span class="process-math">\(y'\)</span> given that <span class="process-math">\(\sin(y) + y^3=6-x^3\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-158" id="solution-158"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-158"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_impl_ex_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/0baXlbhup0o?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-2423">We start by taking the derivative of both sides (thus maintaining the equality.) We have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{\sin(y) + y^3}=\lzoo{x}{6-x^3}\text{.}
+\end{equation*}
+</div>
+<p id="p-2424">The right hand side is easy; it returns <span class="process-math">\(-3x^2\text{.}\)</span></p>
+<p id="p-2425">The left hand side requires more consideration. We take the derivative term-by-term. Using the technique derived from <a href="" class="xref" data-knowl="./knowl/eq_implicit1.html" title="Equation 2.6.1">Equation (2.6.1)</a> above, we can see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_implicit1.html">
+\begin{equation*}
+\lzoo{x}{\sin(y)} = \cos(y) \cdot y'\text{.}
+\end{equation*}
+</div>
+<p id="p-2426">We apply the same process to the <span class="process-math">\(y^3\)</span> term.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{y^3} = \lzoo{(y)^3} = 3(y)^2\cdot y'\text{.}
+\end{equation*}
+</div>
+<p id="p-2427">Putting this together with the right hand side, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\cos(y)y'+3y^2y' = -3x^2\text{.}
+\end{equation*}
+</div>
+<p id="p-2428">Now solve for <span class="process-math">\(y'\text{.}\)</span> It's important to treat <span class="process-math">\(y'\)</span> as an algebraically independent variable from <span class="process-math">\(y\)</span> and <span class="process-math">\(x\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-92">
+\begin{align*}
+\cos(y)y'+3y^2y'\amp = -3x^2\\
+\left(\cos(y) +3y^2\right)y' \amp =-3x^2\\
+y'\amp =\frac{-3x^2}{\cos(y) +3y^2}
+\end{align*}
+</div>
+<p id="p-2429">This equation for <span class="process-math">\(y'\)</span> probably seems unusual for it contains both <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> terms. How is it to be used? We'll address that next.</p>
+</div></div>
+</div></article><p id="p-2430">Implicit functions are generally harder to deal with than explicit functions. With an explicit function, given an <span class="process-math">\(x\)</span> value, we have an explicit formula for computing the corresponding <span class="process-math">\(y\)</span> value. With an implicit function, one often has to find <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> values <em class="emphasis">at the same time</em> that satisfy the equation. It is much easier to demonstrate that a given point satisfies the equation than to actually find such a point.</p>
+<p id="p-2431">For instance, we can affirm easily that the point <span class="process-math">\(\left(\sqrt[3]{6},0\right)\)</span> lies on the graph of the implicit function <span class="process-math">\(\sin(y) + y^3=6-x^3\text{.}\)</span> Plugging in <span class="process-math">\(0\)</span> for <span class="process-math">\(y\text{,}\)</span> we see the left hand side is <span class="process-math">\(0\text{.}\)</span> Setting <span class="process-math">\(x=\sqrt[3]6\text{,}\)</span> we see the right hand side is also <span class="process-math">\(0\text{;}\)</span> the equation is satisfied. The following example finds the equation of the tangent line to this function at this point.</p>
+<article class="example example-like" id="ex_implicit2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Using implicit differentiation to find a tangent line.</span>
+</h4>
+<p id="p-2432">Find the equation of the line tangent to the curve of the implicitly defined function <span class="process-math">\(\sin(y) + y^3=6-x^3\)</span> at the point <span class="process-math">\(\left(\sqrt[3]6,0\right)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-159" id="solution-159"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-159"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_impl_tan_line_prev_ex" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/qYrcm4ObwOM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-2433">In <a href="" class="xref" data-knowl="./knowl/ex_implicit1.html" title="Example 2.6.3: Using Implicit Differentiation">Example 2.6.3</a> we found that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_implicit1.html">
+\begin{equation*}
+y' = \frac{-3x^2}{\cos(y) +3y^2}\text{.}
+\end{equation*}
+</div>
+<p id="p-2434">We find the slope of the tangent line at the point <span class="process-math">\(\left(\sqrt[3]6,0\right)\)</span> by substituting <span class="process-math">\(\sqrt[3]6\)</span> for <span class="process-math">\(x\)</span> and <span class="process-math">\(0\)</span> for <span class="process-math">\(y\text{.}\)</span> Thus at the point <span class="process-math">\(\left(\sqrt[3]6,0\right)\text{,}\)</span> we have the slope as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y' = \frac{-3\left(\sqrt[3]{6}\right)^2}{\cos(0) + 3\cdot0^2} = \frac{-3\sqrt[3]{36}}{1} \approx -9.91\text{.}
+\end{equation*}
+</div>
+<p id="p-2435">Therefore the equation of the tangent line to the implicitly defined function <span class="process-math">\(\sin(y) + y^3=6-x^3\)</span> at the point <span class="process-math">\(\left(\sqrt[3]{6},0\right)\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = -3\sqrt[3]{36}\left(x-\sqrt[3]{6}\right)+0 \approx -9.91x+18\text{.}
+\end{equation*}
+</div>
+<p id="p-2436">The curve and this tangent line are shown in <a href="" class="xref" data-knowl="./knowl/fig_implicit2.html" title="Figure 2.6.5">Figure 2.6.5</a>.</p>
+<figure class="figure figure-like" id="fig_implicit2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.5<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(\sin(y) +y^3 = 6-x^3\)</span> and its tangent line at the point <span class="process-math">\((\sqrt[3]{6},0)\)</span></figcaption></figure>
+</div></div>
+</div></article><p id="p-2437">This suggests a general method for implicit differentiation. For the steps below assume <span class="process-math">\(y\)</span> is a function of <span class="process-math">\(x\text{.}\)</span></p>
+<ol id="p-2438" class="decimal">
+<li id="li-647"><p id="p-2439">Take the derivative of each term in the equation. Treat the <span class="process-math">\(x\)</span> terms like normal. When taking the derivatives of <span class="process-math">\(y\)</span> terms, the usual rules apply except that, because of the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">Chain Rule 2.5.4</a>, we need to multiply each term by <span class="process-math">\(y'\text{.}\)</span></p></li>
+<li id="li-648"><p id="p-2440">Get all the <span class="process-math">\(y'\)</span> terms on one side of the equal sign and put the remaining terms on the other side.</p></li>
+<li id="li-649"><p id="p-2441">Factor out <span class="process-math">\(y'\text{;}\)</span> solve for <span class="process-math">\(y'\)</span> by dividing.</p></li>
+</ol>
+<p id="p-2442">(Practical Note: when working by hand, it may be beneficial to use the symbol <span class="process-math">\(\frac{dy}{dx}\)</span> instead of <span class="process-math">\(y'\text{,}\)</span> as the latter can be easily confused for <span class="process-math">\(y\)</span> or <span class="process-math">\(y^1\text{.}\)</span>)</p>
+<article class="example example-like" id="ex_implicit3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.6</span><span class="period">.</span><span class="space"> </span><span class="title">Using Implicit Differentiation.</span>
+</h4>
+<p id="p-2443">Given the implicitly defined function <span class="process-math">\(y^3+x^2y^4=1+2x\text{,}\)</span> find <span class="process-math">\(y'\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-160" id="solution-160"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-160"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_impl_ex_2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/O5OqJ7a_Ovo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-2444">We will take the implicit derivatives term by term. The derivative of <span class="process-math">\(y^3\)</span> is <span class="process-math">\(3y^2y'\text{.}\)</span></p>
+<p id="p-2445">The second term, <span class="process-math">\(x^2y^4\text{,}\)</span> is a little tricky. It requires the <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a> as it is the product of two functions of <span class="process-math">\(x\text{:}\)</span> <span class="process-math">\(x^2\)</span> and <span class="process-math">\(y^4\text{.}\)</span> Its derivative is <span class="process-math">\(x^2(4y^3y') + 2xy^4\text{.}\)</span> The first part of this expression requires a <span class="process-math">\(y'\)</span> because we are taking the derivative of a <span class="process-math">\(y\)</span> term. The second part does not require it because we are taking the derivative of <span class="process-math">\(x^2\text{.}\)</span></p>
+<p id="p-2446">The derivative of the right hand side is easily found to be <span class="process-math">\(2\text{.}\)</span> In all, we get:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+3y^2y' + 4x^2y^3y' + 2xy^4 = 2\text{.}
+\end{equation*}
+</div>
+<p id="p-2447">Move terms around so that the left side consists only of the <span class="process-math">\(y'\)</span> terms and the right side consists of all the other terms:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+3y^2y' + 4x^2y^3y' = 2-2xy^4\text{.}
+\end{equation*}
+</div>
+<p id="p-2448">Factor out <span class="process-math">\(y'\)</span> from the left side and solve to get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y' = \frac{2-2xy^4}{3y^2+4x^2y^3}\text{.}
+\end{equation*}
+</div>
+<p id="p-2449">To confirm the validity of our work, let's find the equation of a tangent line to this function at a point. It is easy to confirm that the point <span class="process-math">\((0,1)\)</span> lies on the graph of this function. At this point, <span class="process-math">\(y' = 2/3\text{.}\)</span> So the equation of the tangent line is <span class="process-math">\(y = 2/3(x-0)+1\text{.}\)</span> The function and its tangent line are graphed in <a href="" class="xref" data-knowl="./knowl/fig_implicit4.html" title="Figure 2.6.7">Figure 2.6.7</a>.</p>
+<figure class="figure figure-like" id="fig_implicit4"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit4.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.7<span class="period">.</span></span><span class="space"> </span>A graph of the implicitly defined function <span class="process-math">\(y^3+x^2y^4=1+2x\)</span> along with its tangent line at the point <span class="process-math">\((0,1)\)</span></figcaption></figure><p id="p-2450">Notice how our curve looks much different than for functions we have seen. For one, it fails the vertical line test, and so the complete curve is not truly representing <span class="process-math">\(y\)</span> as a function of <span class="process-math">\(x\text{.}\)</span> But when we indicate we are interested in the derivative at <span class="process-math">\((0,1)\text{,}\)</span> we are indicating that we want the function defined by the small portion of the curve that passes through <span class="process-math">\((0,1)\text{,}\)</span> and that small portion does pass the vertical line test. Such functions are important in many areas of mathematics, so developing tools to deal with them is also important.</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_implicit5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Using Implicit Differentiation.</span>
+</h4>
+<p id="p-2451">Given the implicitly defined function <span class="process-math">\(\sin\mathopen{}\left(x^2y^2\right)\mathclose{}+y^3=x+y\text{,}\)</span> find <span class="process-math">\(y'\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-161" id="solution-161"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-161"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_impl_ex_3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/BMn-BU6VTQU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-2452">Differentiating term by term, we find the most difficulty in the first term. It requires both the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> and <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html ./knowl/thm_ProductRule.html" id="md-93">
+\begin{align*}
+\lzoo{x}{\sin\mathopen{}\left(x^2y^2\right)\mathclose{}} \amp = \cos\mathopen{}\left(x^2y^2\right)\mathclose{}\cdot\lzoo{x}{x^2y^2}\\
+\amp = \cos\mathopen{}\left(x^2y^2\right)\mathclose{}\cdot\left(x^2(2yy')+2xy^2\right)\\
+\amp = 2\left(x^2yy'+xy^2\right)\cos\mathopen{}\left(x^2y^2\right)\mathclose{}\text{.}
+\end{align*}
+</div>
+<p id="p-2453">We leave the derivatives of the other terms to the reader. After taking the derivatives of both sides, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2\left(x^2yy'+xy^2\right)\cos\mathopen{}\left(x^2y^2\right)\mathclose{} + 3y^2y' = 1 + y'\text{.}
+\end{equation*}
+</div>
+<p id="p-2454">We now have to be careful to properly solve for <span class="process-math">\(y'\text{,}\)</span> particularly because of the product on the left. It is best to multiply out the product. Doing this, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2x^2y\cos\mathopen{}\left(x^2y^2\right)\mathclose{}y' + 2xy^2\cos\mathopen{}\left(x^2y^2\right)\mathclose{} + 3y^2y' = 1 + y'\text{.}
+\end{equation*}
+</div>
+<p id="p-2455">From here we can safely move around terms to get the following:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2x^2y\cos\mathopen{}\left(x^2y^2\right)\mathclose{}y' + 3y^2y' - y' = 1 - 2xy^2\cos\mathopen{}\left(x^2y^2\right)\mathclose{}\text{.}
+\end{equation*}
+</div>
+<p id="p-2456">Then we can solve for <span class="process-math">\(y'\)</span> to get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y' = \frac{1 - 2xy^2\cos\mathopen{}\left(x^2y^2\right)\mathclose{}}{2x^2y\cos\mathopen{}\left(x^2y^2\right)\mathclose{}+3y^2-1}\text{.}
+\end{equation*}
+</div>
+<p id="p-2457">A graph of this implicit function is given in <a href="" class="xref" data-knowl="./knowl/fig_implicit5.html" title="Figure 2.6.9">Figure 2.6.9</a>.</p>
+<figure class="figure figure-like" id="fig_implicit5"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit5.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.9<span class="period">.</span></span><span class="space"> </span>A graph of the implicitly defined curve <span class="process-math">\(\sin\mathopen{}\left(x^2y^2\right)\mathclose{}+y^3=x+y\)</span></figcaption></figure><p id="p-2458">It is easy to verify that the points <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((0,1)\)</span> and <span class="process-math">\((0,-1)\)</span> all lie on the graph. We can find the slopes of the tangent lines at each of these points using our formula for <span class="process-math">\(y'\text{.}\)</span></p>
+<ul class="disc">
+<li id="li-650"><p id="p-derived-li-650">At <span class="process-math">\((0,0)\text{,}\)</span> the slope is <span class="process-math">\(-1\text{.}\)</span></p></li>
+<li id="li-651"><p id="p-derived-li-651">At <span class="process-math">\((0,1)\text{,}\)</span> the slope is <span class="process-math">\(1/2\text{.}\)</span></p></li>
+<li id="li-652"><p id="p-derived-li-652">At <span class="process-math">\((0,-1)\text{,}\)</span> the slope is also <span class="process-math">\(1/2\text{.}\)</span></p></li>
+</ul>
+<p class="continuation">The tangent lines have been added to the graph of the function in <a href="" class="xref" data-knowl="./knowl/fig_implicit6.html" title="Figure 2.6.10">Figure 2.6.10</a>.</p>
+<figure class="figure figure-like" id="fig_implicit6"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit6.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.10<span class="period">.</span></span><span class="space"> </span>A graph of the implicitly defined curve <span class="process-math">\(\sin\mathopen{}\left(x^2y^2\right)\mathclose{}+y^3=x+y\)</span> and certain tangent lines</figcaption></figure>
+</div></div>
+</div></article><p id="p-2459">Quite a few “famous” curves have equations that are given implicitly. We can use implicit differentiation to find the slope at various points on those curves. We investigate two such curves in the next examples.</p>
+<article class="example example-like" id="ex_implicit7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.11</span><span class="period">.</span><span class="space"> </span><span class="title">Finding slopes of tangent lines to a circle.</span>
+</h4>
+<p id="p-2460">Find the slope of the tangent line to the circle <span class="process-math">\(x^2+y^2=1\)</span> at the point <span class="process-math">\(\left(1/2, \sqrt{3}/2\right)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-162" id="solution-162"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-162"><div class="solution solution-like">
+<p id="p-2461">Taking derivatives, we get <span class="process-math">\(2x+2yy'=0\text{.}\)</span> Solving for <span class="process-math">\(y'\)</span> gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y' = \frac{-x}{y}\text{.}
+\end{equation*}
+</div>
+<p id="p-2462">This is a clever formula. Recall that the slope of the line through the origin and the point <span class="process-math">\((x,y)\)</span> on the circle will be <span class="process-math">\(y/x\text{.}\)</span> We have found that the slope of the tangent line to the circle at that point is the opposite reciprocal of <span class="process-math">\(y/x\text{,}\)</span> namely, <span class="process-math">\(-x/y\text{.}\)</span> Hence these two lines are always perpendicular.</p>
+<p id="p-2463">At the point <span class="process-math">\(\left(1/2, \sqrt{3}/2\right)\text{,}\)</span> we have the tangent line's slope as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y' = \frac{-1/2}{\sqrt{3}/2} = \frac{-1}{\sqrt{3}} \approx -0.577\text{.}
+\end{equation*}
+</div>
+<p id="p-2464">A graph of the circle and its tangent line at <span class="process-math">\(\left(1/2,\sqrt{3}/2\right)\)</span> is given in <a href="" class="xref" data-knowl="./knowl/fig_implicit7.html" title="Figure 2.6.12">Figure 2.6.12</a>, along with a thin dashed line from the origin that is perpendicular to the tangent line. (It turns out that all normal lines to a circle pass through the center of the circle.)</p>
+<figure class="figure figure-like" id="fig_implicit7"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit7.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.12<span class="period">.</span></span><span class="space"> </span>The unit circle with its tangent line at <span class="process-math">\((1/2,\sqrt{3}/2)\)</span></figcaption></figure>
+</div></div>
+</div></article><p id="p-2465">This section has shown how to find the derivatives of implicitly defined functions, whose graphs include a wide variety of interesting and unusual shapes. Implicit differentiation can also be used to further our understanding of “regular” differentiation.</p>
+<p id="p-2466">One hole in our current understanding of derivatives is this: what is the derivative of the square root function? That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lzoo{x}{\sqrt{x}} = \lzoo{x}{x^{1/2}} = \text{?}
+\end{equation*}
+</div>
+<p id="p-2467">We allude to a possible solution, as we can write the square root function as a power function with a rational (or, fractional) power. We are then tempted to apply the <a href="" class="xref" data-knowl="./knowl/thm_PowerRule.html" title="Theorem 2.4.18: Power Rule with Integer Exponents">Power Rule with Integer Exponents</a> and obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_PowerRule.html">
+\begin{equation*}
+\lzoo{x}{x^{1/2}} = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}}\text{.}
+\end{equation*}
+</div>
+<p id="p-2468">The trouble with this is that the <a href="" class="xref" data-knowl="./knowl/thm_PowerRule.html" title="Theorem 2.4.18: Power Rule with Integer Exponents">Power Rule with Integer Exponents</a> was initially defined only for positive integer powers, <span class="process-math">\(n \gt 0\text{.}\)</span> While we did not justify this at the time, generally the <a href="" class="xref" data-knowl="./knowl/thm_PowerRule.html" title="Theorem 2.4.18: Power Rule with Integer Exponents">Power Rule with Integer Exponents</a> is proved using something called the Binomial Theorem, which deals only with positive integers. The <a href="" class="xref" data-knowl="./knowl/thm_QuotientRule.html" title="Theorem 2.4.10: Quotient Rule">Quotient Rule</a> allowed us to extend the <a href="" class="xref" data-knowl="./knowl/thm_PowerRule.html" title="Theorem 2.4.18: Power Rule with Integer Exponents">Power Rule with Integer Exponents</a> to negative integer powers. Implicit Differentiation allows us to extend the <a href="" class="xref" data-knowl="./knowl/thm_PowerRule.html" title="Theorem 2.4.18: Power Rule with Integer Exponents">Power Rule with Integer Exponents</a> to rational powers, as shown below.</p>
+<p id="p-2469">Let <span class="process-math">\(y = x^{m/n}\text{,}\)</span> where <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> are integers with no common factors (so <span class="process-math">\(m=2\)</span> and <span class="process-math">\(n=5\)</span> is fine, but <span class="process-math">\(m=2\)</span> and <span class="process-math">\(n=4\)</span> is not). We can rewrite this explicit function implicitly as <span class="process-math">\(y^n = x^m\text{.}\)</span> Now apply implicit differentiation.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-94">
+\begin{align*}
+y \amp = x^{m/n}\\
+y^n \amp = x^m\\
+\lzoo{x}{y^n} \amp = \lzoo{x}{x^m}\\
+n\cdot y^{n-1}\cdot y' \amp = m\cdot x^{m-1}\\
+y'\amp = \frac{m}{n} \frac{x^{m-1}}{y^{n-1}}\amp\amp\text{(now substitute }x^{m/n}\text{ for }y\text{)}\\
+\amp = \frac{m}{n} \frac{x^{m-1}}{(x^{m/n})^{n-1}}\amp\amp\text{(apply lots of algebra)}\\
+\amp = \frac{m}n x^{(m-n)/n}\\
+\amp = \frac{m}n x^{m/n -1}\text{.}
+\end{align*}
+</div>
+<p id="p-2470">The above derivation is the key to the proof extending the <a href="" class="xref" data-knowl="./knowl/thm_PowerRule.html" title="Theorem 2.4.18: Power Rule with Integer Exponents">Power Rule with Integer Exponents</a> to rational powers. Using limits, we can extend this once more to include <em class="emphasis">all</em> powers, including irrational (even transcendental!) powers, giving the following theorem.</p>
+<article class="theorem theorem-like" id="thm_finalpower"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.6.13</span><span class="period">.</span><span class="space"> </span><span class="title">Power Rule for Differentiation.</span>
+</h4>
+<p id="p-2471">Let <span class="process-math">\(f(x) = x^n\text{,}\)</span> where <span class="process-math">\(n\neq 0\)</span> is a real number. Then <span class="process-math">\(f\)</span> is differentiable on its domain, except possibly at <span class="process-math">\(x=0\text{,}\)</span> and <span class="process-math">\(\fp(x) = n\cdot x^{n-1}\text{.}\)</span> </p></article><p id="p-2472">This theorem allows us to say the derivative of <span class="process-math">\(x^\pi\)</span> is <span class="process-math">\(\pi x^{\pi -1}\text{.}\)</span></p>
+<p id="p-2473">We now apply this final version of the <a href="" class="xref" data-knowl="./knowl/thm_finalpower.html" title="Theorem 2.6.13: Power Rule for Differentiation">Power Rule for Differentiation</a> in the next example, the second investigation of a “famous” curve.</p>
+<article class="example example-like" id="ex_implicit8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.14</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Power Rule.</span>
+</h4>
+<p id="p-2474">Find the slope of <span class="process-math">\(x^{2/3}+y^{2/3}=8\)</span> at the point <span class="process-math">\((8,8)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-163" id="solution-163"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-163"><div class="solution solution-like">
+<p id="p-2475">This is a particularly interesting curve called an <dfn class="terminology">astroid</dfn>. It is the shape traced out by a point on the edge of a circle that is rolling around inside of a larger circle, as shown in <a href="" class="xref" data-knowl="./knowl/fig_implicit9.html" title="Figure 2.6.15">Figure 2.6.15</a>.</p>
+<figure class="figure figure-like" id="fig_implicit9"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit9.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.15<span class="period">.</span></span><span class="space"> </span>An astroid, traced out by a point on the smaller circle as it rolls inside the larger circle</figcaption></figure><p id="p-2476">To find the slope of the astroid at the point <span class="process-math">\((8,8)\text{,}\)</span> we take the derivative implicitly.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-95">
+\begin{align*}
+\frac{2}{3}x^{-1/3}+\frac{2}{3}y^{-1/3}y'\amp =0\\
+\frac{2}{3}y^{-1/3}y' \amp = -\frac{2}{3}x^{-1/3}\\
+y'\amp =-\frac{x^{-1/3}}{y^{-1/3}}\\
+y'\amp =-\frac{y^{1/3}}{x^{1/3}} = -\sqrt[3]{\frac{y}{x}}\text{.}
+\end{align*}
+</div>
+<p id="p-2477">Plugging in <span class="process-math">\(x=8\)</span> and <span class="process-math">\(y=8\text{,}\)</span> we get a slope of <span class="process-math">\(-1\text{.}\)</span> The astroid, with its tangent line at <span class="process-math">\((8,8)\text{,}\)</span> is shown in <a href="" class="xref" data-knowl="./knowl/fig_implicit8.html" title="Figure 2.6.16">Figure 2.6.16</a>.</p>
+<figure class="figure figure-like" id="fig_implicit8"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit8.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.16<span class="period">.</span></span><span class="space"> </span>An astroid with a tangent line</figcaption></figure>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">Implicit Differentiation and the Second Derivative</span>
+</h3>
+<p id="p-2478">We can use implicit differentiation to find higher order derivatives. In theory, this is simple: first find <span class="process-math">\(\lz{y}{x}\text{,}\)</span> then take its derivative with respect to <span class="process-math">\(x\text{.}\)</span> In practice, it is not hard, but it often requires a bit of algebra. We demonstrate this in an example.</p>
+<article class="example example-like" id="ex_implicit9"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.17</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the second derivative.</span>
+</h4>
+<p id="p-2479">Given <span class="process-math">\(x^2+y^2=1\text{,}\)</span> find <span class="process-math">\(\lzn{2}{y}{x} = y''\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-164" id="solution-164"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-164"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_impl_second_deriv" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/V6piqsjn2mk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-2480">We found that <span class="process-math">\(y' = \lz{y}{x} = -x/y\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_implicit7.html" title="Example 2.6.11: Finding slopes of tangent lines to a circle">Example 2.6.11</a>. To find <span class="process-math">\(y''\text{,}\)</span> we apply implicit differentiation to <span class="process-math">\(y'\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_implicit7.html" id="md-96">
+\begin{align*}
+y'' \amp = \lzoo{x}{y'}\\
+\amp = \lzoo{x}{-\frac{x}{y}}\amp\amp\text{(Now use the Quotient Rule.)}\\
+\amp = -\frac{y\cdot1 - x(y')}{y^2}\amp\amp\text{replace }y'\text{ with }-x/y\text{:}\\
+\amp = -\frac{y-x(-x/y)}{y^2}\\
+\amp = -\frac{y+x^2/y}{y^2}\text{.}
+\end{align*}
+</div>
+<p id="p-2481">While this is not a particularly simple expression, it is usable. We can see that <span class="process-math">\(y'' \gt 0\)</span> when <span class="process-math">\(y\lt 0\)</span> and <span class="process-math">\(y''\lt 0\)</span> when <span class="process-math">\(y \gt 0\text{.}\)</span> In <a href="sec_concavity.html" class="internal" title="Section 3.4: Concavity and the Second Derivative">Section 3.4</a>, we will see how this relates to the shape of the graph.</p>
+<p id="p-2482">Also, if we remember that we are only considering points on the curve <span class="process-math">\(x^2+y^2=1\text{,}\)</span> then we know that <span class="process-math">\(x^2=1-y^2\text{.}\)</span> So we can replace the <span class="process-math">\(x^2\)</span> in the expression for <span class="process-math">\(y''\)</span> to get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y''=-\frac{y+\left(1-y^2\right)/y}{y^2}=-\frac{1}{y^3}
+\end{equation*}
+</div>
+<p class="continuation">which is a simpler expression. Recognizing when simplifications like this are possible is not always easy.</p>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-16"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.3</span> <span class="title">Logarithmic Differentiation</span>
+</h3>
+<p id="p-2483">Consider the function <span class="process-math">\(y=x^x\text{;}\)</span> it is graphed in <a href="" class="xref" data-knowl="./knowl/fig_logdiffa.html" title="Figure 2.6.18">Figure 2.6.18</a>. It is well-defined for <span class="process-math">\(x \gt 0\)</span> and we might be interested in finding equations of lines tangent and normal to its graph. How do we take its derivative? </p>
+<aside class="aside aside-like" id="aside-13"><p id="p-2484">In calculus the expression <span class="process-math">\(0^0\)</span> is also considered well-defined and equal to <span class="process-math">\(1\text{.}\)</span> This is easily confused with a limit of the <em class="emphasis">form</em> <span class="process-math">\(0^0\text{,}\)</span> which is indeterminate. We skirt the issue here.</p></aside><figure class="figure figure-like" id="fig_logdiffa"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_logdiffa.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.18<span class="period">.</span></span><span class="space"> </span>A plot of <span class="process-math">\(y=x^x\)</span></figcaption></figure><p id="p-2485">The function is not a power function: it has a “power” of <span class="process-math">\(x\text{,}\)</span> not a constant. It is not an exponential function either: it has a “base” of <span class="process-math">\(x\text{,}\)</span> not a constant.</p>
+<p id="p-2486">A differentiation technique known as <dfn class="terminology">logarithmic differentiation</dfn> becomes useful here. The basic principle is this: take the natural log of both sides of an equation <span class="process-math">\(y=f(x)\text{,}\)</span> then use implicit differentiation to find <span class="process-math">\(y'\text{.}\)</span> We demonstrate this in the following example.</p>
+<article class="example example-like" id="ex_implicit10"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.19</span><span class="period">.</span><span class="space"> </span><span class="title">Using Logarithmic Differentiation.</span>
+</h4>
+<p id="p-2487">Given <span class="process-math">\(y=x^x\text{,}\)</span> use logarithmic differentiation to find <span class="process-math">\(y'\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-165" id="solution-165"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-165"><div class="solution solution-like">
+<figure class="figure figure-like" id="vid_deriv_implicit_logarithmic"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-90" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed?playlist=aofx_jgKDhU,w93T6AyU_aE&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.20<span class="period">.</span></span><span class="space"> </span>Two approaches to solving <a href="" class="xref" data-knowl="./knowl/ex_implicit10.html" title="Example 2.6.19: Using Logarithmic Differentiation">Example 2.6.19</a>. In the first video, taking the log of both sides. In the second, using the inverse relationship <span class="process-math">\(e^{\ln(x)}=x\text{.}\)</span></figcaption></figure><p id="p-2488">As suggested above, we start by taking the natural log of both sides then applying implicit differentiation.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-97">
+\begin{align*}
+y \amp = x^x\amp\\
+\ln(y) \amp = \ln(x^x)\amp\amp\text{(apply logarithm rule)}\\
+\ln(y) \amp = x\ln(x) \amp\amp\text{(now use implicit differentiation)}\\
+\lzoo{x}{\ln(y)} \amp = \lzoo{x}{x\ln(x)}\\
+\frac{y'}{y} \amp = \ln(x) + x\cdot\frac{1}{x}\amp\\
+\frac{y'}{y} \amp = \ln(x) + 1\amp\\
+y' \amp = y\left(\ln(x) +1\right) \amp\amp\text{(substitute }y=x^x\text{)}\\
+y' \amp = x^x\left(\ln(x) +1\right)\amp\text{.}
+\end{align*}
+</div>
+<p id="p-2489">To “test” our answer, let's use it to find the equation of the tangent line at <span class="process-math">\(x=1.5\text{.}\)</span> The point on the graph our tangent line must pass through is <span class="process-math">\(\left(1.5, 1.5^{1.5}\right) \approx (1.5, 1.837)\text{.}\)</span> Using the equation for <span class="process-math">\(y'\text{,}\)</span> we find the slope as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y' = 1.5^{1.5}\left(\ln(1.5) +1\right) \approx 1.837(1.405) \approx 2.582\text{.}
+\end{equation*}
+</div>
+<p id="p-2490">Thus the equation of the tangent line is (approximately) <span class="process-math">\(y \approx 2.582(x-1.5)+1.837\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/fig_implicit10.html" title="Figure 2.6.21">Figure 2.6.21</a> graphs <span class="process-math">\(y=x^x\)</span> along with this tangent line.</p>
+<figure class="figure figure-like" id="fig_implicit10"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit10.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.21<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(y=x^x\)</span> and its tangent line at <span class="process-math">\(x=1.5\)</span></figcaption></figure>
+</div></div>
+</div></article><p id="vidint_deriv_impl_ex5">We would not have been able to compute the derivative of the function in <a href="" class="xref" data-knowl="./knowl/ex_implicit10.html" title="Example 2.6.19: Using Logarithmic Differentiation">Example 2.6.19</a> without logarithmic differentiation. But the method is also useful in cases where the product and quotient rules could be used, but logarithmic differentiation is simpler. The following video provides such an example.</p>
+<figure class="figure figure-like" id="vid_deriv_impl_ex_5"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-91" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/3Cv2EgjH9ZE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.22<span class="period">.</span></span><span class="space"> </span>Using logarithmic differentiation</figcaption></figure><p id="p-2492">Implicit differentiation proves to be useful as it allows us to find the instantaneous rates of change of a variety of functions. In particular, it extended the <a href="" class="xref" data-knowl="./knowl/thm_finalpower.html" title="Theorem 2.6.13: Power Rule for Differentiation">Power Rule for Differentiation</a> to rational exponents, which we then extended to all real numbers. In <a href="sec_deriv_inverse_function.html" class="internal" title="Section 2.7: Derivatives of Inverse Functions">Section 2.7</a>, implicit differentiation will be used to find the derivatives of <dfn class="terminology">inverse</dfn> functions, such as <span class="process-math">\(y=\sin^{-1}(x)\text{.}\)</span></p></section><section class="exercises" id="exercises-12"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.6.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-31"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-387"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-378" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="378" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKSW4geW91ciBvd24gd29yZHMsIGV4cGxhaW4gdGhlIGRpZmZlcmVuY2UgYmV0d2VlbiBpbXBsaWNpdCBmdW5jdGlvbnMgYW5kIGV4cGxpY2l0IGZ1bmN0aW9ucy4KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2493">In your own words, explain the difference between implicit functions and explicit functions.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-378')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-388"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-379" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="379" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ3RoZSBjaGFpbiBydWxlJz0+e30pOwpDb250ZXh0KCktPnN0cmluZ3MtPmFkZCgKICAnY2hhaW4gcnVsZScgPT4ge2FsaWFzID0+ICdjaGFpbiBydWxlJ30sCiAgJ2NoYWluJyA9PiB7YWxpYXMgPT4gJ2NoYWluIHJ1bGUnfQopOwokYW5zPUNvbXB1dGUoInRoZSBjaGFpbiBydWxlIik7CgpCRUdJTl9QR01MCkltcGxpY2l0IGRpZmZlcmVudGlhdGlvbiBpcyBiYXNlZCBvbiB3aGF0IG90aGVyIGRpZmZlcmVudGlhdGlvbiBydWxlPwoKW19deyRhbnN9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2494">Implicit differentiation is based on what other differentiation rule?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-379')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-389"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-380" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="380" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JHRmPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwoKQkVHSU5fUEdNTApbX117JHRmfXs1fSBJbXBsaWNpdCBkaWZmZXJlbnRpYXRpb24gY2FuIGJlIHVzZWQgdG8gZmluZCB0aGUgZGVyaXZhdGl2ZSBvZiBbYHk9XHNxcnR7eH1cdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2496"><ul style="list-style:circle;">
+<li id="li-654"><p id="p-2498">True</p></li>
+<li id="li-655"><p id="p-2499">False</p></li>
+</ul> Implicit differentiation can be used to find the derivative of <span class="process-math">\(y=\sqrt{x}\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-380')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-390"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-381" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="381" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCdOdW1lcmljJyk7JHRmPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDEpOwoKQkVHSU5fUEdNTApbX117JHRmfXs1fSBJbXBsaWNpdCBkaWZmZXJlbnRpYXRpb24gY2FuIGJlIHVzZWQgdG8gZmluZCB0aGUgZGVyaXZhdGl2ZSBvZiBbYHk9eF57My80fVx0ZXh0ey59YF0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2501"><ul style="list-style:circle;">
+<li id="li-657"><p id="p-2503">True</p></li>
+<li id="li-658"><p id="p-2504">False</p></li>
+</ul> Implicit differentiation can be used to find the derivative of <span class="process-math">\(y=x^{3/4}\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-381')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-32"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-43">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-50"><p id="p-2506">Compute the derivative of the given function.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-391"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<div id="webwork-382" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="382" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcsJ20nKTsKJHggPSBsaXN0X3JhbmRvbSgncScsJ3InLCd0JywneCcsJ3knLCd6JywndycpOwokcG0gPSBsaXN0X3JhbmRvbSgnKycsJy0nKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdmJzskeD0neCc7JHBtPScrJ307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoJHg9PntsaW1pdHM9PlswLDRdfSk7CiRmID0gRm9ybXVsYSgic3FydCgkeCkgJHBtIDEvc3FydCgkeCkiKS0+cmVkdWNlOwokZnAgPSAkZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSk9WyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdUbyBlbnRlciBbYFxzcXJ0e3h9XHRleHR7LH1gXSB0eXBlIFt8c3FydCh4KXxdKi4nKUBdKioKCltfXXskZnB9ezgwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2507"><span class="process-math">\(h(t)={\sqrt{t}+\frac{1}{\sqrt{t}}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-382')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-392"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<div id="webwork-383" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="383" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJSb290LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRmbmFtZSA9IGxpc3RfcmFuZG9tKCdmJywnZycsJ2gnLCdqJywnaycsJ3AnLCdtJyk7CiR4ID0gbGlzdF9yYW5kb20oJ3EnLCdyJywndCcsJ3gnLCd5JywneicsJ3cnKTsKJHBtID0gbGlzdF9yYW5kb20oJysnLCctJyk7CiRuID0gcmFuZG9tKDMsNiwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdmJzskeD0neCc7JHBtPScrJzskbj0zO307CkNvbnRleHQoIkZyYWN0aW9uIik7CnBhcnNlcjo6Um9vdC0+RW5hYmxlOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKCR4PT4nUmVhbCcpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+c2V0KCR4PT57bGltaXRzPT5bMCw0XX0pOwokZiA9IEZvcm11bGEoInJvb3QoJG4sJHgpICRwbSAkeF4oKCRuLTEpLyRuKSIpOwokZnAgPSAkZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSk9WyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdUbyBlbnRlciBbYFxzcXJ0e3h9XHRleHR7LH1gXSB0eXBlIFt8c3FydCh4KXxdKi4gVG8gZW50ZXIgW2Bcc3FydFtuXXt4fVx0ZXh0eyx9YF0gdHlwZSBbfHJvb3Qobix4KXxdKi4nKUBdKioKCltfXXskZnB9ezgwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2509"><span class="process-math">\(h(w)={\sqrt[3]{w}+w^{\left({\textstyle\frac{2}{3}}\right)}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-383')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-393"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div id="webwork-384" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="384" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcsJ20nKTsKJHggPSBsaXN0X3JhbmRvbSgncScsJ3InLCd0JywneCcsJ3knLCd6JywndycpOwokcG0gPSBsaXN0X3JhbmRvbSgnKycsJy0nKTsKJGEgPSByYW5kb20oMSw0LDEpKioyOwokbiA9IHJhbmRvbSgyLDQsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRmbmFtZT0nZic7JHg9J3QnOyRwbT0nLSc7JGE9MTskbj0yO307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoJHg9PntsaW1pdHM9PlstJGEqKigxLyRuKSwkYSoqKDEvJG4pXX0pOwokZiA9IEZvcm11bGEoInNxcnQoJGEgJHBtICR4XiRuKSIpOwokZnAgPSAkZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSk9WyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdUbyBlbnRlciBbYFxzcXJ0e3h9XHRleHR7LH1gXSB0eXBlIFt8c3FydCh4KXxdKi4nKUBdKioKCltfXXskZnB9ezgwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2511"><span class="process-math">\(j(y)={\sqrt{16-y^{4}}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-384')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-394"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-385" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="385" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcsJ20nKTsKJHggPSBsaXN0X3JhbmRvbSgncScsJ3InLCd0JywneCcsJ3knLCd6JywndycpOwokdHJpZyA9IGxpc3RfcmFuZG9tKCdzaW4nLCdjb3MnLCd0YW4nKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdnJzskeD0ndCc7JHRyaWc9J3Npbic7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZSgkeD0+J1JlYWwnKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPnNldCgkeD0+e2xpbWl0cz0+WzAscGkvMl19KTsKJGYgPSBGb3JtdWxhKCJzcXJ0KCR4KSR0cmlnKCR4KSIpOwokZnAgPSAkZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSk9WyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdUbyBlbnRlciBbYFxzcXJ0e3h9XHRleHR7LH1gXSB0eXBlIFt8c3FydCh4KXxdKi4nKUBdKioKCltfXXskZnB9ezgwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2513"><span class="process-math">\(k(r)={\sqrt{r}\sin\!\left(r\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-385')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-395"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-386" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="386" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcsJ20nKTsKJHggPSBsaXN0X3JhbmRvbSgncScsJ3InLCd0JywneCcsJ3knLCd6JywndycpOwokbiA9IHJhbmRvbSgxLDMsMSkgKyByYW5kb20oMC4xLDAuOSwwLjEpOwokdHJpZyA9IGxpc3RfcmFuZG9tKCdzaW4nLCdjb3MnLCd0YW4nKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdoJzskeD0neCc7JG49MS41O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoJHg9PntsaW1pdHM9PlswLDRdfSk7CiRmID0gRm9ybXVsYSgiJHheJG4iKTsKJGZwID0gJGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pPVskZl1gXQoKW19deyRmcH17ODB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2515"><span class="process-math">\(p(w)={w^{3.2}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-386')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-396"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-387" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="387" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcsJ20nKTsKJHggPSBsaXN0X3JhbmRvbSgncScsJ3InLCd0JywneCcsJ3knLCd6JywndycpOwokbiA9IHJhbmRvbSgxLDMsMSkgKyByYW5kb20oMC4xLDAuOSwwLjEpOwokYiA9IGxpc3RfcmFuZG9tKEZvcm11bGEoInBpIiksRm9ybXVsYSgiZSIpKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdmJzskeD0neCc7JG49MS45OyRiPUZvcm11bGEoInBpIil9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKCR4PT4nUmVhbCcpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+c2V0KCR4PT57bGltaXRzPT5bMCw0XX0pOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRzPT4wLHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJGYgPSBGb3JtdWxhKCIkeF4kYiArICR4XiRuICsgJGJeJG4iKTsKJGZwID0gJGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pPVskZl1gXQoKW19deyRmcH17ODB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2517"><span class="process-math">\(p(x)={x^{e}+x^{1.9}+e^{1.9}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-387')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-397"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<div id="webwork-388" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="388" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGZuYW1lID0gbGlzdF9yYW5kb20oJ2YnLCdnJywnaCcsJ2onLCdrJywncCcsJ20nKTsKJHggPSBsaXN0X3JhbmRvbSgncScsJ3InLCd0JywneCcsJ3knLCd6JywndycpOwokYSA9IG5vbl96ZXJvX3JhbmRvbSgtOSw5LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskZm5hbWU9J2cnOyR4PSd4JzskYT03O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoJHg9PidSZWFsJyk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoJHg9PntsaW1pdHM9PlswLDRdfSk7CiRmID0gRm9ybXVsYSgiKCR4KyRhKS9zcXJ0KCR4KSIpOwokZnAgPSAkZi0+RCgkeCk7CgpCRUdJTl9QR01MCltgWyRmbmFtZV0oWyR4XSk9WyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdUbyBlbnRlciBbYFxzcXJ0e3h9XHRleHR7LH1gXSB0eXBlIFt8c3FydCh4KXxdKi4nKUBdKioKCltfXXskZnB9ezgwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2519"><span class="process-math">\(m(r)={\frac{r+3}{\sqrt{r}}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-388')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-398"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-389" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="389" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJSb290LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRmbmFtZSA9IGxpc3RfcmFuZG9tKCdmJywnZycsJ2gnLCdqJywnaycsJ3AnLCdtJyk7CiR4ID0gbGlzdF9yYW5kb20oJ3EnLCdyJywndCcsJ3gnLCd5JywneicsJ3cnKTsKJG4gPSByYW5kb20oMyw5LDEpOwokdHJpZyA9IGxpc3RfcmFuZG9tKCdzaW4nLCdjb3MnLCd0YW4nLCdzZWMnLCdjb3QnLCdjc2MnKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGZuYW1lPSdmJzskeD0ndCc7JG49NTskdHJpZz0nc2VjJzt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKCR4PT4nUmVhbCcpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+c2V0KCR4PT57bGltaXRzPT5bMCw0XX0pOwpwYXJzZXI6OlJvb3QtPkVuYWJsZTsKJGYgPSBGb3JtdWxhKCJyb290KCRuLCR4KSgkdHJpZygkeCkrZV4keCkiKTsKJGZwID0gJGYtPkQoJHgpOwoKQkVHSU5fUEdNTApbYFskZm5hbWVdKFskeF0pPVskZl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnVG8gZW50ZXIgW2Bcc3FydHt4fVx0ZXh0eyx9YF0gdHlwZSBbfHNxcnQoeCl8XSouIFRvIGVudGVyIFtgXHNxcnRbbl17eH1cdGV4dHssfWBdIHR5cGUgW3xyb290KG4seCl8XSouJylAXSoqCgpbX117JGZwfXs4MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2521"><span class="process-math">\(f(w)={\sqrt[9]{w}\!\left(\tan\!\left(w\right)+e^{w}\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-389')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-44">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-51"><p id="p-2523">Find <span class="process-math">\(\lz{y}{x}\)</span> using implicit differentiation.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exer_02_06_ex_09"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div id="webwork-390" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="390" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKJGR5ZHg9Rm9ybXVsYSgiLTR4XjMvKDJ5KzEpIik7CkB5PShyYW5kb20oLTIsMiwwLjIpLHJhbmRvbSgtMiwyLDAuMikscmFuZG9tKC0yLDIsMC4yKSxyYW5kb20oLTIsMiwwLjIpLHJhbmRvbSgtMiwyLDAuMikpOwpAeD1tYXB7KDctKCRfKS0oJF8pKioyKSoqKDEvNCkqKC0xKSoqKHJhbmRvbSgtMSwxLDIpKX0oQHkpOwpAeHk9bWFwe1skeFskX10sJHlbJF9dXX0oMC4uNCk7CiRkeWR4LT57dGVzdF9wb2ludHN9PX5+QHh5Owokc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2UgPT4gIlNob3cgeW91ciB3b3JrIHVzaW5nIGltcGxpY2l0IGRpZmZlcmVudGlhdGlvbi4iKSBAXSonOwoKQkVHSU5fUEdNTApbYHheNCt5XjIreT03YF0KCltfXXskZHlkeH17ODB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2524"><span class="process-math">\(x^4+y^2+y=7\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-390')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-400"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-391" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="391" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKJGR5ZHg9Rm9ybXVsYSgiLXleKDMvNSkveF4oMy81KSIpOwpAeT0ocmFuZG9tKDAuMDEsMC45OSwwLjAxKSxyYW5kb20oMC4wMSwwLjk5LDAuMDEpLHJhbmRvbSgwLjAxLDAuOTksMC4wMSkscmFuZG9tKDAuMDEsMC45OSwwLjAxKSxyYW5kb20oMC4wMSwwLjk5LDAuMDEpKTsKQHg9bWFweygxLSgkXykqKigyLzUpKSoqKDUvMil9KEB5KTsKQHh5PW1hcHtbJHhbJF9dLCR5WyRfXV19KDAuLjQpOwokZHlkeC0+e3Rlc3RfcG9pbnRzfT1+fkB4eTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yayB1c2luZyBpbXBsaWNpdCBkaWZmZXJlbnRpYXRpb24uIikgQF0qJzsKCkJFR0lOX1BHTUwKW2B4XnsyLzV9K3leezIvNX09MWBdCgpbX117JGR5ZHh9ezgwfQoKWyRzaG93d29ya10qKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2526"><span class="process-math">\(x^{2/5}+y^{2/5}=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-391')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-401"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-392" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="392" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKJGR5ZHg9Rm9ybXVsYSgic2luKHgpc2VjKHkpIik7CkB5PShyYW5kb20oMCwzLjE0LDAuMDEpLHJhbmRvbSgwLDMuMTQsMC4wMSkscmFuZG9tKDAsMy4xNCwwLjAxKSxyYW5kb20oMCwzLjE0LDAuMDEpLHJhbmRvbSgwLDMuMTQsMC4wMSkpOwpAeD1tYXB7YWNvcygxLXNpbigkXykpfShAeSk7CkB4eT1tYXB7WyR4WyRfXSwkeVskX11dfSgwLi40KTsKJGR5ZHgtPnt0ZXN0X3BvaW50c309fn5AeHk7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiU2hvdyB5b3VyIHdvcmsgdXNpbmcgaW1wbGljaXQgZGlmZmVyZW50aWF0aW9uLiIpIEBdKic7CgpCRUdJTl9QR01MCltgXGNvcyh4KStcc2luKHkpPTFgXQoKW19deyRkeWR4fXs4MH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2528"><span class="process-math">\(\cos(x)+\sin(y)=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-392')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exer_02_06_ex_12"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-393" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="393" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKJGR5ZHg9Rm9ybXVsYSgieS94Iik7CkB4PShyYW5kb20oLTQuMDUsNC4wNSwwLjEpLHJhbmRvbSgtNC4wNSw0LjA1LDAuMSkscmFuZG9tKC00LjA1LDQuMDUsMC4xKSxyYW5kb20oLTQuMDUsNC4wNSwwLjEpLHJhbmRvbSgtNC4wNSw0LjA1LDAuMSkpOwpAeT1tYXB7JF8vMTB9KEB4KTsKQHh5PW1hcHtbJHhbJF9dLCR5WyRfXV19KDAuLjQpOwokZHlkeC0+e3Rlc3RfcG9pbnRzfT1+fkB4eTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yayB1c2luZyBpbXBsaWNpdCBkaWZmZXJlbnRpYXRpb24uIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BcZGZyYWN7eH17eX09MTBgXQoKW19deyRkeWR4fXs4MH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2530"><span class="process-math">\(\dfrac{x}{y}=10\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-393')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-403"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-394" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="394" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKJGR5ZHg9Rm9ybXVsYSgieS94Iik7CiMkYSA9IHJhbmRvbSg1LDE1LDEpOwojaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGE9MTA7fTsKJGE9MTA7CkB5PShyYW5kb20oLTQuMDUsNC4wNSwwLjEpLHJhbmRvbSgtNC4wNSw0LjA1LDAuMSkscmFuZG9tKC00LjA1LDQuMDUsMC4xKSxyYW5kb20oLTQuMDUsNC4wNSwwLjEpLHJhbmRvbSgtNC4wNSw0LjA1LDAuMSkpOwpAeD1tYXB7JF8vJGF9KEB5KTsKQHh5PW1hcHtbJHhbJF9dLCR5WyRfXV19KDAuLjQpOwokZHlkeC0+e3Rlc3RfcG9pbnRzfT1+fkB4eTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yayB1c2luZyBpbXBsaWNpdCBkaWZmZXJlbnRpYXRpb24uIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BcZGZyYWN7eX17eH09WyRhXWBdCgpbX117JGR5ZHh9ezgwfQoKWyRzaG93d29ya10qKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2532"><span class="process-math">\(\dfrac{y}{x}=10\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-394')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-404"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-395" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="395" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKIyRtPWxpc3RfcmFuZG9tKDIsMyw1KTsKIyRiPXJhbmRvbSgyLDksMSk7CiMkYz1yYW5kb20oNCw5LDEpOwojaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JG09MjskYj0yOyRjPTU7fTsKJG09MjskYj0yOyRjPTU7CiRkeWR4PUZvcm11bGEoIi0oZV54IHgoeCskbSkgJGJeKC15KSkvKGxuKCRiKSkiKTsKQHg9KHJhbmRvbSgtNCwxLDAuMSkscmFuZG9tKC00LDEsMC4xKSxyYW5kb20oLTQsMSwwLjEpLHJhbmRvbSgtNCwxLDAuMSkscmFuZG9tKC00LDEsMC4xKSk7CkB5PW1hcHtsbigkYy0oJF8pKiokbSpleHAoJF8pKS9sbigkYil9KEB4KTsKQHh5PW1hcHtbJHhbJF9dLCR5WyRfXV19KDAuLjQpOwokZHlkeC0+e3Rlc3RfcG9pbnRzfT1+fkB4eTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yayB1c2luZyBpbXBsaWNpdCBkaWZmZXJlbnRpYXRpb24uIikgQF0qJzsKCkJFR0lOX1BHTUwKW2B4XlskbV1lXngrWyRiXV55PVskY11gXQoKW19deyRkeWR4fXs4MH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2534"><span class="process-math">\(x^2e^x+2^y=5\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-395')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-405"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-396" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="396" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKIyRtID0gcmFuZG9tKDIsOSwxKTsKIyR0cmlnID0gbGlzdF9yYW5kb20oJ3NpbicsJ2NvcycsJ3RhbicsJ2NvdCcsJ3NlYycsJ2NzYycpOwojJGMgPSByYW5kb20oMTAsOTAsMTApOwojaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JG09MjskdHJpZz0ndGFuJzskYz01MDt9OwokbT0yOyR0cmlnPSd0YW4nOyRjPTUwOwppZiAoJHRyaWcgZXEgJ3NpbicpIHskZHlkeD1Gb3JtdWxhKCItJG0gdGFuKHkpL3giKTt9OwppZiAoJHRyaWcgZXEgJ2NvcycpIHskZHlkeD1Gb3JtdWxhKCIkbSBjb3QoeSkveCIpO307CmlmICgkdHJpZyBlcSAndGFuJykgeyRkeWR4PUZvcm11bGEoIi0kbSBzaW4oeSkgY29zKHkpL3giKTt9OwppZiAoJHRyaWcgZXEgJ2NvdCcpIHskZHlkeD1Gb3JtdWxhKCIkbSBzaW4oeSkgY29zKHkpL3giKTt9OwppZiAoJHRyaWcgZXEgJ3NlYycpIHskZHlkeD1Gb3JtdWxhKCItJG0gY290KHkpL3giKTt9OwppZiAoJHRyaWcgZXEgJ2NzYycpIHskZHlkeD1Gb3JtdWxhKCIkbSB0YW4oeSkveCIpO307CiMgbmVlZCB0byBhdm9pZCB4PT0wCkB4PShyYW5kb20oLTMuOSwzLjksMC4yKSxyYW5kb20oLTMuOSwzLjksMC4yKSxyYW5kb20oLTMuOSwzLjksMC4yKSxyYW5kb20oLTMuOSwzLjksMC4yKSxyYW5kb20oLTMuOSwzLjksMC4yKSk7CmlmICgkdHJpZyBlcSAnc2luJykge0B5PW1hcHthc2luKCRjLygkXykqKiRtKX0oQHgpO307CmlmICgkdHJpZyBlcSAnY29zJykge0B5PW1hcHthY29zKCRjLygkXykqKiRtKX0oQHgpO307CmlmICgkdHJpZyBlcSAndGFuJykge0B5PW1hcHthdGFuKCRjLygkXykqKiRtKX0oQHgpO307CmlmICgkdHJpZyBlcSAnY290Jykge0B5PW1hcHtwaS8yIC0gYXRhbigkYy8oJF8pKiokbSl9KEB4KTt9OwppZiAoJHRyaWcgZXEgJ3NlYycpIHtAeT1tYXB7YWNvcygoJF8pKiokbS8kYyl9KEB4KTt9OwppZiAoJHRyaWcgZXEgJ2NzYycpIHtAeT1tYXB7YXNpbigoJF8pKiokbSkvJGN9KEB4KTt9OwokbGVmdCA9IEZvcm11bGEoInheJG0gJHRyaWcoeSkiKTsKQHh5PW1hcHtbJHhbJF9dLCR5WyRfXV19KDAuLjQpOwokZHlkeC0+e3Rlc3RfcG9pbnRzfT1+fkB4eTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yayB1c2luZyBpbXBsaWNpdCBkaWZmZXJlbnRpYXRpb24uIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BbJGxlZnRdPVskY11gXQoKW19deyRkeWR4fXs4MH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2536"><span class="process-math">\({x^{2}\tan\!\left(y\right)}=50\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-396')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-406"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-397" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="397" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHZXNzYXltYWNyb3MucGwiLCJwYXJzZXJSb290LnBsIiwiY29udGV4dEZyYWN0aW9uLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkZyYWN0aW9uIik7CnBhcnNlcjo6Um9vdC0+RW5hYmxlOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyk7CiMoJGEsJGIpID0gKDIuLjUpW05jaG9vc2VLKDQsMildOwojJGMgPSByYW5kb20oMSw5LDEpOwojKCRtLCRuLCRwKSA9ICgyLi41KVtOY2hvb3NlSyg0LDMpXTsKI2lmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRhPTM7JGI9MjskYz0yOyRtPTI7JG49MzskcD00O307CiRhPTM7JGI9MjskYz0yOyRtPTI7JG49MzskcD00OwokdyA9ICgkYyoqKDEvJHApLyRhKSoqKDEvJG0pOwokbGVmdCA9IEZvcm11bGEoIigkYSB4XiRtICsgJGIgeV4kbileJHAiKTsKJHJpZ2h0ID0gRm9ybXVsYSgiJGMiKTsKJGZyYWMgPSBGcmFjdGlvbigtJGEqJG0sJGIqJG4pOwokZHlkeD1Gb3JtdWxhKCIkZnJhYyB4XigkbS0xKSAvIHleKCRuLTEpIiktPnJlZHVjZTsKQHg9KHJhbmRvbSgtJHcsJHcsMC4wMSkscmFuZG9tKC0kdywkdywwLjAxKSxyYW5kb20oLSR3LCR3LDAuMDEpLHJhbmRvbSgtJHcsJHcsMC4wMSkscmFuZG9tKC0kdywkdywwLjAxKSk7CmlmICgkbiAlIDIgPT0gMSkgewogIEB5PW1hcHtyb290KCRuLChyb290KCRwLCRjKSAtICRhKigkXykqKiRtKS8kYil9KEB4KTsKfSBlbHNlIHsKICBAeT1tYXB7cm9vdCgkbixyYW5kb20oLTEsMSwyKSoocm9vdCgkcCwkYykgLSAkYSooJF8pKiokbSkvJGIpfShAeCk7Cn0KQHh5PW1hcHtbJHhbJF9dLCR5WyRfXV19KDAuLjQpOwokZHlkeC0+e3Rlc3RfcG9pbnRzfT1+fkB4eTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yayB1c2luZyBpbXBsaWNpdCBkaWZmZXJlbnRpYXRpb24uIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BbJGxlZnRdPVskcmlnaHRdYF0KCltfXXskZHlkeH17ODB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2538"><span class="process-math">\({\left(3x^{2}+2y^{3}\right)^{4}}={2}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-397')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-407"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-398" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="398" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwicGFyc2VyUm9vdC5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpDb250ZXh0KCJGcmFjdGlvbiIpOwpwYXJzZXI6OlJvb3QtPkVuYWJsZTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZCh5PT4nUmVhbCcpOwojJGEgPSBub25femVyb19yYW5kb20oLTksOSwxKTsKIyRiID0gcmFuZG9tKDEwMCwyMDAsNSk7CiMkcG0gPSBsaXN0X3JhbmRvbSgnKycsJy0nKTsKIyRtID0gcmFuZG9tKDIsNCwxKTsKIyRuID0gcmFuZG9tKDIsNCwxKTsKI2lmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRhPTI7JGI9MjAwOyRwbT0nLSc7JG09Mjskbj0yO307CiRhPTI7JGI9MjAwOyRwbT0nLSc7JG09Mjskbj0yOwokbGVmdCA9IEZvcm11bGEoIih5XiRtKyRhIHkgJHBtIHgpXiRuIik7CiRyaWdodCA9IEZvcm11bGEoIiRiIik7CiRkeWR4PUZvcm11bGEoIi0oJHBtIDEvKCRtIHleKCRtLTEpKyRhKSkiKS0+cmVkdWNlLT5yZWR1Y2U7CkB5PShyYW5kb20oLTMuOSwxLjksMC4yKSxyYW5kb20oLTMuOSwxLjksMC4yKSxyYW5kb20oLTMuOSwxLjksMC4yKSxyYW5kb20oLTMuOSwxLjksMC4yKSxyYW5kb20oLTMuOSwxLjksMC4yKSk7CkB4PW1hcHsocm9vdCgkbiwkYikgLSAkXyoqJG0gLSAkXykgKiAoKCRwbSBlcSAnKycpID8gMSA6IC0xKTt9KEB5KTsKQHh5PW1hcHtbJHhbJF9dLCR5WyRfXV19KDAuLjQpOwokZHlkeC0+e3Rlc3RfcG9pbnRzfT1+fkB4eTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yayB1c2luZyBpbXBsaWNpdCBkaWZmZXJlbnRpYXRpb24uIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BbJGxlZnRdPVskcmlnaHRdYF0KCltfXXskZHlkeH17ODB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2540"><span class="process-math">\({\left(y^{2}+2y-x\right)^{2}}={200}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-398')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-408"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-399" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="399" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHZXNzYXltYWNyb3MucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZCh5PT4nUmVhbCcpOwojKCRtLCRuKSA9ICgxLi4yKVtOY2hvb3NlSygyLDIpXTsKIyRjID0gcmFuZG9tKDEwLDIwLDEpOwojaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JG09Mjskbj0xOyRjPTE3fTsKJG09Mjskbj0xOyRjPTE3OwokbGVmdCA9IEZvcm11bGEoIih4XiRtICsgeV4kbikvKHheJG4gKyB5XiRtKSIpLT5yZWR1Y2U7CiRyaWdodCA9IEZvcm11bGEoIiRjIik7CiRkeWR4ID0gRm9ybXVsYSgiKCgkbi0kbSkgeF4yICsgJG4geF4oJG4tMSkgeV4kbiAtICRtIHheKCRtLTEpIHleJG0pLygkbiB4XiRuIHleKCRuLTEpICsgKCRuLSRtKSB5XjIgLSAkbSB4XiRtIHleKCRtLTEpKSIpLT5yZWR1Y2U7CkB5PShyYW5kb20oLTMuOSwxLjksMC4yKSxyYW5kb20oLTMuOSwxLjksMC4yKSxyYW5kb20oLTMuOSwxLjksMC4yKSxyYW5kb20oLTMuOSwxLjksMC4yKSxyYW5kb20oLTMuOSwxLjksMC4yKSk7CmlmICgkbSA9PSAyKSB7CiAgQHg9bWFweygkYysoLTEpKioocmFuZG9tKC0xLDEsMikpKnNxcnQoJGMqKjIgLSA0KigkXykqKDEgLSAkYyooJF8pKSkpLzJ9KEB5KTsKfSBlbHNlIHsKICBAeD1tYXB7KDErKC0xKSoqKHJhbmRvbSgtMSwxLDIpKSpzcXJ0KDEgLSA0KiRjKigkXykqKCRjIC0gKCRfKSkpKS8oMiokYyl9KEB5KTsKfQpAeHk9bWFwe1skeFskX10sJHlbJF9dXX0oMC4uNCk7CiRkeWR4LT57dGVzdF9wb2ludHN9PX5+QHh5Owokc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2UgPT4gIlNob3cgeW91ciB3b3JrIHVzaW5nIGltcGxpY2l0IGRpZmZlcmVudGlhdGlvbi4iKSBAXSonOwoKQkVHSU5fUEdNTApbYFskbGVmdF09WyRyaWdodF1gXQoKW19deyRkeWR4fXs4MH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpJZiBvbmUgdGFrZXMgdGhlIGRlcml2YXRpdmUgb2YgdGhlIGVxdWF0aW9uLCBhcyBzaG93biwgdXNpbmcgdGhlIFF1b3RpZW50IFJ1bGUsIG9uZSBmaW5kcyBbYFxmcmFje2R5fXtkeH09XGZyYWN7eF4yKzIgeCB5XjIteX17MiB4XjIgeS14K3leMn1cdGV4dHsufWBdCgpJZiBvbmUgZmlyc3QgY2xlYXJzIHRoZSBkZW5vbWluYXRvciBhbmQgd3JpdGVzIFtgeF4yK3k9MTcoeCt5XjIpYF0gdGhlbiB0YWtlcyB0aGUgZGVyaXZhdGl2ZSBvZiBib3RoIHNpZGVzLCBvbmUgZmluZHMgW2BcZnJhY3tkeX17ZHh9PSBcZnJhY3syeC0xN317MzR5LTF9XHRleHR7Ln1gXQoKVGhlc2UgZXhwcmVzc2lvbnMsIGJ5IHRoZW1zZWx2ZXMsIGFyZSBub3QgZXF1YWwuIEhvd2V2ZXIsIGZvciB2YWx1ZXMgb2YgW2B4YF0gYW5kIFtgeWBdIHRoYXQgc2F0aXNmeSB0aGUgb3JpZ2luYWwgZXF1YXRpb24gKGkuZSwgZm9yIFtgeGBdIGFuZCBbYHlgXSBzdWNoIHRoYXQgW2BcZnJhY3t4XjIreX17eCt5XjJ9PTE3YF0pLCB0aGVzZSBleHByZXNzaW9ucyBhcmUgZXF1YWwuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2542"><span class="process-math">\({\frac{x^{2}+y}{x+y^{2}}}={17}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-399')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-409"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div id="webwork-400" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="400" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHZXNzYXltYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZCh5PT4nUmVhbCcpOwojKCR0cmlnYSwkdHJpZ2IpID0gKCdzaW4nLCdjb3MnKVtOY2hvb3NlSygyLDIpXTsKI2lmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyR0cmlnYT0nc2luJzskdHJpZ2I9J2Nvcyc7fTsKJHRyaWdhPSdzaW4nOyR0cmlnYj0nY29zJzsKJGxlZnQgPSBGb3JtdWxhKCIoJHRyaWdhKHgpK3kpLygkdHJpZ2IoeSkreCkiKTsKJHJpZ2h0ID0gRm9ybXVsYSgiMSIpOwppZiAoJHRyaWdhIGVxICdzaW4nKSB7CiAgJGR5ZHggPSBGb3JtdWxhKCIoMS1jb3MoeCkpLyhzaW4oeCkrMSkiKS0+cmVkdWNlOwogICRkeWR4LT57dGVzdF9wb2ludHN9PVtbLTMuMSwtMy44MzA0MV0sWy0wLjQxLDAuNzMyMjY5XSxbMC41OSwwLjc1OTA5N10sWzIuNiwxLjgyOTA4XSxbNS4zLDYuOTMwMTddXTsKfSBlbHNlIHsKICAkZHlkeCA9IEZvcm11bGEoIihzaW4oeCkrMSkvKDEtY29zKHkpKSIpLT5yZWR1Y2U7CiAgJGR5ZHgtPnt0ZXN0X3BvaW50c309W1swLjgzMTk1OCwxXSxbMS4zMjk1ODMsMl0sWy0wLjA5NTIzMzksLTJdLFstMy43MDQ1NSwtM10sWzAuNzM5MDg1MSwwXV07Cn0KJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yayB1c2luZyBpbXBsaWNpdCBkaWZmZXJlbnRpYXRpb24uIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BbJGxlZnRdPVskcmlnaHRdYF0KCltfXXskZHlkeH17ODB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KSWYgb25lIHRha2VzIHRoZSBkZXJpdmF0aXZlIG9mIHRoZSBlcXVhdGlvbiwgYXMgc2hvd24sIHVzaW5nIHRoZSBRdW90aWVudCBSdWxlLCBvbmUgZmluZHMgW2BcZnJhY3tkeX17ZHh9ID0gXGZyYWN7LVxjb3MgKHgpICh4K1xjb3MgKHkpKStcc2luICh4KSt5fXtcc2luICh5KSAoXHNpbiAoeCkreSkreCtcY29zICh5KX1cdGV4dHsufWBdCgpJZiBvbmUgZmlyc3QgY2xlYXJzIHRoZSBkZW5vbWluYXRvciBhbmQgd3JpdGVzIFtgXHNpbih4KSt5ID0gXGNvcyh5KSt4YF0gdGhlbiB0YWtlcyB0aGUgZGVyaXZhdGl2ZSBvZiBib3RoIHNpZGVzLCBvbmUgZmluZHMgW2BcZnJhY3tkeX17ZHh9ID0gXGZyYWN7MS1cY29zKHgpfXsxK1xzaW4oeSl9XHRleHR7Ln1gXQoKVGhlc2UgZXhwcmVzc2lvbnMsIGJ5IHRoZW1zZWx2ZXMsIGFyZSBub3QgZXF1YWwuIEhvd2V2ZXIsIGZvciB2YWx1ZXMgb2YgW2B4YF0gYW5kIFtgeWBdIHRoYXQgc2F0aXNmeSB0aGUgb3JpZ2luYWwgZXF1YXRpb24gKGkuZSwgZm9yIFtgeGBdIGFuZCBbYHlgXSBzdWNoIHRoYXQgW2BcZnJhY3tcc2luKHgpK3kpfXtcY29zKHkpK3gpfT0xYF0pLCB0aGVzZSBleHByZXNzaW9ucyBhcmUgZXF1YWwuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2547"><span class="process-math">\({\frac{\sin\!\left(x\right)+y}{\cos\!\left(y\right)+x}}={1}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-400')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-410"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-401" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="401" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKJGR5ZHg9Rm9ybXVsYSgiLXgveSIpOwpAdD0ocmFuZG9tKDAsNi4yOCwwLjAxKSxyYW5kb20oMCw2LjI4LDAuMDEpLHJhbmRvbSgwLDYuMjgsMC4wMSkscmFuZG9tKDAsNi4yOCwwLjAxKSxyYW5kb20oMCw2LjI4LDAuMDEpKTsKQHg9bWFwe2V4cChleHAoMSkvMikqY29zKCRfKX0oQHQpOwpAeT1tYXB7ZXhwKGV4cCgxKS8yKSpzaW4oJF8pfShAdCk7CkB4eT1tYXB7WyR4WyRfXSwkeVskX11dfSgwLi40KTsKJGR5ZHgtPnt0ZXN0X3BvaW50c309fn5AeHk7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiU2hvdyB5b3VyIHdvcmsgdXNpbmcgaW1wbGljaXQgZGlmZmVyZW50aWF0aW9uLiIpIEBdKic7CgpCRUdJTl9QR01MCltgXGxuXG1hdGhvcGVue31cbGVmdCh4XjIreV4yXHJpZ2h0KVxtYXRoY2xvc2V7fT1lYF0KCltfXXskZHlkeH17ODB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2552"><span class="process-math">\(\ln\mathopen{}\left(x^2+y^2\right)\mathclose{}=e\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-401')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-411"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div id="webwork-402" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="402" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKJGR5ZHg9Rm9ybXVsYSgiLSgyeCt5KS8oMnkreCkiKTsKQHQ9KHJhbmRvbSgwLDYuMjgsMC4wMSkscmFuZG9tKDAsNi4yOCwwLjAxKSxyYW5kb20oMCw2LjI4LDAuMDEpLHJhbmRvbSgwLDYuMjgsMC4wMSkscmFuZG9tKDAsNi4yOCwwLjAxKSk7CkB1PW1hcHtzcXJ0KDIvMypleHAoMSkpKmNvcygkXyl9KEB0KTsKQHY9bWFwe3NxcnQoMipleHAoMSkpKnNpbigkXyl9KEB0KTsKQHg9bWFweygkdVskX10tJHZbJF9dKS9zcXJ0KDIpfSgwLi40KTsKQHk9bWFweygkdVskX10rJHZbJF9dKS9zcXJ0KDIpfSgwLi40KTsKQHh5PW1hcHtbJHhbJF9dLCR5WyRfXV19KDAuLjQpOwokZHlkeC0+e3Rlc3RfcG9pbnRzfT1+fkB4eTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yayB1c2luZyBpbXBsaWNpdCBkaWZmZXJlbnRpYXRpb24uIikgQF0qJzsKCkJFR0lOX1BHTUwKW2BcbG5cbWF0aG9wZW57fVxsZWZ0KHheMit4eSt5XjJccmlnaHQpXG1hdGhjbG9zZXt9ID0gMWBdCgpbX117JGR5ZHh9ezgwfQoKWyRzaG93d29ya10qKgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2554"><span class="process-math">\(\ln\mathopen{}\left(x^2+xy+y^2\right)\mathclose{} = 1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-402')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-412"><h5 class="heading"><span class="codenumber">26<span class="period">.</span></span></h5>
+<div id="webwork-403" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="403" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcbHp9WzJde1xmcmFje2QjMX17ZCMyfX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOwoKQkVHSU5fUEdNTApTaG93IHRoYXQgW2BcbHp7eX17eH1gXSBpcyB0aGUgc2FtZSBmb3IgZWFjaCBvZiB0aGUgZm9sbG93aW5nIGltcGxpY2l0bHkgZGVmaW5lZCBmdW5jdGlvbnMuCgphLiAgW2B4eT0xYF0KCiAgICBbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKYS4gIFtgeF4yeV4yPTFgXQoKICAgIFtAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgphLiAgW2Bcc2luKHh5KSA9IDFgXQoKICAgIFtAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgphLiAgW2BcbG4oeHkpID0xYF0KCiAgICBbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-2556">Show that <span class="process-math">\(\lz{y}{x}\)</span> is the same for each of the following implicitly defined functions.</p>
+<ol id="p-2557" class="lower-alpha">
+<li id="li-659"><p id="p-2558"><span class="process-math">\(\displaystyle xy=1\)</span></p></li>
+<li id="li-660"><p id="p-2559"><span class="process-math">\(\displaystyle x^2y^2=1\)</span></p></li>
+<li id="li-661"><p id="p-2560"><span class="process-math">\(\displaystyle \sin(xy) = 1\)</span></p></li>
+<li id="li-662"><p id="p-2561"><span class="process-math">\(\displaystyle \ln(xy) =1\)</span></p></li>
+</ol>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-403')">Make Interactive</button></div>
+</div></article><div class="exercisegroup" id="exercisegroup-45">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-52"><p id="p-2562">Find the equation of the tangent line to the graph of the implicitly defined function at the indicated points. As a visual aid, the function is graphed.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-413"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<div id="webwork-404" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="404" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2dyYXBobWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpOyRyZWZyZXNoQ2FjaGVkSW1hZ2VzPTE7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyk7CnBhcnNlcjo6QXNzaWdubWVudC0+QWxsb3c7CkBlcT0oRm9ybXVsYSgieT0wIiksRm9ybXVsYSgieT0tMS44NTkoeC0wLjEpKzAuMjgxMSIpKTsKJGdyPWluaXRfZ3JhcGgoLTEuMiwtMS4yLDEuMiwxLjIsYXhlcz0+WzAsMF0sc2l6ZT0+WzI4MiwyODJdKTsKJGdyLT5sYigncmVzZXQnKTsKZm9yIG15JGkoLTEsLTAuNSwwLjUsMSl7JGdyLT5tb3ZlVG8oJGksLTAuMDQpOyRnci0+bGluZVRvKCRpLDAuMDQsJ2JsYWNrJywyKTskZ3ItPmxiKG5ldyBMYWJlbCgkaSwtMC4wNSwkaSwnYmxhY2snLCdjZW50ZXInLCd0b3AnLCdsYXJnZScpKTt9Owpmb3IgbXkkaSgtMSwtMC41LDAuNSwxKXskZ3ItPm1vdmVUbygtMC4wNCwkaSk7JGdyLT5saW5lVG8oMC4wNCwkaSwnYmxhY2snLDIpOyRnci0+bGIobmV3IExhYmVsKC0wLjA1LCRpLCRpLCdibGFjaycsJ3JpZ2h0JywnbWlkZGxlJywnbGFyZ2UnKSk7fTsKQ29udGV4dCgiTnVtZXJpYyIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKHQ9PidSZWFsJyk7CiR4PUZvcm11bGEoImNvc141KHQpIik7CiR5PUZvcm11bGEoInNpbl41KHQpIik7CiRmPW5ldyBGdW4oJHgtPnBlcmxGdW5jdGlvbiwkeS0+cGVybEZ1bmN0aW9uLCRncik7CiRmLT5kb21haW4oMCw2LjI4MzE4NTIpOwokZi0+c3RlcHMoMTAwKTsKJGYtPndlaWdodCgyKTsKJGYtPmNvbG9yKCdibHVlJyk7CiRnci0+c3RhbXBzKGNsb3NlZF9jaXJjbGUoMC4xLDAuMjgxMSwnYmxhY2snKSk7CiRnci0+bGIobmV3IExhYmVsKDAuMSwwLjI4MTEsJygwLjEsMC4yODExKScsJ2JsYWNrJywnbGVmdCcsJ2JvdHRvbScsJ2xhcmdlJykpOwoKQkVHSU5fUEdNTApPbiB0aGUgY3VydmUgW2B4XnsyLzV9K3leezIvNX0gPSAxXHRleHR7LH1gXSBmaW5kIHRoZSBlcXVhdGlvbiBvZiB0aGUgdGFuZ2VudCBsaW5lIGF0OgoKYS4gIFtgKDEsMClgXQoKICAgIFtfXXskZXFbMF19ezMwfQoKCmEuICBbYCgwLjEsMC4yODExKWBdICh3aGljaCBkb2VzIG5vdCBfZXhhY3RseV8gbGllIG9uIHRoZSBjdXJ2ZSwgYnV0IGlzIHZlcnkgY2xvc2UpCgogICAgW19deyRlcVsxXX17MzB9CgoKPj4gW0BpbWFnZShpbnNlcnRHcmFwaCgkZ3IpLCB3aWR0aD0+NjAwKUBdKiAgPDwKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-2563">On the curve <span class="process-math">\(x^{2/5}+y^{2/5} = 1\text{,}\)</span> find the equation of the tangent line at:</p>
+<ol id="p-2564" class="lower-alpha">
+<li id="li-663"><p id="p-2565"><span class="process-math">\(\displaystyle (1,0)\)</span></p></li>
+<li id="li-664"><p id="p-2566"><span class="process-math">\((0.1,0.2811)\)</span> (which does not <em class="emphasis">exactly</em> lie on the curve, but is very close)</p></li>
+</ol>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/webwork/images/webwork-404-image-1.png" class="contained"></div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-404')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-414"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-405" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="405" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2dyYXBobWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpOyRyZWZyZXNoQ2FjaGVkSW1hZ2VzPTE7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyk7CnBhcnNlcjo6QXNzaWdubWVudC0+QWxsb3c7CkBlcT0oRm9ybXVsYSgieD0xIiksRm9ybXVsYSgieT0tM3NxcnQoMykvOCh4LXNxcnQoMC42KSkrc3FydCgwLjgpIiksRm9ybXVsYSgieT0xIikpOwokZ3I9aW5pdF9ncmFwaCgtMS4yLC0xLjIsMS4yLDEuMixheGVzPT5bMCwwXSxzaXplPT5bMjgyLDI4Ml0pOwokZ3ItPmxiKCdyZXNldCcpOwpmb3IgbXkkaSgtMSwtMC41LDAuNSwxKXskZ3ItPm1vdmVUbygkaSwtMC4wNCk7JGdyLT5saW5lVG8oJGksMC4wNCwnYmxhY2snLDIpOyRnci0+bGIobmV3IExhYmVsKCRpLC0wLjA1LCRpLCdibGFjaycsJ2NlbnRlcicsJ3RvcCcsJ2xhcmdlJykpO307CmZvciBteSRpKC0xLC0wLjUsMC41LDEpeyRnci0+bW92ZVRvKC0wLjA0LCRpKTskZ3ItPmxpbmVUbygwLjA0LCRpLCdibGFjaycsMik7JGdyLT5sYihuZXcgTGFiZWwoLTAuMDUsJGksJGksJ2JsYWNrJywncmlnaHQnLCdtaWRkbGUnLCdsYXJnZScpKTt9OwpDb250ZXh0KCJOdW1lcmljIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJHg9Rm9ybXVsYSgiKGFicyhjb3ModCkpKV4oMS8yKSpzZ24oY29zKHQpKSIpOwokeT1Gb3JtdWxhKCIoYWJzKHNpbih0KSkpXigxLzIpKnNnbihzaW4odCkpIik7CiRmPW5ldyBGdW4oJHgtPnBlcmxGdW5jdGlvbiwkeS0+cGVybEZ1bmN0aW9uLCRncik7CiRmLT5kb21haW4oMCw2LjI4MzE4NTIpOwokZi0+c3RlcHMoMTAwKTsKJGYtPndlaWdodCgyKTsKJGYtPmNvbG9yKCdibHVlJyk7CiRnci0+c3RhbXBzKGNsb3NlZF9jaXJjbGUoMC43NzQ2LDAuODk0NCwnYmxhY2snKSk7CiRnci0+bGIobmV3IExhYmVsKDAuNzc0NiwwLjg5NDQsJyhzcXJ0KDAuNiksc3FydCgwLjgpKScsJ2JsYWNrJywncmlnaHQnLCd0b3AnLCdsYXJnZScpKTsKCkJFR0lOX1BHTUwKT24gdGhlIGN1cnZlIFtgeF57NH0reV57NH0gPSAxXHRleHR7LH1gXSBmaW5kIHRoZSBlcXVhdGlvbiBvZiB0aGUgdGFuZ2VudCBsaW5lIGF0OgoKYS4gIFtgKDEsMClgXQoKICAgIFtfXXskZXFbMF19ezMwfQoKCmEuICBbYFxsZWZ0KFxzcXJ0ezAuNn0sXHNxcnR7MC44fVxyaWdodClgXQoKICAgIFtfXXskZXFbMV19ezMwfQoKCmEuICBBdCBbYCgwLDEpYF0KCiAgICBbX117JGVxWzJdfXszMH0KCgo+PiBbQGltYWdlKGluc2VydEdyYXBoKCRnciksIHdpZHRoPT42MDApQF0qICA8PAoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-2569">On the curve <span class="process-math">\(x^{4}+y^{4} = 1\text{,}\)</span> find the equation of the tangent line at:</p>
+<ol id="p-2570" class="lower-alpha">
+<li id="li-665"><p id="p-2571"><span class="process-math">\(\displaystyle (1,0)\)</span></p></li>
+<li id="li-666"><p id="p-2572"><span class="process-math">\(\displaystyle \left(\sqrt{0.6},\sqrt{0.8}\right)\)</span></p></li>
+<li id="li-667"><p id="p-2573">At <span class="process-math">\((0,1)\)</span></p></li>
+</ol>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/webwork/images/webwork-405-image-1.png" class="contained"></div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-405')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-415"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<div id="webwork-406" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="406" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2dyYXBobWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpOyRyZWZyZXNoQ2FjaGVkSW1hZ2VzPTE7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyk7CnBhcnNlcjo6QXNzaWdubWVudC0+QWxsb3c7CkBlcT0oRm9ybXVsYSgieT00IiksRm9ybXVsYSgieT0zLzEwOF4oMS80KSh4LTIpLTEwOF4oMS80KSIpKTsKJGdyPWluaXRfZ3JhcGgoLTQuMiwtNC4yLDQuMiw0LjIsYXhlcz0+WzAsMF0sc2l6ZT0+WzI4MiwyODJdKTsKJGdyLT5sYigncmVzZXQnKTsKZm9yIG15JGkoLTQsLTMsLTIsLTEsMSwyLDMsNCl7JGdyLT5tb3ZlVG8oJGksLTAuMDQpOyRnci0+bGluZVRvKCRpLDAuMDQsJ2JsYWNrJywyKTskZ3ItPmxiKG5ldyBMYWJlbCgkaSwtMC4wNSwkaSwnYmxhY2snLCdjZW50ZXInLCd0b3AnLCdsYXJnZScpKTt9Owpmb3IgbXkkaSgtNCwtMywtMiwtMSwxLDIsMyw0KXskZ3ItPm1vdmVUbygtMC4wNCwkaSk7JGdyLT5saW5lVG8oMC4wNCwkaSwnYmxhY2snLDIpOyRnci0+bGIobmV3IExhYmVsKC0wLjA1LCRpLCRpLCdibGFjaycsJ3JpZ2h0JywnbWlkZGxlJywnbGFyZ2UnKSk7fTsKQ29udGV4dCgiTnVtZXJpYyIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKHQ9PidSZWFsJyk7CiR4PUZvcm11bGEoInNxcnQoKDIxNiBzaW5eMih0KSArIHNxcnQoKDIxNiBzaW5eMih0KSleMiAtICgzNiBzaW5eMih0KSleMykpXigxLzMpICsgKDIxNiBzaW5eMih0KSAtIHNxcnQoKDIxNiBzaW5eMih0KSleMiAtICgzNnNpbl4yKHQpKV4zKSleKDEvMykgKyA0KSBjb3ModCkiKTsKJHk9Rm9ybXVsYSgic3FydCgoMjE2IHNpbl4yKHQpICsgc3FydCgoMjE2IHNpbl4yKHQpKV4yIC0gKDM2IHNpbl4yKHQpKV4zKSleKDEvMykgKyAoMjE2IHNpbl4yKHQpIC0gc3FydCgoMjE2IHNpbl4yKHQpKV4yIC0gKDM2c2luXjIodCkpXjMpKV4oMS8zKSArIDQpIHNpbih0KSIpOwokZj1uZXcgRnVuKCR4LT5wZXJsRnVuY3Rpb24sJHktPnBlcmxGdW5jdGlvbiwkZ3IpOwokZi0+ZG9tYWluKDAsNi4yODMxODUyKTsKJGYtPnN0ZXBzKDEwMCk7CiRmLT53ZWlnaHQoMik7CiRmLT5jb2xvcignYmx1ZScpOwokZ3ItPnN0YW1wcyhjbG9zZWRfY2lyY2xlKDIsLTMuMjI0LCdibGFjaycpKTsKJGdyLT5sYihuZXcgTGFiZWwoMiwtMy4yMjQsJygyLC1yb290KDQsMTA4KSknLCdibGFjaycsJ2NlbnRlcicsJ2JvdHRvbScsJ2xhcmdlJykpOwoKQkVHSU5fUEdNTApPbiB0aGUgY3VydmUgW2AoeF4yK3leMi00KV4zID0gMTA4eV4yXHRleHR7LH1gXSBmaW5kIHRoZSBlcXVhdGlvbiBvZiB0aGUgdGFuZ2VudCBsaW5lIGF0OgoKYS4gIFtgKDAsNClgXQoKICAgIFtfXXskZXFbMF19ezMwfQoKCmEuICBbYFxsZWZ0KDIsLVxzcXJ0WzRdezEwOH1ccmlnaHQpYF0KCiAgICBbX117JGVxWzFdfXszMH0KCgo+PiBbQGltYWdlKGluc2VydEdyYXBoKCRnciksIHdpZHRoPT42MDApQF0qICA8PAoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-2577">On the curve <span class="process-math">\((x^2+y^2-4)^3 = 108y^2\text{,}\)</span> find the equation of the tangent line at:</p>
+<ol id="p-2578" class="lower-alpha">
+<li id="li-668"><p id="p-2579"><span class="process-math">\(\displaystyle (0,4)\)</span></p></li>
+<li id="li-669"><p id="p-2580"><span class="process-math">\(\displaystyle \left(2,-\sqrt[4]{108}\right)\)</span></p></li>
+</ol>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/webwork/images/webwork-406-image-1.png" class="contained"></div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-406')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-416"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<div id="webwork-407" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="407" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2dyYXBobWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpOyRyZWZyZXNoQ2FjaGVkSW1hZ2VzPTE7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyk7CnBhcnNlcjo6QXNzaWdubWVudC0+QWxsb3c7CkBlcT0oRm9ybXVsYSgieT0teCsxIiksRm9ybXVsYSgieT0zc3FydCgzKS80IikpOwokZ3I9aW5pdF9ncmFwaCgtMi41LC0xLjUsMC41LDEuNSxheGVzPT5bMCwwXSxzaXplPT5bMjgyLDI4Ml0pOwokZ3ItPmxiKCdyZXNldCcpOwpmb3IgbXkkaSgtMiwtMSl7JGdyLT5tb3ZlVG8oJGksLTAuMDQpOyRnci0+bGluZVRvKCRpLDAuMDQsJ2JsYWNrJywyKTskZ3ItPmxiKG5ldyBMYWJlbCgkaSwtMC4wNSwkaSwnYmxhY2snLCdjZW50ZXInLCd0b3AnLCdsYXJnZScpKTt9Owpmb3IgbXkkaSgtMSwxKXskZ3ItPm1vdmVUbygtMC4wNCwkaSk7JGdyLT5saW5lVG8oMC4wNCwkaSwnYmxhY2snLDIpOyRnci0+bGIobmV3IExhYmVsKC0wLjA1LCRpLCRpLCdibGFjaycsJ3JpZ2h0JywnbWlkZGxlJywnbGFyZ2UnKSk7fTsKQ29udGV4dCgiTnVtZXJpYyIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKHQ9PidSZWFsJyk7CiR4PUZvcm11bGEoIigxIC0gY29zKHQpKSpjb3ModCkiKTsKJHk9Rm9ybXVsYSgiKDEgLSBjb3ModCkpKnNpbih0KSIpOwokZj1uZXcgRnVuKCR4LT5wZXJsRnVuY3Rpb24sJHktPnBlcmxGdW5jdGlvbiwkZ3IpOwokZi0+ZG9tYWluKDAsNi4yODMxODUyKTsKJGYtPnN0ZXBzKDEwMCk7CiRmLT53ZWlnaHQoMik7CiRmLT5jb2xvcignYmx1ZScpOwokZ3ItPnN0YW1wcyhjbG9zZWRfY2lyY2xlKC0wLjc1LDEuMjk5LCdibGFjaycpKTsKJGdyLT5sYihuZXcgTGFiZWwoLTAuNzUsMS4yOTksJygtMy80LDNzcXJ0KDMpLzQpJywnYmxhY2snLCdyaWdodCcsJ2JvdHRvbScsJ2xhcmdlJykpOwoKQkVHSU5fUEdNTApPbiB0aGUgY3VydmUgW2AoeF4yK3leMit4KV4yID0geF4yK3leMlx0ZXh0eyx9YF0gZmluZCB0aGUgZXF1YXRpb24gb2YgdGhlIHRhbmdlbnQgbGluZSBhdDoKCmEuICBbYCgwLDEpYF0KCiAgICBbX117JGVxWzBdfXszMH0KCgphLiAgW2BcbGVmdCgtXGZyYWN7M317NH0sIFxmcmFjezNcc3FydHszfX17NH1ccmlnaHQpYF0KCiAgICBbX117JGVxWzFdfXszMH0KCgo+PiBbQGltYWdlKGluc2VydEdyYXBoKCRnciksIHdpZHRoPT42MDApQF0qICA8PAoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-2583">On the curve <span class="process-math">\((x^2+y^2+x)^2 = x^2+y^2\text{,}\)</span> find the equation of the tangent line at:</p>
+<ol id="p-2584" class="lower-alpha">
+<li id="li-670"><p id="p-2585"><span class="process-math">\(\displaystyle (0,1)\)</span></p></li>
+<li id="li-671"><p id="p-2586"><span class="process-math">\(\displaystyle \left(-\frac{3}{4}, \frac{3\sqrt{3}}{4}\right)\)</span></p></li>
+</ol>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/webwork/images/webwork-407-image-1.png" class="contained"></div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-407')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-417"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<div id="webwork-408" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="408" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2dyYXBobWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpOyRyZWZyZXNoQ2FjaGVkSW1hZ2VzPTE7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyk7CnBhcnNlcjo6QXNzaWdubWVudC0+QWxsb3c7CkBlcT0oRm9ybXVsYSgieT0tMS9zcXJ0KDMpKHgtNy8yKSsoNiszc3FydCgzKSkvMiIpLEZvcm11bGEoInk9c3FydCgzKSh4LSg0KzNzcXJ0KDMpKSkvMiszLzIiKSk7CiRncj1pbml0X2dyYXBoKC0yLC0yLDYuNSw2LjUsYXhlcz0+WzAsMF0sc2l6ZT0+WzI4MiwyODJdKTsKJGdyLT5sYigncmVzZXQnKTsKZm9yIG15JGkoMiw0LDYpeyRnci0+bW92ZVRvKCRpLC0wLjA0KTskZ3ItPmxpbmVUbygkaSwwLjA0LCdibGFjaycsMik7JGdyLT5sYihuZXcgTGFiZWwoJGksLTAuMDUsJGksJ2JsYWNrJywnY2VudGVyJywndG9wJywnbGFyZ2UnKSk7fTsKZm9yIG15JGkoMiw0LDYpeyRnci0+bW92ZVRvKC0wLjA0LCRpKTskZ3ItPmxpbmVUbygwLjA0LCRpLCdibGFjaycsMik7JGdyLT5sYihuZXcgTGFiZWwoLTAuMDUsJGksJGksJ2JsYWNrJywncmlnaHQnLCdtaWRkbGUnLCdsYXJnZScpKTt9OwpDb250ZXh0KCJOdW1lcmljIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJHg9Rm9ybXVsYSgiMypjb3ModCkrMiIpOwokeT1Gb3JtdWxhKCIzKnNpbih0KSszIik7CiRmPW5ldyBGdW4oJHgtPnBlcmxGdW5jdGlvbiwkeS0+cGVybEZ1bmN0aW9uLCRncik7CiRmLT5kb21haW4oMCw2LjI4MzE4NTIpOwokZi0+c3RlcHMoMTAwKTsKJGYtPndlaWdodCgyKTsKJGYtPmNvbG9yKCdibHVlJyk7CiRnci0+c3RhbXBzKGNsb3NlZF9jaXJjbGUoMy41LDUuNTk4LCdibGFjaycpKTsKJGdyLT5sYihuZXcgTGFiZWwoMy41LDUuNTk4LCcoNy8yLCg2KzNzcXJ0KDMpKS8yKScsJ2JsYWNrJywnY2VudGVyJywndG9wJywnbGFyZ2UnKSk7CiRnci0+c3RhbXBzKGNsb3NlZF9jaXJjbGUoNC41OTgsMS41LCdibGFjaycpKTsKJGdyLT5sYihuZXcgTGFiZWwoNC41OTgsMS41LCcoKDQrM3NxcnQoMykpLzIsMy8yKScsJ2JsYWNrJywncmlnaHQnLCdib3R0b20nLCdsYXJnZScpKTsKCkJFR0lOX1BHTUwKT24gdGhlIGN1cnZlIFtgKHgtMileMisoeS0zKV4yPTlcdGV4dHssfWBdIGZpbmQgdGhlIGVxdWF0aW9uIG9mIHRoZSB0YW5nZW50IGxpbmUgYXQ6CgphLiAgW2BcbGVmdChcZnJhY3s3fXsyfSxcZnJhY3s2KzNcc3FydHszfX17Mn1ccmlnaHQpYF0KCiAgICBbX117JGVxWzBdfXszMH0KCgphLiAgW2BcbGVmdChcZnJhY3s0KzNcc3FydHszfX17Mn0sXGZyYWN7M317Mn1ccmlnaHQpYF0KCiAgICBbX117JGVxWzFdfXszMH0KCgo+PiBbQGltYWdlKGluc2VydEdyYXBoKCRnciksIHdpZHRoPT42MDApQF0qICA8PAoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-2589">On the curve <span class="process-math">\((x-2)^2+(y-3)^2=9\text{,}\)</span> find the equation of the tangent line at:</p>
+<ol id="p-2590" class="lower-alpha">
+<li id="li-672"><p id="p-2591"><span class="process-math">\(\displaystyle \left(\frac{7}{2},\frac{6+3\sqrt{3}}{2}\right)\)</span></p></li>
+<li id="li-673"><p id="p-2592"><span class="process-math">\(\displaystyle \left(\frac{4+3\sqrt{3}}{2},\frac{3}{2}\right)\)</span></p></li>
+</ol>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/webwork/images/webwork-408-image-1.png" class="contained"></div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-408')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-418"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<div id="webwork-409" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="409" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2dyYXBobWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpOyRyZWZyZXNoQ2FjaGVkSW1hZ2VzPTE7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyk7CnBhcnNlcjo6QXNzaWdubWVudC0+QWxsb3c7CkBlcT0oRm9ybXVsYSgieT0xIiksRm9ybXVsYSgieT0tMi9zcXJ0KDUpKHgrMSkrMS8yKC0xK3NxcnQoNSkpIiksRm9ybXVsYSgieT0yL3NxcnQoNSkoeCsxKSsxLzIoLTEtc3FydCg1KSkiKSk7CiRncj1pbml0X2dyYXBoKC0yLjUsLTIuNSwyLjUsMi41LGF4ZXM9PlswLDBdLHNpemU9PlsyODIsMjgyXSk7CiRnci0+bGIoJ3Jlc2V0Jyk7CmZvciBteSRpKC0yLC0xLDEsMil7JGdyLT5tb3ZlVG8oJGksLTAuMDQpOyRnci0+bGluZVRvKCRpLDAuMDQsJ2JsYWNrJywyKTskZ3ItPmxiKG5ldyBMYWJlbCgkaSwwLCRpLCdibGFjaycsJ2NlbnRlcicsJ3RvcCcsJ2xhcmdlJykpO307CmZvciBteSRpKC0yLC0xLDEsMil7JGdyLT5tb3ZlVG8oLTAuMDQsJGkpOyRnci0+bGluZVRvKDAuMDQsJGksJ2JsYWNrJywyKTskZ3ItPmxiKG5ldyBMYWJlbCgwLCRpLCRpLCdibGFjaycsJ3JpZ2h0JywnbWlkZGxlJywnbGFyZ2UnKSk7fTsKQ29udGV4dCgiTnVtZXJpYyIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKHQ9PidSZWFsJyk7CiR4PUZvcm11bGEoIigtc2luKDJ0KS1jb3NeMih0KSkvc2luXjModCkgY29zKHQpIik7CiR5PUZvcm11bGEoIigtc2luKDJ0KS1jb3NeMih0KSkvc2luXjModCkgc2luKHQpIik7CiRmPW5ldyBGdW4oJHgtPnBlcmxGdW5jdGlvbiwkeS0+cGVybEZ1bmN0aW9uLCRncik7CiRmLT5kb21haW4ocGkvNCw3KnBpLzgpOwokZi0+c3RlcHMoMTAwKTsKJGYtPndlaWdodCgyKTsKJGYtPmNvbG9yKCdibHVlJyk7CiRnci0+c3RhbXBzKGNsb3NlZF9jaXJjbGUoLTEsMSwnYmxhY2snKSk7CiRnci0+bGIobmV3IExhYmVsKC0xLDEsJygtMSwxKScsJ2JsYWNrJywncmlnaHQnLCdib3R0b20nLCdsYXJnZScpKTsKJGdyLT5zdGFtcHMoY2xvc2VkX2NpcmNsZSgtMSwoLTErc3FydCg1KSkvMiwnYmxhY2snKSk7CiRnci0+bGIobmV3IExhYmVsKC0xLCgtMStzcXJ0KDUpKS8yLCcoLTEsKC0xK3NxcnQoNSkpLzIpJywnYmxhY2snLCdsZWZ0JywnbWlkZGxlJywnbGFyZ2UnKSk7CiRnci0+c3RhbXBzKGNsb3NlZF9jaXJjbGUoLTEsKC0xLXNxcnQoNSkpLzIsJ2JsYWNrJykpOwokZ3ItPmxiKG5ldyBMYWJlbCgtMSwoLTEtc3FydCg1KSkvMiwnKC0xLCgtMS1zcXJ0KDUpKS8yKScsJ2JsYWNrJywnbGVmdCcsJ3RvcCcsJ2xhcmdlJykpOwoKQkVHSU5fUEdNTApPbiB0aGUgY3VydmUgW2B4XjIreV4zKzJ4eT0wXHRleHR7LH1gXSBmaW5kIHRoZSBlcXVhdGlvbiBvZiB0aGUgdGFuZ2VudCBsaW5lIGF0OgoKYS4gIFtgKC0xLDEpYF0KCiAgICBbX117JGVxWzBdfXszMH0KCgphLiAgW2BcbGVmdCgtMSxcZnJhYzEyKC0xK1xzcXJ0ezV9KVxyaWdodClgXQoKICAgIFtfXXskZXFbMV19ezMwfQoKCmEuICBbYFxsZWZ0KC0xLFxmcmFjMTIoLTEtXHNxcnR7NX0pXHJpZ2h0KWBdCgogICAgW19deyRlcVsyXX17MzB9CgoKPj4gW0BpbWFnZShpbnNlcnRHcmFwaCgkZ3IpLCB3aWR0aD0+NjAwKUBdKiAgPDwKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-2595">On the curve <span class="process-math">\(x^2+y^3+2xy=0\text{,}\)</span> find the equation of the tangent line at:</p>
+<ol id="p-2596" class="lower-alpha">
+<li id="li-674"><p id="p-2597"><span class="process-math">\(\displaystyle (-1,1)\)</span></p></li>
+<li id="li-675"><p id="p-2598"><span class="process-math">\(\displaystyle \left(-1,\frac12(-1+\sqrt{5})\right)\)</span></p></li>
+<li id="li-676"><p id="p-2599"><span class="process-math">\(\displaystyle \left(-1,\frac12(-1-\sqrt{5})\right)\)</span></p></li>
+</ol>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/webwork/images/webwork-409-image-1.png" class="contained"></div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-409')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-46">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-53"><p id="p-2603">An implicitly defined function is given. Find <span class="process-math">\(\lzn{2}{y}{x}\text{.}\)</span> Note: these are the same functions used in Exercises <a href="" class="xref" data-knowl="./knowl/exer_02_06_ex_09.html" title="Exercise 2.6.4.13">2.6.4.13</a> through <a href="" class="xref" data-knowl="./knowl/exer_02_06_ex_12.html" title="Exercise 2.6.4.16">2.6.4.16</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-419"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<div id="webwork-410" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="410" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZCh5PT4nUmVhbCcpOwokZGR5ZGR4PUZvcm11bGEoIi0oKDJ5KzEpKDEyeF4yKS00eF4zKDIqLSg0eF4zKS8oMnkrMSkpKS8oMnkrMSleMiIpOwpAeT0ocmFuZG9tKC0yLDIsMC4xKSxyYW5kb20oLTIsMiwwLjEpLHJhbmRvbSgtMiwyLDAuMSkscmFuZG9tKC0yLDIsMC4xKSxyYW5kb20oLTIsMiwwLjEpKTsKQHg9bWFweyg3LSgkXyktKCRfKSoqMikqKigxLzQpKigtMSkqKihyYW5kb20oLTEsMSwyKSl9KEB5KTsKQHh5PW1hcHtbJHhbJF9dLCR5WyRfXV19KDAuLjQpOwokZGR5ZGR4LT57dGVzdF9wb2ludHN9PX5+QHh5OwoKQkVHSU5fUEdNTApbYHheNCt5XjIreT03YF0KCltfXXskZGR5ZGR4fXs1MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2604"><span class="process-math">\(x^4+y^2+y=7\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-410')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-420"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<div id="webwork-411" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="411" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZCh5PT4nUmVhbCcpOwokZGR5ZGR4PUZvcm11bGEoIi0oeF4oMy81KSozLzV5XigtMi81KSgteV4oMy81KS94XigzLzUpKS15XigzLzUpKjMvNXheKC0yLzUpKS94Xig2LzUpIik7CkB5PShyYW5kb20oMC4wMSwwLjk5LDAuMDEpLHJhbmRvbSgwLjAxLDAuOTksMC4wMSkscmFuZG9tKDAuMDEsMC45OSwwLjAxKSxyYW5kb20oMC4wMSwwLjk5LDAuMDEpLHJhbmRvbSgwLjAxLDAuOTksMC4wMSkpOwpAeD1tYXB7KDEtKCRfKSoqKDIvNSkpKiooNS8yKX0oQHkpOwpAeHk9bWFwe1skeFskX10sJHlbJF9dXX0oMC4uNCk7CiRkZHlkZHgtPnt0ZXN0X3BvaW50c309fn5AeHk7CgpCRUdJTl9QR01MCltgeF57Mi81fSt5XnsyLzV9PTFgXQoKW19deyRkZHlkZHh9ezUwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2606"><span class="process-math">\(x^{2/5}+y^{2/5}=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-411')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-421"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<div id="webwork-412" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="412" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZCh5PT4nUmVhbCcpOwokZGR5ZGR4PUZvcm11bGEoInNpbl4yKHgpc2VjXjIoeSl0YW4oeSkrY29zKHgpc2VjKHkpIik7CkB5PShyYW5kb20oMCwzLjE0LDAuMDEpLHJhbmRvbSgwLDMuMTQsMC4wMSkscmFuZG9tKDAsMy4xNCwwLjAxKSxyYW5kb20oMCwzLjE0LDAuMDEpLHJhbmRvbSgwLDMuMTQsMC4wMSkpOwpAeD1tYXB7YWNvcygxLXNpbigkXykpfShAeSk7CkB4eT1tYXB7WyR4WyRfXSwkeVskX11dfSgwLi40KTsKJGRkeWRkeC0+e3Rlc3RfcG9pbnRzfT1+fkB4eTsKCkJFR0lOX1BHTUwKW2BcY29zKHgpK1xzaW4oeSk9MWBdCgpbX117JGRkeWRkeH17NTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2608"><span class="process-math">\(\cos(x)+\sin(y)=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-412')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-422"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<div id="webwork-413" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="413" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFkZCh5PT4nUmVhbCcpOwokZGR5ZGR4PUZvcm11bGEoIjAiKTsKQHg9KHJhbmRvbSgtNCw0LDAuMSkscmFuZG9tKC00LDQsMC4xKSxyYW5kb20oLTQsNCwwLjEpLHJhbmRvbSgtNCw0LDAuMSkscmFuZG9tKC00LDQsMC4xKSk7CkB5PW1hcHskXy8xMH0oQHgpOwpAeHk9bWFwe1skeFskX10sJHlbJF9dXX0oMC4uNCk7CiRkZHlkZHgtPnt0ZXN0X3BvaW50c309fn5AeHk7CgpCRUdJTl9QR01MCltgXGRmcmFje3h9e3l9PTEwYF0KCltfXXskZGR5ZGR4fXs1MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2610"><span class="process-math">\(\dfrac{x}{y}=10\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-413')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-47">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-54"><p id="p-2612">Use logarithmic differentiation to find <span class="process-math">\(\lz{y}{x}\text{,}\)</span> then find the equation of the tangent line at the indicated <span class="process-math">\(x\)</span>-value.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-423"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<div id="webwork-414" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="414" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGx6fVsyXXtcZnJhY3tkIzF9e2QjMn19XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoeD0+e2xpbWl0cz0+Wy0wLjksNF19KTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRkeWR4PUZvcm11bGEoIigxK3gpXigxL3gpKDEvKHgoeCsxKSktbG4oMSt4KS94XjIpIik7CkNvbnRleHQoIk51bWVyaWMiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKcGFyc2VyOjpBc3NpZ25tZW50LT5BbGxvdzsKJHQ9Rm9ybXVsYSgieT0oMS0ybG4oMikpKHgtMSkrMiIpOwokc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2UgPT4gIlNob3cgeW91ciB3b3JrIHVzaW5nIGxvZ2FyaXRobWljIGRpZmZlcmVudGlhdGlvbi4iKSBAXSonOwoKQkVHSU5fUEdNTApbYHk9KDEreCleezEveH1gXSBhdCBbYHg9MWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciBbYFxsent5fXt4fWBdIGhlcmUuJylAXSoqCgpbX117JGR5ZHh9ezUwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGVxdWF0aW9uIG9mIHRoZSB0YW5nZW50IGxpbmUgaGVyZS4nKUBdKioKCltfXXskdH17NTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2613"><span class="process-math">\(y=(1+x)^{1/x}\)</span> at <span class="process-math">\(x=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-414')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-424"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<div id="webwork-415" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="415" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGx6fVsyXXtcZnJhY3tkIzF9e2QjMn19XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoeD0+e2xpbWl0cz0+WzAuMDEsNF19KTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRkeWR4PUZvcm11bGEoIigyeCleKHheMikoMnggbG4oMngpK3gpIik7CkNvbnRleHQoIk51bWVyaWMiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKcGFyc2VyOjpBc3NpZ25tZW50LT5BbGxvdzsKJHQ9Rm9ybXVsYSgieT0oMis0bG4oMikpKHgtMSkrMiIpOwokc2hvd3dvcmsgPSAnW0AgZXhwbGFuYXRpb25fYm94KG1lc3NhZ2UgPT4gIlNob3cgeW91ciB3b3JrIHVzaW5nIGxvZ2FyaXRobWljIGRpZmZlcmVudGlhdGlvbi4iKSBAXSonOwoKQkVHSU5fUEdNTApbYHk9KDJ4KV57eF4yfWBdIGF0IFtgeD0xYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIFtgXGx6e3l9e3h9YF0gaGVyZS4nKUBdKioKCltfXXskZHlkeH17NTB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgZXF1YXRpb24gb2YgdGhlIHRhbmdlbnQgbGluZSBoZXJlLicpQF0qKgoKW19deyR0fXs1MH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2616"><span class="process-math">\(y=(2x)^{x^2}\)</span> at <span class="process-math">\(x=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-415')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-425"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<div id="webwork-416" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="416" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGx6fVsyXXtcZnJhY3tkIzF9e2QjMn19XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoeD0+e2xpbWl0cz0+WzAuMDEsNF19KTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRkeWR4PUZvcm11bGEoInheeC8oeCsxKShsbih4KSsxLTEvKHgrMSkpIik7CkNvbnRleHQoIk51bWVyaWMiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKcGFyc2VyOjpBc3NpZ25tZW50LT5BbGxvdzsKJHQ9Rm9ybXVsYSgieT0xLzQqKHgtMSkrMS8yIik7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiU2hvdyB5b3VyIHdvcmsgdXNpbmcgbG9nYXJpdGhtaWMgZGlmZmVyZW50aWF0aW9uLiIpIEBdKic7CgpCRUdJTl9QR01MCltgeT1cZGZyYWN7eF57eH19e3grMX1gXSBhdCBbYHg9MWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciBbYFxsent5fXt4fWBdIGhlcmUuJylAXSoqCgpbX117JGR5ZHh9ezUwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGVxdWF0aW9uIG9mIHRoZSB0YW5nZW50IGxpbmUgaGVyZS4nKUBdKioKCltfXXskdH17NTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2619"><span class="process-math">\(y=\dfrac{x^{x}}{x+1}\)</span> at <span class="process-math">\(x=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-416')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-426"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<div id="webwork-417" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="417" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGx6fVsyXXtcZnJhY3tkIzF9e2QjMn19XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQoeD0+e2xpbWl0cz0+WzAuMDEsNF19KTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRkeWR4PUZvcm11bGEoInheKHNpbih4KSsyKShjb3MoeCkqbG4oeCkrKHNpbih4KSsyKS94KSIpOwpDb250ZXh0KCJOdW1lcmljIik7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHk9PidSZWFsJyk7CnBhcnNlcjo6QXNzaWdubWVudC0+QWxsb3c7CiR0PUZvcm11bGEoInk9KDNwaV4yKS80Kih4LXBpLzIpKyhwaS8yKV4zIik7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiU2hvdyB5b3VyIHdvcmsgdXNpbmcgbG9nYXJpdGhtaWMgZGlmZmVyZW50aWF0aW9uLiIpIEBdKic7CgpCRUdJTl9QR01MCltgeT14Xntcc2luKHgpKzJ9YF0gYXQgW2B4PVxwaS8yYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIFtgXGx6e3l9e3h9YF0gaGVyZS4nKUBdKioKCltfXXskZHlkeH17NTB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgZXF1YXRpb24gb2YgdGhlIHRhbmdlbnQgbGluZSBoZXJlLicpQF0qKgoKW19deyR0fXs1MH0KClskc2hvd3dvcmtdKioKCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2622"><span class="process-math">\(y=x^{\sin(x)+2}\)</span> at <span class="process-math">\(x=\pi/2\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-417')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-427"><h6 class="heading"><span class="codenumber">41<span class="period">.</span></span></h6>
+<div id="webwork-418" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="418" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGx6fVsyXXtcZnJhY3tkIzF9e2QjMn19XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwokZHlkeD1Gb3JtdWxhKCIoeCsxKS8oeCsyKSgxLyh4KzEpLTEvKHgrMikpIik7CkNvbnRleHQoIk51bWVyaWMiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKcGFyc2VyOjpBc3NpZ25tZW50LT5BbGxvdzsKJHQ9Rm9ybXVsYSgieT0xLzkoeC0xKSsyLzMiKTsKJHNob3d3b3JrID0gJ1tAIGV4cGxhbmF0aW9uX2JveChtZXNzYWdlID0+ICJTaG93IHlvdXIgd29yayB1c2luZyBsb2dhcml0aG1pYyBkaWZmZXJlbnRpYXRpb24uIikgQF0qJzsKCkJFR0lOX1BHTUwKW2B5PVxkZnJhY3t4KzF9e3grMn1gXSBhdCBbYHg9MWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciBbYFxsent5fXt4fWBdIGhlcmUuJylAXSoqCgpbX117JGR5ZHh9ezUwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGVxdWF0aW9uIG9mIHRoZSB0YW5nZW50IGxpbmUgaGVyZS4nKUBdKioKCltfXXskdH17NTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2625"><span class="process-math">\(y=\dfrac{x+1}{x+2}\)</span> at <span class="process-math">\(x=1\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-418')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-428"><h6 class="heading"><span class="codenumber">42<span class="period">.</span></span></h6>
+<div id="webwork-419" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="419" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwicGFyc2VyQXNzaWdubWVudC5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwpURVhUKE1PREVTKFBUWD0+JycsSFRNTD0+JzxkaXYgc3R5bGU9ImRpc3BsYXk6bm9uZTsiPlwoXG5ld2NvbW1hbmR7XGx6fVsyXXtcZnJhY3tkIzF9e2QjMn19XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwokZHlkeD1Gb3JtdWxhKCIoKHgrMSkoeCsyKSkvKCh4KzMpKHgrNCkpKDEvKHgrMSkrMS8oeCsyKS0xLyh4KzMpLTEvKHgrNCkpIik7CkNvbnRleHQoIk51bWVyaWMiKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQoeT0+J1JlYWwnKTsKcGFyc2VyOjpBc3NpZ25tZW50LT5BbGxvdzsKJHQ9Rm9ybXVsYSgieT0xMS83MngrMS82Iik7CiRzaG93d29yayA9ICdbQCBleHBsYW5hdGlvbl9ib3gobWVzc2FnZSA9PiAiU2hvdyB5b3VyIHdvcmsgdXNpbmcgbG9nYXJpdGhtaWMgZGlmZmVyZW50aWF0aW9uLiIpIEBdKic7CgpCRUdJTl9QR01MCltgeT1cZGZyYWN7KHgrMSkoeCsyKX17KHgrMykoeCs0KX1gXSBhdCBbYHg9MGBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciBbYFxsent5fXt4fWBdIGhlcmUuJylAXSoqCgpbX117JGR5ZHh9ezUwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGVxdWF0aW9uIG9mIHRoZSB0YW5nZW50IGxpbmUgaGVyZS4nKUBdKioKCltfXXskdH17NTB9CgpbJHNob3d3b3JrXSoqCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-2628"><span class="process-math">\(y=\dfrac{(x+1)(x+2)}{(x+3)(x+4)}\)</span> at <span class="process-math">\(x=0\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-419')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

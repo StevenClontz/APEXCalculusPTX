@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:44:58Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.4.20.1</span><span class="period">.</span>
+</h4>
+<p>Using <a href="" class="xref" data-knowl="./knowl/idea_projectile.html" title="Key Idea 12.3.13: Projectile Motion">Key Idea 12.3.13</a> of <a href="sec_vvf_motion.html" class="internal" title="Section 12.3: The Calculus of Motion">Section 12.3</a> we form the position function of the ball:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_projectile.html ./knowl/sec_vvf_motion.html ./knowl/fig_tannorm7b.html">
+\begin{equation*}
+\vrt = \la \big(64\cos(30^\circ) \big)t, -16t^2+\big(64\sin(30^\circ) \big)t+240\ra\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which we plot in <a href="" class="xref" data-knowl="./knowl/fig_tannorm7b.html" title="Figure 12.4.21">Figure 12.4.21</a>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_tannorm7b.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.4.21<span class="period">.</span></span><span class="space"> </span>Plotting the position of a thrown ball, with 1s increments shown</figcaption></figure><p>From this we find <span class="process-math">\(\vvt = \la 64\cos(30^\circ) , -32t+64\sin(30^\circ) \ra\)</span> and <span class="process-math">\(\vat = \la 0,-32\ra\text{.}\)</span> Computing <span class="process-math">\(\unittangent(t)\)</span> is not difficult, and with some simplification we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\unittangent(t) = \la \frac{\sqrt{3}}{\sqrt{t^2-2t+4}}, \frac{1-t}{\sqrt{t^2-2t+4}}\ra\text{.}
+\end{equation*}
+</div>
+<p>With <span class="process-math">\(\vat\)</span> as simple as it is, finding <span class="process-math">\(a_\text{T}\)</span> is also simple:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a_\text{T}  = \vat\cdot \unittangent(t) = \frac{32t-32}{\sqrt{t^2-2t+4}}\text{.}
+\end{equation*}
+</div>
+<p>We choose to not find <span class="process-math">\(\unitnormal(t)\)</span> and find <span class="process-math">\(a_\text{N}\)</span> through the formula <span class="process-math">\(a_\text{N}  = \sqrt{\norm{\vat}^2-a_\text{T}^2\,}\)</span> :</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a_\text{N}  = \sqrt{32^2-\left(\frac{32t-32}{\sqrt{t^2-2t+4}}\right)^2} = \frac{32\sqrt{3}}{\sqrt{t^2-2t+4}}\text{.}
+\end{equation*}
+</div>
+<p><a href="" class="xref" data-knowl="./knowl/fig_tannorm7a.html" title="Table 12.4.22: A table of values of a_T and a_N in Example 12.4.20">Figure 12.4.22</a> gives a table of values of <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\text{.}\)</span> When <span class="process-math">\(t=0\text{,}\)</span> we see the ball's speed is decreasing; when <span class="process-math">\(t=1\)</span> the speed of the ball is unchanged. This corresponds to the fact that at <span class="process-math">\(t=1\)</span> the ball reaches its highest point.</p>
+<p>After <span class="process-math">\(t=1\)</span> we see that <span class="process-math">\(a_\text{N}\)</span> is decreasing in value. This is because as the ball falls, its path becomes straighter and most of the acceleration is in the form of speeding up the ball, and not in changing its direction.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">12.4.22<span class="period">.</span></span><span class="space"> </span>A table of values of <span class="process-math">\(a_T\)</span> and <span class="process-math">\(a_N\)</span> in Example 12.4.20</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(t\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(a_\text{T}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(a_\text{N}\)</span></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-16\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(27.7\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(32\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(16\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(27.7\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(24.2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(20.9\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(27.7\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(16\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(5\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(29.4\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(12.7\)</span></td>
+</tr>
+</table></div></figure>
+</div>
+<span class="incontext"><a href="sec_tan_norm.html#solution-1108" class="internal">in-context</a></span>
+</body>
+</html>

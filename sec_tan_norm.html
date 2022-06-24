@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:31:31Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Unit Tangent and Normal Vectors</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_vvf_motion.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_vvf.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_curvature.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_vvf_motion.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_vvf.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_curvature.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="active">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_tan_norm"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">12.4</span> <span class="title">Unit Tangent and Normal Vectors</span>
+</h2>
+<section class="subsection" id="subsection-105"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.4.1</span> <span class="title">Unit Tangent Vector</span>
+</h3>
+<p id="p-12423">Given a smooth vector-valued function <span class="process-math">\(\vrt\text{,}\)</span> we defined in <a href="" class="xref" data-knowl="./knowl/def_vector_tangent.html" title="Definition 12.2.17: Tangent Vector, Tangent Line">Definition 12.2.17</a> that any vector parallel to <span class="process-math">\(\vrp(t_0)\)</span> is <em class="emphasis">tangent</em> to the graph of <span class="process-math">\(\vrt\)</span> at <span class="process-math">\(t=t_0\text{.}\)</span> It is often useful to consider just the <em class="emphasis">direction</em> of <span class="process-math">\(\vrp(t)\)</span> and not its magnitude. Therefore we are interested in the unit vector in the direction of <span class="process-math">\(\vrp(t)\text{.}\)</span> This leads to a definition.</p>
+<article class="definition definition-like" id="def_unit_tangent"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Unit Tangent Vector.</span>
+</h4>
+<p id="p-12424">Let <span class="process-math">\(\vrt\)</span> be a smooth function on an open interval <span class="process-math">\(I\text{.}\)</span> The unit tangent vector <span class="process-math">\(\unittangent(t)\)</span> is </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\unittangent(t) = \frac{1}{\norm{\vrp(t)}}\vrp(t)\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="vid-vvf-tannorm-tangent"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-493" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/tmKmAKUdSZ8?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.4.2<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/def_unit_tangent.html" title="Definition 12.4.1: Unit Tangent Vector">Definition 12.4.1</a></figcaption></figure><article class="example example-like" id="ex_tannorm1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the unit tangent vector.</span>
+</h4>
+<p id="p-12425">Let <span class="process-math">\(\vrt = \la 3\cos(t) , 3\sin(t) , 4t\ra\text{.}\)</span> Find <span class="process-math">\(\unittangent(t)\)</span> and compute <span class="process-math">\(\unittangent(0)\)</span> and <span class="process-math">\(\unittangent(1)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-1102" id="solution-1102"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1102"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-tannorm-tangent-eg1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/aGEMbQrBpPI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-12426">We apply <a href="" class="xref" data-knowl="./knowl/def_unit_tangent.html" title="Definition 12.4.1: Unit Tangent Vector">Definition 12.4.1</a> to find <span class="process-math">\(\unittangent(t)\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_unit_tangent.html" id="md-546">
+\begin{align*}
+\unittangent(t) \amp = \frac{1}{\norm{\vrp(t)}}\vrp(t)\\
+\amp =\frac{1}{\sqrt{\big(-3\sin(t) \big)^2+\big(3\cos(t) \big)^2+ 4^2}}\la -3\sin(t) ,3\cos(t) , 4\ra\\
+\amp = \la -\frac35\sin(t) ,\frac35\cos(t) ,\frac45\ra\text{.}
+\end{align*}
+</div>
+<p id="p-12427">We can now easily compute <span class="process-math">\(\unittangent(0)\)</span> and <span class="process-math">\(\unittangent(1)\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\unittangent(0) = \la 0,\frac35,\frac45\ra\,; \unittangent(1) = \la -\frac35\sin(1) ,\frac35\cos(1) ,\frac45\ra \approx \la -0.505,0.324,0.8\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-12428">These are plotted in <a href="" class="xref" data-knowl="./knowl/fig_tannorm1.html" title="Figure 12.4.4">Figure 12.4.4</a> with their initial points at <span class="process-math">\(\vec r(0)\)</span> and <span class="process-math">\(\vec r(1)\text{,}\)</span> respectively. (They look rather “short” since they are only length 1.)</p>
+<figure class="figure figure-like" id="fig_tannorm1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100.497512437811%"><iframe src="generated/asymptote/img_tannorm1.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_tannorm1.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.4.4<span class="period">.</span></span><span class="space"> </span>Plotting unit tangent vectors in <a href="" class="xref" data-knowl="./knowl/ex_tannorm1.html" title="Example 12.4.3: Computing the unit tangent vector">Example 12.4.3</a></figcaption></figure><p id="p-12429">The unit tangent vector <span class="process-math">\(\unittangent(t)\)</span> always has a magnitude of 1, though it is sometimes easy to doubt that is true. We can help solidify this thought in our minds by computing <span class="process-math">\(\norm{\unittangent(1)}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\norm{\unittangent(1)} \approx \sqrt{(-0.505)^2+0.324^2+0.8^2} = 1.000001\text{.}
+\end{equation*}
+</div>
+<p id="p-12430">We have rounded in our computation of <span class="process-math">\(\unittangent(1)\text{,}\)</span> so we don't get 1 exactly. We leave it to the reader to use the exact representation of <span class="process-math">\(\unittangent(1)\)</span> to verify it has length 1.</p>
+</div></div>
+</div></article><p id="p-12431">In many ways, the previous example was “too nice.” It turned out that <span class="process-math">\(\vrp(t)\)</span> was always of length 5. In the next example the length of <span class="process-math">\(\vrp(t)\)</span> is variable, leaving us with a formula that is not as clean.</p>
+<article class="example example-like" id="ex_tannorm2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the unit tangent vector.</span>
+</h4>
+<p id="p-12432">Let <span class="process-math">\(\vrt=\la t^2-t,t^2+t\ra\text{.}\)</span> Find <span class="process-math">\(\unittangent(t)\)</span> and compute <span class="process-math">\(\unittangent(0)\)</span> and <span class="process-math">\(\unittangent(1)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-1103" id="solution-1103"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1103"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-tannorm-tangent-eg2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/zdfMTWdXzJs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-12433">We find <span class="process-math">\(\vrp(t) = \la 2t-1,2t+1\ra\text{,}\)</span> and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\norm{\vrp(t)} = \sqrt{(2t-1)^2+(2t+1)^2} = \sqrt{8t^2+2}\text{.}
+\end{equation*}
+</div>
+<p id="p-12434">Therefore</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\unittangent(t) = \frac{1}{\sqrt{8t^2+2}}\la 2t-1,2t+1\ra = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-12435">When <span class="process-math">\(t=0\text{,}\)</span> we have <span class="process-math">\(\unittangent(0) = \la -1/\sqrt{2},1/\sqrt{2}\ra\text{;}\)</span> when <span class="process-math">\(t=1\text{,}\)</span> we have <span class="process-math">\(\unittangent(1) = \la 1/\sqrt{10}, 3/\sqrt{10}\ra\text{.}\)</span> We leave it to the reader to verify each of these is a unit vector. They are plotted in <a href="" class="xref" data-knowl="./knowl/fig_tannorm2.html" title="Figure 12.4.6">Figure 12.4.6</a></p>
+<figure class="figure figure-like" id="fig_tannorm2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_tannorm2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.4.6<span class="period">.</span></span><span class="space"> </span>Plotting unit tangent vectors in <a href="" class="xref" data-knowl="./knowl/ex_tannorm2.html" title="Example 12.4.5: Computing the unit tangent vector">Example 12.4.5</a></figcaption></figure>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-106"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.4.2</span> <span class="title">Unit Normal Vector</span>
+</h3>
+<p id="p-12436">Just as knowing the direction tangent to a path is important, knowing a direction orthogonal to a path is important. When dealing with real-valued functions, we defined the normal line at a point to the be the line through the point that was perpendicular to the tangent line at that point. We can do a similar thing with vector-valued functions. Given <span class="process-math">\(\vrt\)</span> in <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> we have 2 directions perpendicular to the tangent vector, as shown in <a href="" class="xref" data-knowl="./knowl/fig_tannorm_intro1.html" title="Figure 12.4.7">Figure 12.4.7</a>. It is good to wonder “Is one of these two directions preferable over the other?”</p>
+<figure class="figure figure-like" id="fig_tannorm_intro1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_tannorm_intro1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.4.7<span class="period">.</span></span><span class="space"> </span>Given a direction in the plane, there are always two directions orthogonal to it</figcaption></figure><p id="p-12437">Given <span class="process-math">\(\vrt\)</span> in <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> there are infinitely many vectors orthogonal to the tangent vector at a given point. Again, we might wonder “Is one out of this infinite number of choices preferable over the others? Is one of these the ‘right’ choice?”</p>
+<p id="p-12438">The answer in both <span class="process-math">\(\mathbb{R}^2\)</span> and <span class="process-math">\(\mathbb{R}^3\)</span> is “Yes, there is one vector that is not only preferable, it is the ‘right’ one to choose.” Recall <a href="" class="xref" data-knowl="./knowl/thm_vects_of_constant_length.html" title="Theorem 12.2.30: Vector-Valued Functions of Constant Length">Theorem 12.2.30</a>, which states that if <span class="process-math">\(\vrt\)</span> has constant length, then <span class="process-math">\(\vrt\)</span> is orthogonal to <span class="process-math">\(\vrp(t)\)</span> for all <span class="process-math">\(t\text{.}\)</span> We know <span class="process-math">\(\unittangent(t)\text{,}\)</span> the unit tangent vector, has constant length. Therefore <span class="process-math">\(\unittangent(t)\)</span> is orthogonal to <span class="process-math">\(\unittangentprime(t)\text{.}\)</span> </p>
+<p id="p-12439">We'll see that <span class="process-math">\(\unittangentprime(t)\)</span> is more than just a convenient choice of vector that is orthogonal to <span class="process-math">\(\vrp(t)\text{;}\)</span> rather, it is the “right” choice. Since all we care about is the direction, we define this newly found vector to be a unit vector.</p>
+<aside class="aside aside-like" id="aside-78"><p id="p-12440"><span class="process-math">\(\unittangent(t)\)</span> is a unit vector, by definition. This <em class="emphasis">does not</em> imply that <span class="process-math">\(\unittangentprime(t)\)</span> is also a unit vector.</p></aside><article class="definition definition-like" id="def_unit_normal"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Unit Normal Vector.</span>
+</h4>
+<p id="p-12441">Let <span class="process-math">\(\vrt\)</span> be a vector-valued function where the unit tangent vector, <span class="process-math">\(\unittangent(t)\text{,}\)</span> is smooth on an open interval <span class="process-math">\(I\text{.}\)</span> The <dfn class="terminology">unit normal vector</dfn> <span class="process-math">\(\unitnormal(t)\)</span> is </p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\unitnormal(t) = \frac1{\norm{\unittangentprime(t)}}\unittangentprime(t)\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="vid-vvf-tannorm-normal"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-496" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/HWX5uPUCFJs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.4.9<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/def_unit_normal.html" title="Definition 12.4.8: Unit Normal Vector">Definition 12.4.8</a></figcaption></figure><article class="example example-like" id="ex_tannorm3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the unit normal vector.</span>
+</h4>
+<p id="p-12442">Let <span class="process-math">\(\vrt = \la 3\cos(t) , 3\sin(t) , 4t\ra\)</span> as in <a href="" class="xref" data-knowl="./knowl/ex_tannorm1.html" title="Example 12.4.3: Computing the unit tangent vector">Example 12.4.3</a>. Sketch both <span class="process-math">\(\unittangent(\pi/2)\)</span> and <span class="process-math">\(\unitnormal(\pi/2)\)</span> with initial points at <span class="process-math">\(\vec r(\pi/2)\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-1104" id="solution-1104"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1104"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-tannorm-normal-eg1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/cZkvyF0t5P4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-12443">In <a href="" class="xref" data-knowl="./knowl/ex_tannorm1.html" title="Example 12.4.3: Computing the unit tangent vector">Example 12.4.3</a>, we found</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_tannorm1.html">
+\begin{equation*}
+\unittangent(t) = \la  (-3/5)\sin(t) ,(3/5)\cos(t) ,4/5\ra\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Therefore</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_tannorm1.html">
+\begin{equation*}
+\unittangentprime(t) = \la -\frac35\cos(t) ,-\frac35\sin(t) ,0\ra \text{ and }   \norm{\unittangentprime(t)} = \frac35\text{.}
+\end{equation*}
+</div>
+<p id="p-12444">Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\unitnormal(t) = \frac{\unittangentprime(t)}{3/5} = \la -\cos(t) ,-\sin(t) ,0\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-12445">We compute <span class="process-math">\(\unittangent(\pi/2) = \la -3/5,0,4/5\ra\)</span> and <span class="process-math">\(\unitnormal(\pi/2) = \la 0,-1,0\ra\text{.}\)</span> These are sketched in <a href="" class="xref" data-knowl="./knowl/fig_tannorm3.html" title="Figure 12.4.11">Figure 12.4.11</a>.</p>
+<figure class="figure figure-like" id="fig_tannorm3"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;">
+<div class="asymptote-box" style="padding-top: 100%"><iframe src="generated/asymptote/img_tannorm3.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_tannorm3.html">Link to full-sized image</a></div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.4.11<span class="period">.</span></span><span class="space"> </span>Plotting unit tangent and normal vectors in <a href="" class="xref" data-knowl="./knowl/fig_tannorm3.html" title="Figure 12.4.11">Example 12.4.11</a></figcaption></figure>
+</div></div>
+</div></article><aside class="aside aside-like" id="aside-79"><p id="p-12446">There is one flaw in our definition of <span class="process-math">\(\unitnormal(t)\text{:}\)</span> it is possible that we could have <span class="process-math">\(\unittangentprime(t)=0\text{!}\)</span> Indeed, this is the case for any line of the form <span class="process-math">\(\vec{\ell}(t) = \vec{r}_0+t\vec{v}\text{.}\)</span> For straight lines in the plane, it is most common to orient the normal vector <span class="process-math">\(90^\circ\)</span> counterclockwise from the tangent vector, but for lines in three dimensions, there is no preferred choice of normal vector.</p></aside><p id="p-12447">The previous example was once again “too nice.” In general, the expression for <span class="process-math">\(\unittangent(t)\)</span> contains fractions of square roots, hence the expression of <span class="process-math">\(\unittangentprime(t)\)</span> is very messy. We demonstrate this in the next example.</p>
+<article class="example example-like" id="ex_tannorm4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the unit normal vector.</span>
+</h4>
+<p id="p-12448">Let <span class="process-math">\(\vrt=\la t^2-t,t^2+t\ra\)</span> as in <a href="" class="xref" data-knowl="./knowl/ex_tannorm2.html" title="Example 12.4.5: Computing the unit tangent vector">Example 12.4.5</a>. Find <span class="process-math">\(\unitnormal(t)\)</span> and sketch <span class="process-math">\(\vrt\)</span> with the unit tangent and normal vectors at <span class="process-math">\(t=-1,0\)</span> and 1.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-1105" id="solution-1105"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1105"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-tannorm-normal-eg2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/VExazWvgGlQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-12449">In <a href="" class="xref" data-knowl="./knowl/ex_tannorm2.html" title="Example 12.4.5: Computing the unit tangent vector">Example 12.4.5</a>, we found</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_tannorm2.html">
+\begin{equation*}
+\unittangent(t) = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-12450">Finding <span class="process-math">\(\unittangentprime(t)\)</span> requires two applications of the Quotient Rule:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-547">
+\begin{align*}
+T\,'(t) \amp = \la \frac{\sqrt{8t^2+2}(2)-(2t-1)\left(\frac12(8t^2+2)^{-1/2}(16t)\right)}{8t^2+2},\right.\\
+\amp  \left.\frac{\sqrt{8t^2+2}(2)-(2t+1)\left(\frac12(8t^2+2)^{-1/2}(16t)\right)}{8t^2+2} \ra\\
+\amp = \la \frac{4 (2 t+1)}{\left(8 t^2+2\right)^{3/2}},\frac{4
+(1-2 t)}{\left(8 t^2+2\right)^{3/2}}\ra
+\end{align*}
+</div>
+<p id="p-12451">This is not a unit vector; to find <span class="process-math">\(\unitnormal(t)\text{,}\)</span> we need to divide <span class="process-math">\(\unittangentprime(t)\)</span> by its magnitude.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-548">
+\begin{align*}
+\norm{\unittangentprime(t)} \amp = \sqrt{\frac{16(2t+1)^2}{(8t^2+2)^3}+\frac{16(1-2t)^2}{(8t^2+2)^3}}\\
+\amp = \sqrt{\frac{16(8t^2+2)}{(8t^2+2)^3}}\\
+\amp = \frac{4}{8t^2+2}\text{.}
+\end{align*}
+</div>
+<p id="p-12452">Finally,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-549">
+\begin{align*}
+\unitnormal(t) \amp = \frac1{4/(8t^2+2)}\la \frac{4 (2 t+1)}{\left(8 t^2+2\right)^{3/2}},\frac{4
+(1-2 t)}{\left(8 t^2+2\right)^{3/2}}\ra\\
+\amp = \la \frac{2t+1}{\sqrt{8t^2+2}},-\frac{2t-1}{\sqrt{8t^2+2}}\ra\text{.}
+\end{align*}
+</div>
+<p id="p-12453">Using this formula for <span class="process-math">\(\unitnormal(t)\text{,}\)</span> we compute the unit tangent and normal vectors for <span class="process-math">\(t=-1,0\)</span> and 1 and sketch them in <a href="" class="xref" data-knowl="./knowl/fig_tannorm4.html" title="Figure 12.4.13">Figure 12.4.13</a>.</p>
+<figure class="figure figure-like" id="fig_tannorm4"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_tannorm4.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.4.13<span class="period">.</span></span><span class="space"> </span>Plotting unit tangent and normal vectors in <a href="" class="xref" data-knowl="./knowl/ex_tannorm4.html" title="Example 12.4.12: Computing the unit normal vector">Example 12.4.12</a></figcaption></figure>
+</div></div>
+</div></article><p id="p-12454">The final result for <span class="process-math">\(\unitnormal(t)\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_tannorm4.html" title="Example 12.4.12: Computing the unit normal vector">Example 12.4.12</a> is suspiciously similar to <span class="process-math">\(\unittangent(t)\text{.}\)</span> There is a clear reason for this. If <span class="process-math">\(\vec u = \la u_1,u_2\ra\)</span> is a unit vector in <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> then the <em class="emphasis">only</em> unit vectors orthogonal to <span class="process-math">\(\vec u\)</span> are <span class="process-math">\(\la -u_2,u_1\ra\)</span> and <span class="process-math">\(\la u_2,-u_1\ra\text{.}\)</span> Given <span class="process-math">\(\unittangent(t)\text{,}\)</span> we can quickly determine <span class="process-math">\(\unitnormal(t)\)</span> if we know which term to multiply by <span class="process-math">\((-1)\text{.}\)</span></p>
+<p id="p-12455">Consider again <a href="" class="xref" data-knowl="./knowl/fig_tannorm4.html" title="Figure 12.4.13">Figure 12.4.13</a>, where we have plotted some unit tangent and normal vectors. Note how <span class="process-math">\(\unitnormal(t)\)</span> always points “inside” the curve, or to the concave side of the curve. This is not a coincidence; this is true in general. Knowing the direction that <span class="process-math">\(\vec r(t)\)</span> “turns” allows us to quickly find <span class="process-math">\(\unitnormal(t)\text{.}\)</span></p>
+<article class="theorem theorem-like" id="thm_concave"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">12.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Unit Normal Vectors in <span class="process-math">\(\mathbb{R}^2\)</span>.</span>
+</h4>
+<p id="p-12456">Let <span class="process-math">\(\vec r(t)\)</span> be a vector-valued function in <span class="process-math">\(\mathbb{R}^2\)</span> where <span class="process-math">\(\unittangentprime(t)\)</span> is smooth on an open interval <span class="process-math">\(I\text{.}\)</span> Let <span class="process-math">\(t_0\)</span> be in <span class="process-math">\(I\)</span> and <span class="process-math">\(\unittangent(t_0) = \la t_1,t_2\ra\)</span> Then <span class="process-math">\(\unitnormal(t_0)\)</span> is either</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\unitnormal(t_0) = \la -t_2,t_1\ra  \text{ or }  \unitnormal(t_0) = \la t_2,-t_1\ra\text{,}
+\end{equation*}
+</div>
+<p class="continuation">whichever is the vector that points to the concave side of the graph of <span class="process-math">\(\vec r\text{.}\)</span> </p></article></section><section class="subsection" id="subsection-107"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.4.3</span> <span class="title">Application to Acceleration</span>
+</h3>
+<p id="p-12457">Let <span class="process-math">\(\vrt\)</span> be a position function. It is a fact (stated later in <a href="" class="xref" data-knowl="./knowl/thm_acc_plane.html" title="Theorem 12.4.15: Acceleration in the Plane Defined by \unittangent and \unitnormal">Theorem 12.4.15</a>) that acceleration, <span class="process-math">\(\vat\text{,}\)</span> lies in the plane defined by <span class="process-math">\(\unittangent\)</span> and <span class="process-math">\(\unitnormal\text{.}\)</span> That is, there are scalar functions <span class="process-math">\(a_\text{T}(t)\)</span> and <span class="process-math">\(a_\text{N}(t)\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_acc_plane.html">
+\begin{equation*}
+\vat = a_\text{T}(t)\unittangent(t) + a_\text{N}(t)\unitnormal(t)\text{.}
+\end{equation*}
+</div>
+<p id="p-12458">We generally drop the “of <span class="process-math">\(t\)</span>” part of the notation and just write <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\text{.}\)</span></p>
+<p id="p-12459">The scalar <span class="process-math">\(a_\text{T}\)</span> measures “how much” acceleration is in the direction of travel, that is, it measures the component of acceleration that affects the speed. The scalar <span class="process-math">\(a_\text{N}\)</span> measures “how much” acceleration is perpendicular to the direction of travel, that is, it measures the component of acceleration that affects the direction of travel. </p>
+<p id="p-12460">We can find <span class="process-math">\(a_\text{T}\)</span> using the orthogonal projection of <span class="process-math">\(\vec a(t)\)</span> onto <span class="process-math">\(\unittangent(t)\)</span> (review <a href="" class="xref" data-knowl="./knowl/def_orthogonal_projection.html" title="Definition 11.3.17: Orthogonal Projection">Definition 11.3.17</a> in <a href="sec_dot_product.html" class="internal" title="Section 11.3: The Dot Product">Section 11.3</a> if needed). Recalling that since <span class="process-math">\(\unittangent(t)\)</span> is a unit vector, <span class="process-math">\(\unittangent(t)\cdot\unittangent(t)=1\text{,}\)</span> so we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_orthogonal_projection.html ./knowl/sec_dot_product.html">
+\begin{equation*}
+\proj{a(t)}{T(t)} = \frac{\vec a(t)\cdot\unittangent(t)}{\unittangent(t)\cdot\unittangent(t)}\unittangent(t) = \underbrace{\big(\vec a(t)\cdot\unittangent(t)\big)}_{a_\text{T}}\unittangent(t)\text{.}
+\end{equation*}
+</div>
+<p id="p-12461">Thus the amount of <span class="process-math">\(\vat\)</span> in the direction of <span class="process-math">\(\unittangent(t)\)</span> is <span class="process-math">\(a_\text{T}=\vat\cdot\unittangent(t)\text{.}\)</span> The same logic gives <span class="process-math">\(a_\text{N} = \vat\cdot\unitnormal(t)\text{.}\)</span></p>
+<p id="p-12462">While this is a fine way of computing <span class="process-math">\(a_\text{T}\text{,}\)</span> there are simpler ways of finding <span class="process-math">\(a_\text{N}\)</span> (as finding <span class="process-math">\(\unitnormal\)</span> itself can be complicated). The following theorem gives alternate formulas for <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\text{.}\)</span></p>
+<aside class="aside aside-like" id="aside-80"><p id="p-12463">Keep in mind that both <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\)</span> are functions of <span class="process-math">\(t\text{;}\)</span> that is, the scalar changes depending on <span class="process-math">\(t\text{.}\)</span> It is convention to drop the “<span class="process-math">\((t)\)</span>” notation from <span class="process-math">\(a_\text{T} (t)\)</span> and simply write <span class="process-math">\(a_\text{T}\text{.}\)</span></p></aside><article class="theorem theorem-like" id="thm_acc_plane"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">12.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Acceleration in the Plane Defined by <span class="process-math">\(\unittangent\)</span> and <span class="process-math">\(\unitnormal\)</span>.</span>
+</h4>
+<p id="p-12464">Let <span class="process-math">\(\vrt\)</span> be a position function with acceleration <span class="process-math">\(\vat\)</span> and unit tangent and normal vectors <span class="process-math">\(\unittangent(t)\)</span> and <span class="process-math">\(\unitnormal(t)\text{.}\)</span> Then <span class="process-math">\(\vat\)</span> lies in the plane defined by <span class="process-math">\(\unittangent(t)\)</span> and <span class="process-math">\(\unitnormal(t)\text{;}\)</span> that is, there exists scalars <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vat = a_\text{T} \unittangent(t) + a_\text{N} \unitnormal(t)\text{.}
+\end{equation*}
+</div>
+<p id="p-12465">Moreover,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-550">
+\begin{align*}
+a_\text{T}  \amp = \vat\cdot\unittangent(t) = \frac{d}{dt}\Big(\norm{\vec v(t)}\Big)\\
+a_\text{N}  \amp = \vat\cdot \unitnormal(t) = \sqrt{\norm{\vec a(t)}^2-a_\text{T} ^2} = \frac{\norm{\vat\times\vvt}}{\norm{\vvt}} = \norm{\vvt}\,\norm{\unittangentprime(t)}
+\end{align*}
+</div></article><p id="p-12466"></p>
+<p id="p-12467">Note the second formula for <span class="process-math">\(a_\text{T}\text{:}\)</span> <span class="process-math">\(\ds \frac{d}{dt}\Big(\norm{\vvt}\Big)\text{.}\)</span> This measures the rate of change of speed, which again is the amount of acceleration in the direction of travel.</p>
+<figure class="figure figure-like" id="vid-vvf-tannorm-accel"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-499" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/mRKDo_rot7Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.4.16<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_acc_plane.html" title="Theorem 12.4.15: Acceleration in the Plane Defined by \unittangent and \unitnormal">Theorem 12.4.15</a></figcaption></figure><article class="example example-like" id="ex_tannorm5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.4.17</span><span class="period">.</span><span class="space"> </span><span class="title">Computing <span class="process-math">\(a_T\)</span> and <span class="process-math">\(a_N\)</span>.</span>
+</h4>
+<p id="p-12468">Let <span class="process-math">\(\vrt = \la 3\cos(t) , 3\sin(t) , 4t\ra\)</span> as in <a href="" class="xref" data-knowl="./knowl/ex_tannorm1.html" title="Example 12.4.3: Computing the unit tangent vector">Examples 12.4.3</a> and <a href="" class="xref" data-knowl="./knowl/ex_tannorm3.html" title="Example 12.4.10: Computing the unit normal vector">Example 12.4.10</a>. Find <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-1106" id="solution-1106"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1106"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-tannorm-accel-eg1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/qA776vEHYM0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-12469">The previous examples give <span class="process-math">\(\vat = \la -3\cos(t) ,-3\sin(t) ,0\ra\)</span> and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\unittangent(t) = \la -\frac35\sin(t) ,\frac35\cos(t) ,\frac45\ra  \text{ and }  \unitnormal(t) = \la -\cos(t) ,-\sin(t) ,0\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-12470">We can find <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\)</span> directly with dot products:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-551">
+\begin{align*}
+a_\text{T}  \amp = \vat\cdot \unittangent(t) = \frac95\cos(t) \sin(t) -\frac95\cos(t) \sin(t) +0 = 0.\\
+a_\text{N}  \amp = \vat\cdot \unitnormal(t) = 3\cos^2(t) +3\sin^2(t) + 0 = 3\text{.}
+\end{align*}
+</div>
+<p id="p-12471">Thus <span class="process-math">\(\vat = 0\unittangent(t) + 3\unitnormal(t) = 3\unitnormal(t)\text{,}\)</span> which is clearly the case.</p>
+<p id="p-12472">What is the practical interpretation of these numbers? <span class="process-math">\(a_\text{T} =0\)</span> means the object is moving at a constant speed, and hence all acceleration comes in the form of direction change.</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_tannorm6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.4.18</span><span class="period">.</span><span class="space"> </span><span class="title">Computing <span class="process-math">\(a_T\)</span> and <span class="process-math">\(a_N\)</span>.</span>
+</h4>
+<p id="p-12473">Let <span class="process-math">\(\vrt=\la t^2-t,t^2+t\ra\)</span> as in <a href="" class="xref" data-knowl="./knowl/ex_tannorm2.html" title="Example 12.4.5: Computing the unit tangent vector">Examples 12.4.5</a> and <a href="" class="xref" data-knowl="./knowl/ex_tannorm4.html" title="Example 12.4.12: Computing the unit normal vector">Example 12.4.12</a>. Find <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-1107" id="solution-1107"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1107"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-vvf-tannorm-accel-eg2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/8LTqjQPvh-A?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-12474">The previous examples give <span class="process-math">\(\vat = \la 2,2\ra\)</span> and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\unittangent(t) = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra  \text{ and }  \unitnormal(t) = \la \frac{2t+1}{\sqrt{8t^2+2}},-\frac{2t-1}{\sqrt{8t^2+2}}\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-12475">While we can compute <span class="process-math">\(a_\text{N}\)</span> using <span class="process-math">\(\unitnormal(t)\text{,}\)</span> we instead demonstrate using another formula from <a href="" class="xref" data-knowl="./knowl/thm_acc_plane.html" title="Theorem 12.4.15: Acceleration in the Plane Defined by \unittangent and \unitnormal">Theorem 12.4.15</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_acc_plane.html" id="md-552">
+\begin{align*}
+a_\text{T}  \amp = \vat\cdot\unittangent(t) = \frac{4t-2}{\sqrt{8t^2+2}}+\frac{4t+2}{\sqrt{8t^2+2}} = \frac{8t}{\sqrt{8t^2+2}}.\\
+a_\text{N}  \amp = \sqrt{\norm{\vat}^2-a_\text{T} ^2} = \sqrt{8-\left(\frac{8t}{\sqrt{8t^2+2}}\right)^2}=\frac{4}{\sqrt{8t^2+2}}\text{.}
+\end{align*}
+</div>
+<p id="p-12476">When <span class="process-math">\(t=2\text{,}\)</span> <span class="process-math">\(\ds a_\text{T} = \frac{16}{\sqrt{34}}\approx 2.74\)</span> and <span class="process-math">\(\ds a_\text{N} = \frac{4}{\sqrt{34}} \approx 0.69\text{.}\)</span> We interpret this to mean that at <span class="process-math">\(t=2\text{,}\)</span> the particle is accelerating mostly by increasing speed, not by changing direction. As the path near <span class="process-math">\(t=2\)</span> is relatively straight, this should make intuitive sense. <a href="" class="xref" data-knowl="./knowl/fig_tannorm6.html" title="Figure 12.4.19">Figure 12.4.19</a> gives a graph of the path for reference.</p>
+<figure class="figure figure-like" id="fig_tannorm6"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_tannorm6.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.4.19<span class="period">.</span></span><span class="space"> </span>Graphing <span class="process-math">\(\vec r(t)\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_tannorm6.html" title="Example 12.4.18: Computing a_T and a_N">Example 12.4.18</a></figcaption></figure><p id="p-12477">Contrast this with <span class="process-math">\(t=0\text{,}\)</span> where <span class="process-math">\(a_\text{T} = 0\)</span> and <span class="process-math">\(a_\text{N} = 4/\sqrt{2}\approx 2.82\text{.}\)</span> Here the particle's speed is not changing and all acceleration is in the form of direction change.</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_tannorm7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.4.20</span><span class="period">.</span><span class="space"> </span><span class="title">Analyzing projectile motion.</span>
+</h4>
+<p id="p-12478">A ball is thrown from a height of <span class="quantity">240 ft</span> with an initial speed of <span class="quantity">64 <sup>ft</sup>⁄<sub>s</sub></span> and an angle of elevation of <span class="process-math">\(30^\circ\text{.}\)</span> Find the position function <span class="process-math">\(\vrt\)</span> of the ball and analyze <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\text{.}\)</span> </p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-tabular" data-refid="hk-solution-1108" id="solution-1108"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1108"><div class="solution solution-like">
+<p id="p-12479">Using <a href="" class="xref" data-knowl="./knowl/idea_projectile.html" title="Key Idea 12.3.13: Projectile Motion">Key Idea 12.3.13</a> of <a href="sec_vvf_motion.html" class="internal" title="Section 12.3: The Calculus of Motion">Section 12.3</a> we form the position function of the ball:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_projectile.html ./knowl/sec_vvf_motion.html ./knowl/fig_tannorm7b.html">
+\begin{equation*}
+\vrt = \la \big(64\cos(30^\circ) \big)t, -16t^2+\big(64\sin(30^\circ) \big)t+240\ra\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which we plot in <a href="" class="xref" data-knowl="./knowl/fig_tannorm7b.html" title="Figure 12.4.21">Figure 12.4.21</a>.</p>
+<figure class="figure figure-like" id="fig_tannorm7b"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_tannorm7b.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.4.21<span class="period">.</span></span><span class="space"> </span>Plotting the position of a thrown ball, with 1s increments shown</figcaption></figure><p id="p-12480">From this we find <span class="process-math">\(\vvt = \la 64\cos(30^\circ) , -32t+64\sin(30^\circ) \ra\)</span> and <span class="process-math">\(\vat = \la 0,-32\ra\text{.}\)</span> Computing <span class="process-math">\(\unittangent(t)\)</span> is not difficult, and with some simplification we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\unittangent(t) = \la \frac{\sqrt{3}}{\sqrt{t^2-2t+4}}, \frac{1-t}{\sqrt{t^2-2t+4}}\ra\text{.}
+\end{equation*}
+</div>
+<p id="p-12481">With <span class="process-math">\(\vat\)</span> as simple as it is, finding <span class="process-math">\(a_\text{T}\)</span> is also simple:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a_\text{T}  = \vat\cdot \unittangent(t) = \frac{32t-32}{\sqrt{t^2-2t+4}}\text{.}
+\end{equation*}
+</div>
+<p id="p-12482">We choose to not find <span class="process-math">\(\unitnormal(t)\)</span> and find <span class="process-math">\(a_\text{N}\)</span> through the formula <span class="process-math">\(a_\text{N}  = \sqrt{\norm{\vat}^2-a_\text{T}^2\,}\)</span> :</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a_\text{N}  = \sqrt{32^2-\left(\frac{32t-32}{\sqrt{t^2-2t+4}}\right)^2} = \frac{32\sqrt{3}}{\sqrt{t^2-2t+4}}\text{.}
+\end{equation*}
+</div>
+<p id="p-12483"><a href="" class="xref" data-knowl="./knowl/fig_tannorm7a.html" title="Table 12.4.22: A table of values of a_T and a_N in Example 12.4.20">Figure 12.4.22</a> gives a table of values of <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\text{.}\)</span> When <span class="process-math">\(t=0\text{,}\)</span> we see the ball's speed is decreasing; when <span class="process-math">\(t=1\)</span> the speed of the ball is unchanged. This corresponds to the fact that at <span class="process-math">\(t=1\)</span> the ball reaches its highest point.</p>
+<p id="p-12484">After <span class="process-math">\(t=1\)</span> we see that <span class="process-math">\(a_\text{N}\)</span> is decreasing in value. This is because as the ball falls, its path becomes straighter and most of the acceleration is in the form of speeding up the ball, and not in changing its direction.</p>
+<figure class="table table-like" id="fig_tannorm7a"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">12.4.22<span class="period">.</span></span><span class="space"> </span>A table of values of <span class="process-math">\(a_T\)</span> and <span class="process-math">\(a_N\)</span> in Example 12.4.20</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(t\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(a_\text{T}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(a_\text{N}\)</span></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-16\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(27.7\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(32\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(16\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(27.7\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(24.2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(20.9\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(27.7\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(16\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(5\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(29.4\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(12.7\)</span></td>
+</tr>
+</table></div></figure>
+</div></div>
+</div></article><p id="p-12485">Our understanding of the unit tangent and normal vectors is aiding our understanding of motion. The work in <a href="" class="xref" data-knowl="./knowl/ex_tannorm7.html" title="Example 12.4.20: Analyzing projectile motion">Example 12.4.20</a> gave quantitative analysis of what we intuitively knew.</p>
+<p id="p-12486">The next section provides two more important steps towards this analysis. We currently describe position only in terms of time. In everyday life, though, we often describe position in terms of distance (“The gas station is about 2 miles ahead, on the left.”). The <em class="emphasis">arc length parameter</em> allows us to reference position in terms of distance traveled.</p>
+<p id="p-12487">We also intuitively know that some paths are straighter than others — and some are curvier than others, but we lack a measurement of “curviness.” The arc length parameter provides a way for us to compute <em class="emphasis">curvature</em>, a quantitative measurement of how curvy a curve is.</p></section><section class="exercises" id="exercises-68"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">12.4.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-146"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-2403"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-1488" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1488" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xub3JtfVsxXXtcbGVmdFxsVmVydCMxXHJpZ2h0XHJWZXJ0fVxuZXdjb21tYW5ke1x1bml0dGFuZ2VudH17XHZlY3t7fVR9fVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCklmIFtgXHVuaXR0YW5nZW50KHQpYF0gaXMgYSB1bml0IHRhbmdlbnQgdmVjdG9yLCB3aGF0IGlzIFtgXG5vcm17XHVuaXR0YW5nZW50KHQpfVx0ZXh0ez99YF0KCltfXXsxfXs1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12488">If <span class="process-math">\(\unittangent(t)\)</span> is a unit tangent vector, what is <span class="process-math">\(\norm{\unittangent(t)}\text{?}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1488')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2404"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-1489" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1489" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9PnF8PGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcdnJwfXtcdmVjIHJcaHNraXAwLjc1cHQgJ31cbmV3Y29tbWFuZHtcdW5pdG5vcm1hbH17XHZlY3tOfX1cKTwvZGl2PnwpKTsKQ29udGV4dCgnTnVtZXJpYycpOwoKQkVHSU5fUEdNTApJZiBbYFx1bml0bm9ybWFsKHQpYF0gaXMgYSB1bml0IG5vcm1hbCB2ZWN0b3IsIHdoYXQgaXMgW2BcdW5pdG5vcm1hbCh0KVxjZG90IFx2cnAodClcdGV4dHs/fWBdCgpbX117MH17NX0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12490">If <span class="process-math">\(\unitnormal(t)\)</span> is a unit normal vector, what is <span class="process-math">\(\unitnormal(t)\cdot \vrp(t)\text{?}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1489')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2405"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<p id="p-12492">The acceleration vector <span class="process-math">\(\vat\)</span> lies in the plane defined by what two vectors?</p></article><article class="exercise exercise-like" id="exercise-2406"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-12494"><span class="process-math">\(a_\text{T}\)</span> measures how much the acceleration is affecting the <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> of an object.</p></article></article><article class="subexercises" id="subexercises-147"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-288">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-338"><p id="p-12496">Given <span class="process-math">\(\vrt\text{,}\)</span> find <span class="process-math">\(\unittangent(t)\)</span> and evaluate it at the indicated value of <span class="process-math">\(t\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="x11_04_ex_05"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-12497"><span class="process-math">\(\vrt = \la 2t^2,t^2-t\ra\text{,}\)</span><span class="process-math">\(t=1\)</span></p></article><article class="exercise exercise-like" id="exercise-2408"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<div id="webwork-1490" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1490" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cbmV3Y29tbWFuZHtcdnJ0fXtcdmVjIHIodCl9XG5ld2NvbW1hbmR7XHVuaXR0YW5nZW50fXtcdmVje3t9VH19XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlZlY3RvcjJEIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRUPUNvbXB1dGUoIjwxL3NxcnQoMStzaW5eMih0KSksLXNpbih0KS9zcXJ0KDErc2luXjIodCkpPiIpOwokVGE9Q29tcHV0ZSgiPHNxcnQoMi8zKSwtMS9zcXJ0KDMpPiIpOwoKQkVHSU5fUEdNTApbYFx2cnQgPSBcbGEgdCxcY29zKHQpIFxyYVx0ZXh0eyx9YF0gW2B0PVxwaS80XHRleHR7Ln1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRmluZCBbYFx1bml0dGFuZ2VudCh0KVx0ZXh0ey59YF0nKUBdKioKCltfXXskVH17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdGaW5kIFtgXHVuaXR0YW5nZW50KFxwaS80KVx0ZXh0ey59YF0nKUBdKioKCltfXXskVGF9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12499"><span class="process-math">\(\vrt = \la t,\cos(t) \ra\text{,}\)</span> <span class="process-math">\(t=\pi/4\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1490')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2409"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-12502"><span class="process-math">\(\vrt = \la \cos^3(t) ,\sin^3(t) \ra\text{,}\)</span><span class="process-math">\(t=\pi/4\)</span></p></article><article class="exercise exercise-like" id="x11_04_ex_08"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-1491" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1491" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cbmV3Y29tbWFuZHtcdnJ0fXtcdmVjIHIodCl9XG5ld2NvbW1hbmR7XHVuaXR0YW5nZW50fXtcdmVje3t9VH19XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlZlY3RvcjJEIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRUPUNvbXB1dGUoIjwtc2luKHQpLCBjb3ModCk+Iik7CiRUYT1Db21wdXRlKCI8MCwtMT4iKTsKCkJFR0lOX1BHTUwKW2BcdnJ0ID0gXGxhIFxjb3ModCkgLCBcc2luKHQpIFxyYVx0ZXh0eyx9YF0gW2B0PVxwaVx0ZXh0ey59YF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BcdW5pdHRhbmdlbnQodClcdGV4dHsufWBdJylAXSoqCgpbX117JFR9ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRmluZCBbYFx1bml0dGFuZ2VudChccGkpXHRleHR7Ln1gXScpQF0qKgoKW19deyRUYX17MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12504"><span class="process-math">\(\vrt = \la \cos(t) , \sin(t) \ra\text{,}\)</span> <span class="process-math">\(t=\pi\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1491')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-289">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-339"><p id="p-12507">Find the equation of the line tangent to the curve at the indicated <span class="process-math">\(t\)</span>-value using the unit tangent vector. Note: these are the same problems as in <a href="" class="xref" data-knowl="./knowl/x11_04_ex_05.html" title="Exercise 12.4.4.5">Exercises 12.4.4.5</a> — <a href="" class="xref" data-knowl="./knowl/x11_04_ex_08.html" title="Exercise 12.4.4.8">Exercise 12.4.4.8</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2411"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-1492" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1492" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cbmV3Y29tbWFuZHtcdnJ0fXtcdmVjIHIodCl9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlZlY3RvcjJEIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJEw9Q29tcHV0ZSgiKDIsMCkgKyB0Kjw0L3NxcnQoMTcpLDEvc3FydCgxNyk+Iik7CgpCRUdJTl9QR01MCkZpbmQgdGhlIHZlY3RvciBlcXVhdGlvbiBvZiB0aGUgbGluZSB0YW5nZW50IHRvIFtgXHZydCA9IFxsYSAydF4yLHReMi10IFxyYWBdIGF0IFtgdD0xYF0gdXNpbmcgdGhlIHVuaXQgdGFuZ2VudCB2ZWN0b3IuCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdbYFxlbGwodCk9YF0nKUBdKioKCltfXXskTH17MzB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12508">Find the vector equation of the line tangent to <span class="process-math">\(\vrt = \la 2t^2,t^2-t \ra\)</span> at <span class="process-math">\(t=1\)</span> using the unit tangent vector.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1492')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2412"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-1493" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1493" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cbmV3Y29tbWFuZHtcdnJ0fXtcdmVjIHIodCl9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlZlY3RvcjJEIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJEw9Q29tcHV0ZSgiKHBpLzQsc3FydCgyKS8yKSArIHQqPHNxcnQoMi8zKSwtMS9zcXJ0KDMpPiIpOwoKQkVHSU5fUEdNTApGaW5kIHRoZSB2ZWN0b3IgZXF1YXRpb24gb2YgdGhlIGxpbmUgdGFuZ2VudCB0byBbYFx2cnQgPSBcbGEgdCxcY29zKHQpIFxyYWBdIGF0IFtgdD1ccGkvNGBdIHVzaW5nIHRoZSB1bml0IHRhbmdlbnQgdmVjdG9yLgoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnW2BcZWxsKHQpPWBdJylAXSoqCgpbX117JEx9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12510">Find the vector equation of the line tangent to <span class="process-math">\(\vrt = \la t,\cos(t) \ra\)</span> at <span class="process-math">\(t=\pi/4\)</span> using the unit tangent vector.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1493')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2413"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-12512"><span class="process-math">\(\vrt = \la \cos^3(t) ,\sin^3(t) \ra\text{,}\)</span><span class="process-math">\(t=\pi/4\)</span></p></article><article class="exercise exercise-like" id="exercise-2414"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-1494" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1494" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cbmV3Y29tbWFuZHtcdnJ0fXtcdmVjIHIodCl9XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlZlY3RvcjJEIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKJEw9Q29tcHV0ZSgiKC0xLDApICsgdCo8MCwtMT4iKTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgdmVjdG9yIGVxdWF0aW9uIG9mIHRoZSBsaW5lIHRhbmdlbnQgdG8gW2BcdnJ0ID0gXGxhIFxjb3ModCkgLFxzaW4odCkgXHJhYF0gYXQgW2B0PVxwaWBdIHVzaW5nIHRoZSB1bml0IHRhbmdlbnQgdmVjdG9yLgoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnW2BcZWxsKHQpPWBdJylAXSoqCgpbX117JEx9ezMwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12515">Find the vector equation of the line tangent to <span class="process-math">\(\vrt = \la \cos(t) ,\sin(t) \ra\)</span> at <span class="process-math">\(t=\pi\)</span> using the unit tangent vector.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1494')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-290">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-340"><p id="p-12517">In the following exercises, find <span class="process-math">\(\unitnormal(t)\)</span> using <a href="" class="xref" data-knowl="./knowl/def_unit_normal.html" title="Definition 12.4.8: Unit Normal Vector">Definition 12.4.8</a>. Confirm the result using <a href="" class="xref" data-knowl="./knowl/thm_concave.html" title="Theorem 12.4.14: Unit Normal Vectors in \mathbb{R}^2">Theorem 12.4.14</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2415"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-12518"><span class="process-math">\(\vrt = \la 3\cos(t) , 3\sin(t) \ra\)</span></p></article><article class="exercise exercise-like" id="exercise-2416"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-12520"><span class="process-math">\(\vrt = \la t, t^2 \ra\)</span></p></article><article class="exercise exercise-like" id="exercise-2417"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-12522"><span class="process-math">\(\vrt = \la \cos(t) ,2\sin(t) \ra\)</span></p></article><article class="exercise exercise-like" id="exercise-2418"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-12524"><span class="process-math">\(\vrt = \la e^t,e^{-t} \ra\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-291">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-341">
+<p id="p-12526">In the following exercises, a position function <span class="process-math">\(\vrt\)</span> is given along with its unit tangent vector <span class="process-math">\(\unittangent(t)\)</span> evaluated at <span class="process-math">\(t=a\text{,}\)</span> for some value of <span class="process-math">\(a\text{.}\)</span></p>
+<ol id="p-12527" class="lower-alpha">
+<li id="li-2407"><p id="p-12528">Confirm that <span class="process-math">\(\unittangent(a)\)</span> is as stated.</p></li>
+<li id="li-2408"><p id="p-12529">Using a graph of <span class="process-math">\(\vrt\)</span> and <a href="" class="xref" data-knowl="./knowl/thm_concave.html" title="Theorem 12.4.14: Unit Normal Vectors in \mathbb{R}^2">Theorem 12.4.14</a>, find <span class="process-math">\(\unitnormal(a)\text{.}\)</span></p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2419"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-12530"><span class="process-math">\(\vrt = \la 3\cos(t) ,5\sin(t) \ra\text{;}\)</span><span class="process-math">\(\ds \unittangent(\pi/4) = \la -\frac3{\sqrt{34}}, \frac5{\sqrt{34}}\ra\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2420"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-12534"><span class="process-math">\(\ds \vrt = \la t,\frac{1}{t^2+1}\ra\text{;}\)</span><span class="process-math">\(\ds \unittangent(1) = \la \frac2{\sqrt{5}}, -\frac1{\sqrt{5}}\ra\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2421"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-12538"><span class="process-math">\(\ds \vrt = (1+2\sin(t) )\la \cos(t) ,\sin(t) \ra\text{;}\)</span><span class="process-math">\(\ds \unittangent(0) = \la \frac2{\sqrt{5}}, \frac1{\sqrt{5}}\ra\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2422"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-12542"><span class="process-math">\(\ds \vrt = \la \cos^3(t) ,\sin^3(t) \ra\text{;}\)</span><span class="process-math">\(\ds \unittangent(\pi/4) = \la -\frac1{\sqrt{2}}, \frac1{\sqrt{2}}\ra\text{.}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-292">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-342"><p id="p-12546">In the following exercises, find <span class="process-math">\(\unitnormal(t)\text{.}\)</span></p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2423"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-12547"><span class="process-math">\(\vrt = \la 4t,2\sin(t) ,2\cos(t) \ra\)</span></p></article><article class="exercise exercise-like" id="exercise-2424"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-1495" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1495" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cbmV3Y29tbWFuZHtcdnJ0fXtcdmVjIHIodCl9XG5ld2NvbW1hbmR7XHVuaXRub3JtYWx9e1x2ZWN7Tn19XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlZlY3RvciIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKHQ9PidSZWFsJyk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjAscmVkdWNlQ29uc3RhbnRGdW5jdGlvbnM9PjApOwokTj1Db21wdXRlKCI8LWNvcyh0KSwgLTMvNSBzaW4odCksIC00LzVzaW4odCk+Iik7CgpCRUdJTl9QR01MCklmIFtgXHZydCA9IFxsYSA1XGNvcyh0KSAsM1xzaW4odCkgLDRcc2luKHQpIFxyYVx0ZXh0eyx9YF0gZmluZCBbYFx1bml0bm9ybWFsKHQpXHRleHR7Ln1gXQoKW19deyROfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12549">If <span class="process-math">\(\vrt = \la 5\cos(t) ,3\sin(t) ,4\sin(t) \ra\text{,}\)</span> find <span class="process-math">\(\unitnormal(t)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1495')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2425"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-12551"><span class="process-math">\(\vrt = \la a\cos(t) ,a\sin(t) ,b t \ra\text{;}\)</span> <span class="process-math">\(a \gt 0\)</span></p></article><article class="exercise exercise-like" id="exercise-2426"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-1496" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1496" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cbmV3Y29tbWFuZHtcdnJ0fXtcdmVjIHIodCl9XG5ld2NvbW1hbmR7XHVuaXRub3JtYWx9e1x2ZWN7Tn19XCk8L2Rpdj4nKSk7CkNvbnRleHQoIlZlY3RvciIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKHQ9PidSZWFsJyxhPT4nUmVhbCcpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRzPT4wLHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJE49Q29tcHV0ZSgiPC1jb3MoYXQpLCAtc2luKGF0KSwgMD4iKTsKCkJFR0lOX1BHTUwKSWYgW2BcdnJ0ID0gXGxhIFxjb3MoYXQpLFxzaW4oYXQpLHQgXHJhXHRleHR7LH1gXSBmaW5kIFtgXHVuaXRub3JtYWwodClcdGV4dHsufWBdCgpbX117JE59ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12553">If <span class="process-math">\(\vrt = \la \cos(at),\sin(at),t \ra\text{,}\)</span> find <span class="process-math">\(\unitnormal(t)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1496')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-293">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-343"><p id="p-12555">In the following exercises, find <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\)</span> given <span class="process-math">\(\vrt\text{.}\)</span> Be sure you can sketch <span class="process-math">\(\vrt\)</span> on the indicated interval, and comment on the relative sizes of <span class="process-math">\(a_\text{T}\)</span> and <span class="process-math">\(a_\text{N}\)</span> at the indicated <span class="process-math">\(t\)</span> values.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-2427"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-12556"><span class="process-math">\(\vrt = \la t,t^2 \ra\)</span> on <span class="process-math">\([-1,1]\text{;}\)</span> consider <span class="process-math">\(t=0\)</span> and <span class="process-math">\(t=1\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2428"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<div id="webwork-1497" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1497" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cbmV3Y29tbWFuZHtcdnJ0fXtcdmVjIHIodCl9XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5zZXQodD0+e2xpbWl0cz0+WzAuMSw0XX0pOwokYVQ9Q29tcHV0ZSgiLTIvdF41L3NxcnQoMSsxL3ReNCkiKTsKJGFOPUNvbXB1dGUoIjIvdF4zL3NxcnQoMSsxL3ReNCkiKTsKJGFUMT1Gb3JtdWxhKCItc3FydCgyKSIpOwokYU4xPUZvcm11bGEoInNxcnQoMikiKTsKJGFUMj1Gb3JtdWxhKCItMS8oNHNxcnQoMTcpKSIpOwokYU4yPUZvcm11bGEoIjEvc3FydCgxNykiKTsKCkJFR0lOX1BHTUwKW2BcdnJ0ID0gXGxhIHQsMS90IFxyYWBdIG9uIFtgKDAsNF1cdGV4dHs7fWBdIGNvbnNpZGVyIFtgdD0xYF0gYW5kIFtgdD0yXHRleHR7Ln1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRmluZCBbYGFfe1R9XHRleHR7On1gXScpQF0qKgoKW19deyRhVH17MjB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdGaW5kIFtgYV97Tn1cdGV4dHs6fWBdJylAXSoqCgpbX117JGFOfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BhX3tUfSgxKVx0ZXh0ezp9YF0nKUBdKioKCltfXXskYVQxfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BhX3tOfSgxKVx0ZXh0ezp9YF0nKUBdKioKCltfXXskYU4xfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BhX3tUfSgyKVx0ZXh0ezp9YF0nKUBdKioKCltfXXskYVQyfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BhX3tOfSgyKVx0ZXh0ezp9YF0nKUBdKioKCltfXXskYU4yfXsyMH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpBdCBbYHQ9MVx0ZXh0eyx9YF0gYWNjZWxlcmF0aW9uIGNvbWVzIGZyb20gY2hhbmdpbmcgc3BlZWQgYW5kIGNoYW5naW5nIGRpcmVjdGlvbiBpbiAiZXF1YWwgbWVhc3VyZTsiIGF0IFtgdD0yXHRleHR7LH1gXSBhY2NlbGVyYXRpb24gaXMgbmVhcmx5IFtgXHZlYyAwYF0gYXMgaXQgaXM7IHRoZSBsb3cgdmFsdWUgb2YgW2BhX1x0ZXh0e1R9YF0gc2hvd3MgdGhhdCB0aGUgc3BlZWQgaXMgbmVhcmx5IGNvbnN0YW50IGFuZCB0aGUgbG93IHZhbHVlIG9mIFtgYV9cdGV4dHtOfWBdIHNob3dzIHRoZSBkaXJlY3Rpb24gaXMgbm90IGNoYW5naW5nIHF1aWNrbHkuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12561"><span class="process-math">\(\vrt = \la t,1/t \ra\)</span> on <span class="process-math">\((0,4]\text{;}\)</span> consider <span class="process-math">\(t=1\)</span> and <span class="process-math">\(t=2\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1497')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2429"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-12569"><span class="process-math">\(\vrt = \la 2\cos(t) ,2\sin(t) \ra\)</span> on <span class="process-math">\([0,2\pi]\text{;}\)</span> consider <span class="process-math">\(t=0\)</span> and <span class="process-math">\(t=\pi/2\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2430"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-1498" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1498" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cbmV3Y29tbWFuZHtcdnJ0fXtcdmVjIHIodCl9XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRhVD1Db21wdXRlKCIyIik7CiRhTj1Db21wdXRlKCI0dF4yIik7CiRhVDE9Rm9ybXVsYSgiMiIpOwokYU4xPUZvcm11bGEoIjJwaSIpOwokYVQyPUZvcm11bGEoIjIiKTsKJGFOMj1Gb3JtdWxhKCI0cGkiKTsKCkJFR0lOX1BHTUwKW2BcdnJ0ID0gXGxhIFxjb3ModF4yKSxcc2luKHReMikgXHJhYF0gb24gW2AoMCwyXHBpXVx0ZXh0ezt9YF0gY29uc2lkZXIgW2B0PVxwaS8yYF0gYW5kIFtgdD1ccGlcdGV4dHsufWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdGaW5kIFtgYV97VH1cdGV4dHs6fWBdJylAXSoqCgpbX117JGFUfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BhX3tOfVx0ZXh0ezp9YF0nKUBdKioKCltfXXskYU59ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRmluZCBbYGFfe1R9XG1hdGhvcGVue31cbGVmdChcc3FydHtccGkvMn1ccmlnaHQpXG1hdGhjbG9zZXt9XHRleHR7On1gXScpQF0qKgoKW19deyRhVDF9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRmluZCBbYGFfe059XG1hdGhvcGVue31cbGVmdChcc3FydHtccGkvMn1ccmlnaHQpXG1hdGhjbG9zZXt9XHRleHR7On1gXScpQF0qKgoKW19deyRhTjF9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRmluZCBbYGFfe1R9XG1hdGhvcGVue31cbGVmdChcc3FydHtccGl9XHJpZ2h0KVxtYXRoY2xvc2V7fVx0ZXh0ezp9YF0nKUBdKioKCltfXXskYVQyfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1tgYV97Tn1cbWF0aG9wZW57fVxsZWZ0KFxzcXJ0e1xwaX1ccmlnaHQpXG1hdGhjbG9zZXt9XHRleHR7On1gXScpQF0qKgoKW19deyRhTjJ9ezIwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClRoZSBvYmplY3QgbW92ZXMgYXQgaW5jcmVhc2luZyBzcGVlZCAoaW5jcmVhc2luZyBhdCBhIGNvbnN0YW50IHJhdGUgb2YgYWNjZWxlcmF0aW9uKSwgaGVuY2UgW2BhX1x0ZXh0e1R9PTJcdGV4dHsufWBdIFNpbmNlIHRoZSBvYmplY3QgaXMgaW5jcmVhc2luZyBzcGVlZCB5ZXQgYWx3YXlzIHRyYXZlbGluZyBpbiBhIGNpcmNsZSBvZiByYWRpdXMgMSwgdGhlIGRpcmVjdGlvbiBtdXN0IGNoYW5nZSBtb3JlIHF1aWNrbHk7IHRoZSBhbW91bnQgb2YgYWNjZWxlcmF0aW9uIHRoYXQgY2hhbmdlcyBkaXJlY3Rpb24gaW5jcmVhc2VzIG92ZXIgdGltZS4KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12574"><span class="process-math">\(\vrt = \la \cos(t^2),\sin(t^2) \ra\)</span> on <span class="process-math">\((0,2\pi]\text{;}\)</span> consider <span class="process-math">\(t=\pi/2\)</span> and <span class="process-math">\(t=\pi\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1498')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-2431"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-12582"><span class="process-math">\(\vrt = \la a\cos(t) ,a\sin(t) , bt \ra\)</span> on <span class="process-math">\([0,2\pi]\text{,}\)</span> where <span class="process-math">\(a,b \gt 0\text{;}\)</span> consider <span class="process-math">\(t=0\)</span> and <span class="process-math">\(t=\pi/2\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-2432"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<div id="webwork-1499" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1499" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xsYX17XGxlZnRcbGFuZ2xlfVxuZXdjb21tYW5ke1xyYX17XHJpZ2h0XHJhbmdsZX1cbmV3Y29tbWFuZHtcdnJ0fXtcdmVjIHIodCl9XCk8L2Rpdj4nKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUodD0+J1JlYWwnKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCxyZWR1Y2VDb25zdGFudEZ1bmN0aW9ucz0+MCk7CiRhVD1Db21wdXRlKCIwIik7CiRhTj1Db21wdXRlKCI1Iik7CiRhVDE9Rm9ybXVsYSgiMCIpOwokYU4xPUZvcm11bGEoIjUiKTsKJGFUMj1Gb3JtdWxhKCIwIik7CiRhTjI9Rm9ybXVsYSgiNSIpOwoKQkVHSU5fUEdNTApbYFx2cnQgPSBcbGEgNVxjb3ModCkgLDRcc2luKHQpICwgM1xzaW4odCkgXHJhYF0gb24gW2BbMCwyXHBpXVx0ZXh0ezt9YF0gY29uc2lkZXIgW2B0PTBgXSBhbmQgW2B0PVxwaS8yXHRleHR7Ln1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRmluZCBbYGFfe1R9XHRleHR7On1gXScpQF0qKgoKW19deyRhVH17MjB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdGaW5kIFtgYV97Tn1cdGV4dHs6fWBdJylAXSoqCgpbX117JGFOfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BhX3tUfSgwKVx0ZXh0ezp9YF0nKUBdKioKCltfXXskYVQxfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BhX3tOfSgwKVx0ZXh0ezp9YF0nKUBdKioKCltfXXskYU4xfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0ZpbmQgW2BhX3tUfShccGkvMilcdGV4dHs6fWBdJylAXSoqCgpbX117JGFUMn17MjB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdGaW5kIFtgYV97Tn0oXHBpLzIpXHRleHR7On1gXScpQF0qKgoKW19deyRhTjJ9ezIwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClRoZSBvYmplY3QgbW92ZXMgYXQgY29uc3RhbnQgc3BlZWQsIG1lYW5pbmcgdGhhdCBbYGFfXHRleHR7VH1gXSBpcyBhbHdheXMgMC4gQWNjZWxlcmF0aW9uIGlzIHRodXMgYWx3YXlzIHBlcnBlbmRpY3VsYXIgdG8gdGhlIGRpcmVjdGlvbiBvZiB0cmF2ZWw7IGluIHRoaXMgcGFydGljdWxhciBjYXNlLCBpdCBpcyBhbHdheXMgW2A1YF0gdGltZXMgdGhlIHVuaXQgdmVjdG9yIHBvaW50aW5nIG9ydGhvZ29uYWwgdG8gdGhlIGRpcmVjdGlvbiBvZiB0cmF2ZWwuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-12587"><span class="process-math">\(\vrt = \la 5\cos(t) ,4\sin(t) , 3\sin(t) \ra\)</span> on <span class="process-math">\([0,2\pi]\text{;}\)</span> consider <span class="process-math">\(t=0\)</span> and <span class="process-math">\(t=\pi/2\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1499')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

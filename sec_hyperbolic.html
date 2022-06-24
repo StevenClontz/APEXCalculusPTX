@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:28:57Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Hyperbolic Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_partial_fraction.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_anti_tech.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_lhopitals_rule.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_partial_fraction.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_anti_tech.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_lhopitals_rule.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="active">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_hyperbolic"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.6</span> <span class="title">Hyperbolic Functions</span>
+</h2>
+<section class="introduction" id="introduction-136"><p id="p-6170">The <em class="emphasis">hyperbolic functions</em> are a set of functions that have many applications to mathematics, physics, and engineering. Among many other applications, they are used to describe the formation of satellite rings around planets, to describe the shape of a rope hanging from two points, and have application to the theory of special relativity. This section defines the hyperbolic functions and describes many of their properties, especially their usefulness to calculus.</p>
+<p id="p-6171">These functions are sometimes referred to as the “hyperbolic trigonometric functions” as there are many, many connections between them and the standard trigonometric functions. <a href="" class="xref" data-knowl="./knowl/fig_hfcircle.html" title="Figure 6.6.2">Figure 6.6.2</a> demonstrates one such connection. Just as cosine and sine are used to define points on the circle defined by <span class="process-math">\(x^2+y^2=1\text{,}\)</span> the functions <em class="emphasis">hyperbolic cosine</em> and <em class="emphasis">hyperbolic sine</em> are used to define points on the hyperbola <span class="process-math">\(x^2-y^2=1\text{.}\)</span></p>
+<figure class="figure figure-like" id="vid-hyperbolic-intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-233" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/-6y0xCwCy4s?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.6.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_hyperbolic.html" class="internal" title="Section 6.6: Hyperbolic Functions">Section 6.6</a></figcaption></figure><figure class="figure figure-like" id="fig_hfcircle"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_hf_circlearea"><img src="generated/latex-image/img_hf_circlearea.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:40%;"><figure class="figure figure-like" id="fig_hf_hyperbolaarea"><img src="generated/latex-image/img_hf_hyperbolaarea.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.6.2<span class="period">.</span></span><span class="space"> </span>Using trigonometric functions to define points on a circle and hyperbolic functions to define points on a hyperbola. The area of the shaded regions are included in them.</figcaption></figure></section><section class="subsection" id="sec-hyp-def"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.6.1</span> <span class="title">The Hyperbolic Functions and their Properties</span>
+</h3>
+<p id="p-6172">We begin with their definition.</p>
+<article class="definition definition-like" id="def_hyperbolic_functions"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Hyperbolic Functions.</span>
+</h4>
+<ol id="p-6173" class="decimal cols2">
+<li id="li-1211"><p id="p-6174"><span class="process-math">\(\ds \cosh(x) = \frac{e^x+e^{-x}}2\)</span> </p></li>
+<li id="li-1212"><p id="p-derived-li-1212"><span class="process-math">\(\displaystyle \sinh(x) = \frac{e^x-e^{-x}}2\)</span></p></li>
+<li id="li-1213"><p id="p-derived-li-1213"><span class="process-math">\(\displaystyle \tanh(x) = \frac{\sinh(x) }{\cosh(x) }\)</span></p></li>
+<li id="li-1214"><p id="p-derived-li-1214"><span class="process-math">\(\displaystyle \sech(x) = \frac{1}{\cosh(x) }\)</span></p></li>
+<li id="li-1215"><p id="p-derived-li-1215"><span class="process-math">\(\displaystyle \csch(x) = \frac{1}{\sinh(x) }\)</span></p></li>
+<li id="li-1216"><p id="p-derived-li-1216"><span class="process-math">\(\displaystyle \coth(x) = \frac{\cosh(x) }{\sinh(x) }\)</span></p></li>
+</ol></article><aside class="aside aside-like" id="aside-35"><p id="p-6175"><em class="emphasis">Pronunciation Note:</em></p>
+<p id="p-6176">“cosh” rhymes with “gosh,”</p>
+<p id="p-6177">“sinh” rhymes with “pinch,” and</p>
+<p id="p-6178">“tanh” rhymes with “ranch.”</p></aside><p id="p-6179">These hyperbolic functions are graphed in <a href="" class="xref" data-knowl="./knowl/fig_hyperbolic1.html" title="Figure 6.6.4">Figure 6.6.4</a> and <a href="" class="xref" data-knowl="./knowl/fig_hyperbolic2.html" title="Figure 6.6.6">Figure 6.6.6</a>.</p>
+<p id="p-6180">In the graph of <span class="process-math">\(\cosh(x)\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_hf_cosh.html" title="Figure 6.6.4.(a)">Figure 6.6.4.(a)</a>, the graphs of <span class="process-math">\(e^x/2\)</span> and <span class="process-math">\(e^{-x}/2\)</span> are included with dashed lines. In the graph of <span class="process-math">\(\sinh(x)\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_hf_sinh.html" title="Figure 6.6.4.(b)">Figure 6.6.4.(b)</a>, the graphs of <span class="process-math">\(e^x/2\)</span> and <span class="process-math">\(-
+e^{-x}/2\)</span> are included with dashed lines. As <span class="process-math">\(x\)</span> gets “large,” <span class="process-math">\(\cosh(x)\)</span> and <span class="process-math">\(\sinh(x)\)</span> each act like <span class="process-math">\(e^x/2\text{;}\)</span> when <span class="process-math">\(x\)</span> is a large negative number, <span class="process-math">\(\cosh(x)\)</span> acts like <span class="process-math">\(e^{-x}/2\)</span> whereas <span class="process-math">\(\sinh(x)\)</span> acts like <span class="process-math">\(-e^{-x}/2\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_hyperbolic1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_hf_cosh"><img src="generated/latex-image/img_hf_cosh.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_hf_sinh"><img src="generated/latex-image/img_hf_sinh.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.6.4<span class="period">.</span></span><span class="space"> </span>Graphs of <span class="process-math">\(\sinh(x)\)</span> and <span class="process-math">\(\cosh(x)\)</span></figcaption></figure><figure class="figure figure-like" id="vid-hyperbolic-graphs-first-properties"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-234" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/0YP4mVrroVk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.6.5<span class="period">.</span></span><span class="space"> </span>Video presentation of graphs and basic properties of hyperbolic functions</figcaption></figure><p id="p-6181">In Figure <a href="" class="xref" data-knowl="./knowl/fig_hyperbolic2.html" title="Figure 6.6.6">Figure 6.6.6</a>, notice the domains of <span class="process-math">\(\tanh(x)\)</span> and <span class="process-math">\(\sech(x)\)</span> are <span class="process-math">\((-\infty,\infty)\text{,}\)</span> whereas both <span class="process-math">\(\coth(x)\)</span> and <span class="process-math">\(\csch(x)\)</span> have vertical asymptotes at <span class="process-math">\(x=0\text{.}\)</span> Also note the ranges of these functions, especially <span class="process-math">\(\tanh(x)\text{:}\)</span> as <span class="process-math">\(x\to\infty\text{,}\)</span> both <span class="process-math">\(\sinh(x)\)</span> and <span class="process-math">\(\cosh(x)\)</span> approach <span class="process-math">\(e^{-x}/2\text{,}\)</span> hence <span class="process-math">\(\tanh(x)\)</span> approaches <span class="process-math">\(1\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_hyperbolic2"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_hf_tanh_coth"><img src="generated/latex-image/img_hf_tanh_coth.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_hf_sech_csch"><img src="generated/latex-image/img_hf_sech_csch.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.6.6<span class="period">.</span></span><span class="space"> </span>Graphs of <span class="process-math">\(\tanh(x), \coth(x), \csch(x)\)</span> and <span class="process-math">\(\cosh(x)\)</span></figcaption></figure><p id="p-6182">The following example explores some of the properties of these functions that bear remarkable resemblance to the properties of their trigonometric counterparts.</p>
+<article class="example example-like" id="ex_hf1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.6.7</span><span class="period">.</span><span class="space"> </span><span class="title">Exploring properties of hyperbolic functions.</span>
+</h4>
+<p id="p-6183">Use <a href="" class="xref" data-knowl="./knowl/def_hyperbolic_functions.html" title="Definition 6.6.3: Hyperbolic Functions">Definition 6.6.3</a> to rewrite the following expressions.</p>
+<ol id="p-6184" class="decimal cols2">
+<li id="li-1217"><p id="p-derived-li-1217"><span class="process-math">\(\displaystyle \cosh^2(x) -\sinh^2(x)\)</span></p></li>
+<li id="li-1218"><p id="p-derived-li-1218"><span class="process-math">\(\displaystyle \tanh^2(x) +\sech^2(x)\)</span></p></li>
+<li id="li-1219"><p id="p-derived-li-1219"><span class="process-math">\(\displaystyle 2\cosh(x) \sinh(x)\)</span></p></li>
+<li id="li-1220"><p id="p-derived-li-1220"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\cosh(x) \big)\)</span></p></li>
+<li id="li-1221"><p id="p-derived-li-1221"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\sinh(x) \big)\)</span></p></li>
+<li id="li-1222"><p id="p-derived-li-1222"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\tanh(x) \big)\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-352" id="solution-352"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-352"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-hyperbolic-ex-properties" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/VunyFD8keVg?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-6185" class="decimal">
+<li id="ex_hf1a">
+<p id="p-6186">By <a href="" class="xref" data-knowl="./knowl/def_hyperbolic_functions.html" title="Definition 6.6.3: Hyperbolic Functions">Definition 6.6.3</a></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_hyperbolic_functions.html" id="md-291">
+\begin{align*}
+\cosh^2(x) -\sinh^2(x) \amp = \left(\frac{e^x+e^{-x}}2\right)^2 -\left(\frac{e^x-e^{-x}}2\right)^2\\
+\amp = \frac{e^{2x}+2e^xe^{-x} + e^{-2x}}4 - \frac{e^{2x}-2e^xe^{-x} + e^{-2x}}4\\
+\amp = \frac44=1\text{.}
+\end{align*}
+</div>
+<p class="continuation">So <span class="process-math">\(\cosh^2(x) -\sinh^2(x) =1\text{.}\)</span></p>
+</li>
+<li id="li-1224">
+<p id="p-6187">Again, use <a href="" class="xref" data-knowl="./knowl/def_hyperbolic_functions.html" title="Definition 6.6.3: Hyperbolic Functions">Definition 6.6.3</a></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_hyperbolic_functions.html ./knowl/ex_hf1a.html" id="md-292">
+\begin{align*}
+\tanh^2(x) +\sech^2(x) \amp =\frac{\sinh^2(x) }{\cosh^2(x) } + \frac{1}{\cosh^2(x) }\\
+\amp= \frac{\sinh^2(x) +1}{\cosh^2(x) }\qquad \text{ Now use identity from } \knowl{./knowl/ex_hf1a.html}{\text{Part 1}}\\
+\amp = \frac{\cosh^2(x) }{\cosh^2(x) } = 1\text{.}
+\end{align*}
+</div>
+<p class="continuation">So <span class="process-math">\(\tanh^2(x) +\sech^2(x) =1\text{.}\)</span></p>
+</li>
+<li id="li-1225">
+<p id="p-6188">Again, use <a href="" class="xref" data-knowl="./knowl/def_hyperbolic_functions.html" title="Definition 6.6.3: Hyperbolic Functions">Definition 6.6.3</a></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_hyperbolic_functions.html" id="md-293">
+\begin{align*}
+2\cosh(x) \sinh(x) \amp = 2\left(\frac{e^x+e^{-x}}2\right)\left(\frac{e^x-e^{-x}}2\right)\\
+\amp = 2 \cdot\frac{e^{2x} - e^{-2x}}4\\
+\amp = \frac{e^{2x} - e^{-2x}}2 = \sinh(2x)\text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(2\cosh(x) \sinh(x) = \sinh(2x)\text{.}\)</span></p>
+</li>
+<li id="li-1226">
+<p id="p-6189">Again, use <a href="" class="xref" data-knowl="./knowl/def_hyperbolic_functions.html" title="Definition 6.6.3: Hyperbolic Functions">Definition 6.6.3</a></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_hyperbolic_functions.html" id="md-294">
+\begin{align*}
+\frac{d}{dx}\big(\cosh(x) \big) \amp = \frac{d}{dx}\left(\frac{e^x+e^{-x}}2\right)\\
+\amp = \frac{e^x-e^{-x}}2\\
+\amp = \sinh(x)
+\end{align*}
+</div>
+<p class="continuation">So <span class="process-math">\(\frac{d}{dx}\big(\cosh(x) \big) = \sinh(x)\text{.}\)</span></p>
+</li>
+<li id="li-1227">
+<p id="p-6190">Apply derivatives to <a href="" class="xref" data-knowl="./knowl/def_hyperbolic_functions.html" title="Definition 6.6.3: Hyperbolic Functions">Definition 6.6.3</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_hyperbolic_functions.html" id="md-295">
+\begin{align*}
+\frac{d}{dx}\big(\sinh(x) \big) \amp = \frac{d}{dx}\left(\frac{e^x-e^{-x}}2\right)\\
+\amp = \frac{e^x+e^{-x}}2\\
+\amp = \cosh(x)\text{.}
+\end{align*}
+</div>
+<p class="continuation">So <span class="process-math">\(\frac{d}{dx}\big(\sinh(x) \big) = \cosh(x)\text{.}\)</span></p>
+</li>
+<li id="li-1228">
+<p id="p-6191">Apply derivatives to <a href="" class="xref" data-knowl="./knowl/def_hyperbolic_functions.html" title="Definition 6.6.3: Hyperbolic Functions">Definition 6.6.3</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_hyperbolic_functions.html" id="md-296">
+\begin{align*}
+\frac{d}{dx}\big(\tanh(x) \big) \amp = \frac{d}{dx}\left(\frac{\sinh(x) }{\cosh(x) }\right)\\
+\amp = \frac{\cosh(x) \cosh(x) - \sinh(x) \sinh(x) }{\cosh^2(x) }\\
+\amp = \frac{1}{\cosh^2(x) }\\
+\amp = \sech^2(x)\text{.}
+\end{align*}
+</div>
+<p class="continuation">So <span class="process-math">\(\frac{d}{dx}\big(\tanh(x) \big) = \sech^2(x)\text{.}\)</span></p>
+</li>
+</ol>
+</div></div>
+</div></article><p id="p-6192">The following Key Idea summarizes many of the important identities relating to hyperbolic functions. Each can be verified by referring back to <a href="" class="xref" data-knowl="./knowl/def_hyperbolic_functions.html" title="Definition 6.6.3: Hyperbolic Functions">Definition 6.6.3</a>.</p>
+<article class="insight remark-like" id="idea_hyperbolic_identities"><h4 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">6.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Useful Hyperbolic Function Properties.</span>
+</h4>
+<figure class="list table-like" id="list-1"><figcaption><span class="type">List</span><span class="space"> </span><span class="codenumber">6.6.9<span class="period">.</span></span><span class="space"> </span>Basic Identities</figcaption><div class="named-list-content"><ol class="decimal">
+<li id="li-1229"><p id="p-6193"><span class="process-math">\(\cosh^2(x) -\sinh^2(x) =1\)</span> </p></li>
+<li id="li-1230"><p id="p-derived-li-1230"><span class="process-math">\(\displaystyle \tanh^2(x) +\sech^2(x) =1\)</span></p></li>
+<li id="li-1231"><p id="p-derived-li-1231"><span class="process-math">\(\displaystyle \coth^2(x) -\csch^2(x) = 1\)</span></p></li>
+<li id="li-1232"><p id="p-derived-li-1232"><span class="process-math">\(\displaystyle \cosh(2x) =\cosh^2(x) +\sinh^2(x)\)</span></p></li>
+<li id="li-1233"><p id="p-derived-li-1233"><span class="process-math">\(\displaystyle \sinh(2x) = 2\sinh(x) \cosh(x)\)</span></p></li>
+<li id="li-1234"><p id="p-derived-li-1234"><span class="process-math">\(\displaystyle \cosh^2(x) = \frac{\cosh(2x) +1}{2}\)</span></p></li>
+<li id="li-1235"><p id="p-derived-li-1235"><span class="process-math">\(\displaystyle \sinh^2(x) =\frac{\cosh(2x) -1}{2}\)</span></p></li>
+</ol></div></figure><figure class="list table-like" id="list-2"><figcaption><span class="type">List</span><span class="space"> </span><span class="codenumber">6.6.10<span class="period">.</span></span><span class="space"> </span>Derivatives</figcaption><div class="named-list-content"><ol class="decimal">
+<li id="li-1236"><p id="p-derived-li-1236"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\cosh(x) \big) = \sinh(x)\)</span></p></li>
+<li id="li-1237"><p id="p-derived-li-1237"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\sinh(x) \big) = \cosh(x)\)</span></p></li>
+<li id="li-1238"><p id="p-derived-li-1238"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\tanh(x) \big) = \sech^2(x)\)</span></p></li>
+<li id="li-1239"><p id="p-derived-li-1239"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\sech(x) \big) = -\sech(x) \tanh(x)\)</span></p></li>
+<li id="li-1240"><p id="p-derived-li-1240"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\csch(x) \big) = -\csch(x) \coth(x)\)</span></p></li>
+<li id="li-1241"><p id="p-derived-li-1241"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\coth(x) \big) = -\csch^2(x)\)</span></p></li>
+</ol></div></figure><figure class="list table-like" id="list-3"><figcaption><span class="type">List</span><span class="space"> </span><span class="codenumber">6.6.11<span class="period">.</span></span><span class="space"> </span>Integrals</figcaption><div class="named-list-content"><ol class="decimal">
+<li id="li-1242"><p id="p-derived-li-1242"><span class="process-math">\(\displaystyle \int \cosh(x) \, dx = \sinh(x) +C\)</span></p></li>
+<li id="li-1243"><p id="p-derived-li-1243"><span class="process-math">\(\displaystyle \int \sinh(x) \, dx = \cosh(x) +C\)</span></p></li>
+<li id="li-1244"><p id="p-derived-li-1244"><span class="process-math">\(\displaystyle \int \tanh(x) \, dx = \ln(\cosh(x) ) +C\)</span></p></li>
+<li id="li-1245"><p id="p-derived-li-1245"><span class="process-math">\(\displaystyle \int \coth(x) \, dx = \ln\abs{\sinh(x) \,}+C\)</span></p></li>
+</ol></div></figure></article><p id="p-6194">We practice using <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_identities.html" title="Key Idea 6.6.8: Useful Hyperbolic Function Properties">Key Idea 6.6.8</a>.</p>
+<article class="example example-like" id="ex_hf2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.6.12</span><span class="period">.</span><span class="space"> </span><span class="title">Derivatives and integrals of hyperbolic functions.</span>
+</h4>
+<p id="p-6195">Evaluate the following derivatives and integrals.</p>
+<ol id="p-6196" class="decimal cols2">
+<li id="li-1246"><p id="p-derived-li-1246"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\cosh(2x) \big)\)</span></p></li>
+<li id="li-1247"><p id="p-derived-li-1247"><span class="process-math">\(\displaystyle \int \sech^2(7t-3)\,dt\)</span></p></li>
+<li id="li-1248"><p id="p-derived-li-1248"><span class="process-math">\(\displaystyle \int_0^{\ln(2) } \cosh(x) \, dx\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-353" id="solution-353"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-353"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-hyperbolic-ex-deriv-int" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/MwYZHh9UaRo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-6197" class="decimal">
+<li id="li-1249">
+<p id="p-6198">Using the Chain Rule directly, we have <span class="process-math">\(\frac{d}{dx} \big(\cosh(2x) \big) = 2\sinh(2x)\text{.}\)</span> Just to demonstrate that it works, let's also use the Basic Identity found in <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_identities.html" title="Key Idea 6.6.8: Useful Hyperbolic Function Properties">Key Idea 6.6.8</a>: <span class="process-math">\(\cosh(2x) = \cosh^2(x) +\sinh^2(x)\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_hyperbolic_identities.html" id="md-297">
+\begin{align*}
+\frac{d}{dx}\big(\cosh(2x) \big) \amp = \frac{d}{dx}\big(\cosh^2(x) +\sinh^2(x) \big)\\
+\amp = 2\cosh(x) \sinh(x) + 2\sinh(x) \cosh(x)\\
+\amp = 4\cosh(x) \sinh(x) \text{.}
+\end{align*}
+</div>
+<p class="continuation">Using another Basic Identity, we can see that <span class="process-math">\(4\cosh(x) \sinh(x) = 2\sinh(2x)\text{.}\)</span> We get the same answer either way.</p>
+</li>
+<li id="li-1250">
+<p id="p-6199">We employ substitution, with <span class="process-math">\(u = 7t-3\)</span> and <span class="process-math">\(du = 7dt\text{.}\)</span> Applying <a href="" class="xref" data-knowl="./knowl/idea_linearsub.html" title="Key Idea 6.1.5: Substitution With A Linear Function">Key Ideas 6.1.5</a> and <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_identities.html" title="Key Idea 6.6.8: Useful Hyperbolic Function Properties">Key Idea 6.6.8</a> we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_linearsub.html ./knowl/idea_hyperbolic_identities.html">
+\begin{equation*}
+\int \sech^2(7t-3)\,dt = \frac17\tanh(7t-3) + C\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1251">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-298">
+\begin{align*}
+\int_0^{\ln(2) } \cosh(x) \, dx \amp = \sinh(x) \Big|_0^{\ln(2) }\\
+\amp = \sinh(\ln(2) ) - \sinh(0)\\
+\amp  = \sinh(\ln(2) )\text{.}
+\end{align*}
+</div>
+<p class="continuation">We can simplify this last expression as <span class="process-math">\(\sinh(x)\)</span> is based on exponentials:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-299">
+\begin{align*}
+\sinh(\ln(2) ) \amp = \frac{e^{\ln(2) }-e^{-\ln(2) }}2\\
+\amp = \frac{2-1/2}{2}\\
+\amp = \frac34\text{.}
+\end{align*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.6.2</span> <span class="title">Inverse Hyperbolic Functions</span>
+</h3>
+<p id="p-6201">Just as the inverse trigonometric functions are useful in certain applications, the inverse hyperbolic functions are useful with others. <a href="" class="xref" data-knowl="./knowl/fig_hfarccosh.html" title="Figure 6.6.(a)">Figure 6.6.(a)</a> shows restriction on the domain of <span class="process-math">\(\cosh(x)\)</span> to make the function one-to-one and the resulting domain and range of its inverse function. Since <span class="process-math">\(\sinh(x)\)</span> is already one-to-one, no domain restriction is needed as shown in <a href="" class="xref" data-knowl="./knowl/fig_hfarcsinh.html" title="Figure 6.6.(b)">Figure 6.6.(b)</a>. Since <span class="process-math">\(\sech(x)\)</span> is not one to one, it also needs a restricted domain in order to be invertible. <a href="" class="xref" data-knowl="./knowl/fig_hfarcsecharccsch.html" title="Figure 6.6.(d)">Figure 6.6.(d)</a> shows the graph of <span class="process-math">\(\sech^{-1}(x)\text{.}\)</span> You should carefully compare the graph of this function to the graph given in <a href="" class="xref" data-knowl="./knowl/fig_hf_sech_csch.html" title="Figure 6.6.6.(b)">Figure 6.6.6.(b)</a> to see how this inverse was constructed. The rest of the hyperbolic functions area already one-to-one and need no domain restrictions. Their graphs are also shown in <a href="" class="xref" data-knowl="./knowl/fig_hfinverse1.html" title="Figure 6.6.15">Figure 6.6.15</a>. </p>
+<p id="p-6202">Because the hyperbolic functions are defined in terms of exponential functions, their inverses can be expressed in terms of logarithms as shown in <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_log.html" title="Key Idea 6.6.16: Logarithmic definitions of Inverse Hyperbolic Functions">Key Idea 6.6.16</a>. It is often more convenient to refer to <span class="process-math">\(\sinh^{-1}(x)\)</span> than to <span class="process-math">\(\ln\big(x+\sqrt{x^2+1}\big)\text{,}\)</span> especially when one is working on theory and does not need to compute actual values. On the other hand, when computations are needed, technology is often helpful but many hand-held calculators lack a <em class="emphasis">convenient</em> <span class="process-math">\(\sinh^{-1}(x)\)</span> button. (Often it can be accessed under a menu system, but not conveniently.) In such a situation, the logarithmic representation is useful. The reader is not encouraged to memorize these, but rather know they exist and know how to use them when needed.</p>
+<figure class="figure figure-like" id="vid-hyperbolic-inverse-sinh"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-237" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/znJxWgMJPw8?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.6.13<span class="period">.</span></span><span class="space"> </span>Finding the inverse of <span class="process-math">\(f(x)=\sinh(x)\)</span></figcaption></figure><figure class="table table-like" id="fig_hfinverse2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.6.14<span class="period">.</span></span><span class="space"> </span>Domains and ranges of the hyperbolic and inverse hyperbolic functions</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines">Function</td>
+<td class="l m b1 r0 l0 t0 lines">Domain</td>
+<td class="l m b1 r0 l0 t0 lines">Range</td>
+<td class="l m b1 r0 l0 t0 lines">Function</td>
+<td class="l m b1 r0 l0 t0 lines">Domain</td>
+<td class="l m b1 r0 l0 t0 lines">Range</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\cosh(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([0,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([1,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\cosh^{-1}(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([1,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([0,\infty)\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\sinh(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\sinh^{-1}(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,\infty)\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\tanh(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-1,1)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\tanh^{-1}(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-1,1)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,\infty)\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\sech(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([0,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((0,1]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\sech^{-1}(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((0,1]\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\([0,\infty)\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\csch(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,0) \cup (0,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,0) \cup (0,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\csch^{-1}(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,0) \cup (0,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,0) \cup (0,\infty)\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\coth(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,0) \cup (0,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,-1) \cup (1,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\coth^{-1}(x)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,-1) \cup (1,\infty)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,0) \cup (0,\infty)\)</span></td>
+</tr>
+</table></div></figure><figure class="figure figure-like" id="fig_hfinverse1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_hfarccosh"><img src="generated/latex-image/img_hfarccosh.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_hfarcsinh"><img src="generated/latex-image/img_hfarcsinh.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_hfarctanharccoth"><img src="generated/latex-image/img_hfarctanharccoth.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_hfarcsecharccsch"><img src="generated/latex-image/img_hfarcsecharccsch.svg" role="img" class="contained"><figcaption><span class="codenumber">(d)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.6.15<span class="period">.</span></span><span class="space"> </span>Graphs of the hyperbolic functions (with restricted domains) and their inverses</figcaption></figure><article class="insight remark-like" id="idea_hyperbolic_log"><h4 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">6.6.16</span><span class="period">.</span><span class="space"> </span><span class="title">Logarithmic definitions of Inverse Hyperbolic Functions.</span>
+</h4>
+<ol id="p-6203" class="decimal">
+<li id="li-1252"><p id="p-6204"><span class="process-math">\(\ds\cosh^{-1}(x) =\ln\big(x+\sqrt{x^2-1}\big);\, x\geq1\)</span> </p></li>
+<li id="li-1253"><p id="p-derived-li-1253"><span class="process-math">\(\displaystyle \tanh^{-1}(x) = \frac12\ln\left(\frac{1+x}{1-x}\right);\, \abs{x}\lt 1\)</span></p></li>
+<li id="li-1254"><p id="p-derived-li-1254"><span class="process-math">\(\displaystyle \sech^{-1}(x) = \ln\left(\frac{1+\sqrt{1-x^2}}x\right);\, 0\lt x\leq1\)</span></p></li>
+<li id="li-1255"><p id="p-derived-li-1255"><span class="process-math">\(\displaystyle \sinh^{-1}(x) = \ln\big(x+\sqrt{x^2+1}\big)\)</span></p></li>
+<li id="li-1256"><p id="p-derived-li-1256"><span class="process-math">\(\displaystyle \coth^{-1}(x) = \frac12\ln\left(\frac{x+1}{x-1}\right);\, \abs{x} \gt 1\)</span></p></li>
+<li id="li-1257"><p id="p-derived-li-1257"><span class="process-math">\(\displaystyle \csch^{-1}(x) = \ln\left(\frac1x+\frac{\sqrt{1+x^2}}{\abs{x}}\right);\, x\neq0\)</span></p></li>
+</ol></article><p id="p-6205">The following Key Ideas give the derivatives and integrals relating to the inverse hyperbolic functions. In <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_inverse_integrals.html" title="Key Idea 6.6.18: Integrals Involving Inverse Hyperbolic Functions">Key Idea 6.6.18</a>, both the inverse hyperbolic and logarithmic function representations of the antiderivative are given, based on <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_log.html" title="Key Idea 6.6.16: Logarithmic definitions of Inverse Hyperbolic Functions">Key Idea 6.6.16</a>. Again, these latter functions are often more useful than the former. Note how inverse hyperbolic functions can be used to solve integrals we used Trigonometric Substitution to solve in <a href="sec_trig_sub.html" class="internal" title="Section 6.4: Trigonometric Substitution">Section 6.4</a>.</p>
+<article class="insight remark-like" id="idea_hyperbolic_inverse_derivatives"><h4 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">6.6.17</span><span class="period">.</span><span class="space"> </span><span class="title">Derivatives Involving Inverse Hyperbolic Functions.</span>
+</h4>
+<ol id="p-6206" class="decimal">
+<li id="li-1258"><p id="p-6207"><span class="process-math">\(\ds\frac{d}{dx}\big(\cosh^{-1}(x) \big) = \frac{1}{\sqrt{x^2-1}};\\ x \gt 1\)</span> </p></li>
+<li id="li-1259"><p id="p-derived-li-1259"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\sinh^{-1}(x) \big) = \frac{1}{\sqrt{x^2+1}}\)</span></p></li>
+<li id="li-1260"><p id="p-derived-li-1260"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\tanh^{-1}(x) \big) = \frac{1}{1-x^2};\\ \abs{x}\lt 1\)</span></p></li>
+<li id="li-1261"><p id="p-derived-li-1261"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\sech^{-1}(x) \big) = \frac{-1}{x\sqrt{1-x^2}};\\ 0\lt x\lt 1\)</span></p></li>
+<li id="li-1262"><p id="p-derived-li-1262"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\csch^{-1}(x) \big) = \frac{-1}{\abs{x}\sqrt{1+x^2}};\\ x\neq0\)</span></p></li>
+<li id="li-1263"><p id="p-derived-li-1263"><span class="process-math">\(\displaystyle \frac{d}{dx}\big(\coth^{-1}(x) \big) = \frac{1}{1-x^2};\\ \abs{x} \gt 1\)</span></p></li>
+</ol></article><article class="insight remark-like" id="idea_hyperbolic_inverse_integrals"><h4 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">6.6.18</span><span class="period">.</span><span class="space"> </span><span class="title">Integrals Involving Inverse Hyperbolic Functions.</span>
+</h4>
+<p id="p-6208">Assume <span class="process-math">\(a\gt 0\text{.}\)</span></p>
+<ol class="decimal">
+<li id="li-1264"><div class="displaymath process-math" data-contains-math-knowls="" id="md-300">
+\begin{align*}
+\int \frac{1}{\sqrt{x^2-a^2}}\, dx \amp = \ln\abs{x+\sqrt{x^2-a^2}}+C\\
+(\text{for } 0\lt x\lt a)\, \amp = \cosh^{-1}\left(\frac xa\right)+C 
+\end{align*}
+</div></li>
+<li id="li-1265"><div class="displaymath process-math" data-contains-math-knowls="" id="md-301">
+\begin{align*}
+\int \frac{1}{\sqrt{x^2+a^2}}\, dx \amp =\ln\abs{x+\sqrt{x^2+a^2}}+C\\
+\amp = \sinh^{-1}\left(\frac xa\right)+C
+\end{align*}
+</div></li>
+<li id="li-1266"><div class="displaymath process-math" data-contains-math-knowls="" id="md-302">
+\begin{align*}
+\int \frac{1}{a^2-x^2}\, dx \amp = \frac1{2a}\ln\abs{\frac{a+x}{a-x}}+C\\
+\amp = \begin{cases}
+\frac1a\tanh^{-1}\left(\frac xa\right)+C \amp x^2\lt a^2\\
+\frac1a\coth^{-1}\left(\frac xa\right)+C \amp  a^2\lt x^2
+\end{cases}
+\end{align*}
+</div></li>
+<li id="li-1267"><div class="displaymath process-math" data-contains-math-knowls="" id="md-303">
+\begin{align*}
+\int \frac{1}{x\sqrt{a^2-x^2}}\, dx \amp =\frac1a \ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C\\
+(\text{for } 0\lt x\lt a)\, \amp = -\frac1a\sech^{-1}\left(\frac xa\right)+C
+\end{align*}
+</div></li>
+<li id="li-1268"><div class="displaymath process-math" data-contains-math-knowls="" id="md-304">
+\begin{align*}
+\int \frac{1}{x\sqrt{x^2+a^2}}\, dx \amp = \frac1a \ln\abs{\frac{x}{a+\sqrt{a^2+x^2}}}+C\\
+\amp = -\frac1a\csch^{-1}\abs{\frac xa} + C
+\end{align*}
+</div></li>
+</ol></article><p id="vidint-hyperbolic-int-hypsub">Hyperbolic functions can be used as an alternative to trigonometric substitution, as illustrated in the following video.</p>
+<figure class="figure figure-like" id="vid-hyperbolic-int-hypsub"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-238" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/xYG0fnGDakI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.6.19<span class="period">.</span></span><span class="space"> </span>Using a hyperbolic substitution to evaluate an integral</figcaption></figure><p id="p-6215">We practice using the derivative and integral formulas in the following example.</p>
+<article class="example example-like" id="ex_hf3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.6.20</span><span class="period">.</span><span class="space"> </span><span class="title">Derivatives and integrals involving inverse hyperbolic functions.</span>
+</h4>
+<p id="p-6216">Evaluate the following.</p>
+<ol id="p-6217" class="decimal cols3">
+<li id="li-1269"><p id="p-derived-li-1269"><span class="process-math">\(\displaystyle \frac{d}{dx}\left[\cosh^{-1}\left(\frac{3x-2}{5}\right)\right]\)</span></p></li>
+<li id="li-1270"><p id="p-derived-li-1270"><span class="process-math">\(\displaystyle \int\frac{1}{x^2-1}\, dx\)</span></p></li>
+<li id="li-1271"><p id="p-derived-li-1271"><span class="process-math">\(\displaystyle \int \frac{1}{\sqrt{9x^2+10}}\, dx\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-354" id="solution-354"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-354"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-hyperbolic-ex-deriv-int2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/vlW6Og4hk-w?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-6218" class="decimal">
+<li id="li-1272">
+<p id="p-6219">Applying <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_inverse_derivatives.html" title="Key Idea 6.6.17: Derivatives Involving Inverse Hyperbolic Functions">Key Idea 6.6.17</a> with the Chain Rule gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_hyperbolic_inverse_derivatives.html">
+\begin{equation*}
+\frac{d}{dx}\left[\cosh^{-1}\left(\frac{3x-2}5\right)\right] = \frac{1}{\sqrt{\left(\frac{3x-2}5\right)^2-1}}\cdot\frac35\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1273">
+<p id="p-6220">Multiplying the numerator and denominator by <span class="process-math">\((-1)\)</span> gives: <span class="process-math">\(\ds \int \frac{1}{x^2-1}\, dx = \int \frac{-1}{1-x^2}\, dx\text{.}\)</span> The second integral can be solved with a direct application of item #3 from <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_inverse_integrals.html" title="Key Idea 6.6.18: Integrals Involving Inverse Hyperbolic Functions">Key Idea 6.6.18</a>, with <span class="process-math">\(a=1\text{.}\)</span> Thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_hyperbolic_inverse_integrals.html ./knowl/sec_partial_fraction.html ./knowl/eq_hf3.html" id="mdn-7">
+\begin{align}
+\int \frac{1}{x^2-1}\, dx \amp = -\int \frac{1}{1-x^2}\, dx\notag\\
+\amp = \left\{\begin{array}{ccc} -\tanh^{-1}\left(x\right)+C \amp  \amp  x^2\lt 1 \\ \\
+-\coth^{-1}\left(x\right)+C \amp  \amp  1\lt x^2
+\end{array} \right.\notag\\
+\amp =-\frac12\ln\abs{\frac{x+1}{x-1}}+C\notag\\
+\amp =\frac12\ln\abs{\frac{x-1}{x+1}}+C\text{.}\tag{6.6.1}
+\end{align}
+</div>
+<p class="continuation">We should note that this exact problem was solved at the beginning of <a href="sec_partial_fraction.html" class="internal" title="Section 6.5: Partial Fraction Decomposition">Section 6.5</a>. In that example the answer was given as <span class="process-math">\(\frac12\ln\abs{x-1}-\frac12\ln\abs{x+1}+C\text{.}\)</span> Note that this is equivalent to the answer given in <a href="" class="xref" data-knowl="./knowl/eq_hf3.html" title="Equation 6.6.1">Equation (6.6.1)</a>, as <span class="process-math">\(\ln(a/b) = \ln(a) - \ln(b)\text{.}\)</span></p>
+</li>
+<li id="li-1274">
+<p id="p-6221">This requires a substitution, then item #2 of <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_inverse_integrals.html" title="Key Idea 6.6.18: Integrals Involving Inverse Hyperbolic Functions">Key Idea 6.6.18</a> can be applied. Let <span class="process-math">\(u = 3x\text{,}\)</span> hence <span class="process-math">\(du = 3dx\text{.}\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_hyperbolic_inverse_integrals.html" id="md-305">
+\begin{align*}
+\int \frac{1}{\sqrt{9x^2+10}}\, dx \amp = \frac13\int\frac{1}{\sqrt{u^2+10}}\,du.\\
+\end{align*}
+<p class="intertext">Note <span class="process-math">\(a^2=10\text{,}\)</span> hence <span class="process-math">\(a = \sqrt{10}\text{.}\)</span> Now apply the integral rule.</p>
+\begin{align*}
+\amp = \frac13 \sinh^{-1}\left(\frac{3x}{\sqrt{10}}\right) + C\\
+\amp = \frac13 \ln\abs{3x+\sqrt{9x^2+10}}+C\text{.}
+\end{align*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article><p id="p-6222">This section covers a lot of ground. New functions were introduced, along with some of their fundamental identities, their derivatives and antiderivatives, their inverses, and the derivatives and antiderivatives of these inverses. Four Key Ideas were presented, each including quite a bit of information.</p>
+<p id="p-6223">Do not view this section as containing a source of information to be memorized, but rather as a reference for future problem solving. <a href="" class="xref" data-knowl="./knowl/idea_hyperbolic_inverse_integrals.html" title="Key Idea 6.6.18: Integrals Involving Inverse Hyperbolic Functions">Key Idea 6.6.18</a> contains perhaps the most useful information. Know the integration forms it helps evaluate and understand how to use the inverse hyperbolic answer and the logarithmic answer.</p>
+<p id="p-6224">The next section takes a brief break from demonstrating new integration techniques. It instead demonstrates a technique of evaluating limits that return indeterminate forms. This technique will be useful in <a href="sec_improper_integration.html" class="internal" title="Section 6.8: Improper Integration">Section 6.8</a>, where limits will arise in the evaluation of certain definite integrals.</p></section><section class="exercises" id="exercises-33"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">6.6.3</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-79"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-1147"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-1069" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1069" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XG5ld2NvbW1hbmR7XGFic31bMV17XGxlZnRcbHZlcnQgIzFccmlnaHRccnZlcnR9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKSW4gS2V5IElkZWFbJE5CU1BdKjYuNi44LCB0aGUgZXF1YXRpb24gW2BcZHMgXGludCBcdGFuaCh4KSBcLCBkeCA9IFxsbihcY29zaCh4KSApK0NgXSBpcyBnaXZlbi4gV2h5IGlzICJbYFxsblxhYnN7XGNvc2goeCkgfWBdIiBub3QgdXNlZCBbJE1EQVNIXSogaS5lLiwgd2h5IGFyZSBhYnNvbHV0ZSB2YWx1ZXMgbm90IG5lY2Vzc2FyeT8KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpCZWNhdXNlIFtgXGNvc2goeClgXSBpcyBhbHdheXMgcG9zaXRpdmUuCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6225">In Key Idea 6.6.8, the equation <span class="process-math">\(\ds \int \tanh(x) \, dx = \ln(\cosh(x) )+C\)</span> is given. Why is “<span class="process-math">\(\ln\abs{\cosh(x) }\)</span>” not used — i.e., why are absolute values not necessary?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1069')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1148"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-1070" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1070" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsKCkJFR0lOX1BHTUwKVGhlIGh5cGVyYm9saWMgZnVuY3Rpb25zIGFyZSB1c2VkIHRvIGRlZmluZSBwb2ludHMgb24gdGhlIHJpZ2h0IGhhbmQgcG9ydGlvbiBvZiB0aGUgaHlwZXJib2xhIFtgeF4yLXleMj0xXHRleHR7LH1gXSBhcyBzaG93biBpbiBGaWd1cmVbJE5CU1BdKjYuNi4yLiBIb3cgY2FuIHdlIHVzZSB0aGUgaHlwZXJib2xpYyBmdW5jdGlvbnMgdG8gZGVmaW5lIHBvaW50cyBvbiB0aGUgbGVmdCBoYW5kIHBvcnRpb24gb2YgdGhlIGh5cGVyYm9sYT8KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpUaGUgcG9pbnRzIG9uIHRoZSBsZWZ0IGhhbmQgc2lkZSBjYW4gYmUgZGVmaW5lZCBhcyBbYCgtXGNvc2goeCkgLCBcc2luaCh4KSApXHRleHR7Ln1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6227">The hyperbolic functions are used to define points on the right hand portion of the hyperbola <span class="process-math">\(x^2-y^2=1\text{,}\)</span> as shown in Figure 6.6.2. How can we use the hyperbolic functions to define points on the left hand portion of the hyperbola?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1070')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-80"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-119">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-137"><p id="p-6229">In the following exercises, verify the given identity using <a href="" class="xref" data-knowl="./knowl/def_hyperbolic_functions.html" title="Definition 6.6.3: Hyperbolic Functions">Definition 6.6.3</a>, as done in <a href="" class="xref" data-knowl="./knowl/ex_hf1.html" title="Example 6.6.7: Exploring properties of hyperbolic functions">Example 6.6.7</a>.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1149"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<div id="webwork-1071" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1071" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcY3NjaH17XG9wZXJhdG9ybmFtZXtjc2NofX1cbmV3Y29tbWFuZHtcYW1wfXsmfVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MClZlcmlmeSB0aGUgaWRlbnRpdHkgW2BcY290aF4yKHgpIC1cY3NjaF4yKHgpID0xYF0gdXNpbmcgdGhlIGRlZmluaXRpb25zIG9mIHRoZSBoeXBlcmJvbGljIGZ1bmN0aW9ucy4KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpbYFxiZWdpbnthbGlnbmVkfVxjb3RoXjIoeCkgLVxjc2NoXjIoeCkgXGFtcCA9IFxsZWZ0KFxmcmFje2VeeCtlXnsteH19e2VeeC1lXnsteH19XHJpZ2h0KV4yIC0gXGxlZnQoXGZyYWN7Mn17ZV54LWVeey14fX1ccmlnaHQpXjIgXFwKICAJCQkJCQkJCQkJCVxhbXAgPSBcZnJhY3soZV57Mnh9ICsgMiArIGVeey0yeH0pIC0gKDQpfXtlXnsyeH0gLSAyICsgZV57LTJ4fX1cXAogIAkJCQkJCQkJCQkJXGFtcCA9IFxmcmFje2VeezJ4fSAtIDIgKyBlXnstMnh9fXtlXnsyeH0gLSAyICsgZV57LTJ4fX1cXAogIAkJCQkJCQkJCQkJXGFtcCA9IDEKICAgICAgICAgICAgICAgICAgXGVuZHthbGlnbmVkfWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6230">Verify the identity <span class="process-math">\(\coth^2(x) -\csch^2(x) =1\)</span> using the definitions of the hyperbolic functions.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1071')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1150"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<div id="webwork-1072" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1072" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcYW1wfXsmfVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MClZlcmlmeSB0aGUgaWRlbnRpdHkgW2BcY29zaCgyeCkgPSBcY29zaF4yKHgpICtcc2luaF4yKHgpYF0gdXNpbmcgdGhlIGRlZmluaXRpb25zIG9mIHRoZSBoeXBlcmJvbGljIGZ1bmN0aW9ucy4KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpbYFxiZWdpbnthbGlnbmVkfVxjb3NoXjIoeCkgK1xzaW5oXjIoeCkgXGFtcCA9IFxsZWZ0KFxmcmFje2VeeCtlXnsteH19ezJ9XHJpZ2h0KV4yICsgXGxlZnQoXGZyYWN7ZV54LWVeey14fX17Mn1ccmlnaHQpXjIgXFwKICAJCQkJCQkJCQkJCVxhbXAgPSBcZnJhY3tlXnsyeH0gKyAyICsgZV57LTJ4fX17NH0gKyBcZnJhY3tlXnsyeH0gLSAyICsgZV57LTJ4fX17NH1cXAogIAkJCQkJCQkJCQkJXGFtcCA9IFxmcmFjezJlXnsyeH0gKyAyZV57LTJ4fX17NH1cXAogIAkJCQkJCQkJCQkJXGFtcCA9IFxmcmFje2VeezJ4fSArIGVeey0yeH19ezJ9IFxcCiAgCQkJCQkJCQkJCQlcYW1wID0gXGNvc2goMngpIC4KICAgICAgICAgICAgICAgICAgXGVuZHthbGlnbmVkfWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6232">Verify the identity <span class="process-math">\(\cosh(2x) = \cosh^2(x) +\sinh^2(x)\)</span> using the definitions of the hyperbolic functions.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1072')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1151"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<div id="webwork-1073" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1073" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XG5ld2NvbW1hbmR7XGFtcH17Jn1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOwoKQkVHSU5fUEdNTApWZXJpZnkgdGhlIGlkZW50aXR5IFtgXGRzXGNvc2heMih4KSA9IFxmcmFje1xjb3NoKDJ4KSArMX17Mn1gXSB1c2luZyB0aGUgZGVmaW5pdGlvbnMgb2YgdGhlIGh5cGVyYm9saWMgZnVuY3Rpb25zLgoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCltgXGJlZ2lue2FsaWduZWR9XGNvc2heMih4KSBcYW1wID0gXGxlZnQoXGZyYWN7ZV54K2Veey14fX17Mn1ccmlnaHQpXjIgXFwKICAJCQkJCQkJCQkJCVxhbXAgPSBcZnJhY3tlXnsyeH0gKyAyICsgZV57LTJ4fX17NH0gXFwKICAJCQkJCQkJCQkJCVxhbXAgPSBcZnJhYzEyXGZyYWN7KGVeezJ4fSArIGVeey0yeH0pKzJ9ezJ9XFwKICAJCQkJCQkJCQkJCVxhbXAgPSBcZnJhYzEyXGxlZnQoXGZyYWN7ZV57Mnh9ICsgZV57LTJ4fX17Mn0rMVxyaWdodClcXAogIAkJCQkJCQkJCQkJXGFtcCA9IFxmcmFje1xjb3NoKDJ4KSArMX17Mn0uCiAgICAgICAgICAgICAgICAgIFxlbmR7YWxpZ25lZH1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6234">Verify the identity <span class="process-math">\(\ds\cosh^2(x) = \frac{\cosh(2x) +1}{2}\)</span> using the definitions of the hyperbolic functions.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1073')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1152"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<div id="webwork-1074" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1074" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XG5ld2NvbW1hbmR7XGFtcH17Jn1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOwoKQkVHSU5fUEdNTApWZXJpZnkgdGhlIGlkZW50aXR5IFtgXGRzXHNpbmheMih4KSA9IFxmcmFje1xjb3NoKDJ4KSAtMX17Mn1gXSB1c2luZyB0aGUgZGVmaW5pdGlvbnMgb2YgdGhlIGh5cGVyYm9saWMgZnVuY3Rpb25zLgoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCltgXGJlZ2lue2FsaWduZWR9XHNpbmheMih4KSBcYW1wID0gXGxlZnQoXGZyYWN7ZV54LWVeey14fX17Mn1ccmlnaHQpXjIgXFwKICAJCQkJCQkJCQkJCVxhbXAgPSBcZnJhY3tlXnsyeH0gLSAyICsgZV57LTJ4fX17NH0gXFwKICAJCQkJCQkJCQkJCVxhbXAgPSBcZnJhYzEyXGZyYWN7KGVeezJ4fSArIGVeey0yeH0pLTJ9ezJ9XFwKICAJCQkJCQkJCQkJCVxhbXAgPSBcZnJhYzEyXGxlZnQoXGZyYWN7ZV57Mnh9ICsgZV57LTJ4fX17Mn0tMVxyaWdodClcXAogIAkJCQkJCQkJCQkJXGFtcCA9IFxmcmFje1xjb3NoKDJ4KSAtMX17Mn0uCiAgICAgICAgICAgICAgICAgIFxlbmR7YWxpZ25lZH1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6236">Verify the identity <span class="process-math">\(\ds\sinh^2(x) = \frac{\cosh(2x) -1}{2}\)</span> using the definitions of the hyperbolic functions.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1074')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1153"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div id="webwork-1075" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1075" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XG5ld2NvbW1hbmR7XHNlY2h9e1xvcGVyYXRvcm5hbWV7c2VjaH19XG5ld2NvbW1hbmR7XGFtcH17Jn1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOwoKQkVHSU5fUEdNTApWZXJpZnkgdGhlIGlkZW50aXR5IFtgXGRzXGZyYWN7ZH17ZHh9XGxlZnRbXHNlY2goeCkgXHJpZ2h0XSA9IC1cc2VjaCh4KSBcdGFuaCh4KWBdIHVzaW5nIHRoZSBkZWZpbml0aW9ucyBvZiB0aGUgaHlwZXJib2xpYyBmdW5jdGlvbnMuCgpbQEFOUyhlc3NheV9jbXAoKSk7ZXNzYXlfYm94KDYsNzYpQF0qIFtAZXNzYXlfaGVscCgpQF0qCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KW2BcYmVnaW57YWxpZ25lZH1cZnJhY3tkfXtkeH1cbGVmdFtcc2VjaCh4KSBccmlnaHRdIFxhbXAgPSBcZnJhY3tkfXtkeH1cbGVmdFtcZnJhY3syfXtlXngrZV57LXh9fVxyaWdodF0gXFwKICAJCQkJCQkJCQkJCVxhbXAgPSBcZnJhY3stMihlXngtZV57LXh9KX17KGVeeCtlXnsteH0pXjJ9IFxcCiAgCQkJCQkJCQkJCQlcYW1wID0gLVxmcmFjezIoZV54LWVeey14fSl9eyhlXngrZV57LXh9KShlXngrZV57LXh9KX0gXFwKICAJCQkJCQkJCQkJCVxhbXAgPSAtXGZyYWN7Mn17ZV54K2Veey14fX1cY2RvdCBcZnJhY3tlXngtZV57LXh9fXtlXngrZV57LXh9fVxcCiAgCQkJCQkJCQkJCQlcYW1wID0gLVxzZWNoKHgpIFx0YW5oKHgpIFxlbmR7YWxpZ25lZH1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6238">Verify the identity <span class="process-math">\(\ds\frac{d}{dx}\left[\sech(x) \right] = -\sech(x) \tanh(x)\)</span> using the definitions of the hyperbolic functions.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1075')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1154"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-1076" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1076" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XG5ld2NvbW1hbmR7XGNzY2h9e1xvcGVyYXRvcm5hbWV7Y3NjaH19XG5ld2NvbW1hbmR7XGFtcH17Jn1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOwoKQkVHSU5fUEdNTApWZXJpZnkgdGhlIGlkZW50aXR5IFtgXGRzXGZyYWN7ZH17ZHh9XGxlZnRbXGNvdGgoeCkgXHJpZ2h0XSA9IC1cY3NjaF4yKHgpYF0gdXNpbmcgdGhlIGRlZmluaXRpb25zIG9mIHRoZSBoeXBlcmJvbGljIGZ1bmN0aW9ucy4KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpbYFxiZWdpbnthbGlnbmVkfVxmcmFje2R9e2R4fVxsZWZ0W1xjb3RoKHgpIFxyaWdodF0gXGFtcCA9IFxmcmFje2R9e2R4fVxsZWZ0W1xmcmFje2VeeCtlXnsteH19e2VeeC1lXnsteH19XHJpZ2h0XSBcXAogIAkJCQkJCQkJCQkJXGFtcCA9IFxmcmFjeyhlXngtZV57LXh9KShlXngtZV57LXh9KS0oZV54K2Veey14fSkoZV54K2Veey14fSl9eyhlXngtZV57LXh9KV4yfVxcCiAgCQkJCQkJCQkJCQlcYW1wID0gXGZyYWN7ZV57Mnh9K2Veey0yeH0gLSAyIC0gKGVeezJ4fStlXnstMnh9KzIpfXsoZV54LWVeey14fSleMn1cXAogIAkJCQkJCQkJCQkJXGFtcCA9IC1cZnJhY3s0fXsoZV54LWVeey14fSleMn1cXAogIAkJCQkJCQkJCQkJXGFtcCA9LVxjc2NoXjIoeCkgXGVuZHthbGlnbmVkfWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6240">Verify the identity <span class="process-math">\(\ds\frac{d}{dx}\left[\coth(x) \right] = -\csch^2(x)\)</span> using the definitions of the hyperbolic functions.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1076')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1155"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-1077" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1077" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XG5ld2NvbW1hbmR7XGFic31bMV17XGxlZnRcbHZlcnQgIzFccmlnaHRccnZlcnR9XG5ld2NvbW1hbmR7XGFtcH17Jn1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOwoKQkVHSU5fUEdNTApWZXJpZnkgdGhlIGlkZW50aXR5IFtgXGRzIFxpbnQgXHRhbmgoeCkgXCwgZHggPSBcbG4oXGNvc2goeCkgKSArIENgXSB1c2luZyB0aGUgZGVmaW5pdGlvbnMgb2YgdGhlIGh5cGVyYm9saWMgZnVuY3Rpb25zLgoKW0BBTlMoZXNzYXlfY21wKCkpO2Vzc2F5X2JveCg2LDc2KUBdKiBbQGVzc2F5X2hlbHAoKUBdKgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCltgXGRzCVxpbnQgXHRhbmgoeCkgXCwgZHggPSBcaW50IFxmcmFje1xzaW5oKHgpIH17XGNvc2goeCkgfVwsIGR4YF0KCkxldCBbYHUgPSBcY29zaCh4KVx0ZXh0ezt9YF0gW2BkdSA9IChcc2luaCh4KSApIGR4YF0KCltgXGJlZ2lue2FsaWduZWR9XGFtcCA9IFxpbnQgXGZyYWN7MX17dX1cLGR1IFxcCiAgCQkJCQkJCQkJCQlcYW1wID0gXGxuXGFic3t1fSArIEMgXFwKICAJCQkJCQkJCQkJCVxhbXAgPSBcbG4oXGNvc2goeCkgKSArIEMuCiAgICAgICAgICAgICAgICAgIFxlbmR7YWxpZ25lZH1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6242">Verify the identity <span class="process-math">\(\ds \int \tanh(x) \, dx = \ln(\cosh(x) ) + C\)</span> using the definitions of the hyperbolic functions.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1077')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1156"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-1078" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1078" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Vzc2F5bWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XG5ld2NvbW1hbmR7XGFic31bMV17XGxlZnRcbHZlcnQgIzFccmlnaHRccnZlcnR9XG5ld2NvbW1hbmR7XGFtcH17Jn1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOwoKQkVHSU5fUEdNTApWZXJpZnkgdGhlIGlkZW50aXR5IFtgXGRzIFxpbnQgXGNvdGgoeCkgXCwgZHggPSBcbG5cYWJze1xzaW5oKHgpIH0gKyBDYF0gdXNpbmcgdGhlIGRlZmluaXRpb25zIG9mIHRoZSBoeXBlcmJvbGljIGZ1bmN0aW9ucy4KCltAQU5TKGVzc2F5X2NtcCgpKTtlc3NheV9ib3goNiw3NilAXSogW0Blc3NheV9oZWxwKClAXSoKCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpbYFxiZWdpbnthbGlnbmVkfVxpbnQgXGNvdGgoeCkgXCwgZHggXGFtcCA9IFxpbnQgXGZyYWN7XGNvc2goeCkgfXtcc2luaCh4KSB9XCwgZHhcXAogIAkJCQkJCQkJCQkJXHRleHR7IExldCBcKHUgPSBcc2luaCh4KSBcKTsgXChkdSA9IChcY29zaCh4KSApIGR4XCkgfSAgCVxcCiAgCQkJCQkJCQkJCQlcYW1wID0gXGludCBcZnJhY3sxfXt1fVwsZHUgXFwKICAJCQkJCQkJCQkJCVxhbXAgPSBcbG5cYWJze3V9ICsgQyBcXAogIAkJCQkJCQkJCQkJXGFtcCA9IFxsblxhYnN7XHNpbmgoeCkgfSArIEMuCiAgICAgICAgICAgICAgICAgIFxlbmR7YWxpZ25lZH1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6246">Verify the identity <span class="process-math">\(\ds \int \coth(x) \, dx = \ln\abs{\sinh(x) } + C\)</span> using the definitions of the hyperbolic functions.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1078')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-120">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-138"><p id="p-6248">In the following exercises, find the derivative of the given function.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1157"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<div id="webwork-1079" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1079" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmID0gRm9ybXVsYSgic2luaCgyeCkiKTsKJGRmID0gJGYtPkQoJ3gnKTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgZGVyaXZhdGl2ZSBvZiBbYGYoeCkgPSBcc2luaCgyeClcdGV4dHsufWBdCgpbX117JGRmfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6249">Find the derivative of <span class="process-math">\(f(x) = \sinh(2x)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1079')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1158"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-1080" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1080" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmID0gRm9ybXVsYSgiKGNvc2goeCkpXjIiKTsKJGRmID0gJGYtPkQoJ3gnKTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgZGVyaXZhdGl2ZSBvZiBbYGYoeCkgPSBcY29zaCBeMnhcdGV4dHsufWBdCgpbX117JGRmfXsyMH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpUYWtpbmcgdGhlIGRlcml2YXRpdmUgb2YgW2AoXGNvc2ggeCleMmBdIGRpcmVjdGx5LCBvbmUgZ2V0cyBbYDJcY29zaCB4XHNpbmggeFx0ZXh0ezt9YF0gdXNpbmcgdGhlIGlkZW50aXR5IFtgXGNvc2heMng9XGZyYWMxMihcY29zaDJ4KzEpYF0gZmlyc3QsIG9uZSBnZXRzIFtgXHNpbmggMnhcdGV4dHs7fWBdIGJ5IGtub3duIGh5cGVyYm9saWMgaWRlbnRpdGllcywgdGhlc2UgYXJlIGVxdWFsLgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6251">Find the derivative of <span class="process-math">\(f(x) = \cosh ^2x\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1080')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1159"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div id="webwork-1081" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1081" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmID0gRm9ybXVsYSgidGFuaCh4XjIpIik7CiRkZiA9ICRmLT5EKCd4Jyk7CgpCRUdJTl9QR01MCkZpbmQgdGhlIGRlcml2YXRpdmUgb2YgW2BmKHgpID0gXHRhbmgoeF4yKVx0ZXh0ey59YF0KCltfXXskZGZ9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6254">Find the derivative of <span class="process-math">\(f(x) = \tanh(x^2)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1081')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1160"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-1082" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1082" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmID0gRm9ybXVsYSgibG4oc2luaCh4KSkiKTsKJGRmID0gJGYtPkQoJ3gnKTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgZGVyaXZhdGl2ZSBvZiBbYGYoeCkgPSBcbG4oXHNpbmgoeCkgKVx0ZXh0ey59YF0KCltfXXskZGZ9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6256">Find the derivative of <span class="process-math">\(f(x) = \ln(\sinh(x) )\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1082')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1161"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-1083" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1083" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmID0gRm9ybXVsYSgic2luaCh4KSpjb3NoKHgpIik7CiRkZiA9ICRmLT5EKCd4Jyk7CgpCRUdJTl9QR01MCkZpbmQgdGhlIGRlcml2YXRpdmUgb2YgW2BmKHgpID0gXHNpbmgoeCkgXGNvc2goeClcdGV4dHsufWBdCgpbX117JGRmfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6258">Find the derivative of <span class="process-math">\(f(x) = \sinh(x) \cosh(x)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1083')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1162"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-1084" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1084" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmID0gRm9ybXVsYSgieCpzaW5oKHgpLWNvc2goeCkiKTsKJGRmID0gJGYtPkQoJ3gnKTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgZGVyaXZhdGl2ZSBvZiBbYGYoeCkgPSB4XHNpbmgoeCkgLVxjb3NoKHgpXHRleHR7Ln1gXQoKW19deyRkZn17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6260">Find the derivative of <span class="process-math">\(f(x) = x\sinh(x) -\cosh(x)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1084')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1163"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-1085" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1085" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xzZWNofXtcb3BlcmF0b3JuYW1le3NlY2h9fVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7JGYgPSBGb3JtdWxhKCJhc2VjaCh4XjIpIik7CiRkZiA9ICRmLT5EKCd4Jyk7CgpCRUdJTl9QR01MCkZpbmQgdGhlIGRlcml2YXRpdmUgb2YgW2BmKHgpID0gXHNlY2heey0xfSh4XjIpXHRleHR7Ln1gXQoKW19deyRkZn17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6262">Find the derivative of <span class="process-math">\(f(x) = \sech^{-1}(x^2)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1085')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1164"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-1086" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1086" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmID0gRm9ybXVsYSgiYXNpbmgoM3gpIik7CiRkZiA9ICRmLT5EKCd4Jyk7CgpCRUdJTl9QR01MCkZpbmQgdGhlIGRlcml2YXRpdmUgb2YgW2BmKHgpID0gXHNpbmheey0xfSgzeClcdGV4dHsufWBdCgpbX117JGRmfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6264">Find the derivative of <span class="process-math">\(f(x) = \sinh^{-1}(3x)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1086')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1165"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-1087" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1087" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmID0gRm9ybXVsYSgiYWNvc2goMnheMikiKTsKJGRmID0gJGYtPkQoJ3gnKTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgZGVyaXZhdGl2ZSBvZiBbYGYoeCkgPSBcY29zaF57LTF9KDJ4XjIpXHRleHR7Ln1gXQoKW19deyRkZn17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6266">Find the derivative of <span class="process-math">\(f(x) = \cosh^{-1}(2x^2)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1087')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1166"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-1088" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1088" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmID0gRm9ybXVsYSgiYXRhbmgoeCs1KSIpOwokZGYgPSAkZi0+RCgneCcpOwoKQkVHSU5fUEdNTApGaW5kIHRoZSBkZXJpdmF0aXZlIG9mIFtgZih4KSA9IFx0YW5oXnstMX0oeCs1KVx0ZXh0ey59YF0KCltfXXskZGZ9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6268">Find the derivative of <span class="process-math">\(f(x) = \tanh^{-1}(x+5)\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1088')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1167"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-1089" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1089" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmID0gRm9ybXVsYSgiYXRhbmgoY29zKHgpKSIpOwokZGYgPSAkZi0+RCgneCcpOwoKQkVHSU5fUEdNTApGaW5kIHRoZSBkZXJpdmF0aXZlIG9mIFtgZih4KSA9IFx0YW5oXnstMX0oXGNvcyh4KSApXHRleHR7Ln1gXQoKW19deyRkZn17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6270">Find the derivative of <span class="process-math">\(f(x) = \tanh^{-1}(\cos(x) )\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1089')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1168"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-1090" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1090" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRmID0gRm9ybXVsYSgiYWNvc2goc2VjKHgpKSIpOwokZGYgPSAkZi0+RCgneCcpOwoKQkVHSU5fUEdNTApGaW5kIHRoZSBkZXJpdmF0aXZlIG9mIFtgZih4KSA9IFxjb3NoXnstMX0oXHNlYyh4KSApXHRleHR7Ln1gXQoKW19deyRkZn17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6272">Find the derivative of <span class="process-math">\(f(x) = \cosh^{-1}(\sec(x) )\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1090')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-121">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-139"><p id="p-6274">In the following exercises, find the equation of the line tangent to the function at the given <span class="process-math">\(x\)</span>-value.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1169"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div id="webwork-1091" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1091" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4MCA9IDA7CiRmID0gRm9ybXVsYSgic2luaCh4KSIpOwokZGYgPSAkZi0+RCgneCcpOwokbSA9ICRkZi0+ZXZhbCh4PT4keDApOwokeTAgPSAkZi0+ZXZhbCh4PT4keDApOwokbGluZSA9IEZvcm11bGEoIiRtKih4IC0gJHgwKSArICR5MCIpOwoKQkVHSU5fUEdNTApGaW5kIHRoZSBlcXVhdGlvbiBvZiB0aGUgdGFuZ2VudCBsaW5lIHRvIFtgeT1mKHgpYF0gYXQgW2B4PTBcdGV4dHssfWBdIHdoZXJlIFtgZih4KSA9IFxzaW5oKHgpXHRleHR7Ln1gXQoKW2B5ID0gYF1bX117JGxpbmV9ezIwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCltgeT14YF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6275">Find the equation of the tangent line to <span class="process-math">\(y=f(x)\)</span> at <span class="process-math">\(x=0\text{,}\)</span> where <span class="process-math">\(f(x) = \sinh(x)\text{.}\)</span></p>
+<p id="p-6276"><span class="process-math">\(y =\)</span><span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1091')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1170"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-1092" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1092" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4MCA9IGxuKDIpOwokZiA9IEZvcm11bGEoImNvc2goeCkiKTsKJGRmID0gJGYtPkQoJ3gnKTsKJG0gPSAkZGYtPmV2YWwoeD0+JHgwKTsKJHkwID0gJGYtPmV2YWwoeD0+JHgwKTsKJGxpbmUgPSBGb3JtdWxhKCIkbSooeCAtICR4MCkgKyAkeTAiKTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgZXF1YXRpb24gb2YgdGhlIHRhbmdlbnQgbGluZSB0byBbYHk9Zih4KWBdIGF0IFtgeD1cbG4oMilcdGV4dHssfWBdIHdoZXJlIFtgZih4KSA9IFxjb3NoKHgpXHRleHR7Ln1gXQoKW2B5ID0gYF1bX117JGxpbmV9ezIwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCltgeT0zLzQoeC1cbG4oMikgKSs1LzRgXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6279">Find the equation of the tangent line to <span class="process-math">\(y=f(x)\)</span> at <span class="process-math">\(x=\ln(2)\text{,}\)</span> where <span class="process-math">\(f(x) = \cosh(x)\text{.}\)</span></p>
+<p id="p-6280"><span class="process-math">\(y =\)</span><span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1092')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1171"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div id="webwork-1093" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1093" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4MCA9IC1sbigzKTsKJGYgPSBGb3JtdWxhKCJ0YW5oKHgpIik7CiRkZiA9ICRmLT5EKCd4Jyk7CiRtID0gJGRmLT5ldmFsKHg9PiR4MCk7CiR5MCA9ICRmLT5ldmFsKHg9PiR4MCk7CiRsaW5lID0gRm9ybXVsYSgiJG0qKHggLSAkeDApICsgJHkwIik7CgpCRUdJTl9QR01MCkZpbmQgdGhlIGVxdWF0aW9uIG9mIHRoZSB0YW5nZW50IGxpbmUgdG8gW2B5PWYoeClgXSBhdCBbYHg9LVxsbigzKVx0ZXh0eyx9YF0gd2hlcmUgW2BmKHgpID0gXHRhbmgoeClcdGV4dHsufWBdCgpbYHkgPSBgXVtfXXskbGluZX17MjB9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KW2B5PVxmcmFjOXsyNX0oeCtcbG4oMykpLVxmcmFjNDVgXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6283">Find the equation of the tangent line to <span class="process-math">\(y=f(x)\)</span> at <span class="process-math">\(x=-\ln(3)\text{,}\)</span> where <span class="process-math">\(f(x) = \tanh(x)\text{.}\)</span></p>
+<p id="p-6284"><span class="process-math">\(y =\)</span><span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1093')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1172"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<div id="webwork-1094" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1094" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xzZWNofXtcb3BlcmF0b3JuYW1le3NlY2h9fVwpPC9kaXY+JykpOwpDb250ZXh0KCdOdW1lcmljJyk7JHgwID0gbG4oMyk7CiRmID0gRm9ybXVsYSgic2VjaCh4KV4yIik7CiRkZiA9ICRmLT5EKCd4Jyk7CiRtID0gJGRmLT5ldmFsKHg9PiR4MCk7CiR5MCA9ICRmLT5ldmFsKHg9PiR4MCk7CiRsaW5lID0gRm9ybXVsYSgiJG0qKHggLSAkeDApICsgJHkwIik7CgpCRUdJTl9QR01MCkZpbmQgdGhlIGVxdWF0aW9uIG9mIHRoZSB0YW5nZW50IGxpbmUgdG8gW2B5PWYoeClgXSBhdCBbYHg9XGxuKDMpXHRleHR7LH1gXSB3aGVyZSBbYGYoeCkgPSBcc2VjaF4yKHgpXHRleHR7Ln1gXQoKW2B5ID0gYF1bX117JGxpbmV9ezIwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCltgeT0tNzIvMTI1KHgtXGxuKDMpICkrOS8yNWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6287">Find the equation of the tangent line to <span class="process-math">\(y=f(x)\)</span> at <span class="process-math">\(x=\ln(3)\text{,}\)</span> where <span class="process-math">\(f(x) = \sech^2(x)\text{.}\)</span></p>
+<p id="p-6288"><span class="process-math">\(y =\)</span><span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1094')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1173"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<div id="webwork-1095" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1095" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4MCA9IDA7CiRmID0gRm9ybXVsYSgiYXNpbmgoeCkiKTsKJGRmID0gJGYtPkQoJ3gnKTsKJG0gPSAkZGYtPmV2YWwoeD0+JHgwKTsKJHkwID0gJGYtPmV2YWwoeD0+JHgwKTsKJGxpbmUgPSBGb3JtdWxhKCIkbSooeCAtICR4MCkgKyAkeTAiKTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgZXF1YXRpb24gb2YgdGhlIHRhbmdlbnQgbGluZSB0byBbYHk9Zih4KWBdIGF0IFtgeD0wXHRleHR7LH1gXSB3aGVyZSBbYGYoeCkgPSBcc2luaF57LTF9KHgpXHRleHR7Ln1gXQoKW2B5ID0gYF1bX117JGxpbmV9ezIwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCltgeT14YF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6291">Find the equation of the tangent line to <span class="process-math">\(y=f(x)\)</span> at <span class="process-math">\(x=0\text{,}\)</span> where <span class="process-math">\(f(x) = \sinh^{-1}(x)\text{.}\)</span></p>
+<p id="p-6292"><span class="process-math">\(y =\)</span><span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1095')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1174"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-1096" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1096" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgnTnVtZXJpYycpOyR4MCA9IHNxcnQoMik7CiRmID0gRm9ybXVsYSgiYWNvc2goeCkiKTsKJGRmID0gJGYtPkQoJ3gnKTsKJG0gPSAkZGYtPmV2YWwoeD0+JHgwKTsKJHkwID0gJGYtPmV2YWwoeD0+JHgwKTsKJGxpbmUgPSBGb3JtdWxhKCIkbSooeCAtICR4MCkgKyAkeTAiKTsKCkJFR0lOX1BHTUwKRmluZCB0aGUgZXF1YXRpb24gb2YgdGhlIHRhbmdlbnQgbGluZSB0byBbYHk9Zih4KWBdIGF0IFtgeD1cc3FydCAyXHRleHR7LH1gXSB3aGVyZSBbYGYoeCkgPSBcY29zaF57LTF9KHgpXHRleHR7Ln1gXQoKW2B5ID0gYF1bX117JGxpbmV9ezIwfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCltgeT0oeC1cc3FydHsyfSkrXGNvc2heey0xfShcc3FydHsyfSkgXGFwcHJveCAoeC0xLjQxNCkrMC44ODFgXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6295">Find the equation of the tangent line to <span class="process-math">\(y=f(x)\)</span> at <span class="process-math">\(x=\sqrt 2\text{,}\)</span> where <span class="process-math">\(f(x) = \cosh^{-1}(x)\text{.}\)</span></p>
+<p id="p-6296"><span class="process-math">\(y =\)</span><span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1096')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-122">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-140"><p id="p-6299">In the following exercises, evaluate the given indefinite integral.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1175"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<div id="webwork-1097" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1097" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjEvMipsbihjb3NoKDJ4KSkiKTsKCkJFR0lOX1BHTUwKRXZhbHVhdGUgdGhlIGluZGVmaW5pdGUgaW50ZWdyYWwgW2BcZHMgXGludCBcdGFuaCgyeClcLCBkeFx0ZXh0ey59YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6300">Evaluate the indefinite integral <span class="process-math">\(\ds \int \tanh(2x)\, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1097')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1176"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<div id="webwork-1098" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1098" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjEvMypzaW5oKDN4LTcpIik7CgpCRUdJTl9QR01MCkV2YWx1YXRlIHRoZSBpbmRlZmluaXRlIGludGVncmFsIFtgXGRzIFxpbnQgXGNvc2goM3gtNylcLCBkeFx0ZXh0ey59YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6302">Evaluate the indefinite integral <span class="process-math">\(\ds \int \cosh(3x-7)\, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1098')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1177"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<div id="webwork-1099" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1099" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjEvMipzaW5oKHgpXjIiKTsKCkJFR0lOX1BHTUwKRXZhbHVhdGUgdGhlIGluZGVmaW5pdGUgaW50ZWdyYWwgW2BcZHMgXGludCBcc2luaCh4KSBcY29zaCh4KSBcLCBkeFx0ZXh0ey59YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6304">Evaluate the indefinite integral <span class="process-math">\(\ds \int \sinh(x) \cosh(x) \, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1099')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1178"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<div id="webwork-1100" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1100" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIngqc2luaCh4KS1jb3NoKHgpIik7CgpCRUdJTl9QR01MCkV2YWx1YXRlIHRoZSBpbmRlZmluaXRlIGludGVncmFsIFtgXGRzIFxpbnQgeFxjb3NoKHgpIFwsIGR4XHRleHR7Ln1gXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6306">Evaluate the indefinite integral <span class="process-math">\(\ds \int x\cosh(x) \, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1100')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1179"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<div id="webwork-1101" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1101" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIngqY29zaCh4KS1zaW5oKHgpIik7CgpCRUdJTl9QR01MCkV2YWx1YXRlIHRoZSBpbmRlZmluaXRlIGludGVncmFsIFtgXGRzIFxpbnQgeFxzaW5oKHgpIFwsIGR4XHRleHR7Ln1gXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6308">Evaluate the indefinite integral <span class="process-math">\(\ds \int x\sinh(x) \, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1101')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1180"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<p id="p-6310">Evaluate the indefinite integral <span class="process-math">\(\ds\int \frac1{\sqrt{x^2+1}}\, dx\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1181"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<p id="p-6312">Evaluate the indefinite integral <span class="process-math">\(\ds\int \frac1{\sqrt{x^2-9}}\, dx\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-1182"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<div id="webwork-1102" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1102" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XG5ld2NvbW1hbmR7XGFic31bMV17XGxlZnRcbHZlcnQgIzFccmlnaHRccnZlcnR9XG5ld2NvbW1hbmR7XGx0fXs8fVxuZXdjb21tYW5ke1xhbXB9eyZ9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjEvMipsbihhYnMoeCsxKSktMS8yKmxuKGFicyh4LTEpKSIpOwoKQkVHSU5fUEdNTApFdmFsdWF0ZSB0aGUgaW5kZWZpbml0ZSBpbnRlZ3JhbCBbYFxkcyBcaW50IFxmcmFjezF9ezkteF4yfVwsIGR4XHRleHR7Ln1gXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKQkVHSU5fUEdNTF9TT0xVVElPTgpbYFxsZWZ0XHtcYmVnaW57YXJyYXl9e2NjY30gXGZyYWMxM1x0YW5oXnstMX1cbGVmdChcZnJhYyB4M1xyaWdodCkrQyBcYW1wIFxhbXAgeF4yXGx0IDkgXFwgXFwKICAgICAgICAgICAgICAgIFxmcmFjMTNcY290aF57LTF9XGxlZnQoXGZyYWMgeDNccmlnaHQpK0MgXGFtcCBcYW1wIDlcbHQgeF4yCiAgICAgICAgICAgICAgICBcZW5ke2FycmF5fSBccmlnaHQuID0gXGZyYWMxMlxsblxhYnN7eCsxfSAtIFxmcmFjMTJcbG5cYWJze3gtMX0rQ2BdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6314">Evaluate the indefinite integral <span class="process-math">\(\ds \int \frac{1}{9-x^2}\, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1102')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1183"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<div id="webwork-1103" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1103" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoImFjb3NoKHheMi8yKSIpOwoKQkVHSU5fUEdNTApFdmFsdWF0ZSB0aGUgaW5kZWZpbml0ZSBpbnRlZ3JhbCBbYFxkcyBcaW50IFxmcmFjezJ4fXtcc3FydHt4XjQtNH19XCwgZHhcdGV4dHsufWBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6317">Evaluate the indefinite integral <span class="process-math">\(\ds \int \frac{2x}{\sqrt{x^4-4}}\, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1103')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1184"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<div id="webwork-1104" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1104" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjIvMyphc2luaCh4XigzLzIpKSIpOwoKQkVHSU5fUEdNTApFdmFsdWF0ZSB0aGUgaW5kZWZpbml0ZSBpbnRlZ3JhbCBbYFxkcyBcaW50IFxmcmFje1xzcXJ0e3h9fXtcc3FydHsxK3heM319XCwgZHhcdGV4dHsufWBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6319">Evaluate the indefinite integral <span class="process-math">\(\ds \int \frac{\sqrt{x}}{\sqrt{1+x^3}}\, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1104')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1185"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<div id="webwork-1105" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1105" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjEvMTYqYXRhbih4LzIpKzEvMzIqbG4oYWJzKHgtMikpKzEvMzIqbG4oYWJzKHgrMikpIik7CgpCRUdJTl9QR01MCkV2YWx1YXRlIHRoZSBpbmRlZmluaXRlIGludGVncmFsIFtgXGRzIFxpbnQgXGZyYWN7MX17eF40LTE2fVwsIGR4XHRleHR7Ln1gXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6321">Evaluate the indefinite integral <span class="process-math">\(\ds \int \frac{1}{x^4-16}\, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1105')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1186"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<div id="webwork-1106" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1106" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoImxuKHgpLWxuKGFicyh4KzEpKSIpOwoKQkVHSU5fUEdNTApFdmFsdWF0ZSB0aGUgaW5kZWZpbml0ZSBpbnRlZ3JhbCBbYFxkcyBcaW50IFxmcmFjezF9e3heMit4fVwsIGR4XHRleHR7Ln1gXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6323">Evaluate the indefinite integral <span class="process-math">\(\ds \int \frac{1}{x^2+x}\, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1106')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1187"><h6 class="heading"><span class="codenumber">41<span class="period">.</span></span></h6>
+<div id="webwork-1107" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1107" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoImF0YW4oZV54KSIpOwoKQkVHSU5fUEdNTApFdmFsdWF0ZSB0aGUgaW5kZWZpbml0ZSBpbnRlZ3JhbCBbYFxkcyBcaW50IFxmcmFje2VeeH17ZV57Mnh9KzF9XCwgZHhcdGV4dHsufWBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6325">Evaluate the indefinite integral <span class="process-math">\(\ds \int \frac{e^x}{e^{2x}+1}\, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1107')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1188"><h6 class="heading"><span class="codenumber">42<span class="period">.</span></span></h6>
+<div id="webwork-1108" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1108" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIngqYXNpbmgoeCktc3FydCh4XjIrMSkiKTsKCkJFR0lOX1BHTUwKRXZhbHVhdGUgdGhlIGluZGVmaW5pdGUgaW50ZWdyYWwgW2BcZHMgXGludCBcc2luaF57LTF9KHgpIFwsIGR4XHRleHR7Ln1gXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6327">Evaluate the indefinite integral <span class="process-math">\(\ds \int \sinh^{-1}(x) \, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1108')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1189"><h6 class="heading"><span class="codenumber">43<span class="period">.</span></span></h6>
+<div id="webwork-1109" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1109" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIngqYXRhbmgoeCkrMS8yKmxuKGFicyh4XjItMSkpIik7CgpCRUdJTl9QR01MCkV2YWx1YXRlIHRoZSBpbmRlZmluaXRlIGludGVncmFsIFtgXGRzIFxpbnQgXHRhbmheey0xfSh4KSBcLCBkeFx0ZXh0ey59YF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6329">Evaluate the indefinite integral <span class="process-math">\(\ds \int \tanh^{-1}(x) \, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1109')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1190"><h6 class="heading"><span class="codenumber">44<span class="period">.</span></span></h6>
+<div id="webwork-1110" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1110" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7ClRFWFQoTU9ERVMoUFRYPT4nJyxIVE1MPT4nPGRpdiBzdHlsZT0iZGlzcGxheTpub25lOyI+XChcbmV3Y29tbWFuZHtcZHN9e1xkaXNwbGF5c3R5bGV9XG5ld2NvbW1hbmR7XHNlY2h9e1xvcGVyYXRvcm5hbWV7c2VjaH19XCk8L2Rpdj4nKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoImF0YW4oc2luaCh4KSkiKTsKCkJFR0lOX1BHTUwKRXZhbHVhdGUgdGhlIGluZGVmaW5pdGUgaW50ZWdyYWwgW2BcZHMgXGludCBcc2VjaCh4KSBcLCBkeFx0ZXh0ey59YF0KCihIaW50OiBtdXRpcGx5IGJ5IFtgXGZyYWN7XGNvc2goeCkgfXtcY29zaCh4KSB9XHRleHR7O31gXSBzZXQgW2B1ID0gXHNpbmgoeClcdGV4dHsufWBdKQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-6331">Evaluate the indefinite integral <span class="process-math">\(\ds \int \sech(x) \, dx\text{.}\)</span></p>
+<p id="p-6332">(Hint: mutiply by <span class="process-math">\(\frac{\cosh(x) }{\cosh(x) }\text{;}\)</span> set <span class="process-math">\(u = \sinh(x)\text{.}\)</span>)</p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1110')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-123">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-141"><p id="p-6334">In the following exercises, evaluate the given definite integral.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1191"><h6 class="heading"><span class="codenumber">45<span class="period">.</span></span></h6>
+<div id="webwork-1111" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1111" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRhID0gLTE7CiRiID0gMTsKJEYgPSBGb3JtdWxhKCJjb3NoKHgpIik7CiRyID0gJEYtPmV2YWwoeD0+JGIpIC0gJEYtPmV2YWwoeD0+JGEpOwoKQkVHSU5fUEdNTApFdmFsdWF0ZSB0aGUgZGVmaW5pdGUgaW50ZWdyYWwgW2BcZHMgXGludF97LTF9XjEgXHNpbmgoeCkgXCwgZHhcdGV4dHsufWBdCgpbX117JHJ9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6335">Evaluate the definite integral <span class="process-math">\(\ds \int_{-1}^1 \sinh(x) \, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1111')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1192"><h6 class="heading"><span class="codenumber">46<span class="period">.</span></span></h6>
+<div id="webwork-1112" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1112" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRhID0gLWxuKDIpOwokYiA9IGxuKDIpOwokRiA9IEZvcm11bGEoInNpbmgoeCkiKTsKJHIgPSAkRi0+ZXZhbCh4PT4kYikgLSAkRi0+ZXZhbCh4PT4kYSk7CgpCRUdJTl9QR01MCkV2YWx1YXRlIHRoZSBkZWZpbml0ZSBpbnRlZ3JhbCBbYFxkcyBcaW50X3stXGxuKDIpIH1ee1xsbigyKSB9IFxjb3NoKHgpIFwsIGR4XHRleHR7Ln1gXQoKW19deyRyfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6337">Evaluate the definite integral <span class="process-math">\(\ds \int_{-\ln(2) }^{\ln(2) } \cosh(x) \, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1112')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1193"><h6 class="heading"><span class="codenumber">47<span class="period">.</span></span></h6>
+<div id="webwork-1113" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1113" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cbmV3Y29tbWFuZHtcc2VjaH17XG9wZXJhdG9ybmFtZXtzZWNofX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRhID0gMDsKJGIgPSAxOwokRiA9IEZvcm11bGEoInRhbmgoeCkiKTsKJHIgPSAkRi0+ZXZhbCh4PT4kYikgLSAkRi0+ZXZhbCh4PT4kYSk7CgpCRUdJTl9QR01MCkV2YWx1YXRlIHRoZSBkZWZpbml0ZSBpbnRlZ3JhbCBbYFxkcyBcaW50X3swfV57MX0gXHNlY2heezJ9KHgpIFwsIGR4XHRleHR7Ln1gXQoKW19deyRyfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6339">Evaluate the definite integral <span class="process-math">\(\ds \int_{0}^{1} \sech^{2}(x) \, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1113')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-1194"><h6 class="heading"><span class="codenumber">48<span class="period">.</span></span></h6>
+<div id="webwork-1114" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="1114" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKQ29udGV4dCgnTnVtZXJpYycpOyRhID0gMDsKJGIgPSAyOwokRiA9IEZvcm11bGEoImFzaW5oKHgpIik7CiRyID0gJEYtPmV2YWwoeD0+JGIpIC0gJEYtPmV2YWwoeD0+JGEpOwoKQkVHSU5fUEdNTApFdmFsdWF0ZSB0aGUgZGVmaW5pdGUgaW50ZWdyYWwgW2BcZHMgXGludF97MH1eezJ9XGZyYWMxe1xzcXJ0e3heMisxfX1cLCBkeFx0ZXh0ey59YF0KCltfXXskcn17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-6341">Evaluate the definite integral <span class="process-math">\(\ds \int_{0}^{2}\frac1{\sqrt{x^2+1}}\, dx\text{.}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1114')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

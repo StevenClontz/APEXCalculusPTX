@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:49:49Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<ol class="decimal">
+<li>
+<p>The arrow sizes are constant along any horizontal line, so if one were to draw a small box anywhere on the graph, it would seem that the same amount of fluid would enter the box as exit. Therefore it seems the divergence is zero; it is, as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\divv\vec F = \nabla \cdot \vec F = M_x + N_y = \frac{\partial}{\partial x}(y) + \frac{\partial}{\partial y}(0) = 0\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfield1a_a.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfield1a_a.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfield1a_b.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfield1a_b.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.14<span class="period">.</span></span><span class="space"> </span>The vector fields in parts 1 and 2 in <a href="" class="xref" data-knowl="./knowl/ex_vectorfield1.html" title="Example 15.2.13: Computing divergence and curl of planar vector fields">Example 15.2.13</a></figcaption></figure><p>At any point on the <span class="process-math">\(x\)</span>-axis, arrows above it move to the right and arrows below it move to the left, indicating that a cork placed on the axis would spin clockwise. A cork placed anywhere above the <span class="process-math">\(x\)</span>-axis would have water above it moving to the right faster than the water below it, also creating a clockwise spin. A clockwise spin also appears to be created at points below the <span class="process-math">\(x\)</span>-axis. Thus it seems the curl should be negative (and not zero). Indeed, it is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\curl \vec F = \nabla\times\vec F = N_x-M_y = \frac{\partial}{\partial x}(0) - \frac{\partial}{\partial y}(y) = -1\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>It appears that all vectors that lie on a circle of radius <span class="process-math">\(r\text{,}\)</span> centered at the  origin, have the same length (and indeed this is true). That implies that the divergence should be zero: draw any box on the graph, and any fluid coming in will lie along a circle that takes the same amount of fluid out. Indeed, the divergence is zero, as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\divv\vec F = \nabla \cdot \vec F = M_x + N_y = \frac{\partial}{\partial x}(-y) + \frac{\partial}{\partial y}(x) = 0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Clearly this field moves objects in a circle, but would it induce a cork to spin? It appears that yes, it would: place a cork anywhere in the flow, and the point of the cork closest to the origin would feel less flow than the point on the cork farthest from the origin, which would induce a counterclockwise flow. Indeed, the curl is positive:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\curl \vec F = \nabla\times\vec F = N_x-M_y = \frac{\partial}{\partial x}(x) - \frac{\partial}{\partial y}(-y) = 1-(-1) = 2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since the curl is constant, we conclude the induced spin is the same no matter where one is in this field.</p>
+</li>
+<li>
+<p>At the origin, there are many arrows pointing out but no arrows pointing in. We conclude that at the origin, the divergence must be positive (and not zero). If one were to draw a box anywhere in the field, the edges farther from the origin would have larger arrows passing through them than the edges close to the origin, indicating that more is going from a point than going in. This indicates a positive (and not zero) divergence. This is correct:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\divv\vec F = \nabla \cdot \vec F = M_x + N_y = \frac{\partial}{\partial x}(x) + \frac{\partial}{\partial y}(y) = 1+1=2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">One may find this curl to be harder to determine visually than previous examples. One might note that any arrow that induces a clockwise spin on a cork will have an equally sized arrow inducing a counterclockwise spin on the other side, indicating no spin and no curl. This is correct, as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\curl \vec F = \nabla\times\vec F = N_x-M_y = \frac{\partial}{\partial x}(y) - \frac{\partial}{\partial y}(x) = 0\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfield1b_a.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfield1b_a.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 100.076095449798%"><iframe src="generated/asymptote/img_vectorfield1b_b.html" class="asymptote"></iframe></div>
+<div style="text-align: center;"><a href="https://opentext.uleth.ca/apex-calculus/generated/asymptote/img_vectorfield1b_b.html">Link to full-sized image</a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">15.2.15<span class="period">.</span></span><span class="space"> </span>The vector fields in parts 3 and 4 in <a href="" class="xref" data-knowl="./knowl/ex_vectorfield1.html" title="Example 15.2.13: Computing divergence and curl of planar vector fields">Example 15.2.13</a></figcaption></figure>
+</li>
+<li>
+<p>One might find this divergence hard to determine visually as large arrows appear in close proximity to small arrows, each pointing in different directions. Instead of trying to rationalize a guess, we compute the divergence:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\divv\vec F = \nabla \cdot \vec F = M_x + N_y = \frac{\partial}{\partial x}(\cos y) + \frac{\partial}{\partial y}(\sin x) = 0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Perhaps surprisingly, the divergence is 0. Will all the loops of different directions in the field, one is apt to reason the curl is variable. Indeed, it is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\curl \vec F = \nabla\times\vec F = N_x-M_y = \frac{\partial}{\partial x}(\sin x) - \frac{\partial}{\partial y}(\cos y) = \cos x + \sin y\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Depending on the values of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> the curl may be positive, negative, or zero.</p>
+</li>
+</ol>
+<span class="incontext"><a href="sec_vector_fields.html#p-15535" class="internal">in-context</a></span>
+</body>
+</html>

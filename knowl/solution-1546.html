@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:50:14Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.4.9.1</span><span class="period">.</span>
+</h4>
+<p>The curve <span class="process-math">\(C\)</span> that bounds <span class="process-math">\(R\)</span> is composed of 3 lines. While we need to traverse the boundary of <span class="process-math">\(R\)</span> in a counterclockwise fashion, we may start anywhere we choose. We arbitrarily choose to start at <span class="process-math">\((-1,0)\text{,}\)</span> move to <span class="process-math">\((1,0)\text{,}\)</span> etc., with each line parametrized by <span class="process-math">\(\vec r_1(t)\text{,}\)</span> <span class="process-math">\(\vec r_2(t)\)</span> and <span class="process-math">\(\vec r_3(t)\text{,}\)</span> respectively.</p>
+<p>We leave it to the reader to confirm that the following parametrizations of the three lines are accurate:</p>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vec r_1(t) = \la 2t-1,0\ra\text{,}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">for <span class="process-math">\(0\leq t\leq 1\text{,}\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">with <span class="process-math">\(\vrp_1(t) = \la 2,0\ra\text{,}\)</span>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vec r_2(t) = \la 1-t,2t\ra\text{,}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">for <span class="process-math">\(0\leq t\leq 1\text{,}\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">with <span class="process-math">\(\vrp_2(t) = \la -1,2\ra\text{,}\)</span> and</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vec r_3(t) = \la -t,2-2t\ra\text{,}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">for <span class="process-math">\(0\leq t\leq 1\text{,}\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">with <span class="process-math">\(\vrp_3(t) = \la -1,-2\ra\text{.}\)</span>
+</td>
+</tr>
+</table></div>
+<p>The circulation around <span class="process-math">\(C\)</span> is found by summing the flow along each of the sides of the triangle. We again leave it to the reader to confirm the following computations:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int_{C_1}\vec F\cdot d\vec r_1 \amp = \int_0^1 \la 0,(2t-1)^2+1\ra\cdot \la 2,0\ra dt = 0,\\
+\int_{C_2}\vec F\cdot d\vec r_2 \amp = \int_0^1 \la -2t,(1-t)^2+1\ra\cdot \la -1,2\ra dt = 11/3, \text{ and }\\
+\int_{C_3}\vec F\cdot d\vec r_3 \amp = \int_0^1 \la 2t-2,t^2+1\ra\cdot \la -1,-2\ra dt = -5/3\text{.}
+\end{align*}
+</div>
+<p>The circulation is the sum of the flows: <span class="process-math">\(2\text{.}\)</span></p>
+<p>We confirm Green's Theorem by computing <span class="process-math">\(\iint_R \curl \vec F\, dA\text{.}\)</span> We find <span class="process-math">\(\curl \vec F = 2x+1\text{.}\)</span> The region <span class="process-math">\(R\)</span> is bounded by the lines <span class="process-math">\(y = 2x+2\text{,}\)</span> <span class="process-math">\(y=-2x+2\)</span> and <span class="process-math">\(y=0\text{.}\)</span> Integrating with the order <span class="process-math">\(dx\, dy\)</span> is most straightforward, leading to</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^2\int_{y/2-1}^{1-y/2} (2x+1)\, dx\, dy = \int_0^2 (2-y)\, dy = 2\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which matches our previous measurement of circulation.</p>
+</div>
+<span class="incontext"><a href="sec_greensthm.html#solution-1546" class="internal">in-context</a></span>
+</body>
+</html>

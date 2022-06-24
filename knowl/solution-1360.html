@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:47:53Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">14.2.9.1</span><span class="period">.</span>
+</h3>
+<p>We wish to evaluate <span class="process-math">\(\iint_R \big(xy+e^y\big)\, dA\text{.}\)</span> As <span class="process-math">\(R\)</span> is a rectangle, the bounds are easily described as <span class="process-math">\(3\leq x\leq 4\)</span> and <span class="process-math">\(1\leq y\leq 2\text{.}\)</span></p>
+<p>Using the order <span class="process-math">\(dy\, dx\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint_R\big(xy+e^y\big) \, dA \amp = \int_3^4\int_1^2\big(xy+e^y\big)\, dy \, dx\\
+\amp = \int_3^4 \left(\left.\left[\frac12xy^2+e^y\right]\right|_1^2\, \right) dx\\
+\amp = \int_3^4\left(\frac 32x + e^2-e\right)dx\\
+\amp = \left.\left(\frac 34x^2 + \big(e^2-e\big)x\right)\right|_3^4\\
+\amp = \frac {21}4+ e^2-e\approx 9.92\text{.}
+\end{align*}
+</div>
+<p>Now we check the validity of Fubini's Theorem by using the order <span class="process-math">\(dx\, dy\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\iint_R\big(xy+e^y\big) \, dA \amp = \int_1^2\int_3^4\big(xy+e^y\big)\, dx \, dy\\
+\amp = \int_1^2\left(\left.\left[\frac12x^2y+xe^y\right]\right|_3^4\right)dy\\
+\amp = \int_1^2\left(\frac72y+e^y\right)\, dy\\
+\amp = \left.\left(\frac74y^2+e^y\right)\right|_1^2\\
+\amp =\frac{21}4+e^2-e\approx 9.92\text{.}
+\end{align*}
+</div>
+<p>Both orders of integration return the same result, as expected.</p>
+</div>
+<span class="incontext"><a href="sec_double_int_volume.html#solution-1360" class="internal">in-context</a></span>
+</body>
+</html>

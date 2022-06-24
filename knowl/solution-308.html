@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:48Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.1.12.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-sub-ex-tan" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/sJryXwwdqM4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>The previous paragraph established that we did not know the antiderivatives of tangent, hence we must assume that we have learned something in this section that can help us evaluate this indefinite integral.</p>
+<p>Rewrite <span class="process-math">\(\tan(x)\)</span> as <span class="process-math">\(\sin(x) /\cos(x)\text{.}\)</span> While the presence of a composition of functions may not be immediately obvious, recognize that <span class="process-math">\(\cos(x)\)</span> is “inside” the <span class="process-math">\(1/x\)</span> function. Therefore, we see if setting <span class="process-math">\(u = \cos(x)\)</span> returns usable results. We have that <span class="process-math">\(du = -\sin(x) \, dx\text{,}\)</span> hence <span class="process-math">\(-du = \sin(x) \, dx\text{.}\)</span> We can integrate:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int \tan(x) \, dx \amp = \int \frac{\sin(x) }{\cos(x) }\, dx\\
+\amp = \int \frac1{\underbrace{\cos(x) }_u}\underbrace{\sin(x) \, dx}_{-du}\\
+\amp = \int \frac {-1}u \, du\\
+\amp = -\ln\abs{u} + C\\
+\amp = -\ln\abs{\cos(x) } + C\text{.}
+\end{align*}
+</div>
+<p>Some texts prefer to bring the <span class="process-math">\(-1\)</span> inside the logarithm as a power of <span class="process-math">\(\cos(x)\text{,}\)</span> as in:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+-\ln\abs{\cos(x) } + C \amp = \ln\abs{(\cos(x) )^{-1}} + C\\
+\amp = \ln\abs{ \frac{1}{\cos(x) }} + C\\
+\amp = \ln\abs{\sec(x) } + C\text{.}
+\end{align*}
+</div>
+<p>Thus the result they give is <span class="process-math">\(\int \tan(x) \, dx = \ln\abs{\sec(x) } + C\text{.}\)</span> These two answers are equivalent.</p>
+</div>
+<span class="incontext"><a href="sec_substitution.html#solution-308" class="internal">in-context</a></span>
+</body>
+</html>

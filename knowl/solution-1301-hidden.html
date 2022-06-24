@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:47:09Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>This surface is used in <a href="" class="xref" data-knowl="./knowl/ex_tpl2.html" title="Example 13.7.5: Finding directional tangent lines">Example 13.7.5</a>, so we know that at <span class="process-math">\((x,y)\text{,}\)</span> the direction of the normal line will be <span class="process-math">\(\vec d_n = \la -2x,-2y,-1\ra\text{.}\)</span> A point <span class="process-math">\(P\)</span> on the surface will have coordinates <span class="process-math">\((x,y,2-x^2-y^2)\text{,}\)</span> so <span class="process-math">\(\overrightarrow{PQ} = \la 2-x,2-y,x^2+y^2\ra\text{.}\)</span> To find where <span class="process-math">\(\overrightarrow{PQ}\)</span> is parallel to <span class="process-math">\(\vec d_n\text{,}\)</span> we need to find <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(c\)</span> such that <span class="process-math">\(c\overrightarrow{PQ} = \vec d_n\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_tpl2.html">
+\begin{align*}
+c\overrightarrow{PQ} \amp = \vec d_n\\
+c\la 2-x,2-y,x^2+y^2\ra \amp = \la -2x,-2y,-1\ra.\\
+\end{align*}
+<p class="intertext">This implies</p>
+\begin{align*}
+c(2-x) \amp = -2x\\
+c(2-y) \amp = -2y\\
+c(x^2+y^2) \amp = -1
+\end{align*}
+</div>
+<p>In each equation, we can solve for <span class="process-math">\(c\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c = \frac{-2x}{2-x} = \frac{-2y}{2-y} = \frac{-1}{x^2+y^2}\text{.}
+\end{equation*}
+</div>
+<p>The first two fractions imply <span class="process-math">\(x=y\text{,}\)</span> and so the last fraction can be rewritten as <span class="process-math">\(c=-1/(2x^2)\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\frac{-2x}{2-x} \amp = \frac{-1}{2x^2}\\
+-2x(2x^2) \amp = -1(2-x)\\
+4x^3 \amp = 2-x\\
+4x^3+x-2 \amp =0\text{.}
+\end{align*}
+</div>
+<p>This last equation is a cubic, which is not difficult to solve with a numeric solver. We find that <span class="process-math">\(x= 0.689\text{,}\)</span> hence <span class="process-math">\(P = (0.689,0.689, 1.051)\text{.}\)</span> We find the distance from <span class="process-math">\(Q\)</span> to the surface of <span class="process-math">\(f\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\norm{\overrightarrow{PQ}} = \sqrt{(2-0.689)^2 +(2-0.689)^2+(2-1.051)^2} = 2.083\text{.}
+\end{equation*}
+</div>
+</div></body>
+</html>

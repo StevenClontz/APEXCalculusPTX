@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:39:37Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.2.17.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-series-telescoping2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/BMn2QTtTdNQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol class="decimal">
+<li>
+<p>We can decompose the fraction <span class="process-math">\(2/(n^2+2n)\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_partial_fraction.html ./knowl/fig_series4a.html">
+\begin{equation*}
+\frac2{n^2+2n} = \frac1n-\frac1{n+2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">(See <a href="sec_partial_fraction.html" class="internal" title="Section 6.5: Partial Fraction Decomposition">Section 6.5</a>, Partial Fraction Decomposition, to recall how  this is done, if necessary.)  Expressing the terms of <span class="process-math">\(\{S_n\}\)</span> is now more instructive:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_partial_fraction.html ./knowl/fig_series4a.html">
+\begin{align*}
+S_1 \amp = 1-\frac13 \\
+S_2 \amp = \left(1-\frac13\right) + \left(\frac12-\frac14\right)\\
+\amp = 1+\frac12-\frac13-\frac14\\
+S_3 \amp = \left(1-\frac13\right) + \left(\frac12-\frac14\right)+\left(\frac13-\frac15\right)\\
+\amp = 1+\frac12-\frac14-\frac15\\
+S_4 \amp = \left(1-\frac13\right) + \left(\frac12-\frac14\right)+\left(\frac13-\frac15\right)+\left(\frac14-\frac16\right)\\
+\amp = 1+\frac12-\frac15-\frac16\\
+S_5 \amp = \left(1-\frac13\right) + \left(\frac12-\frac14\right)+\left(\frac13-\frac15\right)+\left(\frac14-\frac16\right)+\left(\frac15-\frac17\right)\\
+\amp = 1+\frac12-\frac16-\frac17
+\end{align*}
+</div>
+<p class="continuation">We again have a telescoping series. In each partial sum, most of the terms cancel and we obtain the formula <span class="process-math">\(\ds S_n = 1+\frac12-\frac1{n+1}-\frac1{n+2}\text{.}\)</span> Taking limits allows us to determine the convergence of the series:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_partial_fraction.html ./knowl/fig_series4a.html">
+\begin{equation*}
+\lim_{n\to\infty}S_n = \lim_{n\to\infty} \left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right) = \frac32\text{,}
+\end{equation*}
+</div>
+<p class="continuation">so <span class="process-math">\(\infser \frac1{n^2+2n} = \frac32\text{.}\)</span> This is illustrated in <a href="" class="xref" data-knowl="./knowl/fig_series4a.html" title="Figure 9.2.18.(a)">Figure 9.2.18.(a)</a>.</p>
+</li>
+<li>
+<p>We begin by writing the first few partial sums of the series:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_series4b.html">
+\begin{align*}
+S_1 \amp = \ln\left(2\right)\\
+S_2 \amp = \ln\left(2\right)+\ln\left(\frac32\right)\\
+S_3 \amp = \ln\left(2\right)+\ln\left(\frac32\right)+\ln\left(\frac43\right)\\
+S_4 \amp = \ln\left(2\right)+\ln\left(\frac32\right)+\ln\left(\frac43\right)+\ln\left(\frac54\right)
+\end{align*}
+</div>
+<p class="continuation">At first, this does not seem helpful, but recall the logarithmic identity: <span class="process-math">\(\ln(x) +\ln(y) = \ln(xy)\text{.}\)</span> Applying this to <span class="process-math">\(S_4\)</span> gives:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_series4b.html">
+\begin{align*}
+S_4 \amp = \ln\left(2\right)+\ln\left(\frac32\right)+\ln\left(\frac43\right)+\ln\left(\frac54\right)\\
+\amp = \ln\left(\frac21\cdot\frac32\cdot\frac43\cdot\frac54\right) = \ln\left(5\right)\text{.}
+\end{align*}
+</div>
+<p class="continuation">We can conclude that <span class="process-math">\(\{S_n\} = \big\{\ln(n+1)\big\}\text{.}\)</span> This sequence  does not converge, as <span class="process-math">\(\lim\limits_{n\to\infty}S_n=\infty\text{.}\)</span> Therefore  <span class="process-math">\(\ds\infser  \ln\left(\frac{n+1}{n}\right)=\infty\text{;}\)</span> the series diverges. Note in <a href="" class="xref" data-knowl="./knowl/fig_series4b.html" title="Figure 9.2.18.(b)">Figure 9.2.18.(b)</a> how the sequence of partial sums grows slowly; after 100 terms, it is not yet over 5. Graphically we may be fooled into thinking the series converges, but our analysis above shows that it does not.</p>
+</li>
+</ol>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like"><img src="generated/latex-image/img_series4a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:47%;"><figure class="figure figure-like"><img src="generated/latex-image/img_series4b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.2.18<span class="period">.</span></span><span class="space"> </span>Scatter plots relating to the series in <a href="" class="xref" data-knowl="./knowl/ex_series4.html" title="Example 9.2.17: Evaluating series">Example 9.2.17</a></figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_series.html#solution-513" class="internal">in-context</a></span>
+</body>
+</html>

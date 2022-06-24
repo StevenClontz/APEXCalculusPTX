@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:50:28Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>Recall <a href="" class="xref" data-knowl="./knowl/idea_unit_vectors.html" title="Key Idea 11.2.25: Unit Vectors">Key Idea 11.2.25</a> from <a href="sec_vector_intro.html" class="internal" title="Section 11.2: An Introduction to Vectors">Section 11.2</a>, which states that all unit vectors in space have the form <span class="process-math">\(\langle \sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta\rangle\)</span> for some angles <span class="process-math">\(\theta\)</span> and <span class="process-math">\(\varphi\text{.}\)</span> If we choose our angles appropriately, this allows us to draw the unit sphere. To get an ellipsoid, we need only scale each component of the sphere appropriately.</p>
+<p>The <span class="process-math">\(x\)</span>-radius of the given ellipsoid is 5, the <span class="process-math">\(y\)</span>-radius is 1 and the <span class="process-math">\(z\)</span>-radius is 2. Substituting <span class="process-math">\(u\)</span> for <span class="process-math">\(\theta\)</span> and <span class="process-math">\(v\)</span> for <span class="process-math">\(\varphi\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec r(u,v) = \langle 5\sin u\cos v, \sin u\sin v,2\cos u\rangle\text{,}
+\end{equation*}
+</div>
+<p class="continuation">where we still need to determine the ranges of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{.}\)</span></p>
+<p>Note how the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> components of <span class="process-math">\(\vec r\)</span> have <span class="process-math">\(\cos v\)</span> and <span class="process-math">\(\sin v\)</span> terms, respectively. This hints at the fact that ellipses are drawn parallel to the <span class="process-math">\(xy\)</span>-plane as <span class="process-math">\(v\)</span> varies, which implies we should have <span class="process-math">\(v\)</span> range from <span class="process-math">\(0\)</span> to <span class="process-math">\(2\pi\text{.}\)</span></p>
+<p>One may be tempted to let <span class="process-math">\(0\leq u\leq 2\pi\)</span> as well, but note how the <span class="process-math">\(z\)</span> component is <span class="process-math">\(2\cos u\text{.}\)</span> We only need <span class="process-math">\(\cos u\)</span> to take on values between <span class="process-math">\(-1\)</span> and <span class="process-math">\(1\)</span> once, therefore we can restrict <span class="process-math">\(u\)</span> to <span class="process-math">\(0\leq u\leq \pi\text{.}\)</span></p>
+<p>The final parametrization is thus</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vec r(u,v) = \langle 5\sin u\cos v, \sin u\sin v,2\cos u\rangle,  0\leq u\leq\pi, 0\leq v\leq 2\pi\text{.}
+\end{equation*}
+</div>
+<p>In <a href="" class="xref" data-knowl="./knowl/fig_parsurf7b_3D.html" title="Figure 15.5.19.(b)">Figure 15.5.19.(b)</a>, the ellipsoid is graphed on <span class="process-math">\(\frac{\pi}{4}\leq u\leq \frac{2\pi}{3}\text{,}\)</span> <span class="process-math">\(\frac{\pi}4\leq v\leq \frac{3\pi}2\)</span> to demonstrate how each variable affects the surface.</p>
+</div></body>
+</html>

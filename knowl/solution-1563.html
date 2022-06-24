@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:50:51Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.7.5.1</span><span class="period">.</span>
+</h4>
+<p>We find the flux across <span class="process-math">\(\surfaceS\)</span> first. As <span class="process-math">\(\surfaceS\)</span> is piecewise-smooth, we decompose it into smooth components <span class="process-math">\(\surfaceS_1\text{,}\)</span> the disk, and <span class="process-math">\(\surfaceS_2\text{,}\)</span> the paraboloid, and find the flux across each.</p>
+<p>In <a href="" class="xref" data-knowl="./knowl/ex_surfflux2.html" title="Example 15.6.10: Flux across surfaces with shared boundaries">Example 15.6.10</a>, we found the flux across <span class="process-math">\(\surfaceS_1\)</span> is 0. We also found that the flux across <span class="process-math">\(\surfaceS_2\)</span> is <span class="process-math">\(\pi/2\text{.}\)</span> (In that example, the normal vector had a positive <span class="process-math">\(z\)</span> component hence was an outer normal.) Thus the total outward flux is <span class="process-math">\(0+\pi/2 = \pi/2\text{.}\)</span></p>
+<p>We now compute <span class="process-math">\(\iiint_D \divv \vec F\, dV\text{.}\)</span> We can describe <span class="process-math">\(D\)</span> as the domain bounded by (think “surface to surface, curve to curve, point to point”):</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0\leq z\leq 1-x^2-y^2,  -\sqrt{1-x^2}\leq y\leq \sqrt{1-x^2}, -1\leq x\leq 1\text{.}
+\end{equation*}
+</div>
+<p>This description of <span class="process-math">\(D\)</span> is not very easy to integrate. With polar, we can do better. Let <span class="process-math">\(R\)</span> represent the unit disk, which can be described in polar simply as <span class="process-math">\(r\text{,}\)</span> where <span class="process-math">\(0\leq r\leq 1\)</span> and <span class="process-math">\(0\leq \theta\leq 2\pi\text{.}\)</span> With <span class="process-math">\(x=r\cos \theta\)</span> and <span class="process-math">\(y=r\sin\theta\text{,}\)</span> the surface <span class="process-math">\(\surfaceS_2\)</span> becomes</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+z=1-x^2-y^2 \Rightarrow 1-(r\cos\theta)^2-(r\sin\theta)^2 \Rightarrow 1-r^2\text{.}
+\end{equation*}
+</div>
+<p>Thus <span class="process-math">\(D\)</span> can be described as the domain bounded by:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0\leq z\leq 1-r^2, 0\leq r\leq 1, 0\leq \theta\leq 2\pi\text{.}
+\end{equation*}
+</div>
+<p>With <span class="process-math">\(\divv \vec F = 1\text{,}\)</span> we can integrate, recalling that <span class="process-math">\(dV = r\, dz\, dr\, d\theta\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\iiint_D\divv \vec F\, dV = \int_0^{2\pi}\int_0^1\int_0^{1-r^2} r\, dz\, dr\, d\theta = \frac{\pi}2\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which matches our flux computation above.</p>
+</div>
+<span class="incontext"><a href="sec_stokes_divergence.html#solution-1563" class="internal">in-context</a></span>
+</body>
+</html>

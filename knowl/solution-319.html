@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:01Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.2.3.1</span><span class="period">.</span>
+</h3>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-parts-ex-onestep" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/gKtzlaH2EPo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>The key to Integration by Parts is to identify part of the integrand as “<span class="process-math">\(u\)</span>” and part as “<span class="process-math">\(dv\text{.}\)</span>” Regular practice will help one make good identifications, and later we will introduce some principles that help. For now, let <span class="process-math">\(u=x\)</span> and <span class="process-math">\(dv=\cos(x) \, dx\text{.}\)</span></p>
+<p>It is generally useful to make a small table of these values as done below. Right now we only know <span class="process-math">\(u\)</span> and <span class="process-math">\(dv\)</span> as shown on the left of <a href="" class="xref" data-knowl="./knowl/fig_ibp1.html" title="Figure 6.2.4">Figure 6.2.4</a>; on the right we fill in the rest of what we need. If <span class="process-math">\(u = x\text{,}\)</span> then <span class="process-math">\(du = dx\text{.}\)</span> Since <span class="process-math">\(dv = \cos(x)\, dx\text{,}\)</span> <span class="process-math">\(v\)</span> is an antiderivative of <span class="process-math">\(\cos(x)\text{.}\)</span> We choose <span class="process-math">\(v = \sin(x)\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+u\amp = x \amp  v\amp =\mathord{?}\\
+du\amp = \mathord{?}  \amp  dv\amp =\cos(x) \, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:10.3448275862069%;"><p><span class="process-math">\(\implies\)</span></p></div>
+<div class="sbspanel middle" style="width:41.3793103448276%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+u\amp = x \amp  v\amp =\sin(x)\\
+du\amp = dx \amp  dv\amp =\cos(x) \, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.4<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts</figcaption></figure><p>Now substitute all of this into the Integration by Parts formula, giving</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int x\cos(x)\,dx = x\sin(x) - \int \sin(x) \,dx\text{.}
+\end{equation*}
+</div>
+<p>We can then integrate <span class="process-math">\(\sin(x)\)</span> to get <span class="process-math">\(-\cos(x) + C\)</span> and overall our answer is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int x\cos(x)\, dx = x\sin(x) + \cos(x) + C\text{.}
+\end{equation*}
+</div>
+<p>Note how the antiderivative contains a product, <span class="process-math">\(x\sin(x)\text{.}\)</span> This product is what makes Integration by Parts necessary.</p>
+<p>We can check our work by taking the derivative:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\lzoo{x}{x\sin(x) + \cos(x) + C} \amp =x\cos(x)+\sin(x)-\sin(x)+0\\
+\amp = x\cos(x)\text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_IBP.html#solution-319" class="internal">in-context</a></span>
+</body>
+</html>

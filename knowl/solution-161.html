@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:12Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.6.8.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_deriv_impl_ex_3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/BMn-BU6VTQU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>Differentiating term by term, we find the most difficulty in the first term. It requires both the <a href="" class="xref" data-knowl="./knowl/thm_chain_rule.html" title="Theorem 2.5.4: The Chain Rule">The Chain Rule</a> and <a href="" class="xref" data-knowl="./knowl/thm_ProductRule.html" title="Theorem 2.4.2: Product Rule">Product Rule</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_chain_rule.html ./knowl/thm_ProductRule.html">
+\begin{align*}
+\lzoo{x}{\sin\mathopen{}\left(x^2y^2\right)\mathclose{}} \amp = \cos\mathopen{}\left(x^2y^2\right)\mathclose{}\cdot\lzoo{x}{x^2y^2}\\
+\amp = \cos\mathopen{}\left(x^2y^2\right)\mathclose{}\cdot\left(x^2(2yy')+2xy^2\right)\\
+\amp = 2\left(x^2yy'+xy^2\right)\cos\mathopen{}\left(x^2y^2\right)\mathclose{}\text{.}
+\end{align*}
+</div>
+<p>We leave the derivatives of the other terms to the reader. After taking the derivatives of both sides, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2\left(x^2yy'+xy^2\right)\cos\mathopen{}\left(x^2y^2\right)\mathclose{} + 3y^2y' = 1 + y'\text{.}
+\end{equation*}
+</div>
+<p>We now have to be careful to properly solve for <span class="process-math">\(y'\text{,}\)</span> particularly because of the product on the left. It is best to multiply out the product. Doing this, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2x^2y\cos\mathopen{}\left(x^2y^2\right)\mathclose{}y' + 2xy^2\cos\mathopen{}\left(x^2y^2\right)\mathclose{} + 3y^2y' = 1 + y'\text{.}
+\end{equation*}
+</div>
+<p>From here we can safely move around terms to get the following:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2x^2y\cos\mathopen{}\left(x^2y^2\right)\mathclose{}y' + 3y^2y' - y' = 1 - 2xy^2\cos\mathopen{}\left(x^2y^2\right)\mathclose{}\text{.}
+\end{equation*}
+</div>
+<p>Then we can solve for <span class="process-math">\(y'\)</span> to get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y' = \frac{1 - 2xy^2\cos\mathopen{}\left(x^2y^2\right)\mathclose{}}{2x^2y\cos\mathopen{}\left(x^2y^2\right)\mathclose{}+3y^2-1}\text{.}
+\end{equation*}
+</div>
+<p>A graph of this implicit function is given in <a href="" class="xref" data-knowl="./knowl/fig_implicit5.html" title="Figure 2.6.9">Figure 2.6.9</a>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit5.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.9<span class="period">.</span></span><span class="space"> </span>A graph of the implicitly defined curve <span class="process-math">\(\sin\mathopen{}\left(x^2y^2\right)\mathclose{}+y^3=x+y\)</span></figcaption></figure><p>It is easy to verify that the points <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((0,1)\)</span> and <span class="process-math">\((0,-1)\)</span> all lie on the graph. We can find the slopes of the tangent lines at each of these points using our formula for <span class="process-math">\(y'\text{.}\)</span></p>
+<ul class="disc">
+<li><p>At <span class="process-math">\((0,0)\text{,}\)</span> the slope is <span class="process-math">\(-1\text{.}\)</span></p></li>
+<li><p>At <span class="process-math">\((0,1)\text{,}\)</span> the slope is <span class="process-math">\(1/2\text{.}\)</span></p></li>
+<li><p>At <span class="process-math">\((0,-1)\text{,}\)</span> the slope is also <span class="process-math">\(1/2\text{.}\)</span></p></li>
+</ul>
+<p class="continuation">The tangent lines have been added to the graph of the function in <a href="" class="xref" data-knowl="./knowl/fig_implicit6.html" title="Figure 2.6.10">Figure 2.6.10</a>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_implicit6.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.10<span class="period">.</span></span><span class="space"> </span>A graph of the implicitly defined curve <span class="process-math">\(\sin\mathopen{}\left(x^2y^2\right)\mathclose{}+y^3=x+y\)</span> and certain tangent lines</figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_imp_deriv.html#solution-161" class="internal">in-context</a></span>
+</body>
+</html>

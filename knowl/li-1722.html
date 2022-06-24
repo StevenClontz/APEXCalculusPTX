@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:39:37Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="li"><h5 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+</h5>
+<p>We can decompose the fraction <span class="process-math">\(2/(n^2+2n)\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_partial_fraction.html ./knowl/fig_series4a.html">
+\begin{equation*}
+\frac2{n^2+2n} = \frac1n-\frac1{n+2}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">(See <a href="sec_partial_fraction.html" class="internal" title="Section 6.5: Partial Fraction Decomposition">Section 6.5</a>, Partial Fraction Decomposition, to recall how  this is done, if necessary.)  Expressing the terms of <span class="process-math">\(\{S_n\}\)</span> is now more instructive:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_partial_fraction.html ./knowl/fig_series4a.html">
+\begin{align*}
+S_1 \amp = 1-\frac13 \\
+S_2 \amp = \left(1-\frac13\right) + \left(\frac12-\frac14\right)\\
+\amp = 1+\frac12-\frac13-\frac14\\
+S_3 \amp = \left(1-\frac13\right) + \left(\frac12-\frac14\right)+\left(\frac13-\frac15\right)\\
+\amp = 1+\frac12-\frac14-\frac15\\
+S_4 \amp = \left(1-\frac13\right) + \left(\frac12-\frac14\right)+\left(\frac13-\frac15\right)+\left(\frac14-\frac16\right)\\
+\amp = 1+\frac12-\frac15-\frac16\\
+S_5 \amp = \left(1-\frac13\right) + \left(\frac12-\frac14\right)+\left(\frac13-\frac15\right)+\left(\frac14-\frac16\right)+\left(\frac15-\frac17\right)\\
+\amp = 1+\frac12-\frac16-\frac17
+\end{align*}
+</div>
+<p class="continuation">We again have a telescoping series. In each partial sum, most of the terms cancel and we obtain the formula <span class="process-math">\(\ds S_n = 1+\frac12-\frac1{n+1}-\frac1{n+2}\text{.}\)</span> Taking limits allows us to determine the convergence of the series:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_partial_fraction.html ./knowl/fig_series4a.html">
+\begin{equation*}
+\lim_{n\to\infty}S_n = \lim_{n\to\infty} \left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right) = \frac32\text{,}
+\end{equation*}
+</div>
+<p class="continuation">so <span class="process-math">\(\infser \frac1{n^2+2n} = \frac32\text{.}\)</span> This is illustrated in <a href="" class="xref" data-knowl="./knowl/fig_series4a.html" title="Figure 9.2.18.(a)">Figure 9.2.18.(a)</a>.</p></article><span class="incontext"><a href="sec_series.html#li-1722" class="internal">in-context</a></span>
+</body>
+</html>

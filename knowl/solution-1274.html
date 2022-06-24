@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:46:41Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">13.5.3.18.1</span><span class="period">.</span>
+</h6>
+<p>We find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dz}{dt} = -\pi\sin(\pi t)\sin(2\pi t+\pi/2)+2\pi\cos(\pi t)\cos(2\pi t+\pi/2)
+\text{.}
+\end{equation*}
+</div>
+<p>One can “easily” see that when <span class="process-math">\(t\)</span> is an integer, <span class="process-math">\(\sin(\pi t) =0\)</span> and <span class="process-math">\(\cos(2\pi t+\pi/2)=0\text{,}\)</span> hence <span class="process-math">\(\frac{dz}{dt}=0\)</span> when <span class="process-math">\(t\)</span> is an integer. There are other places where <span class="process-math">\(z\)</span> has a relative max/min that require more work. First, verify that <span class="process-math">\(\sin(2\pi t+\pi/2) = \cos(2\pi t)\text{,}\)</span> and <span class="process-math">\(\cos(2\pi t+\pi/2) = -\sin(2\pi t)\text{.}\)</span> This lets us rewrite <span class="process-math">\(\frac{dz}{dt} = 0\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-\sin(\pi t)\cos(2\pi t)-2\cos(\pi t)\sin(2\pi t)=0
+\text{.}
+\end{equation*}
+</div>
+<p>By bringing one term to the other side of the equality then dividing, we can get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2\tan(2\pi t) = -\tan(\pi t)
+\text{.}
+\end{equation*}
+</div>
+<p>Using the angle sum/difference formula for tangent, we know</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\tan(2\pi t) = \tan(\pi t + \pi t) = \frac{\tan(\pi t)+\tan(\pi t)}{1-\tan^2(\pi t)}
+\text{.}
+\end{equation*}
+</div>
+<p>Thus we write</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+2\frac{\tan(\pi t)+\tan(\pi t)}{1-\tan^2(\pi t)} = -\tan(\pi t)
+\text{.}
+\end{equation*}
+</div>
+<p>Solving for <span class="process-math">\(\tan^2(\pi t)\text{,}\)</span> we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\tan^2(\pi t) = 5  \implies  \tan(\pi t) = \pm\sqrt{5}
+\text{,}
+\end{equation*}
+</div>
+<p>and so</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\pi t = \tan^{-1}(\pm\sqrt{5}) = \pm\tan^{-1}(\sqrt{5})
+\text{.}
+\end{equation*}
+</div>
+<p>Since the period of tangent is <span class="process-math">\(\pi\text{,}\)</span> we can adjust our answer to be</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\pi t = \pm\tan^{-1}(\sqrt{5})+ n\pi,\text{ where \(n\) is an integer. }
+\end{equation*}
+</div>
+<p>Dividing by <span class="process-math">\(\pi\text{,}\)</span> we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+t = \pm\frac1\pi\tan^{-1}(\sqrt{5})+ n,\text{ where \(n\) is an integer. }
+\end{equation*}
+</div>
+<p>So the solutions in <span class="process-math">\([0,2)\)</span> are <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(\frac{1}{pi}\arctan(sqrt{5})\text{,}\)</span> <span class="process-math">\(1-\frac{1}{pi}\arctan(sqrt{5})\text{,}\)</span> <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(1+\frac{1}{pi}\arctan(sqrt{5})\text{,}\)</span> and <span class="process-math">\(2-\frac{1}{pi}\arctan(sqrt{5})\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="sec_multi_chain.html#solution-1274" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:11Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<ol class="decimal">
+<li>
+<p>If <span class="process-math">\(n\)</span> is even, then <span class="process-math">\(n=2k\)</span> for some integer <span class="process-math">\(k\text{.}\)</span> Rewrite <span class="process-math">\(\sec^n(x)\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\sec^n(x) \amp = \sec^{2k}(x)\\
+\amp = \sec^{2k-2}(x) \sec^2(x)\\
+\amp = (1+\tan^2(x) )^{k-1}\sec^2(x)\text{.}
+\end{align*}
+</div>
+<p class="continuation">Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int\tan^m(x) \sec^n(x) \, dx \amp =\int\tan^m(x) (1+\tan^2(x) )^{k-1}\sec^2(x) \, dx\\
+\amp =\int u^m(1+u^2)^{k-1}\,du\text{,}
+\end{align*}
+</div>
+<p class="continuation">where <span class="process-math">\(u = \tan(x)\)</span> and <span class="process-math">\(du = \sec^2(x) \, dx\text{.}\)</span></p>
+</li>
+<li>
+<p>If <span class="process-math">\(m\)</span> is odd, then <span class="process-math">\(m=2k+1\)</span> for some integer <span class="process-math">\(k\text{.}\)</span> Rewrite <span class="process-math">\(\tan^m(x) \sec^n(x)\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\tan^m(x) \sec^n(x) \amp = \tan^{2k+1}(x) \sec^n(x)\\
+\amp = \tan^{2k}(x) \sec^{n-1}(x) \sec(x) \tan(x)\\
+\amp = (\sec^2(x) -1)^k\sec^{n-1}(x) \sec(x) \tan(x)\text{.}
+\end{align*}
+</div>
+<p class="continuation">Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int\tan^m(x) \sec^n(x) \, dx \amp =\int(\sec^2(x) -1)^k\sec^{n-1}(x) \sec(x) \tan(x) \, dx\\
+\amp = \int(u^2-1)^ku^{n-1}\,du\text{,}
+\end{align*}
+</div>
+<p class="continuation">where <span class="process-math">\(u = \sec(x)\)</span> and <span class="process-math">\(du = \sec(x) \tan(x) \, dx\text{.}\)</span></p>
+</li>
+<li><p>If <span class="process-math">\(n\)</span> is odd and <span class="process-math">\(m\)</span> is even, then <span class="process-math">\(m=2k\)</span> for some integer <span class="process-math">\(k\text{.}\)</span> Convert <span class="process-math">\(\tan^m(x)\)</span> to <span class="process-math">\((\sec^2(x) -1)^k\text{.}\)</span> Expand the new integrand and use Integration By Parts, with <span class="process-math">\(dv = \sec^2(x) \, dx\text{.}\)</span></p></li>
+<li>
+<p>If <span class="process-math">\(m\)</span> is even and <span class="process-math">\(n=0\text{,}\)</span> rewrite <span class="process-math">\(\tan^m(x)\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\tan^m(x) \amp = \tan^{m-2}(x) \tan^2(x)\\
+\amp = \tan^{m-2}(x) (\sec^2(x) -1)\\
+\amp = \tan^{m-2}\sec^2(x) -\tan^{m-2}(x)\text{.}
+\end{align*}
+</div>
+<p class="continuation">So</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int\tan^m(x) \, dx = \underbrace{\int\tan^{m-2}\sec^2(x) \, dx}_{\text{ apply rule 1 } } - \underbrace{\int\tan^{m-2}(x) \, dx}_{\text{ apply rule 4 again } }\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+<span class="incontext"><a href="sec_trigint.html#p-5808" class="internal">in-context</a></span>
+</body>
+</html>

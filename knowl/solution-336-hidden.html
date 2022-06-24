@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:12Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-int-trig-ex-sec3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/mPuR46ztxZQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We apply <a href="" class="xref" data-knowl="./knowl/idea_trig_int_2c.html" title="Item 3">Rule 3</a> from <a href="" class="xref" data-knowl="./knowl/idea_trig_int_2.html" title="Key Idea 6.3.8: Integrals Involving Powers of Tangent and Secant">Key Idea 6.3.8</a> as the power of secant is odd and the power of tangent is even (<span class="process-math">\(0\)</span> is an even number). We use Integration by Parts; the rule suggests letting <span class="process-math">\(dv = \sec^2(x) \, dx\text{,}\)</span> meaning that <span class="process-math">\(u = \sec(x)\text{.}\)</span></p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0.666666666666667%;margin-right:0.666666666666667%;">
+<div class="sbspanel middle" style="width:40.5405405405405%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+u\amp = \sec(x) \amp  v\amp =\mathord{?}\\
+du\amp = \mathord{?}  \amp  dv\amp =\sec^2(x) \, dx
+\end{align*}
+</div></div>
+<div class="sbspanel middle" style="width:6.081081081081082%;"><p><span class="process-math">\(\implies\)</span></p></div>
+<div class="sbspanel middle" style="width:50.6756756756757%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+u\amp = \sec(x) \amp  v\amp =\tan(x)\\
+du\amp = \sec(x) \tan(x) \, dx \amp  dv\amp =\sec^2(x) \, dx
+\end{align*}
+</div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.12<span class="period">.</span></span><span class="space"> </span>Setting up Integration by Parts</figcaption></figure><p>Employing Integration by Parts, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_trig_int_2c.html ./knowl/idea_trig_int_2.html">
+\begin{align*}
+\int \sec^3(x) \, dx  	\amp =	\int \underbrace{\sec(x) }_u\cdot\underbrace{\sec^2(x) \, dx}_{dv}\\
+\amp =	\sec(x) \tan(x) - \int \sec(x) \tan^2(x) \, dx.\\
+\end{align*}
+<p class="intertext">This new integral also requires applying <a href="" class="xref" data-knowl="./knowl/idea_trig_int_2c.html" title="Item 3">Rule 3</a> of <a href="" class="xref" data-knowl="./knowl/idea_trig_int_2.html" title="Key Idea 6.3.8: Integrals Involving Powers of Tangent and Secant">Key Idea 6.3.8</a>:</p>
+\begin{align*}
+\int \sec^3(x)\, dx\amp = \sec(x) \tan(x) - \int \sec(x) \big(\sec^2(x) -1\big)\, dx\\
+\amp =	\sec(x) \tan(x) - \int \sec^3(x) \, dx + \int \sec(x) \, dx\\
+\amp = \sec(x) \tan(x) -\int \sec^3(x) \, dx + \ln\abs{\sec(x) +\tan(x) }\\
+\end{align*}
+<p class="intertext">In previous applications of Integration by Parts, we have seen where the original integral has reappeared in our work. We resolve this by adding <span class="process-math">\(\int \sec^3(x) \, dx\)</span> to both sides, giving:</p>
+\begin{align*}
+2\int \sec^3(x) \, dx \amp = \sec(x) \tan(x) + \ln\abs{\sec(x) +\tan(x) }\\
+\int \sec^3(x) \, dx \amp = \frac12\Big(\sec(x) \tan(x) + \ln\abs{\sec(x) +\tan(x) }\Big)+C
+\end{align*}
+</div>
+</div></body>
+</html>

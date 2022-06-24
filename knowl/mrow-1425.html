@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:40:06Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\inflim \left(a_n \right)^{1/n} \amp =\inflim \left(\frac{n^4}{(\ln(n))^n}\right)^{1/n}\\
+\amp = \inflim \frac{\big(n^{4/n}\big)}{\ln(n)}\\
+\end{align*}
+<p class="intertext">The limit of the numerator must be found using L'Hospital's Rule for indeterminate powers</p>
+\begin{align*}
+\inflim \left(n^{4/n}\right) \amp = \inflim e^{\ln\left(n^{4/n}\right)}\\
+\amp = \inflim e^{{4\ln\left(n\right)}/n}\\
+\end{align*}
+<p class="intertext">Now apply L'Hospital's to the expression in the exponent:</p>
+\begin{align*}
+\amp \stackrel{\, \text{ by LHR }  \, }{=} \inflim e^{4/n}\\
+\amp = e^0=1
+\end{align*}
+</div>
+<span class="incontext"><a href="sec_ratio_root_tests.html#md-401" class="internal">in-context</a></span>
+</body>
+</html>

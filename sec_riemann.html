@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:28:30Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Riemann Sums</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_def_int.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_integration.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_FTC.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_def_int.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_integration.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_FTC.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="active">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="internal">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_riemann"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Riemann Sums</span>
+</h2>
+<section class="introduction" id="introduction-93"><figure class="figure figure-like" id="vid_int_rie_intro"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-162" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/-4hZaGBw6EI?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.1<span class="period">.</span></span><span class="space"> </span>Video introduction to <a href="sec_riemann.html" class="internal" title="Section 5.3: Riemann Sums">Section 5.3</a></figcaption></figure><p id="p-4524">In the previous section we defined the definite integral of a function on <span class="process-math">\([a,b]\)</span> to be the signed area between the curve and the <span class="process-math">\(x\)</span>-axis. Some areas were simple to compute; we ended the section with a region whose area was not simple to compute. In this section we develop a technique to find such areas. </p>
+<p id="p-4525">A fundamental calculus technique is to first answer a given problem with an approximation, then refine that approximation to make it better, then use limits in the refining process to find the exact answer. That is what we will do here.</p>
+<p id="p-4526">Consider the region given in <a href="" class="xref" data-knowl="./knowl/fig_rie1a.html" title="Figure 5.3.2">Figure 5.3.2</a>, which is the area under <span class="process-math">\(y=4x-x^2\)</span> on <span class="process-math">\([0,4]\text{.}\)</span> What is the signed area of this region — i.e., what is <span class="process-math">\(\int_0^4(4x-x^2)\, dx\text{?}\)</span></p>
+<figure class="figure figure-like" id="fig_rie1a"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rie1a.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.2<span class="period">.</span></span><span class="space"> </span>A graph of <span class="process-math">\(f(x) = 4x-x^2\text{.}\)</span> What is the area of the shaded region?</figcaption></figure><p id="p-4527">We start by approximating. We can surround the region with a rectangle with height and width of 4 and find the area is approximately 16 square units. This is obviously an <em class="emphasis">over-approximation</em>; we are including area in the rectangle that is not under the parabola.</p>
+<figure class="figure figure-like" id="fig_rie1a2"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rie1a2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.3<span class="period">.</span></span><span class="space"> </span>Approximating area under a curve with one rectangle</figcaption></figure><p id="p-4528">We have an approximation of the area, using one rectangle. How can we refine our approximation to make it better? The key to this section is this answer: <em class="emphasis">use more rectangles.</em></p>
+<p id="p-4529">Let's use four rectangles with an equal width of 1. This <em class="emphasis">partitions</em> the interval <span class="process-math">\([0,4]\)</span> into 4 <em class="emphasis">subintervals</em>, <span class="process-math">\([0,1]\text{,}\)</span> <span class="process-math">\([1,2]\text{,}\)</span> <span class="process-math">\([2,3]\)</span> and <span class="process-math">\([3,4]\text{.}\)</span> On each subinterval we will draw a rectangle.</p>
+<p id="p-4530">There are three common ways to determine the height of these rectangles: the <em class="emphasis">Left Hand Rule</em>, the <em class="emphasis">Right Hand Rule</em>, and the <em class="emphasis">Midpoint Rule</em>. The <em class="emphasis">Left Hand Rule</em> says to evaluate the function at the left-hand endpoint of the subinterval and make the rectangle that height. In <a href="" class="xref" data-knowl="./knowl/fig_rie1b.html" title="Figure 5.3.4">Figure 5.3.4</a>, the rectangle drawn on the interval <span class="process-math">\([2,3]\)</span> has height determined by the Left Hand Rule; it has a height of <span class="process-math">\(f(2)\text{.}\)</span> (The rectangle is labeled “LHR.”) </p>
+<figure class="figure figure-like" id="fig_rie1b"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rie1b.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.4<span class="period">.</span></span><span class="space"> </span>Approximating <span class="process-math">\(\int_0^4(4x-x^2)\, dx\)</span> using rectangles. The heights of the rectangles are determined using different rules.</figcaption></figure><p id="p-4531">The <em class="emphasis">Right Hand Rule</em> says the opposite: on each subinterval, evaluate the function at the right endpoint and make the rectangle that height. In the figure, the rectangle drawn on <span class="process-math">\([0,1]\)</span> is drawn using <span class="process-math">\(f(1)\)</span> as its height; this rectangle is labeled “RHR.”.</p>
+<p id="p-4532">The <em class="emphasis">Midpoint Rule</em> says that on each subinterval, evaluate the function at the midpoint and make the rectangle that height. The rectangle drawn on <span class="process-math">\([1,2]\)</span> was made using the Midpoint Rule, with a height of <span class="process-math">\(f(1.5)\text{.}\)</span> That rectangle is labeled “MPR.”</p>
+<p id="p-4533">These are the three most common rules for determining the heights of approximating rectangles, but one is not forced to use one of these three methods. The rectangle on <span class="process-math">\([3,4]\)</span> has a height of approximately <span class="process-math">\(f(3.53)\text{,}\)</span> very close to the Midpoint Rule. It was chosen so that the area of the rectangle is <em class="emphasis">exactly</em> the area of the region under <span class="process-math">\(f\)</span> on <span class="process-math">\([3,4]\text{.}\)</span> (Later you'll be able to figure how to do this, too.)</p>
+<p id="p-4534">The following example will approximate the value of <span class="process-math">\(\int_0^4 (4x-x^2)\, dx\)</span> using these rules.</p>
+<article class="example example-like" id="ex_rie2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Left Hand, Right Hand and Midpoint Rules.</span>
+</h3>
+<p id="p-4535">Approximate the value of <span class="process-math">\(\int_0^4 (4x-x^2)\, dx\)</span> using the Left Hand Rule, the Right Hand Rule, and the Midpoint Rule, using 4 equally spaced subintervals.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-272" id="solution-272"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-272"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_rie_approx" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/qn8Q1i8s5Ng?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-4536">We break the interval <span class="process-math">\([0,4]\)</span> into four subintervals as before. In <a href="" class="xref" data-knowl="./knowl/fig_rie2a.html" title="Figure 5.3.6.(a)">Figure 5.3.6.(a)</a> we see 4 rectangles drawn on <span class="process-math">\(f(x) = 4x-x^2\)</span> using the Left Hand Rule. (The areas of the rectangles are given in each figure.)</p>
+<p id="p-4537">Note how in the first subinterval, <span class="process-math">\([0,1]\text{,}\)</span> the rectangle has height <span class="process-math">\(f(0)=0\text{.}\)</span> We add up the areas of each rectangle (height<span class="times-sign">×</span> width) for our Left Hand Rule approximation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-153">
+\begin{align*}
+\amp f(0)\cdot 1 + f(1)\cdot 1+ f(2)\cdot 1+f(3)\cdot 1\\
+=\amp 0+3+4+3 = 10\text{.}
+\end{align*}
+</div>
+<p id="p-4538"><a href="" class="xref" data-knowl="./knowl/fig_rie2b.html" title="Figure 5.3.6.(b)">Figure 5.3.6.(b)</a> shows 4 rectangles drawn under <span class="process-math">\(f\)</span> using the Right Hand Rule; note how the <span class="process-math">\([3,4]\)</span> subinterval has a rectangle of height 0.</p>
+<p id="p-4539">In this example, these rectangles seem to be the mirror image of those found in <a href="" class="xref" data-knowl="./knowl/fig_rie2a.html" title="Figure 5.3.6.(a)">Figure 5.3.6.(a)</a>. This is because of the symmetry of our shaded region. Our approximation gives the same answer as before, though calculated a different way:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_rie2a.html" id="md-154">
+\begin{align*}
+\amp f(1)\cdot 1 + f(2)\cdot 1+ f(3)\cdot 1+f(4)\cdot 1\\
+\amp =3+4+3+0= 10\text{.}
+\end{align*}
+</div>
+<p id="p-4540"><a href="" class="xref" data-knowl="./knowl/fig_rie2c.html" title="Figure 5.3.6.(c)">Figure 5.3.6.(c)</a> shows 4 rectangles drawn under <span class="process-math">\(f\)</span> using the Midpoint Rule.</p>
+<p id="p-4541">This gives an approximation of <span class="process-math">\(\int_0^4(4x-x^2)\, dx\)</span> as:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-155">
+\begin{align*}
+f(0.5)\cdot 1 + f(1.5)\cdot 1+ f(2.5)\cdot 1 \amp +f(3.5)\cdot 1\\
+\amp =1.75+3.75+3.75+1.75 = 11\text{.}
+\end{align*}
+</div>
+<p id="p-4542">Our three methods provide two approximations of <span class="process-math">\(\int_0^4(4x-x^2)\, dx\text{:}\)</span> 10 and 11.</p>
+<figure class="figure figure-like" id="fig_rie2"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_rie2a"><img src="generated/latex-image/img_rie2a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>using the Left Hand Rule</figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_rie2b"><img src="generated/latex-image/img_rie2b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>using the Right Hand Rule</figcaption></figure></div>
+<div class="sbspanel top" style="width:31%;"><figure class="figure figure-like" id="fig_rie2c"><img src="generated/latex-image/img_rie2c.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span>using the Midpoint Rule</figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.6<span class="period">.</span></span><span class="space"> </span>Approximating <span class="process-math">\(\int_0^4(4x-x^2)\, dx\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_rie2.html" title="Example 5.3.5: Using the Left Hand, Right Hand and Midpoint Rules">Example 5.3.5</a></figcaption></figure>
+</div></div>
+</div></article></section><section class="subsection" id="fig_rie_notation"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">Summation Notation</span>
+</h3>
+<p id="p-4543">It is hard to tell at this moment which is a better approximation: 10 or 11? We can continue to refine our approximation by using more rectangles. The notation can become unwieldy, though, as we add up longer and longer lists of numbers. We introduce <em class="emphasis">summation notation</em> to ameliorate this problem. </p>
+<figure class="figure figure-like" id="vid_int_rie_sum_not"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-164" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/d0gSFClfRdY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.7<span class="period">.</span></span><span class="space"> </span>Explaining summation notation</figcaption></figure><p id="p-4544">Suppose we wish to add up a list of numbers <span class="process-math">\(a_1\text{,}\)</span> <span class="process-math">\(a_2\text{,}\)</span> <span class="process-math">\(a_3\text{,}\)</span> …, <span class="process-math">\(a_9\text{.}\)</span> Instead of writing</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_sigmanotation.html">
+\begin{equation*}
+a_1+a_2+a_3+a_4+a_5+a_6+a_7+a_8+a_9\text{,}
+\end{equation*}
+</div>
+<p class="continuation">we use summation notation and write <span class="process-math">\(\sum_{i=1}^9 a_i\text{.}\)</span>  The upper case sigma, <span class="process-math">\(Sigma\)</span> represents the term “sum”. The index (counter) of summation in this example is <span class="process-math">\(i\text{;}\)</span> any symbol can be used. By convention, the index takes on only the integer values between (and including) the lower and upper bounds. To the right of <span class="process-math">\(\Sigma\text{,}\)</span> the expression <span class="process-math">\(a_i\)</span> is called the summand. It tells us what we are summing. This is summarized in <a href="" class="xref" data-knowl="./knowl/eq_sigmanotation.html" title="Equation 5.3.1">Equation (5.3.1)</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_sigmanotation.html" id="eq_sigmanotation">
+\begin{equation}
+\sum_{\underbrace{i=1}_{i \text{-index of summation}}}^{\overbrace{9}^\text{upper bound}} \underbrace{a_i}_\text{summand}\tag{5.3.1}
+\end{equation}
+</div>
+<p id="p-4545">Let's practice using this notation.</p>
+<article class="example example-like" id="ex_rie3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Using summation notation.</span>
+</h4>
+<p id="p-4546">Let the numbers <span class="process-math">\(\{a_i\}\)</span> be defined as <span class="process-math">\(a_i = 2i-1\)</span> for integers <span class="process-math">\(i\text{,}\)</span> where <span class="process-math">\(i\geq 1\text{.}\)</span> So <span class="process-math">\(a_1 = 1\text{,}\)</span> <span class="process-math">\(a_2 = 3\text{,}\)</span> <span class="process-math">\(a_3 = 5\text{,}\)</span> etc. (The output is the positive odd integers). Evaluate the following summations:</p>
+<ol class="decimal">
+<li id="li-1058"><p id="p-derived-li-1058"><span class="process-math">\(\displaystyle \sum_{i=1}^6 a_i \)</span></p></li>
+<li id="li-1059"><p id="p-derived-li-1059"><span class="process-math">\(\displaystyle \sum_{i=3}^7 (3a_i-4) \)</span></p></li>
+<li id="li-1060"><p id="p-derived-li-1060"><span class="process-math">\(\displaystyle \sum_{i=1}^4 (a_i)^2 \)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-273" id="solution-273"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-273"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_rie_sum_ex" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/GKaRI_a96-Q?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<ol id="p-4547" class="decimal">
+<li id="li-1061"><div class="displaymath process-math" data-contains-math-knowls="" id="md-156">
+\begin{align*}
+\sum_{i=1}^6 a_i \amp = a_1+a_2+a_3+a_4+a_5+a_6\\
+\amp =  1+3+5+7+9+11\\
+\amp =  36\text{.}
+\end{align*}
+</div></li>
+<li id="li-1062">
+<p id="p-4549">Note the starting value is different than 1:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-157">
+\begin{align*}
+\sum_{i=3}^7 (3a_i-4) \amp = (3a_3-4)+(3a_4-4)+(3a_5-4)+(3a_6-4)+(3a_7-4)\\
+\amp = 11+17+23+29+35\\
+\amp = 115\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-1063"><div class="displaymath process-math" data-contains-math-knowls="" id="md-158">
+\begin{align*}
+\sum_{i=1}^4 (a_i)^2 \amp =  (a_1)^2+(a_2)^2+(a_3)^2+(a_4)^2\\
+\amp =  1^2+3^2+5^2+7^2\\
+\amp =  84\text{.}
+\end{align*}
+</div></li>
+</ol>
+</div></div>
+</div></article><p id="p-4551">It might seem odd to stress a new, concise way of writing summations only to write each term out as we add them up. It is. The following theorem gives some of the properties of summations that allow us to work with them without writing individual terms. Examples will follow.</p>
+<article class="theorem theorem-like" id="thm_summation"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Summations.</span>
+</h4>
+<ol id="p-4552" class="decimal cols2">
+<li id="li-1064"><p id="p-4553"><span class="process-math">\(\ds \sum_{i=1}^n c = c\cdot n\text{,}\)</span> where <span class="process-math">\(c\)</span> is a constant.</p></li>
+<li id="li-1065"><p id="p-derived-li-1065"><span class="process-math">\(\displaystyle \sum_{i=m}^n (a_i\pm b_i) = \sum_{i=m}^n a_i \pm \sum_{i=m}^n b_i\)</span></p></li>
+<li id="li-1066"><p id="p-derived-li-1066"><span class="process-math">\(\displaystyle \sum_{i=m}^n c\cdot a_i = c\cdot\sum_{i=m}^n a_i\)</span></p></li>
+<li id="li-1067"><p id="p-derived-li-1067"><span class="process-math">\(\displaystyle \sum_{i=m}^j a_i + \sum_{i=j+1}^n a_i = \sum_{i=m}^n a_i\)</span></p></li>
+<li id="li-1068"><p id="p-derived-li-1068"><span class="process-math">\(\displaystyle \sum_{i=1}^n i = \frac{n(n+1)}2\)</span></p></li>
+<li id="li-1069"><p id="p-derived-li-1069"><span class="process-math">\(\displaystyle \sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}6\)</span></p></li>
+<li id="li-1070"><p id="p-derived-li-1070"><span class="process-math">\(\displaystyle \sum_{i=1}^n i^3 = \left(\frac{n(n+1)}2\right)^2\)</span></p></li>
+</ol></article><figure class="figure figure-like" id="vid_int_rie_sum_prop"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-166" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/w8jWl2KjOvQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.10<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_summation.html" title="Theorem 5.3.9: Properties of Summations">Theorem 5.3.9</a></figcaption></figure><article class="example example-like" id="ex_rie4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating summations using Theorem 5.3.9.</span>
+</h4>
+<p id="p-4554">Revisit <a href="" class="xref" data-knowl="./knowl/ex_rie3.html" title="Example 5.3.8: Using summation notation">Example 5.3.8</a> and, using <a href="" class="xref" data-knowl="./knowl/thm_summation.html" title="Theorem 5.3.9: Properties of Summations">Theorem 5.3.9</a>, evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_rie3.html ./knowl/thm_summation.html">
+\begin{equation*}
+\sum_{i=1}^6 a_i = \sum_{i=1}^6 (2i-1)\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-274" id="solution-274"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-274"><div class="solution solution-like">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-159">
+\begin{align*}
+\sum_{i=1}^6 (2i-1) \amp  = \sum_{i=1}^6 2i - \sum_{i=1}^6 (1)\\
+\amp =  \left(2\sum_{i=1}^6 i \right)- 6\\
+\amp = 2\frac{6(6+1)}{2} - 6\\
+\amp = 42-6 = 36
+\end{align*}
+</div>
+<p id="p-4556">We obtained the same answer without writing out all six terms. When dealing with small sizes of <span class="process-math">\(n\text{,}\)</span> it may be faster to write the terms out by hand. However, <a href="" class="xref" data-knowl="./knowl/thm_summation.html" title="Theorem 5.3.9: Properties of Summations">Theorem 5.3.9</a> is incredibly important when dealing with large sums as we'll soon see.</p>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">Riemann Sums</span>
+</h3>
+<p id="p-4557">Consider again <span class="process-math">\(\int_0^4(4x-x^2)\, dx\text{.}\)</span> We will approximate this definite integral using 16 equally spaced subintervals and the Right Hand Rule in <a href="" class="xref" data-knowl="./knowl/ex_rie7.html" title="Example 5.3.13: Approximating definite integrals using sums">Example 5.3.13</a>. Before doing so, it will pay to do some careful preparation. </p>
+<figure class="figure figure-like" id="fig_rie5"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rie5.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.12<span class="period">.</span></span><span class="space"> </span>Dividing <span class="process-math">\([0,4]\)</span> into 16 equally spaced subintervals</figcaption></figure><p id="p-4558"><a href="" class="xref" data-knowl="./knowl/fig_rie5.html" title="Figure 5.3.12">Figure 5.3.12</a> shows a number line of <span class="process-math">\([0,4]\)</span> divided, or <em class="emphasis">partitioned</em>, into 16 equally spaced subintervals. We denote <span class="process-math">\(0\)</span> as <span class="process-math">\(x_0\text{;}\)</span> we have marked the values of <span class="process-math">\(x_4\text{,}\)</span> <span class="process-math">\(x_8\text{,}\)</span> <span class="process-math">\(x_{12}\)</span> and <span class="process-math">\(x_{16}\text{.}\)</span> We could mark them all, but the figure would get crowded. While it is easy to figure that <span class="process-math">\(x_{9} = 2.25\text{,}\)</span> in general, we want a method of determining the value of <span class="process-math">\(x_i\)</span> without consulting the figure. Consider:</p>
+<div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="generated/latex-image/img_rie5a.svg" role="img" class="contained"></div>
+<p id="p-4559">So <span class="process-math">\(x_{9} = x_0 + 9(4/16) = 2.25\text{.}\)</span></p>
+<p id="p-4560">If we had partitioned <span class="process-math">\([0,4]\)</span> into 100 equally spaced subintervals, each subinterval would have length <span class="process-math">\(\Delta x=4/100 = 0.04\text{.}\)</span> We could compute <span class="process-math">\(x_{31}\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_{31} = x_0 + 31(4/100) = 1.24\text{.}
+\end{equation*}
+</div>
+<p id="p-4561">(That was far faster than creating a sketch first.)</p>
+<p id="p-4562">Given any subdivision of <span class="process-math">\([0,4]\text{,}\)</span> the first subinterval is <span class="process-math">\([x_0,x_1]\text{;}\)</span> the second is <span class="process-math">\([x_1,x_2]\text{;}\)</span> the <span class="process-math">\(i\)</span>th subinterval is <span class="process-math">\([x_{i-1},x_{i}]\text{.}\)</span></p>
+<p id="p-4563">When using the Left Hand Rule, the height of the <span class="process-math">\(i\)</span>th rectangle will be <span class="process-math">\(f(x_{i-1})\text{.}\)</span></p>
+<p id="p-4564">When using the Right Hand Rule, the height of the <span class="process-math">\(i\)</span>th rectangle will be <span class="process-math">\(f(x_{i})\text{.}\)</span></p>
+<p id="p-4565">When using the Midpoint Rule, the height of the <span class="process-math">\(i\)</span>th rectangle will be <span class="process-math">\(\ds f\left(\frac{x_{i-1}+x_{i}}2\right)\text{.}\)</span></p>
+<p id="p-4566">Thus approximating <span class="process-math">\(\int_0^4(4x-x^2)\, dx\)</span> with 16 equally spaced subintervals can be expressed as follows, where <span class="process-math">\(\Delta x = 4/16 = 1/4\text{:}\)</span></p>
+<dl id="p-4567" class="description-list">
+<dt id="li-1071">Left Hand Rule</dt>
+<dd><p id="p-4568"><span class="process-math">\(\displaystyle \ds \sum_{i=1}^{16} f(x_{i-1})\Delta x\)</span></p></dd>
+<dt id="li-1072">Right Hand Rule</dt>
+<dd><p id="p-4569"><span class="process-math">\(\displaystyle \ds \sum_{i=1}^{16} f(x_{i})\Delta x\)</span></p></dd>
+<dt id="li-1073">Midpoint Rule</dt>
+<dd><p id="p-4570"><span class="process-math">\(\displaystyle \ds \sum_{i=1}^{16} f\left(\frac{x_{i-1}+x_{i}}2\right)\Delta x\)</span></p></dd>
+</dl>
+<p id="p-4571">We use these formulas in the next two examples. The following example lets us practice using the Right Hand Rule and the summation formulas introduced in <a href="" class="xref" data-knowl="./knowl/thm_summation.html" title="Theorem 5.3.9: Properties of Summations">Theorem 5.3.9</a>.</p>
+<article class="example example-like" id="ex_rie7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating definite integrals using sums.</span>
+</h4>
+<p id="p-4572">Approximate <span class="process-math">\(\int_0^4(4x-x^2)\, dx\)</span> using the Right Hand Rule and summation formulas with 16 and 1000 equally spaced intervals.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-275" id="solution-275"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-275"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_rie_ex_1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/urkFFBmu9uQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-4573">Using the formula derived before, using 16 equally spaced intervals and the Right Hand Rule, we can approximate the definite integral as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{i=1}^{16}f(x_{i})\Delta x\text{.}
+\end{equation*}
+</div>
+<p id="p-4574">We have <span class="process-math">\(\Delta x = 4/16 = 0.25\text{.}\)</span> Since <span class="process-math">\(x_i = 0+i\Delta x\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_{i} = 0 + i\Delta x = i\Delta x\text{.}
+\end{equation*}
+</div>
+<p id="p-4575">Using the summation formulas, consider:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="mdn-5">
+\begin{align}
+\int_0^4 (4x-x^2)\, dx \amp \approx \sum_{i=1}^{16} f(x_{i})\Delta x\notag\\
+\amp = \sum_{i=1}^{16} f(i\Delta x) \Delta x\notag\\
+\amp = \sum_{i=1}^{16} \big(4i\Delta x - (i\Delta x)^2\big)\Delta x\notag\\
+\amp = \sum_{i=1}^{16} (4i\Delta x^2 - i^2\Delta x^3)\notag\\
+\amp = (4\Delta x^2)\sum_{i=1}^{16} i - \Delta x^3 \sum_{i=1}^{16} i^2\tag{5.3.2}\\
+\amp = (4\Delta x^2)\frac{16\cdot 17}{2} - \Delta x^3 \frac{16(17)(33)}6\notag\\
+\amp =	4\cdot 0.25^2\cdot 136-0.25^3\cdot 1496\notag\\
+\amp =10.625\notag
+\end{align}
+</div>
+<p id="p-4576">We were able to sum up the areas of 16 rectangles with very little computation. In <a href="" class="xref" data-knowl="./knowl/fig_rie7.html" title="Figure 5.3.14">Figure 5.3.14</a> the function and the 16 rectangles are graphed. While some rectangles over-approximate the area, other under-approximate the area (by about the same amount). Thus our approximate area of 10.625 is likely a fairly good approximation.</p>
+<p id="p-4577">Notice Equation <a href="" class="xref" data-knowl="./knowl/eq_rie7.html" title="Equation 5.3.2">(5.3.2)</a>; by replacing 16 by 1,000 (and appropriately changing the value of <span class="process-math">\(\Delta x\)</span>), we can use that equation to sum up 1000 rectangles!</p>
+<figure class="figure figure-like" id="fig_rie7"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rie7.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.14<span class="period">.</span></span><span class="space"> </span>Approximating <span class="process-math">\(\int_0^4(4x-x^2)\, dx\)</span> with the Right Hand Rule and 16 evenly spaced subintervals</figcaption></figure><p id="p-4578">We do so here, skipping from the original summand to the equivalent of Equation <a href="" class="xref" data-knowl="./knowl/eq_rie7.html" title="Equation 5.3.2">(5.3.2)</a> to save space. Note that <span class="process-math">\(\Delta x = 4/1000 = 0.004\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_rie7.html" id="md-160">
+\begin{align*}
+\int_0^4 (4x-x^2)\, dx \amp \approx \sum_{i=1}^{1000} f(x_{i})\Delta x\\
+\amp = (4\Delta x^2)\sum_{i=1}^{1000} i - \Delta x^3 \sum_{i=1}^{1000} i^2\\
+\amp = (4\Delta x^2)\frac{1000\cdot 1001}{2} - \Delta x^3 \frac{1000(1001)(2001)}6\\
+\amp =10.666656
+\end{align*}
+</div>
+<p id="p-4579">Using many, many rectangles, we have a likely good approximation of <span class="process-math">\(\int_0^4 (4x-x^2)\dx\text{.}\)</span> That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^4(4x-x^2)\, dx \approx 10.666656\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><p id="p-4580">Before the above example, we stated what the summations for the Left Hand, Right Hand and Midpoint Rules looked like. Each had the same basic structure, which was:</p>
+<ol id="p-4581" class="decimal">
+<li id="li-1074"><p id="p-4582">each rectangle has the same width, which we referred to as <span class="process-math">\(\Delta x\text{,}\)</span> and</p></li>
+<li id="li-1075"><p id="p-4583">each rectangle's height is determined by evaluating <span class="process-math">\(f\)</span> at a particular point in each subinterval. For instance, the Left Hand Rule states that each rectangle's height is determined by evaluating <span class="process-math">\(f\)</span> at the left hand endpoint of the subinterval the rectangle lives on.</p></li>
+</ol>
+<p id="p-4584">One could partition an interval <span class="process-math">\([a,b]\)</span> with subintervals that do not have the same size. We refer to the length of the <span class="process-math">\(i\)</span>th subinterval as <span class="process-math">\(\Delta x_i\text{.}\)</span> Also, one could determine each rectangle's height by evaluating <span class="process-math">\(f\)</span> at <em class="emphasis">any</em> point <span class="process-math">\(c_i\)</span> in the <span class="process-math">\(i\)</span>th subinterval. Thus the height of the <span class="process-math">\(i\)</span>th subinterval would be <span class="process-math">\(f(c_i)\text{,}\)</span> and the area of the <span class="process-math">\(i\)</span>th rectangle would be <span class="process-math">\(f(c_i)\Delta x_i\text{.}\)</span> These ideas are formally defined below.</p>
+<article class="definition definition-like" id="def_partition"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Partition.</span>
+</h4>
+<p id="p-4585">A <dfn class="terminology">partition</dfn> <span class="process-math">\(\Delta x\)</span> of a closed interval <span class="process-math">\([a,b]\)</span> is a set of numbers <span class="process-math">\(x_0\text{,}\)</span> <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(\ldots\)</span> <span class="process-math">\(x_{n}\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a=x_0 \lt  x_1 \lt  \ldots \lt  x_{n-1} \lt  x_{n}=b\text{.}
+\end{equation*}
+</div>
+<p id="p-4586">The length of the <span class="process-math">\(i\)</span>th subinterval, <span class="process-math">\([x_{i-1},x_{i}]\text{,}\)</span> is <span class="process-math">\(\Delta x_i = x_{i}-x_{i-1}\text{.}\)</span> If <span class="process-math">\([a,b]\)</span> is partitioned into subintervals of equal length, we let <span class="process-math">\(\Delta x\)</span> represent the length of each subinterval.</p>
+<p id="p-4587">The <dfn class="terminology">size of the partition</dfn>, denoted <span class="process-math">\(\norm{\Delta x}\text{,}\)</span> is the length of the largest subinterval of the partition. </p></article><figure class="figure figure-like" id="vid_int_rie_partns"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-168" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/2iw1Mh4iJ0I?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.16<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/def_partition.html" title="Definition 5.3.15: Partition">Definition 5.3.15</a></figcaption></figure><p id="p-4588">Summations of rectangles with area <span class="process-math">\(f(c_i)\Delta x_i\)</span> are named after mathematician Georg Friedrich Bernhard Riemann, as given in the following definition.</p>
+<article class="definition definition-like" id="def_rie_sum"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3.17</span><span class="period">.</span><span class="space"> </span><span class="title">Riemann Sum.</span>
+</h4>
+<p id="p-4589">Let <span class="process-math">\(f\)</span> be defined on a closed interval <span class="process-math">\([a,b]\text{,}\)</span> let <span class="process-math">\(\Delta x\)</span> be a partition of <span class="process-math">\([a,b]\)</span> as given in <a href="" class="xref" data-knowl="./knowl/def_partition.html" title="Definition 5.3.15: Partition">Definition 5.3.15</a>,  and let <span class="process-math">\(c_i\)</span> denote any value in the <span class="process-math">\(i\)</span>th subinterval.</p>
+<p id="p-4590">The sum</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{i=1}^n f(c_i)\Delta x_i
+\end{equation*}
+</div>
+<p class="continuation">is a <dfn class="terminology">Riemann sum</dfn> of <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\text{.}\)</span></p></article><figure class="figure figure-like" id="vid_int_rie_defn"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-169" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/1ZxKyf4JSS4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.18<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/def_rie_sum.html" title="Definition 5.3.17: Riemann Sum">Definition 5.3.17</a></figcaption></figure><p id="p-4591"><a href="" class="xref" data-knowl="./knowl/fig_riedef.html" title="Figure 5.3.19">Figure 5.3.19</a> shows the approximating rectangles of a Riemann sum of <span class="process-math">\(\int_0^4(4x-x^2)\, dx\text{.}\)</span> While the rectangles in this example do not approximate well the shaded area, they demonstrate that the subinterval widths may vary and the heights of the rectangles can be determined without following a particular rule.</p>
+<figure class="figure figure-like" id="fig_riedef"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_riedef.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.19<span class="period">.</span></span><span class="space"> </span>An example of a general Riemann sum to approximate <span class="process-math">\(\int_0^4(4x-x^2)\, dx\)</span></figcaption></figure><p id="p-4592">“Usually” Riemann sums are calculated using one of the three methods we have introduced. The uniformity of construction makes computations easier. Before working another example, let's summarize some of what we have learned in a convenient way.</p>
+<article class="insight remark-like" id="idea_riemann"><h4 class="heading">
+<span class="type">Key Idea</span><span class="space"> </span><span class="codenumber">5.3.20</span><span class="period">.</span><span class="space"> </span><span class="title">Riemann Sum Concepts.</span>
+</h4>
+<p id="p-4593">Consider <span class="process-math">\(\ds \int_a^b f(x) \, dx \approx \sum_{i=1}^n f(c_i)\Delta x_i\text{.}\)</span></p>
+<ol id="p-4594" class="decimal">
+<li id="li-1076"><p id="p-4595">When the <span class="process-math">\(n\)</span> subintervals have equal length, <span class="process-math">\(\ds \Delta x_i = \Delta x = \frac{b-a}n\text{.}\)</span></p></li>
+<li id="li-1077"><p id="p-4596">The <span class="process-math">\(i\)</span>th term of an equally spaced partition is <span class="process-math">\(x_i = a + i\Delta x\text{.}\)</span> (Thus <span class="process-math">\(x_0=a\)</span> and <span class="process-math">\(x_{n} = b\text{.}\)</span>)</p></li>
+<li id="li-1078"><p id="p-4597">The Left Hand Rule summation is: <span class="process-math">\(\ds \sum_{i=1}^n f(x_{i-1})\Delta x\text{.}\)</span></p></li>
+<li id="li-1079"><p id="p-4598">The Right Hand Rule summation is: <span class="process-math">\(\ds \sum_{i=1}^n f(x_{i})\Delta x\text{.}\)</span></p></li>
+<li id="li-1080"><p id="p-4599">The Midpoint Rule summation is: <span class="process-math">\(\ds \sum_{i=1}^n f\left(\frac{x_{i-1}+x_{i}}{2}\right)\Delta x\text{.}\)</span></p></li>
+</ol></article><p id="p-4600">Let's do another example.</p>
+<article class="example example-like" id="ex_rie8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.21</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating definite integrals with sums.</span>
+</h4>
+<p id="p-4601">Approximate <span class="process-math">\(\int_{-2}^3 (5x+2)\, dx\)</span> using the Midpoint Rule and 10 equally spaced intervals.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-276" id="solution-276"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-276"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_rie_ex_2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/O6S1f6-D8Ls?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-4602">Following <a href="" class="xref" data-knowl="./knowl/idea_riemann.html" title="Key Idea 5.3.20: Riemann Sum Concepts">Key Idea 5.3.20</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_riemann.html">
+\begin{equation*}
+\Delta x = \frac{3 - (-2)}{10} = 1/2  \text{ and }   x_i = (-2) + (1/2)(i) = i/2-2\text{.}
+\end{equation*}
+</div>
+<p id="p-4603">As we are using the Midpoint Rule, we will also need <span class="process-math">\(x_{i-1}\)</span> and <span class="process-math">\(\ds \frac{x_{i-1}+x_{i}}2\text{.}\)</span> Since <span class="process-math">\(x_i = i/2-2\text{,}\)</span><span class="process-math">\(x_{i-1} = (i-1)/2 - 2 = i/2 -5/2\text{.}\)</span> This gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{x_{i-1}+x_{i}}2 = \frac{(i/2-5/2) + (i/2-2)}{2} = \frac{i-9/2}{2} = i/2 - 9/4\text{.}
+\end{equation*}
+</div>
+<p id="p-4604">We now construct the Riemann sum and compute its value using summation formulas.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-161">
+\begin{align*}
+\int_{-2}^3 (5x+2)\, dx   \amp \approx \sum_{i=1}^{10} f\left(\frac{x_{i-1}+x_{i}}{2}\right)\Delta x\\
+\amp =  \sum_{i=1}^{10} f(i/2 - 9/4)\Delta x\\
+\amp =  \sum_{i=1}^{10} \big(5(i/2-9/4) + 2\big)\Delta x\\
+\amp =  \Delta x\sum_{i=1}^{10}\left[\left(\frac{5}{2}\right)i - \frac{37}{4}\right]\\
+\amp =  \Delta x\left(\frac{5}2\sum_{i=1}^{10} (i) - \sum_{i=1}^{10}\left(\frac{37}{4}\right)\right)\\
+\amp = \frac12\left(\frac52\cdot\frac{10(11)}{2} - 10\cdot\frac{37}4\right)\\
+\amp = \frac{45}2 = 22.5
+\end{align*}
+</div>
+<figure class="figure figure-like" id="fig_rie8"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rie8.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.22<span class="period">.</span></span><span class="space"> </span>Approximating <span class="process-math">\(\int_{-2}^3 (5x+2)\, dx\)</span> using the Midpoint Rule and 10 evenly spaced subintervals in <a href="" class="xref" data-knowl="./knowl/ex_rie8.html" title="Example 5.3.21: Approximating definite integrals with sums">Example 5.3.21</a></figcaption></figure><p id="p-4605">Note the graph of <span class="process-math">\(f(x) = 5x+2\)</span> in <a href="" class="xref" data-knowl="./knowl/fig_rie8.html" title="Figure 5.3.22">Figure 5.3.22</a>. The regions whose area is computed by the definite integral are triangles, meaning we can find the exact answer without summation techniques. We find that the exact answer is indeed 22.5. One of the strengths of the Midpoint Rule is that often each rectangle includes area that should not be counted, but misses other area that should. When the partition size is small, these two amounts are about equal and these errors almost “cancel each other out.” In this example, since our function is a line, these errors are exactly equal and they do cancel each other out, giving us the exact answer.</p>
+<p id="p-4606">Note too that when the function is negative, the rectangles have a “negative” height. When we compute the area of the rectangle, we use <span class="process-math">\(f(c_i)\Delta x\text{;}\)</span> when <span class="process-math">\(f\)</span> is negative, the area is counted as negative.</p>
+</div></div>
+</div></article><p id="p-4607">Notice in the previous example that while we used 10 equally spaced intervals, the number “10” didn't play a big role in the calculations until the very end. Mathematicians love to abstract ideas; let's approximate the area of another region using <span class="process-math">\(n\)</span> subintervals, where we do not specify a value of <span class="process-math">\(n\)</span> until the very end.</p>
+<article class="example example-like" id="ex_rie9"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.23</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating definite integrals with a formula, using sums.</span>
+</h4>
+<p id="p-4608">Revisit <span class="process-math">\(\int_0^4(4x-x^2)\, dx\)</span> yet again. Approximate this definite integral using the Right Hand Rule with <span class="process-math">\(n\)</span> equally spaced subintervals.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-277" id="solution-277"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-277"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_rie_ex_n_rect" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/LjMZOVNdRxQ?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-4609">Using <a href="" class="xref" data-knowl="./knowl/idea_riemann.html" title="Key Idea 5.3.20: Riemann Sum Concepts">Key Idea 5.3.20</a>, we know <span class="process-math">\(\Delta x = \frac{4-0}{n} = 4/n\text{.}\)</span> We also find <span class="process-math">\(x_i = 0 + i\Delta x = 4i/n\text{.}\)</span></p>
+<p id="p-4610">We construct the Right Hand Rule Riemann sum as follows. Be sure to follow each step carefully. If you get stuck, and do not understand how one line proceeds to the next, you may skip to the result and consider how this result is used. You should come back, though, and work through each step for full understanding.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-162">
+\begin{align*}
+\int_0^4(4x-x^2)\, dx \amp \approx \sum_{i=1}^n f(x_{i})\Delta x\\
+\amp = \sum_{i=1}^n f\left(\frac{4i}{n}\right) \Delta x\\
+\amp =  \sum_{i=1}^n \left[4\frac{4i}n-\left(\frac{4i}n\right)^2\right]\Delta x\\
+\amp =  \sum_{i=1}^n \left(\frac{16\Delta x}{n}\right)i - \sum_{i=1}^n \left(\frac{16\Delta x}{n^2}\right)i^2\\
+\amp =  \left(\frac{16\Delta x}{n}\right)\sum_{i=1}^n i - \left(\frac{16\Delta x}{n^2}\right)\sum_{i=1}^n i^2\\
+\amp = \left(\frac{16\Delta x}{n}\right)\cdot \frac{n(n+1)}{2} - \left(\frac{16\Delta x}{n^2}\right)\frac{n(n+1)(2n+1)}{6}\\
+\amp =\frac{32(n+1)}{n} - \frac{32(n+1)(2n+1)}{3n^2}  (\text{ recall } \Delta x = 4/n)\\
+\amp = \frac{32}{3}\left(1-\frac{1}{n^2}\right) \text{ (after simplifying) }
+\end{align*}
+</div>
+<p id="p-4611">The result is an amazing, easy to use formula. To approximate the definite integral with 10 equally spaced subintervals and the Right Hand Rule, set <span class="process-math">\(n=10\)</span> and compute</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^4 (4x-x^2)\, dx \approx \frac{32}{3}\left(1-\frac{1}{10^2}\right) = 10.56\text{.}
+\end{equation*}
+</div>
+<p id="p-4612">Recall how earlier we approximated the definite integral with 4 subintervals; with <span class="process-math">\(n=4\text{,}\)</span> the formula gives 10, our answer as before.</p>
+<p id="p-4613">It is now easy to approximate the integral with 1,000,000 subintervals! Hand-held calculators will round off the answer a bit prematurely giving an answer of <span class="process-math">\(10.66666667\text{.}\)</span> (The actual answer is <span class="process-math">\(10.666666666656\text{.}\)</span>)</p>
+<p id="p-4614">We now take an important leap. Up to this point, our mathematics has been limited to geometry and algebra (finding areas and manipulating expressions). Now we apply <em class="emphasis">calculus</em>. For any <em class="emphasis">finite</em> <span class="process-math">\(n\text{,}\)</span> we know that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^4 (4x-x^2)\, dx \approx \frac{32}{3}\left(1-\frac{1}{n^2}\right)\text{.}
+\end{equation*}
+</div>
+<p id="p-4615">Both common sense and high-level mathematics tell us that as <span class="process-math">\(n\)</span> gets large, the approximation gets better. In fact, if we take the <em class="emphasis">limit</em> as <span class="process-math">\(n\rightarrow \infty\text{,}\)</span> we get the <em class="emphasis">exact area</em> described by <span class="process-math">\(\int_0^4 (4x-x^2)\, dx\text{.}\)</span> That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-163">
+\begin{align*}
+\int_0^4 (4x-x^2)\, dx \amp = \lim_{n\rightarrow \infty} \frac{32}{3}\left(1-\frac{1}{n^2}\right)\\
+\amp = \frac{32}{3}\left(1-0\right)\\
+\amp = \frac{32}{3} = 10.\overline{6}
+\end{align*}
+</div>
+<p id="p-4616">This is a fantastic result. By considering <span class="process-math">\(n\)</span> equally-spaced subintervals, we obtained a formula for an approximation of the definite integral that involved our variable <span class="process-math">\(n\text{.}\)</span> As <span class="process-math">\(n\)</span> grows large — without bound — the error shrinks to zero and we obtain the exact area.</p>
+</div></div>
+</div></article><p id="p-4617">This section started with a fundamental calculus technique: make an approximation, refine the approximation to make it better, then use limits in the refining process to get an exact answer. That is precisely what we just did.</p>
+<p id="p-4618">Let's practice this again.</p>
+<article class="example example-like" id="ex_rie10"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.24</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating definite integrals with a formula, using sums.</span>
+</h4>
+<p id="p-4619">Find a formula that approximates <span class="process-math">\(\int_{-1}^5 x^3\, dx\)</span> using the Right Hand Rule and <span class="process-math">\(n\)</span> equally spaced subintervals, then take the limit as <span class="process-math">\(n\to\infty\)</span> to find the exact area.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-278" id="solution-278"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-278"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid_int_rie_ex_lim" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/yvWSszI0Xvc?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-4620">Following <a href="" class="xref" data-knowl="./knowl/idea_riemann.html" title="Key Idea 5.3.20: Riemann Sum Concepts">Key Idea 5.3.20</a>, we have <span class="process-math">\(\Delta x = \frac{5-(-1)}{n} = 6/n\text{.}\)</span> We have <span class="process-math">\(x_i = (-1) + i\Delta x\text{,}\)</span> which is the right endpoint of the <span class="process-math">\(i\)</span>th subinterval.</p>
+<p id="p-4621">The Riemann sum corresponding to the Right Hand Rule is (followed by simplifications):</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-164">
+\begin{align*}
+\int_{-1}^5 x^3\, dx   \amp \approx \sum_{i=1}^n f(x_{i})\Delta x\\
+\amp = \sum_{i=1}^n f(-1+i\Delta x)\Delta x\\
+\amp = \sum_{i=1}^n (-1+i\Delta x)^3\Delta x\\
+\amp = \sum_{i=1}^n \big((i\Delta x)^3 -3(i\Delta x)^2 + 3i\Delta x -1\big)\Delta x  \text{ (now distribute \(\Delta x\)) }\\
+\amp = \sum_{i=1}^n \big(i^3\Delta x^4 - 3i^2\Delta x^3 + 3i\Delta x^2 -\Delta x\big)  \text{ (now split up summation) }\\
+\amp = \Delta x^4 \sum_{i=1}^ni^3 -3\Delta x^3 \sum_{i=1}^n i^2+ 3\Delta x^2 \sum_{i=1}^n i - \sum_{i=1}^n \Delta x\\
+\amp = \Delta x^4 \left(\frac{n(n+1)}{2}\right)^2 -3\Delta x^3 \frac{n(n+1)(2n+1)}{6}+ 3\Delta x^2 \frac{n(n+1)}{2} - n\Delta x\\
+\end{align*}
+<p class="intertext">(use <span class="process-math">\(\Delta x = 6/n\)</span>)</p>
+\begin{align*}
+\amp = \frac{1296}{n^4}\cdot\frac{n^2(n+1)^2}{4} - 3\frac{216}{n^3}\cdot\frac{n(n+1)(2n+1)}{6} + 3\frac{36}{n^2}\frac{n(n+1)}2 -6\\
+\end{align*}
+<p class="intertext">(now do a sizable amount of algebra to simplify)</p>
+\begin{align*}
+\amp =156 + \frac{378}n + \frac{216}{n^2}
+\end{align*}
+</div>
+<p id="p-4622">Once again, we have found a compact formula for approximating the definite integral with <span class="process-math">\(n\)</span> equally spaced subintervals and the Right Hand Rule. Using 10 subintervals, we have an approximation of <span class="process-math">\(195.96\)</span> (these rectangles are shown in <a href="" class="xref" data-knowl="./knowl/fig_rie9.html" title="Figure 5.3.25">Figure 5.3.25</a>). Using <span class="process-math">\(n=100\)</span> gives an approximation of <span class="process-math">\(159.802\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig_rie9"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_rie9.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.25<span class="period">.</span></span><span class="space"> </span>Approximating <span class="process-math">\(\int_{-1}^5 x^3\, dx\)</span> using the Right Hand Rule and 10 evenly spaced subintervals</figcaption></figure><p id="p-4623">Now find the exact answer using a limit:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{-1}^5 x^3\, dx = \lim_{n\to\infty} \left(156 + \frac{378}n + \frac{216}{n^2}\right) = 156\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.3</span> <span class="title">Limits of Riemann Sums</span>
+</h3>
+<p id="p-4624">We have used limits to evaluate given definite integrals. Will this always work? It can be shown, given not-very-restrictive conditions, that yes, it will always work — this is the content of <a href="" class="xref" data-knowl="./knowl/thm_riemann_sum.html" title="Theorem 5.3.26: Definite Integrals and the Limit of Riemann Sums">Theorem 5.3.26</a> below.</p>
+<p id="p-4625">The previous two examples demonstrated how an expression such as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{i=1}^n f(x_{i})\Delta x
+\end{equation*}
+</div>
+<p class="continuation">can be rewritten as an expression explicitly involving <span class="process-math">\(n\text{,}\)</span> such as <span class="process-math">\(32/3(1-1/n^2)\text{.}\)</span></p>
+<p id="p-4626">Viewed in this manner, we can think of the summation as a function of <span class="process-math">\(n\text{.}\)</span> An <span class="process-math">\(n\)</span> value is given (where <span class="process-math">\(n\)</span> is a positive integer), and the sum of areas of <span class="process-math">\(n\)</span> equally spaced rectangles is returned, using the Left Hand, Right Hand, or Midpoint Rules.</p>
+<p id="p-4627">Given a definite integral <span class="process-math">\(\int_a^b f(x)\, dx\text{,}\)</span> let:</p>
+<ul id="p-4628" class="disc">
+<li id="li-1081"><p id="p-4629"><span class="process-math">\(\ds S_L(n) = \sum_{i=1}^n f(x_{i-1})\Delta x\text{,}\)</span> the sum of equally spaced rectangles formed using the Left Hand Rule,</p></li>
+<li id="li-1082"><p id="p-4630"><span class="process-math">\(\ds S_R(n) = \sum_{i=1}^n f(x_{i})\Delta x\text{,}\)</span> the sum of equally spaced rectangles formed using the Right Hand Rule, and</p></li>
+<li id="li-1083"><p id="p-4631"><span class="process-math">\(\ds S_M(n) = \sum_{i=1}^n f\left(\frac{x_{i-1}+x_{i}}{2}\right)\Delta x\text{,}\)</span> the sum of equally spaced rectangles formed using the Midpoint Rule.</p></li>
+</ul>
+<p id="p-4632">Recall the definition of a limit as <span class="process-math">\(n\to\infty\text{:}\)</span> <span class="process-math">\(\lim\limits_{n\to\infty}S_L(n) = K\)</span> if, given any <span class="process-math">\(\varepsilon \gt 0\text{,}\)</span> there exists <span class="process-math">\(N \gt 0\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\abs{S_L(n)-K} \lt  \varepsilon  \text{ when }  n\geq N\text{.}
+\end{equation*}
+</div>
+<p id="p-4633">The following theorem states that we can use any of our three rules to find the exact value of a definite integral <span class="process-math">\(\int_a^b f(x)\, dx\text{.}\)</span> It also goes two steps further. The theorem states that the height of each rectangle doesn't have to be determined following a specific rule, but could be <span class="process-math">\(f(c_i)\text{,}\)</span> where <span class="process-math">\(c_i\)</span> is any point in the <span class="process-math">\(i\)</span>th subinterval, as discussed before Riemann Sums were defined in <a href="" class="xref" data-knowl="./knowl/def_rie_sum.html" title="Definition 5.3.17: Riemann Sum">Definition 5.3.17</a>.</p>
+<p id="p-4634">The theorem goes on to state that the rectangles do not need to be of the same width. Using the notation of <a href="" class="xref" data-knowl="./knowl/def_partition.html" title="Definition 5.3.15: Partition">Definition 5.3.15</a>, let <span class="process-math">\(\Delta x_i\)</span> denote the length of the <span class="process-math">\(i\)</span>th subinterval in a partition of <span class="process-math">\([a,b]\)</span> and let <span class="process-math">\(\norm{\Delta x}\)</span> represent the length of the largest subinterval in the partition: that is, <span class="process-math">\(\norm{\Delta x}\)</span> is the largest of all the <span class="process-math">\(\Delta x_i\text{.}\)</span> If <span class="process-math">\(\norm{\Delta x}\)</span> is small, then <span class="process-math">\([a,b]\)</span> must be partitioned into many subintervals, since all subintervals must have small lengths. “Taking the limit as <span class="process-math">\(\norm{\Delta x}\)</span> goes to zero” implies that the number <span class="process-math">\(n\)</span> of subintervals in the partition is growing to infinity, as the largest subinterval length is becoming arbitrarily small. We then interpret the expression</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_partition.html">
+\begin{equation*}
+\lim_{\norm{\Delta x}\to 0}\sum_{i=1}^nf(c_i)\Delta x_i
+\end{equation*}
+</div>
+<p class="continuation">as “the limit of the sum of the areas of rectangles, where the width of each rectangle can be different but getting small, and the height of each rectangle is not necessarily determined by a particular rule.” The theorem states that this Riemann Sum also gives the value of the definite integral of <span class="process-math">\(f\)</span> over <span class="process-math">\([a,b]\text{.}\)</span></p>
+<aside class="aside aside-like" id="aside-27"><p id="p-4635">One of the things <a href="" class="xref" data-knowl="./knowl/thm_riemann_sum.html" title="Theorem 5.3.26: Definite Integrals and the Limit of Riemann Sums">Theorem 5.3.26</a> tells us is that if <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([a,b]\text{,}\)</span> then the definite integral <span class="process-math">\(\int_a^b f(x)\,dx\)</span> is guaranteed to exist.</p>
+<p id="p-4636">Knowing that every continuous function can be integrated is useful, since most of the functions we work with are continuous. However, it turns out that a function can be integrated even if it has a finite number of discontinuities, as long as these are removable or jump discontinuities.</p></aside><article class="theorem theorem-like" id="thm_riemann_sum"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.3.26</span><span class="period">.</span><span class="space"> </span><span class="title">Definite Integrals and the Limit of Riemann Sums.</span>
+</h4>
+<p id="p-4637">Let <span class="process-math">\(f\)</span> be continuous on the closed interval <span class="process-math">\([a,b]\)</span> and let <span class="process-math">\(S_L(n)\text{,}\)</span> <span class="process-math">\(S_R(n)\text{,}\)</span> <span class="process-math">\(S_M(n)\text{,}\)</span> <span class="process-math">\(\Delta x\text{,}\)</span> <span class="process-math">\(\Delta x_i\)</span> and <span class="process-math">\(c_i\)</span> be defined as before. Then: </p>
+<ol id="p-4638" class="decimal">
+<li id="li-1084"><p id="p-derived-li-1084"><span class="process-math">\(\displaystyle \begin{aligned}\lim_{n\to\infty} S_L(n) \amp = \lim_{n\to\infty} S_R(n)\\
+\amp = \lim_{n\to\infty} S_M(n)\\
+\amp = \lim_{n\to\infty}\sum_{i=1}^n f(c_i)\Delta x\end{aligned}\)</span></p></li>
+<li id="li-1085"><p id="p-derived-li-1085"><span class="process-math">\(\displaystyle \ds \lim_{n\to\infty}\sum_{i=1}^n f(c_i)\Delta x = \int_a^b f(x)\, dx\)</span></p></li>
+<li id="li-1086"><p id="p-derived-li-1086"><span class="process-math">\(\displaystyle \lim_{\norm{\Delta x}\to 0} \sum_{i=1}^n f(c_i)\Delta x_i = \int_a^b f(x)\, dx\)</span></p></li>
+</ol></article><figure class="figure figure-like" id="vid_int_rie_lim_rie_sum_def_int"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-173" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/A-WLvclVMC0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.27<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_riemann_sum.html" title="Theorem 5.3.26: Definite Integrals and the Limit of Riemann Sums">Theorem 5.3.26</a></figcaption></figure><p id="p-4639">We summarize what we have learned over the past few sections here.</p>
+<ul id="p-4640" class="disc">
+<li id="li-1087"><p id="p-4641">Knowing the “area under the curve” can be useful. One common example: the area under a velocity curve is displacement.</p></li>
+<li id="li-1088"><p id="p-4642">We have defined the definite integral, <span class="process-math">\(\int_a^b f(x)\, dx\text{,}\)</span> to be the signed area under <span class="process-math">\(f\)</span> on the interval <span class="process-math">\([a,b]\text{.}\)</span></p></li>
+<li id="li-1089"><p id="p-4643">While we can approximate a definite integral many ways, we have focused on using rectangles whose heights can be determined using the Left Hand Rule, the Right Hand Rule and the Midpoint Rule.</p></li>
+<li id="li-1090"><p id="p-4644">Sums of rectangles of this type are called Riemann sums.</p></li>
+<li id="li-1091"><p id="p-4645">The exact value of the definite integral can be computed using the limit of a Riemann sum. We generally use one of the above methods as it makes the algebra simpler.</p></li>
+</ul>
+<p id="p-4646">We first learned of derivatives through limits then learned rules that made the process simpler. We know of a way to evaluate a definite integral using limits; in the next section we will see how the Fundamental Theorem of Calculus makes the process simpler. The key feature of this theorem is its connection between the indefinite integral and the definite integral.</p></section><section class="exercises" id="exercises-25"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.3.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-62"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-786"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-721" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="721" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ2xpbWl0cyc9Pnt9KTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ2xpbWl0Jz0+e2FsaWFzPT4nbGltaXRzJ30pOwoKQkVHSU5fUEdNTApBIGZ1bmRhbWVudGFsIGNhbGN1bHVzIHRlY2huaXF1ZSBpcyB0byB1c2UgW19deydsaW1pdHMnfXsxMH0gdG8gcmVmaW5lIGFwcHJveGltYXRpb25zIHRvIGdldCBhbiBleGFjdCBhbnN3ZXIuCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4647">A fundamental calculus technique is to use <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> to refine approximations to get an exact answer.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-721')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-787"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-722" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="722" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxiID0gcmFuZG9tKDIsOSwxKTsKJHViID0gcmFuZG9tKDEyLDIwLDEpOwokbSA9IHJhbmRvbSgzMCw2MCwxKTsKJGIgPSBub25femVyb19yYW5kb20oLTMwMCwzMDAsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRsYj03OyR1Yj0xNDskbT00ODskYj0tMjAxO307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoaT0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhKCIkbSBpICsgJGIiKS0+cmVkdWNlOwoKQkVHSU5fUEdNTApXaGF0IGlzIHRoZSB1cHBlciBib3VuZCBpbiB0aGUgc3VtbWF0aW9uIFtgXHN1bVxsaW1pdHNfe2k9WyRsYl19XntbJHViXX0gKFskZl0pXHRleHR7P31gXQoKW19deyR1Yn17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4649">What is the upper bound in the summation <span class="process-math">\(\sum\limits_{i=9}^{12} ({53i-232})\text{?}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-722')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-788"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-723" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="723" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgpLT5zdHJpbmdzLT5hZGQoJ3JlY3RhbmdsZXMnPT57fSk7CkNvbnRleHQoKS0+c3RyaW5ncy0+YWRkKCdyZWN0YW5nbGUnPT57YWxpYXM9PidyZWN0YW5nbGVzJ30pOwoKQkVHSU5fUEdNTApUaGlzIHNlY3Rpb24gYXBwcm94aW1hdGVzIGRlZmluaXRlIGludGVncmFscyB1c2luZyB3aGF0IGdlb21ldHJpYyBzaGFwZT8KCltfXXsncmVjdGFuZ2xlcyd9ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4651">This section approximates definite integrals using what geometric shape?</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-723')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-789"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-724" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="724" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJQb3BVcC5wbCIsInBhcnNlclZlY3RvclV0aWxzLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJ1ZT1Qb3BVcChbJz8nLCdUcnVlJywnRmFsc2UnXSwxKTsKJGZhbHNlPVBvcFVwKFsnPycsJ1RydWUnLCdGYWxzZSddLDIpOwoKQkVHSU5fUEdNTApbX117JHRydWV9ezV9IEEgc3VtIHVzaW5nIHRoZSBSaWdodCBIYW5kIFJ1bGUgaXMgYW4gZXhhbXBsZSBvZiBhIFJpZW1hbm4gU3VtLgoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4653"><ul style="list-style:circle;">
+<li id="li-1093"><p id="p-4655">True</p></li>
+<li id="li-1094"><p id="p-4656">False</p></li>
+</ul> A sum using the Right Hand Rule is an example of a Riemann Sum.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-724')">Make Interactive</button></div>
+</div></article></article><article class="subexercises" id="subexercises-63"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-82">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-94"><p id="p-4658">Write out each term of the summation and compute the sum.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-790"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<div id="webwork-725" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="725" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsImJpemFycm9Bcml0aG1ldGljLnBsIiwiQW5zd2VyRm9ybWF0SGVscC5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGb3JtLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsYiA9IHJhbmRvbSgyLDUsMSk7CiR1YiA9ICRsYiArIHJhbmRvbSgyLDMsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRsYj0yOyR1Yj00O307CkBpID0gKCRsYi4uJHViKTsKQGZpID0gbWFweyRfKioyfShAaSk7CiRzdHJpbmcgPSBqb2luKCcrJyxAZmkpOwokc3VtID0gUmVhbCgkc3RyaW5nKTsKQ29udGV4dCgiRm9ybSIpOwpDb250ZXh0KCktPm9wZXJhdG9ycy0+c2V0KAogICcrJyA9PiB7Y2xhc3MgPT4gJ2JpemFycm86OkJPUDo6YWRkJywgaXNDb21tYW5kID0+IDF9LAogICctJyA9PiB7Y2xhc3MgPT4gJ2JpemFycm86OkJPUDo6c3VidHJhY3QnLCBpc0NvbW1hbmQgPT4gMX0sCik7CiR0ZXJtcyA9IEZvcm11bGEoIiRzdHJpbmciKTsKCkJFR0lOX1BHTUwKW2Bcc3VtXGxpbWl0c197aT1bJGxiXX1ee1skdWJdfSBpXjJgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIHN1bSBvZiB0ZXJtcyBoZXJlLiBGb3IgZXhhbXBsZSwgW3wxKzIrM3xdKi4nKUBdKioKCltfXXskdGVybXN9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGFjdHVhbCBzdW0gaGVyZS4nKUBdKioKCltfXXskc3VtfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4659"><span class="process-math">\(\sum\limits_{i=3}^{5} i^2\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-725')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-791"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<div id="webwork-726" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="726" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsImJpemFycm9Bcml0aG1ldGljLnBsIiwiQW5zd2VyRm9ybWF0SGVscC5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGb3JtLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsYiA9IHJhbmRvbSgtMywtMSwxKTsKJHViID0gcmFuZG9tKDEsMywxKTsKJG0gPSByYW5kb20oMiw1LDEpOwokYiA9IG5vbl96ZXJvX3JhbmRvbSgtMywzLDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskbGI9LTE7JHViPTM7JG09NDskYj0tMjt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKGk9PidSZWFsJyk7CiRmID0gRm9ybXVsYSgiJG0gaSArICRiIiktPnJlZHVjZTsKQGkgPSAoJGxiLi4kdWIpOwpAZmkgPSBtYXB7JG0qJF8gKyAkYn0oQGkpOwokc3RyaW5nID0gam9pbignKycsQGZpKTsKJHN1bSA9IFJlYWwoJHN0cmluZyk7CkNvbnRleHQoIkZvcm0iKTsKQ29udGV4dCgpLT5vcGVyYXRvcnMtPnNldCgKICAnKycgPT4ge2NsYXNzID0+ICdiaXphcnJvOjpCT1A6OmFkZCcsIGlzQ29tbWFuZCA9PiAxfSwKICAnLScgPT4ge2NsYXNzID0+ICdiaXphcnJvOjpCT1A6OnN1YnRyYWN0JywgaXNDb21tYW5kID0+IDF9LAopOwokdGVybXMgPSBGb3JtdWxhKCIkc3RyaW5nIik7CgpCRUdJTl9QR01MCltgXHN1bVxsaW1pdHNfe2k9WyRsYl19XntbJHViXX0gXGxlZnQoWyRmXVxyaWdodClgXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIHN1bSBvZiB0ZXJtcyBoZXJlLiBGb3IgZXhhbXBsZSwgW3wxKzIrM3xdKi4nKUBdKioKCltfXXskdGVybXN9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGFjdHVhbCBzdW0gaGVyZS4nKUBdKioKCltfXXskc3VtfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4662"><span class="process-math">\(\sum\limits_{i=-2}^{3} \left({3i-3}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-726')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-792"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div id="webwork-727" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="727" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsImJpemFycm9Bcml0aG1ldGljLnBsIiwiQW5zd2VyRm9ybWF0SGVscC5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGb3JtLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsYiA9IHJhbmRvbSgtMywtMSwxKTsKJHViID0gcmFuZG9tKDEsMywxKTsKJHRyaWcgPSBsaXN0X3JhbmRvbSgnc2luJywnY29zJyk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRsYj0tMjskdWI9MjskdHJpZz0nc2luJzt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKGk9PidSZWFsJyk7CiRmID0gRm9ybXVsYSgic2luKHBpIGkgLzIpIiktPnJlZHVjZTsKQGkgPSAoJGxiLi4kdWIpOwpAZmkgPSBtYXB7JGYtPmV2YWwoaT0+JF8pfShAaSk7CiRzdHJpbmcgPSBqb2luKCcrJyxAZmkpOwokc3VtID0gUmVhbCgkc3RyaW5nKTsKQ29udGV4dCgiRm9ybSIpOwpDb250ZXh0KCktPm9wZXJhdG9ycy0+c2V0KAogICcrJyA9PiB7Y2xhc3MgPT4gJ2JpemFycm86OkJPUDo6YWRkJywgaXNDb21tYW5kID0+IDF9LAogICctJyA9PiB7Y2xhc3MgPT4gJ2JpemFycm86OkJPUDo6c3VidHJhY3QnLCBpc0NvbW1hbmQgPT4gMX0sCik7CiR0ZXJtcyA9IEZvcm11bGEoIiRzdHJpbmciKTsKCkJFR0lOX1BHTUwKW2Bcc3VtXGxpbWl0c197aT1bJGxiXX1ee1skdWJdfSBbJGZdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBzdW0gb2YgdGVybXMgaGVyZS4gRm9yIGV4YW1wbGUsIFt8MSsyKzN8XSouJylAXSoqCgpbX117JHRlcm1zfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBhY3R1YWwgc3VtIGhlcmUuJylAXSoqCgpbX117JHN1bX17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4665"><span class="process-math">\(\sum\limits_{i=-2}^{2} {\sin\!\left(\frac{\pi i}{2}\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-727')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-793"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div id="webwork-728" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="728" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsImJpemFycm9Bcml0aG1ldGljLnBsIiwiQW5zd2VyRm9ybWF0SGVscC5wbCIsIlBHY2hvaWNlbWFjcm9zLnBsIiwiUENDbWFjcm9zLnBsIiwiY29udGV4dEZvcm0ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxiID0gMTsKKCR1YiwkYykgPSAoNS4uMTApW05jaG9vc2VLKDUsMildOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskdWI9MTA7JGM9NTt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKGk9PidSZWFsJyk7CiRmID0gRm9ybXVsYSgiJGMiKS0+cmVkdWNlOwpAaSA9ICgkbGIuLiR1Yik7CkBmaSA9IG1hcHskZi0+ZXZhbChpPT4kXyl9KEBpKTsKJHN0cmluZyA9IGpvaW4oJysnLEBmaSk7CiRzdW0gPSBSZWFsKCRzdHJpbmcpOwpDb250ZXh0KCJGb3JtIik7CkNvbnRleHQoKS0+b3BlcmF0b3JzLT5zZXQoCiAgJysnID0+IHtjbGFzcyA9PiAnYml6YXJybzo6Qk9QOjphZGQnLCBpc0NvbW1hbmQgPT4gMX0sCiAgJy0nID0+IHtjbGFzcyA9PiAnYml6YXJybzo6Qk9QOjpzdWJ0cmFjdCcsIGlzQ29tbWFuZCA9PiAxfSwKKTsKJHRlcm1zID0gRm9ybXVsYSgiJHN0cmluZyIpOwoKQkVHSU5fUEdNTApbYFxzdW1cbGltaXRzX3tpPVskbGJdfV57WyR1Yl19IFskZl1gXQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIHN1bSBvZiB0ZXJtcyBoZXJlLiBGb3IgZXhhbXBsZSwgW3wxKzIrM3xdKi4nKUBdKioKCltfXXskdGVybXN9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGFjdHVhbCBzdW0gaGVyZS4nKUBdKioKCltfXXskc3VtfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4668"><span class="process-math">\(\sum\limits_{i=1}^{8} {5}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-728')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-794"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div id="webwork-729" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="729" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsImJpemFycm9Bcml0aG1ldGljLnBsIiwiQW5zd2VyRm9ybWF0SGVscC5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsImNvbnRleHRGb3JtLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsYiA9IDE7CiR1YiA9IHJhbmRvbSg0LDYsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyR1Yj01O307CkNvbnRleHQoIkZyYWN0aW9uIik7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoaT0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhKCIxL2kiKS0+cmVkdWNlOwpAaSA9ICgkbGIuLiR1Yik7CkBmaSA9IG1hcHtGcmFjdGlvbigkZi0+ZXZhbChpPT4kXykpfShAaSk7CiRzdHJpbmcgPSBqb2luKCcrJyxAZmkpOwokc3VtID0gRnJhY3Rpb24oJHN0cmluZyk7CkNvbnRleHQoIkZvcm0iKTsKQ29udGV4dCgpLT5vcGVyYXRvcnMtPnNldCgKICAnKycgPT4ge2NsYXNzID0+ICdiaXphcnJvOjpCT1A6OmFkZCcsIGlzQ29tbWFuZCA9PiAxfSwKICAnLScgPT4ge2NsYXNzID0+ICdiaXphcnJvOjpCT1A6OnN1YnRyYWN0JywgaXNDb21tYW5kID0+IDF9LAopOwokdGVybXMgPSBGb3JtdWxhKCIkc3RyaW5nIik7CgpCRUdJTl9QR01MCltgXHN1bVxsaW1pdHNfe2k9WyRsYl19XntbJHViXX0gWyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgc3VtIG9mIHRlcm1zIGhlcmUuIEZvciBleGFtcGxlLCBbfDErMiszfF0qLicpQF0qKgoKW19deyR0ZXJtc317MjB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgYWN0dWFsIHN1bSBoZXJlLicpQF0qKgoKW19deyRzdW19ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4671"><span class="process-math">\(\sum\limits_{i=1}^{6} {\frac{1}{i}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-729')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-795"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div id="webwork-730" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="730" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsImJpemFycm9Bcml0aG1ldGljLnBsIiwiQW5zd2VyRm9ybWF0SGVscC5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGb3JtLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsYiA9IDE7CiR1YiA9IHJhbmRvbSg0LDgsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyR1Yj02O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoaT0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhKCIoLTEpXmkgaSIpLT5yZWR1Y2U7CkBpID0gKCRsYi4uJHViKTsKQGZpID0gbWFweyRmLT5ldmFsKGk9PiRfKX0oQGkpOwokc3RyaW5nID0gam9pbignKycsQGZpKTsKJHN1bSA9IFJlYWwoJHN0cmluZyk7CkNvbnRleHQoIkZvcm0iKTsKQ29udGV4dCgpLT5vcGVyYXRvcnMtPnNldCgKICAnKycgPT4ge2NsYXNzID0+ICdiaXphcnJvOjpCT1A6OmFkZCcsIGlzQ29tbWFuZCA9PiAxfSwKICAnLScgPT4ge2NsYXNzID0+ICdiaXphcnJvOjpCT1A6OnN1YnRyYWN0JywgaXNDb21tYW5kID0+IDF9LAopOwokdGVybXMgPSBGb3JtdWxhKCIkc3RyaW5nIik7CgpCRUdJTl9QR01MCltgXHN1bVxsaW1pdHNfe2k9WyRsYl19XntbJHViXX0gWyRmXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgc3VtIG9mIHRlcm1zIGhlcmUuIEZvciBleGFtcGxlLCBbfDErMiszfF0qLicpQF0qKgoKW19deyR0ZXJtc317MjB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgYWN0dWFsIHN1bSBoZXJlLicpQF0qKgoKW19deyRzdW19ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4674"><span class="process-math">\(\sum\limits_{i=1}^{8} {\left(-1\right)^{i}i}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-730')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-796"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<div id="webwork-731" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="731" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsImJpemFycm9Bcml0aG1ldGljLnBsIiwiQW5zd2VyRm9ybWF0SGVscC5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsImNvbnRleHRGb3JtLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsYiA9IDE7CiR1YiA9IHJhbmRvbSgzLDUsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyR1Yj00O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoaT0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhKCIxL2kgLSAxLyhpKzEpIiktPnJlZHVjZTsKQGkgPSAoJGxiLi4kdWIpOwpDb250ZXh0KCJGcmFjdGlvbiIpOwpAZmkgPSBtYXB7RnJhY3Rpb24oJGYtPmV2YWwoaT0+JF8pKX0oQGkpOwokc3RyaW5nID0gam9pbignKycsQGZpKTsKJHN1bSA9IEZyYWN0aW9uKCRzdHJpbmcpOwpDb250ZXh0KCJGb3JtIik7CkNvbnRleHQoKS0+b3BlcmF0b3JzLT5zZXQoCiAgJysnID0+IHtjbGFzcyA9PiAnYml6YXJybzo6Qk9QOjphZGQnLCBpc0NvbW1hbmQgPT4gMX0sCiAgJy0nID0+IHtjbGFzcyA9PiAnYml6YXJybzo6Qk9QOjpzdWJ0cmFjdCcsIGlzQ29tbWFuZCA9PiAxfSwKKTsKJHRlcm1zID0gRm9ybXVsYSgiJHN0cmluZyIpOwoKQkVHSU5fUEdNTApbYFxzdW1cbGltaXRzX3tpPVskbGJdfV57WyR1Yl19IFxsZWZ0KFskZl1ccmlnaHQpYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBzdW0gb2YgdGVybXMgaGVyZS4gRm9yIGV4YW1wbGUsIFt8MSsyKzN8XSouJylAXSoqCgpbX117JHRlcm1zfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBhY3R1YWwgc3VtIGhlcmUuJylAXSoqCgpbX117JHN1bX17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4677"><span class="process-math">\(\sum\limits_{i=1}^{5} \left({\frac{1}{i}-\frac{1}{i+1}}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-731')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-797"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div id="webwork-732" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="732" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsImJpemFycm9Bcml0aG1ldGljLnBsIiwiQW5zd2VyRm9ybWF0SGVscC5wbCIsIlBDQ21hY3Jvcy5wbCIsImNvbnRleHRGb3JtLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CiRsYiA9IHJhbmRvbSgwLDEsMSk7CiR1YiA9IHJhbmRvbSg0LDYsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRsYj0wOyR1Yj01O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoaT0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhKCIoLTEpXmkgY29zKHBpIGkpIiktPnJlZHVjZTsKQGkgPSAoJGxiLi4kdWIpOwpAZmkgPSBtYXB7JGYtPmV2YWwoaT0+JF8pfShAaSk7CiRzdHJpbmcgPSBqb2luKCcrJyxAZmkpOwokc3VtID0gUmVhbCgkc3RyaW5nKTsKQ29udGV4dCgiRm9ybSIpOwpDb250ZXh0KCktPm9wZXJhdG9ycy0+c2V0KAogICcrJyA9PiB7Y2xhc3MgPT4gJ2JpemFycm86OkJPUDo6YWRkJywgaXNDb21tYW5kID0+IDF9LAogICctJyA9PiB7Y2xhc3MgPT4gJ2JpemFycm86OkJPUDo6c3VidHJhY3QnLCBpc0NvbW1hbmQgPT4gMX0sCik7CiR0ZXJtcyA9IEZvcm11bGEoIiRzdHJpbmciKTsKCkJFR0lOX1BHTUwKW2Bcc3VtXGxpbWl0c197aT1bJGxiXX1ee1skdWJdfSBbJGZdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBzdW0gb2YgdGVybXMgaGVyZS4gRm9yIGV4YW1wbGUsIFt8MSsyKzN8XSouJylAXSoqCgpbX117JHRlcm1zfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBhY3R1YWwgc3VtIGhlcmUuJylAXSoqCgpbX117JHN1bX17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4680"><span class="process-math">\(\sum\limits_{i=0}^{5} {\left(-1\right)^{i}\cos\!\left(\pi i\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-732')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-83">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-95"><p id="p-4683">Write the sum in summation notation.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-798"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div id="webwork-733" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="733" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJNdWx0aUFuc3dlci5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokbGIgPSAxOwokdWIgPSByYW5kb20oNCw2LDEpOwokbSA9IHJhbmRvbSgyLDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyR1Yj01OyRtPTM7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZShpPT4nUmVhbCcpOwokZiA9IEZvcm11bGEoIiRtIGkiKS0+cmVkdWNlOwpAaSA9ICgkbGIuLiR1Yik7CkBmaSA9IG1hcHskZi0+ZXZhbChpPT4kXyl9KEBpKTsKJHN0cmluZyA9IGpvaW4oJysnLEBmaSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjApOwokdGVybXMgPSBGb3JtdWxhKCIkc3RyaW5nIik7CiRtdWx0aWFucyA9IE11bHRpQW5zd2VyKCRsYiwgJHViLCAkZiktPndpdGgoCiAgc2luZ2xlUmVzdWx0ID0+IDEsCiAgY2hlY2tlciA9PiBzdWIgewogICAgICBteSAoICRjb3JyZWN0LCAkc3R1ZGVudCwgJHNlbGYgKSA9IEBfOwogICAgICBteSAoICRzdHVsYiwgJHN0dXViLCAkc3R1ZiApID0gQHskc3R1ZGVudH07CiAgICAgIG15ICggJGNvcmxiLCAkY29ydWIsICRjb3JmICkgPSBAeyRjb3JyZWN0fTsKICAgICAgaWYgKCRzdHV1YiAtICRzdHVsYiAhPSAkY29ydWIgLSAkY29ybGIpIHtWYWx1ZTo6RXJyb3IoIllvdXIgc3VtIGRvZXMgbm90IGhhdmUgdGhlIGNvcnJlY3QgbnVtYmVyIG9mIHRlcm1zIik7fTsKICAgICAgQHN0dWkgPSAoJHN0dWxiLi4kc3R1dWIpOwogICAgICBAc3R1ZmkgPSBtYXB7JHN0dWYtPmV2YWwoaT0+JF8pfShAc3R1aSk7CiAgICAgIEBjb3JpID0gKCRjb3JsYi4uJGNvcnViKTsKICAgICAgQGNvcmZpID0gbWFweyRjb3JmLT5ldmFsKGk9PiRfKX0oQGNvcmkpOwogICAgICAkc2NvcmUgPSAxOwogICAgICBmb3IgJGogKDAuLiQjY29yZmkpIHsKICAgICAgICBpZiAoJHN0dWZpWyRqXSAhPSAkY29yZmlbJGpdKSB7CiAgICAgICAgICAkc2NvcmUgPSAwOwogICAgICAgICAgbGFzdDsKICAgICAgICB9CiAgICAgIH0KICAgICAgcmV0dXJuICRzY29yZTsKICAgIH0KKTsKCkJFR0lOX1BHTUwKW2BbJHRlcm1zXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgc3VtIHdlcmUgaW4gc2lnbWEgbm90YXRpb24sIFtgXHN1bVxsaW1pdHNfe2k9XHRleHR7c3RhcnR9fV57XHRleHR7ZW5kfX0oXHRleHR7c3VtbWFuZCBleHByZXNzaW9ufSlcdGV4dHssfWBdIGVudGVyIHRoZSBzdGFydCB2YWx1ZSBoZXJlLicpQF0qKgoKW19deyRtdWx0aWFuc317MjB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgc3VtIHdlcmUgaW4gc2lnbWEgbm90YXRpb24sIFtgXHN1bVxsaW1pdHNfe2k9XHRleHR7c3RhcnR9fV57XHRleHR7ZW5kfX0oXHRleHR7c3VtbWFuZCBleHByZXNzaW9ufSlcdGV4dHssfWBdIGVudGVyIHRoZSBlbmQgdmFsdWUgaGVyZS4nKUBdKioKCltfXXskbXVsdGlhbnN9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIHN1bSB3ZXJlIGluIHNpZ21hIG5vdGF0aW9uLCBbYFxzdW1cbGltaXRzX3tpPVx0ZXh0e3N0YXJ0fX1ee1x0ZXh0e2VuZH19KFx0ZXh0e3N1bW1hbmQgZXhwcmVzc2lvbn0pXHRleHR7LH1gXSBlbnRlciB0aGUgc3VtbWFuZCBleHByZXNzaW9uIGhlcmUuJylAXSoqCgpbX117JG11bHRpYW5zfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4684"><span class="process-math">\({4+8+12+16}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-733')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-799"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div id="webwork-734" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="734" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJNdWx0aUFuc3dlci5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokbGIgPSAwOwokdWIgPSByYW5kb20oNSw5LDEpOwokYiA9IG5vbl96ZXJvX3JhbmRvbSgtMiwyLDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskdWI9ODskYj0tMTt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKGk9PidSZWFsJyk7CiRmID0gRm9ybXVsYSgiaV4yICsgJGIiKS0+cmVkdWNlOwpAaSA9ICgkbGIuLiR1Yik7CkBmaSA9IG1hcHskZi0+ZXZhbChpPT4kXyl9KEBpKTsKJHN0cmluZyA9IGpvaW4oJysnLEBmaSk7CkNvbnRleHQoKS0+ZmxhZ3MtPnNldChyZWR1Y2VDb25zdGFudHM9PjApOwokdGVybXMgPSBGb3JtdWxhKCIkc3RyaW5nIik7CiRtdWx0aWFucyA9IE11bHRpQW5zd2VyKCRsYiwgJHViLCAkZiktPndpdGgoCiAgc2luZ2xlUmVzdWx0ID0+IDEsCiAgY2hlY2tlciA9PiBzdWIgewogICAgICBteSAoICRjb3JyZWN0LCAkc3R1ZGVudCwgJHNlbGYgKSA9IEBfOwogICAgICBteSAoICRzdHVsYiwgJHN0dXViLCAkc3R1ZiApID0gQHskc3R1ZGVudH07CiAgICAgIG15ICggJGNvcmxiLCAkY29ydWIsICRjb3JmICkgPSBAeyRjb3JyZWN0fTsKICAgICAgaWYgKCRzdHV1YiAtICRzdHVsYiAhPSAkY29ydWIgLSAkY29ybGIpIHtWYWx1ZTo6RXJyb3IoIllvdXIgc3VtIGRvZXMgbm90IGhhdmUgdGhlIGNvcnJlY3QgbnVtYmVyIG9mIHRlcm1zIik7fTsKICAgICAgQHN0dWkgPSAoJHN0dWxiLi4kc3R1dWIpOwogICAgICBAc3R1ZmkgPSBtYXB7JHN0dWYtPmV2YWwoaT0+JF8pfShAc3R1aSk7CiAgICAgIEBjb3JpID0gKCRjb3JsYi4uJGNvcnViKTsKICAgICAgQGNvcmZpID0gbWFweyRjb3JmLT5ldmFsKGk9PiRfKX0oQGNvcmkpOwogICAgICAkc2NvcmUgPSAxOwogICAgICBmb3IgJGogKDAuLiQjY29yZmkpIHsKICAgICAgICBpZiAoJHN0dWZpWyRqXSAhPSAkY29yZmlbJGpdKSB7CiAgICAgICAgICAkc2NvcmUgPSAwOwogICAgICAgICAgbGFzdDsKICAgICAgICB9CiAgICAgIH0KICAgICAgcmV0dXJuICRzY29yZTsKICAgIH0KKTsKCkJFR0lOX1BHTUwKW2BbJHRlcm1zXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgc3VtIHdlcmUgaW4gc2lnbWEgbm90YXRpb24sIFtgXHN1bVxsaW1pdHNfe2k9XHRleHR7c3RhcnR9fV57XHRleHR7ZW5kfX0oXHRleHR7c3VtbWFuZCBleHByZXNzaW9ufSlcdGV4dHssfWBdIGVudGVyIHRoZSBzdGFydCB2YWx1ZSBoZXJlLicpQF0qKgoKW19deyRtdWx0aWFuc317MjB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgc3VtIHdlcmUgaW4gc2lnbWEgbm90YXRpb24sIFtgXHN1bVxsaW1pdHNfe2k9XHRleHR7c3RhcnR9fV57XHRleHR7ZW5kfX0oXHRleHR7c3VtbWFuZCBleHByZXNzaW9ufSlcdGV4dHssfWBdIGVudGVyIHRoZSBlbmQgdmFsdWUgaGVyZS4nKUBdKioKCltfXXskbXVsdGlhbnN9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIHN1bSB3ZXJlIGluIHNpZ21hIG5vdGF0aW9uLCBbYFxzdW1cbGltaXRzX3tpPVx0ZXh0e3N0YXJ0fX1ee1x0ZXh0e2VuZH19KFx0ZXh0e3N1bW1hbmQgZXhwcmVzc2lvbn0pXHRleHR7LH1gXSBlbnRlciB0aGUgc3VtbWFuZCBleHByZXNzaW9uIGhlcmUuJylAXSoqCgpbX117JG11bHRpYW5zfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4686"><span class="process-math">\({2+3+6+11+18+27+38}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-734')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-800"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div id="webwork-735" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="735" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJNdWx0aUFuc3dlci5wbCIsImNvbnRleHRGcmFjdGlvbi5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokbGIgPSAxOwokdWIgPSByYW5kb20oNCw2LDEpOwokYiA9IHJhbmRvbSgxLDUsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyR1Yj00OyRiPTE7fTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUZyYWN0aW9ucz0+MCk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoaT0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhKCJpLyhpKyRiKSIpLT5yZWR1Y2U7CkBpID0gKCRsYi4uJHViKTsKQGZpID0gbWFwe0ZyYWN0aW9uKCRfLCRfKyRiKX0oQGkpOwokc3RyaW5nID0gam9pbignKycsQGZpKTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50cz0+MCk7CiR0ZXJtcyA9IEZvcm11bGEoIiRzdHJpbmciKTsKJG11bHRpYW5zID0gTXVsdGlBbnN3ZXIoJGxiLCAkdWIsICRmKS0+d2l0aCgKICBzaW5nbGVSZXN1bHQgPT4gMSwKICBjaGVja2VyID0+IHN1YiB7CiAgICAgIG15ICggJGNvcnJlY3QsICRzdHVkZW50LCAkc2VsZiApID0gQF87CiAgICAgIG15ICggJHN0dWxiLCAkc3R1dWIsICRzdHVmICkgPSBAeyRzdHVkZW50fTsKICAgICAgbXkgKCAkY29ybGIsICRjb3J1YiwgJGNvcmYgKSA9IEB7JGNvcnJlY3R9OwogICAgICBpZiAoJHN0dXViIC0gJHN0dWxiICE9ICRjb3J1YiAtICRjb3JsYikge1ZhbHVlOjpFcnJvcigiWW91ciBzdW0gZG9lcyBub3QgaGF2ZSB0aGUgY29ycmVjdCBudW1iZXIgb2YgdGVybXMiKTt9OwogICAgICBAc3R1aSA9ICgkc3R1bGIuLiRzdHV1Yik7CiAgICAgIEBzdHVmaSA9IG1hcHskc3R1Zi0+ZXZhbChpPT4kXyl9KEBzdHVpKTsKICAgICAgQGNvcmkgPSAoJGNvcmxiLi4kY29ydWIpOwogICAgICBAY29yZmkgPSBtYXB7JGNvcmYtPmV2YWwoaT0+JF8pfShAY29yaSk7CiAgICAgICRzY29yZSA9IDE7CiAgICAgIGZvciAkaiAoMC4uJCNjb3JmaSkgewogICAgICAgIGlmICgkc3R1ZmlbJGpdICE9ICRjb3JmaVskal0pIHsKICAgICAgICAgICRzY29yZSA9IDA7CiAgICAgICAgICBsYXN0OwogICAgICAgIH0KICAgICAgfQogICAgICByZXR1cm4gJHNjb3JlOwogICAgfQopOwoKQkVHSU5fUEdNTApbYFskdGVybXNdYF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBzdW0gd2VyZSBpbiBzaWdtYSBub3RhdGlvbiwgW2Bcc3VtXGxpbWl0c197aT1cdGV4dHtzdGFydH19XntcdGV4dHtlbmR9fShcdGV4dHtzdW1tYW5kIGV4cHJlc3Npb259KVx0ZXh0eyx9YF0gZW50ZXIgdGhlIHN0YXJ0IHZhbHVlIGhlcmUuJylAXSoqCgpbX117JG11bHRpYW5zfXsyMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0lmIHRoZSBzdW0gd2VyZSBpbiBzaWdtYSBub3RhdGlvbiwgW2Bcc3VtXGxpbWl0c197aT1cdGV4dHtzdGFydH19XntcdGV4dHtlbmR9fShcdGV4dHtzdW1tYW5kIGV4cHJlc3Npb259KVx0ZXh0eyx9YF0gZW50ZXIgdGhlIGVuZCB2YWx1ZSBoZXJlLicpQF0qKgoKW19deyRtdWx0aWFuc317MjB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgc3VtIHdlcmUgaW4gc2lnbWEgbm90YXRpb24sIFtgXHN1bVxsaW1pdHNfe2k9XHRleHR7c3RhcnR9fV57XHRleHR7ZW5kfX0oXHRleHR7c3VtbWFuZCBleHByZXNzaW9ufSlcdGV4dHssfWBdIGVudGVyIHRoZSBzdW1tYW5kIGV4cHJlc3Npb24gaGVyZS4nKUBdKioKCltfXXskbXVsdGlhbnN9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4688"><span class="process-math">\({{\textstyle\frac{1}{4}}+{\textstyle\frac{2}{5}}+{\textstyle\frac{3}{6}}+{\textstyle\frac{4}{7}}+{\textstyle\frac{5}{8}}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-735')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-801"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div id="webwork-736" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="736" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJwYXJzZXJNdWx0aUFuc3dlci5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokbGIgPSBsaXN0X3JhbmRvbSgwLDEpOwokdWIgPSAkbGIgKyA0OwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskbGI9MDt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKGk9PidSZWFsJyk7CiRmID0gKCRsYiA9PSAwKSA/IEZvcm11bGEoIigtMSleaSIpIDogRm9ybXVsYSgiKC0xKV4oaSsxKSIpOwpAaSA9ICgkbGIuLiR1Yik7CkBmaSA9IG1hcHskZi0+ZXZhbChpPT4kXykgKiBGb3JtdWxhKCJlXiRfIil9KEBpKTsKJGYgPSAoJGxiID09IDApID8gRm9ybXVsYSgiKC1lKV5pIikgOiBGb3JtdWxhKCItKC1lKV5pIik7CiRzdHJpbmcgPSBqb2luKCcrJyxAZmkpOwpDb250ZXh0KCktPmZsYWdzLT5zZXQocmVkdWNlQ29uc3RhbnRzPT4wKTsKJHRlcm1zID0gRm9ybXVsYSgiJHN0cmluZyIpLT5yZWR1Y2U7CiRtdWx0aWFucyA9IE11bHRpQW5zd2VyKCRsYiwgJHViLCAkZiktPndpdGgoCiAgc2luZ2xlUmVzdWx0ID0+IDEsCiAgY2hlY2tlciA9PiBzdWIgewogICAgICBteSAoICRjb3JyZWN0LCAkc3R1ZGVudCwgJHNlbGYgKSA9IEBfOwogICAgICBteSAoICRzdHVsYiwgJHN0dXViLCAkc3R1ZiApID0gQHskc3R1ZGVudH07CiAgICAgIG15ICggJGNvcmxiLCAkY29ydWIsICRjb3JmICkgPSBAeyRjb3JyZWN0fTsKICAgICAgaWYgKCRzdHV1YiAtICRzdHVsYiAhPSAkY29ydWIgLSAkY29ybGIpIHtWYWx1ZTo6RXJyb3IoIllvdXIgc3VtIGRvZXMgbm90IGhhdmUgdGhlIGNvcnJlY3QgbnVtYmVyIG9mIHRlcm1zIik7fTsKICAgICAgQHN0dWkgPSAoJHN0dWxiLi4kc3R1dWIpOwogICAgICBAc3R1ZmkgPSBtYXB7JHN0dWYtPmV2YWwoaT0+JF8pfShAc3R1aSk7CiAgICAgIEBjb3JpID0gKCRjb3JsYi4uJGNvcnViKTsKICAgICAgQGNvcmZpID0gbWFweyRjb3JmLT5ldmFsKGk9PiRfKX0oQGNvcmkpOwogICAgICAkc2NvcmUgPSAxOwogICAgICBmb3IgJGogKDAuLiQjY29yZmkpIHsKICAgICAgICBpZiAoJHN0dWZpWyRqXSAhPSAkY29yZmlbJGpdKSB7CiAgICAgICAgICAkc2NvcmUgPSAwOwogICAgICAgICAgbGFzdDsKICAgICAgICB9CiAgICAgIH0KICAgICAgcmV0dXJuICRzY29yZTsKICAgIH0KKTsKCkJFR0lOX1BHTUwKW2BbJHRlcm1zXWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgc3VtIHdlcmUgaW4gc2lnbWEgbm90YXRpb24sIFtgXHN1bVxsaW1pdHNfe2k9XHRleHR7c3RhcnR9fV57XHRleHR7ZW5kfX0oXHRleHR7c3VtbWFuZCBleHByZXNzaW9ufSlcdGV4dHssfWBdIGVudGVyIHRoZSBzdGFydCB2YWx1ZSBoZXJlLicpQF0qKgoKW19deyRtdWx0aWFuc317MjB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdJZiB0aGUgc3VtIHdlcmUgaW4gc2lnbWEgbm90YXRpb24sIFtgXHN1bVxsaW1pdHNfe2k9XHRleHR7c3RhcnR9fV57XHRleHR7ZW5kfX0oXHRleHR7c3VtbWFuZCBleHByZXNzaW9ufSlcdGV4dHssfWBdIGVudGVyIHRoZSBlbmQgdmFsdWUgaGVyZS4nKUBdKioKCltfXXskbXVsdGlhbnN9ezIwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnSWYgdGhlIHN1bSB3ZXJlIGluIHNpZ21hIG5vdGF0aW9uLCBbYFxzdW1cbGltaXRzX3tpPVx0ZXh0e3N0YXJ0fX1ee1x0ZXh0e2VuZH19KFx0ZXh0e3N1bW1hbmQgZXhwcmVzc2lvbn0pXHRleHR7LH1gXSBlbnRlciB0aGUgc3VtbWFuZCBleHByZXNzaW9uIGhlcmUuJylAXSoqCgpbX117JG11bHRpYW5zfXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4690"><span class="process-math">\({1-e+e^{2}-e^{3}+e^{4}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-736')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-84">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-96"><p id="p-4692">Evaluate the summation using <a href="" class="xref" data-knowl="./knowl/thm_summation.html" title="Theorem 5.3.9: Properties of Summations">Theorem 5.3.9</a>.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-802"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div id="webwork-737" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="737" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokbGIgPSAxOwooJHViLCRjKSA9ICg1Li4xMClbTmNob29zZUsoNSwyKV07CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyR1Yj0xMDskYz01O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoaT0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhKCIkYyIpLT5yZWR1Y2U7CkBpID0gKCRsYi4uJHViKTsKQGZpID0gbWFweyRmLT5ldmFsKGk9PiRfKX0oQGkpOwokc3RyaW5nID0gam9pbignKycsQGZpKTsKJHN1bSA9IFJlYWwoJHN0cmluZyk7CgpCRUdJTl9QR01MCltgXHN1bVxsaW1pdHNfe2k9WyRsYl19XntbJHViXX0gWyRmXWBdCgpbX117JHN1bX17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4693"><span class="process-math">\(\sum\limits_{i=1}^{8} {9}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-737')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-803"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div id="webwork-738" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="738" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxiID0gMTsKJHViID0gcmFuZG9tKDIwLDMwLDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskdWI9MjU7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZShpPT4nUmVhbCcpOwokZiA9IEZvcm11bGEoImkiKS0+cmVkdWNlOwpAaSA9ICgkbGIuLiR1Yik7CkBmaSA9IG1hcHskZi0+ZXZhbChpPT4kXyl9KEBpKTsKJHN0cmluZyA9IGpvaW4oJysnLEBmaSk7CiRzdW0gPSBSZWFsKCRzdHJpbmcpOwoKQkVHSU5fUEdNTApbYFxzdW1cbGltaXRzX3tpPVskbGJdfV57WyR1Yl19IFskZl1gXQoKW19deyRzdW19ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4695"><span class="process-math">\(\sum\limits_{i=1}^{27} {i}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-738')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-804"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<div id="webwork-739" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="739" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxiID0gMTsKJHViID0gcmFuZG9tKDgsMTIsMSk7CiRhID0gcmFuZG9tKDIsNiwxKTsKJGIgPSBub25femVyb19yYW5kb20oLTQsNCwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JHViPTEwOyRhPTM7JGI9LTI7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZShpPT4nUmVhbCcpOwokZiA9IEZvcm11bGEoIiRhIGleMiArICRiIGkiKS0+cmVkdWNlOwpAaSA9ICgkbGIuLiR1Yik7CkBmaSA9IG1hcHskZi0+ZXZhbChpPT4kXyl9KEBpKTsKJHN0cmluZyA9IGpvaW4oJysnLEBmaSk7CiRzdW0gPSBSZWFsKCRzdHJpbmcpOwoKQkVHSU5fUEdNTApbYFxzdW1cbGltaXRzX3tpPVskbGJdfV57WyR1Yl19IFxsZWZ0KFskZl1ccmlnaHQpYF0KCltfXXskc3VtfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4697"><span class="process-math">\(\sum\limits_{i=1}^{12} \left({2i^{2}+3i}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-739')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-805"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div id="webwork-740" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="740" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxiID0gMTsKJHViID0gcmFuZG9tKDEyLDIwLDEpOwokYSA9IHJhbmRvbSgyLDYsMSk7CiRiID0gbm9uX3plcm9fcmFuZG9tKC0xMCwxMCwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JHViPTE1OyRhPTI7JGI9LTEwO307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoaT0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhKCIkYSBpXjMgKyAkYiIpLT5yZWR1Y2U7CkBpID0gKCRsYi4uJHViKTsKQGZpID0gbWFweyRmLT5ldmFsKGk9PiRfKX0oQGkpOwokc3RyaW5nID0gam9pbignKycsQGZpKTsKJHN1bSA9IFJlYWwoJHN0cmluZyk7CgpCRUdJTl9QR01MCltgXHN1bVxsaW1pdHNfe2k9WyRsYl19XntbJHViXX0gXGxlZnQoWyRmXVxyaWdodClgXQoKW19deyRzdW19ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4699"><span class="process-math">\(\sum\limits_{i=1}^{20} \left({6i^{3}-5}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-740')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-806"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div id="webwork-741" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="741" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokbGIgPSAxOwokdWIgPSByYW5kb20oOCwxMiwxKTsKKCRhLCRiLCRjLCRkKSA9ICgtMTIuLi0xLDEuLjEyKVtOY2hvb3NlSygyNCw0KV07CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyR1Yj0xMDskYT0tNDskYj0xMDskYz0tNzskZD0xMTt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKGk9PidSZWFsJyk7CkNvbnRleHQoKS0+bm9yZWR1Y2UoJygteCkreScsJygteCkteScpOwokZiA9IEZvcm11bGEoIiRhIGleMyArICRiIGleMiArICRjIGkgKyAkZCIpLT5yZWR1Y2U7CkBpID0gKCRsYi4uJHViKTsKQGZpID0gbWFweyRmLT5ldmFsKGk9PiRfKX0oQGkpOwokc3RyaW5nID0gam9pbignKycsQGZpKTsKJHN1bSA9IFJlYWwoJHN0cmluZyk7CgpCRUdJTl9QR01MCltgXHN1bVxsaW1pdHNfe2k9WyRsYl19XntbJHViXX0gXGxlZnQoWyRmXVxyaWdodClgXQoKW19deyRzdW19ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4701"><span class="process-math">\(\sum\limits_{i=1}^{8} \left({-i^{3}+5i^{2}+9i-7}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-741')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-807"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div id="webwork-742" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="742" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsIlBHY291cnNlLnBsIiwpO1RFWFQoYmVnaW5wcm9ibGVtKCkpOwokbGIgPSAxOwokdWIgPSByYW5kb20oOCwxMiwxKTsKKCRiLCRjLCRkKSA9ICgtOS4uLTEsMS4uOSlbTmNob29zZUsoMTgsMyldOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskdWI9MTA7JGI9LTM7JGM9MjskZD03O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoaT0+J1JlYWwnKTsKQ29udGV4dCgpLT5ub3JlZHVjZSgnKC14KSt5JywnKC14KS15Jyk7CiRmID0gRm9ybXVsYSgiaV4zICsgJGIgaV4yICsgJGMgaSArICRkIiktPnJlZHVjZTsKQGkgPSAoJGxiLi4kdWIpOwpAZmkgPSBtYXB7JGYtPmV2YWwoaT0+JF8pfShAaSk7CiRzdHJpbmcgPSBqb2luKCcrJyxAZmkpOwokc3VtID0gUmVhbCgkc3RyaW5nKTsKCkJFR0lOX1BHTUwKW2Bcc3VtXGxpbWl0c197aT1bJGxiXX1ee1skdWJdfSBcbGVmdChbJGZdXHJpZ2h0KWBdCgpbX117JHN1bX17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4703"><span class="process-math">\(\sum\limits_{i=1}^{8} \left({i^{3}-7i^{2}-8i+3}\right)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-742')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-808"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<div id="webwork-743" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="743" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxiID0gMTsKJHViID0gcmFuZG9tKDgwLDEyMCw1KTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JHViPTEwMDt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKGk9PidSZWFsJyk7CiRmID0gRm9ybXVsYSgiaSIpLT5yZWR1Y2U7CkBpID0gKCRsYi4uJHViKTsKQGZpID0gbWFweyRmLT5ldmFsKGk9PiRfKX0oQGkpOwokc3RyaW5nID0gam9pbignKycsQGZpKTsKJHN1bSA9IFJlYWwoJHN0cmluZyk7CiRwZW51bHRpbWF0ZSA9ICR1YiAtIDE7CgpCRUdJTl9QR01MCltgMSsyKzMrXGNkb3RzK1skcGVudWx0aW1hdGVdK1skdWJdYF0KCltfXXskc3VtfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4705"><span class="process-math">\(1+2+3+\cdots+89+90\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-743')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-809"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<div id="webwork-744" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="744" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxiID0gMTsKJHViID0gcmFuZG9tKDE2LDMwLDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskdWI9MjA7fTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZShpPT4nUmVhbCcpOwokZiA9IEZvcm11bGEoImleMiIpLT5yZWR1Y2U7CkBpID0gKCRsYi4uJHViKTsKQGZpID0gbWFweyRmLT5ldmFsKGk9PiRfKX0oQGkpOwokc3RyaW5nID0gam9pbignKycsQGZpKTsKJHN1bSA9IFJlYWwoJHN0cmluZyk7CiRsYXN0ID0gJHViKioyOwokcGVudWx0aW1hdGUgPSAoJHViIC0gMSkqKjI7CgpCRUdJTl9QR01MCltgMSs0KzkrXGNkb3RzK1skcGVudWx0aW1hdGVdK1skbGFzdF1gXQoKW19deyRzdW19ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4707"><span class="process-math">\(1+4+9+\cdots+400+441\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-744')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-85">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-97"><p id="p-4709"><a href="" class="xref" data-knowl="./knowl/thm_summation.html" title="Theorem 5.3.9: Properties of Summations">Theorem 5.3.9</a> states <span class="process-math">\(\sum\limits_{i=1}^na_i = \sum\limits_{i=1}^k a_i + \sum\limits_{i=k+1}^n a_i\text{,}\)</span> so <span class="process-math">\(\sum\limits_{i=k+1}^na_i = \sum\limits_{i=1}^n a_i - \sum\limits_{i=1}^k a_i\text{.}\)</span> Use this fact, along with other parts of <a href="" class="xref" data-knowl="./knowl/thm_summation.html" title="Theorem 5.3.9: Properties of Summations">Theorem 5.3.9</a>, to evaluate the summation.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-810"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<div id="webwork-745" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="745" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxiID0gcmFuZG9tKDcsMTMsMSk7CiR1YiA9ICRsYiArIHJhbmRvbSg4LDEyLDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskbGI9MTE7JHViPTIwO307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hcmUoaT0+J1JlYWwnKTsKJGYgPSBGb3JtdWxhKCJpIiktPnJlZHVjZTsKQGkgPSAoJGxiLi4kdWIpOwpAZmkgPSBtYXB7JGYtPmV2YWwoaT0+JF8pfShAaSk7CiRzdHJpbmcgPSBqb2luKCcrJyxAZmkpOwokc3VtID0gUmVhbCgkc3RyaW5nKTsKCkJFR0lOX1BHTUwKW2Bcc3VtXGxpbWl0c197aT1bJGxiXX1ee1skdWJdfSBbJGZdYF0KCltfXXskc3VtfXsxMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4710"><span class="process-math">\(\sum\limits_{i=10}^{18} {i}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-745')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-811"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<div id="webwork-746" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="746" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxiID0gcmFuZG9tKDE0LDE4LDEpOwokdWIgPSAkbGIgKyByYW5kb20oOCwxMiwxKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGxiPTE2OyR1Yj0yNTt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKGk9PidSZWFsJyk7CiRmID0gRm9ybXVsYSgiaSoqMyIpLT5yZWR1Y2U7CkBpID0gKCRsYi4uJHViKTsKQGZpID0gbWFweyRmLT5ldmFsKGk9PiRfKX0oQGkpOwokc3RyaW5nID0gam9pbignKycsQGZpKTsKJHN1bSA9IFJlYWwoJHN0cmluZyk7CgpCRUdJTl9QR01MCltgXHN1bVxsaW1pdHNfe2k9WyRsYl19XntbJHViXX0gWyRmXWBdCgpbX117JHN1bX17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4712"><span class="process-math">\(\sum\limits_{i=17}^{28} {i^{3}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-746')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-812"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<div id="webwork-747" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="747" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxiID0gcmFuZG9tKDUsOCwxKTsKJHViID0gJGxiICsgcmFuZG9tKDUsOCwxKTsKJGMgPSByYW5kb20oMyw4LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskbGI9NzskdWI9MTI7JGM9NDt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKGk9PidSZWFsJyk7CiRmID0gRm9ybXVsYSgiJGMiKS0+cmVkdWNlOwpAaSA9ICgkbGIuLiR1Yik7CkBmaSA9IG1hcHskZi0+ZXZhbChpPT4kXyl9KEBpKTsKJHN0cmluZyA9IGpvaW4oJysnLEBmaSk7CiRzdW0gPSBSZWFsKCRzdHJpbmcpOwoKQkVHSU5fUEdNTApbYFxzdW1cbGltaXRzX3tpPVskbGJdfV57WyR1Yl19IFskZl1gXQoKW19deyRzdW19ezEwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4714"><span class="process-math">\(\sum\limits_{i=7}^{13} {4}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-747')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-813"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<div id="webwork-748" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="748" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKJGxiID0gcmFuZG9tKDUsOCwxKTsKJHViID0gJGxiICsgcmFuZG9tKDUsOCwxKTsKJGMgPSByYW5kb20oMyw4LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskbGI9NTskdWI9MTA7JGM9NDt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKGk9PidSZWFsJyk7CiRmID0gRm9ybXVsYSgiJGMgaSoqMyIpLT5yZWR1Y2U7CkBpID0gKCRsYi4uJHViKTsKQGZpID0gbWFweyRmLT5ldmFsKGk9PiRfKX0oQGkpOwokc3RyaW5nID0gam9pbignKycsQGZpKTsKJHN1bSA9IFJlYWwoJHN0cmluZyk7CgpCRUdJTl9QR01MCltgXHN1bVxsaW1pdHNfe2k9WyRsYl19XntbJHViXX0gWyRmXWBdCgpbX117JHN1bX17MTB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4716"><span class="process-math">\(\sum\limits_{i=8}^{13} {6i^{3}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-748')">Make Interactive</button></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-86">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-98">
+<p id="p-4718">In the following exercises, a definite integral <span class="process-math">\(\ds \int_a^b f(x) \, dx\)</span> is given.</p>
+<ol class="lower-alpha">
+<li id="li-1095"><p id="p-4719">Graph <span class="process-math">\(f(x)\)</span> on <span class="process-math">\([a,b]\text{.}\)</span></p></li>
+<li id="li-1096"><p id="p-4720">Add to the sketch rectangles using the provided rule.</p></li>
+<li id="li-1097"><p id="p-4721">Approximate <span class="process-math">\(\ds \int_a^b f(x) \, dx\)</span> by summing the areas of the rectangles.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-814"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-4722"><span class="process-math">\(\ds \int_{-3}^3 x^2\, dx\text{,}\)</span> with <span class="process-math">\(6\)</span> rectangles using the Left Hand Rule.</p></article><article class="exercise exercise-like" id="exercise-815"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<p id="p-4723"><span class="process-math">\(\ds \int_{0}^2 (5-x^2)\, dx\text{,}\)</span> with <span class="process-math">\(4\)</span> rectangles using the Midpoint Rule.</p></article><article class="exercise exercise-like" id="exercise-816"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<p id="p-4724"><span class="process-math">\(\ds \int_{0}^\pi \sin(x) \, dx\text{,}\)</span> with <span class="process-math">\(6\)</span> rectangles using the Right Hand Rule.</p></article><article class="exercise exercise-like" id="exercise-817"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<p id="p-4725"><span class="process-math">\(\ds \int_{0}^3 2^x\, dx\text{,}\)</span> with <span class="process-math">\(5\)</span> rectangles using the Left Hand Rule.</p></article><article class="exercise exercise-like" id="exercise-818"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<p id="p-4726"><span class="process-math">\(\ds \int_{1}^2 \ln(x) \, dx\text{,}\)</span> with <span class="process-math">\(3\)</span> rectangles using the Midpoint Rule.</p></article><article class="exercise exercise-like" id="exercise-819"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<p id="p-4727"><span class="process-math">\(\ds \int_{1}^9 \frac1x\, dx\text{,}\)</span> with <span class="process-math">\(4\)</span> rectangles using the Right Hand Rule.</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-87">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-99">
+<p id="p-4728">A definite integral is given below. As demonstrated in <a href="" class="xref" data-knowl="./knowl/ex_rie9.html" title="Example 5.3.23: Approximating definite integrals with a formula, using sums">Examples 5.3.23</a> and <a href="" class="xref" data-knowl="./knowl/ex_rie10.html" title="Example 5.3.24: Approximating definite integrals with a formula, using sums">Example 5.3.24</a>, do the following:</p>
+<ol class="lower-alpha">
+<li id="li-1098"><p id="p-4729">Find a formula to approximate the definite integral using <span class="process-math">\(n\)</span> subintervals and the provided rule.</p></li>
+<li id="li-1099"><p id="p-4730">Evaluate the formula using <span class="process-math">\(n=10\text{,}\)</span> <span class="process-math">\(100\text{,}\)</span> and <span class="process-math">\(1000\text{.}\)</span></p></li>
+<li id="li-1100"><p id="p-4731">Find the limit of the formula, as <span class="process-math">\(n\to \infty\text{,}\)</span> to find the exact value of the definite integral.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-820"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<div id="webwork-749" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="749" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJHJ1bGUgPSBsaXN0X3JhbmRvbSgnTGVmdCBIYW5kIFJ1bGUnLCdSaWdodCBIYW5kIFJ1bGUnKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JHJ1bGUgPSAnUmlnaHQgSGFuZCBSdWxlJzt9OwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKG49PiJSZWFsIik7CmlmICgkcnVsZSBlcSAnTGVmdCBIYW5kIFJ1bGUnKSB7CiAgJHN1bSA9IEZvcm11bGEoIihuLTEpXjIvKDRuXjIpIik7Cn0KZWxzaWYgKCRydWxlIGVxICdSaWdodCBIYW5kIFJ1bGUnKSB7CiAgJHN1bSA9IEZvcm11bGEoIihuKzEpXjIvKDRuXjIpIik7Cn07CiRzdW0xMCA9ICRzdW0tPmV2YWwobj0+MTApOwokc3VtMTAwID0gJHN1bS0+ZXZhbChuPT4xMDApOwokc3VtMTAwMCA9ICRzdW0tPmV2YWwobj0+MTAwMCk7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRleGFjdCA9IEZyYWN0aW9uKDEsNCk7CgpCRUdJTl9QR01MCltgXGRzIFxpbnRfezB9XjEgeF4zXCwgZHhcdGV4dHssfWBdIHVzaW5nIHRoZSBbJHJ1bGVdLgoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGZvcm11bGEgaW4gdGVybXMgb2YgW2BuYF0gaGVyZS4nKUBdKioKCltfXXskc3VtfXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0V2YWx1YXRlIHRoZSBmb3JtdWxhIHVzaW5nIFtgbj0xMGBdIGhlcmUuJylAXSoqCgpbX117JHN1bTEwfXsxMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0V2YWx1YXRlIHRoZSBmb3JtdWxhIHVzaW5nIFtgbj0xMDBgXSBoZXJlLicpQF0qKgoKW19deyRzdW0xMDB9ezEwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRXZhbHVhdGUgdGhlIGZvcm11bGEgdXNpbmcgW2BuPTEwMDBgXSBoZXJlLicpQF0qKgoKW19deyRzdW0xMDAwfXsxMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBsaW1pdCBoZXJlLicpQF0qKgoKW19deyRleGFjdH17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4732"><span class="process-math">\(\ds \int_{0}^1 x^3\, dx\text{,}\)</span> using the Right Hand Rule.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-749')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-821"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<div id="webwork-750" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="750" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJHJ1bGUgPSBsaXN0X3JhbmRvbSgnTGVmdCBIYW5kIFJ1bGUnLCdSaWdodCBIYW5kIFJ1bGUnKTsKJGxiID0gcmFuZG9tKC0yLC0xLDEpOwokdWIgPSByYW5kb20oMSwyLDEpOwokYyA9IHJhbmRvbSgyLDUsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRydWxlID0gJ0xlZnQgSGFuZCBSdWxlJzskbGI9LTE7JHViPTE7JGM9Mzt9OwpDb250ZXh0KCJGcmFjdGlvbiIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKG49PiJSZWFsIik7CiRBID0gRnJhY3Rpb24oJGMqKCR1YiAtICRsYikqKDYqJGxiKiR1YiArIDIqKCR1YiAtICRsYikqKjIpLDYpOwokQiA9IEZyYWN0aW9uKCRjKigkdWIgLSAkbGIpKig2KiRsYiooJHViIC0gJGxiKSArIDMqKCR1YiAtICRsYikqKjIpLDYpOwppZiAoJHJ1bGUgZXEgJ0xlZnQgSGFuZCBSdWxlJykgeyRCID0gLSRCO307CiRDID0gRnJhY3Rpb24oJGMqKCR1YiAtICRsYikqKjMsNik7CigkQm4sJEJkKT0kQi0+dmFsdWU7CigkQ24sJENkKT0kQy0+dmFsdWU7CiRzdW0gPSBGb3JtdWxhKCIkQSArICRCbi8oJEJkIG4pICsgJENuLygkQ2Qgbl4yKSIpOwokc3VtMTAgPSAkc3VtLT5ldmFsKG49PjEwKTsKJHN1bTEwMCA9ICRzdW0tPmV2YWwobj0+MTAwKTsKJHN1bTEwMDAgPSAkc3VtLT5ldmFsKG49PjEwMDApOwokZXhhY3QgPSAkQTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludF97WyRsYl19XntbJHViXX0gWyRjXXheMlwsIGR4XHRleHR7LH1gXSB1c2luZyB0aGUgWyRydWxlXS4KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBmb3JtdWxhIGluIHRlcm1zIG9mIFtgbmBdIGhlcmUuJylAXSoqCgpbX117JHN1bX17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFdmFsdWF0ZSB0aGUgZm9ybXVsYSB1c2luZyBbYG49MTBgXSBoZXJlLicpQF0qKgoKW19deyRzdW0xMH17MTB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFdmFsdWF0ZSB0aGUgZm9ybXVsYSB1c2luZyBbYG49MTAwYF0gaGVyZS4nKUBdKioKCltfXXskc3VtMTAwfXsxMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0V2YWx1YXRlIHRoZSBmb3JtdWxhIHVzaW5nIFtgbj0xMDAwYF0gaGVyZS4nKUBdKioKCltfXXskc3VtMTAwMH17MTB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgbGltaXQgaGVyZS4nKUBdKioKCltfXXskZXhhY3R9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4738"><span class="process-math">\(\ds \int_{-2}^{1} 3x^2\, dx\text{,}\)</span> using the Left Hand Rule.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-750')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-822"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<div id="webwork-751" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="751" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJGxiID0gcmFuZG9tKC0yLC0xLDEpOwokdWIgPSByYW5kb20oMSw0LDEpOwokbSA9IHJhbmRvbSgyLDUsMSk7CiRiID0gbm9uX3plcm9fcmFuZG9tKC0yLDIsMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRsYj0tMTskdWI9MzskbT0zOyRiPS0xO307CiRmID0gRm9ybXVsYSgiJG0geCArICRiIiktPnJlZHVjZTsKQ29udGV4dCgiRnJhY3Rpb24iKTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZShuPT4iUmVhbCIpOwokc3VtID0gRnJhY3Rpb24oKCR1Yi0kbGIpKigkbSooJHViKyRsYikrMiokYiksMik7CiRzdW0gPSBGb3JtdWxhKCIkc3VtIik7CiRzdW0xMCA9ICRzdW0tPmV2YWwobj0+MTApOwokc3VtMTAwID0gJHN1bS0+ZXZhbChuPT4xMDApOwokc3VtMTAwMCA9ICRzdW0tPmV2YWwobj0+MTAwMCk7CiRleGFjdCA9IEZyYWN0aW9uKCIkc3VtIik7CgpCRUdJTl9QR01MCltgXGRzIFxpbnRfe1skbGJdfV57WyR1Yl19IFxsZWZ0KFskZl1ccmlnaHQpXCwgZHhcdGV4dHssfWBdIHVzaW5nIHRoZSBNaWRwb2ludCBSdWxlLgoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGZvcm11bGEgaW4gdGVybXMgb2YgW2BuYF0gaGVyZS4nKUBdKioKCltfXXskc3VtfXszMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0V2YWx1YXRlIHRoZSBmb3JtdWxhIHVzaW5nIFtgbj0xMGBdIGhlcmUuJylAXSoqCgpbX117JHN1bTEwfXsxMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0V2YWx1YXRlIHRoZSBmb3JtdWxhIHVzaW5nIFtgbj0xMDBgXSBoZXJlLicpQF0qKgoKW19deyRzdW0xMDB9ezEwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRXZhbHVhdGUgdGhlIGZvcm11bGEgdXNpbmcgW2BuPTEwMDBgXSBoZXJlLicpQF0qKgoKW19deyRzdW0xMDAwfXsxMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBsaW1pdCBoZXJlLicpQF0qKgoKW19deyRleGFjdH17MjB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4744"><span class="process-math">\(\ds \int_{-2}^{1} \left({5x-2}\right)\, dx\text{,}\)</span> using the Midpoint Rule.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-751')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-823"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<div id="webwork-752" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="752" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJHJ1bGUgPSBsaXN0X3JhbmRvbSgnTGVmdCBIYW5kIFJ1bGUnLCdSaWdodCBIYW5kIFJ1bGUnKTsKJGxiID0gcmFuZG9tKDEsMiwxKTsKJHViID0gJGxiICsgcmFuZG9tKDIsNCwxKTsKJG0gPSByYW5kb20oMiw1LDEpOwokYiA9IG5vbl96ZXJvX3JhbmRvbSgtNCw0LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskcnVsZT0nTGVmdCBIYW5kIFJ1bGUnOyRsYj0xOyR1Yj00OyRtPTI7JGI9LTM7fTsKJGYgPSBGb3JtdWxhKCIkbSB4XjIgKyAkYiIpLT5yZWR1Y2U7CkNvbnRleHQoIkZyYWN0aW9uIik7CiRBID0gRnJhY3Rpb24oKCR1YiAtICRsYikqKCRtKiR1YioqMiArICRtKiR1YiokbGIgKyAkbSokbGIqKjIgKyAzKiRiKSwzKTsKJEIgPSBGcmFjdGlvbigkbSooJHViIC0gJGxiKSoqMiooJHViICsgJGxiKSwyKTsKaWYgKCRydWxlIGVxICdMZWZ0IEhhbmQgUnVsZScpIHskQiA9IC0kQjt9OwokQyA9IEZyYWN0aW9uKCRtKigkdWIgLSAkbGIpKiozLDYpOwooJEJuLCRCZCk9JEItPnZhbHVlOwooJENuLCRDZCk9JEMtPnZhbHVlOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKG49PiJSZWFsIik7CiRzdW0gPSBGb3JtdWxhKCIkQSArICRCbi8oJEJkIG4pICsgJENuLygkQ2Qgbl4yKSIpOwokc3VtMTAgPSAkc3VtLT5ldmFsKG49PjEwKTsKJHN1bTEwMCA9ICRzdW0tPmV2YWwobj0+MTAwKTsKJHN1bTEwMDAgPSAkc3VtLT5ldmFsKG49PjEwMDApOwokZXhhY3QgPSAkQTsKCkJFR0lOX1BHTUwKW2BcZHMgXGludF97WyRsYl19XntbJHViXX0gXGxlZnQoWyRmXVxyaWdodClcLCBkeFx0ZXh0eyx9YF0gdXNpbmcgdGhlIFskcnVsZV0uCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgZm9ybXVsYSBpbiB0ZXJtcyBvZiBbYG5gXSBoZXJlLicpQF0qKgoKW19deyRzdW19ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRXZhbHVhdGUgdGhlIGZvcm11bGEgdXNpbmcgW2BuPTEwYF0gaGVyZS4nKUBdKioKCltfXXskc3VtMTB9ezEwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRXZhbHVhdGUgdGhlIGZvcm11bGEgdXNpbmcgW2BuPTEwMGBdIGhlcmUuJylAXSoqCgpbX117JHN1bTEwMH17MTB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFdmFsdWF0ZSB0aGUgZm9ybXVsYSB1c2luZyBbYG49MTAwMGBdIGhlcmUuJylAXSoqCgpbX117JHN1bTEwMDB9ezEwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGxpbWl0IGhlcmUuJylAXSoqCgpbX117JGV4YWN0fXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4750"><span class="process-math">\(\ds \int_{2}^{4} \left({5x^{2}-4}\right)\, dx\text{,}\)</span> using the Left Hand Rule.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-752')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-824"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<div id="webwork-753" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="753" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJHJ1bGUgPSBsaXN0X3JhbmRvbSgnTGVmdCBIYW5kIFJ1bGUnLCdSaWdodCBIYW5kIFJ1bGUnKTsKJGxiID0gcmFuZG9tKC0xMiwtNywxKTsKJHViID0gLSRsYjsKJGIgPSBub25femVyb19yYW5kb20oMyw4LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskcnVsZT0nUmlnaHQgSGFuZCBSdWxlJzskbGI9LTEwOyR1Yj0xMDskYj01O307CiRmID0gRm9ybXVsYSgiJGIgLSB4IiktPnJlZHVjZTsKQ29udGV4dCgpLT52YXJpYWJsZXMtPmFyZShuPT4iUmVhbCIpOwokc3VtID0gRm9ybXVsYSgiMiokdWIqJGIgKyAoMiokdWIqKjIpL24iKS0+cmVkdWNlOwppZiAoJHJ1bGUgZXEgJ0xlZnQgSGFuZCBSdWxlJykgewogICRzdW0gPSBGb3JtdWxhKCIyKiR1YiokYiAtICgyKiR1YioqMikvbiIpLT5yZWR1Y2U7Cn07CiRzdW0xMCA9ICRzdW0tPmV2YWwobj0+MTApOwokc3VtMTAwID0gJHN1bS0+ZXZhbChuPT4xMDApOwokc3VtMTAwMCA9ICRzdW0tPmV2YWwobj0+MTAwMCk7CiRleGFjdCA9IFJlYWwoMiokdWIqJGIpOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50X3tbJGxiXX1ee1skdWJdfSBcbGVmdChbJGZdXHJpZ2h0KVwsIGR4XHRleHR7LH1gXSB1c2luZyB0aGUgWyRydWxlXS4KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0VudGVyIHRoZSBmb3JtdWxhIGluIHRlcm1zIG9mIFtgbmBdIGhlcmUuJylAXSoqCgpbX117JHN1bX17MzB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFdmFsdWF0ZSB0aGUgZm9ybXVsYSB1c2luZyBbYG49MTBgXSBoZXJlLicpQF0qKgoKW19deyRzdW0xMH17MTB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFdmFsdWF0ZSB0aGUgZm9ybXVsYSB1c2luZyBbYG49MTAwYF0gaGVyZS4nKUBdKioKCltfXXskc3VtMTAwfXsxMH0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ0V2YWx1YXRlIHRoZSBmb3JtdWxhIHVzaW5nIFtgbj0xMDAwYF0gaGVyZS4nKUBdKioKCltfXXskc3VtMTAwMH17MTB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgbGltaXQgaGVyZS4nKUBdKioKCltfXXskZXhhY3R9ezIwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4756"><span class="process-math">\(\ds \int_{-11}^{11} \left({7-x}\right)\, dx\text{,}\)</span> using the Left Hand Rule.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-753')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-825"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<div id="webwork-754" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="754" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKVEVYVChNT0RFUyhQVFg9PicnLEhUTUw9Pic8ZGl2IHN0eWxlPSJkaXNwbGF5Om5vbmU7Ij5cKFxuZXdjb21tYW5ke1xkc317XGRpc3BsYXlzdHlsZX1cKTwvZGl2PicpKTsKJHJ1bGUgPSBsaXN0X3JhbmRvbSgnTGVmdCBIYW5kIFJ1bGUnLCdSaWdodCBIYW5kIFJ1bGUnKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JHJ1bGU9J1JpZ2h0IEhhbmQgUnVsZSc7fTsKJGYgPSBGb3JtdWxhKCJ4XjMgLSB4XjIiKS0+cmVkdWNlOwpDb250ZXh0KCJGcmFjdGlvbiIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YXJlKG49PiJSZWFsIik7CiRzdW0gPSBGb3JtdWxhKCItMS8xMisxLygxMm5eMikiKTsKJHN1bTEwID0gJHN1bS0+ZXZhbChuPT4xMCk7CiRzdW0xMDAgPSAkc3VtLT5ldmFsKG49PjEwMCk7CiRzdW0xMDAwID0gJHN1bS0+ZXZhbChuPT4xMDAwKTsKJGV4YWN0ID0gRnJhY3Rpb24oLTEsMTIpOwoKQkVHSU5fUEdNTApbYFxkcyBcaW50X3swfV57MX0gXGxlZnQoWyRmXVxyaWdodClcLCBkeFx0ZXh0eyx9YF0gdXNpbmcgdGhlIFskcnVsZV0uCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFbnRlciB0aGUgZm9ybXVsYSBpbiB0ZXJtcyBvZiBbYG5gXSBoZXJlLicpQF0qKgoKW19deyRzdW19ezMwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRXZhbHVhdGUgdGhlIGZvcm11bGEgdXNpbmcgW2BuPTEwYF0gaGVyZS4nKUBdKioKCltfXXskc3VtMTB9ezEwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRXZhbHVhdGUgdGhlIGZvcm11bGEgdXNpbmcgW2BuPTEwMGBdIGhlcmUuJylAXSoqCgpbX117JHN1bTEwMH17MTB9CgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdFdmFsdWF0ZSB0aGUgZm9ybXVsYSB1c2luZyBbYG49MTAwMGBdIGhlcmUuJylAXSoqCgpbX117JHN1bTEwMDB9ezEwfQoKW0BLZXlib2FyZEluc3RydWN0aW9ucygnRW50ZXIgdGhlIGxpbWl0IGhlcmUuJylAXSoqCgpbX117JGV4YWN0fXsyMH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4762"><span class="process-math">\(\ds \int_{0}^{1} \left({x^{3}-x^{2}}\right)\, dx\text{,}\)</span> using the Left Hand Rule.</p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-754')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article><article class="subexercises" id="subexercises-64"><h4 class="heading"><span class="title">Review</span></h4>
+<div class="exercisegroup" id="exercisegroup-88">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-100"><p id="p-4768">Find the general antiderivative of the given function.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-826"><h6 class="heading"><span class="codenumber">41<span class="period">.</span></span></h6>
+<div id="webwork-755" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="755" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskdHJpZyA9IGxpc3RfcmFuZG9tKCd0YW4nLCdzZWMnLCdjc2MnLCdjb3QnKTsKJGMgPSByYW5kb20oMiw5LDEpOwppZigkZW52aXJ7cHJvYmxlbVNlZWR9PT0xKXskdHJpZz0ndGFuJzskYz01O307CiRGID0gRm9ybXVsYSgiJGMqJHRyaWcoeCkiKTsKJGYgPSAkRi0+RCgneCcpLT5yZWR1Y2U7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiJGMqJHRyaWcoeCkiKTsKCkJFR0lOX1BHTUwKW2BmKHgpID0gWyRmXWBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4769"><span class="process-math">\(f(x) = {-7\csc\!\left(x\right)\cot\!\left(x\right)}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-755')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-827"><h6 class="heading"><span class="codenumber">42<span class="period">.</span></span></h6>
+<div id="webwork-756" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="756" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskYyA9IHJhbmRvbSgyLDksMSk7CmlmKCRlbnZpcntwcm9ibGVtU2VlZH09PTEpeyRjPTc7fTsKJGYgPSBGb3JtdWxhKCIkYy94Iik7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiJGMqbG4oYWJzKHgpKSIpOwoKQkVHSU5fUEdNTApbYGYoeCkgPSBbJGZdYF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4771"><span class="process-math">\(f(x) = {\frac{7}{x}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-756')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-828"><h6 class="heading"><span class="codenumber">43<span class="period">.</span></span></h6>
+<div id="webwork-757" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="757" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsInBhcnNlckZvcm11bGFVcFRvQ29uc3RhbnQucGwiLCJjb250ZXh0RnJhY3Rpb24ucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKKCRhLCRiLCRjKSA9ICgtOS4uLTEsMS4uOSlbTmNob29zZUsoMTgsMyldOwooJG0sJG4sJHApID0gbnVtX3NvcnQoKDAuLjUpW05jaG9vc2VLKDYsMyldKTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGE9NDskYj0tNTskYz04OyRtPTU7JG49MzskcD0wO307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQodD0+IlJlYWwiKTsKJGYgPSBGb3JtdWxhKCIkYSB0XiRtICsgJGIgdF4kbiArICRjIHReJHAiKS0+cmVkdWNlOwpDb250ZXh0KCJGcmFjdGlvbiIpOwpDb250ZXh0KCktPnZhcmlhYmxlcy0+YWRkKHQ9PiJSZWFsIik7CiRBID0gRnJhY3Rpb24oJGEsJG0rMSk7CiRCID0gRnJhY3Rpb24oJGIsJG4rMSk7CiRDID0gRnJhY3Rpb24oJGMsJHArMSk7CiRGID0gRm9ybXVsYVVwVG9Db25zdGFudCgiJEEgdF4oJG0rMSkgKyAkQiB0XigkbisxKSArICRDIHReKCRwKzEpIiktPnJlZHVjZTsKCkJFR0lOX1BHTUwKW2BnKHQpID0gWyRmXWBdCgpbX117JEZ9ezQwfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4773"><span class="process-math">\(g(t) = {6+8t-4t^{2}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-757')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-829"><h6 class="heading"><span class="codenumber">44<span class="period">.</span></span></h6>
+<div id="webwork-758" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="758" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2Nob2ljZW1hY3Jvcy5wbCIsInBhcnNlckZvcm11bGFVcFRvQ29uc3RhbnQucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKKCRiLCRjKSA9ICgyLi45KVtOY2hvb3NlSyg4LDIpXTsKaWYoJGVudmlye3Byb2JsZW1TZWVkfT09MSl7JGI9ODskYz01O307CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQodD0+IlJlYWwiKTsKJGYgPSBGb3JtdWxhKCIkYyAkYl50IiktPnJlZHVjZTsKQ29udGV4dCgpLT5mbGFncy0+c2V0KHJlZHVjZUNvbnN0YW50RnVuY3Rpb25zPT4wKTsKJEYgPSBGb3JtdWxhVXBUb0NvbnN0YW50KCIkYy9sbigkYikgJGJedCIpOwoKQkVHSU5fUEdNTApbYGcodCkgPSBbJGZdYF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4775"><span class="process-math">\(g(t) = {6\cdot 9^{t}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-758')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-830"><h6 class="heading"><span class="codenumber">45<span class="period">.</span></span></h6>
+<div id="webwork-759" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="759" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoKS0+dmFyaWFibGVzLT5hZGQodD0+IlJlYWwiKTsKJEYgPSBGb3JtdWxhVXBUb0NvbnN0YW50KCJzaW4odCktY29zKHQpIik7CgpCRUdJTl9QR01MCltgZyh0KSA9IFxjb3ModCkgKyBcc2luKHQpYF0KCltfXXskRn17NDB9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4777"><span class="process-math">\(g(t) = \cos(t) + \sin(t)\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-759')">Make Interactive</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-831"><h6 class="heading"><span class="codenumber">46<span class="period">.</span></span></h6>
+<div id="webwork-760" class="exercise-wrapper" data-domain="https://webwork.cs.uleth.ca" data-seed="760" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJwYXJzZXJGb3JtdWxhVXBUb0NvbnN0YW50LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTskRiA9IEZvcm11bGFVcFRvQ29uc3RhbnQoIjIqc3FydCh4KSIpOwoKQkVHSU5fUEdNTApbYGYoeCkgPSBcZnJhY3sxfXtcc3FydHt4fX1gXQoKW19deyRGfXs0MH0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-4779"><span class="process-math">\(f(x) = \frac{1}{\sqrt{x}}\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-760')">Make Interactive</button></div>
+</div></article>
+</div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:38:57Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.1.19.1</span><span class="period">.</span>
+</h4>
+<p>Our initial condition yields the starting values <span class="process-math">\(x_0 = 1\)</span> and <span class="process-math">\(y_0 = -1\text{.}\)</span> With <span class="process-math">\(h = 0.5\text{,}\)</span> it takes <span class="process-math">\(N=2\)</span> steps to get to <span class="process-math">\(x=2\text{.}\)</span> Using steps 1 and 2 from the Euler's Method algorithm,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x_0  \amp = 1      \amp    y_0  \amp = -1\\
+x_1   \amp = x_0 + h   \amp    y_1   \amp = y_0 + hf(x_0,y_0)\\
+\amp = 1 + 0.5     \amp     \amp = -1 + 0.5(1 - 1)\\
+\amp = 1.5    \amp     \amp = -1\\
+x_2  \amp = x_0 + 2h  \amp   y_2  \amp = y_1 + hf(x_1,y_1)\\
+\amp = 1 + 2(0.5)  \amp     \amp = -1 + 0.5(1.5 -1)\\
+\amp = 2      \amp     \amp = -0.75 \text{.}
+\end{align*}
+</div>
+<p>Using Euler's method, we find the approximate <span class="process-math">\(y(2) \approx -0.75\text{.}\)</span></p>
+<p>To help visualize the Euler's method approximation, these three points (connected by line segments) are plotted along with the analytical solution to the initial value problem in <a href="" class="xref" data-knowl="./knowl/fig_20_01_euler1.html" title="Figure 8.1.20">Figure 8.1.20</a>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img-euler1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.20<span class="period">.</span></span><span class="space"> </span>Euler's Method approximation to <span class="process-math">\(\yp = x + y\)</span> with <span class="process-math">\(y(1) = -1\)</span> from <a href="" class="xref" data-knowl="./knowl/ex_euler1.html" title="Example 8.1.19: Using Euler's Method 1">Example 8.1.19</a>, along with the analytical solution to the initial value problem</figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_Graphical_Numerical.html#solution-478" class="internal">in-context</a></span>
+</body>
+</html>

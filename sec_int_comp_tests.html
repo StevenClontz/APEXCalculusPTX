@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:29:50Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>APEX Integral and Comparison Tests</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="og:image" content="https://opentext.uleth.ca/apex-calculus/external/images/APEX.png">
+<meta property="book:title" content="APEX Calculus">
+<meta property="book:author" content="Gregory Hartman, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork.cs.uleth.ca/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork.js"></script><script src="https://webwork.cs.uleth.ca/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script type="application/json" class="js-hypothesis-config">{
+    "openLoginForm": false;    "openSidebar": false;    "showHighlights": true;}</script><script src="https://hypothes.is/embed.js" async=""></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+\newcommand{\apex}{\mbox{\hbox{A}\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt \hbox{X}}}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\lz}[2]{\frac{d#1}{d#2}}
+\newcommand{\lzn}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\lzo}[1]{\frac{d}{d#1}}
+\newcommand{\lzoo}[2]{{\frac{d}{d#1}}{\left(#2\right)}}
+\newcommand{\lzon}[2]{\frac{d^{#1}}{d#2^{#1}}}
+\newcommand{\lzoa}[3]{\left.{\frac{d#1}{d#2}}\right|_{#3}}
+\newcommand{\plz}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\plzoa}[3]{\left.{\frac{\partial#1}{\partial#2}}\right|_{#3}}
+
+\newcommand{\inflim}[1][n]{\lim\limits_{#1 \to \infty}}
+
+\newcommand{\infser}[1][1]{\sum_{n=#1}^\infty}
+
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+\newcommand{\snorm}[1]{\left|\left|\,#1\,\right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\hskip0.75pt '}
+\newcommand{\vrpp}{\vec r\hskip0.75pt ''}
+\newcommand{\vsp}{\vec s\hskip0.75pt '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\unittangent}{\vec{{}T}}
+\newcommand{\unitnormal}{\vec{N}}
+\newcommand{\unittangentprime}{\vec{{}T}\hskip0.75pt '}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\surfaceS}{\mathcal{S}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\, dx= {\ds #2}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\divv}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.apexcalculus.com" target="_blank"><img src="external/images/APEX.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="apex-calculus.html"><span class="title">APEX Calculus</span></a></h1>
+<p class="byline">Gregory Hartman, Ph.D., Sean Fitzpatrick, Ph.D. (Editor), Alex Jordan, Ph.D. (Editor), Carly Vollet, M.S. (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_series.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter_sequences_series.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_ratio_root_tests.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_series.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter_sequences_series.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_ratio_root_tests.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Thanks</a></li>
+<li><a href="apex-preface.html" data-scroll="apex-preface" class="internal">Preface</a></li>
+<li><a href="preface-history.html" data-scroll="preface-history" class="internal">A Brief History of Calculus</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_limits.html" data-scroll="chapter_limits" class="internal"><span class="codenumber">1</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_limit_intro.html" data-scroll="sec_limit_intro" class="internal">An Introduction To Limits</a></li>
+<li><a href="sec_limit_def.html" data-scroll="sec_limit_def" class="internal">Epsilon-Delta Definition of a Limit</a></li>
+<li><a href="sec_limit_analytically.html" data-scroll="sec_limit_analytically" class="internal">Finding Limits Analytically</a></li>
+<li><a href="sec_limits_one_sided.html" data-scroll="sec_limits_one_sided" class="internal">One-Sided Limits</a></li>
+<li><a href="sec_continuity.html" data-scroll="sec_continuity" class="internal">Continuity</a></li>
+<li><a href="sec_limits_infty.html" data-scroll="sec_limits_infty" class="internal">Limits Involving Infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_derivatives.html" data-scroll="chapter_derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_derivative.html" data-scroll="sec_derivative" class="internal">Instantaneous Rates of Change: The Derivative</a></li>
+<li><a href="sec_interp_deriv.html" data-scroll="sec_interp_deriv" class="internal">Interpretations of the Derivative</a></li>
+<li><a href="sec_basic_diff_rules.html" data-scroll="sec_basic_diff_rules" class="internal">Basic Differentiation Rules</a></li>
+<li><a href="sec_prod_quot_rules.html" data-scroll="sec_prod_quot_rules" class="internal">The Product and Quotient Rules</a></li>
+<li><a href="sec_chainrule.html" data-scroll="sec_chainrule" class="internal">The Chain Rule</a></li>
+<li><a href="sec_imp_deriv.html" data-scroll="sec_imp_deriv" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_deriv_inverse_function.html" data-scroll="sec_deriv_inverse_function" class="internal">Derivatives of Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_graphbehavior.html" data-scroll="chapter_graphbehavior" class="internal"><span class="codenumber">3</span> <span class="title">The Graphical Behavior of Functions</span></a><ul>
+<li><a href="sec_extreme_values.html" data-scroll="sec_extreme_values" class="internal">Extreme Values</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt" class="internal">The Mean Value Theorem</a></li>
+<li><a href="sec_incr_decr.html" data-scroll="sec_incr_decr" class="internal">Increasing and Decreasing Functions</a></li>
+<li><a href="sec_concavity.html" data-scroll="sec_concavity" class="internal">Concavity and the Second Derivative</a></li>
+<li><a href="sec_sketch.html" data-scroll="sec_sketch" class="internal">Curve Sketching</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_deriv_apps.html" data-scroll="chapter_deriv_apps" class="internal"><span class="codenumber">4</span> <span class="title">Applications of the Derivative</span></a><ul>
+<li><a href="sec_newton.html" data-scroll="sec_newton" class="internal">Newton's Method</a></li>
+<li><a href="sec_related_rates.html" data-scroll="sec_related_rates" class="internal">Related Rates</a></li>
+<li><a href="sec_optimization.html" data-scroll="sec_optimization" class="internal">Optimization</a></li>
+<li><a href="sec_differentials.html" data-scroll="sec_differentials" class="internal">Differentials</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_integration.html" data-scroll="chapter_integration" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_antider.html" data-scroll="sec_antider" class="internal">Antiderivatives and Indefinite Integration</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int" class="internal">The Definite Integral</a></li>
+<li><a href="sec_riemann.html" data-scroll="sec_riemann" class="internal">Riemann Sums</a></li>
+<li><a href="sec_FTC.html" data-scroll="sec_FTC" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_numerical_integration.html" data-scroll="sec_numerical_integration" class="internal">Numerical Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_anti_tech.html" data-scroll="chapter_anti_tech" class="internal"><span class="codenumber">6</span> <span class="title">Techniques of Antidifferentiation</span></a><ul>
+<li><a href="sec_substitution.html" data-scroll="sec_substitution" class="internal">Substitution</a></li>
+<li><a href="sec_IBP.html" data-scroll="sec_IBP" class="internal">Integration by Parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint" class="internal">Trigonometric Integrals</a></li>
+<li><a href="sec_trig_sub.html" data-scroll="sec_trig_sub" class="internal">Trigonometric Substitution</a></li>
+<li><a href="sec_partial_fraction.html" data-scroll="sec_partial_fraction" class="internal">Partial Fraction Decomposition</a></li>
+<li><a href="sec_hyperbolic.html" data-scroll="sec_hyperbolic" class="internal">Hyperbolic Functions</a></li>
+<li><a href="sec_lhopitals_rule.html" data-scroll="sec_lhopitals_rule" class="internal">L'Hospital's Rule</a></li>
+<li><a href="sec_improper_integration.html" data-scroll="sec_improper_integration" class="internal">Improper Integration</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_app_of_int.html" data-scroll="chapter_app_of_int" class="internal"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_ABC.html" data-scroll="sec_ABC" class="internal">Area Between Curves</a></li>
+<li><a href="sec_disk.html" data-scroll="sec_disk" class="internal">Volume by Cross-Sectional Area; Disk and Washer Methods</a></li>
+<li><a href="sec_shell_method.html" data-scroll="sec_shell_method" class="internal">The Shell Method</a></li>
+<li><a href="sec_arc_length.html" data-scroll="sec_arc_length" class="internal">Arc Length and Surface Area</a></li>
+<li><a href="sec_work.html" data-scroll="sec_work" class="internal">Work</a></li>
+<li><a href="sec_fluid_force.html" data-scroll="sec_fluid_force" class="internal">Fluid Forces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_differential_equations.html" data-scroll="chapter_differential_equations" class="internal"><span class="codenumber">8</span> <span class="title">Differential Equations</span></a><ul>
+<li><a href="sec_Graphical_Numerical.html" data-scroll="sec_Graphical_Numerical" class="internal">Graphical and Numerical Solutions to Differential Equations</a></li>
+<li><a href="sec_Separable.html" data-scroll="sec_Separable" class="internal">Separable Differential Equations</a></li>
+<li><a href="sec_Linear.html" data-scroll="sec_Linear" class="internal">First Order Linear Differential Equations</a></li>
+<li><a href="sec_Modeling.html" data-scroll="sec_Modeling" class="internal">Modeling with Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_sequences_series.html" data-scroll="chapter_sequences_series" class="internal"><span class="codenumber">9</span> <span class="title">Sequences and Series</span></a><ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences" class="internal">Sequences</a></li>
+<li><a href="sec_series.html" data-scroll="sec_series" class="internal">Infinite Series</a></li>
+<li><a href="sec_int_comp_tests.html" data-scroll="sec_int_comp_tests" class="active">Integral and Comparison Tests</a></li>
+<li><a href="sec_ratio_root_tests.html" data-scroll="sec_ratio_root_tests" class="internal">Ratio and Root Tests</a></li>
+<li><a href="sec_alt_series.html" data-scroll="sec_alt_series" class="internal">Alternating Series and Absolute Convergence</a></li>
+<li><a href="sec_power_series.html" data-scroll="sec_power_series" class="internal">Power Series</a></li>
+<li><a href="sec_taylor_poly.html" data-scroll="sec_taylor_poly" class="internal">Taylor Polynomials</a></li>
+<li><a href="sec_taylor_series.html" data-scroll="sec_taylor_series" class="internal">Taylor Series</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_planar_curves.html" data-scroll="chapter_planar_curves" class="internal"><span class="codenumber">10</span> <span class="title">Curves in the Plane</span></a><ul>
+<li><a href="sec_conic_sections.html" data-scroll="sec_conic_sections" class="internal">Conic Sections</a></li>
+<li><a href="sec_param_eqs.html" data-scroll="sec_param_eqs" class="internal">Parametric Equations</a></li>
+<li><a href="sec_par_calc.html" data-scroll="sec_par_calc" class="internal">Calculus and Parametric Equations</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar" class="internal">Introduction to Polar Coordinates</a></li>
+<li><a href="sec_polarcalc.html" data-scroll="sec_polarcalc" class="internal">Calculus and Polar Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vectors.html" data-scroll="chapter_vectors" class="internal"><span class="codenumber">11</span> <span class="title">Vectors</span></a><ul>
+<li><a href="sec_space_coord.html" data-scroll="sec_space_coord" class="internal">Introduction to Cartesian Coordinates in Space</a></li>
+<li><a href="sec_vector_intro.html" data-scroll="sec_vector_intro" class="internal">An Introduction to Vectors</a></li>
+<li><a href="sec_dot_product.html" data-scroll="sec_dot_product" class="internal">The Dot Product</a></li>
+<li><a href="sec_cross_product.html" data-scroll="sec_cross_product" class="internal">The Cross Product</a></li>
+<li><a href="sec_lines.html" data-scroll="sec_lines" class="internal">Lines</a></li>
+<li><a href="sec_planes.html" data-scroll="sec_planes" class="internal">Planes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vvf.html" data-scroll="chap_vvf" class="internal"><span class="codenumber">12</span> <span class="title">Vector Valued Functions</span></a><ul>
+<li><a href="sec_vvf.html" data-scroll="sec_vvf" class="internal">Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_calc.html" data-scroll="sec_vvf_calc" class="internal">Calculus and Vector-Valued Functions</a></li>
+<li><a href="sec_vvf_motion.html" data-scroll="sec_vvf_motion" class="internal">The Calculus of Motion</a></li>
+<li><a href="sec_tan_norm.html" data-scroll="sec_tan_norm" class="internal">Unit Tangent and Normal Vectors</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="internal">The Arc Length Parameter and Curvature</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_multi.html" data-scroll="chapter_multi" class="internal"><span class="codenumber">13</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec_multi_intro.html" data-scroll="sec_multi_intro" class="internal">Introduction to Multivariable Functions</a></li>
+<li><a href="sec_multi_limit.html" data-scroll="sec_multi_limit" class="internal">Limits and Continuity of Multivariable Functions</a></li>
+<li><a href="sec_partial_derivatives.html" data-scroll="sec_partial_derivatives" class="internal">Partial Derivatives</a></li>
+<li><a href="sec_total_differential.html" data-scroll="sec_total_differential" class="internal">Differentiability and the Total Differential</a></li>
+<li><a href="sec_multi_chain.html" data-scroll="sec_multi_chain" class="internal">The Multivariable Chain Rule</a></li>
+<li><a href="sec_directional_derivative.html" data-scroll="sec_directional_derivative" class="internal">Directional Derivatives</a></li>
+<li><a href="sec_multi_tangent.html" data-scroll="sec_multi_tangent" class="internal">Tangent Lines, Normal Lines, and Tangent Planes</a></li>
+<li><a href="sec_multi_extreme_values.html" data-scroll="sec_multi_extreme_values" class="internal">Extreme Values</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_mult_int.html" data-scroll="chapter_mult_int" class="internal"><span class="codenumber">14</span> <span class="title">Multiple Integration</span></a><ul>
+<li><a href="sec_iterated_integrals.html" data-scroll="sec_iterated_integrals" class="internal">Iterated Integrals and Area</a></li>
+<li><a href="sec_double_int_volume.html" data-scroll="sec_double_int_volume" class="internal">Double Integration and Volume</a></li>
+<li><a href="sec_double_int_polar.html" data-scroll="sec_double_int_polar" class="internal">Double Integration with Polar Coordinates</a></li>
+<li><a href="sec_center_of_mass.html" data-scroll="sec_center_of_mass" class="internal">Center of Mass</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area" class="internal">Surface Area</a></li>
+<li><a href="sec_triple_int.html" data-scroll="sec_triple_int" class="internal">Volume Between Surfaces and Triple Integration</a></li>
+<li><a href="sec_cylindrical_spherical.html" data-scroll="sec_cylindrical_spherical" class="internal">Triple Integration with Cylindrical and Spherical Coordinates</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter_vector_calc.html" data-scroll="chapter_vector_calc" class="internal"><span class="codenumber">15</span> <span class="title">Vector Analysis</span></a><ul>
+<li><a href="sec_line_int_intro.html" data-scroll="sec_line_int_intro" class="internal">Introduction to Line Integrals</a></li>
+<li><a href="sec_vector_fields.html" data-scroll="sec_vector_fields" class="internal">Vector Fields</a></li>
+<li><a href="sec_line_int_vf.html" data-scroll="sec_line_int_vf" class="internal">Line Integrals over Vector Fields</a></li>
+<li><a href="sec_greensthm.html" data-scroll="sec_greensthm" class="internal">Flow, Flux, Green's Theorem and the Divergence Theorem</a></li>
+<li><a href="sec_parametric_surfaces.html" data-scroll="sec_parametric_surfaces" class="internal">Parametrized Surfaces and Surface Area</a></li>
+<li><a href="sec_surface_integral.html" data-scroll="sec_surface_integral" class="internal">Surface Integrals</a></li>
+<li><a href="sec_stokes_divergence.html" data-scroll="sec_stokes_divergence" class="internal">The Divergence Theorem and Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Answers to Odd Exercises</span></a></li>
+<li class="link">
+<a href="appendix-reference.html" data-scroll="appendix-reference" class="internal"><span class="codenumber">B</span> <span class="title">Quick Reference</span></a><ul>
+<li><a href="reference-derivatives.html" data-scroll="reference-derivatives" class="internal">Differentiation Formulas</a></li>
+<li><a href="reference-integration.html" data-scroll="reference-integration" class="internal">Integration Formulas</a></li>
+<li><a href="reference-trigonometry.html" data-scroll="reference-trigonometry" class="internal">Trigonometry Reference</a></li>
+<li><a href="reference-area-volume.html" data-scroll="reference-area-volume" class="internal">Areas and Volumes</a></li>
+<li><a href="reference-algebra.html" data-scroll="reference-algebra" class="internal">Algebra</a></li>
+<li><a href="reference-formulas.html" data-scroll="reference-formulas" class="internal">Additional Formulas</a></li>
+<li><a href="section-98.html" data-scroll="section-98" class="internal">Summary of Tests for Series</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_int_comp_tests"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">9.3</span> <span class="title">Integral and Comparison Tests</span>
+</h2>
+<section class="introduction" id="introduction-200"><p id="p-8554">Knowing whether or not a series converges is very important, especially when we discuss Power Series in <a href="sec_power_series.html" class="internal" title="Section 9.6: Power Series">Section 9.6</a>. <a href="" class="xref" data-knowl="./knowl/thm_geom_series.html" title="Theorem 9.2.6: Geometric Series Test">Theorems 9.2.6</a> and <a href="" class="xref" data-knowl="./knowl/thm_pseries.html" title="Theorem 9.2.13: p-Series Test">Theorem 9.2.13</a> give criteria for when Geometric and <span class="process-math">\(p\)</span>-series converge, and <a href="" class="xref" data-knowl="./knowl/thm_series_nth_term.html" title="Theorem 9.2.23: nth-Term Test for Divergence">Theorem 9.2.23</a> gives a quick test to determine if a series diverges. There are many important series whose convergence cannot be determined by these theorems, though, so we introduce a set of tests that allow us to handle a broad range of series. We start with the Integral Test.</p></section><section class="subsection" id="subsection-62"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.3.1</span> <span class="title">Integral Test</span>
+</h3>
+<p id="p-8555">We stated in <a href="sec_sequences.html" class="internal" title="Section 9.1: Sequences">Section 9.1</a> that a sequence <span class="process-math">\(\{a_n\}\)</span> is a function <span class="process-math">\(a(n)\)</span> whose domain is <span class="process-math">\(\mathN\text{,}\)</span> the set of natural numbers. If we can extend <span class="process-math">\(a(n)\)</span> to <span class="process-math">\(\mathbb{R}\text{,}\)</span> the real numbers, and it is both positive and decreasing on <span class="process-math">\([1,\infty)\text{,}\)</span> then the convergence of <span class="process-math">\(\ds \infser a_n\)</span> is the same as <span class="process-math">\(\ds\int_1^\infty a(x)\, dx\text{.}\)</span></p>
+<article class="theorem theorem-like" id="thm_integral_test"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Integral Test.</span>
+</h4>
+<p id="p-8556">Let a sequence <span class="process-math">\(\{a_n\}\)</span> be defined by <span class="process-math">\(a_n=a(n)\text{,}\)</span> where <span class="process-math">\(a(n)\)</span> is continuous, positive and decreasing on <span class="process-math">\([1,\infty)\text{.}\)</span> Then <span class="process-math">\(\ds \infser a_n\)</span> converges, if, and only if, <span class="process-math">\(\ds\int_1^\infty a(x)\, dx\)</span> converges. </p></article><aside class="aside aside-like" id="aside-57"><p id="p-8557"><a href="" class="xref" data-knowl="./knowl/thm_integral_test.html" title="Theorem 9.3.1: Integral Test">Theorem 9.3.1</a> does not state that the integral and the summation have the same value.</p></aside><figure class="figure figure-like" id="vid-seqseries-intcomp-integral-test"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-318" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/43DIt-rRclA?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.2<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_integral_test.html" title="Theorem 9.3.1: Integral Test">Theorem 9.3.1</a></figcaption></figure><p id="p-8558">We can demonstrate the truth of the Integral Test with two simple graphs. In <a href="" class="xref" data-knowl="./knowl/fig_integral_test_a.html" title="Figure 9.3.3.(a)">Figure 9.3.3.(a)</a>, the height of each rectangle is <span class="process-math">\(a(n)=a_n\)</span> for <span class="process-math">\(n=1,2,\ldots\text{,}\)</span> and clearly the rectangles enclose more area than the area under <span class="process-math">\(y=a(x)\text{.}\)</span> Therefore we can conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_integral_test_a.html" id="eq_integral_testa">
+\begin{equation}
+\ds \int_1^\infty a(x)\, dx \lt  \infser a_n\text{.}\tag{9.3.1}
+\end{equation}
+</div>
+<figure class="figure figure-like" id="fig_integral_test"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_integral_test_a"><img src="generated/latex-image/img_integral_test_a.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel top" style="width:47%;"><figure class="figure figure-like" id="fig_integral_test_b"><img src="generated/latex-image/img_integral_test_b.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.3<span class="period">.</span></span><span class="space"> </span>Illustrating the truth of the Integral Test</figcaption></figure><p id="p-8559">In <a href="" class="xref" data-knowl="./knowl/fig_integral_test_b.html" title="Figure 9.3.3.(b)">Figure 9.3.3.(b)</a>, we draw rectangles under <span class="process-math">\(y=a(x)\)</span> with the Right-Hand rule, starting with <span class="process-math">\(n=2\text{.}\)</span> This time, the area of the rectangles is less than the area under <span class="process-math">\(y=a(x)\text{,}\)</span> so <span class="process-math">\(\ds\sum_{n=2}^\infty a_n \lt  \int_1^\infty a(x)\, dx\text{.}\)</span> Note how this summation starts with <span class="process-math">\(n=2\text{;}\)</span> adding <span class="process-math">\(a_1\)</span> to both sides lets us rewrite the summation starting with <span class="process-math">\(n=1\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_integral_test_b.html" id="eq_integral_testb">
+\begin{equation}
+\infser a_n \lt  a_1 +\int_1^\infty a(x)\, dx\text{.}\tag{9.3.2}
+\end{equation}
+</div>
+<p id="p-8560">Combining Equations <a href="" class="xref" data-knowl="./knowl/eq_integral_testa.html" title="Equation 9.3.1">(9.3.1)</a> and <a href="" class="xref" data-knowl="./knowl/eq_integral_testb.html" title="Equation 9.3.2">(9.3.2)</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_integral_testa.html ./knowl/eq_integral_testb.html" id="eq_integral_testc">
+\begin{equation}
+\infser a_n\lt  a_1 +\int_1^\infty a(x)\, dx \lt  a_1 + \infser a_n\text{.}\tag{9.3.3}
+\end{equation}
+</div>
+<p id="p-8561">From Equation <a href="" class="xref" data-knowl="./knowl/eq_integral_testc.html" title="Equation 9.3.3">(9.3.3)</a> we can make the following two statements:</p>
+<ol id="p-8562" class="decimal">
+<li id="li-1806"><p id="p-8563">If <span class="process-math">\(\ds \infser a_n\)</span> diverges, so does <span class="process-math">\(\ds\int_1^\infty a(x)\, dx\)</span> (because <span class="process-math">\(\ds \infser a_n \lt a_1 +\int_1^\infty a(x)\, dx\)</span>)</p></li>
+<li id="li-1807"><p id="p-8564">If <span class="process-math">\(\ds \infser a_n\)</span> converges, so does <span class="process-math">\(\ds\int_1^\infty a(x)\, dx\)</span> (because <span class="process-math">\(\ds \ds \int_1^\infty a(x)\, dx \lt \infser a_n\text{.}\)</span>)</p></li>
+</ol>
+<p id="p-8565">Therefore the series and integral either both converge or both diverge. <a href="" class="xref" data-knowl="./knowl/thm_series_behavior.html" title="Theorem 9.2.24: Infinite Nature of Series">Theorem 9.2.24</a> allows us to extend this theorem to series where <span class="process-math">\(a(n)\)</span> is positive and decreasing on <span class="process-math">\([b,\infty)\)</span> for some <span class="process-math">\(b \gt 1\text{.}\)</span> A formal proof of the <a href="" class="xref" data-knowl="./knowl/thm_integral_test.html" title="Theorem 9.3.1: Integral Test">Integral Test</a> is shown below.</p>
+<article class="hiddenproof" id="proof-7"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-7"><h4 class="heading"><span class="title">Proof of the Integral Test.</span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><p id="p-8566">Let <span class="process-math">\(a(x)=a_x\)</span> be a postive, continuous, decreasing function on <span class="process-math">\([1,\infty)\text{.}\)</span> We will consider how the partial sums of <span class="process-math">\(\infser a_n\)</span> compare to the integral <span class="process-math">\(\int_0^\infty a(x)\, dx \text{.}\)</span> We first consider the case where <span class="process-math">\(\int_1^{\infty}a(x)\, dx\)</span> diverges.</p>
+<ol id="p-8567" class="decimal">
+<li id="li-1808"><p id="p-8568">Suppose that <span class="process-math">\(\int_1^{\infty}a(x)\, dx\)</span> diverges. Using <a href="" class="xref" data-knowl="./knowl/fig_integral_test_a.html" title="Figure 9.3.3.(a)">Figure 9.3.3.(a)</a>, we can say that <span class="process-math">\(S_n=\sum_{i=1}^{n}a_i\gt \int_1^{n+1}a(x)\, dx\text{.}\)</span> If we let <span class="process-math">\(n \to \infty\)</span> in this inequality, we know that <span class="process-math">\(\int_1^{n+1}a(x)\, dx\)</span> will get arbitrarily large as <span class="process-math">\(n \to \infty\)</span> (since <span class="process-math">\(a(x) \gt 0\)</span> and <span class="process-math">\(\int_1^{\infty}a(x)\, dx\)</span> diverges). Therefore we conclude that <span class="process-math">\(S_n=\sum_{i=1}^{n}a_i\)</span> will also get arbitrarily large as <span class="process-math">\(n \to \infty\text{,}\)</span> and thus <span class="process-math">\(\infser a_n\)</span> diverges.</p></li>
+<li id="li-1809"><p id="p-8569">Now suppose that <span class="process-math">\(\int_1^{\infty}a(x)\, dx\)</span> converges to <span class="process-math">\(M\text{,}\)</span> where <span class="process-math">\(M\)</span> is some positive, finite number. Using <a href="" class="xref" data-knowl="./knowl/fig_integral_test_b.html" title="Figure 9.3.3.(b)">Figure 9.3.3.(b)</a>, we can say that <span class="process-math">\(0 \lt S_n=\sum_{i=1}^{n}a_i \lt \int_1^{\infty} a(x)\, dx=M\text{.}\)</span> Therefore our sequence of partial sums, <span class="process-math">\(S_n\)</span> is bounded. Furthermore, <span class="process-math">\(S_n\)</span> is a monotonically increasing sequence since all of the terms <span class="process-math">\(a_n\)</span> are positive. Since <span class="process-math">\(S_n\)</span> is both bounded and monotonic, <span class="process-math">\(S_n\)</span> converges by <a href="" class="xref" data-knowl="./knowl/thm_converge_bounded.html" title="Theorem 9.1.26: Convergent Sequences are Bounded">Convergent Sequences are Bounded</a> and by <a href="" class="xref" data-knowl="./knowl/def_series.html" title="Definition 9.2.2: Infinite Series, nth Partial Sums, Convergence, Divergence">Definition 9.2.2</a>, the series <span class="process-math">\(\infser a_n\)</span> converges as well.</p></li>
+</ol></article></div>
+<article class="example example-like" id="ex_itest1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Integral Test.</span>
+</h4>
+<p id="p-8570">Determine the convergence of <span class="process-math">\(\ds\infser \frac{\ln(n) }{n^2}\text{.}\)</span> (The terms of the sequence <span class="process-math">\(\{a_n\} = \{\ln(n) /n^2\}\)</span> and the <span class="process-math">\(n\)</span>th partial sums are given in <a href="" class="xref" data-knowl="./knowl/fig_itest1.html" title="Figure 9.3.5">Figure 9.3.5</a>.)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-video" data-refid="hk-solution-558" id="solution-558"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-558"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-intcomp-example1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/YuAg9zOh2Hk?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-8571"><a href="" class="xref" data-knowl="./knowl/fig_itest1.html" title="Figure 9.3.5">Figure 9.3.5</a> implies that <span class="process-math">\(a(n) = (\ln(n) )/n^2\)</span> is positive and decreasing on <span class="process-math">\([2,\infty)\text{.}\)</span> We can determine this analytically, too. We know <span class="process-math">\(a(n)\)</span> is positive as both <span class="process-math">\(\ln(n)\)</span> and <span class="process-math">\(n^2\)</span> are positive on <span class="process-math">\([2,\infty)\text{.}\)</span> Treating <span class="process-math">\(a(n)\)</span> as a continuous function of <span class="process-math">\(n\)</span> defined on <span class="process-math">\([1, \infty)\text{,}\)</span> consider <span class="process-math">\(a'(n) = (1-2\ln(n) )/n^3\text{,}\)</span> which is negative for <span class="process-math">\(n\geq 2\text{.}\)</span> Since <span class="process-math">\(a'(n)\)</span> is negative, <span class="process-math">\(a(n)\)</span> is decreasing for <span class="process-math">\(n\geq 2\text{.}\)</span> We can still use the integral test since a finite number of terms will not affect convergence of the series.</p>
+<figure class="figure figure-like" id="fig_itest1"><div class="image-box" style="width: 47%; margin-left: 26.5%; margin-right: 26.5%;"><img src="generated/latex-image/img_itest1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.5<span class="period">.</span></span><span class="space"> </span>Plotting the sequence and series in <a href="" class="xref" data-knowl="./knowl/ex_itest1.html" title="Example 9.3.4: Using the Integral Test">Example 9.3.4</a></figcaption></figure><p id="p-8572">Applying the Integral Test, we test the convergence of <span class="process-math">\(\ds \int_1^\infty \frac{\ln(x) }{x^2}\, dx\text{.}\)</span> Integrating this improper integral requires the use of Integration by Parts, with <span class="process-math">\(u = \ln(x)\)</span> and <span class="process-math">\(dv = 1/x^2\, dx\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-389">
+\begin{align*}
+\int_1^\infty \frac{\ln(x) }{x^2}\, dx \amp = \lim_{b\to\infty} \int_1^b \frac{\ln(x) }{x^2}\, dx\\
+\amp = \lim_{b\to\infty} -\frac1x\ln(x) \Big|_1^b + \int_1^b\frac1{x^2}\, dx\\
+\amp = \lim_{b\to\infty} -\frac1x\ln(x) -\frac 1x\Big|_1^b\\
+\amp = \lim_{b\to\infty}1-\frac1b-\frac{\ln(b) }{b}. \text{ Apply L'Hospital's Rule: }\\
+\amp = 1\text{.}
+\end{align*}
+</div>
+<p id="p-8573">Since <span class="process-math">\(\ds \int_1^\infty \frac{\ln(x) }{x^2}\, dx\)</span> converges, so does <span class="process-math">\(\ds \infser \frac{\ln(n) }{n^2}\text{.}\)</span></p>
+</div></div>
+</div></article><p id="p-8574"><a href="" class="xref" data-knowl="./knowl/thm_pseries.html" title="Theorem 9.2.13: p-Series Test">Theorem 9.2.13</a> was given without justification, stating that the general <span class="process-math">\(p\)</span>-series <span class="process-math">\(\ds \infser \frac 1{(an+b)^p}\)</span> converges if, and only if, <span class="process-math">\(p \gt 1\text{.}\)</span> In the following example, we prove this to be true by applying the Integral Test.</p>
+<article class="example example-like" id="ex_itest2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Integral Test to establish Theorem 9.2.13.</span>
+</h4>
+<p id="p-8575">Let <span class="process-math">\(a, b\)</span> be real numbers such that <span class="process-math">\(a\neq 0\)</span> and <span class="process-math">\(an+b\gt 0\)</span> for all <span class="process-math">\(n\geq 1\text{.}\)</span> Use the Integral Test to prove that <span class="process-math">\(\ds \infser \frac1{(an+b)^p}\)</span> converges if, and only if, <span class="process-math">\(p \gt 1\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-559" id="solution-559"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-559"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-intcomp-ptest" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/fBQkA2ntBuM?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-8576">Consider the integral <span class="process-math">\(\ds\int_1^\infty \frac1{(ax+b)^p}\, dx\text{;}\)</span> assuming <span class="process-math">\(p\neq 1\)</span> and <span class="process-math">\(a\neq 0\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-390">
+\begin{align*}
+\int_1^\infty \frac1{(ax+b)^p}\, dx \amp = \lim_{c\to\infty} \int_1^c \frac1{(ax+b)^p}\, dx\\
+\amp = \lim_{c\to\infty} \frac{1}{a(1-p)}(ax+b)^{1-p}\Big|_1^c\\
+\amp = \lim_{c\to\infty} \frac{1}{a(1-p)}\big((ac+b)^{1-p}-(a+b)^{1-p}\big)\text{.}
+\end{align*}
+</div>
+<p id="p-8577">This limit converges if, and only if, <span class="process-math">\(p \gt 1\)</span> so that <span class="process-math">\(1-p \lt 0\text{.}\)</span> It is easy to show that the integral also diverges in the case of <span class="process-math">\(p=1\text{.}\)</span> (This result is similar to the work preceding <a href="" class="xref" data-knowl="./knowl/idea_impint1.html" title="Key Idea 6.8.17: Convergence of Improper Integrals involving 1/x^p">Key Idea 6.8.17</a>.)</p>
+<p id="p-8578">Therefore <span class="process-math">\(\ds \infser \frac 1{(an+b)^p}\)</span> converges if, and only if, <span class="process-math">\(p \gt 1\text{.}\)</span></p>
+</div></div>
+</div></article><p id="p-8579">We consider two more convergence tests in this section, both <em class="emphasis">comparison</em> tests. That is, we determine the convergence of one series by comparing it to another series with known convergence.</p></section><section class="subsection" id="subsection-63"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.3.2</span> <span class="title">Direct Comparison Test</span>
+</h3>
+<article class="theorem theorem-like" id="thm_series_direct_compare"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Direct Comparison Test.</span>
+</h4>
+<p id="p-8580">Let <span class="process-math">\(\{a_n\}\)</span> and <span class="process-math">\(\{b_n\}\)</span> be positive sequences where <span class="process-math">\(a_n\leq b_n\)</span> for all <span class="process-math">\(n\geq N\text{,}\)</span> for some <span class="process-math">\(N\geq 1\text{.}\)</span> </p>
+<ol id="p-8581" class="decimal">
+<li id="li-1810"><p id="p-8582">If <span class="process-math">\(\ds \infser b_n\)</span> converges, then <span class="process-math">\(\ds \infser a_n\)</span> converges.</p></li>
+<li id="li-1811"><p id="p-8583">If <span class="process-math">\(\ds \infser a_n\)</span> diverges, then <span class="process-math">\(\ds \infser b_n\)</span> diverges.</p></li>
+</ol></article><article class="hiddenproof" id="proof-8"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-8"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><p id="p-8584">Let <span class="process-math">\(0\lt a_n\leq b_n\)</span> for all <span class="process-math">\(n\geq N \geq 1\text{.}\)</span> Note that both partial sums for both series are positive and increasing since the terms of both sequences are positive.</p>
+<ol id="p-8585" class="decimal">
+<li id="li-1812">
+<p id="p-8586">Suppose that <span class="process-math">\(\ds \infser b_n\)</span> converges, so <span class="process-math">\(\ds \infser b_n=S\text{,}\)</span> where <span class="process-math">\(S\)</span> is a finite, positive number. (<span class="process-math">\(S\)</span> must be positive since <span class="process-math">\(b_n \gt 0\text{.}\)</span>)</p>
+<p id="p-8587">Comparing the partial sums, we must have <span class="process-math">\(\ds \sum_{i=N}^n a_i \leq \sum_{i=N}^n b_i\)</span> since <span class="process-math">\(a_n\leq b_n\)</span> for all <span class="process-math">\(n\geq N\text{.}\)</span> Furthermore since <span class="process-math">\(\ds \infser b_n\)</span> converges to <span class="process-math">\(S\text{,}\)</span> our partial sums for <span class="process-math">\(a_n\)</span> are bounded (note that the partial sums started at <span class="process-math">\(i=N\text{,}\)</span> but a finite number of terms will not affect the boundedness of the partial sums).</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_converge_bounded.html">
+\begin{equation*}
+0\lt \sum_{i=N}^n a_i \leq \sum_{i=N}^n b_i \lt S\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since the sequence of partial sums, <span class="process-math">\(s_n=\sum_{i=1}^n a_i \)</span> is both monotonically increasing and bounded, we can say that <span class="process-math">\(s_n\)</span> converges (by <a href="" class="xref" data-knowl="./knowl/thm_converge_bounded.html" title="Theorem 9.1.26: Convergent Sequences are Bounded">Convergent Sequences are Bounded</a>), and therefore so does <span class="process-math">\(\infser a_n \text{.}\)</span></p>
+</li>
+<li id="li-1813">
+<p id="p-8588">Suppose that <span class="process-math">\(\ds \infser a_n\)</span> diverges, so <span class="process-math">\(\ds \sum_{i=1}^n a_n=\infty\text{.}\)</span> (We can say that the series diverges to <span class="process-math">\(\infty\)</span> since the terms of the series are always positive). Comparing the partial sums, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ds \sum_{i=N}^n a_i \leq \sum_{i=N}^n b_i
+\end{equation*}
+</div>
+<p class="continuation">Then applying limits, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ds \lim\limits_{n \to \infty}\sum_{i=N}^n a_i \leq \lim\limits_{n \to \infty}\sum_{i=N}^n b_i\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since the limit on the left side diverges to <span class="process-math">\(\infty\text{,}\)</span> we can say that <span class="process-math">\(\lim\limits_{n \to \infty}\sum_{i=N}^n b_i\)</span> also diverges to <span class="process-math">\(\infty\text{.}\)</span></p>
+</li>
+</ol></article></div>
+<aside class="aside aside-like" id="aside-58"><p id="p-8589">A sequence <span class="process-math">\(\{a_n\}\)</span> is a <em class="emphasis">positive sequence</em> if <span class="process-math">\(a_n \gt 0\)</span> for all <span class="process-math">\(n\text{.}\)</span></p>
+<p id="p-8590">Because of <a href="" class="xref" data-knowl="./knowl/thm_series_behavior.html" title="Theorem 9.2.24: Infinite Nature of Series">Theorem 9.2.24</a>, any theorem that relies on a positive sequence still holds true when <span class="process-math">\(a_n \gt 0\)</span> for all but a finite number of values of <span class="process-math">\(n\text{.}\)</span> </p></aside><figure class="figure figure-like" id="vid-seqseries-intcomp-comp-test"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-321" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/KhPpyQVNR5Y?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.8<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_series_direct_compare.html" title="Theorem 9.3.7: Direct Comparison Test">Theorem 9.3.7</a></figcaption></figure><article class="example example-like" id="ex_dct1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Direct Comparison Test.</span>
+</h4>
+<p id="p-8591">Determine the convergence of <span class="process-math">\(\ds\infser \frac1{3^n+n^2}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-560" id="solution-560"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-560"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-intcomp-comp-example" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/DAfdDWo948U?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-8592">This series is neither a geometric or <span class="process-math">\(p\)</span>-series, but seems related. We predict it will converge, so we look for a series with larger terms that converges. (Note too that the Integral Test seems difficult to apply here.)</p>
+<p id="p-8593">Since <span class="process-math">\(3^n \lt 3^n+n^2\text{,}\)</span> <span class="process-math">\(\ds \frac1{3^n} \gt  \frac1{3^n+n^2}\)</span> for all <span class="process-math">\(n\geq1\text{.}\)</span> The series <span class="process-math">\(\ds\infser \frac{1}{3^n}\)</span> is a convergent geometric series; by <a href="" class="xref" data-knowl="./knowl/thm_series_direct_compare.html" title="Theorem 9.3.7: Direct Comparison Test">Theorem 9.3.7</a>, <span class="process-math">\(\ds \infser \frac1{3^n+n^2}\)</span> converges.</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_dct2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Direct Comparison Test.</span>
+</h4>
+<p id="p-8594">Determine the convergence of <span class="process-math">\(\ds\infser \frac{1}{n-\ln(n) }\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-561" id="solution-561"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-561"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-intcomp-comp-example2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/G1j5JNagVmU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-8595">We know the Harmonic Series <span class="process-math">\(\ds\infser \frac1n\)</span> diverges, and it seems that the given series is closely related to it, hence we predict it will diverge.</p>
+<p id="p-8596">Since <span class="process-math">\(n\geq n-\ln(n)\)</span> for all <span class="process-math">\(n\geq 1\text{,}\)</span> <span class="process-math">\(\ds \frac1n \leq \frac1{n-\ln(n) }\)</span> for all <span class="process-math">\(n\geq 1\text{.}\)</span></p>
+<p id="p-8597">The Harmonic Series diverges, so we conclude that <span class="process-math">\(\ds\infser \frac{1}{n-\ln(n) }\)</span> diverges as well.</p>
+</div></div>
+</div></article><p id="p-8598">The concept of direct comparison is powerful and often relatively easy to apply. Practice helps one develop the necessary intuition to quickly pick a proper series with which to compare. However, it is easy to construct a series for which it is difficult to apply the Direct Comparison Test.</p>
+<p id="p-8599">Consider <span class="process-math">\(\ds\infser \frac1{n+\ln(n) }\text{.}\)</span> It is very similar to the divergent series given in <a href="" class="xref" data-knowl="./knowl/ex_dct2.html" title="Example 9.3.10: Applying the Direct Comparison Test">Example 9.3.10</a>. We suspect that it also diverges, as <span class="process-math">\(\ds \frac 1n \approx \frac1{n+\ln(n) }\)</span> for large <span class="process-math">\(n\text{.}\)</span> However, the inequality that we naturally want to use “goes the wrong way”: since <span class="process-math">\(n\leq n+\ln(n)\)</span> for all <span class="process-math">\(n\geq 1\text{,}\)</span> <span class="process-math">\(\ds\frac1n \geq \frac{1}{n+\ln(n) }\)</span> for all <span class="process-math">\(n\geq 1\text{.}\)</span> The given series has terms <em class="emphasis">less than</em> the terms of a divergent series, and we cannot conclude anything from this.</p>
+<p id="p-8600">Fortunately, we can apply another test to the given series to determine its convergence.</p>
+<figure class="figure figure-like" id="vid-seqseries-intcomp-motivate-limit"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-324" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/bH7U2fgSWXs?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.11<span class="period">.</span></span><span class="space"> </span>Motivating <a href="" class="xref" data-knowl="./knowl/thm_series_limit_compare.html" title="Theorem 9.3.12: Limit Comparison Test">Theorem 9.3.12</a></figcaption></figure></section><section class="subsection" id="subsection-64"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.3.3</span> <span class="title">Limit Comparison Test</span>
+</h3>
+<article class="theorem theorem-like" id="thm_series_limit_compare"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Limit Comparison Test.</span>
+</h4>
+<p id="p-8601">Let <span class="process-math">\(\{a_n\}\)</span> and <span class="process-math">\(\{b_n\}\)</span> be positive sequences. </p>
+<ol id="p-8602" class="decimal">
+<li id="li-1814"><p id="p-8603">If <span class="process-math">\(\lim\limits_{n\to\infty} \dfrac{a_n}{b_n} = L\text{,}\)</span> where <span class="process-math">\(L\)</span> is a positive real number, then <span class="process-math">\(\ds \infser a_n\)</span> and <span class="process-math">\(\ds \infser b_n\)</span> either both converge or both diverge.</p></li>
+<li id="li-1815"><p id="p-8604">If <span class="process-math">\(\lim\limits_{n\to\infty} \dfrac{a_n}{b_n} = 0\text{,}\)</span> then if <span class="process-math">\(\ds \infser b_n\)</span> converges, then so does <span class="process-math">\(\ds \infser a_n\text{.}\)</span></p></li>
+<li id="li-1816"><p id="p-8605">If <span class="process-math">\(\lim\limits_{n\to\infty} \dfrac{a_n}{b_n} = \infty\text{,}\)</span> then if <span class="process-math">\(\ds \infser b_n\)</span> diverges, then so does <span class="process-math">\(\ds \infser a_n\text{.}\)</span></p></li>
+</ol></article><p id="p-8606"><a href="" class="xref" data-knowl="./knowl/thm_series_limit_compare.html" title="Theorem 9.3.12: Limit Comparison Test">Theorem 9.3.12</a> is most useful when the convergence of the series from <span class="process-math">\(\{b_n\}\)</span> is known and we are trying to determine the convergence of the series from <span class="process-math">\(\{a_n\}\text{.}\)</span></p>
+<figure class="figure figure-like" id="vid-seqseries-intcomp-limit-compare"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-325" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/zGKEPIyXvvY?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.13<span class="period">.</span></span><span class="space"> </span>Video presentation of <a href="" class="xref" data-knowl="./knowl/thm_series_limit_compare.html" title="Theorem 9.3.12: Limit Comparison Test">Theorem 9.3.12</a></figcaption></figure><p id="p-8607">We use the Limit Comparison Test in the next example to examine the series <span class="process-math">\(\ds\infser \frac1{n+\ln(n) }\)</span> which motivated this new test.</p>
+<article class="example example-like" id="ex_lct1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Limit Comparison Test.</span>
+</h4>
+<p id="p-8608">Determine the convergence of <span class="process-math">\(\ds\infser \frac1{n+\ln(n) }\)</span> using the Limit Comparison Test.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-562" id="solution-562"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-562"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-intcomp-limit-example1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/RBeu0Tgsj_c?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-8609">We compare the terms of <span class="process-math">\(\ds\infser \frac1{n+\ln(n) }\)</span> to the terms of the Harmonic Sequence <span class="process-math">\(\ds\infser \frac1{n}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-391">
+\begin{align*}
+\lim_{n\to\infty}\frac{1/(n+\ln(n) )}{1/n} \amp = \lim_{n\to\infty} \frac{n}{n+\ln(n) }\\
+\amp = 1 \text{ (after applying L'Hospital's Rule) } \text{.}
+\end{align*}
+</div>
+<p id="p-8610">Since the Harmonic Series diverges, we conclude that <span class="process-math">\(\ds\infser \frac1{n+\ln(n) }\)</span> diverges as well.</p>
+</div></div>
+</div></article><article class="example example-like" id="ex_lct2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Limit Comparison Test.</span>
+</h4>
+<p id="p-8611">Determine the convergence of <span class="process-math">\(\ds\infser \frac1{3^n-n^2}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-563" id="solution-563"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-563"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-intcomp-limit-example2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/1qaiCHhP3GE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-8612">This series is similar to the one in <a href="" class="xref" data-knowl="./knowl/ex_dct1.html" title="Example 9.3.9: Applying the Direct Comparison Test">Example 9.3.9</a>, but now we are considering “<span class="process-math">\(3^n-n^2\)</span>” instead of “<span class="process-math">\(3^n+n^2\text{.}\)</span>” This difference makes applying the Direct Comparison Test difficult.</p>
+<p id="p-8613">Instead, we use the Limit Comparison Test and compare with the series <span class="process-math">\(\ds\infser \frac1{3^n}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-392">
+\begin{align*}
+\lim_{n\to\infty}\frac{1/(3^n-n^2)}{1/3^n} \amp = \lim_{n\to\infty}\frac{3^n}{3^n-n^2}\\
+\amp = 1  \text{ (after applying L'Hospital's Rule twice) } \text{.}
+\end{align*}
+</div>
+<p id="p-8614">We know <span class="process-math">\(\ds\infser \frac1{3^n}\)</span> is a convergent geometric series, hence <span class="process-math">\(\ds\infser \frac1{3^n-n^2}\)</span> converges as well.</p>
+</div></div>
+</div></article><p id="p-8615">As mentioned before, practice helps one develop the intuition to quickly choose a series with which to compare. A general rule of thumb is to pick a series based on the dominant term in the expression of <span class="process-math">\(\{a_n\}\text{.}\)</span> It is also helpful to note that factorials dominate exponentials, which dominate algebraic functions (e.g., polynomials), which dominate logarithms. In the previous example, the dominant term of <span class="process-math">\(\ds\frac{1}{3^n-n^2}\)</span> was <span class="process-math">\(3^n\text{,}\)</span> so we compared the series to <span class="process-math">\(\ds \infser \frac1{3^n}\text{.}\)</span> It is hard to apply the Limit Comparison Test to series containing factorials, though, as we have not learned how to apply L'Hospital's Rule to <span class="process-math">\(n!\text{.}\)</span></p>
+<article class="example example-like" id="ex_lct3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Limit Comparison Test.</span>
+</h4>
+<p id="p-8616">Determine the convergence of <span class="process-math">\(\ds\infser \frac{\sqrt{n}+3}{n^2-n+1}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-video" data-refid="hk-solution-564" id="solution-564"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-564"><div class="solution solution-like">
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-seqseries-intcomp-limit-example3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/D-OsPkY8khE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p id="p-8617">We naïvely attempt to apply the rule of thumb given above and note that the dominant term in the expression of the series is <span class="process-math">\(1/n^2\text{.}\)</span> Knowing that <span class="process-math">\(\ds \infser \frac1{n^2}\)</span> converges, we attempt to apply the Limit Comparison Test:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-393">
+\begin{align*}
+\lim_{n\to\infty}\frac{(\sqrt{n}+3)/(n^2-n+1)}{1/n^2} \amp = \lim_{n\to\infty}\frac{n^2(\sqrt n+3)}{n^2-n+1}\\
+\amp = \infty  \text{ (Apply L'Hospital's Rule) } \text{.}
+\end{align*}
+</div>
+<p id="p-8618"><a href="" class="xref" data-knowl="./knowl/thm_series_limit_compare.html" title="Theorem 9.3.12: Limit Comparison Test">Theorem 9.3.12</a> part (3) only applies when <span class="process-math">\(\ds\infser b_n\)</span> diverges; in our case, it converges. Ultimately, our test has not revealed anything about the convergence of our series.</p>
+<p id="p-8619">The problem is that we chose a poor series with which to compare. Since the numerator and denominator of the terms of the series are both algebraic functions, we should have compared our series to the dominant term of the numerator divided by the dominant term of the denominator.</p>
+<p id="p-8620">The dominant term of the numerator is <span class="process-math">\(n^{1/2}\)</span> and the dominant term of the denominator is <span class="process-math">\(n^2\text{.}\)</span> Thus we should compare the terms of the given series to <span class="process-math">\(n^{1/2}/n^2 = 1/n^{3/2}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-394">
+\begin{align*}
+\lim_{n\to\infty}\frac{(\sqrt{n}+3)/(n^2-n+1)}{1/n^{3/2}} \amp = \lim_{n\to \infty} \frac{n^{3/2}(\sqrt n+3)}{n^2-n+1}\\
+\amp = 1 \text{ (Apply L'Hospital's Rule) } \text{.}
+\end{align*}
+</div>
+<p id="p-8621">Since the <span class="process-math">\(p\)</span>-series <span class="process-math">\(\ds\infser \frac1{n^{3/2}}\)</span> converges, we conclude that <span class="process-math">\(\ds\infser \frac{\sqrt{n}+3}{n^2-n+1}\)</span> converges as well.</p>
+</div></div>
+</div></article><p id="p-8622">We mentioned earlier that the Integral Test did not work well with series containing factorial terms. The next section introduces the Ratio Test, which does handle such series well. We also introduce the Root Test, which is good for series where each term is raised to a power.</p></section><section class="exercises" id="exercises-48"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">9.3.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="subexercises-106"><h4 class="heading"><span class="title">Terms and Concepts</span></h4>
+<article class="exercise exercise-like" id="exercise-1617"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<p id="p-8623">In order to apply the Integral Test to a sequence <span class="process-math">\(\{a_n\}\text{,}\)</span> the function <span class="process-math">\(a(n) = a_n\)</span> must be <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>, <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> and <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>.</p></article><article class="exercise exercise-like" id="exercise-1618"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<p id="p-8625">T/F: The Integral Test can be used to determine the sum of a convergent series.</p></article><article class="exercise exercise-like" id="exercise-1619"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<p id="p-8627">What test(s) in this section do not work well with factorials?</p></article><article class="exercise exercise-like" id="exercise-1620"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<p id="p-8629">Suppose <span class="process-math">\(\ds \infser[0] a_n\)</span> is convergent, and there are sequences <span class="process-math">\(\{b_n\}\)</span> and <span class="process-math">\(\{c_n\}\)</span> such that <span class="process-math">\(b_n \leq a_n \leq c_n\)</span> for all <span class="process-math">\(n\text{.}\)</span> What can be said about the series <span class="process-math">\(\ds \infser[0] b_n\)</span> and <span class="process-math">\(\ds \infser[0] c_n\text{?}\)</span></p></article></article><article class="subexercises" id="subexercises-107"><h4 class="heading"><span class="title">Problems</span></h4>
+<div class="exercisegroup" id="exercisegroup-170">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-201"><p id="p-8631">In the following exercises, use the Integral Test to determine the convergence of the given series.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1621"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-8632"><span class="process-math">\(\ds \infser \frac{1}{2^n}\)</span></p></article><article class="exercise exercise-like" id="exercise-1622"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-8634"><span class="process-math">\(\ds \infser \frac{1}{n^4}\)</span></p></article><article class="exercise exercise-like" id="exercise-1623"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-8636"><span class="process-math">\(\ds \infser \frac{n}{n^2+1}\)</span></p></article><article class="exercise exercise-like" id="exercise-1624"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-8638"><span class="process-math">\(\ds \sum_{n=2}^\infty \frac{1}{n\ln(n) }\)</span></p></article><article class="exercise exercise-like" id="exercise-1625"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-8640"><span class="process-math">\(\ds \infser \frac{1}{n^2+1}\)</span></p></article><article class="exercise exercise-like" id="exercise-1626"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-8642"><span class="process-math">\(\ds \sum_{n=2}^\infty \frac{1}{n(\ln(n) )^2}\)</span></p></article><article class="exercise exercise-like" id="exercise-1627"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-8644"><span class="process-math">\(\ds \infser \frac{n}{2^n}\)</span></p></article><article class="exercise exercise-like" id="exercise-1628"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-8646"><span class="process-math">\(\ds \infser \frac{\ln(n) }{n^3}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-171">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-202"><p id="p-8648">In the following exercises, use the Direct Comparison Test to determine the convergence of the given series; state what series is used for comparison.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1629"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-8649"><span class="process-math">\(\ds \infser \frac{1}{n^2+3n-5}\)</span></p></article><article class="exercise exercise-like" id="exercise-1630"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-8651"><span class="process-math">\(\ds \infser \frac{1}{4^n+n^2-n}\)</span></p></article><article class="exercise exercise-like" id="exercise-1631"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-8653"><span class="process-math">\(\ds \infser \frac{\ln(n) }{n}\)</span></p></article><article class="exercise exercise-like" id="exercise-1632"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-8655"><span class="process-math">\(\ds \infser \frac{1}{n!+n}\)</span></p></article><article class="exercise exercise-like" id="exercise-1633"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-8657"><span class="process-math">\(\ds \sum_{n=2}^\infty \frac{1}{\sqrt{n^2-1}}\)</span></p></article><article class="exercise exercise-like" id="exercise-1634"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-8659"><span class="process-math">\(\ds \sum_{n=5}^\infty \frac{1}{\sqrt{n}-2}\)</span></p></article><article class="exercise exercise-like" id="exercise-1635"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-8661"><span class="process-math">\(\ds \infser \frac{n^2+n+1}{n^3-5}\)</span></p></article><article class="exercise exercise-like" id="exercise-1636"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-8663"><span class="process-math">\(\ds \infser \frac{2^n}{5^n+10}\)</span></p></article><article class="exercise exercise-like" id="exercise-1637"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-8665"><span class="process-math">\(\ds \sum_{n=2}^\infty \frac{n}{n^2-1}\)</span></p></article><article class="exercise exercise-like" id="exercise-1638"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-8667"><span class="process-math">\(\ds \sum_{n=2}^\infty \frac{1}{n^2\ln(n) }\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-172">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-203"><p id="p-8669">In the following exercises, use the Limit Comparison Test to determine the convergence of the given series; state what series is used for comparison.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1639"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-8670"><span class="process-math">\(\ds \infser \frac{1}{n^2 -3n+5}\)</span></p></article><article class="exercise exercise-like" id="exercise-1640"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-8672"><span class="process-math">\(\ds \infser \frac{1}{4^n-n^2}\)</span></p></article><article class="exercise exercise-like" id="exercise-1641"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-8674"><span class="process-math">\(\ds \sum_{n=4}^\infty \frac{\ln(n) }{n-3}\)</span></p></article><article class="exercise exercise-like" id="exercise-1642"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-8676"><span class="process-math">\(\ds \infser \frac{1}{\sqrt{n^2+n}}\)</span></p></article><article class="exercise exercise-like" id="exercise-1643"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-8678"><span class="process-math">\(\ds \infser \frac{1}{n+\sqrt{n}}\)</span></p></article><article class="exercise exercise-like" id="exercise-1644"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-8680"><span class="process-math">\(\ds \infser \frac{n-10}{n^2+10n+10}\)</span></p></article><article class="exercise exercise-like" id="exercise-1645"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-8682"><span class="process-math">\(\ds \infser \sin\big(1/n\big)\)</span></p></article><article class="exercise exercise-like" id="exercise-1646"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<p id="p-8684"><span class="process-math">\(\ds \infser \frac{n+5}{n^3-5}\)</span></p></article><article class="exercise exercise-like" id="exercise-1647"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<p id="p-8686"><span class="process-math">\(\ds \infser \frac{\sqrt{n}+3}{n^2+17}\)</span></p></article><article class="exercise exercise-like" id="exercise-1648"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<p id="p-8688"><span class="process-math">\(\ds \infser \frac{1}{\sqrt{n}+100}\)</span></p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-173">
+<h5 class="heading"><span class="title">Exercise Group.</span></h5>
+<div class="introduction" id="introduction-204"><p id="p-8690">In the following exercises, determine the convergence of the given series. State the test used; more than one test may be appropriate.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-1649"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<p id="p-8691"><span class="process-math">\(\ds \infser \frac{n^2}{2^n}\)</span></p></article><article class="exercise exercise-like" id="exercise-1650"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<p id="p-8693"><span class="process-math">\(\ds \infser \frac{1}{(2n+5)^3}\)</span></p></article><article class="exercise exercise-like" id="exercise-1651"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<p id="p-8695"><span class="process-math">\(\ds \infser \frac{n!}{10^n}\)</span></p></article><article class="exercise exercise-like" id="exercise-1652"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<p id="p-8697"><span class="process-math">\(\ds \infser \frac{\ln(n) }{n!}\)</span></p></article><article class="exercise exercise-like" id="exercise-1653"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<p id="p-8699"><span class="process-math">\(\ds \infser \frac{1}{3^n+n}\)</span></p></article><article class="exercise exercise-like" id="exercise-1654"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<p id="p-8701"><span class="process-math">\(\ds \infser \frac{n-2}{10n+5}\)</span></p></article><article class="exercise exercise-like" id="exercise-1655"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<p id="p-8703"><span class="process-math">\(\ds \infser \frac{3^n}{n^3}\)</span></p></article><article class="exercise exercise-like" id="exercise-1656"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<p id="p-8705"><span class="process-math">\(\ds \infser \frac{\cos(1/n)}{\sqrt{n}}\)</span></p></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-1657"><h5 class="heading"><span class="codenumber">41<span class="period">.</span></span></h5>
+<div class="introduction" id="introduction-205"><p id="p-8707">Given that <span class="process-math">\(\ds \infser a_n\)</span> converges, state which of the following series converges, may converge, or does not converge.</p></div>
+<article class="task exercise-like" id="task-1"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-8708"><span class="process-math">\(\ds \infser \frac{a_n}n\)</span></p></article><article class="task exercise-like" id="task-series-intcomp1"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-8710"><span class="process-math">\(\ds \infser a_n a_{n+1}\)</span></p></article><article class="task exercise-like" id="task-3"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-8712"><span class="process-math">\(\ds \infser (a_n)^2\)</span></p></article><article class="task exercise-like" id="task-4"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-8714"><span class="process-math">\(\ds \infser na_n\)</span></p></article><article class="task exercise-like" id="task-5"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-8716"><span class="process-math">\(\ds \infser \frac{1}{a_n}\)</span></p></article></article><article class="exercise exercise-like" id="exercise-1658"><h5 class="heading"><span class="codenumber">42<span class="period">.</span></span></h5>
+<div class="introduction" id="introduction-206"><p id="p-8718">In this exercise, we explore an approximation method for series to which the <a href="" class="xref" data-knowl="./knowl/thm_integral_test.html" title="Theorem 9.3.1: Integral Test">Integral Test</a> applies.</p></div>
+<article class="task exercise-like" id="task-6"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-8719">Let <span class="process-math">\(a(x)\)</span> be a function to which the <a href="" class="xref" data-knowl="./knowl/thm_integral_test.html" title="Theorem 9.3.1: Integral Test">Integral Test</a> applies, and for which the series <span class="process-math">\(\infser a_n\)</span> converges.</p>
+<p id="p-8720">Let <span class="process-math">\(R_n = \sum_{n+1}^\infty a_n\)</span> denote the <dfn class="terminology">remainder</dfn>; that is, the difference between <span class="process-math">\(\infser a_n\)</span> and the <span class="process-math">\(n\)</span>th partial sum. (Note that <span class="process-math">\(R_n\)</span> is the size of the error that results if we approximate the series by the <span class="process-math">\(n\)</span>th partial sum.) Explain why we must have the following inequality:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_n^\infty a(x)\,dx \leq R_n \leq \int_{n+1}^\infty a(x)\,dx
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-7"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-8723">Estimate the error involved in using the first 12 terms to approximate the series <span class="process-math">\(\sum_{n=1}^\infty 1/n^4\text{.}\)</span> What is the approximate value of the series?</p></article><article class="task exercise-like" id="task-8"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-8725">How many terms must we take to ensure that the <span class="process-math">\(n\)</span>th partial sum approximation for <span class="process-math">\(\infser 1/n^4\)</span> is accurate to 5 decimal places?</p></article></article></article></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:39:10Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.3.6.1</span><span class="period">.</span>
+</h4>
+<div class="video-box" style="width: 98%;padding-top: 55.125%; margin-left: 1%; margin-right: 1%;"><iframe id="vid-diffeq-linear-example1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/fgeo61eY3qo?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<p>We solve by following the steps in <a href="" class="xref" data-knowl="./knowl/idea_solving_linear.html" title="Key Idea 8.3.5: Solving First Order Linear Equations">Key Idea 8.3.5</a>. Unlike the process for solving separable equations, we need not worry about losing constant solutions. The answer we find <em class="emphasis">will</em> be the general solution to the differential equation. We first write the equation in the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_solving_linear.html">
+\begin{equation*}
+\frac{dy}{dx} - xy = 0\text{.}
+\end{equation*}
+</div>
+<p>By identifying <span class="process-math">\(p(x) = -x\text{,}\)</span> we can compute the integrating factor</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mu(x) = e^{\int -x\,dx} = e^{-\frac{1}{2}x^2}\text{.}
+\end{equation*}
+</div>
+<p>Multiplying both side of the differential equation by <span class="process-math">\(\mu(x)\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+e^{-\frac{1}{2}x^2}\left( \frac{dy}{dx} - xy\right) = 0\text{.}
+\end{equation*}
+</div>
+<p>The left hand side of the differential equation condenses to yield</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx} \left ( e^{-\frac{1}{2}x^2}y\right ) = 0\text{.}
+\end{equation*}
+</div>
+<aside class="aside aside-like"><p>The step where the left hand side of the differential equation condenses to the derivative of a product can feel a bit magical. The reality is that we choose <span class="process-math">\(\mu(x)\)</span> so that we can get exactly this condensing behavior. It's not magic, it's math! If you're still skeptical, try using the Product Rule and Implicit Differentiation to evaluate <span class="process-math">\(\displaystyle \frac{d}{dx}\left (e^{-\frac{1}{2}x^2}y\right)\text{,}\)</span> and verify that it becomes <span class="process-math">\(e^{-\frac{1}{2}x^2}\left(\displaystyle \frac{dy}{dx} - xy\right)\text{.}\)</span></p></aside><p>We integrate both sides with respect to <span class="process-math">\(x\)</span> to find the implicit solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+e^{-\frac{1}{2}x^2}y = C\text{,}
+\end{equation*}
+</div>
+<p class="continuation">or the explicit solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y  = Ce^{\frac{1}{2}x^2}\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="sec_Linear.html#solution-486" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:42Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="li"><h5 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
+</h5>
+<p>The limit <span class="process-math">\(\lim\limits_{x\to\infty} x^2-e^x\)</span> initially returns the indeterminate form <span class="process-math">\(\infty-\infty\text{.}\)</span> We can rewrite the expression by factoring out <span class="process-math">\(x^2\text{;}\)</span> <span class="process-math">\(\ds x^2-e^x = x^2\left(1-\frac{e^x}{x^2}\right)\text{.}\)</span> We need to evaluate how <span class="process-math">\(e^x/x^2\)</span> behaves as <span class="process-math">\(x\rightarrow \infty\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to\infty}\frac{e^x}{x^2} \stackrel{\,\text{ by LHR }  \,}{=} \lim_{x\to\infty} \frac{e^x}{2x} \stackrel{\,\text{ by LHR }  \,}{=} \lim_{x\to\infty} \frac{e^x}{2} = \infty\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(\lim_{x\to\infty}x^2(1-e^x/x^2)\)</span> evaluates to <span class="process-math">\(\infty\cdot(-\infty)\text{,}\)</span> which is not an indeterminate form; rather, <span class="process-math">\(\infty\cdot(-\infty)\)</span> evaluates to <span class="process-math">\(-\infty\text{.}\)</span> We conclude that <span class="process-math">\(\lim\limits_{x\to\infty} x^2-e^x = -\infty\text{.}\)</span> Interpretation: as <span class="process-math">\(x\)</span> gets large, the difference between <span class="process-math">\(x^2\)</span> and <span class="process-math">\(e^x\)</span> grows very large.</p></article><span class="incontext"><a href="sec_lhopitals_rule.html#li-1294" class="internal">in-context</a></span>
+</body>
+</html>

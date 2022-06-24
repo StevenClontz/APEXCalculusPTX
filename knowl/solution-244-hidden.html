@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:35:52Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>One can likely guess the correct answer — that is great. We will proceed to show how calculus can provide this answer in a context that proves this answer is correct.</p>
+<p>It helps to make a sketch of the situation. Our enclosure is sketched twice in <a href="" class="xref" data-knowl="./knowl/fig_opt1b.html" title="Figure 4.3.3">Figure 4.3.3</a>, either with treetop grass and nice fence boards or as a simple rectangle. Either way, drawing a rectangle forces us to realize that we need to know the dimensions of this rectangle so we can create an area function — after all, we are trying to maximize the area.</p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:47%;"><img src="generated/latex-image/img_opt1b.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:47%;"><img src="generated/latex-image/img_opt1b2.svg" role="img" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.3<span class="period">.</span></span><span class="space"> </span>A sketch of the enclosure in <a href="" class="xref" data-knowl="./knowl/ex_opt1.html" title="Example 4.3.2: Optimization: perimeter and area">Example 4.3.2</a>.</figcaption></figure><p>We let <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> denote the lengths of the sides of the rectangle. Clearly,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{ Area } =xy\text{.}
+\end{equation*}
+</div>
+<p>We do not yet know how to handle functions with two variables; we need to reduce this down to a single variable. We know more about the situation: the man has <span class="process-math">\(100\)</span> feet of fencing. By knowing the perimeter of the rectangle must be <span class="process-math">\(100\text{,}\)</span> we can create another equation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{ Perimeter }  = 100 = 2x+2y\text{.}
+\end{equation*}
+</div>
+<p>We now have two equations and two unknowns. In the latter equation, we solve for <span class="process-math">\(y\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y = 50-x\text{.}
+\end{equation*}
+</div>
+<p>Now substitute this expression for <span class="process-math">\(y\)</span> in the area equation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{ Area }  = A(x) = x(50-x)\text{.}
+\end{equation*}
+</div>
+<p>Note we now have an equation of one variable; we can truly call the Area a function of <span class="process-math">\(x\text{.}\)</span></p>
+<p>This function only makes sense when <span class="process-math">\(0\leq x \leq 50\text{,}\)</span> otherwise we get negative values of area. So we find the extreme values of <span class="process-math">\(A(x)\)</span> on the interval <span class="process-math">\([0,50]\)</span> using <a href="" class="xref" data-knowl="./knowl/idea_extrema.html" title="Key Idea 3.1.18: Finding Extrema on a Closed Interval">Key Idea 3.1.18</a>.</p>
+<p>To find the critical points, we take the derivative of <span class="process-math">\(A(x)\)</span> and set it equal to <span class="process-math">\(0\text{,}\)</span> then solve for <span class="process-math">\(x\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+A(x) \amp = x(50-x)\\
+\amp = 50x-x^2\\
+A'(x)   \amp = 50-2x
+\end{align*}
+</div>
+<p>We solve <span class="process-math">\(50-2x=0\)</span> to find <span class="process-math">\(x=25\text{;}\)</span> this is the only critical point. We evaluate <span class="process-math">\(A(x)\)</span> at the endpoints of our interval and at this critical point to find the extreme values; in this case, all we care about is the maximum.</p>
+<p>Clearly <span class="process-math">\(A(0)=0\)</span> and <span class="process-math">\(A(50)=0\text{,}\)</span> whereas <span class="process-math">\(A(25) = 625\)</span><span class="quantity">ft<sup>2</sup></span>. This is the maximum. Since we earlier found <span class="process-math">\(y = 50-x\text{,}\)</span> we find that <span class="process-math">\(y\)</span> is also <span class="process-math">\(25\text{.}\)</span> Thus the dimensions of the rectangular enclosure with perimeter of <span class="quantity">100 ft</span>. with maximum area is a square, with sides of length <span class="quantity">25 ft</span>.</p>
+</div></body>
+</html>

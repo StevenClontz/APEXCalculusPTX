@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:36:48Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.1.10.1</span><span class="period">.</span>
+</h3>
+<p>This is another example where there does not seem to be an obvious composition of functions. The line of thinking used in <a href="" class="xref" data-knowl="./knowl/ex_sub4.html" title="Example 6.1.9: Integrating by substitution">Example 6.1.9</a> is useful here: choose something for <span class="process-math">\(u\)</span> and consider what this implies <span class="process-math">\(du\)</span> must be. If <span class="process-math">\(u\)</span> can be chosen such that <span class="process-math">\(du\)</span> also appears in the integrand, then we have chosen well.</p>
+<p>Choosing <span class="process-math">\(u = 1/x\)</span> makes <span class="process-math">\(du = -1/x^2\, dx\text{;}\)</span> that does not seem helpful. However, setting <span class="process-math">\(u = \ln(x)\)</span> makes <span class="process-math">\(du = 1/x\, dx\text{,}\)</span> which is part of the integrand. Thus:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\int \frac1{x\ln(x)}\, dx   \amp =  \int \frac{1}{\underbrace{\ln(x)}_{u}}\underbrace{\frac1x\, dx}_{du}\\
+\amp = \int \frac1u\, du\\
+\amp = \ln\abs{u} + C\\
+\amp = \ln\abs{ \ln(x) } + C\text{.}
+\end{align*}
+</div>
+<p>The final answer is interesting; the natural log of the natural log. Take the derivative to confirm this answer is indeed correct.</p>
+</div>
+<span class="incontext"><a href="sec_substitution.html#solution-307" class="internal">in-context</a></span>
+</body>
+</html>

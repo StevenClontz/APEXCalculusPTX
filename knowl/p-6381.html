@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-24T18:37:42Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>This limit leads to the indeterminate form <span class="process-math">\(0^0\text{.}\)</span> Let <span class="process-math">\(f(x) = x^x\)</span> and consider first <span class="process-math">\(\lim\limits_{x\to0^+} \ln\big(f(x)\big)\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_LHR_power.html ./knowl/fig_LHR4.html">
+\begin{align*}
+\lim_{x\to0^+} \ln\big(f(x)\big) \amp = \lim_{x\to0^+} \ln\left(x^x\right)\\
+\amp = \lim_{x\to0^+} x\ln(x)\\
+\amp = \lim_{x\to0^+} \frac{\ln(x) }{1/x}.\\
+\end{align*}
+<p class="intertext">This produces the indeterminate form <span class="process-math">\(-\infty/\infty\)</span> so we apply l'Hospital's Rule.</p>
+\begin{align*}
+\amp =	\lim_{x\to0^+} \frac{1/x}{-1/x^2}\\
+\amp = \lim_{x\to0^+} -x\\
+\amp = 0\text{.}
+\end{align*}
+</div>
+<p class="continuation">Thus <span class="process-math">\(\lim\limits_{x\to0^+} \ln\big(f(x)\big) =0\text{.}\)</span> We return to the original limit and apply <a href="" class="xref" data-knowl="./knowl/idea_LHR_power.html" title="Key Idea 6.7.7: Evaluating Limits Involving Indeterminate Forms 0^0 1^\infty and \infty^0">Key Idea 6.7.7</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/idea_LHR_power.html ./knowl/fig_LHR4.html">
+\begin{equation*}
+\lim_{x\to0^+} x^x = \lim_{x\to0^+} f(x) = \lim_{x\to0^+} e^{\ln(f(x))} = e^0 = 1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This result is supported by the graph of <span class="process-math">\(f(x)=x^x\)</span> given in <a href="" class="xref" data-knowl="./knowl/fig_LHR4.html" title="Figure 6.7.9">Figure 6.7.9</a>.</p>
+<span class="incontext"><a href="sec_lhopitals_rule.html#p-6381" class="internal">in-context</a></span>
+</body>
+</html>
